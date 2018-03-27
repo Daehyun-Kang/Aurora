@@ -1,0 +1,294 @@
+/**
+ * @file   az_event.h
+ * @brief  
+ * @date   18/06/16
+ * @author fware
+ *
+ * @copyright
+ * Copyright (c) Fware, 2013-2017 - All Rights Reserved
+ * You may use, distribute and modify this code under the 
+ * terms of the "Aurora Source Code License".
+ * See the file LICENSE for full license details.\n\n
+ *
+ * You should have received a copy of  the LICENSE with this file.\n\n
+ *
+ * If not, please contact to Fware with the information in the file CONTACTS.
+ *
+ * History:
+ *   - 2016-06-18 fware initial create
+ */
+
+#ifndef AZ_EVENT_H
+#define AZ_EVENT_H
+
+#include "az_link.h"
+#include "az_ring.h"
+#include "az_rw_lock.h"
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+/* constants */
+
+/* basic macros */
+#ifdef  CONFIG_AZ_EVENT_POOL_SZ
+#define AZ_EVENT_POOL_SZ   CONFIG_AZ_EVENT_POOL_SZ   
+#else
+#define AZ_EVENT_POOL_SZ   2048   
+#endif
+
+/* basic types */
+typedef uint64_t  az_event_id_t;
+
+#if __BYTE_ORDER == __LITTLE_ENDIAN 
+typedef  AZ_PACKED_STRUCT(az_event_id_st) {
+  uint64_t  num:48;
+  uint64_t  ext:7;
+  uint64_t  acc:1;
+  uint64_t  sig:5;  // for signal through system event port
+  uint64_t  status:3;
+} az_event_id_st_t;
+#else
+typedef PACKED_STRUCT(az_event_id_st) {
+  uint64_t  status:3;
+  uint64_t  sig:5;  // for signal through system event port
+  uint64_t  acc:1;
+  uint64_t  ext:7;
+  uint64_t  num:48;
+} az_event_id_st_t;
+#endif
+
+#define AZ_EVENT_ACC_MASK 0x0080000000000000
+
+typedef AZ_PACKED_STRUCT(az_event_descr) {
+  az_uint32_t           index;
+  az_uint32_t           sendCount;
+  az_uint32_t           recvCount;
+  
+  az_refcount_t         refCount;
+} az_event_descr_t;
+
+typedef AZ_PACKED_STRUCT(az_event) {
+  az_event_id_t         id;
+  az_size_t             size;   
+  az_ref_t              data;
+
+  az_ref_t              _data;
+  az_event_descr_t      _descr;
+} az_event_t;
+
+typedef az_event_t  * az_event_ref_t;
+#define AZ_EVENT_ID_ACC(eid)  ((eid) & AZ_EVENT_ACC_MASK)
+#define AZ_EVENT_IS_ACC(eid)  (((az_event_id_st_t *)(eid))->acc)
+#define AZ_EVENT_SET_ASSERT(eid)  \
+  do { (((az_event_id_st_t *)(eid))->status) |= 1; } while (0);
+#define AZ_EVENT_RESET_ASSERT(eid)  \
+  do { (((az_event_id_st_t *)(eid))->status) &= ~1; } while (0);
+#define AZ_EVENT_ID_EQUAL(a, b, m) \
+  (((a) & (m)) == ((b) & (m)))
+
+/* structures */
+
+/*
+ * define event port stuffs
+ */
+typedef az_uint32_t   az_event_port_no_t;
+
+#define AZ_EVENT_PORT_NO_INVALID        (az_event_port_no_t)(-1)
+#define AZ_EVENT_PORT_NO_NOT_ASSIGNED   (az_event_port_no_t)(-2)
+
+#define AZ_EVENT_PORT_TYPE0      0    // post on global event queue
+#define AZ_EVENT_PORT_TYPE1      1    // post on local event queue
+#define AZ_EVENT_PORT_TYPE_MAX   2
+
+#define AZ_EVENT_PORT_STATE_NULL  AZ_ST_IDLE 
+#define AZ_EVENT_PORT_STATE_INIT  AZ_ST_INIT 
+#define AZ_EVENT_PORT_STATE_TINI  AZ_ST_TINI 
+#define AZ_EVENT_PORT_STATE_ACTV  AZ_ST_NORM
+
+#define AZ_EVENT_PORT_MALLOCED    1
+
+typedef union {
+  az_uint32_t   u32;
+#if __BYTE_ORDER == __LITTLE_ENDIAN 
+  struct {
+    az_uint32_t state:8;
+    az_uint32_t substate:8;
+    az_uint32_t misc:8;
+    az_uint32_t type:8;
+  } st;
+#else
+  struct {
+    az_uint32_t type:8;
+    az_uint32_t misc:8;
+    az_uint32_t substate:8;
+    az_uint32_t state:8;
+  } st;
+#endif
+} az_event_port_flags_t;
+
+typedef struct az_event_port_mux {
+  int                 size;
+  az_event_port_no_t  *port_list;
+  int                 *state_list;
+} az_event_port_mux_t;
+
+typedef struct az_event_acc {
+  int             size;
+  az_event_ref_t  *event_list;
+  int             *state_list;
+} az_event_acc_t;
+
+typedef struct az_event_receiver_stats {
+  struct {
+    int qfull;
+  } err;
+} az_event_receiver_stats_t;
+
+typedef struct az_event_receiver {
+  az_sys_ep_t       *sys_port;
+
+  az_event_port_mux_t *port_mux;
+
+  az_event_acc_t    *event_acc;
+
+  az_ring_t         *event_q;
+
+  az_event_receiver_stats_t *stats;
+
+  az_link_t         link;
+
+  az_event_port_no_t  _port_no;
+  int                 _port_index;
+} az_event_receiver_t;
+
+struct az_event_port; 
+
+typedef az_r_t  (*az_event_port_subscribe_t)(struct az_event_port *, az_event_receiver_t *);
+typedef az_r_t  (*az_event_port_prepare_t)(struct az_event_port *, az_event_id_t , az_size_t, az_event_ref_t *);
+typedef az_r_t  (*az_event_port_post_t)(struct az_event_port *, az_event_t *);
+typedef az_r_t  (*az_event_port_fetch_t)(struct az_event_port *, az_event_receiver_t *, az_event_ref_t *);
+typedef az_r_t  (*az_event_port_fetchComplete_t)(struct az_event_port *, az_event_receiver_t *, az_event_t *);
+typedef az_r_t  (*az_event_port_unsubscribe_t)(struct az_event_port *, az_event_receiver_t *);
+
+typedef struct {
+  az_event_port_subscribe_t         Subscribe;
+  az_event_port_prepare_t           Prepare; 
+  az_event_port_post_t              Post; 
+  az_event_port_fetch_t             Fetch; 
+  az_event_port_fetchComplete_t     FetchComplete; 
+  az_event_port_unsubscribe_t       Unsubscribe; 
+} az_event_port_oprs_t;
+
+typedef struct az_event_port {
+  az_event_port_no_t    no;
+  az_event_port_flags_t flags;
+
+  az_event_id_t         event_id;
+  az_event_id_t         event_mask;
+
+  az_rw_lock_t          *lock;
+
+  az_event_port_oprs_t  *oprs;
+
+  az_link_list_t receiver_list;
+
+  az_rw_lock_t      _lock;
+} az_event_port_t;
+typedef az_event_port_t * az_event_port_ref_t;
+#define AZ_EVENT_PORT_DECL(eport) \
+  az_event_port_t eport = { \
+    .no = AZ_EVENT_PORT_NO_NOT_ASSIGNED,\
+    .flags.u32 = 0,\
+    .lock = NULL,\
+    .oprs = NULL,\
+  };
+#define AZ_EVENT_PORT_ACC(port)  ((port)->event_id & AZ_EVENT_ACC_MASK)
+#define AZ_EVENT_IN_PORT(port, e) \
+  (((port)->event_id & (port)->event_mask) == ((e)->id & (port)->event_mask))
+
+#define az_event_port_lock_init(port) \
+            if (port->lock) { az_rw_lock_init(port->lock); } 
+#define az_event_port_lock_deinit(port) \
+            if (port->lock) { az_rw_lock_deinit(port->lock); } 
+#define az_event_port_lock_read(port) \
+            if (port->lock) { az_rw_lock_read(port->lock); } 
+#define az_event_port_unlock_read(port) \
+            if (port->lock) { az_rw_unlock_read(port->lock); } 
+#define az_event_port_lock_write(port) \
+            if (port->lock) { az_rw_lock_write(port->lock); } 
+#define az_event_port_unlock_write(port) \
+            if (port->lock) { az_rw_unlock_write(port->lock); } 
+
+/* structured types */
+
+/* macros */
+
+/* variabls exposed */
+
+/* inline functions */
+static inline void az_event_port_mux_init(az_event_port_mux_t *mux, int size,
+    az_event_port_no_t  *rcv_port_list, int *rcv_port_state_list)
+{
+  int j;
+  az_assert(NULL != mux);
+  az_assert(NULL != rcv_port_list);
+  az_assert(NULL != rcv_port_state_list);
+  mux->size = size;
+  mux->port_list = rcv_port_list;
+  mux->state_list = rcv_port_state_list;
+  for (j = 0; j < size; j++) {
+    rcv_port_list[j] = AZ_EVENT_PORT_NO_NOT_ASSIGNED;
+    rcv_port_state_list[j] = 0; 
+  }
+}
+static inline void az_event_acc_init(az_event_acc_t *acc,
+    int size, az_event_ref_t *acc_event_list, int *acc_state_list)
+{
+  int j;
+  az_assert(NULL != acc);
+  az_assert(NULL != acc_event_list);
+  az_assert(NULL != acc_state_list);
+  acc->size = 8;
+  acc->event_list = acc_event_list;
+  acc->state_list = acc_state_list;
+  for (j = 0; j < size; j++) {
+    acc_event_list[j] = NULL;
+    acc_state_list[j] = 0;
+  }
+}
+
+
+/* function prototypes exposed */
+extern az_r_t  az_event_pool_init();
+extern az_r_t  az_event_pool_deinit();
+extern az_r_t  az_event_pool_createEvent(az_event_ref_t *pEvent, az_size_t size);
+extern az_r_t  az_event_pool_deleteEvent(az_event_ref_t e);
+extern az_r_t  az_event_pool_findEvent(az_event_ref_t *pEvent, az_event_id_t eventid, az_event_id_t mask);
+
+extern az_r_t  az_event_bus_init();
+extern az_r_t  az_event_bus_start();
+extern az_r_t  az_event_bus_stop(); 
+extern az_r_t  az_event_bus_denit();
+
+extern az_event_port_t *az_event_port_get(az_event_port_no_t portno);
+extern az_r_t az_event_port_search(az_event_id_t event_id, az_event_id_t event_mask, az_uint32_t *pPortNo); 
+extern az_r_t az_event_port_create(az_event_id_t event_id, az_event_id_t event_mask, uint8_t type, az_event_port_ref_t *pPort);
+extern az_r_t az_event_port_attach(az_event_port_ref_t port);
+extern az_r_t az_event_port_detach(az_event_port_ref_t port); 
+extern az_r_t az_event_port_delete(az_event_port_t *port);
+
+extern az_r_t az_event_port_subscribe(az_event_port_t *port, az_event_receiver_t *receiver);
+extern az_r_t az_event_port_unsubscribe(az_event_port_t *port, az_event_receiver_t *receiver);
+extern az_r_t  az_event_port_prepare(az_event_port_t *port, az_event_id_t eventid, az_size_t size, az_event_ref_t *pEvent);
+extern az_r_t az_event_port_post(az_event_port_t *port, az_event_t *event);
+extern az_r_t  az_event_port_fetch(az_event_port_t *port, az_event_receiver_t *rcvr, az_event_ref_t *pEvent);
+extern az_r_t  az_event_port_fetchComplete(az_event_port_t *port, az_event_receiver_t *rcvr, az_event_t *event);
+
+extern az_r_t  az_event_recv_wait(az_event_receiver_t *rcvr, az_int64_t tmo_ns);
+#ifdef __cplusplus
+}
+#endif
+#endif

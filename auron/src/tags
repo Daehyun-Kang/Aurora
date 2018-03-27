@@ -1,0 +1,684 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADDR_BUF_LEN	addr2line.c	261;"	d	file:
+AM_TRACE_H	../inc/am_trace.h	22;"	d
+ARM_DEMANGLING	../inc/demangle.h	94;"	d
+ARM_DEMANGLING_STYLE_STRING	../inc/demangle.h	83;"	d
+AURON_H	../inc/auron.h	22;"	d
+AUTO_DEMANGLING	../inc/demangle.h	91;"	d
+AUTO_DEMANGLING_STYLE_STRING	../inc/demangle.h	80;"	d
+AZM_MALLOC_STATS	../inc/azm_mcheck.h	57;"	d
+AZM_MCHECK_H	../inc/azm_mcheck.h	22;"	d
+AZM_MTRACE_ALLOC_POP	../inc/azm_mcheck.h	72;"	d
+AZM_MTRACE_ALLOC_PUSH	../inc/azm_mcheck.h	59;"	d
+AZM_MTRACE_LIST_SZ	../inc/azm_mcheck.h	34;"	d
+AZM_RSH_H	../inc/azm_rsh.h	22;"	d
+AZM_TRACE_DISP_LONG_FORMAT	../inc/azm_trace.h	59;"	d
+AZM_TRACE_DISP_SHORT_FORMAT	../inc/azm_trace.h	56;"	d
+AZM_TRACE_DISP_TIME	../inc/azm_trace.h	53;"	d
+AZM_TRACE_DISP_WHERE	../inc/azm_trace.h	54;"	d
+AZM_TRACE_DISP_XU	../inc/azm_trace.h	52;"	d
+AZM_TRACE_DISP_XU_NAME	../inc/azm_trace.h	51;"	d
+AZM_TRACE_H	../inc/azm_trace.h	22;"	d
+AZ_APP_CFG_TREE	../../aurora/inc/frw/az_frw_cfg.h	44;"	d
+AZ_CLI_API_H	../../aurora/inc/cli/az_cli_api.h	22;"	d
+AZ_CLI_CMD_ERROR	../../aurora/inc/cli/az_cli_cmd.h	52;"	d
+AZ_CLI_CMD_H	../../aurora/inc/cli/az_cli_cmd.h	22;"	d
+AZ_CLI_CMD_MASK_APP	../../aurora/inc/cli/az_cli_cmd.h	57;"	d
+AZ_CLI_CMD_MASK_DEBUG	../../aurora/inc/cli/az_cli_cmd.h	54;"	d
+AZ_CLI_CMD_MASK_FRW	../../aurora/inc/cli/az_cli_cmd.h	56;"	d
+AZ_CLI_CMD_MASK_LOCAL	../../aurora/inc/cli/az_cli_cmd.h	55;"	d
+AZ_CLI_CMD_NOTFOUND	../../aurora/inc/cli/az_cli_cmd.h	49;"	d
+AZ_CLI_CMD_QUIT	../../aurora/inc/cli/az_cli_cmd.h	51;"	d
+AZ_CLI_CMD_SHOWHELP	../../aurora/inc/cli/az_cli_cmd.h	50;"	d
+AZ_CLI_CMD_SUCCESS	../../aurora/inc/cli/az_cli_cmd.h	48;"	d
+AZ_CLI_GLUE_H	../../aurora/inc/cli/az_cli_glue.h	22;"	d
+AZ_CLI_H	../../aurora/inc/cli/az_cli.h	22;"	d
+AZ_CLI_SHELL_MAX	../../aurora/inc/cli/az_cli_glue.h	33;"	d
+AZ_CLI_SHELL_MAX	../../aurora/inc/cli/az_cli_glue.h	35;"	d
+AZ_CLI_SHELL_PROMPT_DFT	../../aurora/inc/cli/az_cli.h	38;"	d
+AZ_CLI_SHELL_STATE_BCAST	../../aurora/inc/cli/az_cli.h	42;"	d
+AZ_CLI_SHELL_STATE_DMALLOC	../../aurora/inc/cli/az_cli.h	46;"	d
+AZ_CLI_SHELL_STATE_INIT	../../aurora/inc/cli/az_cli.h	39;"	d
+AZ_CLI_SHELL_STATE_LOG	../../aurora/inc/cli/az_cli.h	45;"	d
+AZ_CLI_SHELL_STATE_RXON	../../aurora/inc/cli/az_cli.h	43;"	d
+AZ_CLI_SHELL_STATE_RXSTDOUT	../../aurora/inc/cli/az_cli.h	44;"	d
+AZ_CLI_SHELL_STATE_START	../../aurora/inc/cli/az_cli.h	40;"	d
+AZ_CLI_SHELL_STATE_START_DFT	../../aurora/inc/cli/az_cli.h	48;"	d
+AZ_CLI_SHELL_STATE_STOP	../../aurora/inc/cli/az_cli.h	41;"	d
+AZ_DATETIME_H	../../aurora/inc/sys/az_datetime.h	22;"	d
+AZ_DIR_INVALID	../../aurora/inc/sys/az_fs.h	64;"	d
+AZ_DLLIB_H	../../aurora/inc/sys/az_dllib.h	22;"	d
+AZ_FILE_INVALID	../../aurora/inc/sys/az_fs.h	71;"	d
+AZ_FRW_CFG_H	../../aurora/inc/frw/az_frw_cfg.h	22;"	d
+AZ_FRW_CFG_KEY_sys	../../aurora/inc/frw/az_frw_cfg.h	32;"	d
+AZ_FRW_CFG_TREE	../../aurora/inc/frw/az_frw_cfg.h	43;"	d
+AZ_FRW_CMD_CONF	../../aurora/inc/frw/az_frw.h	49;"	d
+AZ_FRW_CMD_DOWN	../../aurora/inc/frw/az_frw.h	55;"	d
+AZ_FRW_CMD_H	../../aurora/inc/frw/az_frw_cmd.h	22;"	d
+AZ_FRW_CMD_INIT	../../aurora/inc/frw/az_frw.h	48;"	d
+AZ_FRW_CMD_SAPP	../../aurora/inc/frw/az_frw.h	53;"	d
+AZ_FRW_CMD_SYNC	../../aurora/inc/frw/az_frw.h	50;"	d
+AZ_FRW_CMD_TAPP	../../aurora/inc/frw/az_frw.h	54;"	d
+AZ_FRW_CMD_TINI	../../aurora/inc/frw/az_frw.h	56;"	d
+AZ_FRW_EVT_BASE	../../aurora/inc/frw/az_frw.h	42;"	d
+AZ_FRW_EVT_BASE	../../aurora/inc/frw/az_frw.h	45;"	d
+AZ_FRW_EVT_IERR	../../aurora/inc/frw/az_frw.h	57;"	d
+AZ_FRW_EVT_MASK	../../aurora/inc/frw/az_frw.h	43;"	d
+AZ_FRW_EVT_MASK	../../aurora/inc/frw/az_frw.h	46;"	d
+AZ_FRW_EVT_SYNC	../../aurora/inc/frw/az_frw.h	52;"	d
+AZ_FRW_EVT_TOUT	../../aurora/inc/frw/az_frw.h	51;"	d
+AZ_FRW_H	../../aurora/inc/frw/az_frw.h	22;"	d
+AZ_FRW_STATE_CNFG	../../aurora/inc/frw/az_frw.h	34;"	d
+AZ_FRW_STATE_DOWN	../../aurora/inc/frw/az_frw.h	38;"	d
+AZ_FRW_STATE_IDLE	../../aurora/inc/frw/az_frw.h	32;"	d
+AZ_FRW_STATE_IERR	../../aurora/inc/frw/az_frw.h	36;"	d
+AZ_FRW_STATE_INIT	../../aurora/inc/frw/az_frw.h	33;"	d
+AZ_FRW_STATE_NORM	../../aurora/inc/frw/az_frw.h	37;"	d
+AZ_FRW_STATE_SYNC	../../aurora/inc/frw/az_frw.h	35;"	d
+AZ_FS_H	../../aurora/inc/sys/az_fs.h	22;"	d
+AZ_INET_H	../../aurora/inc/sys/az_inet.h	22;"	d
+AZ_INET_PORT	../../aurora/inc/sys/az_inet.h	55;"	d
+AZ_MISC_H	../../aurora/inc/sys/az_misc.h	22;"	d
+AZ_MUTEX_H	../../aurora/inc/sys/az_mutex.h	22;"	d
+AZ_MUTEX_INVALID	../../aurora/inc/sys/az_mutex.h	46;"	d
+AZ_NAME_MAX	../../aurora/inc/sys/az_fs.h	50;"	d
+AZ_NAME_MAX	../../aurora/inc/sys/az_fs.h	52;"	d
+AZ_NL	../../aurora/inc/cli/az_cli_cmd.h	33;"	d
+AZ_PATH_COMP_MAX	../../aurora/inc/sys/az_fs.h	44;"	d
+AZ_PATH_COMP_MAX	../../aurora/inc/sys/az_fs.h	46;"	d
+AZ_PATH_DELIMITER	../../aurora/inc/sys/az_fs.h	55;"	d
+AZ_PATH_MAX	../../aurora/inc/sys/az_fs.h	38;"	d
+AZ_PATH_MAX	../../aurora/inc/sys/az_fs.h	40;"	d
+AZ_PATH_SEPERATOR	../../aurora/inc/sys/az_fs.h	56;"	d
+AZ_PROBE	../../aurora/inc/mon/az_probe.h	114;"	d
+AZ_PROBE_DEF_REF	../../aurora/inc/mon/az_probe.h	35;"	d
+AZ_PROBE_H	../../aurora/inc/mon/az_probe.h	22;"	d
+AZ_PROBE_PRINTF	../../aurora/inc/mon/az_probe.h	123;"	d
+AZ_PROBE_REF_INVALID	../../aurora/inc/mon/az_probe.h	34;"	d
+AZ_PROBE_REG	../../aurora/inc/mon/az_probe.h	36;"	d
+AZ_SEM_H	../../aurora/inc/sys/az_sem.h	22;"	d
+AZ_SEM_INVALID	../../aurora/inc/sys/az_sem.h	45;"	d
+AZ_SEM_OPTIONS_PSHARED	../../aurora/inc/sys/az_sem.h	35;"	d
+AZ_SIG_H	../../aurora/inc/sys/az_sig.h	22;"	d
+AZ_SOCKET_H	../../aurora/inc/sys/az_socket.h	22;"	d
+AZ_SOCK_INVALID	../../aurora/inc/sys/az_inet.h	43;"	d
+AZ_SOCK_INVALID	../../aurora/inc/sys/az_inet.h	46;"	d
+AZ_TCPSERVER_GLUE_H	../../aurora/inc/net/az_tcpserver_glue.h	22;"	d
+AZ_TCPSERVER_H	../../aurora/inc/net/az_tcpserver.h	22;"	d
+AZ_TCPSERVER_STATE_CLIBUSY	../../aurora/inc/net/az_tcpserver.h	38;"	d
+AZ_TCPSERVER_STATE_DALLOC	../../aurora/inc/net/az_tcpserver.h	40;"	d
+AZ_TCPSERVER_STATE_IDLE	../../aurora/inc/net/az_tcpserver.h	34;"	d
+AZ_TCPSERVER_STATE_INIT	../../aurora/inc/net/az_tcpserver.h	35;"	d
+AZ_TCPSERVER_STATE_MASK	../../aurora/inc/net/az_tcpserver.h	39;"	d
+AZ_TCPSERVER_STATE_RUN	../../aurora/inc/net/az_tcpserver.h	37;"	d
+AZ_TCPSERVER_STATE_START	../../aurora/inc/net/az_tcpserver.h	36;"	d
+AZ_TCP_H	../../aurora/inc/sys/az_tcp.h	22;"	d
+AZ_TIMER_H	../../aurora/inc/sys/az_timer.h	22;"	d
+AZ_TIMER_INVALID	../../aurora/inc/sys/az_timer.h	48;"	d
+AZ_TRACE_CODE_CMD_ENABLE	../../aurora/inc/mon/az_trace.h	42;"	d
+AZ_TRACE_CODE_CMD_START	../../aurora/inc/mon/az_trace.h	40;"	d
+AZ_TRACE_CODE_CMD_STOP	../../aurora/inc/mon/az_trace.h	41;"	d
+AZ_TRACE_CODE_FUNC_ENTER	../../aurora/inc/mon/az_trace.h	44;"	d
+AZ_TRACE_CODE_FUNC_EXIT	../../aurora/inc/mon/az_trace.h	45;"	d
+AZ_TRACE_H	../../aurora/inc/mon/az_trace.h	22;"	d
+AZ_TRACE_IS_ACTV	../../aurora/inc/mon/az_trace.h	87;"	d
+AZ_TRACE_SOCK_CLI_NAME	../../aurora/inc/mon/az_trace.h	33;"	d
+AZ_TRACE_SOCK_SVR_NAME	../../aurora/inc/mon/az_trace.h	32;"	d
+AZ_TRACE_STATE_ACTV	../../aurora/inc/mon/az_trace.h	38;"	d
+AZ_TRACE_STATE_BUSY	../../aurora/inc/mon/az_trace.h	37;"	d
+AZ_TRACE_STATE_IDLE	../../aurora/inc/mon/az_trace.h	35;"	d
+AZ_TRACE_STATE_INIT	../../aurora/inc/mon/az_trace.h	36;"	d
+AZ_XU_ERROR_CREATED	../../aurora/inc/sys/az_xu.h	44;"	d
+AZ_XU_ERROR_DELETE	../../aurora/inc/sys/az_xu.h	47;"	d
+AZ_XU_ERROR_RCVEVT	../../aurora/inc/sys/az_xu.h	49;"	d
+AZ_XU_ERROR_SNDEVT	../../aurora/inc/sys/az_xu.h	48;"	d
+AZ_XU_ERROR_START	../../aurora/inc/sys/az_xu.h	45;"	d
+AZ_XU_ERROR_STOP	../../aurora/inc/sys/az_xu.h	46;"	d
+AZ_XU_EVENT_OPT_AND_ALL	../../aurora/inc/sys/az_xu.h	66;"	d
+AZ_XU_EVENT_OPT_PRESERVE	../../aurora/inc/sys/az_xu.h	67;"	d
+AZ_XU_EVENT_THR_START	../../aurora/inc/sys/az_xu.h	52;"	d
+AZ_XU_EVENT_THR_STOP	../../aurora/inc/sys/az_xu.h	53;"	d
+AZ_XU_EVENT_VECTORS	../../aurora/inc/sys/az_xu.h	51;"	d
+AZ_XU_FLAGS_INI_VAL	../../aurora/inc/sys/az_xu.h	58;"	d
+AZ_XU_FLAGS_INI_VAL	../../aurora/inc/sys/az_xu.h	60;"	d
+AZ_XU_FLAGS_LOG_ERR	../../aurora/inc/sys/az_xu.h	55;"	d
+AZ_XU_FLAGS_TRACE	../../aurora/inc/sys/az_xu.h	56;"	d
+AZ_XU_H	../../aurora/inc/sys/az_xu.h	22;"	d
+AZ_XU_INVALID	../../aurora/inc/sys/az_xu.h	124;"	d
+AZ_XU_PRIORITY_MAX	../../aurora/inc/sys/az_xu_types.h	32;"	d
+AZ_XU_PRIORITY_MIN	../../aurora/inc/sys/az_xu_types.h	31;"	d
+AZ_XU_STATE_BUSY	../../aurora/inc/sys/az_xu.h	41;"	d
+AZ_XU_STATE_CREATED	../../aurora/inc/sys/az_xu.h	38;"	d
+AZ_XU_STATE_ERROR	../../aurora/inc/sys/az_xu.h	42;"	d
+AZ_XU_STATE_START	../../aurora/inc/sys/az_xu.h	39;"	d
+AZ_XU_STATE_STOP	../../aurora/inc/sys/az_xu.h	40;"	d
+AZ_XU_TRACE_ENABLED	../../aurora/inc/sys/az_xu.h	63;"	d
+AZ_XU_TRACE_SET_CURFUNC	../../aurora/inc/sys/az_xu.h	167;"	d
+AZ_XU_TYPES_H	../../aurora/inc/sys/az_xu_types.h	22;"	d
+Argc	../../aurora/inc/cli/az_cli_cmd.h	/^  int   Argc;$/;"	m	struct:az_cli_cmd_table
+Argv	../../aurora/inc/cli/az_cli_cmd.h	/^  char  *Argv[CONFIG_AZ_CLI_MAX_ARGS];$/;"	m	struct:az_cli_cmd_table
+CONFIG_AM_TRACE_MON	../inc/auron.h	34;"	d
+CONFIG_AM_TRACE_SVR_PORT	../inc/auron.h	35;"	d
+CONFIG_AZM_TRACE_MON	../inc/auron.h	34;"	d
+CONFIG_AZM_TRACE_MON_SVR_PORT	../inc/auron.h	35;"	d
+CONFIG_AZM_TRACE_PRB_SVR_PORT	../inc/auron.h	36;"	d
+CONFIG_AZ_CLI_CMDBUF_SZ	../../aurora/inc/cli/az_cli_cmd.h	41;"	d
+CONFIG_AZ_CLI_MAX_ARGS	../../aurora/inc/cli/az_cli_cmd.h	45;"	d
+CONFIG_AZ_CLI_MAX_CMDS	../../aurora/inc/cli/az_cli_cmd.h	37;"	d
+CONFIG_AZ_CLI_TX_BUFFER_SZ	../../aurora/inc/cli/az_cli.h	35;"	d
+CONFIG_AZ_SIGHANDLE_MAX	../../aurora/inc/sys/az_sig.h	31;"	d
+CURRENT_DEMANGLING_STYLE	../inc/demangle.h	90;"	d
+Cleanup	../../aurora/inc/cli/az_cli.h	/^  az_cli_cleanup_t  Cleanup;$/;"	m	struct:az_cli_shell
+DEMANGLE_COMPONENT_ARGLIST	../inc/demangle.h	/^  DEMANGLE_COMPONENT_ARGLIST,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_ARRAY_TYPE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_ARRAY_TYPE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_BINARY	../inc/demangle.h	/^  DEMANGLE_COMPONENT_BINARY,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_BINARY_ARGS	../inc/demangle.h	/^  DEMANGLE_COMPONENT_BINARY_ARGS,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_BUILTIN_TYPE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_BUILTIN_TYPE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_CAST	../inc/demangle.h	/^  DEMANGLE_COMPONENT_CAST,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_CHARACTER	../inc/demangle.h	/^  DEMANGLE_COMPONENT_CHARACTER,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_CLONE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_CLONE$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_COMPLEX	../inc/demangle.h	/^  DEMANGLE_COMPONENT_COMPLEX,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_COMPOUND_NAME	../inc/demangle.h	/^  DEMANGLE_COMPONENT_COMPOUND_NAME,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_CONST	../inc/demangle.h	/^  DEMANGLE_COMPONENT_CONST,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_CONSTRUCTION_VTABLE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_CONSTRUCTION_VTABLE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_CONST_THIS	../inc/demangle.h	/^  DEMANGLE_COMPONENT_CONST_THIS,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_CONVERSION	../inc/demangle.h	/^  DEMANGLE_COMPONENT_CONVERSION,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_COVARIANT_THUNK	../inc/demangle.h	/^  DEMANGLE_COMPONENT_COVARIANT_THUNK,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_CTOR	../inc/demangle.h	/^  DEMANGLE_COMPONENT_CTOR,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_DECLTYPE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_DECLTYPE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_DEFAULT_ARG	../inc/demangle.h	/^  DEMANGLE_COMPONENT_DEFAULT_ARG,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_DTOR	../inc/demangle.h	/^  DEMANGLE_COMPONENT_DTOR,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_EXTENDED_OPERATOR	../inc/demangle.h	/^  DEMANGLE_COMPONENT_EXTENDED_OPERATOR,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_FIXED_TYPE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_FIXED_TYPE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_FUNCTION_PARAM	../inc/demangle.h	/^  DEMANGLE_COMPONENT_FUNCTION_PARAM,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_FUNCTION_TYPE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_FUNCTION_TYPE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_GLOBAL_CONSTRUCTORS	../inc/demangle.h	/^  DEMANGLE_COMPONENT_GLOBAL_CONSTRUCTORS,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_GLOBAL_DESTRUCTORS	../inc/demangle.h	/^  DEMANGLE_COMPONENT_GLOBAL_DESTRUCTORS,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_GUARD	../inc/demangle.h	/^  DEMANGLE_COMPONENT_GUARD,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_HIDDEN_ALIAS	../inc/demangle.h	/^  DEMANGLE_COMPONENT_HIDDEN_ALIAS,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_IMAGINARY	../inc/demangle.h	/^  DEMANGLE_COMPONENT_IMAGINARY,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_INITIALIZER_LIST	../inc/demangle.h	/^  DEMANGLE_COMPONENT_INITIALIZER_LIST,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_JAVA_CLASS	../inc/demangle.h	/^  DEMANGLE_COMPONENT_JAVA_CLASS,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_JAVA_RESOURCE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_JAVA_RESOURCE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_LAMBDA	../inc/demangle.h	/^  DEMANGLE_COMPONENT_LAMBDA,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_LITERAL	../inc/demangle.h	/^  DEMANGLE_COMPONENT_LITERAL,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_LITERAL_NEG	../inc/demangle.h	/^  DEMANGLE_COMPONENT_LITERAL_NEG,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_LOCAL_NAME	../inc/demangle.h	/^  DEMANGLE_COMPONENT_LOCAL_NAME,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_NAME	../inc/demangle.h	/^  DEMANGLE_COMPONENT_NAME,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_NONTRANSACTION_CLONE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_NONTRANSACTION_CLONE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_NULLARY	../inc/demangle.h	/^  DEMANGLE_COMPONENT_NULLARY,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_NUMBER	../inc/demangle.h	/^  DEMANGLE_COMPONENT_NUMBER,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_OPERATOR	../inc/demangle.h	/^  DEMANGLE_COMPONENT_OPERATOR,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_PACK_EXPANSION	../inc/demangle.h	/^  DEMANGLE_COMPONENT_PACK_EXPANSION,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_POINTER	../inc/demangle.h	/^  DEMANGLE_COMPONENT_POINTER,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_PTRMEM_TYPE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_PTRMEM_TYPE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_QUAL_NAME	../inc/demangle.h	/^  DEMANGLE_COMPONENT_QUAL_NAME,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_REFERENCE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_REFERENCE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_REFERENCE_THIS	../inc/demangle.h	/^  DEMANGLE_COMPONENT_REFERENCE_THIS,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_REFTEMP	../inc/demangle.h	/^  DEMANGLE_COMPONENT_REFTEMP,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_RESTRICT	../inc/demangle.h	/^  DEMANGLE_COMPONENT_RESTRICT,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_RESTRICT_THIS	../inc/demangle.h	/^  DEMANGLE_COMPONENT_RESTRICT_THIS,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_RVALUE_REFERENCE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_RVALUE_REFERENCE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_RVALUE_REFERENCE_THIS	../inc/demangle.h	/^  DEMANGLE_COMPONENT_RVALUE_REFERENCE_THIS,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_SUB_STD	../inc/demangle.h	/^  DEMANGLE_COMPONENT_SUB_STD,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TAGGED_NAME	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TAGGED_NAME,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TEMPLATE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TEMPLATE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TEMPLATE_ARGLIST	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TEMPLATE_ARGLIST,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TEMPLATE_PARAM	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TEMPLATE_PARAM,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_THUNK	../inc/demangle.h	/^  DEMANGLE_COMPONENT_THUNK,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TLS_INIT	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TLS_INIT,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TLS_WRAPPER	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TLS_WRAPPER,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TRANSACTION_CLONE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TRANSACTION_CLONE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TRINARY	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TRINARY,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TRINARY_ARG1	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TRINARY_ARG1,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TRINARY_ARG2	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TRINARY_ARG2,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TYPED_NAME	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TYPED_NAME,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TYPEINFO	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TYPEINFO,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TYPEINFO_FN	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TYPEINFO_FN,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_TYPEINFO_NAME	../inc/demangle.h	/^  DEMANGLE_COMPONENT_TYPEINFO_NAME,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_UNARY	../inc/demangle.h	/^  DEMANGLE_COMPONENT_UNARY,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_UNNAMED_TYPE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_UNNAMED_TYPE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_VECTOR_TYPE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_VECTOR_TYPE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_VENDOR_TYPE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_VENDOR_TYPE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_VENDOR_TYPE_QUAL	../inc/demangle.h	/^  DEMANGLE_COMPONENT_VENDOR_TYPE_QUAL,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_VIRTUAL_THUNK	../inc/demangle.h	/^  DEMANGLE_COMPONENT_VIRTUAL_THUNK,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_VOLATILE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_VOLATILE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_VOLATILE_THIS	../inc/demangle.h	/^  DEMANGLE_COMPONENT_VOLATILE_THIS,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_VTABLE	../inc/demangle.h	/^  DEMANGLE_COMPONENT_VTABLE,$/;"	e	enum:demangle_component_type
+DEMANGLE_COMPONENT_VTT	../inc/demangle.h	/^  DEMANGLE_COMPONENT_VTT,$/;"	e	enum:demangle_component_type
+DEMANGLE_H	../inc/demangle.h	26;"	d
+DMGL_ANSI	../inc/demangle.h	34;"	d
+DMGL_ARM	../inc/demangle.h	49;"	d
+DMGL_AUTO	../inc/demangle.h	46;"	d
+DMGL_EDG	../inc/demangle.h	53;"	d
+DMGL_GNAT	../inc/demangle.h	55;"	d
+DMGL_GNU	../inc/demangle.h	47;"	d
+DMGL_GNU_V3	../inc/demangle.h	54;"	d
+DMGL_HP	../inc/demangle.h	50;"	d
+DMGL_JAVA	../inc/demangle.h	35;"	d
+DMGL_LUCID	../inc/demangle.h	48;"	d
+DMGL_NO_OPTS	../inc/demangle.h	32;"	d
+DMGL_PARAMS	../inc/demangle.h	33;"	d
+DMGL_RET_DROP	../inc/demangle.h	42;"	d
+DMGL_RET_POSTFIX	../inc/demangle.h	38;"	d
+DMGL_STYLE_MASK	../inc/demangle.h	57;"	d
+DMGL_TYPES	../inc/demangle.h	37;"	d
+DMGL_VERBOSE	../inc/demangle.h	36;"	d
+EDG_DEMANGLING	../inc/demangle.h	96;"	d
+EDG_DEMANGLING_STYLE_STRING	../inc/demangle.h	85;"	d
+FUNC_MAX	addr2line.c	463;"	d	file:
+GNAT_DEMANGLING	../inc/demangle.h	99;"	d
+GNAT_DEMANGLING_STYLE_STRING	../inc/demangle.h	88;"	d
+GNU_DEMANGLING	../inc/demangle.h	92;"	d
+GNU_DEMANGLING_STYLE_STRING	../inc/demangle.h	81;"	d
+GNU_V3_DEMANGLING	../inc/demangle.h	97;"	d
+GNU_V3_DEMANGLING_STYLE_STRING	../inc/demangle.h	86;"	d
+HP_DEMANGLING	../inc/demangle.h	95;"	d
+HP_DEMANGLING_STYLE_STRING	../inc/demangle.h	84;"	d
+JAVA_DEMANGLING	../inc/demangle.h	98;"	d
+JAVA_DEMANGLING_STYLE_STRING	../inc/demangle.h	87;"	d
+LUCID_DEMANGLING	../inc/demangle.h	93;"	d
+LUCID_DEMANGLING_STYLE_STRING	../inc/demangle.h	82;"	d
+NO_DEMANGLING_STYLE_STRING	../inc/demangle.h	79;"	d
+Read	../../aurora/inc/cli/az_cli.h	/^  az_cli_read_t   Read;$/;"	m	struct:az_cli_shell
+Write	../../aurora/inc/cli/az_cli.h	/^  az_cli_write_t  Write;$/;"	m	struct:az_cli_shell
+_evectable	../../aurora/inc/sys/az_xu.h	/^  struct az_xu_evector _evectable[AZ_XU_EVENT_VECTORS];$/;"	m	struct:az_xu_entity	typeref:struct:az_xu_entity::az_xu_evector
+_libtrace_data	addr2line.c	/^typedef struct _libtrace_data {$/;"	s	file:
+_sym_info	addr2line.c	/^typedef struct _sym_info {$/;"	s	file:
+_sys_xu	../../aurora/inc/sys/az_xu.h	/^  az_sys_xu_entity_t  _sys_xu;$/;"	m	struct:az_xu_entity
+abfd	addr2line.c	/^    bfd *abfd;$/;"	m	struct:_libtrace_data	file:
+accum	../inc/demangle.h	/^      short accum;$/;"	m	struct:demangle_component::__anon1::__anon5
+alloc_call	../inc/azm_mcheck.h	/^  az_ref_t  alloc_call[AZM_MTRACE_LIST_SZ];$/;"	m	struct:azm_malloc_stats
+alloc_list	../inc/azm_mcheck.h	/^  az_ref_t  alloc_list[AZM_MTRACE_LIST_SZ];$/;"	m	struct:azm_malloc_stats
+alloc_size	../inc/azm_mcheck.h	/^  uint32_t  alloc_size[AZM_MTRACE_LIST_SZ];$/;"	m	struct:azm_malloc_stats
+am_trace_cli_cmd	am_trace.c	/^int am_trace_cli_cmd(int argc, char *argv[])$/;"	f
+am_trace_ctrl	../inc/am_trace.h	/^typedef struct am_trace_ctrl {$/;"	s
+am_trace_ctrl	am_trace.c	/^az_trace_ctrl_t am_trace_ctrl = {$/;"	v
+am_trace_ctrl_t	../inc/am_trace.h	/^} am_trace_ctrl_t;$/;"	t	typeref:struct:am_trace_ctrl
+am_trace_enable	am_trace.c	/^int am_trace_enable(int onoff)$/;"	f
+am_trace_start	am_trace.c	/^int am_trace_start()$/;"	f
+am_trace_start_default_thread	am_trace.c	/^az_r_t  am_trace_start_default_thread()$/;"	f
+am_trace_stop	am_trace.c	/^int am_trace_stop()$/;"	f
+am_trace_stop_default_thread	am_trace.c	/^az_r_t  am_trace_stop_default_thread()$/;"	f
+am_trace_thread_default	am_trace.c	/^az_xu_t am_trace_thread_default = NULL;$/;"	v
+am_trace_thread_proc_default	am_trace.c	/^void *am_trace_thread_proc_default(void *arg)$/;"	f
+am_trace_thread_state	am_trace.c	/^int am_trace_thread_state = 0;$/;"	v
+am_xu_main	am_main.c	/^az_xu_t am_xu_main = NULL;$/;"	v
+am_xu_main_arg	am_main.c	/^struct am_xu_main_arg {$/;"	s	file:
+am_xu_main_arg	am_main.c	/^} am_xu_main_arg;$/;"	v	typeref:struct:am_xu_main_arg
+am_xu_main_config	am_main.c	/^am_xu_config_t am_xu_main_config = {$/;"	v
+am_xu_main_entry	am_main.c	/^void *am_xu_main_entry(struct am_xu_main_arg *arg)$/;"	f
+arg	../../aurora/inc/sys/az_xu.h	/^  az_xu_arg_t           arg;$/;"	m	struct:az_xu_evector
+arg	../../aurora/inc/sys/az_xu.h	/^  az_xu_arg_t     arg;$/;"	m	struct:az_xu_entity
+argc	am_main.c	/^  int argc;$/;"	m	struct:am_xu_main_arg	file:
+argc	azm_main.c	/^  int argc;$/;"	m	struct:azm_xu_main_arg	file:
+args	../inc/demangle.h	/^      int args;$/;"	m	struct:demangle_component::__anon1::__anon4
+argv	am_main.c	/^  char **argv;$/;"	m	struct:am_xu_main_arg	file:
+argv	azm_main.c	/^  char **argv;$/;"	m	struct:azm_xu_main_arg	file:
+arm_demangling	../inc/demangle.h	/^  arm_demangling = DMGL_ARM,$/;"	e	enum:demangling_styles
+attr	../../aurora/inc/sys/az_xu.h	/^  az_xu_attr_t    attr;$/;"	m	struct:az_xu_entity
+auto_demangling	../inc/demangle.h	/^  auto_demangling = DMGL_AUTO,$/;"	e	enum:demangling_styles
+az_attr_constructor	../../aurora/inc/mon/az_trace.h	78;"	d
+az_attr_constructor	../../aurora/inc/mon/az_trace.h	82;"	d
+az_attr_destructor	../../aurora/inc/mon/az_trace.h	79;"	d
+az_attr_destructor	../../aurora/inc/mon/az_trace.h	83;"	d
+az_attr_no_instrument	../../aurora/inc/mon/az_trace.h	80;"	d
+az_attr_no_instrument	../../aurora/inc/mon/az_trace.h	84;"	d
+az_cli_cleanup_t	../../aurora/inc/cli/az_cli.h	/^typedef void (*az_cli_cleanup_t)(struct az_cli_shell *);$/;"	t
+az_cli_cmd_descr	../../aurora/inc/cli/az_cli_cmd.h	/^typedef struct az_cli_cmd_descr {$/;"	s
+az_cli_cmd_descr_init	../../aurora/inc/cli/az_cli_cmd.h	/^static inline void az_cli_cmd_descr_init(az_cli_cmd_descr_t *pDescr)$/;"	f
+az_cli_cmd_descr_t	../../aurora/inc/cli/az_cli_cmd.h	/^} az_cli_cmd_descr_t;$/;"	t	typeref:struct:az_cli_cmd_descr
+az_cli_cmd_exec_t	../../aurora/inc/cli/az_cli_api.h	/^typedef int32_t (*az_cli_cmd_exec_t)(int, char *[]);$/;"	t
+az_cli_cmd_exec_t	../../aurora/inc/cli/az_cli_cmd.h	/^typedef int32_t (*az_cli_cmd_exec_t)(int, char *[]);$/;"	t
+az_cli_cmd_table	../../aurora/inc/cli/az_cli_cmd.h	/^typedef struct az_cli_cmd_table {$/;"	s
+az_cli_cmd_table_t	../../aurora/inc/cli/az_cli_api.h	/^typedef struct az_cli_cmd_table az_cli_cmd_table_t;$/;"	t	typeref:struct:az_cli_cmd_table
+az_cli_cmd_table_t	../../aurora/inc/cli/az_cli_cmd.h	/^} az_cli_cmd_table_t;$/;"	t	typeref:struct:az_cli_cmd_table
+az_cli_get_default	../../aurora/inc/cli/az_cli_glue.h	/^static inline az_cli_shell_t  *az_cli_get_default()$/;"	f
+az_cli_key_cmd	../../aurora/inc/cli/az_cli_api.h	/^struct az_cli_key_cmd {$/;"	s
+az_cli_port_t	../../aurora/inc/cli/az_cli.h	/^typedef int az_cli_port_t; $/;"	t
+az_cli_read_t	../../aurora/inc/cli/az_cli.h	/^typedef int (*az_cli_read_t)(az_cli_port_t, char *, int);$/;"	t
+az_cli_shell	../../aurora/inc/cli/az_cli.h	/^typedef struct az_cli_shell {$/;"	s
+az_cli_shell_t	../../aurora/inc/cli/az_cli.h	/^} az_cli_shell_t;$/;"	t	typeref:struct:az_cli_shell
+az_cli_thread_curShell	../../aurora/inc/cli/az_cli_glue.h	/^static inline az_cli_shell_t *az_cli_thread_curShell()$/;"	f
+az_cli_write_t	../../aurora/inc/cli/az_cli.h	/^typedef int (*az_cli_write_t)(az_cli_port_t, const char *, int);$/;"	t
+az_dir_entity_t	../../aurora/inc/sys/az_fs.h	/^} az_dir_entity_t; $/;"	t	typeref:struct:__anon1
+az_dir_t	../../aurora/inc/sys/az_fs.h	/^typedef az_dir_entity_t * az_dir_t;$/;"	t
+az_dirent_t	../../aurora/inc/sys/az_fs.h	/^typedef az_sys_dirent_t   az_dirent_t;$/;"	t
+az_file_entity_t	../../aurora/inc/sys/az_fs.h	/^} az_file_entity_t; $/;"	t	typeref:struct:__anon2
+az_file_t	../../aurora/inc/sys/az_fs.h	/^typedef az_file_entity_t * az_file_t;$/;"	t
+az_fs_allocateFile	../../aurora/inc/sys/az_fs.h	/^static inline az_file_t az_fs_allocateFile()$/;"	f
+az_fs_combinePath	../../aurora/inc/sys/az_fs.h	/^static inline az_r_t az_fs_combinePath(char *path1, char *path2, char *dest)$/;"	f
+az_fs_freeFile	../../aurora/inc/sys/az_fs.h	/^static inline void az_fs_freeFile(az_file_t file)$/;"	f
+az_fs_getBasePathComponent	../../aurora/inc/sys/az_fs.h	/^static inline az_r_t  az_fs_getBasePathComponent(char *path, char *out)$/;"	f
+az_fs_getFileBase	../../aurora/inc/sys/az_fs.h	/^static inline az_r_t  az_fs_getFileBase(char *filename, char *base)$/;"	f
+az_fs_getFileExt	../../aurora/inc/sys/az_fs.h	/^static inline az_r_t  az_fs_getFileExt(char *filename, char *ext)$/;"	f
+az_fs_getLastPathComponent	../../aurora/inc/sys/az_fs.h	/^static inline az_r_t  az_fs_getLastPathComponent(char *path, char *comp)$/;"	f
+az_fs_makePath	../../aurora/inc/sys/az_fs.h	/^static inline az_r_t az_fs_makePath(char *comp[], char *dest)$/;"	f
+az_fs_parsePath	../../aurora/inc/sys/az_fs.h	/^static inline az_r_t  az_fs_parsePath(const char *path, char *parsed_path, char *comp[])$/;"	f
+az_inet_IpAddr2Str	../../aurora/inc/sys/az_inet.h	/^static inline char  *az_inet_IpAddr2Str(struct sockaddr_in *addr, char *ipAddrStr, int ipAddrStrLen)$/;"	f
+az_inet_closeSocket	../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_closeSocket(az_sock_t p)$/;"	f
+az_inet_isValidIpAddr	../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_isValidIpAddr(char *ipAddr)$/;"	f
+az_inet_openSocket	../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_openSocket(int domain, int type, int protocol, az_sock_t *p)$/;"	f
+az_inet_setReuseAddr	../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_setReuseAddr(az_sock_t sd)$/;"	f
+az_inet_setSocketBlockMode	../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_setSocketBlockMode(az_sock_t sd) $/;"	f
+az_inet_setSocketNonBlockMode	../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_setSocketNonBlockMode(az_sock_t sd) $/;"	f
+az_inet_setTcpNodelay	../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_setTcpNodelay(az_sock_t sd)$/;"	f
+az_inet_str2IpAddr	../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_str2IpAddr(struct sockaddr_in *addr, char *ipAddrStr) $/;"	f
+az_mutex_entity_t	../../aurora/inc/sys/az_mutex.h	/^} az_mutex_entity_t;$/;"	t	typeref:struct:__anon3
+az_mutex_t	../../aurora/inc/sys/az_mutex.h	/^typedef az_mutex_entity_t *        az_mutex_t;$/;"	t
+az_probe	../../aurora/inc/mon/az_probe.h	/^typedef struct az_probe {$/;"	s
+az_probe_callback_t	../../aurora/inc/mon/az_probe.h	/^typedef char  *(*az_probe_callback_t)(void *,...);$/;"	t
+az_probe_deregister	../../aurora/inc/mon/az_probe.h	/^static inline void az_probe_deregister(az_probe_ref_t index)$/;"	f
+az_probe_ref_t	../../aurora/inc/mon/az_probe.h	/^typedef uint32_t   az_probe_ref_t;$/;"	t
+az_probe_register	../../aurora/inc/mon/az_probe.h	/^static inline az_probe_ref_t az_probe_register(char *tag, void *m,  $/;"	f
+az_probe_t	../../aurora/inc/mon/az_probe.h	/^} az_probe_t;$/;"	t	typeref:struct:az_probe
+az_sem_entity_t	../../aurora/inc/sys/az_sem.h	/^} az_sem_entity_t;$/;"	t	typeref:struct:__anon4
+az_sem_t	../../aurora/inc/sys/az_sem.h	/^typedef az_sem_entity_t *                  az_sem_t;$/;"	t
+az_sig_descr	../../aurora/inc/sys/az_sig.h	/^typedef struct az_sig_descr {$/;"	s
+az_sig_descr_t	../../aurora/inc/sys/az_sig.h	/^} az_sig_descr_t;$/;"	t	typeref:struct:az_sig_descr
+az_sigaction_t	../../aurora/inc/sys/az_sig.h	/^typedef struct sigaction az_sigaction_t;$/;"	t	typeref:struct:sigaction
+az_sighandler_descr	../../aurora/inc/sys/az_sig.h	/^typedef struct az_sighandler_descr {$/;"	s
+az_sighandler_descr_t	../../aurora/inc/sys/az_sig.h	/^} az_sighandler_descr_t;$/;"	t	typeref:struct:az_sighandler_descr
+az_sighandler_t	../../aurora/inc/sys/az_sig.h	/^typedef void  (*az_sighandler_t)(int);$/;"	t
+az_sock_t	../../aurora/inc/sys/az_inet.h	/^typedef az_sys_sock_t az_sock_t;$/;"	t
+az_sock_t	../../aurora/inc/sys/az_inet.h	/^typedef int           az_sock_t;$/;"	t
+az_socket_t	../../aurora/inc/sys/az_socket.h	/^} az_socket_t;$/;"	t	typeref:struct:__anon5
+az_sys_localtime	../../aurora/inc/sys/az_datetime.h	/^static inline az_sys_datetime_t *az_sys_localtime(az_sys_time_t *t)$/;"	f
+az_tcpserver	../../aurora/inc/net/az_tcpserver.h	/^typedef struct  az_tcpserver {$/;"	s
+az_tcpserver_cfg	../../aurora/inc/net/az_tcpserver.h	/^struct az_tcpserver_cfg {$/;"	s
+az_tcpserver_oprs	../../aurora/inc/net/az_tcpserver.h	/^struct az_tcpserver_oprs {$/;"	s
+az_tcpserver_t	../../aurora/inc/net/az_tcpserver.h	/^} az_tcpserver_t;$/;"	t	typeref:struct:az_tcpserver
+az_tcpserver_thread_start	../../aurora/inc/net/az_tcpserver_glue.h	/^static inline az_r_t az_tcpserver_thread_start(char *name,$/;"	f
+az_tcpserver_thread_stop	../../aurora/inc/net/az_tcpserver_glue.h	/^static inline az_r_t az_tcpserver_thread_stop(void *thread)$/;"	f
+az_timer_entity_t	../../aurora/inc/sys/az_timer.h	/^} az_timer_entity_t;$/;"	t	typeref:struct:__anon6
+az_timer_t	../../aurora/inc/sys/az_timer.h	/^typedef az_timer_entity_t *   az_timer_t;$/;"	t
+az_trace_ctrl	../../aurora/inc/mon/az_trace.h	/^typedef struct az_trace_ctrl {$/;"	s
+az_trace_ctrl_t	../../aurora/inc/mon/az_trace.h	/^} az_trace_ctrl_t;$/;"	t	typeref:struct:az_trace_ctrl
+az_trace_info	../../aurora/inc/mon/az_trace.h	/^typedef struct az_trace_info {$/;"	s
+az_trace_info_t	../../aurora/inc/mon/az_trace.h	/^} az_trace_info_t;$/;"	t	typeref:struct:az_trace_info
+az_xu_arg_t	../../aurora/inc/sys/az_xu.h	/^typedef void *az_xu_arg_t;$/;"	t
+az_xu_attr_t	../../aurora/inc/sys/az_xu_types.h	/^} az_xu_attr_t;$/;"	t	typeref:struct:__anon7
+az_xu_cause_t	../../aurora/inc/sys/az_xu.h	/^typedef short az_xu_cause_t;$/;"	t
+az_xu_core_mask_t	../../aurora/inc/sys/az_xu_types.h	/^typedef uint64_t az_xu_core_mask_t;$/;"	t
+az_xu_entity	../../aurora/inc/sys/az_xu.h	/^typedef struct az_xu_entity {$/;"	s
+az_xu_entity_t	../../aurora/inc/sys/az_xu.h	/^} az_xu_entity_t;$/;"	t	typeref:struct:az_xu_entity
+az_xu_entry_t	../../aurora/inc/sys/az_xu.h	/^typedef az_xu_ret_t (*az_xu_entry_t)(az_xu_arg_t);$/;"	t
+az_xu_evector	../../aurora/inc/sys/az_xu.h	/^struct az_xu_evector {$/;"	s
+az_xu_event_handler_t	../../aurora/inc/sys/az_xu.h	/^typedef void (*az_xu_event_handler_t)(int, az_xu_arg_t);$/;"	t
+az_xu_event_t	../../aurora/inc/sys/az_xu.h	/^typedef az_sys_event_t  az_xu_event_t;$/;"	t
+az_xu_flags_t	../../aurora/inc/sys/az_xu.h	/^typedef int   az_xu_flags_t;$/;"	t
+az_xu_reset_flags	../../aurora/inc/sys/az_xu.h	/^static inline void az_xu_reset_flags(int flags)$/;"	f
+az_xu_ret_t	../../aurora/inc/sys/az_xu.h	/^typedef void *az_xu_ret_t;$/;"	t
+az_xu_self	../../aurora/inc/sys/az_xu.h	136;"	d
+az_xu_set_flags	../../aurora/inc/sys/az_xu.h	/^static inline void az_xu_set_flags(int flags)$/;"	f
+az_xu_set_trace	../../aurora/inc/sys/az_xu.h	/^static inline int az_xu_set_trace(az_xu_trace_info_t *info, int onoff)$/;"	f
+az_xu_state_t	../../aurora/inc/sys/az_xu.h	/^typedef short az_xu_state_t;$/;"	t
+az_xu_t	../../aurora/inc/sys/az_xu.h	/^typedef   az_xu_entity_t *  az_xu_t;$/;"	t
+az_xu_trace_info	../../aurora/inc/sys/az_xu.h	/^typedef struct az_xu_trace_info {$/;"	s
+az_xu_trace_info_t	../../aurora/inc/sys/az_xu.h	/^} az_xu_trace_info_t;$/;"	t	typeref:struct:az_xu_trace_info
+azm_malloc_init	../inc/azm_mcheck.h	/^static inline void az_attr_no_instrument azm_malloc_init()$/;"	f
+azm_malloc_stats	../inc/azm_mcheck.h	/^struct azm_malloc_stats {$/;"	s
+azm_rsh_cli_cmd	azm_rsh.c	/^int azm_rsh_cli_cmd(int argc, char *argv[])$/;"	f
+azm_rsh_ctrl	../inc/azm_rsh.h	/^typedef struct azm_rsh_ctrl {$/;"	s
+azm_rsh_ctrl	azm_rsh.c	/^azm_rsh_ctrl_t azm_rsh_ctrl = {$/;"	v
+azm_rsh_ctrl_t	../inc/azm_rsh.h	/^} azm_rsh_ctrl_t;$/;"	t	typeref:struct:azm_rsh_ctrl
+azm_rsh_deinit	azm_rsh.c	/^int azm_rsh_deinit()$/;"	f
+azm_rsh_init	azm_rsh.c	/^int azm_rsh_init()$/;"	f
+azm_rsh_proc_default	azm_rsh.c	/^int azm_rsh_proc_default(void *arg)$/;"	f
+azm_rsh_start_default_thread	azm_rsh.c	/^az_r_t  azm_rsh_start_default_thread()$/;"	f
+azm_rsh_stop_default_thread	azm_rsh.c	/^az_r_t  azm_rsh_stop_default_thread()$/;"	f
+azm_rsh_thread_default	azm_rsh.c	/^az_xu_t azm_rsh_thread_default = NULL;$/;"	v
+azm_rsh_thread_proc_default	azm_rsh.c	/^void *azm_rsh_thread_proc_default(void *arg)$/;"	f
+azm_rsh_thread_state	azm_rsh.c	/^int azm_rsh_thread_state = 0;$/;"	v
+azm_trace_cli_cmd	azm_trace.c	/^int azm_trace_cli_cmd(int argc, char *argv[])$/;"	f
+azm_trace_ctrl	../inc/azm_trace.h	/^typedef struct azm_trace_ctrl {$/;"	s
+azm_trace_ctrl	azm_trace.c	/^azm_trace_ctrl_t azm_trace_ctrl = {$/;"	v
+azm_trace_ctrl_t	../inc/azm_trace.h	/^} azm_trace_ctrl_t;$/;"	t	typeref:struct:azm_trace_ctrl
+azm_trace_deinit	azm_trace.c	/^int azm_trace_deinit()$/;"	f
+azm_trace_enable_remote	azm_trace.c	/^int azm_trace_enable_remote(int onoff)$/;"	f
+azm_trace_init	azm_trace.c	/^int azm_trace_init()$/;"	f
+azm_trace_proc_default	azm_trace.c	/^int azm_trace_proc_default(void *arg)$/;"	f
+azm_trace_proc_query_rsp	azm_trace.c	/^int azm_trace_proc_query_rsp(short query, char *data, int datalen)$/;"	f
+azm_trace_send_query_cmd	azm_trace.c	/^int azm_trace_send_query_cmd(short query, char *data, int datalen)$/;"	f
+azm_trace_start	azm_trace.c	/^int azm_trace_start()$/;"	f
+azm_trace_start_default_thread	azm_trace.c	/^az_r_t  azm_trace_start_default_thread()$/;"	f
+azm_trace_stop	azm_trace.c	/^int azm_trace_stop()$/;"	f
+azm_trace_stop_default_thread	azm_trace.c	/^az_r_t  azm_trace_stop_default_thread()$/;"	f
+azm_trace_svr	azm_trace.c	/^az_tcpserver_t azm_trace_svr = {$/;"	v
+azm_trace_svr_onClientConnection	azm_trace.c	/^int azm_trace_svr_onClientConnection(void *ctx, az_sock_t cliSock, void *cliAddrIn)$/;"	f
+azm_trace_svr_oprs	azm_trace.c	/^struct az_tcpserver_oprs azm_trace_svr_oprs;$/;"	v	typeref:struct:az_tcpserver_oprs
+azm_trace_thread_default	azm_trace.c	/^az_xu_t azm_trace_thread_default = NULL;$/;"	v
+azm_trace_thread_proc_default	azm_trace.c	/^void *azm_trace_thread_proc_default(void *arg)$/;"	f
+azm_trace_thread_state	azm_trace.c	/^int azm_trace_thread_state = 0;$/;"	v
+azm_xu_main	azm_main.c	/^az_xu_t azm_xu_main = NULL;$/;"	v
+azm_xu_main_arg	azm_main.c	/^struct azm_xu_main_arg {$/;"	s	file:
+azm_xu_main_arg	azm_main.c	/^} azm_xu_main_arg;$/;"	v	typeref:struct:azm_xu_main_arg
+azm_xu_main_config	azm_main.c	/^az_xu_config_t azm_xu_main_config = {$/;"	v
+azm_xu_main_entry	azm_main.c	/^void *azm_xu_main_entry(struct azm_xu_main_arg *arg)$/;"	f
+backlog	../../aurora/inc/net/az_tcpserver.h	/^  int   backlog;$/;"	m	struct:az_tcpserver_cfg
+base_names	addr2line.c	/^    bfd_boolean base_names;      \/* Strip directory names.  *\/$/;"	m	struct:_libtrace_data	file:
+bfd_nonfatal	addr2line.c	/^bfd_nonfatal(const char *string)$/;"	f
+buffer	../../aurora/inc/cli/az_cli.h	/^  char  buffer[CONFIG_AZ_CLI_TX_BUFFER_SZ];$/;"	m	struct:az_cli_shell
+cAllocPoped	../inc/azm_mcheck.h	/^  unsigned long  cAllocPoped;$/;"	m	struct:azm_malloc_stats
+cTotal	../inc/azm_mcheck.h	/^  unsigned long  cTotal;$/;"	m	struct:azm_malloc_stats
+caller	../../aurora/inc/mon/az_trace.h	/^  void    *caller;$/;"	m	struct:az_trace_info
+callstack	../../aurora/inc/sys/az_xu.h	/^  void  *callstack[CONFIG_AZ_TRACE_DEPTH_MAX];$/;"	m	struct:az_xu_trace_info
+cause	../../aurora/inc/sys/az_xu.h	/^  az_xu_cause_t   cause;$/;"	m	struct:az_xu_entity
+cb_f	../../aurora/inc/mon/az_probe.h	/^  char  *(*cb_f)(void *,...);$/;"	m	struct:az_probe
+character	../inc/demangle.h	/^      int character;$/;"	m	struct:demangle_component::__anon1::__anon11
+cmd	../../aurora/inc/cli/az_cli_api.h	/^  int32_t (*cmd)(int, char *[]);$/;"	m	struct:az_cli_key_cmd
+cmd_table	../../aurora/inc/cli/az_cli.h	/^  az_cli_cmd_table_t *cmd_table;$/;"	m	struct:az_cli_shell
+cmdbuffer	../../aurora/inc/cli/az_cli.h	/^  char  cmdbuffer[CONFIG_AZ_CLI_CMDBUF_SZ];	$/;"	m	struct:az_cli_shell
+cmdpos	../../aurora/inc/cli/az_cli.h	/^  int   cmdpos;$/;"	m	struct:az_cli_shell
+code	../../aurora/inc/mon/az_trace.h	/^  short code;$/;"	m	struct:az_trace_info
+config	../../aurora/inc/net/az_tcpserver.h	/^  struct az_tcpserver_cfg config;$/;"	m	struct:az_tcpserver	typeref:struct:az_tcpserver::az_tcpserver_cfg
+core_mask	../../aurora/inc/sys/az_xu_types.h	/^    az_xu_core_mask_t core_mask;$/;"	m	struct:__anon7
+count	../../aurora/inc/cli/az_cli_cmd.h	/^  int  count;$/;"	m	struct:az_cli_cmd_table
+curSh	../inc/azm_rsh.h	/^  az_cli_shell_t  *curSh;$/;"	m	struct:azm_rsh_ctrl
+demangle_callbackref	../inc/demangle.h	/^typedef void (*demangle_callbackref) (const char *, size_t, void *);$/;"	t
+demangle_component	../inc/demangle.h	/^struct demangle_component$/;"	s
+demangle_component_type	../inc/demangle.h	/^enum demangle_component_type$/;"	g
+demangler_engine	../inc/demangle.h	/^extern const struct demangler_engine$/;"	s
+demangling_style	../inc/demangle.h	/^  const enum demangling_styles demangling_style;$/;"	m	struct:demangler_engine	typeref:enum:demangler_engine::demangling_styles
+demangling_style_doc	../inc/demangle.h	/^  const char *const demangling_style_doc;$/;"	m	struct:demangler_engine
+demangling_style_name	../inc/demangle.h	/^  const char *const demangling_style_name;$/;"	m	struct:demangler_engine
+demangling_styles	../inc/demangle.h	/^extern enum demangling_styles$/;"	g
+depth	../../aurora/inc/mon/az_trace.h	/^  short depth;$/;"	m	struct:az_trace_info
+depth	../../aurora/inc/sys/az_xu.h	/^  short depth;$/;"	m	struct:az_xu_trace_info
+do_demangle	addr2line.c	/^    bfd_boolean do_demangle;     \/* Demangle names.  *\/$/;"	m	struct:_libtrace_data	file:
+edg_demangling	../inc/demangle.h	/^  edg_demangling = DMGL_EDG,$/;"	e	enum:demangling_styles
+entry	../../aurora/inc/sys/az_xu.h	/^  az_xu_entry_t   entry;$/;"	m	struct:az_xu_entity
+evecount	../../aurora/inc/sys/az_xu.h	/^  int             evecount;$/;"	m	struct:az_xu_entity
+evectable	../../aurora/inc/sys/az_xu.h	/^  struct az_xu_evector *evectable; $/;"	m	struct:az_xu_entity	typeref:struct:az_xu_entity::az_xu_evector
+evectors	../../aurora/inc/sys/az_xu.h	/^  az_xu_event_t   evectors;$/;"	m	struct:az_xu_entity
+exec	../../aurora/inc/cli/az_cli_cmd.h	/^  az_cli_cmd_exec_t exec;$/;"	m	struct:az_cli_cmd_descr
+filename	addr2line.c	/^    const char *filename;$/;"	m	struct:_sym_info	file:
+filepath	../inc/am_trace.h	/^  char        filepath[CONFIG_AZ_PATH_MAX];$/;"	m	struct:am_trace_ctrl
+filepath	../inc/azm_rsh.h	/^  char        filepath[CONFIG_AZ_PATH_MAX];$/;"	m	struct:azm_rsh_ctrl
+filepath	../inc/azm_trace.h	/^  char        filepath[CONFIG_AZ_PATH_MAX];$/;"	m	struct:azm_trace_ctrl
+find_address_in_section	addr2line.c	/^find_address_in_section(bfd *abfd, asection *section, void *data)$/;"	f	file:
+find_offset_in_section	addr2line.c	/^find_offset_in_section(bfd *abfd, asection *section, sym_info *psi)$/;"	f	file:
+flags	../../aurora/inc/net/az_tcpserver.h	/^  int   flags;$/;"	m	struct:az_tcpserver_cfg
+flags	../../aurora/inc/sys/az_xu.h	/^  az_xu_flags_t   flags;$/;"	m	struct:az_xu_entity
+flags	../../aurora/inc/sys/az_xu.h	/^  short flags;$/;"	m	struct:az_xu_trace_info
+flags	../inc/azm_rsh.h	/^  uint16_t flags;$/;"	m	struct:azm_rsh_ctrl
+flags	../inc/azm_trace.h	/^  uint16_t flags;$/;"	m	struct:azm_trace_ctrl
+found	addr2line.c	/^    bfd_boolean found;$/;"	m	struct:_sym_info	file:
+func	../../aurora/inc/mon/az_trace.h	/^  void    *func;$/;"	m	struct:az_trace_info
+functionname	addr2line.c	/^    const char *functionname;$/;"	m	struct:_sym_info	file:
+get_file_size	addr2line.c	/^get_file_size(const char * file_name)$/;"	f
+gnat_demangling	../inc/demangle.h	/^  gnat_demangling = DMGL_GNAT$/;"	e	enum:demangling_styles
+gnu_demangling	../inc/demangle.h	/^  gnu_demangling = DMGL_GNU,$/;"	e	enum:demangling_styles
+gnu_v3_base_object_ctor	../inc/demangle.h	/^  gnu_v3_base_object_ctor,$/;"	e	enum:gnu_v3_ctor_kinds
+gnu_v3_base_object_dtor	../inc/demangle.h	/^  gnu_v3_base_object_dtor,$/;"	e	enum:gnu_v3_dtor_kinds
+gnu_v3_complete_object_allocating_ctor	../inc/demangle.h	/^  gnu_v3_complete_object_allocating_ctor,$/;"	e	enum:gnu_v3_ctor_kinds
+gnu_v3_complete_object_ctor	../inc/demangle.h	/^  gnu_v3_complete_object_ctor = 1,$/;"	e	enum:gnu_v3_ctor_kinds
+gnu_v3_complete_object_dtor	../inc/demangle.h	/^  gnu_v3_complete_object_dtor,$/;"	e	enum:gnu_v3_dtor_kinds
+gnu_v3_ctor_kinds	../inc/demangle.h	/^enum gnu_v3_ctor_kinds {$/;"	g
+gnu_v3_deleting_dtor	../inc/demangle.h	/^  gnu_v3_deleting_dtor = 1,$/;"	e	enum:gnu_v3_dtor_kinds
+gnu_v3_demangling	../inc/demangle.h	/^  gnu_v3_demangling = DMGL_GNU_V3,$/;"	e	enum:demangling_styles
+gnu_v3_dtor_kinds	../inc/demangle.h	/^enum gnu_v3_dtor_kinds {$/;"	g
+gnu_v3_object_ctor_group	../inc/demangle.h	/^  gnu_v3_object_ctor_group$/;"	e	enum:gnu_v3_ctor_kinds
+gnu_v3_object_dtor_group	../inc/demangle.h	/^  gnu_v3_object_dtor_group$/;"	e	enum:gnu_v3_dtor_kinds
+gnu_v3_unified_ctor	../inc/demangle.h	/^  gnu_v3_unified_ctor,$/;"	e	enum:gnu_v3_ctor_kinds
+gnu_v3_unified_dtor	../inc/demangle.h	/^  gnu_v3_unified_dtor,$/;"	e	enum:gnu_v3_dtor_kinds
+handler	../../aurora/inc/sys/az_sig.h	/^  az_sighandler_t handler;$/;"	m	struct:az_sighandler_descr
+handler	../../aurora/inc/sys/az_xu.h	/^  az_xu_event_handler_t handler;$/;"	m	struct:az_xu_evector
+handlerlist	../../aurora/inc/sys/az_sig.h	/^  az_sighandler_t *handlerlist;$/;"	m	struct:az_sig_descr
+help	../../aurora/inc/cli/az_cli_cmd.h	/^  const char  *help;$/;"	m	struct:az_cli_cmd_descr
+hp_demangling	../inc/demangle.h	/^  hp_demangling = DMGL_HP,$/;"	e	enum:demangling_styles
+index	../../aurora/inc/mon/az_probe.h	/^  az_probe_ref_t  index;$/;"	m	struct:az_probe
+init	../../aurora/inc/net/az_tcpserver.h	/^  int (*init)(struct az_tcpserver *);$/;"	m	struct:az_tcpserver_oprs
+ion	../../aurora/inc/sys/az_fs.h	/^  az_ion_t        ion;$/;"	m	struct:__anon2
+ion	../../aurora/inc/sys/az_fs.h	/^  az_ion_t      ion;$/;"	m	struct:__anon1
+ion	../../aurora/inc/sys/az_mutex.h	/^  az_ion_t            ion;$/;"	m	struct:__anon3
+ion	../../aurora/inc/sys/az_sem.h	/^  az_ion_t            ion;$/;"	m	struct:__anon4
+ion	../../aurora/inc/sys/az_socket.h	/^  az_ion_t    ion;$/;"	m	struct:__anon5
+ion	../../aurora/inc/sys/az_timer.h	/^  az_ion_t            ion;$/;"	m	struct:__anon6
+ion	../../aurora/inc/sys/az_xu.h	/^  az_ion_t        ion;$/;"	m	struct:az_xu_entity
+ipAddrStr	../../aurora/inc/net/az_tcpserver.h	/^  char  *ipAddrStr;$/;"	m	struct:az_tcpserver_cfg
+java_demangling	../inc/demangle.h	/^  java_demangling = DMGL_JAVA,$/;"	e	enum:demangling_styles
+key	../../aurora/inc/cli/az_cli_api.h	/^  char  *key;$/;"	m	struct:az_cli_key_cmd
+kind	../inc/demangle.h	/^      enum gnu_v3_ctor_kinds kind;$/;"	m	struct:demangle_component::__anon1::__anon6	typeref:enum:demangle_component::__anon1::__anon6::gnu_v3_ctor_kinds
+kind	../inc/demangle.h	/^      enum gnu_v3_dtor_kinds kind;$/;"	m	struct:demangle_component::__anon1::__anon7	typeref:enum:demangle_component::__anon1::__anon7::gnu_v3_dtor_kinds
+left	../inc/demangle.h	/^      struct demangle_component *left;$/;"	m	struct:demangle_component::__anon1::__anon12	typeref:struct:demangle_component::__anon1::__anon12::demangle_component
+len	../inc/demangle.h	/^      int len;$/;"	m	struct:demangle_component::__anon1::__anon2
+len	../inc/demangle.h	/^      int len;$/;"	m	struct:demangle_component::__anon1::__anon9
+length	../inc/demangle.h	/^      struct demangle_component *length;$/;"	m	struct:demangle_component::__anon1::__anon5	typeref:struct:demangle_component::__anon1::__anon5::demangle_component
+libtrace_close	addr2line.c	/^libtrace_close(void)$/;"	f
+libtrace_data	addr2line.c	/^} libtrace_data;$/;"	t	typeref:struct:_libtrace_data	file:
+libtrace_init	addr2line.c	/^libtrace_init($/;"	f
+libtrace_resolve	addr2line.c	/^libtrace_resolve($/;"	f
+line	addr2line.c	/^    unsigned int line;$/;"	m	struct:_sym_info	file:
+list	../../aurora/inc/cli/az_cli_cmd.h	/^  az_cli_cmd_descr_t list[CONFIG_AZ_CLI_MAX_CMDS];$/;"	m	struct:az_cli_cmd_table
+list_matching_formats	addr2line.c	/^list_matching_formats(char **p)$/;"	f
+log_fd	../../aurora/inc/mon/az_trace.h	/^  az_sys_fd_t log_fd;$/;"	m	struct:az_trace_ctrl
+log_fd	../inc/am_trace.h	/^  az_sys_fd_t log_fd;$/;"	m	struct:am_trace_ctrl
+log_fd	../inc/azm_rsh.h	/^  az_sys_fd_t log_fd;$/;"	m	struct:azm_rsh_ctrl
+log_fd	../inc/azm_trace.h	/^  az_sys_fd_t log_fd;$/;"	m	struct:azm_trace_ctrl
+logport	../../aurora/inc/cli/az_cli.h	/^  az_sys_fd_t     logport;$/;"	m	struct:az_cli_shell
+lucid_demangling	../inc/demangle.h	/^  lucid_demangling = DMGL_LUCID,$/;"	e	enum:demangling_styles
+m_libtrace_data	addr2line.c	/^static libtrace_data m_libtrace_data = {$/;"	v	file:
+main	addr2line.c	/^main (int argc, char **argv)$/;"	f
+main	am_main.c	/^int main(int argc, char *argv[])$/;"	f
+main	azm_main.c	/^int main(int argc, char *argv[])$/;"	f
+mask	../../aurora/inc/cli/az_cli_cmd.h	/^  int mask;$/;"	m	struct:az_cli_cmd_descr
+module	../../aurora/inc/mon/az_probe.h	/^  void  *module;$/;"	m	struct:az_probe
+monSvrIpStr	../../aurora/inc/mon/az_trace.h	/^  char      monSvrIpStr[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_trace_ctrl
+monSvrPort	../../aurora/inc/mon/az_trace.h	/^  uint16_t  monSvrPort;$/;"	m	struct:az_trace_ctrl
+monSvrPort	../inc/azm_trace.h	/^  uint16_t    monSvrPort;$/;"	m	struct:azm_trace_ctrl
+mutex	../../aurora/inc/sys/az_mutex.h	/^  az_sys_mutex_t     mutex;       $/;"	m	struct:__anon3
+nTotal	../inc/azm_mcheck.h	/^  unsigned long  nTotal;$/;"	m	struct:azm_malloc_stats
+name	../../aurora/inc/cli/az_cli.h	/^  char  name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_cli_shell
+name	../../aurora/inc/cli/az_cli_cmd.h	/^  const char *name;$/;"	m	struct:az_cli_cmd_descr
+name	../../aurora/inc/net/az_tcpserver.h	/^  char  *name;$/;"	m	struct:az_tcpserver_cfg
+name	../../aurora/inc/sys/az_mutex.h	/^  char      name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:__anon3
+name	../../aurora/inc/sys/az_sem.h	/^  char      name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:__anon4
+name	../../aurora/inc/sys/az_timer.h	/^  char      name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:__anon6
+name	../../aurora/inc/sys/az_xu.h	/^  char            name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_xu_entity
+name	../inc/demangle.h	/^      struct demangle_component *name;$/;"	m	struct:demangle_component::__anon1::__anon4	typeref:struct:demangle_component::__anon1::__anon4::demangle_component
+name	../inc/demangle.h	/^      struct demangle_component *name;$/;"	m	struct:demangle_component::__anon1::__anon6	typeref:struct:demangle_component::__anon1::__anon6::demangle_component
+name	../inc/demangle.h	/^      struct demangle_component *name;$/;"	m	struct:demangle_component::__anon1::__anon7	typeref:struct:demangle_component::__anon1::__anon7::demangle_component
+next	../../aurora/inc/sys/az_sig.h	/^  struct az_sighandler_t *next;$/;"	m	struct:az_sighandler_descr	typeref:struct:az_sighandler_descr::az_sighandler_t
+no_demangling	../inc/demangle.h	/^  no_demangling = -1,$/;"	e	enum:demangling_styles
+no_instrument	addr2line.c	27;"	d	file:
+non_fatal	addr2line.c	/^non_fatal(const char *format, ...)$/;"	f
+num	../inc/demangle.h	/^      int num;$/;"	m	struct:demangle_component::__anon1::__anon13
+number	../inc/demangle.h	/^      long number;$/;"	m	struct:demangle_component::__anon1::__anon10
+onClientConnection	../../aurora/inc/net/az_tcpserver.h	/^  int (*onClientConnection)(void *, az_sock_t cliSock, void *cliAddr);$/;"	m	struct:az_tcpserver_oprs
+onoff	am_trace.c	/^    int onoff = strtol(argv[1], NULL, 10);$/;"	v
+op	../inc/demangle.h	/^      const struct demangle_operator_info *op;$/;"	m	struct:demangle_component::__anon1::__anon3	typeref:struct:demangle_component::__anon1::__anon3::demangle_operator_info
+oprs	../../aurora/inc/net/az_tcpserver.h	/^  struct az_tcpserver_oprs *oprs;$/;"	m	struct:az_tcpserver	typeref:struct:az_tcpserver::az_tcpserver_oprs
+org_action	../../aurora/inc/sys/az_sig.h	/^  az_sigaction_t org_action;$/;"	m	struct:az_sig_descr
+pc	addr2line.c	/^    bfd_vma pc;$/;"	m	struct:_sym_info	file:
+port	../../aurora/inc/net/az_tcpserver.h	/^  int   port;$/;"	m	struct:az_tcpserver_cfg
+pos	../inc/azm_mcheck.h	/^  uint32_t  pos;$/;"	m	struct:azm_malloc_stats
+prbSvrIpStr	../inc/azm_trace.h	/^  char        prbSvrIpStr[CONFIG_AZ_NAME_MAX];$/;"	m	struct:azm_trace_ctrl
+prbSvrPort	../inc/azm_trace.h	/^  uint16_t    prbSvrPort;$/;"	m	struct:azm_trace_ctrl
+priority	../../aurora/inc/sys/az_xu_types.h	/^    int priority;$/;"	m	struct:__anon7
+priv	../../aurora/inc/net/az_tcpserver.h	/^  void  *priv;$/;"	m	struct:az_tcpserver
+program_name	addr2line.c	/^char *program_name = "addr2line"; $/;"	v
+prompt	../../aurora/inc/cli/az_cli.h	/^  const char  *prompt;$/;"	m	struct:az_cli_shell
+read_fd	../../aurora/inc/mon/az_trace.h	/^  az_sys_fd_t read_fd;$/;"	m	struct:az_trace_ctrl
+read_fd	../inc/am_trace.h	/^  az_sys_fd_t read_fd;$/;"	m	struct:am_trace_ctrl
+read_fd	../inc/azm_rsh.h	/^  az_sys_socket_t read_fd;$/;"	m	struct:azm_rsh_ctrl
+read_fd	../inc/azm_trace.h	/^  az_sys_fd_t read_fd;$/;"	m	struct:azm_trace_ctrl
+read_fd	../inc/azm_trace.h	/^  az_sys_socket_t read_fd;$/;"	m	struct:azm_trace_ctrl
+refCount	../../aurora/inc/sys/az_timer.h	/^  az_refcount_t  refCount;$/;"	m	struct:__anon6
+report	addr2line.c	/^report(const char * format, va_list args)$/;"	f
+right	../inc/demangle.h	/^      struct demangle_component *right;$/;"	m	struct:demangle_component::__anon1::__anon12	typeref:struct:demangle_component::__anon1::__anon12::demangle_component
+rshSvrIpStr	../inc/azm_rsh.h	/^  char        rshSvrIpStr[CONFIG_AZ_NAME_MAX];$/;"	m	struct:azm_rsh_ctrl
+rshSvrPort	../inc/azm_rsh.h	/^  uint16_t    rshSvrPort;$/;"	m	struct:azm_rsh_ctrl
+run	../../aurora/inc/net/az_tcpserver.h	/^  void *(*run)(void *);$/;"	m	struct:az_tcpserver_oprs
+rxport	../../aurora/inc/cli/az_cli.h	/^  az_cli_port_t   txport, rxport;$/;"	m	struct:az_cli_shell
+s	../inc/demangle.h	/^      const char *s;$/;"	m	struct:demangle_component::__anon1::__anon2
+s_binary	../inc/demangle.h	/^    } s_binary;$/;"	m	union:demangle_component::__anon1	typeref:struct:demangle_component::__anon1::__anon12
+s_builtin	../inc/demangle.h	/^    } s_builtin;$/;"	m	union:demangle_component::__anon1	typeref:struct:demangle_component::__anon1::__anon8
+s_character	../inc/demangle.h	/^    } s_character;$/;"	m	union:demangle_component::__anon1	typeref:struct:demangle_component::__anon1::__anon11
+s_ctor	../inc/demangle.h	/^    } s_ctor;$/;"	m	union:demangle_component::__anon1	typeref:struct:demangle_component::__anon1::__anon6
+s_dtor	../inc/demangle.h	/^    } s_dtor;$/;"	m	union:demangle_component::__anon1	typeref:struct:demangle_component::__anon1::__anon7
+s_extended_operator	../inc/demangle.h	/^    } s_extended_operator;$/;"	m	union:demangle_component::__anon1	typeref:struct:demangle_component::__anon1::__anon4
+s_fixed	../inc/demangle.h	/^    } s_fixed;$/;"	m	union:demangle_component::__anon1	typeref:struct:demangle_component::__anon1::__anon5
+s_name	../inc/demangle.h	/^    } s_name;$/;"	m	union:demangle_component::__anon1	typeref:struct:demangle_component::__anon1::__anon2
+s_number	../inc/demangle.h	/^    } s_number;$/;"	m	union:demangle_component::__anon1	typeref:struct:demangle_component::__anon1::__anon10
+s_operator	../inc/demangle.h	/^    } s_operator;$/;"	m	union:demangle_component::__anon1	typeref:struct:demangle_component::__anon1::__anon3
+s_string	../inc/demangle.h	/^    } s_string;$/;"	m	union:demangle_component::__anon1	typeref:struct:demangle_component::__anon1::__anon9
+s_unary_num	../inc/demangle.h	/^    } s_unary_num;$/;"	m	union:demangle_component::__anon1	typeref:struct:demangle_component::__anon1::__anon13
+sat	../inc/demangle.h	/^      short sat;$/;"	m	struct:demangle_component::__anon1::__anon5
+sched_policy	../../aurora/inc/sys/az_xu_types.h	/^    int sched_policy;$/;"	m	struct:__anon7
+section	addr2line.c	/^    asection *section;$/;"	m	struct:_libtrace_data	file:
+signo	../../aurora/inc/sys/az_sig.h	/^  int signo;$/;"	m	struct:az_sig_descr
+slurp_symtab	addr2line.c	/^slurp_symtab(bfd *abfd)$/;"	f	file:
+sock	../../aurora/inc/net/az_tcpserver.h	/^  az_sock_t sock;$/;"	m	struct:az_tcpserver
+stack_size	../../aurora/inc/sys/az_xu_types.h	/^    az_size_t   stack_size;$/;"	m	struct:__anon7
+start	../../aurora/inc/net/az_tcpserver.h	/^  int (*start)(struct az_tcpserver *);$/;"	m	struct:az_tcpserver_oprs
+startdelay	../../aurora/inc/sys/az_xu_types.h	/^    int startdelay;$/;"	m	struct:__anon7
+state	../../aurora/inc/cli/az_cli.h	/^  int state;$/;"	m	struct:az_cli_shell
+state	../../aurora/inc/mon/az_trace.h	/^  int state;$/;"	m	struct:az_trace_ctrl
+state	../../aurora/inc/net/az_tcpserver.h	/^  volatile int state;$/;"	m	struct:az_tcpserver
+state	../../aurora/inc/sys/az_xu.h	/^  az_xu_state_t   state;$/;"	m	struct:az_xu_entity
+state	../inc/am_trace.h	/^  int state;$/;"	m	struct:am_trace_ctrl
+state	../inc/azm_rsh.h	/^  uint16_t state;$/;"	m	struct:azm_rsh_ctrl
+state	../inc/azm_trace.h	/^  uint16_t state;$/;"	m	struct:azm_trace_ctrl
+stop	../../aurora/inc/net/az_tcpserver.h	/^  int (*stop)(struct az_tcpserver *);$/;"	m	struct:az_tcpserver_oprs
+string	../inc/demangle.h	/^      const char* string;$/;"	m	struct:demangle_component::__anon1::__anon9
+sub	../inc/demangle.h	/^      struct demangle_component *sub;$/;"	m	struct:demangle_component::__anon1::__anon13	typeref:struct:demangle_component::__anon1::__anon13::demangle_component
+svrIpStr	../inc/am_trace.h	/^  char        svrIpStr[CONFIG_AZ_NAME_MAX];$/;"	m	struct:am_trace_ctrl
+svrPort	../inc/am_trace.h	/^  uint16_t    svrPort;$/;"	m	struct:am_trace_ctrl
+sym_info	addr2line.c	/^} sym_info; $/;"	t	typeref:struct:_sym_info	file:
+syms	addr2line.c	/^    asymbol **syms;              \/* Symbol table.  *\/$/;"	m	struct:_libtrace_data	file:
+sys_dir	../../aurora/inc/sys/az_fs.h	/^  az_sys_dir_t  sys_dir;$/;"	m	struct:__anon1
+sys_file	../../aurora/inc/sys/az_fs.h	/^  az_sys_file_t   sys_file;$/;"	m	struct:__anon2
+sys_sem	../../aurora/inc/sys/az_sem.h	/^  az_sys_sem_t              sys_sem; $/;"	m	struct:__anon4
+sys_socket	../../aurora/inc/sys/az_socket.h	/^  az_sys_socket_t sys_socket;$/;"	m	struct:__anon5
+sys_timer	../../aurora/inc/sys/az_timer.h	/^  az_sys_timer_t         sys_timer;$/;"	m	struct:__anon6
+sys_xu	../../aurora/inc/sys/az_xu.h	/^  az_sys_xu_t     sys_xu;$/;"	m	struct:az_xu_entity
+tag	../../aurora/inc/mon/az_probe.h	/^  char  *tag;$/;"	m	struct:az_probe
+thread	../../aurora/inc/cli/az_cli.h	/^  void  *thread;$/;"	m	struct:az_cli_shell
+thread	../../aurora/inc/net/az_tcpserver.h	/^  void  *thread;$/;"	m	struct:az_tcpserver
+timeout	../../aurora/inc/net/az_tcpserver.h	/^  long  timeout;$/;"	m	struct:az_tcpserver_cfg
+trace_info	../../aurora/inc/sys/az_xu.h	/^  az_xu_trace_info_t trace_info; $/;"	m	struct:az_xu_entity
+translate_addresses	addr2line.c	/^translate_addresses(bfd *abfd, asection *section, $/;"	f	file:
+ts	../../aurora/inc/mon/az_trace.h	/^  struct timespec ts;$/;"	m	struct:az_trace_info	typeref:struct:az_trace_info::timespec
+txport	../../aurora/inc/cli/az_cli.h	/^  az_cli_port_t   txport, rxport;$/;"	m	struct:az_cli_shell
+type	../inc/demangle.h	/^      const struct demangle_builtin_type_info *type;$/;"	m	struct:demangle_component::__anon1::__anon8	typeref:struct:demangle_component::__anon1::__anon8::demangle_builtin_type_info
+type	../inc/demangle.h	/^  enum demangle_component_type type;$/;"	m	struct:demangle_component	typeref:enum:demangle_component::demangle_component_type
+u	../inc/demangle.h	/^  } u;$/;"	m	struct:demangle_component	typeref:union:demangle_component::__anon1
+unknown_demangling	../inc/demangle.h	/^  unknown_demangling = 0,$/;"	e	enum:demangling_styles
+unwind_inlines	addr2line.c	/^    bfd_boolean unwind_inlines;  \/* Unwind inlined functions. *\/$/;"	m	struct:_libtrace_data	file:
+usage	addr2line.c	/^usage (FILE *stream, int status)$/;"	f	file:
+with_functions	addr2line.c	/^    bfd_boolean with_functions;  \/* Show function names.  *\/$/;"	m	struct:_libtrace_data	file:
+write_fd	../../aurora/inc/mon/az_trace.h	/^  az_sys_fd_t write_fd;$/;"	m	struct:az_trace_ctrl
+write_fd	../inc/am_trace.h	/^  az_sys_fd_t write_fd;$/;"	m	struct:am_trace_ctrl
+write_fd	../inc/azm_rsh.h	/^  az_sys_socket_t write_fd;$/;"	m	struct:azm_rsh_ctrl
+write_fd	../inc/azm_trace.h	/^  az_sys_fd_t write_fd;$/;"	m	struct:azm_trace_ctrl
+write_fd	../inc/azm_trace.h	/^  az_sys_socket_t write_fd;$/;"	m	struct:azm_trace_ctrl
+xu	../../aurora/inc/mon/az_trace.h	/^  az_xu_t xu; $/;"	m	struct:az_trace_info
+xu	../../aurora/inc/mon/az_trace.h	/^  pthread_t xu; $/;"	m	struct:az_trace_info
+xu	am_trace.c	/^    void *xu = strtol(argv[2], NULL, 16);$/;"	v
+xu_name	../../aurora/inc/mon/az_trace.h	/^  char    xu_name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_trace_info

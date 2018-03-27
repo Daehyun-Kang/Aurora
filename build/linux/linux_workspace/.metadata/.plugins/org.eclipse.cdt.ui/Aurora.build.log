@@ -1,0 +1,19 @@
+
+**** Build of configuration Debug for project Aurora ****
+
+make all 
+Building file: /home/fware/work/Aurora/aurora/src/iou/az_iou_msgq.c
+Invoking: GCC ix86 64-bit Compiler Properties
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/iou/az_iou_msgq.d" -MT"sources/iou/az_iou_msgq.d" -o "sources/iou/az_iou_msgq.o" "/home/fware/work/Aurora/aurora/src/iou/az_iou_msgq.c"
+Finished building: /home/fware/work/Aurora/aurora/src/iou/az_iou_msgq.c
+ 
+Building target: libAurora.a
+Invoking: GNU ix86 64-bit Archiver
+/usr/bin/ar -r  "libAurora.a"  ./sources/test/az_test_main.o ./sources/test/az_test_xu.o  ./sources/sys/az_fs.o ./sources/sys/az_mutex.o ./sources/sys/az_sem.o ./sources/sys/az_timer.o ./sources/sys/az_xu.o  ./sources/linux/az_sys_fs.o ./sources/linux/az_sys_init.o ./sources/linux/az_sys_timer.o ./sources/linux/az_sys_xu.o  ./sources/iou/az_iou_api.o ./sources/iou/az_iou_msgq.o ./sources/iou/az_iou_util.o  ./sources/core/az_array_toStr.o ./sources/core/az_buffer_toStr.o ./sources/core/az_core.o ./sources/core/az_event.o ./sources/core/az_event_bus.o ./sources/core/az_fifo_toStr.o ./sources/core/az_ion.o ./sources/core/az_ion_toStr.o ./sources/core/az_link_toStr.o ./sources/core/az_msgq.o ./sources/core/az_var.o ./sources/core/az_xml.o 
+Finished building target: libAurora.a
+ 
+make --no-print-directory post-build
+cp libAurora.a /home/fware/work/Aurora/linux_workspace/../aurora/lib/linux/;
+ 
+
+**** Build Finished ****

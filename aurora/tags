@@ -1,0 +1,265 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AZ_DEF_BE	inc/sys/linux/az_linux_endian.h	42;"	d
+AZ_DEF_BE	inc/sys/linux/az_linux_endian.h	83;"	d
+AZ_DEF_LE	inc/sys/linux/az_linux_endian.h	48;"	d
+AZ_DEF_LE	inc/sys/linux/az_linux_endian.h	84;"	d
+AZ_LINUX_BASE_H	inc/sys/linux/az_linux_base.h	22;"	d
+AZ_LINUX_DEF_H	inc/sys/linux/az_linux_def.h	22;"	d
+AZ_LINUX_DLLIB_H	inc/sys/linux/az_linux_dllib.h	22;"	d
+AZ_LINUX_ENDIAN_H	inc/sys/linux/az_linux_endian.h	22;"	d
+AZ_LINUX_EVENT_H	inc/sys/linux/az_linux_event.h	22;"	d
+AZ_LINUX_FS_H	inc/sys/linux/az_linux_fs.h	22;"	d
+AZ_LINUX_FUTEX_DEFINED	inc/sys/linux/az_linux_def.h	107;"	d
+AZ_LINUX_FUTEX_DEFINED	inc/sys/linux/az_linux_event.h	88;"	d
+AZ_LINUX_LOCK_H	inc/sys/linux/az_linux_lock.h	22;"	d
+AZ_LINUX_MUTEX_H	inc/sys/linux/az_linux_mutex.h	22;"	d
+AZ_LINUX_SEM_H	inc/sys/linux/az_linux_sem.h	22;"	d
+AZ_LINUX_SOCKET_H	inc/sys/linux/az_linux_socket.h	21;"	d
+AZ_LINUX_TIMER_H	inc/sys/linux/az_linux_timer.h	21;"	d
+AZ_LINUX_XU_H	inc/sys/linux/az_linux_xu.h	21;"	d
+AZ_SYS_DIR_INVALID	inc/sys/linux/az_linux_fs.h	49;"	d
+AZ_SYS_EP_RD_IO_EVT	inc/sys/linux/az_linux_event.h	60;"	d
+AZ_SYS_EP_WR_IO_EVT	inc/sys/linux/az_linux_event.h	56;"	d
+AZ_SYS_EVENT_OPT_AND_ALL	inc/sys/linux/az_linux_def.h	115;"	d
+AZ_SYS_EVENT_OPT_AND_ALL	inc/sys/linux/az_linux_event.h	40;"	d
+AZ_SYS_EVENT_OPT_PRESERVE	inc/sys/linux/az_linux_def.h	116;"	d
+AZ_SYS_EVENT_OPT_PRESERVE	inc/sys/linux/az_linux_event.h	41;"	d
+AZ_SYS_FD_INVALID	inc/sys/linux/az_linux_def.h	64;"	d
+AZ_SYS_FILE_INVALID	inc/sys/linux/az_linux_fs.h	50;"	d
+AZ_SYS_IOMUX_INVALID	inc/sys/linux/az_linux_event.h	71;"	d
+AZ_SYS_IOMUX_TIMEOUT	inc/sys/linux/az_linux_event.h	82;"	d
+AZ_SYS_IO_ERR	inc/sys/linux/az_linux_event.h	78;"	d
+AZ_SYS_IO_ET	inc/sys/linux/az_linux_event.h	80;"	d
+AZ_SYS_IO_HUP	inc/sys/linux/az_linux_event.h	79;"	d
+AZ_SYS_IO_IN	inc/sys/linux/az_linux_event.h	74;"	d
+AZ_SYS_IO_OUT	inc/sys/linux/az_linux_event.h	75;"	d
+AZ_SYS_IO_PRI	inc/sys/linux/az_linux_event.h	77;"	d
+AZ_SYS_IO_RDHUP	inc/sys/linux/az_linux_event.h	76;"	d
+AZ_SYS_LINUX_H	inc/sys/linux/az_sys_linux.h	21;"	d
+AZ_SYS_MUTEX_INVALID	inc/sys/linux/az_linux_def.h	68;"	d
+AZ_SYS_MUTEX_INVALID	inc/sys/linux/az_linux_mutex.h	40;"	d
+AZ_SYS_NL	inc/sys/linux/az_linux_def.h	27;"	d
+AZ_SYS_PATH_DELIMITER	inc/sys/linux/az_linux_def.h	84;"	d
+AZ_SYS_PATH_DELIMITER	inc/sys/linux/az_linux_fs.h	37;"	d
+AZ_SYS_PATH_SEPERATOR	inc/sys/linux/az_linux_def.h	85;"	d
+AZ_SYS_PATH_SEPERATOR	inc/sys/linux/az_linux_fs.h	38;"	d
+AZ_SYS_SEM_INVALID	inc/sys/linux/az_linux_def.h	72;"	d
+AZ_SYS_SEM_INVALID	inc/sys/linux/az_linux_sem.h	41;"	d
+AZ_SYS_SEM_OPTIONS_PSHARED	inc/sys/linux/az_linux_sem.h	36;"	d
+AZ_SYS_SHM_INVALID	inc/sys/linux/az_linux_def.h	101;"	d
+AZ_SYS_SHM_NAME_MAX	inc/sys/linux/az_linux_def.h	77;"	d
+AZ_SYS_SHM_NAME_MAX	inc/sys/linux/az_linux_def.h	79;"	d
+AZ_SYS_SOCKET_INVALID	inc/sys/linux/az_linux_def.h	179;"	d
+AZ_SYS_SOCKET_INVALID	inc/sys/linux/az_linux_socket.h	40;"	d
+AZ_SYS_TIMER_INVALID	inc/sys/linux/az_linux_def.h	167;"	d
+AZ_SYS_TIMER_INVALID	inc/sys/linux/az_linux_timer.h	54;"	d
+AZ_SYS_TLS	inc/sys/linux/az_sys_linux.h	84;"	d
+AZ_SYS_XU_INVALID	inc/sys/linux/az_linux_def.h	143;"	d
+AZ_SYS_XU_INVALID	inc/sys/linux/az_linux_xu.h	55;"	d
+__GNU_SOURCE	inc/sys/linux/az_sys_linux.h	27;"	d
+__USE_GNU	inc/sys/linux/az_sys_linux.h	24;"	d
+arg	inc/sys/linux/az_linux_def.h	/^  void            *arg;$/;"	m	struct:__anon2
+arg	inc/sys/linux/az_linux_def.h	/^  void            *arg;$/;"	m	struct:__anon3
+arg	inc/sys/linux/az_linux_timer.h	/^  void            *arg;$/;"	m	struct:__anon6
+arg	inc/sys/linux/az_linux_xu.h	/^  void            *arg;$/;"	m	struct:__anon7
+attr	inc/sys/linux/az_linux_def.h	/^  az_xu_attr_t    *attr;$/;"	m	struct:__anon2
+attr	inc/sys/linux/az_linux_xu.h	/^  az_xu_attr_t    *attr;$/;"	m	struct:__anon7
+az_getExeFileName	inc/sys/linux/az_linux_def.h	/^static inline char az_attr_no_instrument *az_getExeFileName()$/;"	f
+az_sys_be16	inc/sys/linux/az_linux_endian.h	/^static inline uint16_t az_sys_be16(uint16_t v) $/;"	f
+az_sys_be32	inc/sys/linux/az_linux_endian.h	/^static inline uint32_t az_sys_be32(uint32_t v) $/;"	f
+az_sys_be64	inc/sys/linux/az_linux_endian.h	/^static inline uint32_t az_sys_be64(uint64_t v) $/;"	f
+az_sys_datetime_t	inc/sys/linux/az_linux_def.h	/^typedef struct tm                az_sys_datetime_t;$/;"	t	typeref:struct:tm
+az_sys_dir_t	inc/sys/linux/az_linux_fs.h	/^typedef DIR *             az_sys_dir_t;$/;"	t
+az_sys_dirent_getname	inc/sys/linux/az_linux_fs.h	57;"	d
+az_sys_dirent_t	inc/sys/linux/az_linux_fs.h	/^typedef struct dirent     az_sys_dirent_t;$/;"	t	typeref:struct:dirent
+az_sys_dirlist_ctx_t	inc/sys/linux/az_linux_fs.h	/^} az_sys_dirlist_ctx_t;$/;"	t	typeref:struct:__anon5
+az_sys_dllib_findBfdAddr2Name	inc/sys/linux/az_linux_dllib.h	/^static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) $/;"	f
+az_sys_dllib_findBfdSymbol	inc/sys/linux/az_linux_dllib.h	/^static az_ref_t __attribute__((no_instrument_function)) az_sys_dllib_findBfdSymbol(char *filename, char *symname) $/;"	f
+az_sys_dllib_getStaticSymbol	inc/sys/linux/az_linux_dllib.h	/^static inline az_r_t az_sys_dllib_getStaticSymbol(char *name, az_ref_t *pAddr) $/;"	f
+az_sys_dllib_getSymbol	inc/sys/linux/az_linux_dllib.h	/^static inline az_r_t az_sys_dllib_getSymbol(az_sys_lib_t libId, char *name, az_ref_t *pAddr) $/;"	f
+az_sys_dllib_load	inc/sys/linux/az_linux_dllib.h	/^static inline az_r_t az_sys_dllib_load(az_str_t path, az_sys_lib_t *plibId) $/;"	f
+az_sys_dllib_unload	inc/sys/linux/az_linux_dllib.h	/^static inline az_r_t az_sys_dllib_unload(az_sys_lib_t libId) $/;"	f
+az_sys_dup	inc/sys/linux/az_linux_fs.h	65;"	d
+az_sys_dup2	inc/sys/linux/az_linux_fs.h	66;"	d
+az_sys_ep_deinit	inc/sys/linux/az_linux_event.h	/^static inline void az_sys_ep_deinit(az_sys_ep_t *ep)$/;"	f
+az_sys_ep_init	inc/sys/linux/az_linux_event.h	/^static inline void az_sys_ep_init(az_sys_ep_t *ep)$/;"	f
+az_sys_ep_printf	inc/sys/linux/az_linux_event.h	36;"	d
+az_sys_ep_recv	inc/sys/linux/az_linux_event.h	/^static inline az_r_t az_sys_ep_recv(az_sys_ep_t *ep, az_sys_event_t aevents, az_sys_event_t wevents, az_int8_t options, az_sys_event_t *qevent, az_sys_event_t *pevent)$/;"	f
+az_sys_ep_recv_wait	inc/sys/linux/az_linux_event.h	/^static inline az_r_t az_sys_ep_recv_wait(az_sys_ep_t *ep, az_int64_t nsec,$/;"	f
+az_sys_ep_send	inc/sys/linux/az_linux_event.h	/^static inline az_r_t az_sys_ep_send(az_sys_ep_t *ep, az_sys_event_t sevent)$/;"	f
+az_sys_ep_t	inc/sys/linux/az_linux_event.h	/^} az_sys_ep_t;$/;"	t	typeref:struct:__anon4
+az_sys_ep_wait	inc/sys/linux/az_linux_event.h	/^static inline az_r_t az_sys_ep_wait(az_sys_ep_t *ep, az_int64_t nsec)$/;"	f
+az_sys_eprintf	inc/sys/linux/az_linux_def.h	39;"	d
+az_sys_eprintf0	inc/sys/linux/az_linux_def.h	36;"	d
+az_sys_errno	inc/sys/linux/az_linux_def.h	29;"	d
+az_sys_errorstr	inc/sys/linux/az_linux_def.h	30;"	d
+az_sys_event_t	inc/sys/linux/az_linux_def.h	/^typedef uint32_t az_sys_event_t;$/;"	t
+az_sys_event_t	inc/sys/linux/az_linux_event.h	/^typedef uint32_t az_sys_event_t;$/;"	t
+az_sys_fd_t	inc/sys/linux/az_linux_def.h	/^typedef int az_sys_fd_t;$/;"	t
+az_sys_fd_t	inc/sys/linux/az_linux_fs.h	/^typedef int               az_sys_fd_t;$/;"	t
+az_sys_file_t	inc/sys/linux/az_linux_fs.h	/^typedef int               az_sys_file_t;$/;"	t
+az_sys_fileno	inc/sys/linux/az_linux_fs.h	64;"	d
+az_sys_free	inc/sys/linux/az_linux_def.h	/^static inline void az_attr_no_instrument az_sys_free(az_ref_t ptr)$/;"	f
+az_sys_fs_chdir	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_chdir(az_str_t path)$/;"	f
+az_sys_fs_close	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_close(az_sys_file_t file) $/;"	f
+az_sys_fs_combinePath	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_combinePath(char *path1, char *path2, char *dest)$/;"	f
+az_sys_fs_copy	inc/sys/linux/az_linux_fs.h	/^static inline az_size_t az_sys_fs_copy(const az_str_t ipath, const az_str_t opath) $/;"	f
+az_sys_fs_create	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_create(const char * path, int mode, az_sys_file_t *pfile) $/;"	f
+az_sys_fs_createfolder	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_createfolder(const char *path, az_int32_t mode)$/;"	f
+az_sys_fs_delete	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_delete(const char *path) $/;"	f
+az_sys_fs_deletefolder	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_deletefolder(const char *path)$/;"	f
+az_sys_fs_exist	inc/sys/linux/az_linux_fs.h	/^static inline az_bool_t az_sys_fs_exist(const char *path)$/;"	f
+az_sys_fs_filesize	inc/sys/linux/az_linux_fs.h	/^static inline az_size_t az_sys_fs_filesize(az_sys_file_t fd)$/;"	f
+az_sys_fs_find	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_find(const char *foldername, az_str_t filename)$/;"	f
+az_sys_fs_ftruncate	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_ftruncate(az_sys_file_t fd, az_size_t size)$/;"	f
+az_sys_fs_getcwd	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_getcwd(az_str_t path, az_size_t size)$/;"	f
+az_sys_fs_getpath	inc/sys/linux/az_linux_fs.h	/^static inline az_size_t az_sys_fs_getpath(az_sys_file_t fd, char *path, az_size_t size)$/;"	f
+az_sys_fs_lseek	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_lseek(az_sys_file_t fd, az_pos_t pos, az_int32_t whence)$/;"	f
+az_sys_fs_open	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_open(const az_str_t path, int flags, int mode, az_sys_file_t *pfile) $/;"	f
+az_sys_fs_parsePath	inc/sys/linux/az_linux_fs.h	/^static inline az_size_t az_sys_fs_parsePath(az_str_t path, az_str_t path_buffer, az_str_t path_comp[])$/;"	f
+az_sys_fs_read	inc/sys/linux/az_linux_fs.h	/^static inline az_size_t az_sys_fs_read(az_sys_file_t file, az_ref_t bp, az_size_t len) $/;"	f
+az_sys_fs_rename	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_rename(az_str_t opath, az_str_t npath)$/;"	f
+az_sys_fs_renamefolder	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_renamefolder(az_str_t opath, az_str_t npath)$/;"	f
+az_sys_fs_size	inc/sys/linux/az_linux_fs.h	/^static inline az_size_t az_sys_fs_size(az_str_t path)$/;"	f
+az_sys_fs_truncate	inc/sys/linux/az_linux_fs.h	/^static inline az_r_t az_sys_fs_truncate(const char *path, az_size_t size)$/;"	f
+az_sys_fs_write	inc/sys/linux/az_linux_fs.h	/^static inline az_size_t az_sys_fs_write(az_sys_file_t file, az_ref_t bp, az_size_t len) $/;"	f
+az_sys_inetIP	inc/sys/linux/az_linux_socket.h	48;"	d
+az_sys_inetPort	inc/sys/linux/az_linux_socket.h	50;"	d
+az_sys_io_create	inc/sys/linux/az_linux_event.h	/^static inline az_sys_io_t az_sys_io_create() $/;"	f
+az_sys_io_delete	inc/sys/linux/az_linux_event.h	/^static inline az_sys_io_t az_sys_io_delete(az_sys_io_t fd) $/;"	f
+az_sys_io_event_data_t	inc/sys/linux/az_linux_event.h	/^typedef epoll_data_t        az_sys_io_event_data_t;$/;"	t
+az_sys_io_event_t	inc/sys/linux/az_linux_event.h	/^typedef struct epoll_event  az_sys_io_event_t;$/;"	t	typeref:struct:epoll_event
+az_sys_io_t	inc/sys/linux/az_linux_event.h	/^typedef az_sys_fd_t         az_sys_io_t;$/;"	t
+az_sys_iomux_add	inc/sys/linux/az_linux_event.h	/^static inline int az_sys_iomux_add(az_sys_iomux_t mux, az_sys_io_t fd, uint32_t events)$/;"	f
+az_sys_iomux_add_ep	inc/sys/linux/az_linux_event.h	/^static inline void az_sys_iomux_add_ep(az_sys_iomux_t mux, az_sys_ep_t *ep)$/;"	f
+az_sys_iomux_create	inc/sys/linux/az_linux_event.h	/^static inline az_sys_iomux_t az_sys_iomux_create()$/;"	f
+az_sys_iomux_del	inc/sys/linux/az_linux_event.h	/^static inline int az_sys_iomux_del(az_sys_iomux_t mux, az_sys_io_t fd)$/;"	f
+az_sys_iomux_del_ep	inc/sys/linux/az_linux_event.h	/^static inline void az_sys_iomux_del_ep(az_sys_iomux_t mux, az_sys_ep_t *ep)$/;"	f
+az_sys_iomux_t	inc/sys/linux/az_linux_event.h	/^typedef az_sys_fd_t         az_sys_iomux_t;$/;"	t
+az_sys_iomux_wait	inc/sys/linux/az_linux_event.h	/^static inline int az_sys_iomux_wait(az_sys_iomux_t mux, az_sys_io_event_t *ioevt,$/;"	f
+az_sys_le16	inc/sys/linux/az_linux_endian.h	/^static inline uint16_t az_sys_le16(uint16_t v) $/;"	f
+az_sys_le32	inc/sys/linux/az_linux_endian.h	/^static inline uint32_t az_sys_le32(uint32_t v) $/;"	f
+az_sys_le64	inc/sys/linux/az_linux_endian.h	/^static inline uint32_t az_sys_le64(uint64_t v) $/;"	f
+az_sys_lib_t	inc/sys/linux/az_linux_def.h	/^typedef void *  az_sys_lib_t;$/;"	t
+az_sys_lib_t	inc/sys/linux/az_linux_dllib.h	/^typedef void *  az_sys_lib_t;$/;"	t
+az_sys_lw_lock	inc/sys/linux/az_linux_lock.h	/^static inline az_r_t az_sys_lw_lock(az_sys_lw_lock_t *p)$/;"	f
+az_sys_lw_lock	inc/sys/linux/az_linux_lock.h	/^typedef struct az_sys_lw_lock {$/;"	s
+az_sys_lw_lock_deinit	inc/sys/linux/az_linux_lock.h	/^static inline az_r_t az_sys_lw_lock_deinit(az_sys_lw_lock_t *p)$/;"	f
+az_sys_lw_lock_init	inc/sys/linux/az_linux_lock.h	/^static inline az_r_t az_sys_lw_lock_init(az_sys_lw_lock_t *p)$/;"	f
+az_sys_lw_lock_t	inc/sys/linux/az_linux_lock.h	/^} az_sys_lw_lock_t;$/;"	t	typeref:struct:az_sys_lw_lock
+az_sys_lw_unlock	inc/sys/linux/az_linux_lock.h	/^static inline az_r_t az_sys_lw_unlock(az_sys_lw_lock_t *p)$/;"	f
+az_sys_malloc	inc/sys/linux/az_linux_def.h	/^static inline az_ref_t az_attr_no_instrument az_sys_malloc(az_size_t size)$/;"	f
+az_sys_mutex_create	inc/sys/linux/az_linux_mutex.h	/^static inline az_r_t  az_sys_mutex_create(const char *name, int options, az_sys_mutex_t *pMutex)$/;"	f
+az_sys_mutex_delete	inc/sys/linux/az_linux_mutex.h	/^static inline az_r_t  az_sys_mutex_delete(az_sys_mutex_t m)$/;"	f
+az_sys_mutex_lock	inc/sys/linux/az_linux_mutex.h	/^static inline az_r_t  az_sys_mutex_lock(az_sys_mutex_t m)$/;"	f
+az_sys_mutex_t	inc/sys/linux/az_linux_def.h	/^typedef pthread_mutex_t *        az_sys_mutex_t; $/;"	t
+az_sys_mutex_t	inc/sys/linux/az_linux_mutex.h	/^typedef pthread_mutex_t * az_sys_mutex_t; $/;"	t
+az_sys_mutex_trylock	inc/sys/linux/az_linux_mutex.h	/^static inline az_r_t  az_sys_mutex_trylock(az_sys_mutex_t m)$/;"	f
+az_sys_mutex_unlock	inc/sys/linux/az_linux_mutex.h	/^static inline az_r_t  az_sys_mutex_unlock(az_sys_mutex_t m)$/;"	f
+az_sys_pid_t	inc/sys/linux/az_linux_def.h	/^typedef pid_t                    az_sys_pid_t;$/;"	t
+az_sys_printf	inc/sys/linux/az_linux_def.h	33;"	d
+az_sys_sem_create	inc/sys/linux/az_linux_sem.h	/^static inline az_r_t  az_sys_sem_create(const char *name, int options, unsigned int value, az_sys_sem_t *pSem)$/;"	f
+az_sys_sem_delete	inc/sys/linux/az_linux_sem.h	/^static inline az_r_t  az_sys_sem_delete(az_sys_sem_t m)$/;"	f
+az_sys_sem_post	inc/sys/linux/az_linux_sem.h	/^static inline az_r_t  az_sys_sem_post(az_sys_sem_t m)$/;"	f
+az_sys_sem_t	inc/sys/linux/az_linux_def.h	/^typedef sem_t *               az_sys_sem_t;$/;"	t
+az_sys_sem_t	inc/sys/linux/az_linux_sem.h	/^typedef sem_t *               az_sys_sem_t; $/;"	t
+az_sys_sem_timedwait	inc/sys/linux/az_linux_sem.h	/^static inline az_r_t  az_sys_sem_timedwait(az_sys_sem_t m, az_uint64_t tmo_ns)$/;"	f
+az_sys_sem_trywait	inc/sys/linux/az_linux_sem.h	/^static inline az_r_t  az_sys_sem_trywait(az_sys_sem_t m)$/;"	f
+az_sys_sem_wait	inc/sys/linux/az_linux_sem.h	/^static inline az_r_t  az_sys_sem_wait(az_sys_sem_t m)$/;"	f
+az_sys_shm_entity_t	inc/sys/linux/az_linux_def.h	/^} az_sys_shm_entity_t;$/;"	t	typeref:struct:__anon1
+az_sys_shm_t	inc/sys/linux/az_linux_def.h	/^typedef az_sys_shm_entity_t*   az_sys_shm_t;$/;"	t
+az_sys_sockaddr_t	inc/sys/linux/az_linux_def.h	/^typedef struct sockaddr   az_sys_sockaddr_t;$/;"	t	typeref:struct:sockaddr
+az_sys_sockaddr_t	inc/sys/linux/az_linux_socket.h	/^typedef struct sockaddr   az_sys_sockaddr_t;$/;"	t	typeref:struct:sockaddr
+az_sys_sockerror	inc/sys/linux/az_linux_def.h	31;"	d
+az_sys_socket_accept	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_accept(az_sys_socket_t sd, az_sys_sockaddr_t*addr, az_sys_socklen_t *addrlen)$/;"	f
+az_sys_socket_bind	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_bind(az_sys_socket_t sd, az_sys_sockaddr_t*addr, az_sys_socklen_t addrlen)$/;"	f
+az_sys_socket_connect	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_connect(az_sys_socket_t sd, az_sys_sockaddr_t*addr, az_sys_socklen_t addrlen)$/;"	f
+az_sys_socket_create	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_create(int domain, int type, int protocol, az_sys_socket_t *p)$/;"	f
+az_sys_socket_delete	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_delete(az_sys_socket_t sd)$/;"	f
+az_sys_socket_enblock	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_enblock(az_sys_socket_t sd)$/;"	f
+az_sys_socket_getopt	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_getopt(az_sys_socket_t sd,$/;"	f
+az_sys_socket_listen	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_listen(az_sys_socket_t sd, int backlog)$/;"	f
+az_sys_socket_nodelay	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_nodelay(az_sys_socket_t sd)$/;"	f
+az_sys_socket_nonblock	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_nonblock(az_sys_socket_t sd)$/;"	f
+az_sys_socket_read	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_read(az_sys_socket_t sd, void* buf, az_size_t len)$/;"	f
+az_sys_socket_recv	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_recv(az_sys_socket_t sd, void* buf, az_size_t len, int flags)$/;"	f
+az_sys_socket_recvfrom	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_recvfrom(az_sys_socket_t sd, void* buf, az_size_t len, int flags, az_sys_sockaddr_t *src_addr, az_sys_socklen_t *addrlen)$/;"	f
+az_sys_socket_send	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_send(az_sys_socket_t sd, const void* buf, az_size_t len, int flags)$/;"	f
+az_sys_socket_sendto	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_sendto(az_sys_socket_t sd, const void* buf, az_size_t len, int flags, const az_sys_sockaddr_t *dest_addr, az_sys_socklen_t addrlen)$/;"	f
+az_sys_socket_setopt	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_setopt(az_sys_socket_t sd,$/;"	f
+az_sys_socket_t	inc/sys/linux/az_linux_def.h	/^typedef int az_sys_socket_t;$/;"	t
+az_sys_socket_t	inc/sys/linux/az_linux_socket.h	/^typedef int               az_sys_socket_t;$/;"	t
+az_sys_socket_write	inc/sys/linux/az_linux_socket.h	/^static inline az_r_t az_sys_socket_write(az_sys_socket_t sd, const void* buf, az_size_t len)$/;"	f
+az_sys_socklen_t	inc/sys/linux/az_linux_def.h	/^typedef socklen_t         az_sys_socklen_t;$/;"	t
+az_sys_socklen_t	inc/sys/linux/az_linux_socket.h	/^typedef socklen_t         az_sys_socklen_t;$/;"	t
+az_sys_time_t	inc/sys/linux/az_linux_def.h	/^typedef time_t                    az_sys_time_t;$/;"	t
+az_sys_timer_entity_t	inc/sys/linux/az_linux_def.h	/^} az_sys_timer_entity_t;$/;"	t	typeref:struct:__anon3
+az_sys_timer_entity_t	inc/sys/linux/az_linux_timer.h	/^} az_sys_timer_entity_t;$/;"	t	typeref:struct:__anon6
+az_sys_timer_t	inc/sys/linux/az_linux_def.h	/^typedef az_sys_timer_entity_t*   az_sys_timer_t;$/;"	t
+az_sys_timer_t	inc/sys/linux/az_linux_timer.h	/^typedef az_sys_timer_entity_t*   az_sys_timer_t;$/;"	t
+az_sys_timespec_t	inc/sys/linux/az_linux_def.h	/^typedef struct timespec          az_sys_timespec_t;$/;"	t	typeref:struct:timespec
+az_sys_xu_close_iomux	inc/sys/linux/az_linux_xu.h	/^static inline az_r_t az_sys_xu_close_iomux()$/;"	f
+az_sys_xu_entity_t	inc/sys/linux/az_linux_def.h	/^} az_sys_xu_entity_t;$/;"	t	typeref:struct:__anon2
+az_sys_xu_entity_t	inc/sys/linux/az_linux_xu.h	/^} az_sys_xu_entity_t;$/;"	t	typeref:struct:__anon7
+az_sys_xu_eport	inc/sys/linux/az_linux_xu.h	/^static inline az_sys_ep_t *az_sys_xu_eport()$/;"	f
+az_sys_xu_iomux	inc/sys/linux/az_linux_xu.h	/^static inline az_sys_iomux_t az_sys_xu_iomux()$/;"	f
+az_sys_xu_iomux_add	inc/sys/linux/az_linux_xu.h	/^static inline az_r_t az_sys_xu_iomux_add(az_sys_io_t fd, uint32_t ioevt)$/;"	f
+az_sys_xu_iomux_del	inc/sys/linux/az_linux_xu.h	/^static inline az_r_t az_sys_xu_iomux_del(az_sys_io_t fd)$/;"	f
+az_sys_xu_open_iomux	inc/sys/linux/az_linux_xu.h	/^static inline az_r_t az_sys_xu_open_iomux()$/;"	f
+az_sys_xu_self	inc/sys/linux/az_linux_xu.h	67;"	d
+az_sys_xu_t	inc/sys/linux/az_linux_def.h	/^typedef   az_sys_xu_entity_t *  az_sys_xu_t;$/;"	t
+az_sys_xu_t	inc/sys/linux/az_linux_xu.h	/^typedef az_sys_xu_entity_t*   az_sys_xu_t;$/;"	t
+az_sys_xu_wait_iomux	inc/sys/linux/az_linux_xu.h	/^static inline az_r_t az_sys_xu_wait_iomux(az_sys_io_event_t *ioevt, int maxevents, int tmo_ms)$/;"	f
+counter	inc/sys/linux/az_linux_lock.h	/^  int   counter;$/;"	m	struct:az_sys_lw_lock
+cur	inc/sys/linux/az_linux_fs.h	/^  struct dirent *cur;$/;"	m	struct:__anon5	typeref:struct:__anon5::dirent
+dirp	inc/sys/linux/az_linux_fs.h	/^  DIR *dirp;$/;"	m	struct:__anon5
+entry	inc/sys/linux/az_linux_def.h	/^  void            *(*entry)(void *); $/;"	m	struct:__anon2
+entry	inc/sys/linux/az_linux_xu.h	/^  void            *(*entry)(void *); $/;"	m	struct:__anon7
+env	inc/sys/linux/az_linux_def.h	/^  jmp_buf         env;$/;"	m	struct:__anon2
+env	inc/sys/linux/az_linux_xu.h	/^  jmp_buf         env;$/;"	m	struct:__anon7
+ep	inc/sys/linux/az_linux_def.h	/^  az_sys_ep_t     ep;$/;"	m	struct:__anon2
+ep	inc/sys/linux/az_linux_xu.h	/^  az_sys_ep_t     ep;$/;"	m	struct:__anon7
+events	inc/sys/linux/az_linux_event.h	/^  az_sys_event_t   events;$/;"	m	struct:__anon4
+fd	inc/sys/linux/az_linux_def.h	/^  az_sys_fd_t      fd;$/;"	m	struct:__anon1
+fd	inc/sys/linux/az_linux_event.h	/^  az_sys_fd_t      fd;$/;"	m	struct:__anon4
+futex	inc/sys/linux/az_linux_def.h	/^static inline int futex(int *uaddr, int futex_op, int val,$/;"	f
+futex	inc/sys/linux/az_linux_event.h	/^static inline futex(int *uaddr, int futex_op, int val,$/;"	f
+handler	inc/sys/linux/az_linux_def.h	/^  void            (*handler)(void *);$/;"	m	struct:__anon3
+handler	inc/sys/linux/az_linux_timer.h	/^  void            (*handler)(void *);$/;"	m	struct:__anon6
+interval	inc/sys/linux/az_linux_def.h	/^  az_uint64_t     interval;$/;"	m	struct:__anon3
+interval	inc/sys/linux/az_linux_timer.h	/^  az_uint64_t     interval;$/;"	m	struct:__anon6
+iomux	inc/sys/linux/az_linux_def.h	/^  az_sys_iomux_t  iomux;$/;"	m	struct:__anon2
+iomux	inc/sys/linux/az_linux_xu.h	/^  az_sys_iomux_t  iomux;$/;"	m	struct:__anon7
+length	inc/sys/linux/az_linux_def.h	/^  az_size_t        length;$/;"	m	struct:__anon1
+lock	inc/sys/linux/az_linux_event.h	/^  az_sys_lw_lock_t  lock;$/;"	m	struct:__anon4
+name	inc/sys/linux/az_linux_def.h	/^  char              name[AZ_SYS_SHM_NAME_MAX];$/;"	m	struct:__anon1
+name	inc/sys/linux/az_linux_def.h	/^  const char            *name;$/;"	m	struct:__anon3
+name	inc/sys/linux/az_linux_def.h	/^  const char      *name;$/;"	m	struct:__anon2
+name	inc/sys/linux/az_linux_timer.h	/^  const char      *name;$/;"	m	struct:__anon6
+name	inc/sys/linux/az_linux_xu.h	/^  char            *name;$/;"	m	struct:__anon7
+owner	inc/sys/linux/az_linux_def.h	/^  int32_t         owner;$/;"	m	struct:__anon3
+owner	inc/sys/linux/az_linux_timer.h	/^  int32_t         owner;$/;"	m	struct:__anon6
+phyAddr	inc/sys/linux/az_linux_def.h	/^  az_ref_t         phyAddr;$/;"	m	struct:__anon1
+priv	inc/sys/linux/az_linux_def.h	/^  void            *priv;$/;"	m	struct:__anon2
+priv	inc/sys/linux/az_linux_xu.h	/^  void            *priv;$/;"	m	struct:__anon7
+refCount	inc/sys/linux/az_linux_def.h	/^  az_refcount_t    refCount;$/;"	m	struct:__anon1
+repeat	inc/sys/linux/az_linux_def.h	/^  int             repeat;$/;"	m	struct:__anon3
+repeat	inc/sys/linux/az_linux_timer.h	/^  int             repeat;$/;"	m	struct:__anon6
+revents	inc/sys/linux/az_linux_event.h	/^  az_sys_event_t   revents;$/;"	m	struct:__anon4
+sem	inc/sys/linux/az_linux_lock.h	/^  int   sem;$/;"	m	struct:az_sys_lw_lock
+sem_suspend	inc/sys/linux/az_linux_def.h	/^  sem_t           sem_suspend;$/;"	m	struct:__anon2
+sem_suspend	inc/sys/linux/az_linux_xu.h	/^  sem_t           sem_suspend;$/;"	m	struct:__anon7
+state	inc/sys/linux/az_linux_def.h	/^  int             state;$/;"	m	struct:__anon2
+state	inc/sys/linux/az_linux_def.h	/^  int             state;$/;"	m	struct:__anon3
+state	inc/sys/linux/az_linux_timer.h	/^  int             state;$/;"	m	struct:__anon6
+state	inc/sys/linux/az_linux_xu.h	/^  int             state;$/;"	m	struct:__anon7
+thread	inc/sys/linux/az_linux_def.h	/^  pthread_t       thread;$/;"	m	struct:__anon2
+thread	inc/sys/linux/az_linux_xu.h	/^  pthread_t       thread;$/;"	m	struct:__anon7
+timer	inc/sys/linux/az_linux_def.h	/^  timer_t     timer;$/;"	m	struct:__anon3
+timer	inc/sys/linux/az_linux_timer.h	/^  timer_t         timer;$/;"	m	struct:__anon6
+virAddr	inc/sys/linux/az_linux_def.h	/^  az_ref_t         virAddr;$/;"	m	struct:__anon1

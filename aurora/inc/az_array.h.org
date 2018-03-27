@@ -1,0 +1,441 @@
+/**
+ * @file   az_array.h
+ * @brief  
+ * @date   12/03/16
+ * @author fware
+ *
+ * Copyright (c) Fware, 2013-2017 - All Rights Reserved
+ * You may use, distribute and modify this code under the 
+ * terms of the "Aurora Source Code License".
+ * See the file LICENSE for full license details.
+
+ * You should have received a copy of  the LICENSE with this file.
+
+ * If not, please contact to Fware with the information in the file CONTACTS.
+ *
+ * History: @date 
+ *   - 2016-03-12 fware initial create
+ */
+
+#ifndef AZ_ARRAY_H
+#define AZ_ARRAY_H
+
+#include "az_def.h"
+#include "az_err.h"
+#include "az_ring.h"
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+/* constants */
+
+/* basic macros */
+
+/* basic types */
+typedef az_ref_t  az_array_element_t;
+typedef az_pos_t    az_array_id_t;
+
+static inline az_pos_t az_array_mk_id_mask(az_array_id_t id_max) 
+{
+  az_pos_t mask = 1 << (sizeof(id_max) * 8 - 1);
+  az_pos_t j;
+  az_pos_t value = 0;
+  for (j = 0; j < sizeof(az_array_id_t); j++, mask >>= 1) {
+    if (id_max & mask) {
+      value |= mask;
+    } 
+    if (value) value |= mask;
+  }
+
+  return value;
+}
+
+typedef struct az_array {
+  az_array_element_t  *list;
+  az_size_t           size;
+  az_size_t           count;
+  az_size_t           last;
+
+  az_pos_t            id_mask;
+
+  #ifdef  AZ_ARRAY_USE_LINKED_LIST
+  az_link_list_t      id_list;
+  az_array_id_info_t  *ids;
+  #else
+  az_ring_t           id_list;
+  az_ref_t            *ids;
+  #endif
+
+  az_rw_lock_t    *lock;
+
+  az_array_element_t  *_list;
+  #ifdef  AZ_ARRAY_USE_LINKED_LIST
+  az_array_id_info_t  *_ids;
+  #else
+  az_ref_t            *_ids;
+  #endif
+  az_rw_lock_t    _lock;
+
+  az_refcount_t refCount;
+} az_array_t;
+
+/* structures */
+
+/* structured types */
+
+/* macros */
+#define az_array_lock_write(ar)   if((ar)->lock)  { az_rw_lock_write((ar)->lock); }
+#define az_array_unlock_write(ar) if ((ar)->lock) { az_rw_unlock_write((ar)->lock); }
+#define az_array_lock_read(ar)   if((ar)->lock)  { az_rw_lock_read((ar)->lock); }
+#define az_array_unlock_read(ar) if ((ar)->lock) { az_rw_unlock_read((ar)->lock); }
+
+#define az_array_element_at(arr, i)   ((arr)->list[(i)])
+
+/* variabls exposed */
+
+/* inline functions */
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+static inline az_array_id_t az_array_id_get(az_array_t *pArray)
+{
+  az_array_id_t id = pArray->size;
+  
+  az_array_lock_write(pArray);
+  #ifdef  AZ_ARRAY_USE_LINKED_LIST
+  az_link_t *plink;
+  az_array_id_info_t *info = NULL;
+
+  plink = az_link_getFirst(&pArray->id_list);
+  if (NULL != plink) {
+    info = container_of(plink, az_array_id_info_t, link);
+    if (info) {
+      info->link.next = NULL;
+      id = info->id;
+    }
+  }
+  #else
+  if (az_ring_pop(&pArray->id_list, &id) > 0) {
+    az_pos_t index;
+    switch (pArray->id_list.type) {
+      case  AZ_RING_TYPE_DS32:
+        index = (az_pos_t)(*(az_int32_t *)&id);
+        break;
+      case  AZ_RING_TYPE_DS16:
+        index = (az_pos_t)(*(az_int16_t *)&id);
+        break;
+      case  AZ_RING_TYPE_DS64:
+        index = (az_pos_t)(*(az_int64_t *)&id);
+        break;
+    }
+    id = index & pArray->id_mask;
+  } else {
+    id = pArray->size;
+  }
+  #endif
+  az_array_unlock_write(pArray);
+
+
+  az_sys_printf("%s: %d\n", __FUNCTION__, id);
+
+  return id;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+static inline void az_array_id_free(az_array_t *pArray, az_array_id_t id)
+{
+  #ifdef  AZ_ARRAY_USE_LINKED_LIST
+  az_array_id_info_t *info = NULL; 
+  do {
+    if (id >= pArray->size) {
+      break;
+    }
+    info = &pArray->ids[id];
+    az_array_lock_write(pArray);
+    az_link_putLast(&pArray->id_list, &info->link);
+    az_array_unlock_write(pArray);
+  } while (0);
+  #else
+  do {
+    if (id >= pArray->size) {
+      break;
+    }
+    az_pos_t index = id | ~(pArray->id_mask);
+    switch (pArray->id_list.type) {
+      case  AZ_RING_TYPE_DS32:
+        *(az_int32_t *)&id = (az_int32_t)index;
+        break;
+      case  AZ_RING_TYPE_DS16:
+        *(az_int16_t *)&id = (az_int16_t)index;
+        break;
+      case  AZ_RING_TYPE_DS64:
+        *(az_int64_t *)&id = (az_int64_t)index;
+        break;
+    }
+    az_array_lock_write(pArray);
+    if (az_ring_push(&pArray->id_list, &id) > 0) {
+    }
+    az_array_unlock_write(pArray);
+  } while (0);
+  #endif
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+static inline az_r_t az_array_init(az_array_t *pArray, az_size_t size,
+    az_array_element_t *list, az_ref_t ids) 
+{
+  az_r_t err = AZ_ERR(ENTITY_NULL);
+  if (NULL == pArray) {
+    pArray = az_sys_malloc(sizeof(az_array_t));
+    if (pArray) {
+      pArray->refCount = 0;
+    }
+  }
+  do {
+    if (NULL == pArray) {
+      break;
+    }
+    pArray->lock = NULL; 
+    pArray->id_mask = az_array_mk_id_mask(size); 
+    pArray->refCount++;
+    if (NULL == list) {
+      list = az_sys_malloc(size * sizeof(az_array_element_t));
+      if (NULL == list) break;
+      pArray->_list = list;
+    } else {
+      pArray->_list = NULL;
+    }
+    err = AZ_SUCCESS;
+    pArray->list = list;
+    pArray->size = size;
+
+    #ifdef  AZ_ARRAY_USE_LINKED_LIST
+    if (NULL == ids) {
+      ids = az_sys_malloc(size * sizeof(az_array_id_info_t));
+      if (NULL == ids) break;
+      pArray->_ids = ids;
+    } else {
+      pArray->_ids = NULL; 
+    }
+    pArray->ids = ids;
+    az_link_initList(&pArray->id_list);
+    #else
+    do {
+      az_ring_type_t ring_type;
+      az_size_t ring_size;
+      if (size <= 0x7fff) {
+       ring_size = size * sizeof(az_int16_t);
+       ring_type = AZ_RING_TYPE_DS16;
+      } else if (size <= 0x7fffffff) {
+       ring_size = size * sizeof(az_int32_t);
+       ring_type = AZ_RING_TYPE_DS32;
+      } else {
+       ring_size = size * sizeof(az_int64_t);
+       ring_type = AZ_RING_TYPE_DS64;
+      }
+      if (NULL == ids) {
+        ids = az_sys_malloc(ring_size);
+        if (NULL == ids) break;
+        pArray->_ids = ids;
+      }
+      pArray->ids = ids;
+      az_ring_init(&pArray->id_list, ring_type, size, ids);
+    } while (0);
+    #endif
+
+    az_size_t i;
+    for (i = 0; i < size; i++) {
+      list[i] = NULL;
+      #ifdef  AZ_ARRAY_USE_LINKED_LIST
+      ids[i].id = i;
+      ids[i].link.next = NULL;
+      #endif
+      az_array_id_free(pArray, i);
+    }
+    pArray->count = 0;
+    pArray->last = 0;
+
+    pArray->lock = &pArray->_lock;
+    az_rw_lock_init(pArray->lock);
+
+  } while (0);
+
+  if (err) {
+    if (pArray) {
+      if (NULL != pArray->lock) {
+        az_rw_lock_deinit(pArray->lock);
+        pArray->lock = NULL;
+      }
+      if (pArray->_ids) az_sys_free(pArray->_ids);
+      if (pArray->_list) az_sys_free(pArray->_list);
+      if (--pArray->refCount == 0) {
+        az_sys_free(pArray);
+      }
+    }
+  }
+
+  return err;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+static inline void az_array_deinit(az_array_t *pArray)
+{
+  if (pArray) {
+    if (NULL != pArray->lock) {
+      az_rw_lock_deinit(pArray->lock);
+      pArray->lock = NULL;
+    }
+    if (pArray->_ids) az_sys_free(pArray->_ids);
+    if (pArray->_list) az_sys_free(pArray->_list);
+    if (--pArray->refCount == 0) {
+      az_sys_free(pArray);
+    }
+  }
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+static inline az_array_id_t az_array_add(az_array_t *pArray, az_array_element_t e)
+{
+  az_array_id_t id;
+
+  id = az_array_id_get(pArray);
+  if (id < pArray->size) {
+    pArray->list[id] = e;
+    az_atomic_inc_size(&pArray->count);
+    if (pArray->last <= id) pArray->last = id + 1;
+  } else {
+    id = AZ_ERR(OVERFLOW); 
+  }
+
+  return id;
+}
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+static inline az_array_id_t az_array_fill(az_array_t *pArray, az_array_element_t e, az_array_element *(*fill_f)(az_array_id_t, az_array_element_t *))
+{
+  az_array_id_t id;
+  az_assert(NULL != pArray && NULL != e);
+  az_assert(NULL != fill_f);
+
+  id = az_array_id_get(pArray);
+  if (id < pArray->size) {
+    pArray->list[id] = (fill_f)(id, e); 
+    az_atomic_inc_size(&pArray->count);
+    if (pArray->last <= id) pArray->last = id + 1;
+  } else {
+    id = AZ_ERR(OVERFLOW); 
+  }
+
+  return id;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+static inline az_r_t az_array_del(az_array_t *pArray, az_array_id_t id)
+{
+  az_array_element_t *e;
+  az_r_t result = AZ_ERR(ENTITY_NULL);
+
+  do {
+    if (id >= pArray->size) {
+      break;
+    }
+    e = &pArray->list[id];
+    if (NULL == *e) {
+      break;
+    }
+    result = AZ_SUCCESS;
+    *e = NULL;
+    az_atomic_dec_size(&pArray->count);
+    az_array_id_free(pArray, id);
+    for (e--, id--; NULL == *e && id >= 0; e--) {
+      id--;
+    }
+    pArray->last = id + 1;
+  } while (0);
+
+  return result;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+static inline az_r_t az_array_find(az_array_t *pArray, az_array_element_t *e,
+    az_r_t (*find_f)(az_array_element_t *, az_array_element_t *))
+{
+  az_r_t result = AZ_ERR(NOT_FOUND);
+  az_pos_t    j, max;
+
+  az_assert(NULL != pArray && NULL != e);
+  az_assert(NULL != find_f); 
+
+  do {
+    az_array_lock_read(pArray);
+    max = pArray->last - 1;
+    for (j = 0;j < (max+1)/2; j++) {
+      if (find_f(e, pArray->list[j])) {
+        result = (az_r_t)(j);
+        break;
+      }
+      if (find_f(e, pArray->list[max-j])) {
+        result = (az_r_t)(max-j);
+        break;
+      }
+    }
+    az_array_unlock_read(pArray);
+  } while (0);
+
+  return result;
+}
+
+/* function prototypes exposed */
+
+#ifdef __cplusplus
+}
+#endif
+#endif

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Aurora_REPO</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>NSFW</name>
+			<type>2</type>
+			<locationURI>NSFW_WS/NSFW</locationURI>
+		</link>
+		<link>
+			<name>aurora</name>
+			<type>2</type>
+			<locationURI>Aurora_WS/aurora</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>Aurora_WS</name>
+			<value>$%7BPARENT-1-WORKSPACE_LOC%7D</value>
+		</variable>
+	</variableList>
+</projectDescription>

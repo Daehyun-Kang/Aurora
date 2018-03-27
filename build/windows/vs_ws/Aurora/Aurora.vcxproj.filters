@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{f82a0fa4-c05d-403b-8ec8-997cd95b8fcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\diag">
+      <UniqueIdentifier>{a9a3533c-25b3-443f-a275-c122ac1a6129}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\frw">
+      <UniqueIdentifier>{f290a545-4109-42f1-b2b3-a10a6a18a452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\iou">
+      <UniqueIdentifier>{ffc733f5-a6b5-493d-a10a-9990c69b7a98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sys">
+      <UniqueIdentifier>{95daf7eb-8548-4a17-a954-15e8e59a70be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\test">
+      <UniqueIdentifier>{98f7783f-2077-48ba-99f1-b0ccfa47babb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\windows">
+      <UniqueIdentifier>{04469da6-0b03-4195-b794-44be4e3f6f09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\cli">
+      <UniqueIdentifier>{c74ab5e0-6d3e-4280-89a8-460992cfaf04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\net">
+      <UniqueIdentifier>{fe9443da-2cba-4df5-8b6b-848bba00fd57}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\aurora\src\sys\windows\az_sys_init.c">
+      <Filter>Source Files\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\sys\windows\az_sys_timer.c">
+      <Filter>Source Files\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\sys\windows\az_sys_xu.c">
+      <Filter>Source Files\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\sys\az_mutex.c">
+      <Filter>Source Files\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\sys\az_sem.c">
+      <Filter>Source Files\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\sys\az_timer.c">
+      <Filter>Source Files\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\sys\az_xu.c">
+      <Filter>Source Files\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_array_toStr.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_buffer_toStr.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_core.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_event.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_event_bus.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_fifo_toStr.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_ion.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_ion_toStr.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_link_toStr.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_msgq.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_var.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_xml.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\diag\az_diag_typeSize.c">
+      <Filter>Source Files\diag</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\iou\az_iou_api.c">
+      <Filter>Source Files\iou</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\iou\az_iou_msgq.c">
+      <Filter>Source Files\iou</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\iou\az_iou_util.c">
+      <Filter>Source Files\iou</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\test\az_test.c">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\test\az_test_main.c">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\test\az_test_xu.c">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\cli\az_cli.c">
+      <Filter>Source Files\cli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\cli\az_cli_cmd.c">
+      <Filter>Source Files\cli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\cli\az_cli_glue.c">
+      <Filter>Source Files\cli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\cli\az_cli_svr.c">
+      <Filter>Source Files\cli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_log.c">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\net\az_tcpserver.c">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\sys\az_inet.c">
+      <Filter>Source Files\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\aurora\src\frw\az_frw_cmd.c">
+      <Filter>Source Files\frw</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

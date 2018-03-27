@@ -1,0 +1,150 @@
+/**
+ * @file   az_event.h
+ * @brief  
+ * @date   18/06/16
+ * @author fware
+ *
+ * Copyright (c) Fware, 2013-2017 - All Rights Reserved
+ * You may use, distribute and modify this code under the 
+ * terms of the "Aurora Source Code License".
+ * See the file LICENSE for full license details.
+
+ * You should have received a copy of  the LICENSE with this file.
+
+ * If not, please contact to Fware with the information in the file CONTACTS.
+ *
+ * History: @date 
+ *   - 2016-06-18 fware initial create
+ */
+
+#ifndef AZ_EVENT_H
+#define AZ_EVENT_H
+
+#include "az_link.h"
+#include "az_ring.h"
+#include "az_rw_lock.h"
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+/* constants */
+
+/* basic macros */
+#ifdef  CONFIG_AZ_EVENT_MAX
+#define AZ_EVENT_MAX   CONFIG_AZ_EVENT_MAX   
+#else
+#define AZ_EVENT_MAX   2048   
+#endif
+
+/* basic types */
+typedef uint64_t  az_event_id_t;
+typedef PACKED_STRUCT(struct az_event_id_st {
+  uint64_t  status:3;
+  uint64_t  sig:5;  // for signal through system event port
+  uint64_t  ext:8;
+  uint64_t  num:48;
+}) az_event_id_st_t;
+
+typedef PACKED_STRUCT(struct az_event {
+  az_event_id_t id;
+  az_ref_t      data;
+}) az_event_t;
+
+typedef az_uint32_t az_event_ref_t;
+typedef az_uint32_t az_event_descr_id_t;
+
+typedef PACKED_STRUCT(struct az_event_descr {
+  az_event_descr_id_t   index;
+  az_event_ref_t        ref_no;
+  az_uint32_t           sendCount;
+  az_uint32_t           recvCount;
+}) az_event_descr_t;
+
+/* structures */
+
+/*
+ * define event port stuffs
+ */
+typedef az_uint32_t   az_event_port_no_t;
+
+#define AZ_EVENT_PORT_NO_INVALID        (az_event_port_no_t)(-1)
+#define AZ_EVENT_PORT_NO_NOT_ASSIGNED   (az_event_port_type_t)(-2)
+
+typedef enum {
+  AZ_EVENT_PORT_TYPE0 = 0,    // post on global event queue
+  AZ_EVENT_PORT_TYPE1,        // post on local event queue
+  AZ_EVENT_PORT_TYPE_MAX,
+} az_event_port_type_t;
+
+typedef struct az_event_receiver {
+  az_sys_ep_t   *sys_port;
+
+  az_link_t     link;
+} az_event_receiver_t;
+
+struct az_event_port; 
+
+typedef az_r_t  (*az_event_port_subscribe_t)(struct az_event_port *, az_event_receiver_t *);
+typedef az_r_t  (*az_event_port_post_t)(struct az_event_port *, az_event_t *);
+typedef az_r_t  (*az_event_port_fetch_t)(struct az_event_port *, az_event_descr_id_t *pEvtDescrId);
+typedef az_r_t  (*az_event_port_fetchComplete_t)(struct az_event_port *, az_event_descr_id_t evtDescrId);
+typedef az_r_t  (*az_event_port_unsubscribe_t)(struct az_event_port *, az_event_receiver_t *);
+
+typedef struct {
+  az_event_port_subscribe_t         subscribe;
+  az_event_port_post_t              post; 
+  az_event_port_fetch_t             fetch; 
+  az_event_port_fetchComplete_t     fetchComplete; 
+  az_event_port_unsubscribe_t       unsubscribe; 
+} az_event_port_oprs_t;
+
+typedef struct az_event_port {
+  az_event_port_no_t    no;
+  az_event_port_type_t  type;
+
+  az_event_id_t         event_id;
+  az_event_id_t         event_mask;
+
+  az_rw_lock_t          *lock;
+
+  az_event_port_oprs_t  *oprs;
+
+  az_link_list_t receiver_list;
+
+  az_rw_lock_t      _lock;
+} az_event_port_t;
+
+#define az_event_port_lock_init(port) \
+            if (port->lock) { az_rw_lock_init(port->lock); } 
+#define az_event_port_lock_deinit(port) \
+            if (port->lock) { az_rw_lock_deinit(port->lock); } 
+#define az_event_port_lock_read(port) \
+            if (port->lock) { az_rw_lock_read(port->lock); } 
+#define az_event_port_unlock_read(port) \
+            if (port->lock) { az_rw_unlock_read(port->lock); } 
+#define az_event_port_lock_write(port) \
+            if (port->lock) { az_rw_lock_write(port->lock); } 
+#define az_event_port_unlock_write(port) \
+            if (port->lock) { az_rw_unlock_write(port->lock); } 
+
+/* structured types */
+
+/* macros */
+
+/* variabls exposed */
+
+/* inline functions */
+
+/* function prototypes exposed */
+extern az_r_t  az_event_ref_init();
+extern az_r_t  az_event_ref_deinit();
+extern az_r_t  az_event_ref_compare_id(az_event_id_t *a, az_event_id_t *b);
+extern az_r_t  az_event_ref_register(az_event_id_t event, az_event_ref_t *pref);
+extern az_r_t  az_event_ref_deregister(az_event_id_t event, az_event_ref_t refid);
+
+#ifdef __cplusplus
+}
+#endif
+#endif

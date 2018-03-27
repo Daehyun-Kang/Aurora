@@ -1,0 +1,1041 @@
+/**
+ * @file   az_event_bus.c
+ * @brief  
+ * @date   24/06/16
+ * @author fware
+ *
+ * @copyright
+ * Copyright (c) Fware, 2013-2016 - All Rights Reserved
+ * You may use, distribute and modify this code under the 
+ * terms of the "Aurora Source Code License".
+ * See the file LICENSE for full license details.\n\n
+ *
+ * You should have received a copy of  the LICENSE with this file.\n\n
+ *
+ * If not, please contact to Fware with the information in the file CONTACTS.
+ *
+ * History:
+ *   - 2016-06-24 fware initial create
+ */
+
+/* include header files */
+#include "az_core.h"
+#include "az_event_bus.h"
+#include "az_xu.h"
+#include "az_printf.h"
+#include "az_malloc.h"
+
+/* declare global variables */
+az_event_port_t *az_event_port_list_default[AZ_EVENT_PORT_LIST_SZ];
+
+az_event_bus_t  az_event_bus_default = {
+  .state = AZ_ST_IDLE,
+  .port_count = 0,
+  .port_list = az_event_port_list_default,
+};
+az_event_bus_t  *az_event_bus_pDefault = &az_event_bus_default;
+
+/* declare static variables */
+
+
+/* implement static functions */
+
+/**
+ * @fn        function name
+ * @brief     function-description
+ * @param     input-output-parameters
+ * @return    return-value
+ * @warning   warnings
+ * @exception none
+ */
+
+
+/* implement global functions */
+
+/**
+ * @fn        function name
+ * @brief     function-description
+ * @param     input-output-parameters
+ * @return    return-value
+ * @warning   warnings
+ * @exception none
+ */
+
+/*
+ * define event bus managing functions 
+ */
+az_r_t  az_event_bus_init()
+{
+  az_r_t r = AZ_ERR(STATE);
+  az_event_bus_t  *ebus = AZ_EVENT_BUS();
+
+  if (!(ebus->state & (AZ_ST_INIT|AZ_ST_TINI|AZ_ST_NORM))) {
+    ebus->state |= AZ_ST_INIT;
+    r = AZ_SUCCESS;
+
+    int j = 0;
+    for (; j < AZ_EVENT_PORT_LIST_SZ; j++) {
+      ebus->port_list[j] = NULL;
+    }
+    ebus->port_count = 0;
+  }
+
+  return r;
+}
+az_r_t  az_event_bus_start() 
+{
+  az_r_t r = AZ_ERR(STATE);
+  az_event_bus_t  *ebus = AZ_EVENT_BUS();
+
+  if (ebus->state == AZ_ST_INIT) {
+    if (ebus->state & AZ_ST_NORM) {
+      r = AZ_ERR(AGAIN);
+    } else {
+      ebus->state = AZ_ST_NORM;
+      r = AZ_SUCCESS;
+    }
+  }
+  return r;
+}
+az_r_t  az_event_bus_stop() 
+{
+  az_r_t r = AZ_ERR(STATE);
+  az_event_bus_t  *ebus = AZ_EVENT_BUS();
+  if (ebus->state == AZ_ST_NORM) {
+    r = AZ_SUCCESS;
+    ebus->state = AZ_ST_TINI; 
+  }
+}
+
+
+az_r_t  az_event_bus_denit()
+{
+  az_r_t r = AZ_ERR(STATE);
+  az_event_bus_t  *ebus = AZ_EVENT_BUS();
+
+  if (ebus->state & AZ_ST_TINI) {
+    r = AZ_SUCCESS;
+
+    int j = 0;
+    for (; j < AZ_EVENT_PORT_LIST_SZ; j++) {
+      ebus->port_list[j] = NULL;
+    }
+    ebus->port_count = 0;
+    ebus->state = AZ_ST_IDLE;
+  }
+
+  return r;
+}
+
+
+/*
+ * define event port operations
+ */
+extern az_r_t az_event_port_subscribe_type0(az_event_port_t *port, az_event_receiver_t *receiver);
+extern az_r_t az_event_port_unsubscribe_type0(az_event_port_t *port, az_event_receiver_t *receiver);
+extern az_r_t  az_event_port_prepare_type0(az_event_port_t *port, az_event_id_t eventid, az_size_t size, az_event_ref_t *pEvent);
+extern az_r_t az_event_port_post_type0(az_event_port_t *port, az_event_t *event);
+extern az_r_t  az_event_port_fetch_type0(az_event_port_t *port, az_event_receiver_t *rcvr, az_event_ref_t *pEvent);
+extern az_r_t  az_event_port_fetchComplete_type0(az_event_port_t *port, az_event_receiver_t *rcvr, az_event_t *event);
+
+az_event_port_oprs_t az_event_port_oprs_type0 = {
+  .Subscribe = az_event_port_subscribe_type0,
+  .Prepare = az_event_port_prepare_type0,
+  .Post = az_event_port_post_type0,
+  .Fetch = az_event_port_fetch_type0,
+  .FetchComplete = az_event_port_fetchComplete_type0,
+  .Unsubscribe = az_event_port_unsubscribe_type0,
+};
+
+extern az_r_t az_event_port_subscribe_type1(az_event_port_t *port, az_event_receiver_t *receiver);
+extern az_r_t az_event_port_unsubscribe_type1(az_event_port_t *port, az_event_receiver_t *receiver);
+extern az_r_t  az_event_port_prepare_type1(az_event_port_t *port, az_event_id_t eventid, az_size_t size, az_event_ref_t *pEvent);
+extern az_r_t az_event_port_post_type1(az_event_port_t *port, az_event_t *event);
+extern az_r_t  az_event_port_fetch_type1(az_event_port_t *port, az_event_receiver_t *rcvr, az_event_ref_t *pEvent);
+extern az_r_t  az_event_port_fetchComplete_type1(az_event_port_t *port, az_event_receiver_t *rcvr, az_event_t *event);
+az_event_port_oprs_t az_event_port_oprs_type1 = {
+  .Subscribe = az_event_port_subscribe_type1,
+  .Prepare = az_event_port_prepare_type1,
+  .Post = az_event_port_post_type1,
+  .Fetch = az_event_port_fetch_type1,
+  .FetchComplete = az_event_port_fetchComplete_type1,
+  .Unsubscribe = az_event_port_unsubscribe_type1,
+};
+
+az_event_port_oprs_t *az_event_port_oprs_table[AZ_EVENT_PORT_TYPE_MAX+1] =
+{
+  &az_event_port_oprs_type0,
+  &az_event_port_oprs_type1,
+  NULL
+};
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_event_port_t *az_event_port_get(az_event_port_no_t portno)
+{
+  az_event_bus_t  *ebus = AZ_EVENT_BUS();
+  return ebus->port_list[portno];
+}
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_event_port_search(az_event_id_t event_id, az_event_id_t event_mask, az_uint32_t *pPortNo) 
+{
+  az_r_t r = AZ_ERR(STATE);
+  az_event_bus_t  *ebus = AZ_EVENT_BUS();
+
+  if (ebus->state & AZ_ST_NORM) {
+    r = AZ_ERR(NOT_FOUND);
+    az_event_port_t *port = NULL; 
+    int j = 0, k = ebus->port_count;
+    for (; k > 0 && j < AZ_EVENT_PORT_LIST_SZ; j++) {
+      port = ebus->port_list[j];
+      if (NULL == port) continue;
+      k--;
+      if ((port->event_id & port->event_mask) != (event_id & event_mask)) { 
+        continue;
+      }
+      r = AZ_SUCCESS;
+      az_assert(port->no == j);
+      *pPortNo = port->no; 
+      break;
+    }
+  }
+
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_event_port_create(az_event_id_t event_id, az_event_id_t event_mask, uint8_t type, az_event_port_ref_t *pPort)
+{
+  az_event_port_ref_t port = *pPort;
+  az_uint32_t portno;
+  az_event_bus_t  *ebus = AZ_EVENT_BUS();
+  az_r_t  r = AZ_FAIL;
+
+  do {
+    r = az_event_port_search(event_id, event_mask, &portno); 
+    if (AZ_SUCCESS == r) {
+      *pPort = ebus->port_list[portno];
+      r = AZ_ERR(AGAIN);
+      break; 
+    }
+    if (NULL != port) {
+      if (port->flags.u32 != 0 && port->no != AZ_EVENT_PORT_NO_NOT_ASSIGNED) {
+        r = AZ_ERR(STATE);
+        break;
+      }
+    } else {
+      port = (az_event_port_ref_t)az_malloc(sizeof(az_event_port_t));
+      if (NULL == port) {
+        az_r_t  r = AZ_ERR(MALLOC);
+        break;
+      }
+      *pPort = port;
+      port->flags.st.misc |= AZ_EVENT_PORT_MALLOCED; 
+    }
+    r = AZ_SUCCESS;
+    port->no = AZ_EVENT_PORT_NO_NOT_ASSIGNED;
+    port->flags.st.type = type;
+    port->flags.st.state = AZ_EVENT_PORT_STATE_INIT;
+    port->event_id = event_id;
+    port->event_mask = event_mask;
+    port->oprs = az_event_port_oprs_table[type];
+    az_link_initList(&(port->receiver_list));
+
+    port->lock = &port->_lock;
+    az_event_port_lock_init(port);
+
+  } while (0);
+
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_event_port_attach(az_event_port_ref_t port) 
+{
+  az_event_bus_t  *ebus = AZ_EVENT_BUS();
+  az_r_t  r = AZ_SUCCESS;
+  do {
+    if (NULL == port) {
+      r = AZ_ERR(ENTITY_NULL);
+      break;
+    }
+    if (port->flags.st.state != AZ_EVENT_PORT_STATE_INIT) {
+      r = AZ_ERR(STATE);
+      break;
+    }
+    int j = 0;
+    az_event_port_ref_t *list = ebus->port_list;
+    for (;j < AZ_EVENT_PORT_LIST_SZ; j++, list++) {
+      if (NULL == az_atomic_compare_and_swap_ptr(list, NULL, port)) { 
+        port->no = j;
+        port->flags.st.state = AZ_EVENT_PORT_STATE_ACTV;
+        az_atomic_inc32(&(ebus->port_count));
+        break;
+      }
+    }
+  } while (0);
+
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_event_port_detach(az_event_port_ref_t port) 
+{
+  az_event_bus_t  *ebus = AZ_EVENT_BUS();
+  az_r_t  r = AZ_ERR(NOT_FOUND);
+  do {
+    if (NULL == port) {
+      r = AZ_ERR(ENTITY_NULL);
+      break;
+    }
+    if (port->flags.st.state != AZ_EVENT_PORT_STATE_ACTV) {
+      r = AZ_ERR(STATE);
+      break;
+    }
+    int j = 0;
+    az_event_port_ref_t *list = ebus->port_list;
+    for (;j < AZ_EVENT_PORT_LIST_SZ; j++, list++) {
+      if (port == az_atomic_compare_and_swap_ptr(list, port, NULL)) { 
+        port->no = AZ_EVENT_PORT_NO_INVALID;
+        port->flags.st.state = AZ_EVENT_PORT_STATE_TINI;
+        az_atomic_dec32(&(ebus->port_count));
+        r = AZ_SUCCESS;
+        break;
+      }
+    }
+  } while (0);
+
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_event_port_delete(az_event_port_t *port) 
+{
+  az_event_bus_t  *ebus = AZ_EVENT_BUS();
+  az_r_t  r = AZ_ERR(NOT_FOUND);
+  do {
+    if (NULL == port) {
+      r = AZ_ERR(ENTITY_NULL);
+      break;
+    }
+    if (port->flags.st.state != AZ_EVENT_PORT_STATE_TINI) {
+      r = AZ_ERR(STATE);
+      break;
+    }
+    r = AZ_SUCCESS;
+    az_event_port_lock_deinit(port);
+    port->lock = NULL;
+    if (port->flags.st.misc & AZ_EVENT_PORT_MALLOCED) {
+      az_free(port);
+    } else {
+      port->flags.st.state = AZ_EVENT_PORT_STATE_NULL;
+    }
+  } while (0);
+
+  return r;
+}
+
+az_r_t az_event_port_subscribe(az_event_port_t *port, az_event_receiver_t *receiver)
+{
+  az_assert(NULL != port);
+  az_assert(NULL != port->oprs);
+  return (port->oprs->Subscribe)(port, receiver);
+}
+az_r_t az_event_port_unsubscribe(az_event_port_t *port, az_event_receiver_t *receiver)
+{
+  az_assert(NULL != port);
+  az_assert(NULL != port->oprs);
+  return (port->oprs->Unsubscribe)(port, receiver);
+}
+az_r_t  az_event_port_prepare(az_event_port_t *port, az_event_id_t eventid, az_size_t size, az_event_ref_t *pEvent)
+{
+  az_assert(NULL != port);
+  az_assert(NULL != port->oprs);
+  return (port->oprs->Prepare)(port, eventid, size, pEvent);
+}
+az_r_t az_event_port_post(az_event_port_t *port, az_event_t *event)
+{
+  az_assert(NULL != port);
+  az_assert(NULL != port->oprs);
+  return (port->oprs->Post)(port, event);
+}
+az_r_t  az_event_port_fetch(az_event_port_t *port, az_event_receiver_t *rcvr, az_event_ref_t *pEvent)
+{
+  az_assert(NULL != port);
+  az_assert(NULL != port->oprs);
+  return (port->oprs->Fetch)(port, rcvr, pEvent);
+}
+az_r_t  az_event_port_fetchComplete(az_event_port_t *port, az_event_receiver_t *rcvr, az_event_t *event)
+{
+  az_assert(NULL != port);
+  az_assert(NULL != port->oprs);
+  return (port->oprs->FetchComplete)(port, rcvr, event); 
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t  az_event_recv_wait(az_event_receiver_t *rcvr, az_int64_t tmo_ns)
+{
+  az_assert(NULL != rcvr);
+  az_r_t  r = AZ_SUCCESS;
+  az_event_port_mux_t *port_mux = rcvr->port_mux;
+  az_xu_event_t revent; 
+  int count = 0, j;
+  if (NULL == port_mux) {
+    r = az_xu_recvEvent(0xffffffff, 0, tmo_ns, &revent); 
+  } else {
+    do {
+      for ( j = 0; j < port_mux->size; j++) {
+        if (port_mux->state_list[j] > 0) count++;
+      }
+      if (count > 0) {
+        r = (az_r_t)count;
+        break;
+      }
+      r = az_xu_recvEvent(0xffffffff, 0, tmo_ns, &revent); 
+      if (r < 0) break;
+    } while (1);
+  }
+
+  return r;
+}
+
+/*
+ * define type 0 port operations
+ */
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_event_port_subscribe_type0(az_event_port_t *port, az_event_receiver_t *receiver)
+{
+  az_r_t r = AZ_SUCCESS;
+  az_event_receiver_t *rcvr;
+  
+  do {
+    if (NULL == port || NULL == receiver) {
+      r = AZ_ERR(ARG_NULL);
+      break;
+    }
+    rcvr = az_malloc(sizeof(az_event_receiver_t *));
+    if (NULL == rcvr) {
+      r = AZ_ERR(MALLOC);
+      break;
+    }
+    rcvr->sys_port = receiver->sys_port;
+    rcvr->port_mux = receiver->port_mux;
+    while (rcvr->port_mux) {
+    	int j;
+    	for (j = 0; j < rcvr->port_mux->size; j++) {
+    		if (rcvr->port_mux->port_list[j] == port->no) {
+    			rcvr->_port_no = port->no;
+    			rcvr->_port_index = j;
+    			break;
+    		}
+    	}
+    	if (j < rcvr->port_mux->size) break;
+    	for (j = 0; j < rcvr->port_mux->size; j++) {
+    		if (rcvr->port_mux->port_list[j] == AZ_EVENT_PORT_NO_NOT_ASSIGNED) {
+    			rcvr->port_mux->port_list[j] = port->no;
+    			rcvr->port_mux->state_list[j] = 0;
+    			rcvr->_port_no = port->no;
+    			rcvr->_port_index = j;
+    			break;
+    		}
+    	}
+    	if (j == rcvr->port_mux->size) {
+    		rcvr->port_mux = NULL;
+    		r = AZ_ERR(FULL);
+    	}
+    	break;
+    }
+
+    rcvr->event_acc = receiver->event_acc;
+
+    rcvr->event_q = receiver->event_q;
+
+    az_link_init(&(rcvr->link));
+    az_event_port_lock_write(port);
+    az_link_putLast(&port->receiver_list, &rcvr->link);
+    az_event_port_unlock_write(port);
+  } while (0);
+ 
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_event_port_unsubscribe_type0(az_event_port_t *port, az_event_receiver_t *receiver)
+{
+  az_r_t r = AZ_ERR(NOT_FOUND);
+  az_event_receiver_t *rcvr;
+  az_event_t  *event;
+  
+  do {
+    if (NULL == port || NULL == receiver) {
+      r = AZ_ERR(ARG_NULL);
+      break;
+    }
+    az_link_t *prev, *cur = NULL;
+    while (1) {
+      az_event_port_lock_read(port);
+      if (NULL == cur) {
+        cur = &(port->receiver_list);
+        prev = cur;
+        cur = prev->next; 
+      } else {
+        prev = cur;
+        cur = prev->next;
+      }
+      if (cur == &(port->receiver_list)) {
+        az_event_port_unlock_read(port);
+        rcvr = NULL;
+        break;
+      }
+      az_event_port_unlock_read(port);
+      rcvr = container_of(cur, az_event_receiver_t, link); 
+      if (rcvr->sys_port == receiver->sys_port) {
+        az_event_port_lock_write(port);
+        az_link_remove(&port->receiver_list, prev, cur);
+        az_event_port_unlock_write(port);
+        r = AZ_SUCCESS;
+        break;
+      }
+    }
+    if (AZ_SUCCESS == r) {
+      // clear pending events
+      az_event_port_fetch_type0(port, rcvr, &event);
+      while (NULL != event) {
+        az_event_port_fetchComplete_type0(port, rcvr, event);
+        az_event_port_fetch_type0(port, rcvr, &event);
+      }
+      az_free(rcvr);
+    }
+  } while (0);
+ 
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t  az_event_port_prepare_type0(az_event_port_t *port, az_event_id_t eventid, az_size_t size, az_event_ref_t *pEvent)
+{
+  az_event_t *event;
+  az_r_t r;
+  do {
+    r = az_event_pool_createEvent(&event, size);
+    if (r < 0) {
+      *pEvent = NULL;
+      break;
+    }
+    event->id = eventid;
+    *pEvent = event;
+  } while (0);
+
+  if (event) { az_printf("event:%p id:%p\n", event, event->id); }
+  else  { az_printf("event:%p \n", event); }
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_event_port_post_type0(az_event_port_t *port, az_event_t *event)
+{
+  az_r_t r = AZ_ERR(NOT_FOUND);
+  az_event_receiver_t *rcvr;
+  az_event_id_st_t *pEventId;
+  
+  do {
+    if (NULL == port || NULL == event) {
+      r = AZ_ERR(ARG_NULL);
+      break;
+    }
+    pEventId = (az_event_id_st_t *)&(event->id);
+    az_link_t *prev, *cur = NULL;
+    //if (AZ_EVENT_IS_ACC(&event->id)) {
+    if (pEventId->acc) {
+      az_printf("acc:%x\n",AZ_EVENT_IS_ACC(&event->id));
+      r = AZ_ERR(INVALID_TYPE);
+      break;
+    } 
+    AZ_EVENT_SET_ASSERT(&event->id); 
+    while (1) {
+      az_event_port_lock_read(port);
+      if (NULL == cur) {
+        cur = &(port->receiver_list);
+        prev = cur;
+        cur = prev->next; 
+      } else {
+        prev = cur;
+        cur = prev->next;
+      }
+      if (cur == &(port->receiver_list)) {
+        az_event_port_unlock_read(port);
+        break;
+      }
+      az_event_port_unlock_read(port);
+
+      rcvr = container_of(cur, az_event_receiver_t, link); 
+      
+      r = az_ring_push(rcvr->event_q, &event);
+      if (r < 0) {
+        r = AZ_ERR(FULL);
+        rcvr->stats->err.qfull++;
+        continue;
+      }
+      event->_descr.sendCount++;
+
+      if (rcvr->port_mux) {
+    	  az_assert(rcvr->port_mux->port_list[rcvr->_port_index] == port->no);
+    	  int *count = &rcvr->port_mux->state_list[rcvr->_port_index];
+    	  *count = *count + 1; // atomic increase
+      }
+      printf("send sig %p\n", rcvr->sys_port);
+      if (NULL != rcvr->sys_port) {
+        az_sys_ep_send(rcvr->sys_port, 1 << pEventId->sig);
+      }
+      r = AZ_SUCCESS;
+    }
+
+  } while (0);
+ 
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t  az_event_port_fetch_type0(az_event_port_t *port, az_event_receiver_t *rcvr, az_event_ref_t *pEvent)
+{
+  az_event_t *event = NULL;
+  az_r_t r = AZ_SUCCESS;
+  az_assert(NULL != port && NULL != rcvr && NULL != pEvent);
+
+  do {
+    r = az_ring_pop(rcvr->event_q, &event);
+    if (r < 0) {
+      r = AZ_ERR(NO_DATA);
+      *pEvent = NULL; 
+      break;
+    }
+    *pEvent = event;
+  } while (0);
+
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t  az_event_port_fetchComplete_type0(az_event_port_t *port, az_event_receiver_t *rcvr, az_event_t *event)
+{
+  az_r_t r = AZ_SUCCESS;
+  az_assert(NULL != port && NULL != rcvr && NULL != event);
+
+  do {
+    if (AZ_EVENT_IS_ACC(&event->id)) {
+      r = AZ_ERR(INVALID_TYPE);
+      break;
+    }
+    event->_descr.recvCount++;
+    if (event->_descr.sendCount == event->_descr.recvCount) {
+      AZ_EVENT_RESET_ASSERT(&event->id); 
+      az_event_pool_deleteEvent(event);
+    }
+  } while (0);
+
+  return r;
+}
+
+/*
+ * define type 1 port operations
+ */
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_event_port_subscribe_type1(az_event_port_t *port, az_event_receiver_t *receiver)
+{
+  az_r_t r = AZ_SUCCESS;
+  az_event_receiver_t *rcvr;
+  
+  do {
+    if (NULL == port || NULL == receiver) {
+      r = AZ_ERR(ARG_NULL);
+      break;
+    }
+    rcvr = az_malloc(sizeof(az_event_receiver_t *));
+    if (NULL == rcvr) {
+      r = AZ_ERR(MALLOC);
+      break;
+    }
+    rcvr->sys_port = receiver->sys_port;
+    rcvr->port_mux = receiver->port_mux;
+    while (rcvr->port_mux) {
+    	int j;
+    	for (j = 0; j < rcvr->port_mux->size; j++) {
+    		if (rcvr->port_mux->port_list[j] == port->no) {
+    			rcvr->_port_no = port->no;
+    			rcvr->_port_index = j;
+    			break;
+    		}
+    	}
+    	if (j < rcvr->port_mux->size) break;
+    	for (j = 0; j < rcvr->port_mux->size; j++) {
+    		if (rcvr->port_mux->port_list[j] == AZ_EVENT_PORT_NO_NOT_ASSIGNED) {
+    			rcvr->port_mux->port_list[j] = port->no;
+    			rcvr->port_mux->state_list[j] = 0;
+    			rcvr->_port_no = port->no;
+    			rcvr->_port_index = j;
+    			break;
+    		}
+    	}
+    	if (j == rcvr->port_mux->size) {
+    		rcvr->port_mux = NULL;
+    		r = AZ_ERR(FULL);
+    	}
+    	break;
+    }
+
+    rcvr->event_acc = receiver->event_acc;
+
+    rcvr->event_q = receiver->event_q;
+
+    az_link_init(&(rcvr->link));
+    az_event_port_lock_write(port);
+    az_link_putLast(&port->receiver_list, &rcvr->link);
+    az_event_port_unlock_write(port);
+  } while (0);
+ 
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_event_port_unsubscribe_type1(az_event_port_t *port, az_event_receiver_t *receiver)
+{
+  az_r_t r = AZ_ERR(NOT_FOUND);
+  az_event_receiver_t *rcvr;
+  az_event_t  *event;
+  
+  do {
+    if (NULL == port || NULL == receiver) {
+      r = AZ_ERR(ARG_NULL);
+      break;
+    }
+    az_link_t *prev, *cur = NULL;
+    while (1) {
+      az_event_port_lock_read(port);
+      if (NULL == cur) {
+        cur = &(port->receiver_list);
+        prev = cur;
+        cur = prev->next; 
+      } else {
+        prev = cur;
+        cur = prev->next;
+      }
+      if (cur == &(port->receiver_list)) {
+        az_event_port_unlock_read(port);
+        rcvr = NULL;
+        break;
+      }
+      az_event_port_unlock_read(port);
+      rcvr = container_of(cur, az_event_receiver_t, link); 
+      if (rcvr->sys_port == receiver->sys_port) {
+        az_event_port_lock_write(port);
+        az_link_remove(&port->receiver_list, prev, cur);
+        az_event_port_unlock_write(port);
+        r = AZ_SUCCESS;
+        break;
+      }
+    }
+    if (AZ_SUCCESS == r) {
+      // clear pending events
+      az_event_port_fetch_type1(port, rcvr, &event);
+      while (NULL != event) {
+        az_event_port_fetchComplete_type1(port, rcvr, event);
+        az_event_port_fetch_type1(port, rcvr, &event);
+      }
+      az_free(rcvr);
+    }
+  } while (0);
+ 
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t  az_event_port_prepare_type1(az_event_port_t *port, az_event_id_t eventid, az_size_t size, az_event_ref_t *pEvent)
+{
+  az_event_t *event;
+  az_r_t r;
+  do {
+    if (0) az_printf("%p acc %p \n", eventid, AZ_EVENT_ID_ACC(eventid));
+    if (AZ_EVENT_ID_ACC(eventid)) {
+      if (0) az_printf("%p acc on \n", eventid);
+      r = az_event_pool_findEvent(&event, eventid, port->event_mask);
+      if (AZ_SUCCESS == r) {
+        *pEvent = event;
+        break;
+      }
+    } else {
+      if (0) az_printf("%p acc off \n", eventid);
+    }
+    r = az_event_pool_createEvent(&event, size);
+    if (r < 0) {
+      *pEvent = NULL;
+      break;
+    }
+    event->id = eventid;
+    *pEvent = event;
+  } while (0);
+
+  if (event) { az_printf("event:%p id:%p\n", event, event->id); }
+  else  { az_printf("event:%p \n", event); }
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_event_port_post_type1(az_event_port_t *port, az_event_t *event)
+{
+  az_r_t r = AZ_ERR(NOT_FOUND);
+  az_event_receiver_t *rcvr;
+  az_event_id_st_t *pEventId;
+  
+  do {
+    if (NULL == port || NULL == event) {
+      r = AZ_ERR(ARG_NULL);
+      break;
+    }
+    pEventId = (az_event_id_st_t *)&(event->id);
+    az_link_t *prev, *cur = NULL;
+    if (!AZ_EVENT_IS_ACC(&event->id)) {
+      printf("ACC:%x\n",AZ_EVENT_IS_ACC(&event->id));
+      r = AZ_ERR(INVALID_TYPE);
+      break;
+    } 
+    int j;
+    int acc_event_size;
+    AZ_EVENT_SET_ASSERT(&event->id); 
+    while (1) {
+      az_event_port_lock_read(port);
+      if (NULL == cur) {
+        cur = &(port->receiver_list);
+        prev = cur;
+        cur = prev->next; 
+      } else {
+        prev = cur;
+        cur = prev->next;
+      }
+      if (cur == &(port->receiver_list)) {
+        az_event_port_unlock_read(port);
+        break;
+      }
+      az_event_port_unlock_read(port);
+
+      rcvr = container_of(cur, az_event_receiver_t, link); 
+      if (1) {
+        acc_event_size = rcvr->event_acc->size;
+        az_event_ref_t *acc_event = rcvr->event_acc->event_list;
+        int *acc_state = rcvr->event_acc->state_list;
+        do {
+          for (j = 0; j < acc_event_size; j++, acc_event++, acc_state++) {
+            if (event == *acc_event) {
+            	*acc_state = *acc_state + 1;
+              event->_descr.sendCount++; // atomic increase
+              if (0) az_printf("found acc_event %p:%p at %d\n", event,event->id, j);  
+              break;
+            }
+          }
+          if ( j < acc_event_size) break;
+          acc_event = rcvr->event_acc->event_list;
+          acc_state = rcvr->event_acc->state_list;
+          for (j = 0; j < acc_event_size; j++, acc_event++, acc_state++) {
+            if (NULL == *acc_event) {
+              *acc_event = event;
+              *acc_state = 1;
+              event->_descr.sendCount++;
+              if (0) az_printf("new acc_event %p:%p at %d\n", event,event->id, j);  
+              break;
+            }
+          }
+        } while (0);
+      }
+      if (rcvr->port_mux) {
+    	  az_assert(rcvr->port_mux->port_list[rcvr->_port_index] == port->no);
+    	  int *state = &rcvr->port_mux->state_list[rcvr->_port_index];
+    	  *state = *state + 1; // atomic increase
+      }
+      az_printf("send sig %p, sendcount=%d recvcount=%d size=%d\n", rcvr->sys_port, event->_descr.sendCount, event->_descr.recvCount, acc_event_size);
+      if (NULL != rcvr->sys_port) {
+        az_sys_ep_send(rcvr->sys_port, 1 << pEventId->sig);
+      }
+      r = AZ_SUCCESS;
+    }
+
+  } while (0);
+ 
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t  az_event_port_fetch_type1(az_event_port_t *port, az_event_receiver_t *rcvr, az_event_ref_t *pEvent)
+{
+  az_event_t *event = NULL;
+  az_r_t r = AZ_SUCCESS;
+  az_event_acc_t *event_acc;
+  int j, k;
+  az_assert(NULL != port && NULL != rcvr && NULL != pEvent);
+
+  do {
+    event_acc = rcvr->event_acc;
+    int *event_state = event_acc->state_list;
+    az_event_ref_t  *event_list = event_acc->event_list;
+    for (j = 0; j < event_acc->size; j++, event_state++, event_list++) {
+      event = *event_list;
+      if (NULL == event) continue;
+      if (!AZ_EVENT_IN_PORT(port, event)) {
+        az_printf("%p:%p: %p:%p\n",port->event_id, port->event_id & port->event_mask, event->id, event->id & port->event_mask);
+        continue; 
+      }
+      if (*event_state > 0) {
+        *event_state = *event_state - 1; 
+        az_printf("event_acc %d: %p state:%d\n",j, event, *event_state); 
+        break;
+      }
+      az_printf("event_acc %d: %p state:%d\n",j, event, *event_state); 
+    }
+    if (j == event_acc->size) {
+      r = AZ_ERR(NO_DATA);
+      *pEvent = NULL; 
+      break;
+    }
+    *pEvent = event;
+  } while (0);
+
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t  az_event_port_fetchComplete_type1(az_event_port_t *port, az_event_receiver_t *rcvr, az_event_t *event)
+{
+  az_r_t r = AZ_SUCCESS;
+  az_assert(NULL != port && NULL != rcvr && NULL != event);
+
+  do {
+    if (!AZ_EVENT_IS_ACC(&event->id)) {
+      r = AZ_ERR(INVALID_TYPE);
+      break;
+    }
+    event->_descr.recvCount++;
+    if (event->_descr.sendCount == event->_descr.recvCount) {
+      AZ_EVENT_RESET_ASSERT(&event->id); 
+      az_printf("event_acc %p desserted %p\n", event, event->id); 
+    }
+  } while (0);
+
+  return r;
+}
+
+#if 0
+#endif
+
+/* === end of AZ_EVENT_BUS_C === */

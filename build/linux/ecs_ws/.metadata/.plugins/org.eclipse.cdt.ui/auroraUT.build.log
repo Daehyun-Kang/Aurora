@@ -1,0 +1,7 @@
+18:02:35 **** Clean-only build of configuration Debug for project auroraUT ****
+make clean 
+rm -rf  ./Sources/ut/az_ut_buffer_reserve.o ./Sources/ut/az_ut_double_link_add.o ./Sources/ut/az_ut_double_link_del.o ./Sources/ut/az_ut_fifo_pop.o ./Sources/ut/az_ut_fifo_push.o ./Sources/ut/az_ut_fs_file2mem.o ./Sources/ut/az_ut_ion_register.o ./Sources/ut/az_ut_link_getFirst.o ./Sources/ut/az_ut_link_putFirst.o ./Sources/ut/az_ut_link_putLast.o ./Sources/ut/az_ut_link_remove.o ./Sources/ut/az_ut_main.o ./Sources/ut/az_ut_xml_parser_run.o ./Sources/ut/az_ut_xml_tree_parse.o ./Sources/ut/az_ut_xu_create.o  ./Sources/ut/az_ut_buffer_reserve.d ./Sources/ut/az_ut_double_link_add.d ./Sources/ut/az_ut_double_link_del.d ./Sources/ut/az_ut_fifo_pop.d ./Sources/ut/az_ut_fifo_push.d ./Sources/ut/az_ut_fs_file2mem.d ./Sources/ut/az_ut_ion_register.d ./Sources/ut/az_ut_link_getFirst.d ./Sources/ut/az_ut_link_putFirst.d ./Sources/ut/az_ut_link_putLast.d ./Sources/ut/az_ut_link_remove.d ./Sources/ut/az_ut_main.d ./Sources/ut/az_ut_xml_parser_run.d ./Sources/ut/az_ut_xml_tree_parse.d ./Sources/ut/az_ut_xu_create.d  auroraUT
+ 
+
+18:02:35 Build Finished (took 113ms)
+

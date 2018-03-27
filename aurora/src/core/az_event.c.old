@@ -1,0 +1,181 @@
+/**
+ * @file   az_event.c
+ * @brief  
+ * @date   02/07/16
+ * @author fware
+ *
+ * @copyright
+ * Copyright (c) Fware, 2013-2016 - All Rights Reserved
+ * You may use, distribute and modify this code under the 
+ * terms of the "Aurora Source Code License".
+ * See the file LICENSE for full license details.\n\n
+ *
+ * You should have received a copy of  the LICENSE with this file.\n\n
+ *
+ * If not, please contact to Fware with the information in the file CONTACTS.
+ *
+ * History:
+ *   - 2016-07-02 fware initial create
+ */
+
+/* include header files */
+#include "az_core.h"
+
+/* declare global variables */
+az_array_t      az_event_pool;
+az_event_ref_t  az_event_ref_list[AZ_EVENT_POOL_SZ];
+az_event_t      az_event_list[AZ_EVENT_POOL_SZ];
+
+/* declare static variables */
+
+
+/* implement static functions */
+
+/**
+ * @fn        function name
+ * @brief     function-description
+ * @param     input-output-parameters
+ * @return    return-value
+ * @warning   warnings
+ * @exception none
+ */
+
+
+/* implement global functions */
+
+/**
+ * @fn        function name
+ * @brief     function-description
+ * @param     input-output-parameters
+ * @return    return-value
+ * @warning   warnings
+ * @exception none
+ */
+az_r_t  az_event_pool_init()
+{
+  az_memset(az_event_ref_list, 0, sizeof(az_event_ref_list));
+  az_memset(az_event_list, 0, sizeof(az_event_list));
+
+  az_array_init(&az_event_pool, AZ_EVENT_POOL_SZ, az_event_ref_list, 
+      NULL, sizeof(az_event_ref_t));
+  int j;
+  for (j = 0; j < AZ_EVENT_POOL_SZ; j++) {
+    az_event_list[j]._descr.index = j;
+    az_refcount_init_static(&az_event_list[j]._descr.refCount);
+  }
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t  az_event_pool_deinit()
+{
+  az_array_deinit(&az_event_pool);
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t  az_event_pool_findEvent(az_event_ref_t *pEvent, az_event_id_t eventid, az_event_id_t mask)
+{
+  az_r_t r = AZ_ERR(NOT_FOUND);
+  az_event_t  *event;
+  int j, k;
+
+  do {
+    for (j = 0, k = az_event_pool.count; j < az_event_pool.size && k > 0;j++) {
+      event = *az_array_element_ptr_at(&az_event_pool, j);
+      if (NULL == event) continue;
+      k--;
+      if (0) az_sys_printf("%p %p %p\n",event->id, eventid, mask);
+      if (AZ_EVENT_ID_EQUAL(event->id,eventid,mask)) {
+        r = AZ_SUCCESS;
+        *pEvent = event;
+        break;
+      }
+    }
+    if (r < 0) {
+      *pEvent = NULL;
+    }
+  } while (0);
+
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t  az_event_pool_createEvent(az_event_ref_t *pEvent, az_size_t size)
+{
+  az_r_t r = AZ_SUCCESS;
+  az_array_id_t index;
+  az_event_ref_t  e;
+
+  do {
+    index = az_array_addptr(&az_event_pool, -1); 
+    if (index < 0) {
+      r = AZ_ERR(NO_SPACE);
+      break;
+    }
+
+    e = &az_event_list[index];
+    az_assert(index == e->_descr.index);
+    e->size = size;
+    if (size > 0) {
+      e->data = e->_data = az_malloc(size);
+    } else {
+      e->data = e->_data = NULL; 
+    }
+
+    az_refcount_inc(&e->_descr.refCount);
+    *pEvent = e;
+    *az_array_element_ptr_at(&az_event_pool, index) = e; 
+  } while (0);
+
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t  az_event_pool_deleteEvent(az_event_ref_t e)
+{
+  az_r_t r = AZ_SUCCESS;
+  az_array_id_t id = e->_descr.index;
+
+  do {
+    if (az_refcount_dec(&e->_descr.refCount) > 0) {
+      r = AZ_ERR(BUSY);
+      break;
+    }
+    if (e->_data) {
+      az_free(e->_data);
+      e->data = e->_data = NULL;
+      e->size = 0;
+    }
+    r = az_array_del(&az_event_pool, id); 
+  } while (0);
+
+  return r;
+}
+#if 0
+#endif
+
+
+/* === end of AZ_EVENT_C === */

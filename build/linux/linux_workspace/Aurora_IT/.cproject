@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="mcpods.configuration.gnu.ix86_64.ics.debug.67566314">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="mcpods.configuration.gnu.ix86_64.ics.debug.67566314" moduleId="org.eclipse.cdt.core.settings" name="Debug-Mercury-Content">
+				<macros>
+					<stringMacro name="AURORA_DIR" type="VALUE_TEXT" value="${workspace_loc}/../aurora"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="exe" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" description="" id="mcpods.configuration.gnu.ix86_64.ics.debug.67566314" name="Debug-Mercury-Content" parent="mcpods.configuration.gnu.ix86_64.ics.debug" postbuildStep="cp ${BuildArtifactFilePrefix}${BuildArtifactFileName} ${AURORA_DIR}/build/linux/" preannouncebuildStep="Beginning build of target application with Base Mercury content.">
+					<folderInfo id="mcpods.configuration.gnu.ix86_64.ics.debug.67566314." name="/" resourcePath="">
+						<toolChain id="mcpods.toolchain.gnu.ix86_64.ics.debug.1399944959" name="GNU C/C++ ix86 64-bit Tool Chain with Base Mercury Content" superClass="mcpods.toolchain.gnu.ix86_64.ics.debug">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.GNU_ELF" id="mcpods.targetPlatform.gnu.ix86_64.ics.1361343071" isAbstract="false" name="MCP ODS GNU ix86 64-bit with Base Mercury Content" osList="win64,linux" superClass="mcpods.targetPlatform.gnu.ix86_64.ics"/>
+							<builder buildPath="${workspace_loc:/NSFW_UT/Debug-Mercury-Content}" id="mcpods.builder.gnu.ix86_64.ics.1318011873" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GNU Make" superClass="mcpods.builder.gnu.ix86_64.ics"/>
+							<tool id="mcpods.tool.gnu.c.compiler.ix86_64.ics.debug.383082729" name="GCC ix86 64-bit Compiler" superClass="mcpods.tool.gnu.c.compiler.ix86_64.ics.debug">
+								<option id="mcpods.tool.gnu.c.compiler.ix86_64.ics.option.compiler.include.paths.379967248" name="Standard GCC and Mercury headers" superClass="mcpods.tool.gnu.c.compiler.ix86_64.ics.option.compiler.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="${MC_DIR}/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/asm-x86_64"/>
+									<listOptionValue builtIn="false" value="&quot;${AURORA_DIR}/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${AURORA_DIR}/inc/sys/linux&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${AURORA_DIR}/inc/sys&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.preprocessor.preprocess.731425926" name="Preprocess only (-E)" superClass="gnu.c.compiler.option.preprocessor.preprocess" value="false" valueType="boolean"/>
+								<option id="gnu.c.compiler.option.warnings.nowarn.88432766" name="Inhibit all warnings (-w)" superClass="gnu.c.compiler.option.warnings.nowarn" value="true" valueType="boolean"/>
+								<option id="mcpods.tool.gnu.c.compiler.ix86_64.ics.option.preprocessor.def.symbols.846847536" name="Symbol Definitions" superClass="mcpods.tool.gnu.c.compiler.ix86_64.ics.option.preprocessor.def.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="TATL_TRACE_ENABLE"/>
+									<listOptionValue builtIn="false" value="linux"/>
+									<listOptionValue builtIn="false" value="CONFIG_IX86_64"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1832565651" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="mcpods.tool.gnu.cpp.compiler.ix86_64.ics.debug.1388333482" name="G++ ix86 64-bit Compiler" superClass="mcpods.tool.gnu.cpp.compiler.ix86_64.ics.debug"/>
+							<tool id="mcpods.tool.gnu.c.linker.ix86_64.ics.584308671" name="GCC ix86 64-bit Linker" superClass="mcpods.tool.gnu.c.linker.ix86_64.ics">
+								<option id="mcpods.tool.gnu.c.linker.ix86_64.ics.option.paths.1274240380" name="Directories to be searched for libraries" superClass="mcpods.tool.gnu.c.linker.ix86_64.ics.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="${MC_DIR}/linux-x86_64/lib"/>
+									<listOptionValue builtIn="false" value="/usr/lib64"/>
+									<listOptionValue builtIn="false" value="&quot;${AURORA_DIR}/lib/linux&quot;"/>
+								</option>
+								<option id="mcpods.tool.gnu.c.linker.ix86_64.ics.option.libs.1824465486" name="GCC Linker Library Dependencies" superClass="mcpods.tool.gnu.c.linker.ix86_64.ics.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="Aurora"/>
+									<listOptionValue builtIn="false" value="bfd"/>
+									<listOptionValue builtIn="false" value="sal"/>
+									<listOptionValue builtIn="false" value="csal"/>
+									<listOptionValue builtIn="false" value="mc"/>
+									<listOptionValue builtIn="false" value="ics_cluster"/>
+									<listOptionValue builtIn="false" value="icsxml"/>
+									<listOptionValue builtIn="false" value="cdfxml"/>
+									<listOptionValue builtIn="false" value="frdapi"/>
+									<listOptionValue builtIn="false" value="frdxml"/>
+									<listOptionValue builtIn="false" value="xmlt"/>
+									<listOptionValue builtIn="false" value="expat"/>
+									<listOptionValue builtIn="false" value="tatl"/>
+									<listOptionValue builtIn="false" value="mcgclock"/>
+									<listOptionValue builtIn="false" value="mcdrv"/>
+									<listOptionValue builtIn="false" value="mcmutex"/>
+									<listOptionValue builtIn="false" value="mckpsem"/>
+									<listOptionValue builtIn="false" value="mcrose"/>
+									<listOptionValue builtIn="false" value="dl"/>
+									<listOptionValue builtIn="false" value="rt"/>
+									<listOptionValue builtIn="false" value="stdc++"/>
+									<listOptionValue builtIn="false" value="m"/>
+									<listOptionValue builtIn="false" value="gcc"/>
+									<listOptionValue builtIn="false" value="pthread"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.403063091" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="mcpods.tool.gnu.cpp.linker.ix86_64.ics.892011805" name="G++ ix86 64-bit Linker" superClass="mcpods.tool.gnu.cpp.linker.ix86_64.ics"/>
+							<tool id="mcpods.tool.gnu.assembler.ix86_64.ics.1418877675" name="GNU ix86 64-bit Assembler" superClass="mcpods.tool.gnu.assembler.ix86_64.ics">
+								<inputType id="mcpods.tool.gnu.assembler.ix86_64.inputType.226697732" name="Assembler Input Types" superClass="mcpods.tool.gnu.assembler.ix86_64.inputType"/>
+							</tool>
+							<tool id="mcpods.tool.gnu.archiver.ix86_64.ics.2097902825" name="GNU ix86 64-bit Archiver" superClass="mcpods.tool.gnu.archiver.ix86_64.ics"/>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="mcpods.configuration.gnu.ix86_64.ics.debug.67566314.usr/lib64" resourcePath="usr/lib64">
+						<toolChain id="com.mc.cdt.toolchain.ix86_64.libpath2.1813328884" name="MCP ODS GNU ix86 64-bit Library Path" superClass="com.mc.cdt.toolchain.ix86_64.libpath2">
+							<targetPlatform id="mcpods.configuration.gnu.ix86_64.ics.debug.67566314.usr/lib64.443954451" name=""/>
+							<tool id="com.mc.cdt.toolchain.ix86_64.libpath.tool.ix86_64.ics.2027962141" superClass="com.mc.cdt.toolchain.ix86_64.libpath.tool.ix86_64.ics"/>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="mcpods.configuration.gnu.ix86_64.ics.debug.67566314.usr/bin/gdb" resourcePath="usr/bin/gdb">
+						<toolChain id="com.mc.cdt.toolchain.ix86_64.gdb2.479075179" name="MCP ODS GNU Remote ix86 64-bit Debugger" superClass="com.mc.cdt.toolchain.ix86_64.gdb2">
+							<targetPlatform id="mcpods.configuration.gnu.ix86_64.ics.debug.67566314.usr/bin/gdb.1128957312" name=""/>
+							<tool id="com.mc.cdt.toolchain.ix86_64.gdb.ics.tool.debug.189235460" superClass="com.mc.cdt.toolchain.ix86_64.gdb.ics.tool.debug"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="mcpods.configuration.gnu.ix86_64.ics.release.1756642204">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="mcpods.configuration.gnu.ix86_64.ics.release.1756642204" moduleId="org.eclipse.cdt.core.settings" name="Release-Mercury-Content">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="exe" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" description="" id="mcpods.configuration.gnu.ix86_64.ics.release.1756642204" name="Release-Mercury-Content" parent="mcpods.configuration.gnu.ix86_64.ics.release" preannouncebuildStep="Beginning build of target 64-bit application with Base Mercury content.">
+					<folderInfo id="mcpods.configuration.gnu.ix86_64.ics.release.1756642204." name="/" resourcePath="">
+						<toolChain id="mcpods.toolchain.gnu.ix86_64.ics.release.2145621277" name="GNU C/C++ ix86 64-bit Tool Chain with Base Mercury Content" superClass="mcpods.toolchain.gnu.ix86_64.ics.release">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.GNU_ELF" id="mcpods.targetPlatform.gnu.ix86_64.ics.347038457" isAbstract="false" name="MCP ODS GNU ix86 64-bit with Base Mercury Content" osList="win64,linux" superClass="mcpods.targetPlatform.gnu.ix86_64.ics"/>
+							<builder buildPath="${workspace_loc:/NSFW_UT/Release-Mercury-Content}" id="mcpods.builder.gnu.ix86_64.ics.993678786" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GNU Make" superClass="mcpods.builder.gnu.ix86_64.ics"/>
+							<tool id="mcpods.tool.gnu.c.compiler.ix86_64.ics.release.2140946727" name="GCC ix86 64-bit Compiler" superClass="mcpods.tool.gnu.c.compiler.ix86_64.ics.release">
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1143551442" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="mcpods.tool.gnu.cpp.compiler.ix86_64.ics.release.1235028890" name="G++ ix86 64-bit Compiler" superClass="mcpods.tool.gnu.cpp.compiler.ix86_64.ics.release"/>
+							<tool id="mcpods.tool.gnu.c.linker.ix86_64.ics.404189296" name="GCC ix86 64-bit Linker" superClass="mcpods.tool.gnu.c.linker.ix86_64.ics">
+								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.445427995" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="mcpods.tool.gnu.cpp.linker.ix86_64.ics.915468011" name="G++ ix86 64-bit Linker" superClass="mcpods.tool.gnu.cpp.linker.ix86_64.ics"/>
+							<tool id="mcpods.tool.gnu.assembler.ix86_64.ics.1099631058" name="GNU ix86 64-bit Assembler" superClass="mcpods.tool.gnu.assembler.ix86_64.ics">
+								<inputType id="mcpods.tool.gnu.assembler.ix86_64.inputType.232573320" name="Assembler Input Types" superClass="mcpods.tool.gnu.assembler.ix86_64.inputType"/>
+							</tool>
+							<tool id="mcpods.tool.gnu.archiver.ix86_64.ics.2132484114" name="GNU ix86 64-bit Archiver" superClass="mcpods.tool.gnu.archiver.ix86_64.ics"/>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="mcpods.configuration.gnu.ix86_64.ics.release.1756642204.usr/lib64" resourcePath="usr/lib64">
+						<toolChain id="com.mc.cdt.toolchain.ix86_64.libpath.ics.release.578389187" name="MCP ODS GNU ix86 64-bit Library Path" superClass="com.mc.cdt.toolchain.ix86_64.libpath.ics.release">
+							<targetPlatform id="mcpods.configuration.gnu.ix86_64.ics.release.1756642204.usr/lib64.1902706417" name=""/>
+							<tool id="com.mc.cdt.toolchain.ix86_64.libpath.tool.ics.release.75520746" superClass="com.mc.cdt.toolchain.ix86_64.libpath.tool.ics.release"/>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="mcpods.configuration.gnu.ix86_64.ics.release.1756642204.usr/bin/gdb" resourcePath="usr/bin/gdb">
+						<toolChain id="com.mc.cdt.toolchain.ix86_64.gdb.ics.release.1889727643" name="MCP ODS GNU Remote ix86 64-bit Debugger" superClass="com.mc.cdt.toolchain.ix86_64.gdb.ics.release">
+							<targetPlatform id="mcpods.configuration.gnu.ix86_64.ics.release.1756642204.usr/bin/gdb.2127329377" name=""/>
+							<tool id="com.mc.cdt.toolchain.ix86_64.gdb.ics.tool.release.205069590" superClass="com.mc.cdt.toolchain.ix86_64.gdb.ics.tool.release"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="NSFW_UT.mcpods.exe.ix86_64.1652465452" name="MultiCore Plus Open Development Suite ix86 64-bit Executable" projectType="mcpods.exe.ix86_64"/>
+	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/AIF_IT"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="mcpods.configuration.gnu.ix86_64.ics.debug.67566314;mcpods.configuration.gnu.ix86_64.ics.debug.67566314.;mcpods.tool.gnu.c.compiler.ix86_64.ics.debug.383082729;cdt.managedbuild.tool.gnu.c.compiler.input.1832565651">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+</cproject>

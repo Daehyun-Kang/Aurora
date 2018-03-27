@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="mcpods.configuration.gnu.ix86_64.debug.staticLib.1739503305">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="mcpods.configuration.gnu.ix86_64.debug.staticLib.1739503305" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<macros>
+					<stringMacro name="AURORA_DIR" type="VALUE_TEXT" value="${workspace_loc}/../aurora"/>
+				</macros>
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/NSFW"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/AIF"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/Aurora"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/NSFW/Debug"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/AIF/Debug"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/Aurora/Debug"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="NSFW"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="AIF"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="Aurora"/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="a" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="rm -rf" description="Mercury GNU ix86 64-bit debug static library" id="mcpods.configuration.gnu.ix86_64.debug.staticLib.1739503305" name="Debug" parent="mcpods.configuration.gnu.ix86_64.debug.staticLib" postbuildStep="cp ${BuildArtifactFilePrefix}${BuildArtifactFileName} ${AURORA_DIR}/lib/linux/;" preannouncebuildStep="Beginning build of ix86 64-bit target library with Base Mercury content.">
+					<folderInfo id="mcpods.configuration.gnu.ix86_64.debug.staticLib.1739503305." name="/" resourcePath="">
+						<toolChain id="com.mc.cdt.toolchain.ix86_64.staticLib.debug.652751313" name="GNU C/C++ ix86 64-bit Tool Chain" superClass="com.mc.cdt.toolchain.ix86_64.staticLib.debug">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.GNU_ELF" id="mcpods.targetPlatform.gnu.ix86_64.staticLib.249783775" isAbstract="false" name="MCP ODS GNU ix86 64-bit" osList="win64,linux" superClass="mcpods.targetPlatform.gnu.ix86_64.staticLib"/>
+							<builder buildPath="${workspace_loc:/NSFW/Debug}" id="mcpods.builder.gnu.ix86_64.staticLib.1514799682" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GNU Make" superClass="mcpods.builder.gnu.ix86_64.staticLib"/>
+							<tool id="mcpods.tool.gnu.assembler.ix86_64.staticLib.1982200417" name="GNU ix86 64-bit Assembler" superClass="mcpods.tool.gnu.assembler.ix86_64.staticLib">
+								<inputType id="mcpods.tool.gnu.assembler.ix86_64.inputType.1616115598" name="Assembler Input Types" superClass="mcpods.tool.gnu.assembler.ix86_64.inputType"/>
+							</tool>
+							<tool id="mcpods.tool.gnu.archiver.ix86_64.staticLib.2101824350" name="GNU ix86 64-bit Archiver" superClass="mcpods.tool.gnu.archiver.ix86_64.staticLib"/>
+							<tool id="mcpods.tool.gnu.c.compiler.ix86_64.staticLib.debug.1175884850" name="GCC ix86 64-bit Compiler Properties" superClass="mcpods.tool.gnu.c.compiler.ix86_64.staticLib.debug">
+								<option defaultValue="gnu.c.optimization.level.none" id="mcpods.tool.gnu.c.compiler.ix86_64.staticLib.debug.option.optimization.level.1924216277" name="C Optimization Level" superClass="mcpods.tool.gnu.c.compiler.ix86_64.staticLib.debug.option.optimization.level" valueType="enumerated"/>
+								<option id="mcpods.tool.gnu.c.compiler.ix86_64.staticLib.debug.option.debugging.level.7223820" name="C Debugging Level" superClass="mcpods.tool.gnu.c.compiler.ix86_64.staticLib.debug.option.debugging.level"/>
+								<option id="mcpods.tool.gnu.c.compiler.x86_64.staticLib.option.include.paths.181228196" name="C ix86 64-bit Mercury System Headers" superClass="mcpods.tool.gnu.c.compiler.x86_64.staticLib.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="${MC_DIR}/include"/>
+									<listOptionValue builtIn="false" value="&quot;${AURORA_DIR}/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${AURORA_DIR}/inc/sys&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${AURORA_DIR}/inc/sys/linux&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.warnings.nowarn.1864595115" name="Inhibit all warnings (-w)" superClass="gnu.c.compiler.option.warnings.nowarn" value="true" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.389262805" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="mcpods.tool.gnu.cpp.compiler.ix86_64.staticLib.debug.1112618026" name="G++ ix86 64-bit Compiler Properties" superClass="mcpods.tool.gnu.cpp.compiler.ix86_64.staticLib.debug">
+								<option id="mcpods.tool.gnu.cpp.compiler.ix86_64.staticLib.debug.option.optimization.level.1800555159" name="C++ Optimization Level" superClass="mcpods.tool.gnu.cpp.compiler.ix86_64.staticLib.debug.option.optimization.level"/>
+								<option id="mcpods.tool.gnu.cpp.compiler.ix86_64.staticLib.debug.option.debugging.level.1632146387" name="C++ Debugging Level" superClass="mcpods.tool.gnu.cpp.compiler.ix86_64.staticLib.debug.option.debugging.level"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="sources/test/az_test.c|sources/frw/az_main.c|sources/frw/aur_main.c|sources/frw/aif_main.c|sources/osa/win|sources/frw/ns_main.c|sources/osa/vxw" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="mcpods.configuration.gnu.ix86_64.release.staticLib.444224517">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="mcpods.configuration.gnu.ix86_64.release.staticLib.444224517" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/NSFW"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/AIF"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/Aurora"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/NSFW/Release"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/AIF/Release"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/Aurora/Release"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="NSFW"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="AIF"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="Aurora"/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="a" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="rm -rf" description="Mercury ix86 64-bit static library" id="mcpods.configuration.gnu.ix86_64.release.staticLib.444224517" name="Release" parent="mcpods.configuration.gnu.ix86_64.release.staticLib" preannouncebuildStep="Beginning build of target library with Base Mercury content.">
+					<folderInfo id="mcpods.configuration.gnu.ix86_64.release.staticLib.444224517." name="/" resourcePath="">
+						<toolChain id="com.mc.cdt.toolchain.ix86_64.staticLib.release.1417859414" name="GNU C/C++ ix86 64-bit Tool Chain" superClass="com.mc.cdt.toolchain.ix86_64.staticLib.release">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.GNU_ELF" id="mcpods.targetPlatform.gnu.ix86_64.staticLib.1968538526" isAbstract="false" name="MCP ODS GNU ix86 64-bit" osList="win64,linux" superClass="mcpods.targetPlatform.gnu.ix86_64.staticLib"/>
+							<builder buildPath="${workspace_loc:/NSFW/Release}" id="mcpods.builder.gnu.ix86_64.staticLib.1334879227" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GNU Make" superClass="mcpods.builder.gnu.ix86_64.staticLib"/>
+							<tool id="mcpods.tool.gnu.assembler.ix86_64.staticLib.672971409" name="GNU ix86 64-bit Assembler" superClass="mcpods.tool.gnu.assembler.ix86_64.staticLib">
+								<inputType id="mcpods.tool.gnu.assembler.ix86_64.inputType.29409781" name="Assembler Input Types" superClass="mcpods.tool.gnu.assembler.ix86_64.inputType"/>
+							</tool>
+							<tool id="mcpods.tool.gnu.archiver.ix86_64.staticLib.1732897562" name="GNU ix86 64-bit Archiver" superClass="mcpods.tool.gnu.archiver.ix86_64.staticLib"/>
+							<tool id="mcpods.tool.gnu.c.compiler.ix86_64.staticLib.release.1681938400" name="GCC ix86 64-bit Compiler Properties" superClass="mcpods.tool.gnu.c.compiler.ix86_64.staticLib.release">
+								<option defaultValue="gnu.c.optimization.level.most" id="mcpods.tool.gnu.c.compiler.ix86_64.staticLib.release.option.optimization.level.1364337697" name="C Optimization Level" superClass="mcpods.tool.gnu.c.compiler.ix86_64.staticLib.release.option.optimization.level" valueType="enumerated"/>
+								<option id="mcpods.tool.gnu.c.compiler.ix86_64.staticLib.release.option.debugging.level.34703315" name="C Debugging Level" superClass="mcpods.tool.gnu.c.compiler.ix86_64.staticLib.release.option.debugging.level"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.684103020" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="mcpods.tool.gnu.cpp.compiler.ix86_64.staticLib.release.32851641" name="G++ ix86 64-bit Compiler Properties" superClass="mcpods.tool.gnu.cpp.compiler.ix86_64.staticLib.release">
+								<option id="mcpods.tool.gnu.cpp.compiler.ix86_64.staticLib.release.option.optimization.level.254876765" name="C++ Optimization Level" superClass="mcpods.tool.gnu.cpp.compiler.ix86_64.staticLib.release.option.optimization.level"/>
+								<option id="mcpods.tool.gnu.cpp.compiler.ix86_64.staticLib.release.option.debugging.level.2072917105" name="C++ Debugging Level" superClass="mcpods.tool.gnu.cpp.compiler.ix86_64.staticLib.release.option.debugging.level"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="sources/test/az_test.c|sources/frw/az_main.c|sources/frw/aur_main.c|sources/frw/aif_main.c|sources/osa/win|sources/frw/ns_main.c|sources/osa/vxw" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="NSFW.cdt.managedbuild.target.gnu.staticLib.ix86_64.1279981928" name="MultiCore Plus Open Development Suite ix86 64-bit Static Library" projectType="cdt.managedbuild.target.gnu.staticLib.ix86_64"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="mcpods.configuration.gnu.ix86_64.debug.staticLib.1739503305;mcpods.configuration.gnu.ix86_64.debug.staticLib.1739503305.;mcpods.tool.gnu.c.compiler.ix86_64.staticLib.debug.1175884850;cdt.managedbuild.tool.gnu.c.compiler.input.389262805">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/NSFW"/>
+	</storageModule>
+</cproject>

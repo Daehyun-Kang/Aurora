@@ -1,0 +1,321 @@
+﻿  az_test_main.c
+d:\work\aurora\aurora\inc\sys\windows\az_windows_sem.h(198): warning C4244: '=': conversion from 'az_int64_t' to 'DWORD', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_event.h(182): warning C4244: '=': conversion from 'az_int64_t' to 'DWORD', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(69): warning C4244: 'initializing': conversion from 'SOCKET' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(144): warning C4244: 'function': conversion from 'az_sys_socket_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(144): warning C4244: 'function': conversion from 'az_size_t' to 'unsigned int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(148): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(152): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4244: 'function': conversion from 'az_sys_socket_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4244: 'function': conversion from 'az_size_t' to 'unsigned int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(161): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(161): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(165): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(165): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_def.h(258): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\work\aurora\aurora\inc\az_sys_def.h(89): warning C4091: 'typedef ': ignored on left of 'az_sys_shm_arg_t' when no variable is declared
+d:\work\aurora\aurora\inc\az_string.h(128): warning C4090: 'initializing': different 'const' qualifiers
+d:\work\aurora\aurora\inc\az_index.h(242): warning C4018: '<=': signed/unsigned mismatch
+d:\work\aurora\aurora\inc\az_index.h(306): warning C4244: 'initializing': conversion from 'az_pos_t' to 'uint8_t', possible loss of data
+d:\work\aurora\aurora\inc\az_index.h(311): warning C4244: 'initializing': conversion from 'az_pos_t' to 'uint16_t', possible loss of data
+d:\work\aurora\aurora\inc\az_index.h(316): warning C4244: 'initializing': conversion from 'az_pos_t' to 'uint32_t', possible loss of data
+d:\work\aurora\aurora\inc\az_array.h(92): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_array.h(116): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_array.h(376): warning C4047: 'function': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(376): warning C4022: 'fill_f': pointer mismatch for actual parameter 1
+d:\work\aurora\aurora\inc\az_array.h(405): warning C4047: '=': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(409): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(413): warning C4047: '=': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(436): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(462): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(484): warning C4133: '=': incompatible types - from 'uint32_t *' to 'uint16_t *'
+d:\work\aurora\aurora\inc\az_array.h(488): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(514): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(540): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(573): warning C4047: 'function': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(573): warning C4022: 'find_f': pointer mismatch for actual parameter 2
+d:\work\aurora\aurora\inc\az_array.h(577): warning C4047: 'function': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(577): warning C4022: 'find_f': pointer mismatch for actual parameter 2
+d:\work\aurora\aurora\inc\az_ion.h(84): warning C4047: '=': 'az_ion_t *' differs in levels of indirection from 'az_array_element_t *'
+d:\work\aurora\aurora\inc\az_ion.h(82): warning C4244: 'initializing': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_link.h(160): warning C4133: 'function': incompatible types - from 'az_link_list_t *' to 'az_link_t *'
+d:\work\aurora\aurora\inc\az_link.h(265): warning C4133: '!=': incompatible types - from 'az_double_link *' to 'az_double_link_list_t *'
+d:\work\aurora\aurora\inc\az_link.h(266): warning C4013: 'az_asser' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\az_link.h(286): warning C4133: '!=': incompatible types - from 'az_double_link *' to 'az_double_link_list_t *'
+d:\work\aurora\aurora\inc\az_fifo.h(122): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_fifo.h(127): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\sys\az_fs.h(105): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(106): warning C4013: 'strtok_r' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\sys\az_fs.h(106): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\sys\az_fs.h(109): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\sys\az_fs.h(123): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(128): warning C4090: 'initializing': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(145): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(164): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(183): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\az_cirbuffer.h(178): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(185): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(184): warning C4244: 'initializing': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(213): warning C4244: '=': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(220): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(227): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(226): warning C4244: 'initializing': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_log.h(132): warning C4477: 'sprintf' : format string '%06d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
+  d:\work\aurora\aurora\inc\az_log.h(132): note: consider using '%lld' in the format string
+  d:\work\aurora\aurora\inc\az_log.h(132): note: consider using '%Id' in the format string
+  d:\work\aurora\aurora\inc\az_log.h(132): note: consider using '%I64d' in the format string
+d:\work\aurora\aurora\inc\az_log.h(137): warning C4013: 'az_sys_localtime' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\az_log.h(137): warning C4047: 'initializing': 'az_sys_datetime_t *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\az_log.h(375): warning C4018: '>': signed/unsigned mismatch
+d:\work\aurora\aurora\inc\az_printf.h(32): warning C4005: 'AZ_NL': macro redefinition
+  d:\work\aurora\aurora\inc\az_log.h(63): note: see previous definition of 'AZ_NL'
+d:\work\aurora\aurora\inc\az_printf.h(45): warning C4005: 'AZ_FMT_KV_EXP': macro redefinition
+  d:\work\aurora\aurora\inc\az_printf.h(44): note: see previous definition of 'AZ_FMT_KV_EXP'
+d:\work\aurora\aurora\src\test\az_test_main.c(58): warning C4101: 'name': unreferenced local variable
+d:\work\aurora\aurora\src\test\az_test_main.c(57): warning C4101: 'r': unreferenced local variable
+  az_frw_cmd.c
+d:\work\aurora\aurora\inc\sys\windows\az_windows_sem.h(198): warning C4244: '=': conversion from 'az_int64_t' to 'DWORD', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_event.h(182): warning C4244: '=': conversion from 'az_int64_t' to 'DWORD', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(69): warning C4244: 'initializing': conversion from 'SOCKET' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(144): warning C4244: 'function': conversion from 'az_sys_socket_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(144): warning C4244: 'function': conversion from 'az_size_t' to 'unsigned int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(148): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(152): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4244: 'function': conversion from 'az_sys_socket_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4244: 'function': conversion from 'az_size_t' to 'unsigned int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(161): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(161): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(165): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(165): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_def.h(258): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\work\aurora\aurora\inc\az_sys_def.h(89): warning C4091: 'typedef ': ignored on left of 'az_sys_shm_arg_t' when no variable is declared
+d:\work\aurora\aurora\inc\az_string.h(128): warning C4090: 'initializing': different 'const' qualifiers
+d:\work\aurora\aurora\inc\az_index.h(242): warning C4018: '<=': signed/unsigned mismatch
+d:\work\aurora\aurora\inc\az_index.h(306): warning C4244: 'initializing': conversion from 'az_pos_t' to 'uint8_t', possible loss of data
+d:\work\aurora\aurora\inc\az_index.h(311): warning C4244: 'initializing': conversion from 'az_pos_t' to 'uint16_t', possible loss of data
+d:\work\aurora\aurora\inc\az_index.h(316): warning C4244: 'initializing': conversion from 'az_pos_t' to 'uint32_t', possible loss of data
+d:\work\aurora\aurora\inc\az_array.h(92): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_array.h(116): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_array.h(376): warning C4047: 'function': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(376): warning C4022: 'fill_f': pointer mismatch for actual parameter 1
+d:\work\aurora\aurora\inc\az_array.h(405): warning C4047: '=': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(409): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(413): warning C4047: '=': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(436): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(462): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(484): warning C4133: '=': incompatible types - from 'uint32_t *' to 'uint16_t *'
+d:\work\aurora\aurora\inc\az_array.h(488): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(514): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(540): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(573): warning C4047: 'function': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(573): warning C4022: 'find_f': pointer mismatch for actual parameter 2
+d:\work\aurora\aurora\inc\az_array.h(577): warning C4047: 'function': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(577): warning C4022: 'find_f': pointer mismatch for actual parameter 2
+d:\work\aurora\aurora\inc\az_ion.h(84): warning C4047: '=': 'az_ion_t *' differs in levels of indirection from 'az_array_element_t *'
+d:\work\aurora\aurora\inc\az_ion.h(82): warning C4244: 'initializing': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_link.h(160): warning C4133: 'function': incompatible types - from 'az_link_list_t *' to 'az_link_t *'
+d:\work\aurora\aurora\inc\az_link.h(265): warning C4133: '!=': incompatible types - from 'az_double_link *' to 'az_double_link_list_t *'
+d:\work\aurora\aurora\inc\az_link.h(266): warning C4013: 'az_asser' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\az_link.h(286): warning C4133: '!=': incompatible types - from 'az_double_link *' to 'az_double_link_list_t *'
+d:\work\aurora\aurora\inc\az_fifo.h(122): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_fifo.h(127): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\sys\az_fs.h(105): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(106): warning C4013: 'strtok_r' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\sys\az_fs.h(106): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\sys\az_fs.h(109): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\sys\az_fs.h(123): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(128): warning C4090: 'initializing': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(145): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(164): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(183): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\az_cirbuffer.h(178): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(185): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(184): warning C4244: 'initializing': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(213): warning C4244: '=': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(220): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(227): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(226): warning C4244: 'initializing': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_log.h(132): warning C4477: 'sprintf' : format string '%06d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
+  d:\work\aurora\aurora\inc\az_log.h(132): note: consider using '%lld' in the format string
+  d:\work\aurora\aurora\inc\az_log.h(132): note: consider using '%Id' in the format string
+  d:\work\aurora\aurora\inc\az_log.h(132): note: consider using '%I64d' in the format string
+d:\work\aurora\aurora\inc\az_log.h(137): warning C4013: 'az_sys_localtime' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\az_log.h(137): warning C4047: 'initializing': 'az_sys_datetime_t *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\az_log.h(375): warning C4018: '>': signed/unsigned mismatch
+d:\work\aurora\aurora\inc\az_printf.h(32): warning C4005: 'AZ_NL': macro redefinition
+  d:\work\aurora\aurora\inc\az_log.h(63): note: see previous definition of 'AZ_NL'
+d:\work\aurora\aurora\inc\az_printf.h(45): warning C4005: 'AZ_FMT_KV_EXP': macro redefinition
+  d:\work\aurora\aurora\inc\az_printf.h(44): note: see previous definition of 'AZ_FMT_KV_EXP'
+d:\work\aurora\aurora\src\frw\az_frw_cmd.c(83): warning C4013: 'az_cli_printf' undefined; assuming extern returning int
+d:\work\aurora\aurora\src\frw\az_frw_cmd.c(86): warning C4244: '=': conversion from 'az_size_t' to 'int32_t', possible loss of data
+d:\work\aurora\aurora\src\frw\az_frw_cmd.c(98): warning C4013: 'az_ion_valuesOnRow' undefined; assuming extern returning int
+  az_cli_svr.c
+d:\work\aurora\aurora\inc\sys\windows\az_windows_sem.h(198): warning C4244: '=': conversion from 'az_int64_t' to 'DWORD', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_event.h(182): warning C4244: '=': conversion from 'az_int64_t' to 'DWORD', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(69): warning C4244: 'initializing': conversion from 'SOCKET' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(144): warning C4244: 'function': conversion from 'az_sys_socket_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(144): warning C4244: 'function': conversion from 'az_size_t' to 'unsigned int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(148): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(152): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4244: 'function': conversion from 'az_sys_socket_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4244: 'function': conversion from 'az_size_t' to 'unsigned int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(161): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(161): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(165): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(165): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_def.h(258): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\work\aurora\aurora\inc\az_sys_def.h(89): warning C4091: 'typedef ': ignored on left of 'az_sys_shm_arg_t' when no variable is declared
+d:\work\aurora\aurora\inc\sys\az_inet.h(61): warning C4013: 'inet_ntop' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\sys\az_inet.h(61): warning C4047: '==': 'void *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\sys\az_inet.h(70): warning C4013: 'inet_pton' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\az_cirbuffer.h(178): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(185): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(184): warning C4244: 'initializing': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(213): warning C4244: '=': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(220): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(227): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(226): warning C4244: 'initializing': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_log.h(63): warning C4005: 'AZ_NL': macro redefinition
+  d:\work\aurora\aurora\inc\cli\az_cli_cmd.h(33): note: see previous definition of 'AZ_NL'
+d:\work\aurora\aurora\inc\az_log.h(132): warning C4477: 'sprintf' : format string '%06d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
+  d:\work\aurora\aurora\inc\az_log.h(132): note: consider using '%lld' in the format string
+  d:\work\aurora\aurora\inc\az_log.h(132): note: consider using '%Id' in the format string
+  d:\work\aurora\aurora\inc\az_log.h(132): note: consider using '%I64d' in the format string
+d:\work\aurora\aurora\inc\az_log.h(137): warning C4013: 'az_sys_localtime' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\az_log.h(137): warning C4047: 'initializing': 'az_sys_datetime_t *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\az_log.h(375): warning C4018: '>': signed/unsigned mismatch
+d:\work\aurora\aurora\inc\az_printf.h(32): warning C4005: 'AZ_NL': macro redefinition
+  d:\work\aurora\aurora\inc\az_log.h(63): note: see previous definition of 'AZ_NL'
+d:\work\aurora\aurora\inc\az_printf.h(45): warning C4005: 'AZ_FMT_KV_EXP': macro redefinition
+  d:\work\aurora\aurora\inc\az_printf.h(44): note: see previous definition of 'AZ_FMT_KV_EXP'
+d:\work\aurora\aurora\src\cli\az_cli_svr.c(93): warning C4244: 'function': conversion from 'az_sock_t' to 'az_cli_port_t', possible loss of data
+d:\work\aurora\aurora\src\cli\az_cli_svr.c(93): warning C4028: formal parameter 1 different from declaration
+d:\work\aurora\aurora\src\cli\az_cli_svr.c(93): warning C4028: formal parameter 2 different from declaration
+d:\work\aurora\aurora\src\cli\az_cli_svr.c(93): warning C4028: formal parameter 3 different from declaration
+d:\work\aurora\aurora\src\cli\az_cli_svr.c(96): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'az_sock_t'
+  d:\work\aurora\aurora\src\cli\az_cli_svr.c(96): note: consider using '%lld' in the format string
+  d:\work\aurora\aurora\src\cli\az_cli_svr.c(96): note: consider using '%Id' in the format string
+  d:\work\aurora\aurora\src\cli\az_cli_svr.c(96): note: consider using '%I64d' in the format string
+  az_cli_glue.c
+d:\work\aurora\aurora\inc\sys\windows\az_windows_sem.h(198): warning C4244: '=': conversion from 'az_int64_t' to 'DWORD', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_event.h(182): warning C4244: '=': conversion from 'az_int64_t' to 'DWORD', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(69): warning C4244: 'initializing': conversion from 'SOCKET' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(144): warning C4244: 'function': conversion from 'az_sys_socket_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(144): warning C4244: 'function': conversion from 'az_size_t' to 'unsigned int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(148): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(152): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4244: 'function': conversion from 'az_sys_socket_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4244: 'function': conversion from 'az_size_t' to 'unsigned int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(161): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(161): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(165): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(165): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_def.h(258): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\work\aurora\aurora\inc\az_sys_def.h(89): warning C4091: 'typedef ': ignored on left of 'az_sys_shm_arg_t' when no variable is declared
+d:\work\aurora\aurora\inc\az_string.h(128): warning C4090: 'initializing': different 'const' qualifiers
+d:\work\aurora\aurora\inc\az_index.h(242): warning C4018: '<=': signed/unsigned mismatch
+d:\work\aurora\aurora\inc\az_index.h(306): warning C4244: 'initializing': conversion from 'az_pos_t' to 'uint8_t', possible loss of data
+d:\work\aurora\aurora\inc\az_index.h(311): warning C4244: 'initializing': conversion from 'az_pos_t' to 'uint16_t', possible loss of data
+d:\work\aurora\aurora\inc\az_index.h(316): warning C4244: 'initializing': conversion from 'az_pos_t' to 'uint32_t', possible loss of data
+d:\work\aurora\aurora\inc\az_array.h(92): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_array.h(116): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_array.h(376): warning C4047: 'function': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(376): warning C4022: 'fill_f': pointer mismatch for actual parameter 1
+d:\work\aurora\aurora\inc\az_array.h(405): warning C4047: '=': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(409): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(413): warning C4047: '=': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(436): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(462): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(484): warning C4133: '=': incompatible types - from 'uint32_t *' to 'uint16_t *'
+d:\work\aurora\aurora\inc\az_array.h(488): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(514): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(540): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_array.h(573): warning C4047: 'function': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(573): warning C4022: 'find_f': pointer mismatch for actual parameter 2
+d:\work\aurora\aurora\inc\az_array.h(577): warning C4047: 'function': 'az_array_element_t *' differs in levels of indirection from 'uint8_t *'
+d:\work\aurora\aurora\inc\az_array.h(577): warning C4022: 'find_f': pointer mismatch for actual parameter 2
+d:\work\aurora\aurora\inc\az_ion.h(84): warning C4047: '=': 'az_ion_t *' differs in levels of indirection from 'az_array_element_t *'
+d:\work\aurora\aurora\inc\az_ion.h(82): warning C4244: 'initializing': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_link.h(160): warning C4133: 'function': incompatible types - from 'az_link_list_t *' to 'az_link_t *'
+d:\work\aurora\aurora\inc\az_link.h(265): warning C4133: '!=': incompatible types - from 'az_double_link *' to 'az_double_link_list_t *'
+d:\work\aurora\aurora\inc\az_link.h(266): warning C4013: 'az_asser' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\az_link.h(286): warning C4133: '!=': incompatible types - from 'az_double_link *' to 'az_double_link_list_t *'
+d:\work\aurora\aurora\inc\az_fifo.h(122): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\az_fifo.h(127): warning C4133: 'function': incompatible types - from 'az_size_t *' to 'volatile LONG *'
+d:\work\aurora\aurora\inc\sys\az_fs.h(105): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(106): warning C4013: 'strtok_r' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\sys\az_fs.h(106): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\sys\az_fs.h(109): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\sys\az_fs.h(123): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(128): warning C4090: 'initializing': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(145): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(164): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_fs.h(183): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\az_cirbuffer.h(178): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(185): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(184): warning C4244: 'initializing': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(213): warning C4244: '=': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(220): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(227): warning C4244: 'function': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_cirbuffer.h(226): warning C4244: 'initializing': conversion from 'az_pos_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\az_log.h(132): warning C4477: 'sprintf' : format string '%06d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
+  d:\work\aurora\aurora\inc\az_log.h(132): note: consider using '%lld' in the format string
+  d:\work\aurora\aurora\inc\az_log.h(132): note: consider using '%Id' in the format string
+  d:\work\aurora\aurora\inc\az_log.h(132): note: consider using '%I64d' in the format string
+d:\work\aurora\aurora\inc\az_log.h(137): warning C4013: 'az_sys_localtime' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\az_log.h(137): warning C4047: 'initializing': 'az_sys_datetime_t *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\az_log.h(375): warning C4018: '>': signed/unsigned mismatch
+d:\work\aurora\aurora\inc\az_printf.h(32): warning C4005: 'AZ_NL': macro redefinition
+  d:\work\aurora\aurora\inc\az_log.h(63): note: see previous definition of 'AZ_NL'
+d:\work\aurora\aurora\inc\az_printf.h(45): warning C4005: 'AZ_FMT_KV_EXP': macro redefinition
+  d:\work\aurora\aurora\inc\az_printf.h(44): note: see previous definition of 'AZ_FMT_KV_EXP'
+d:\work\aurora\aurora\src\cli\az_cli_glue.c(59): warning C4244: 'return': conversion from 'az_r_t' to 'int', possible loss of data
+d:\work\aurora\aurora\src\cli\az_cli_glue.c(70): warning C4244: 'return': conversion from 'az_r_t' to 'int', possible loss of data
+d:\work\aurora\aurora\src\cli\az_cli_glue.c(103): warning C4101: 'ap': unreferenced local variable
+  az_cli_cmd.c
+d:\work\aurora\aurora\inc\sys\windows\az_windows_sem.h(198): warning C4244: '=': conversion from 'az_int64_t' to 'DWORD', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_event.h(182): warning C4244: '=': conversion from 'az_int64_t' to 'DWORD', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(69): warning C4244: 'initializing': conversion from 'SOCKET' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(144): warning C4244: 'function': conversion from 'az_sys_socket_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(144): warning C4244: 'function': conversion from 'az_size_t' to 'unsigned int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(148): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(152): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4244: 'function': conversion from 'az_sys_socket_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4244: 'function': conversion from 'az_size_t' to 'unsigned int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(161): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(161): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(165): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(165): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_def.h(258): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\work\aurora\aurora\inc\az_sys_def.h(89): warning C4091: 'typedef ': ignored on left of 'az_sys_shm_arg_t' when no variable is declared
+d:\work\aurora\aurora\src\cli\az_cli_cmd.c(188): warning C4013: 'az_cli_printf' undefined; assuming extern returning int
+  az_cli.c
+d:\work\aurora\aurora\inc\sys\windows\az_windows_sem.h(198): warning C4244: '=': conversion from 'az_int64_t' to 'DWORD', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_event.h(182): warning C4244: '=': conversion from 'az_int64_t' to 'DWORD', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(69): warning C4244: 'initializing': conversion from 'SOCKET' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(144): warning C4244: 'function': conversion from 'az_sys_socket_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(144): warning C4244: 'function': conversion from 'az_size_t' to 'unsigned int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(148): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(152): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4244: 'function': conversion from 'az_sys_socket_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(157): warning C4244: 'function': conversion from 'az_size_t' to 'unsigned int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(161): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(161): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(165): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\windows\az_windows_socket.h(165): warning C4244: 'function': conversion from 'az_size_t' to 'int', possible loss of data
+d:\work\aurora\aurora\inc\sys\windows\az_windows_def.h(258): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\work\aurora\aurora\inc\az_sys_def.h(89): warning C4091: 'typedef ': ignored on left of 'az_sys_shm_arg_t' when no variable is declared
+d:\work\aurora\aurora\src\cli\az_cli.c(25): warning C4028: formal parameter 3 different from declaration
+d:\work\aurora\aurora\src\cli\az_cli.c(68): warning C4101: 'j': unreferenced local variable
+d:\work\aurora\aurora\src\cli\az_cli.c(138): warning C4090: 'function': different 'const' qualifiers
+d:\work\aurora\aurora\src\cli\az_cli.c(130): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+az_test.obj : warning LNK4006: az_test_xu already defined in az_test_xu.obj; second definition ignored
+  Aurora.vcxproj -> D:\work\Aurora\build\windows\vs_ws\x64\Debug\Aurora.lib
+          1개 파일이 복사되었습니다.

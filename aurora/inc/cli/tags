@@ -1,0 +1,55 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AZ_CLI_CMD_H	az_cli_cmd.h	22;"	d
+AZ_CLI_CMD_MASK_APP	az_cli_cmd.h	52;"	d
+AZ_CLI_CMD_MASK_DEBUG	az_cli_cmd.h	49;"	d
+AZ_CLI_CMD_MASK_FRW	az_cli_cmd.h	51;"	d
+AZ_CLI_CMD_MASK_LOCAL	az_cli_cmd.h	50;"	d
+AZ_CLI_CMD_NOTFOUND	az_cli_cmd.h	45;"	d
+AZ_CLI_CMD_QUIT	az_cli_cmd.h	47;"	d
+AZ_CLI_CMD_SHOWHELP	az_cli_cmd.h	46;"	d
+AZ_CLI_CMD_SUCCESS	az_cli_cmd.h	44;"	d
+AZ_CLI_GLUE_H	az_cli_glue.h	22;"	d
+AZ_CLI_H	az_cli.h	22;"	d
+AZ_CLI_SHELL_PROMPT_DFT	az_cli.h	37;"	d
+AZ_CLI_SHELL_STATE_START	az_cli.h	38;"	d
+AZ_CLI_SHELL_STATE_STOP	az_cli.h	39;"	d
+CONFIG_AZ_CLI_CMDBUF_SZ	az_cli_cmd.h	37;"	d
+CONFIG_AZ_CLI_MAX_ARGS	az_cli_cmd.h	41;"	d
+CONFIG_AZ_CLI_MAX_CMDS	az_cli_cmd.h	33;"	d
+CONFIG_AZ_CLI_TX_BUFFER_SZ	az_cli.h	34;"	d
+Read	az_cli.h	/^  az_cli_read_t   Read;$/;"	m	struct:az_cli_shell
+Write	az_cli.h	/^  az_cli_write_t  Write;$/;"	m	struct:az_cli_shell
+argc	az_cli_cmd.h	/^  int   argc;$/;"	m	struct:__anon1
+argv	az_cli_cmd.h	/^  char  *argv[CONFIG_AZ_CLI_MAX_ARGS];$/;"	m	struct:__anon1
+az_cli_cmd_descr	az_cli_cmd.h	/^typedef struct az_cli_cmd_descr {$/;"	s
+az_cli_cmd_descr_init	az_cli_cmd.h	/^static inline void az_cli_cmd_descr_init(az_cli_cmd_descr_t *pDescr)$/;"	f
+az_cli_cmd_descr_t	az_cli_cmd.h	/^} az_cli_cmd_descr_t;$/;"	t	typeref:struct:az_cli_cmd_descr
+az_cli_cmd_exec_t	az_cli_cmd.h	/^typedef int32_t (*az_cli_cmd_exec_t)(int, char *[]);$/;"	t
+az_cli_cmd_table_t	az_cli_cmd.h	/^} az_cli_cmd_table_t;$/;"	t	typeref:struct:__anon1
+az_cli_port_t	az_cli.h	/^typedef int az_cli_port_t; $/;"	t
+az_cli_read_t	az_cli.h	/^typedef int (*az_cli_read_t)(az_cli_port_t, char *, int);$/;"	t
+az_cli_shell	az_cli.h	/^typedef struct az_cli_shell {$/;"	s
+az_cli_shell_t	az_cli.h	/^} az_cli_shell_t;$/;"	t	typeref:struct:az_cli_shell
+az_cli_thread_curShell	az_cli_glue.h	/^static inline az_cli_shell_t *az_cli_thread_curShell()$/;"	f
+az_cli_write_t	az_cli.h	/^typedef int (*az_cli_write_t)(az_cli_port_t, char *, int);$/;"	t
+buffer	az_cli.h	/^  char  buffer[CONFIG_AZ_CLI_TX_BUFFER_SZ];$/;"	m	struct:az_cli_shell
+cmd_table	az_cli.h	/^  az_cli_cmd_table_t *cmd_table;$/;"	m	struct:az_cli_shell
+cmdbuffer	az_cli.h	/^  char  cmdbuffer[CONFIG_AZ_CLI_CMDBUF_SZ];	$/;"	m	struct:az_cli_shell
+cmdpos	az_cli.h	/^  int   cmdpos;$/;"	m	struct:az_cli_shell
+count	az_cli_cmd.h	/^  int  count;$/;"	m	struct:__anon1
+exec	az_cli_cmd.h	/^  az_cli_cmd_exec_t exec;$/;"	m	struct:az_cli_cmd_descr
+help	az_cli_cmd.h	/^  const char  *help;$/;"	m	struct:az_cli_cmd_descr
+list	az_cli_cmd.h	/^  az_cli_cmd_descr_t list[CONFIG_AZ_CLI_MAX_CMDS];$/;"	m	struct:__anon1
+mask	az_cli_cmd.h	/^  int mask;$/;"	m	struct:az_cli_cmd_descr
+name	az_cli.h	/^  char  name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_cli_shell
+name	az_cli_cmd.h	/^  const char *name;$/;"	m	struct:az_cli_cmd_descr
+prompt	az_cli.h	/^  const char  *prompt;$/;"	m	struct:az_cli_shell
+rxport	az_cli.h	/^  az_cli_port_t   txport, rxport;$/;"	m	struct:az_cli_shell
+state	az_cli.h	/^  int state;$/;"	m	struct:az_cli_shell
+thread	az_cli.h	/^  void  *thread;$/;"	m	struct:az_cli_shell
+txport	az_cli.h	/^  az_cli_port_t   txport, rxport;$/;"	m	struct:az_cli_shell

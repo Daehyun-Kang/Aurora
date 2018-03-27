@@ -1,0 +1,61 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.init
+
+RM := rm
+
+# All of the sources participating in the build are defined here
+-include sources.mk
+-include sources/ut/subdir.mk
+-include subdir.mk
+-include objects.mk
+
+ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(strip $(C_DEPS)),)
+-include $(C_DEPS)
+endif
+endif
+
+-include ../makefile.defs
+
+# Add inputs and outputs from these tool invocations to the build variables 
+EXECUTABLES += \
+
+ARCHIVES += \
+
+
+# All Target
+all: Aurora_UT.exe
+
+# Tool invocations
+Aurora_UT.exe: $(OBJS) $(USER_OBJS)
+	@echo 'Building target: $@'
+	@echo 'Invoking: GCC ix86 64-bit Linker'
+	/usr/bin/gcc -L/opt/mercury/linux-x86_64/lib -L/usr/lib64 -L"/home/fware/work/Aurora/linux_workspace/../aurora/lib/linux" -u CorbaICSFactory -u TheConfigurationManager -u smb_map -u utl_zalloc -m64 -o "Aurora_UT.exe" $(OBJS) $(USER_OBJS) $(LIBS)
+	@echo 'Finished building target: $@'
+	@echo ' '
+	$(MAKE) --no-print-directory post-build
+
+USER_OBJS.exe: Aurora_UT.exe $(OBJS) $(USER_OBJS)
+
+libdefault.a: $(OBJS)
+	@echo 'Invoking: GNU ix86 64-bit Archiver'
+	/usr/bin/ar -r  "libdefault.a" $(OBJS)
+	@echo 'Finished building: $@'
+	@echo ' '
+
+# Other Targets
+clean:
+	-$(RM) $(OBJS)$(C_DEPS)$(ARCHIVES)$(EXECUTABLES) Aurora_UT.exe
+	-@echo ' '
+
+post-build:
+	-cp Aurora_UT.exe /home/fware/work/Aurora/linux_workspace/../aurora/build/linux/
+	-@echo ' '
+
+.PHONY: all clean dependents
+.SECONDARY: post-build
+
+-include ../makefile.targets

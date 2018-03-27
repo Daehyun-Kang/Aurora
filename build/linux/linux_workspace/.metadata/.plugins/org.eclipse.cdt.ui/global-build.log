@@ -1,0 +1,19 @@
+
+**** Build of configuration Debug-Mercury-Content for project Aurora_IT ****
+
+make all 
+Building file: /home/fware/work/Aurora/aurora/src/frw/az_main.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/az_main.d" -MT"sources/az_main.d" -o "sources/az_main.o" "/home/fware/work/Aurora/aurora/src/frw/az_main.c"
+Finished building: /home/fware/work/Aurora/aurora/src/frw/az_main.c
+ 
+Building target: Aurora_IT.exe
+Invoking: GCC ix86 64-bit Linker
+/usr/bin/gcc -L/opt/mercury/linux-x86_64/lib -L/usr/lib64 -L"/home/fware/work/Aurora/linux_workspace/../aurora/lib/linux" -u CorbaICSFactory -u TheConfigurationManager -u smb_map -u utl_zalloc -m64 -o "Aurora_IT.exe"  ./sources/az_main.o   -lAurora -lbfd -lsal -lcsal -lmc -lics_cluster -licsxml -lcdfxml -lfrdapi -lfrdxml -lxmlt -lexpat -ltatl -lmcgclock -lmcdrv -lmcmutex -lmckpsem -lmcrose -ldl -lrt -lstdc++ -lm -lgcc -lpthread
+Finished building target: Aurora_IT.exe
+ 
+make --no-print-directory post-build
+cp Aurora_IT.exe /home/fware/work/Aurora/linux_workspace/../aurora/build/linux/
+ 
+
+**** Build Finished ****

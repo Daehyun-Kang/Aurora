@@ -1,0 +1,399 @@
+/**
+ * @file   az_iou_msgq.c
+ * @brief  
+ * @date   02/08/16
+ * @author fware
+ *
+ * @copyright
+ * Copyright (c) Fware, 2013-2016 - All Rights Reserved
+ * You may use, distribute and modify this code under the 
+ * terms of the "Aurora Source Code License".
+ * See the file LICENSE for full license details.\n\n
+ *
+ * You should have received a copy of  the LICENSE with this file.\n\n
+ *
+ * If not, please contact to Fware with the information in the file CONTACTS.
+ *
+ * History:
+ *   - 2016-08-02 fware initial create
+ */
+
+/* include header files */
+#include "az_iou_msgq.h"
+
+/* declare global variables */
+
+/* declare static variables */
+
+static struct az_iou_oprs az_iou_msgq_oprs = {
+  .Create = az_iou_msgq_create,
+  .Delete = az_iou_msgq_delete,
+  .Open = az_iou_msgq_open,
+  .Close = az_iou_msgq_close,
+  .Setup = az_iou_msgq_setup,
+  .Release = az_iou_msgq_release,
+  .Control = az_iou_msgq_control,
+  .Recv = az_iou_msgq_recv,
+  .Send = az_iou_msgq_send,
+};
+
+/* implement static functions */
+
+/**
+ * @fn        function name
+ * @brief     function-description
+ * @param     input-output-parameters
+ * @return    return-value
+ * @warning   warnings
+ * @exception none
+ */
+
+
+/* implement global functions */
+
+/**
+ * @fn        function name
+ * @brief     function-description
+ * @param     input-output-parameters
+ * @return    return-value
+ * @warning   warnings
+ * @exception none
+ */
+az_r_t  az_iou_msgq_create(az_iou_t *iou, az_iou_config_t *cfg, az_iou_id_t *pId)
+{
+  az_assert(NULL != pId);
+  az_r_t  r = AZ_ERR(ARG_NULL);
+
+  do {
+    az_iou_t *iou_exist;
+    iou_exist = az_iou_find(cfg);
+    if (NULL != iou_exist) {
+      *pId = iou_exist->ion.id;
+      r = AZ_ERR(AGAIN);
+      break;
+    }
+    if (NULL == iou) {
+      if (NULL == cfg) {
+        break;
+      }
+      iou = az_sys_malloc(sizeof(az_iou_t));
+      if (NULL == iou) {
+        r = AZ_ERR(MALLOC);
+        break;
+      }
+      iou->ion.refCount = 0;
+      iou->config = *cfg;
+    } else {
+      if (iou->status.state & AZ_IOU_STATE_ASSIGNED) {
+        r = AZ_ERR(STATE);
+        break;
+      }
+      if (NULL == cfg) {
+        cfg = &iou->config;
+      }
+      if (cfg != &iou->config) {
+        iou->config = *cfg;
+      }
+    }
+    iou->ion.refCount++;
+    az_memset(&(iou->status), 0, sizeof(iou->status));
+    iou->status.state = AZ_IOU_STATE_ASSIGNED;
+    iou->oprs = &az_iou_msgq_oprs;
+    iou->priv = NULL;
+
+    r = az_ion_register(&iou->ion, AZ_ION_TYPE_IOU);
+    if (r < 0) {
+      if (--(iou->ion.refCount) == 0) {
+        az_sys_free(iou);
+        break;
+      }
+    }
+    *pId = iou->ion.id;
+
+    if (iou->config.flags & AZ_IOU_FLAGS_TX) {
+      if (iou->config.tx.event_id) {
+        az_event_port_create(
+                iou->config.tx.event_id, 
+                iou->config.tx.event_mask, 
+                AZ_EVENT_PORT_TYPE1,
+                &(iou->tx.event_port));
+        az_event_port_prepare(
+                iou->tx.event_port,
+                iou->config.tx.event_id, 
+                0, 
+                &(iou->tx.event));
+      }
+    }
+
+    if (iou->config.flags & AZ_IOU_FLAGS_RX) {
+      if (iou->config.rx.event_id) {
+        az_event_port_create(
+                iou->config.rx.event_id, 
+                iou->config.rx.event_mask, 
+                AZ_EVENT_PORT_TYPE1,
+                &(iou->rx.event_port));
+      }
+    }
+
+  } while (0);
+
+  return r;
+}
+az_r_t  az_iou_msgq_delete(az_iou_t *iou)
+{
+  az_assert(NULL != iou);
+  az_assert(iou->ion.type == AZ_ION_TYPE_IOU);
+  az_r_t r = AZ_SUCCESS;
+
+  do {
+    if (!(iou->status.state & AZ_IOU_STATE_ASSIGNED)) {
+      r = AZ_ERR(STATE);
+      break;
+    }
+    if ((iou->status.state & AZ_IOU_STATE_BUSY)) {
+      r = AZ_ERR(BUSY);
+      break;
+    }
+    r = az_ion_deregister(&iou->ion);
+    if (r) break;
+    if (--(iou->ion.refCount) == 0) {
+      az_sys_free(iou);
+    } else {
+      iou->status.state = 0;
+    }
+  } while (0);
+
+  return r;
+}
+
+az_r_t  az_iou_msgq_open(az_iou_t *iou, int flags)
+{
+  az_assert(NULL != iou);
+  az_assert(iou->ion.type == AZ_ION_TYPE_IOU);
+  az_assert(iou->status.state & AZ_IOU_STATE_ASSIGNED);
+  az_r_t r = AZ_SUCCESS;
+
+  do {
+    if (!(flags & AZ_IOU_FLAGS_TRX)) {
+      r = AZ_ERR(INVALID_ARG);
+      break;
+    }
+    if (iou->status.state & AZ_IOU_STATE_TX_OPEN){
+      if (!(iou->config.flags & AZ_IOU_FLAGS_TX)) {
+        r = AZ_ERR(NOT_SUPPORT);
+        break;
+      }
+      if (flags & AZ_IOU_FLAGS_TX) {
+        r = AZ_ERR(AGAIN);
+        break;
+      }
+    }
+    if (iou->status.state & AZ_IOU_STATE_RX_OPEN) {
+      if (!(iou->config.flags & AZ_IOU_FLAGS_RX)) {
+        r = AZ_ERR(NOT_SUPPORT);
+        break;
+      }
+      if (flags & AZ_IOU_FLAGS_RX) {
+        r = AZ_ERR(AGAIN);
+        break;
+      }
+    }
+    if ((flags & AZ_IOU_FLAGS_TRX) == AZ_IOU_FLAGS_TRX) {
+      iou->status.state |= AZ_IOU_STATE_OPEN;
+      if (!(iou->status.state & AZ_IOU_STATE_UP)) {
+        az_iou_msgq_setup(iou, AZ_IOU_FLAGS_TRX);
+      }
+    }  else {
+    if ((flags & AZ_IOU_FLAGS_TX)) {
+      iou->status.state |= AZ_IOU_STATE_TX_OPEN;
+      if (!(iou->status.state & AZ_IOU_STATE_TX_UP)) {
+        az_iou_msgq_setup(iou, AZ_IOU_FLAGS_TX);
+      }
+    }
+    if ((flags & AZ_IOU_FLAGS_RX)) {
+      iou->status.state |= AZ_IOU_STATE_RX_OPEN;
+      if (!(iou->status.state & AZ_IOU_STATE_RX_UP)) {
+        az_iou_msgq_setup(iou, AZ_IOU_FLAGS_RX);
+      }
+    }
+    }
+
+  } while (0);
+
+  return r;
+}
+az_r_t  az_iou_msgq_close(az_iou_t *iou, int flags)
+{
+  az_assert(NULL != iou);
+  az_assert(iou->ion.type == AZ_ION_TYPE_IOU);
+  az_assert(iou->status.state & AZ_IOU_STATE_ASSIGNED);
+  az_r_t r = AZ_SUCCESS;
+
+  do {
+    if (!(flags & AZ_IOU_FLAGS_TRX)) {
+      r = AZ_ERR(INVALID_ARG);
+      break;
+    }
+    if (iou->status.state & AZ_IOU_STATE_TX_OPEN){
+      if (!(iou->config.flags & AZ_IOU_FLAGS_TX)) {
+        r = AZ_ERR(NOT_SUPPORT);
+        break;
+      }
+      if (!(flags & AZ_IOU_FLAGS_TX)) {
+        r = AZ_ERR(AGAIN);
+        break;
+      }
+    }
+    if (iou->status.state & AZ_IOU_STATE_RX_OPEN) {
+      if (!(iou->config.flags & AZ_IOU_FLAGS_RX)) {
+        r = AZ_ERR(NOT_SUPPORT);
+        break;
+      }
+      if (!(flags & AZ_IOU_FLAGS_RX)) {
+        r = AZ_ERR(AGAIN);
+        break;
+      }
+    }
+    if ((flags & AZ_IOU_FLAGS_TRX) == AZ_IOU_FLAGS_TRX) {
+      if (iou->status.state & AZ_IOU_STATE_UP) {
+        az_iou_msgq_release(iou, AZ_IOU_FLAGS_TRX);
+      }
+      iou->status.state &= ~AZ_IOU_STATE_OPEN;
+    }  else {
+      if ((flags & AZ_IOU_FLAGS_TX)) {
+        if ((iou->status.state & AZ_IOU_STATE_TX_UP)) {
+         az_iou_msgq_release(iou, AZ_IOU_FLAGS_TX);
+        }
+        iou->status.state &= ~AZ_IOU_STATE_TX_OPEN;
+      }
+      if ((flags & AZ_IOU_FLAGS_RX)) {
+        if (!(iou->status.state & AZ_IOU_STATE_RX_UP)) {
+         az_iou_msgq_release(iou, AZ_IOU_FLAGS_RX);
+        }
+        iou->status.state &= ~AZ_IOU_STATE_RX_OPEN;
+      }
+    }
+
+  } while (0);
+
+  return r;
+}
+
+az_r_t  az_iou_msgq_setup(az_iou_t *iou, int options)
+{
+  az_assert(NULL != iou);
+  az_assert(iou->ion.type == AZ_ION_TYPE_IOU);
+  az_assert(iou->status.state & AZ_IOU_STATE_ASSIGNED);
+  az_r_t r = AZ_SUCCESS;
+  char *remote = NULL, *local = NULL;
+  int state = 0;
+
+  do {
+    if (options & AZ_IOU_FLAGS_TX) {
+      remote = iou->config.remote_addr.name;
+      state |= AZ_IOU_STATE_TX_UP;
+    }
+    if (options & AZ_IOU_FLAGS_RX) {
+      local = iou->config.local_addr.name;
+      state |= AZ_IOU_STATE_RX_UP;
+    }
+    iou->priv = az_iou_msgq_ctx_create(iou, iou->priv, local, remote);
+    if (iou->priv) {
+      az_iou_msgq_ctx_t *ctx = (az_iou_msgq_ctx_t *)(iou->priv);
+      if (NULL != ctx->local) {
+        ctx->local->event_port = iou->rx.event_port; 
+      }
+      iou->status.state |= state; 
+    } else {
+      r = AZ_ERR(CREAT);
+    }
+  } while (0);
+
+  return r;
+}
+
+az_r_t  az_iou_msgq_release(az_iou_t *iou, int options)
+{
+  az_assert(NULL != iou);
+  az_assert(iou->ion.type == AZ_ION_TYPE_IOU);
+  az_assert(iou->status.state & AZ_IOU_STATE_ASSIGNED);
+  az_r_t r = AZ_SUCCESS;
+  char *remote = NULL, *local = NULL;
+  int state = 0;
+
+  do {
+    if (options & AZ_IOU_FLAGS_TX) {
+      remote = iou->config.remote_addr.name;
+      state |= AZ_IOU_STATE_TX_UP;
+    }
+    if (options & AZ_IOU_FLAGS_RX) {
+      local = iou->config.local_addr.name;
+      state |= AZ_IOU_STATE_RX_UP;
+    }
+    iou->priv = az_iou_msgq_ctx_delete(iou, iou->priv, local, remote);
+    iou->status.state &= ~state; 
+  } while (0);
+
+  return r;
+}
+
+az_size_t az_iou_msgq_recv(az_iou_t *iou, void *bp, az_size_t size)
+{
+  az_size_t r = (az_size_t)AZ_SUCCESS;
+  az_iou_msgq_ctx_t *ctx;
+  az_assert(NULL != iou);
+  do {
+    ctx = (az_iou_msgq_ctx_t *)(iou->priv);
+    if (NULL == ctx) {
+      r = (az_size_t)AZ_ERR(CTX_NULL);
+      break;
+    }
+    if (NULL == ctx->local) {
+      r = (ctx->local->Recv)(ctx->local, bp, size);
+    }
+
+  } while (0);
+
+  return r;
+}
+
+az_size_t az_iou_msgq_send(az_iou_t *iou, void *bp, az_size_t size)
+{
+  az_size_t r = (az_size_t)AZ_SUCCESS;
+  az_iou_msgq_ctx_t *ctx;
+  az_assert(NULL != iou);
+  do {
+    ctx = (az_iou_msgq_ctx_t *)(iou->priv);
+    if (NULL == ctx) {
+      r = (az_size_t)AZ_ERR(CTX_NULL);
+      break;
+    }
+    if (NULL == ctx->remote) {
+      r = (ctx->remote->Send)(ctx->remote, bp, size);
+      if (iou->tx.event) {
+        az_event_post(iou->tx.event_port, iou->tx.event);
+      }
+    }
+
+  } while (0);
+
+  return r;
+}
+
+az_r_t az_iou_msgq_control(az_iou_t *iou, int cmd, void *arg1, void *arg2)
+{
+  az_size_t r = (az_size_t)AZ_SUCCESS;
+  az_assert(NULL != iou);
+
+  do {
+    switch (cmd) {
+      default:
+        r = AZ_ERR(NOT_SUPPORT);
+        break;
+    }
+  } while (0);
+
+  return r;
+}
+
+/* === end of AZ_IOU_MSGQ_C === */

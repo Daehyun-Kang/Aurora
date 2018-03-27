@@ -1,0 +1,25 @@
+﻿  az_core.c
+d:\work\aurora\aurora\inc\sys\windows\az_windows_def.h(194): warning C4244: 'function': conversion from 'az_size_t' to 'std::size_t', possible loss of data
+d:\work\aurora\aurora\inc\az_sys_def.h(86): warning C4091: 'typedef ': ignored on left of 'az_sys_shm_arg_t' when no variable is declared
+d:\work\aurora\aurora\inc\az_link.h(146): warning C4133: 'function': incompatible types - from 'az_link_list_t *' to 'az_link_t *'
+d:\work\aurora\aurora\inc\az_array.h(90): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 2 has type 'az_array_id_t'
+  d:\work\aurora\aurora\inc\az_array.h(90): note: consider using '%lld' in the format string
+  d:\work\aurora\aurora\inc\az_array.h(90): note: consider using '%I64d' in the format string
+d:\work\aurora\aurora\inc\sys\az_file.h(72): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_file.h(73): warning C4013: 'strtok_r' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\sys\az_file.h(73): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\sys\az_file.h(76): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\sys\az_file.h(90): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_file.h(95): warning C4090: 'initializing': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_file.h(112): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_file.h(131): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_file.h(150): warning C4090: '=': different 'const' qualifiers
+d:\work\aurora\aurora\inc\sys\az_file.h(174): warning C4244: 'function': conversion from 'az_size_t' to 'std::size_t', possible loss of data
+d:\work\aurora\aurora\inc\sys\az_file.h(179): warning C4244: 'function': conversion from 'az_size_t' to 'std::size_t', possible loss of data
+d:\work\aurora\aurora\inc\az_log.h(57): warning C4477: 'sprintf' : format string '%06d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
+  d:\work\aurora\aurora\inc\az_log.h(57): note: consider using '%lld' in the format string
+  d:\work\aurora\aurora\inc\az_log.h(57): note: consider using '%I64d' in the format string
+d:\work\aurora\aurora\inc\az_log.h(62): warning C4013: 'az_sys_localtime' undefined; assuming extern returning int
+d:\work\aurora\aurora\inc\az_log.h(62): warning C4047: 'initializing': 'az_sys_datetime_t *' differs in levels of indirection from 'int'
+d:\work\aurora\aurora\inc\az_log.h(104): warning C4013: 'clock_gettime' undefined; assuming extern returning int
+  Aurora.vcxproj -> D:\work\Aurora\windows_workspace\Aurora\Debug\Aurora.lib

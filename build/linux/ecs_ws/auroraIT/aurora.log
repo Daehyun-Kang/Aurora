@@ -1,0 +1,8 @@
+<1521857901.936460> [main] [az_cli_svr.c:az_cli_svr_start:132]	cli server: cliSvr start result=0:SUCCESS
+<1521857901.936636> [cliSvr] [az_tcpserver.c:az_tcpserver_run_default:150]	tcp server on (null):53000 open ok
+<1521857901.939013> [main] [az_test_main.c:az_test_main:94]	r = 1
+<1521857901.945978> [main] [az_test_main.c:az_test_main:96]	r = 1
+<1521857901.946679> [main] [az_test_main.c:az_test_main:98]	r = 1
+<1521857901.947466> [main] [az_test_main.c:az_test_main:100]	r = 1
+<1521857901.947482> [main] [az_test_xu.c:az_test_xu:160]	testCase name missing
+<1521857750.560710> [cliSvr] [az_cli_svr.c:az_cli_svr_onClientConnection:107]	remote cli shell1 on 24 from 127.0.0.1:55452 start...r:0

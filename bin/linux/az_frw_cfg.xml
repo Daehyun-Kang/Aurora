@@ -1,0 +1,9 @@
+<? xml version="1.0" encoding="iso-8859-1"?>
+<sys>
+  <xulist>
+  <xu name="frw" entry="az_frw_thread_entry" arg="az_frw_thread_arg" 
+    stackSize.u32="16384" >
+    <schedule coremask.h64="00000001" policy="SCHED_RR" priority.u32="50" />
+  </xu>
+  </xulist>
+</sys>

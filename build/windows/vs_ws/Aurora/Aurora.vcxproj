@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0BA3923B-97DF-4077-92BC-ECD1011F39DE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Aurora</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="AuroraPropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="AuroraPropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="AuroraPropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="AuroraPropertySheet.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions);MSVC</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(Aurora_IMP)\inc\sys\windows;$(Aurora_IMP)\inc\sys;$(Aurora_IMP)\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>COPY $(OutDir)\$(TargetFileName) $(Aurora_LIB_OUT)\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions);MSVC</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(Aurora_IMP)\inc\sys\windows;$(Aurora_IMP)\inc\sys;$(Aurora_IMP)\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>COPY $(OutDir)\$(TargetFileName) $(Aurora_LIB_OUT)\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions);MSVC</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(Aurora_IMP)\inc\sys\windows;$(Aurora_IMP)\inc\sys;$(Aurora_IMP)\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>COPY $(OutDir)\$(TargetFileName) $(Aurora_LIB_OUT)\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions);MSVC</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(Aurora_IMP)\inc\sys\windows;$(Aurora_IMP)\inc\sys;$(Aurora_IMP)\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>COPY $(OutDir)\$(TargetFileName) $(Aurora_LIB_OUT)\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\aurora\src\cli\az_cli.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\cli\az_cli_cmd.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\cli\az_cli_glue.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\cli\az_cli_svr.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_array_toStr.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_buffer_toStr.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_core.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_event.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_event_bus.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_fifo_toStr.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_ion.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_ion_toStr.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_link_toStr.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_log.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_msgq.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_var.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\core\az_xml.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\diag\az_diag_typeSize.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\frw\az_frw_cmd.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\iou\az_iou_api.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\iou\az_iou_msgq.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\iou\az_iou_util.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\net\az_tcpserver.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\sys\az_inet.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\sys\az_mutex.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\sys\az_sem.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\sys\az_timer.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\sys\az_xu.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\sys\windows\az_sys_init.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\sys\windows\az_sys_timer.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\sys\windows\az_sys_xu.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\test\az_test.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\test\az_test_main.c" />
+    <ClCompile Include="..\..\..\..\aurora\src\test\az_test_xu.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

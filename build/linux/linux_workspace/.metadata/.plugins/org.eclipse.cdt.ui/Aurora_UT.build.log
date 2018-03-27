@@ -1,0 +1,89 @@
+
+**** Build of configuration Debug-Mercury-Content for project Aurora_UT ****
+
+make all 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_buffer_reserve.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_buffer_reserve.d" -MT"sources/ut/az_ut_buffer_reserve.d" -o "sources/ut/az_ut_buffer_reserve.o" "/home/fware/work/Aurora/aurora/ut/az_ut_buffer_reserve.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_buffer_reserve.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_double_link_add.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_double_link_add.d" -MT"sources/ut/az_ut_double_link_add.d" -o "sources/ut/az_ut_double_link_add.o" "/home/fware/work/Aurora/aurora/ut/az_ut_double_link_add.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_double_link_add.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_double_link_del.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_double_link_del.d" -MT"sources/ut/az_ut_double_link_del.d" -o "sources/ut/az_ut_double_link_del.o" "/home/fware/work/Aurora/aurora/ut/az_ut_double_link_del.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_double_link_del.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_fifo_pop.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_fifo_pop.d" -MT"sources/ut/az_ut_fifo_pop.d" -o "sources/ut/az_ut_fifo_pop.o" "/home/fware/work/Aurora/aurora/ut/az_ut_fifo_pop.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_fifo_pop.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_fifo_push.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_fifo_push.d" -MT"sources/ut/az_ut_fifo_push.d" -o "sources/ut/az_ut_fifo_push.o" "/home/fware/work/Aurora/aurora/ut/az_ut_fifo_push.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_fifo_push.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_fs_file2mem.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_fs_file2mem.d" -MT"sources/ut/az_ut_fs_file2mem.d" -o "sources/ut/az_ut_fs_file2mem.o" "/home/fware/work/Aurora/aurora/ut/az_ut_fs_file2mem.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_fs_file2mem.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_ion_register.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_ion_register.d" -MT"sources/ut/az_ut_ion_register.d" -o "sources/ut/az_ut_ion_register.o" "/home/fware/work/Aurora/aurora/ut/az_ut_ion_register.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_ion_register.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_link_getFirst.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_link_getFirst.d" -MT"sources/ut/az_ut_link_getFirst.d" -o "sources/ut/az_ut_link_getFirst.o" "/home/fware/work/Aurora/aurora/ut/az_ut_link_getFirst.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_link_getFirst.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_link_putFirst.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_link_putFirst.d" -MT"sources/ut/az_ut_link_putFirst.d" -o "sources/ut/az_ut_link_putFirst.o" "/home/fware/work/Aurora/aurora/ut/az_ut_link_putFirst.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_link_putFirst.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_link_putLast.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_link_putLast.d" -MT"sources/ut/az_ut_link_putLast.d" -o "sources/ut/az_ut_link_putLast.o" "/home/fware/work/Aurora/aurora/ut/az_ut_link_putLast.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_link_putLast.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_link_remove.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_link_remove.d" -MT"sources/ut/az_ut_link_remove.d" -o "sources/ut/az_ut_link_remove.o" "/home/fware/work/Aurora/aurora/ut/az_ut_link_remove.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_link_remove.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_main.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_main.d" -MT"sources/ut/az_ut_main.d" -o "sources/ut/az_ut_main.o" "/home/fware/work/Aurora/aurora/ut/az_ut_main.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_main.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_xml_parser_run.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_xml_parser_run.d" -MT"sources/ut/az_ut_xml_parser_run.d" -o "sources/ut/az_ut_xml_parser_run.o" "/home/fware/work/Aurora/aurora/ut/az_ut_xml_parser_run.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_xml_parser_run.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_xml_tree_parse.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_xml_tree_parse.d" -MT"sources/ut/az_ut_xml_tree_parse.d" -o "sources/ut/az_ut_xml_tree_parse.o" "/home/fware/work/Aurora/aurora/ut/az_ut_xml_tree_parse.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_xml_tree_parse.c
+ 
+Building file: /home/fware/work/Aurora/aurora/ut/az_ut_xu_create.c
+Invoking: GCC ix86 64-bit Compiler
+/usr/bin/gcc -DTATL_TRACE_ENABLE -Dlinux -DCONFIG_IX86_64 -I/opt/mercury/include -I/usr/include/asm-x86_64 -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys/linux" -I"/home/fware/work/Aurora/linux_workspace/../aurora/inc/sys" -O0 -g3 -w -Wall -c -fmessage-length=0 -m64 -MMD -MP -MF"sources/ut/az_ut_xu_create.d" -MT"sources/ut/az_ut_xu_create.d" -o "sources/ut/az_ut_xu_create.o" "/home/fware/work/Aurora/aurora/ut/az_ut_xu_create.c"
+Finished building: /home/fware/work/Aurora/aurora/ut/az_ut_xu_create.c
+ 
+Building target: Aurora_UT.exe
+Invoking: GCC ix86 64-bit Linker
+/usr/bin/gcc -L/opt/mercury/linux-x86_64/lib -L/usr/lib64 -L"/home/fware/work/Aurora/linux_workspace/../aurora/lib/linux" -u CorbaICSFactory -u TheConfigurationManager -u smb_map -u utl_zalloc -m64 -o "Aurora_UT.exe"  ./sources/ut/az_ut_buffer_reserve.o ./sources/ut/az_ut_double_link_add.o ./sources/ut/az_ut_double_link_del.o ./sources/ut/az_ut_fifo_pop.o ./sources/ut/az_ut_fifo_push.o ./sources/ut/az_ut_fs_file2mem.o ./sources/ut/az_ut_ion_register.o ./sources/ut/az_ut_link_getFirst.o ./sources/ut/az_ut_link_putFirst.o ./sources/ut/az_ut_link_putLast.o ./sources/ut/az_ut_link_remove.o ./sources/ut/az_ut_main.o ./sources/ut/az_ut_xml_parser_run.o ./sources/ut/az_ut_xml_tree_parse.o ./sources/ut/az_ut_xu_create.o   -lAurora -lbfd -lsal -lcsal -lmc -lics_cluster -licsxml -lcdfxml -lfrdapi -lfrdxml -lxmlt -lexpat -ltatl -lmcgclock -lmcdrv -lmcmutex -lmckpsem -lmcrose -ldl -lrt -lstdc++ -lm -lgcc -lpthread
+Finished building target: Aurora_UT.exe
+ 
+make --no-print-directory post-build
+cp Aurora_UT.exe /home/fware/work/Aurora/linux_workspace/../aurora/build/linux/
+ 
+
+**** Build Finished ****

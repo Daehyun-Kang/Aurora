@@ -234,19 +234,25 @@ az_fsm_state_t az_test_fsm_handleOnNorm(void *ctx, az_fsm_state_t state, az_even
   az_assert(NULL != edescr);
 
   az_test_case_t *tc = az_test_curTestCase();
-  az_tlog("testcase:%s iter=%d/%d %s\n", tc->name, 
-      tc->test_iter.index, tc->test_iter.remained, az_fsm_probe(ctx, 3, evt));
+  az_tlog("testcase%d:%s %d %d iter=%d/%d %s\n", 
+      tc->index, tc->name, 
+      tc->report.pass, tc->report.fail,
+      tc->test_iter.index, 
+      tc->test_iter.remained, az_fsm_probe(ctx, 3, evt));
 
-  iter = tc->test_iter.list + tc->test_iter.index;
+  if (tc->test_iter.index < tc->test_iter.count) {
+    iter = tc->test_iter.list + tc->test_iter.index;
+    az_tlog("iter %d result:%d:%s\n", iter->index, iter->result, az_err_str(iter->result)); 
+  } else {
+    iter = NULL; 
+  }
   do {
     switch (evtid) {
       case AZ_TEST_CMD_PLOG:
-        //memset(&iter->report, 0, sizeof(iter->report));
         if (tc->oprs.Prolog) {
           r = (tc->oprs.Prolog)(tc);
         }
         if (r < 0) {
-          //iter->report.fail++;
           tc->report.fail++;
           tc->test_iter.index++;
           tc->test_iter.remained--;
@@ -267,7 +273,6 @@ az_fsm_state_t az_test_fsm_handleOnNorm(void *ctx, az_fsm_state_t state, az_even
           r = (tc->oprs.Run)(tc);
         }
         if (r < 0) {
-          //iter->report.fail++;
           tc->report.fail++;
           tc->test_iter.index++;
           tc->test_iter.remained--;
@@ -288,10 +293,7 @@ az_fsm_state_t az_test_fsm_handleOnNorm(void *ctx, az_fsm_state_t state, az_even
         if (tc->oprs.Epilog) {
           r = (tc->oprs.Epilog)(tc);
         }
-        tc->test_iter.index++;
-        tc->test_iter.remained--;
         if (r < 0) {
-          //iter->report.fail++;
           tc->report.fail++;
           tc->test_iter.errored++;
         } else {
@@ -299,17 +301,16 @@ az_fsm_state_t az_test_fsm_handleOnNorm(void *ctx, az_fsm_state_t state, az_even
           if (iter->result < 0) {
             tc->report.fail++;
           } else {
-            //iter->report.pass++;
             tc->report.pass++;
             if (iter->result == 0) {
-              //iter->report.success++;
               tc->report.success++;
             } else {
-              //iter->report.failure++;
               tc->report.failure++;
             }
           }
         }
+        tc->test_iter.index++;
+        tc->test_iter.remained--;
         if (tc->test_iter.remained > 0) {
           fsm->substate = AZ_TEST_SUBSTATE_PRE; 
           r = az_test_sendEvent(AZ_TEST_CMD_PLOG, 0, NULL);

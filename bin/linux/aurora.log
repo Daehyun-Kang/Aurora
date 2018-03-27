@@ -1,575 +1,343 @@
-<16:04:43.623144>  [main]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:10 ref count 2
-<16:04:43.623161>  [main]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:10 ref count 2
-<16:04:43.623227>  [main]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:11 ref count 2
-<16:04:43.623235>  [main]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:11 ref count 2
-<16:04:43.623241>  [main]  [az_cli_svr.c:az_cli_svr_start:130] <0:SUCCESS> cli server: cliSvr start
-<16:04:43.623254>  [main]  test project::unitTest config found on file::az_test_frw.xml
-<16:04:43.623353>  [main]  test case::az_ut_abc onoff=1 found on test project::unitTest
-<16:04:43.623471>  [main]  [az_test_main.c:az_test_loadTestConfig:111] <0:SUCCESS> load test config ./az_ut_cfg_abc.xml
-<16:04:43.623480>  [main]  [az_test_main.c:az_test_main:401] root tree
-<16:04:43.624585>  [main]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:13 ref count 2
-<16:04:43.624597>  [main]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:13 ref count 2
-<16:04:43.624707>  [cliSvr]  tcp server on (null):53000 open ok
-<16:04:43.624844>  [tcRunner]  [az_test.c:az_tc_thread_proc_default:118] rcvr=0x7865e0 port=0x60e00000df78
-<16:04:43.624876>  [tcRunner]  az_tc_thread_proc_default start...
-<16:04:43.624919>  [main]  test case::az_ut_abc started
-<16:04:43.624921>  [tcRunner]  [az_test_fsm_handleOnIdle] testcase:az_ut_abc tc_fsm: (0) state=h0 event=(h8000000020000001:0:h(nil))
+<20:58:05.904207>  [main]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:10 ref count 2
+<20:58:05.904222>  [main]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:10 ref count 2
+<20:58:05.904288>  [main]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:11 ref count 2
+<20:58:05.904297>  [main]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:11 ref count 2
+<20:58:05.904303>  [main]  [az_cli_svr.c:az_cli_svr_start:130] <0:SUCCESS> cli server: cliSvr start
+<20:58:05.904317>  [main]  test project::unitTest config found on file::az_test_frw.xml
+<20:58:05.904420>  [main]  test case::az_ut_abc onoff=1 found on test project::unitTest
+<20:58:05.904547>  [main]  [az_test_main.c:az_test_loadTestConfig:111] <0:SUCCESS> load test config ./az_ut_cfg_abc.xml
+<20:58:05.904558>  [main]  [az_test_main.c:az_test_main:401] root tree
+<20:58:05.905562>  [main]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:13 ref count 2
+<20:58:05.905575>  [main]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:13 ref count 2
+<20:58:05.905719>  [cliSvr]  tcp server on (null):53000 open ok
+<20:58:05.905902>  [tcRunner]  [az_test.c:az_tc_thread_proc_default:118] rcvr=0x78f7c0 port=0x611000009f18
+<20:58:05.905924>  [tcRunner]  az_tc_thread_proc_default start...
+<20:58:05.906021>  [main]  test case::az_ut_abc started
+<20:58:05.906038>  [tcRunner]  [az_test_fsm_handleOnIdle] testcase:az_ut_abc tc_fsm: (0) state=h0 event=(h8000000020000001:0:h(nil))
 
-<16:04:43.624965>  [tcRunner]  a=2 b=3 r=5
-<16:04:43.624974>  [tcRunner]  a=2 b=3 r=4
-<16:04:43.624981>  [tcRunner]  a=2 b=-3 r=-1
-<16:04:43.625002>  [tcRunner]  [abc.c:az_ut_init_abc:122] <0:SUCCESS> ...
-<16:04:43.625025>  [tcRunner]  [az_test_fsm_handleOnInit] testcase:az_ut_abc tc_fsm: (1) state=h1 event=(h8000000020000003:0:h(nil))
+<20:58:05.906070>  [tcRunner]  a=2 b=3 r=5
+<20:58:05.906091>  [tcRunner]  a=2 b=3 r=4
+<20:58:05.906097>  [tcRunner]  a=2 b=-3 r=-1
+<20:58:05.906103>  [tcRunner]  [abc.c:az_ut_init_abc:122] <0:SUCCESS> ...
+<20:58:05.906124>  [tcRunner]  [az_test_fsm_handleOnInit] testcase:az_ut_abc tc_fsm: (1) state=h1 event=(h8000000020000003:0:h(nil))
 
-<16:04:43.625032>  [tcRunner]  [abc.c:az_ut_sync_abc:140] <0:SUCCESS> ...
-<16:04:43.625046>  [tcRunner]  [az_test_fsm_handleOnSync] testcase:az_ut_abc tc_fsm: (2) state=h3 event=(h8000000020000004:0:h(nil))
+<20:58:05.906131>  [tcRunner]  [abc.c:az_ut_sync_abc:140] <0:SUCCESS> ...
+<20:58:05.906147>  [tcRunner]  [az_test_fsm_handleOnSync] testcase:az_ut_abc tc_fsm: (2) state=h3 event=(h8000000020000004:0:h(nil))
 
-<16:04:43.625059>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase:az_ut_abc iter=0/3 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+<20:58:05.906163>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase0:az_ut_abc 0 0 iter=0/3 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
 
-<16:04:43.625067>  [tcRunner]  [abc.c:az_ut_prolog_abc:157] <0:SUCCESS> ...
-<16:04:43.625082>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase:az_ut_abc iter=0/3 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+<20:58:05.906172>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 0 result:0:SUCCESS
+<20:58:05.906178>  [tcRunner]  [abc.c:az_ut_prolog_abc:157] <0:SUCCESS> ...
+<20:58:05.906191>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase0:az_ut_abc 0 0 iter=0/3 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
 
-<16:04:43.625089>  [tcRunner]  iter0: a=2 b=3 r=5
-<16:04:43.625094>  [tcRunner]  [abc.c:az_ut_run_abc:184] <0:SUCCESS> ...
-<16:04:43.625107>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase:az_ut_abc iter=0/3 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+<20:58:05.906198>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 0 result:0:SUCCESS
+<20:58:05.906204>  [tcRunner]  iter0: a=2 b=3 r=5
+<20:58:05.906209>  [tcRunner]  [abc.c:az_ut_run_abc:184] <0:SUCCESS> ...
+<20:58:05.906224>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase0:az_ut_abc 0 0 iter=0/3 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
 
-<16:04:43.625114>  [tcRunner]  [abc.c:az_ut_epilog_abc:210] <0:SUCCESS> ...
-<16:04:43.625133>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase:az_ut_abc iter=1/2 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+<20:58:05.906231>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 0 result:0:SUCCESS
+<20:58:05.906236>  [tcRunner]  [abc.c:az_ut_epilog_abc:210] <0:SUCCESS> ...
+<20:58:05.906257>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase0:az_ut_abc 1 0 iter=1/2 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
 
-<16:04:43.625142>  [tcRunner]  [abc.c:az_ut_prolog_abc:157] <0:SUCCESS> ...
-<16:04:43.625159>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase:az_ut_abc iter=1/2 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+<20:58:05.906265>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 1 result:0:SUCCESS
+<20:58:05.906271>  [tcRunner]  [abc.c:az_ut_prolog_abc:157] <0:SUCCESS> ...
+<20:58:05.906281>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase0:az_ut_abc 1 0 iter=1/2 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
 
-<16:04:43.625168>  [tcRunner]  iter0: a=2 b=3 r=4
-<16:04:43.625175>  [tcRunner]  [abc.c:az_ut_run_abc:184] <0:SUCCESS> ...
-<16:04:43.625190>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase:az_ut_abc iter=1/2 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+<20:58:05.906289>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 1 result:0:SUCCESS
+<20:58:05.906295>  [tcRunner]  iter1: a=2 b=3 r=4
+<20:58:05.906302>  [tcRunner]  [abc.c:az_ut_run_abc:184] <0:SUCCESS> ...
+<20:58:05.906312>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase0:az_ut_abc 1 0 iter=1/2 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
 
-<16:04:43.625201>  [tcRunner]  [abc.c:az_ut_epilog_abc:210] <0:SUCCESS> ...
-<16:04:43.625217>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase:az_ut_abc iter=2/1 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+<20:58:05.906320>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 1 result:0:SUCCESS
+<20:58:05.906326>  [tcRunner]  [abc.c:az_ut_epilog_abc:210] <0:SUCCESS> ...
+<20:58:05.906336>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase0:az_ut_abc 1 1 iter=2/1 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
 
-<16:04:43.625224>  [tcRunner]  [abc.c:az_ut_prolog_abc:157] <0:SUCCESS> ...
-<16:04:43.625233>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase:az_ut_abc iter=2/1 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+<20:58:05.906344>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 2 result:0:SUCCESS
+<20:58:05.906349>  [tcRunner]  [abc.c:az_ut_prolog_abc:157] <0:SUCCESS> ...
+<20:58:05.906359>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase0:az_ut_abc 1 1 iter=2/1 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
 
-<16:04:43.625239>  [tcRunner]  iter0: a=2 b=-3 r=-1
-<16:04:43.625244>  [tcRunner]  [abc.c:az_ut_run_abc:184] <0:SUCCESS> ...
-<16:04:43.625253>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase:az_ut_abc iter=2/1 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+<20:58:05.906367>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 2 result:0:SUCCESS
+<20:58:05.906372>  [tcRunner]  iter2: a=2 b=-3 r=-1
+<20:58:05.906378>  [tcRunner]  [abc.c:az_ut_run_abc:184] <0:SUCCESS> ...
+<20:58:05.906388>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase0:az_ut_abc 1 1 iter=2/1 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
 
-<16:04:43.625259>  [tcRunner]  [abc.c:az_ut_epilog_abc:210] <0:SUCCESS> ...
-<16:04:43.625275>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase:az_ut_abc iter=3/0 tc_fsm: (3) state=h5 event=(h8000000020000006:0:h(nil))
+<20:58:05.906395>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 2 result:0:SUCCESS
+<20:58:05.906401>  [tcRunner]  [abc.c:az_ut_epilog_abc:210] <0:SUCCESS> ...
+<20:58:05.906417>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase0:az_ut_abc 2 1 iter=3/0 tc_fsm: (3) state=h5 event=(h8000000020000006:0:h(nil))
 
-<16:04:43.625285>  [tcRunner]  [abc.c:az_ut_term_abc:235] <0:SUCCESS> ...
-<16:04:43.625300>  [tcRunner]  [az_test_fsm_handleOnTini] testcase:az_ut_abc tc_fsm: (4) state=h4 event=(h8000000020000007:0:h(nil))
+<20:58:05.906429>  [tcRunner]  [abc.c:az_ut_term_abc:235] <0:SUCCESS> ...
+<20:58:05.906444>  [tcRunner]  [az_test_fsm_handleOnTini] testcase:az_ut_abc tc_fsm: (4) state=h4 event=(h8000000020000007:0:h(nil))
 
-<16:04:43.625310>  [tcRunner]  [az_xu.c:az_xu_exit:558] id:13 ref count 13
-<16:04:43.625312>  [main]  test case::az_ut_abc stopped
-<16:04:43.625318>  [tcRunner]  [az_ion.c:az_ion_deregister:165] id:13 type:32769 ion:0x61300000cb58/1 result=0
-<16:04:43.625380>  [main]  test case::eventTest onoff=0 found on test project::unitTest
-<16:04:43.625390>  [main]  test case::msgqTest onoff=0 found on test project::unitTest
-<16:04:43.625398>  [main]  test case::ringTest onoff=0 found on test project::unitTest
-<16:04:43.625553>  [main]  [az_xu.c:az_xu_exit:558] id:4 ref count 4
-<16:04:43.625564>  [main]  [az_ion.c:az_ion_deregister:165] id:4 type:32769 ion:0x61300000db18/1 result=0
-15:01:11.239706>  [tcRunner]  [az_ion.c:az_ion_deregister:165] id:13 type:32769 ion:0x61300000cb58/1 result=0
-<15:01:11.239797>  [main]  test case::eventTest onoff=0 found on test project::unitTest
-<15:01:11.239807>  [main]  test case::msgqTest onoff=0 found on test project::unitTest
-<15:01:11.239829>  [main]  test case::ringTest onoff=0 found on test project::unitTest
-<15:01:11.240075>  [main]  [az_xu.c:az_xu_exit:558] id:4 ref count 4
-<15:01:11.240084>  [main]  [az_ion.c:az_ion_deregister:165] id:4 type:32769 ion:0x61300000db18/1 result=0
-nner]  a=2 b=3 r=5
-<14:36:21.447563>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447577>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447591>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447605>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447619>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447634>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447648>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447663>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447678>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447692>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447707>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447722>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447737>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447752>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447766>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447780>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447792>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447806>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447822>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447837>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447851>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447863>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447875>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447887>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447899>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447913>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447928>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447956>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447971>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.447986>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448000>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448015>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448030>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448051>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448068>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448102>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448132>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448148>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448163>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448174>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448187>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448198>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448220>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448234>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448248>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448260>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448273>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448295>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448310>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448324>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448338>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448354>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448380>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448405>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448428>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448453>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448479>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448504>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448527>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448576>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448604>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448651>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448680>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448712>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448745>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448774>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448800>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448825>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448852>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448879>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448905>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448932>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448949>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448963>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.448977>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449014>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449040>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449085>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449113>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449139>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449162>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449187>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449213>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449236>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449260>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449284>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449309>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449339>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449366>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449392>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449418>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449465>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449491>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449532>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449557>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449575>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449587>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449609>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449620>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449634>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449649>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449663>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449675>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449687>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449701>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449715>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449728>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449739>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449751>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449767>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449782>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449797>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449812>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449826>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449841>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449855>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449877>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449893>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449907>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449921>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449940>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449955>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449967>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449980>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.449994>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450087>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450113>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450127>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450139>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450153>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450166>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450180>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450197>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450212>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450226>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450239>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450252>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450266>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450280>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450294>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450311>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450328>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450357>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450373>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450389>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450404>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450420>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450434>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450449>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450463>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450479>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450494>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450507>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450556>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450572>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450595>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450607>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450620>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450633>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450646>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450659>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450672>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450686>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450699>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450711>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450724>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450737>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450752>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450766>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450779>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450792>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450804>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450818>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450831>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450844>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450857>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450870>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450884>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450897>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450910>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450923>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450936>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450949>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450963>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450976>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.450989>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451002>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451016>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451029>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451042>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451054>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451068>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451081>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451095>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451108>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451121>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451134>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451147>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451161>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451174>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451187>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451201>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451214>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451226>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451239>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451251>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451263>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451275>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451288>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451300>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451313>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451326>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451339>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451352>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451365>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451378>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451391>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451403>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451416>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451429>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451442>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451455>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451468>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451482>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451495>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451508>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451521>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451534>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451547>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451560>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451574>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451587>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451599>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451613>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451628>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451641>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451654>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451667>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451683>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451696>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451708>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451722>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451735>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451747>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451760>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451773>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451785>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451797>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451810>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451823>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451836>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451848>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451860>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451874>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451887>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451900>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451913>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451926>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451938>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451952>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451964>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451977>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.451991>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452004>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452016>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452029>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452042>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452056>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452069>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452082>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452095>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452109>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452122>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452135>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452148>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452161>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452175>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452188>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452201>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452214>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452227>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452240>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452252>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452272>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452285>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452298>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452312>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452325>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452338>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452351>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452364>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452378>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452391>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452404>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452417>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452430>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452443>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452456>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452469>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452482>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452495>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452509>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452522>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452535>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452550>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452563>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452576>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452589>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452602>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452615>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452628>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452641>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452654>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452667>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452680>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452694>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452707>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452720>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452733>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452746>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452759>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452772>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452786>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452800>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452813>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452826>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452839>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452852>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452865>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452878>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452891>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452904>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452918>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452936>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452950>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452963>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452976>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.452989>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453002>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453016>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453028>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453041>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453055>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453068>  [tcRunner]  a=2 b=3 r=5
-=3 r=5
-21.453081>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453095>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453109>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453122>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453135>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453148>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453161>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453174>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453186>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453199>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453213>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453226>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453239>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453252>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453265>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453277>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453290>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453303>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453314>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453326>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453339>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453353>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453363>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453376>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453390>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453404>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453418>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453432>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453442>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453455>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453464>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453476>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453485>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453494>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453503>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453522>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453532>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453541>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453552>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453562>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453574>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453583>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453595>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453604>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453616>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453625>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453637>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453647>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453658>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453666>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453672>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453679>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453686>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453693>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453700>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453712>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453720>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453726>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453733>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453740>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453750>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453758>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453764>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453775>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453782>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453790>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453801>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453818>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453825>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453832>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453838>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453845>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453852>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453858>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453866>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453873>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453880>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453887>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453894>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453902>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453908>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453915>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453922>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453929>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453936>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453942>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453949>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453956>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453963>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453969>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453977>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453984>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453990>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.453997>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454004>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454011>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454018>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454034>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454043>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454050>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454057>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454064>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454070>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454077>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454084>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454090>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454097>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454104>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454111>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454118>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454124>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454131>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454138>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454145>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454152>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454159>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454166>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454174>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454181>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454188>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454195>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454202>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454209>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454216>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454223>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454230>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454236>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454243>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454251>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454258>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454265>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454271>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454278>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454285>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454291>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454298>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454309>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454318>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454330>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454339>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454350>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454359>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454371>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454380>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454392>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454402>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454413>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454423>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454434>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454444>  [tcRunner]  a=2 b=3 r=5
-<14:36:21.454455>  [tcRunner]  a=2 b=3 r=5
+<20:58:05.906458>  [main]  test case::az_ut_abc stopped
+<20:58:05.906524>  [main]  test case::az_ut_rw_lock onoff=1 found on test project::unitTest
+<20:58:05.906767>  [main]  [az_test_main.c:az_test_loadTestConfig:111] <0:SUCCESS> load test config ./az_ut_rw_lock_cfg.xml
+<20:58:05.906782>  [main]  [az_test_main.c:az_test_main:401] root tree
+<20:58:05.907283>  [main]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:17 ref count 2
+<20:58:05.907300>  [main]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:17 ref count 2
+<20:58:05.907418>  [tcRunner]  [az_test.c:az_tc_thread_proc_default:118] rcvr=0x78f7c0 port=0x611000009f18
+<20:58:05.907450>  [tcRunner]  az_tc_thread_proc_default start...
+<20:58:05.907488>  [main]  test case::az_ut_az_rw_lock started
+<20:58:05.907490>  [tcRunner]  [az_test_fsm_handleOnIdle] testcase:az_ut_az_rw_lock tc_fsm: (0) state=h0 event=(h8000000020000001:0:h(nil))
+
+<20:58:05.907557>  [tcRunner]  e=rrw r=xxx
+<20:58:05.907569>  [tcRunner]  e=wrr r=xxx 
+<20:58:05.907575>  [tcRunner]  e=rrw r=xxx
+<20:58:05.907584>  [tcRunner]  e=wrr r=xxx 
+<20:58:05.907595>  [tcRunner]  e=rrw r=xxx
+<20:58:05.907606>  [tcRunner]  e=wrr r=xxx 
+<20:58:05.907617>  [tcRunner]  e=rrw r=xxx
+<20:58:05.907627>  [tcRunner]  e=wrr r=xxx 
+<20:58:05.907636>  [tcRunner]  e=rrw r=xxx 
+<20:58:05.907646>  [tcRunner]  [az_ut_rw_lock.c:az_ut_init_az_rw_lock:122] <0:SUCCESS> ...
+<20:58:05.907672>  [tcRunner]  [az_test_fsm_handleOnInit] testcase:az_ut_az_rw_lock tc_fsm: (1) state=h1 event=(h8000000020000003:0:h(nil))
+
+<20:58:05.907686>  [tcRunner]  [az_ut_rw_lock.c:az_ut_sync_az_rw_lock:168] <0:SUCCESS> ...
+<20:58:05.907707>  [tcRunner]  [az_test_fsm_handleOnSync] testcase:az_ut_az_rw_lock tc_fsm: (2) state=h3 event=(h8000000020000004:0:h(nil))
+
+<20:58:05.907729>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 0 0 iter=0/9 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+
+<20:58:05.907743>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 0 result:0:SUCCESS
+<20:58:05.907755>  [tcRunner]  [az_ut_rw_lock.c:az_ut_prolog_az_rw_lock:187] <0:SUCCESS> ...
+<20:58:05.907777>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 0 0 iter=0/9 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+
+<20:58:05.907791>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 0 result:0:SUCCESS
+<20:58:05.907913>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:18 ref count 2
+<20:58:05.907928>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:18 ref count 2
+<20:58:05.908082>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:19 ref count 2
+<20:58:05.908095>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:19 ref count 2
+<20:58:05.908234>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:20 ref count 2
+<20:58:05.908247>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:20 ref count 2
+<20:58:05.908309>  [tcRunner]  [az_ut_rw_lock.c:az_ut_run_az_rw_lock:228] <0:SUCCESS> ...
+<20:58:05.908331>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 0 0 iter=0/9 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+
+<20:58:05.908341>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 0 result:0:SUCCESS
+<20:58:06.908489>  [tcRunner]  e=rrw r=rrw 0
+<20:58:06.908574>  [tcRunner]  [az_ut_rw_lock.c:az_ut_epilog_az_rw_lock:260] <0:SUCCESS> ...
+<20:58:06.908644>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 1 0 iter=1/8 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+
+<20:58:06.908671>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 1 result:0:SUCCESS
+<20:58:06.908689>  [tcRunner]  [az_ut_rw_lock.c:az_ut_prolog_az_rw_lock:187] <0:SUCCESS> ...
+<20:58:06.908728>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 1 0 iter=1/8 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+
+<20:58:06.908752>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 1 result:0:SUCCESS
+<20:58:06.909020>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:21 ref count 2
+<20:58:06.909068>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:21 ref count 2
+<20:58:06.909410>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:22 ref count 2
+<20:58:06.909457>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:22 ref count 2
+<20:58:06.909759>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:23 ref count 2
+<20:58:06.909798>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:23 ref count 2
+<20:58:06.909883>  [tcRunner]  [az_ut_rw_lock.c:az_ut_run_az_rw_lock:228] <0:SUCCESS> ...
+<20:58:06.909947>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 1 0 iter=1/8 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+
+<20:58:06.909973>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 1 result:0:SUCCESS
+<20:58:07.910124>  [tcRunner]  e=wrr r=wrr  0
+<20:58:07.910169>  [tcRunner]  [az_ut_rw_lock.c:az_ut_epilog_az_rw_lock:260] <0:SUCCESS> ...
+<20:58:07.910200>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 2 0 iter=2/7 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+
+<20:58:07.910211>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 2 result:0:SUCCESS
+<20:58:07.910218>  [tcRunner]  [az_ut_rw_lock.c:az_ut_prolog_az_rw_lock:187] <0:SUCCESS> ...
+<20:58:07.910234>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 2 0 iter=2/7 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+
+<20:58:07.910242>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 2 result:0:SUCCESS
+<20:58:07.910378>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:24 ref count 2
+<20:58:07.910400>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:24 ref count 2
+<20:58:07.910557>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:25 ref count 2
+<20:58:07.910573>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:25 ref count 2
+<20:58:07.910724>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:26 ref count 2
+<20:58:07.910741>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:26 ref count 2
+<20:58:07.910806>  [tcRunner]  [az_ut_rw_lock.c:az_ut_run_az_rw_lock:228] <0:SUCCESS> ...
+<20:58:07.910834>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 2 0 iter=2/7 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+
+<20:58:07.910844>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 2 result:0:SUCCESS
+<20:58:08.910956>  [tcRunner]  e=rrw r=rrw 0
+<20:58:08.911001>  [tcRunner]  [az_ut_rw_lock.c:az_ut_epilog_az_rw_lock:260] <0:SUCCESS> ...
+<20:58:08.911034>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 3 0 iter=3/6 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+
+<20:58:08.911053>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 3 result:0:SUCCESS
+<20:58:08.911061>  [tcRunner]  [az_ut_rw_lock.c:az_ut_prolog_az_rw_lock:187] <0:SUCCESS> ...
+<20:58:08.911078>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 3 0 iter=3/6 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+
+<20:58:08.911087>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 3 result:0:SUCCESS
+<20:58:08.911235>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:27 ref count 2
+<20:58:08.911256>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:27 ref count 2
+<20:58:08.911409>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:28 ref count 2
+<20:58:08.911427>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:28 ref count 2
+<20:58:08.911551>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:29 ref count 2
+<20:58:08.911564>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:29 ref count 2
+<20:58:08.911628>  [tcRunner]  [az_ut_rw_lock.c:az_ut_run_az_rw_lock:228] <0:SUCCESS> ...
+<20:58:08.911657>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 3 0 iter=3/6 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+
+<20:58:08.911668>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 3 result:0:SUCCESS
+<20:58:09.911929>  [tcRunner]  e=wrr r=wrr  0
+<20:58:09.912020>  [tcRunner]  [az_ut_rw_lock.c:az_ut_epilog_az_rw_lock:260] <0:SUCCESS> ...
+<20:58:09.912101>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 4 0 iter=4/5 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+
+<20:58:09.912145>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 4 result:0:SUCCESS
+<20:58:09.912170>  [tcRunner]  [az_ut_rw_lock.c:az_ut_prolog_az_rw_lock:187] <0:SUCCESS> ...
+<20:58:09.912229>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 4 0 iter=4/5 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+
+<20:58:09.912261>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 4 result:0:SUCCESS
+<20:58:09.912516>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:30 ref count 2
+<20:58:09.912555>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:30 ref count 2
+<20:58:09.912990>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:31 ref count 2
+<20:58:09.913052>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:31 ref count 2
+<20:58:09.913327>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:32 ref count 2
+<20:58:09.913364>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:32 ref count 2
+<20:58:09.913455>  [tcRunner]  [az_ut_rw_lock.c:az_ut_run_az_rw_lock:228] <0:SUCCESS> ...
+<20:58:09.913529>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 4 0 iter=4/5 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+
+<20:58:09.913578>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 4 result:0:SUCCESS
+<20:58:10.913870>  [tcRunner]  e=rrw r=rrw 0
+<20:58:10.913961>  [tcRunner]  [az_ut_rw_lock.c:az_ut_epilog_az_rw_lock:260] <0:SUCCESS> ...
+<20:58:10.914088>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 5 0 iter=5/4 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+
+<20:58:10.914136>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 5 result:0:SUCCESS
+<20:58:10.914175>  [tcRunner]  [az_ut_rw_lock.c:az_ut_prolog_az_rw_lock:187] <0:SUCCESS> ...
+<20:58:10.914248>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 5 0 iter=5/4 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+
+<20:58:10.914289>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 5 result:0:SUCCESS
+<20:58:10.914572>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:33 ref count 2
+<20:58:10.914620>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:33 ref count 2
+<20:58:10.914955>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:34 ref count 2
+<20:58:10.914999>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:34 ref count 2
+<20:58:10.915303>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:35 ref count 2
+<20:58:10.915340>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:35 ref count 2
+<20:58:10.915430>  [tcRunner]  [az_ut_rw_lock.c:az_ut_run_az_rw_lock:228] <0:SUCCESS> ...
+<20:58:10.915547>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 5 0 iter=5/4 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+
+<20:58:10.915582>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 5 result:0:SUCCESS
+<20:58:11.915743>  [tcRunner]  e=wrr r=wrr  0
+<20:58:11.915865>  [tcRunner]  [az_ut_rw_lock.c:az_ut_epilog_az_rw_lock:260] <0:SUCCESS> ...
+<20:58:11.915925>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 6 0 iter=6/3 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+
+<20:58:11.915940>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 6 result:0:SUCCESS
+<20:58:11.915950>  [tcRunner]  [az_ut_rw_lock.c:az_ut_prolog_az_rw_lock:187] <0:SUCCESS> ...
+<20:58:11.915970>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 6 0 iter=6/3 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+
+<20:58:11.915980>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 6 result:0:SUCCESS
+<20:58:11.916279>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:36 ref count 2
+<20:58:11.916305>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:36 ref count 2
+<20:58:11.916486>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:37 ref count 2
+<20:58:11.916507>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:37 ref count 2
+<20:58:11.916652>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:38 ref count 2
+<20:58:11.916671>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:38 ref count 2
+<20:58:11.916743>  [tcRunner]  [az_ut_rw_lock.c:az_ut_run_az_rw_lock:228] <0:SUCCESS> ...
+<20:58:11.916801>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 6 0 iter=6/3 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+
+<20:58:11.916817>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 6 result:0:SUCCESS
+<20:58:12.916966>  [tcRunner]  e=rrw r=rrw 0
+<20:58:12.917053>  [tcRunner]  [az_ut_rw_lock.c:az_ut_epilog_az_rw_lock:260] <0:SUCCESS> ...
+<20:58:12.917126>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 7 0 iter=7/2 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+
+<20:58:12.917152>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 7 result:0:SUCCESS
+<20:58:12.917170>  [tcRunner]  [az_ut_rw_lock.c:az_ut_prolog_az_rw_lock:187] <0:SUCCESS> ...
+<20:58:12.917210>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 7 0 iter=7/2 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+
+<20:58:12.917234>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 7 result:0:SUCCESS
+<20:58:12.917520>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:39 ref count 2
+<20:58:12.917571>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:39 ref count 2
+<20:58:12.917847>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:40 ref count 2
+<20:58:12.917881>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:40 ref count 2
+<20:58:12.918408>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:41 ref count 2
+<20:58:12.918473>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:41 ref count 2
+<20:58:12.918560>  [tcRunner]  [az_ut_rw_lock.c:az_ut_run_az_rw_lock:228] <0:SUCCESS> ...
+<20:58:12.918641>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 7 0 iter=7/2 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+
+<20:58:12.918670>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 7 result:0:SUCCESS
+<20:58:13.918941>  [tcRunner]  e=wrr r=wrr  0
+<20:58:13.919027>  [tcRunner]  [az_ut_rw_lock.c:az_ut_epilog_az_rw_lock:260] <0:SUCCESS> ...
+<20:58:13.919101>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 8 0 iter=8/1 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+
+<20:58:13.919128>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 8 result:0:SUCCESS
+<20:58:13.919146>  [tcRunner]  [az_ut_rw_lock.c:az_ut_prolog_az_rw_lock:187] <0:SUCCESS> ...
+<20:58:13.919188>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 8 0 iter=8/1 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+
+<20:58:13.919212>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 8 result:0:SUCCESS
+<20:58:13.919489>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:42 ref count 2
+<20:58:13.919537>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:42 ref count 2
+<20:58:13.919884>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:43 ref count 2
+<20:58:13.919937>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:43 ref count 2
+<20:58:13.920209>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:44 ref couf count0:58:13.920243>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:44 ref count 2
+<20:58:13.920374>  [tcRunner]  [az_ut_rw_lock.c:az_ut_run_az_rw_lock:228] <0:SUCCESS> ...
+<20:58:13.920526>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 8 0 iter=8/1 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+
+<20:58:13.920572>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 8 result:0:SUCCESS
+<20:58:14.920715>  [tcRunner]  e=rrw r=rrw  0
+<20:58:14.920819>  [tcRunner]  [az_ut_rw_lock.c:az_ut_epilog_az_rw_lock:260] <0:SUCCESS> ...
+<20:58:14.920887>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 9 0 iter=9/0 tc_fsm: (3) state=h5 event=(h8000000020000006:0:h(nil))
+
+<20:58:14.920921>  [tcRunner]  [az_ut_rw_lock.c:az_ut_term_az_rw_lock:286] <0:SUCCESS> ...
+<20:58:14.920944>  [tcRunner]  [az_test_fsm_handleOnTini] testcase:az_ut_az_rw_lock tc_fsm: (4) state=h4 event=(h8000000020000007:0:h(nil))
+
+<20:58:14.920985>  [main]  test case::az_ut_az_rw_lock stopped
+<20:58:14.921138>  [main]  test case::eventTest onoff=0 found on test project::unitTest
+<20:58:14.921157>  [main]  test case::msgqTest onoff=0 found on test project::unitTest
+<20:58:03.483497>  [main]  test case::ringTest onoff=0 found on test project::unitTest
+SUCCESS> ...
+<20:50:01.941054>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 6 1 iter=7/2 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+
+<20:50:01.941081>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 7 result:0:SUCCESS
+<20:50:01.941100>  [tcRunner]  [az_ut_rw_lock.c:az_ut_prolog_az_rw_lock:187] <0:SUCCESS> ...
+<20:50:01.941143>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 6 1 iter=7/2 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+
+<20:50:01.941166>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 7 result:0:SUCCESS
+<20:50:01.941409>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:17 ref count 2
+<20:50:01.941447>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:17 ref count 2
+<20:50:01.941713>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:18 ref count 2
+<20:50:01.941749>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:18 ref count 2
+<20:50:01.941982>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:19 ref count 2
+<20:50:01.942012>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:19 ref count 2
+<20:50:01.942118>  [tcRunner]  [az_ut_rw_lock.c:az_ut_run_az_rw_lock:228] <0:SUCCESS> ...
+<20:50:01.942185>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 6 1 iter=7/2 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+
+<20:50:01.942214>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 7 result:0:SUCCESS
+<20:50:02.041938>  [r0]  [az_xu.c:az_xu_exit:558] id:17 ref count 17
+<20:50:02.042066>  [r0]  [az_ion.c:az_ion_deregister:165] id:17 type:32769 ion:0x613000017518/1 result=0
+<20:50:02.142487>  [r0]  [az_xu.c:az_xu_exit:558] id:18 ref count 18
+<20:50:02.142609>  [r0]  [az_ion.c:az_ion_deregister:165] id:18 type:32769 ion:0x613000017198/1 result=0
+<20:50:02.142998>  [r0]  [az_xu.c:az_xu_exit:558] id:19 ref count 19
+<20:50:02.143057>  [r0]  [az_ion.c:az_ion_deregister:165] id:19 type:32769 ion:0x613000016e18/1 result=0
+<20:50:02.942461>  [tcRunner]  e=wrr r=wrr  0
+<20:50:02.942548>  [tcRunner]  [az_ut_rw_lock.c:az_ut_epilog_az_rw_lock:260] <0:SUCCESS> ...
+<20:50:02.942623>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 7 1 iter=8/1 tc_fsm: (3) state=h5 event=(h8000000020000008:0:h(nil))
+
+<20:50:02.942649>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 8 result:0:SUCCESS
+<20:50:02.942669>  [tcRunner]  [az_ut_rw_lock.c:az_ut_prolog_az_rw_lock:187] <0:SUCCESS> ...
+<20:50:02.942711>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 7 1 iter=8/1 tc_fsm: (3) state=h5 event=(h8000000020000009:0:h(nil))
+
+<20:50:02.942731>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 8 result:0:SUCCESS
+<20:50:02.942974>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:17 ref count 2
+<20:50:02.943014>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:17 ref count 2
+<20:50:02.943250>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:18 ref count 2
+<20:50:02.943293>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:18 ref count 2
+<20:50:02.943520>  [tcRunner]  [az_xu.c:az_xu_start:181] <0:SUCCESS> id:19 ref count 2
+<20:50:02.943574>  [tcRunner]  [az_xu.c:az_xu_create:132] <0:SUCCESS> id:19 ref count 2
+<20:50:02.943667>  [tcRunner]  [az_ut_rw_lock.c:az_ut_run_az_rw_lock:228] <0:SUCCESS> ...
+<20:50:02.943751>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 7 1 iter=8/1 tc_fsm: (3) state=h5 event=(h800000002000000a:0:h(nil))
+
+<20:50:02.943791>  [tcRunner]  [az_test_fsm_handleOnNorm] iter 8 result:0:SUCCESS
+<20:50:03.043391>  [r0]  [az_xu.c:az_xu_exit:558] id:17 ref count 17
+<20:50:03.043496>  [r0]  [az_ion.c:az_ion_deregister:165] id:17 type:32769 ion:0x613000016a98/1 result=0
+<20:50:03.043871>  [r0]  [az_xu.c:az_xu_exit:558] id:19 ref count 19
+<20:50:03.043915>  [r0]  [az_ion.c:az_ion_deregister:165] id:19 type:32769 ion:0x613000016398/1 result=0
+<20:50:03.144248>  [r0]  [az_xu.c:az_xu_exit:558] id:18 ref count 18
+<20:50:03.144339>  [r0]  [az_ion.c:az_ion_deregister:165] id:18 type:32769 ion:0x613000016718/1 result=0
+<20:50:03.943925>  [tcRunner]  e=rrw r=rrw  0
+<20:50:03.943980>  [tcRunner]  [az_ut_rw_lock.c:az_ut_epilog_az_rw_lock:260] <0:SUCCESS> ...
+<20:50:03.944011>  [tcRunner]  [az_test_fsm_handleOnNorm] testcase1:az_ut_az_rw_lock 8 1 iter=9/0 tc_fsm: (3) state=h5 event=(h8000000020000006:0:h(nil))
+
+<20:50:03.944036>  [tcRunner]  [az_ut_rw_lock.c:az_ut_term_az_rw_lock:286] <0:SUCCESS> ...
+<20:50:03.944053>  [tcRunner]  [az_test_fsm_handleOnTini] testcase:az_ut_az_rw_lock tc_fsm: (4) state=h4 event=(h8000000020000007:0:h(nil))
+
+<20:50:03.944068>  [tcRunner]  [az_xu.c:az_xu_exit:558] id:13 ref count 13
+<20:50:03.944074>  [main]  test case::az_ut_az_rw_lock stopped
+<20:50:03.944078>  [tcRunner]  [az_ion.c:az_ion_deregister:165] id:13 type:32769 ion:0x61300000c7d8/1 result=0
+<20:50:03.944257>  [main]  test case::eventTest onoff=0 found on test project::unitTest
+<20:50:03.944272>  [main]  test case::msgqTest onoff=0 found on test project::unitTest
+<20:50:03.944281>  [main]  test case::ringTest onoff=0 found on test project::unitTest
+<20:50:03.944479>  [main]  [az_xu.c:az_xu_exit:558] id:4 ref count 4
+<20:50:03.944495>  [main]  [az_ion.c:az_ion_deregister:165] id:4 type:32769 ion:0x61300000db18/1 result=0
+ rRunner]  a=2 b=3 r=5
 <14:36:21.454466>  [tcRunner]  a=2 b=3 r=5
 <14:36:21.454478>  [tcRunner]  a=2 b=3 r=5
 <14:36:21.454487>  [tcRunner]  a=2 b=3 r=5

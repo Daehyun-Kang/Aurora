@@ -269,7 +269,7 @@ az_r_t az_test_loadTestIters(az_test_case_t *tc)
     } else {
       tc->test_iter.list = iter;
       for (j = 0; j < test_iter_count; j++, iter++) {
-        iter->index = 0;
+        iter->index = j;
         iter->onoff = 1;
         iter->xml = s_xml_iters[j];
         iter->test_vector = NULL;

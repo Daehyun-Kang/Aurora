@@ -271,30 +271,52 @@ def defSetReasonFunction(f, fname):
   f.write("}\n\n");
 
 def parseFuncDecl(funcdecl):
-  token = funcdecl.split(" ", 1)
-  print token
-  if len(token) != 2: 
+  funcdecl = funcdecl.replace("*", "* ")
+  token = funcdecl.split(" ")
+  #print token
+  if len(token) < 2: 
     print "\"{0}\" is invalid func decl".format(funcdecl)
     return False
-  rettype = token[0]
-  token = token[1].split("(",1)
+  rettype = "" 
+  func = ""
+  found = True 
   #print token
+  for arg in token[1:len(token)]:
+    if arg == '*' and found:
+      rettype = rettype + arg.strip()
+    elif len(arg) == 0:
+      continue
+    else:
+      func = func + ' ' + arg
+      found = False
+  rettype = token[0] + ' ' + rettype
+  #print rettype
+  #print func
+  token = func.strip().split("(",1)
   funcname = token[0]
-  token = token[1].split(",")
-  #print token
-  argcount = len(token)
-  token[argcount-1] = token[argcount-1].replace(")", "")
-  token[argcount-1] = token[argcount-1].replace(";", "")
+  if len(token) > 1: 
+    token = token[1].split(",")
+    #print token
+    argcount = len(token)
+    token[argcount-1] = token[argcount-1].replace(")", "").strip()
+    token[argcount-1] = token[argcount-1].replace(";", "").strip()
+  else:
+    token = []
   funcstruct={'ret':rettype, 'name':funcname, 'args':token}
   return funcstruct
 
 def argsToVector(rettype, args):
   argn = len(args)
-  print args
   s = ""
   for arg in args:
+    arg = arg.replace("*", "* ")
     token = arg.strip().split(' ')
-    s += "{0}=\"{1}\" ".format(token[1], token[0]) 
+    if len(token) > 1:
+      if len(token) > 2:
+        n = token[0]+' '+''.join(token[1:len(token)-1])
+        s += "{0}=\"{1}\" ".format(token[len(token)-1].strip(), n.strip()) 
+      else:
+        s += "{0}=\"{1}\" ".format(token[len(token)-1].strip(), token[0].strip()) 
 
   s += "{0}=\"{1}\" ".format("expected_result", rettype) 
   s += "{0}=\"{1}\" ".format("result", rettype) 
@@ -375,7 +397,8 @@ def main():
 
   filenames=filename.split('.')
   tcname = UnitTestVarPrefix + '_' + filenames[0];
-  filename = UnitTestVarPrefix +'_cfg_'+filenames[0] + '.xml'
+  #filename = UnitTestVarPrefix +'_cfg_'+filenames[0] + '.xml'
+  filename = filenames[0] + '_cfg.xml'
   if os.path.isfile(filename):
     os.rename(filename, filename+'.bk')
 

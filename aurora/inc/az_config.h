@@ -171,5 +171,6 @@
 #define CONFIG_AZ_TEST                    1
 //#undef CONFIG_AZ_TEST                    
 
+#define  CONFIG_AZ_SYS_LW_USE_SEM          1 
 #endif
 

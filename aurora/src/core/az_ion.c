@@ -85,9 +85,10 @@ az_r_t az_ion_deregister(az_ion_t *ion)
 {
   az_r_t result = AZ_SUCCESS; 
 
-  if (NULL == ion) {
-    result = AZ_ERR(ARG_NULL);
-  } else {
+  do {
+    if (NULL == ion) {
+      result = AZ_ERR(ARG_NULL);
+    }
     result = az_array_delptr(AZ_ION_LIST(), ion->id);
     if (result == AZ_SUCCESS) {
       az_refcount_atomic_dec(&ion->refCount);
@@ -96,7 +97,7 @@ az_r_t az_ion_deregister(az_ion_t *ion)
     }
     az_sys_eprintf("id:%d type:%d ion:%p/%d result="AZ_FMT_RET(1)"\n",ion->id, 
         ion->type, az_ion(ion->id), AZ_REFCOUNT_VALUE(&ion->refCount), result); 
-  }
+  } while (0);
 
   return result;
 }
@@ -142,33 +143,38 @@ az_r_t az_ion_deregister(az_ion_t *ion)
 {
   az_r_t result = AZ_SUCCESS; 
 
-  if (NULL == ion) {
-    result = AZ_ERR(ARG_NULL);
-  } else {
+  do {
+    if (NULL == ion) {
+      result = AZ_ERR(ARG_NULL);
+    } 
     az_ion_id_t id = ion->id;
 
     if (id < 0 || id > AZ_ION_LIST()->size) {
+      az_xu_t xu = az_xu_self();
+      az_sys_eprintf("ion %d(%p) OOR xu:%p\n", id, ion, xu);
       result = AZ_ERR(OVERFLOW);
-    } else {
-      if (ion != az_ions[id]) {
-        result = AZ_ERR(INVALID);
-      } else {
-        if  (az_refcount_atomic_dec(&ion->refCount) == 0) {
-          az_atomic_dec32(&AZ_ION_LIST()->count);
-          az_ions[ion->id] = NULL;
-          if (ion->type & AZ_ION_FLAG_AUTOALLOC) {
-            az_sys_io_delete(ion->id); 
-          }
-          ion->id = AZ_SYS_IO_INVALID;
-        } else if (AZ_REFCOUNT_VALUE(&ion->refCount) < 0) {
-          // may reset the refcount to zero
-          result = AZ_ERR(AGAIN);
-        }
-      }
+      break;
+    } 
+    if (ion != az_ions[id]) {
+      az_xu_t xu = az_xu_self();
+      az_sys_eprintf("ion %d(%p) mismatch xu:%p\n", id, ion, xu);
+      result = AZ_ERR(INVALID);
+      break;
     }
-    az_sys_eprintf("id:%d type:%d ion:%p/%d result="AZ_FMT_RET(1)"\n",ion->id, 
+    az_eprintf("id:%d type:%d ion:%p/%d result="AZ_FMT_RET(1)"\n",ion->id, 
         ion->type, az_ion(ion->id), AZ_REFCOUNT_VALUE(&ion->refCount), result); 
-  }
+    if  (az_refcount_atomic_dec(&ion->refCount) == 0) {
+      az_atomic_dec32(&AZ_ION_LIST()->count);
+      az_ions[ion->id] = NULL;
+      if (ion->type & AZ_ION_FLAG_AUTOALLOC) {
+        az_sys_io_delete(ion->id); 
+      }
+      ion->id = AZ_SYS_IO_INVALID;
+    } else if (AZ_REFCOUNT_VALUE(&ion->refCount) < 0) {
+      // may reset the refcount to zero
+      result = AZ_ERR(AGAIN);
+    }
+  } while (0);
 
   return result;
 }

@@ -1,6 +1,6 @@
 <? xml version="1.0" encoding="iso-8859-1"?>
 <testProj name="unitTest">
-  <testCase name="az_ut_abc" cfgfile="az_ut_cfg_abc.xml" onoff.bool="1" />
+  <testCase name="az_ut_abc" cfgfile="az_ut_cfg_abc.xml" onoff.bool="1" timeout.int32="3000"/>
   <testCase name="eventTest" cfgfile="az_tc_eventTest.xml" onoff.bool="0" />
   <testCase name="msgqTest" cfgfile="az_tc_msgqTest.xml" onoff.bool="0" />
   <testCase name="ringTest" cfgfile="az_tc_ringTest.xml" onoff.bool="0" />

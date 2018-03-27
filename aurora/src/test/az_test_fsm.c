@@ -70,7 +70,7 @@ static az_fsm_state_t az_test_fsm_handleOnIdle(void *ctx, az_fsm_state_t state, 
   az_assert(NULL != edescr);
 
   az_test_case_t *tc = az_test_curTestCase();
-  az_logt("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 0, evt));
+  az_tlog("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 0, evt));
   do {
     switch (evtid) {
       case AZ_TEST_CMD_INIT:
@@ -122,7 +122,7 @@ static az_fsm_state_t az_test_fsm_handleOnInit(void *ctx, az_fsm_state_t state, 
   az_assert(NULL != edescr);
 
   az_test_case_t *tc = az_test_curTestCase();
-  az_logt("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 1, evt));
+  az_tlog("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 1, evt));
   do {
     switch (evtid) {
       case AZ_TEST_CMD_SYNC:
@@ -172,7 +172,7 @@ static az_fsm_state_t az_test_fsm_handleOnSync(void *ctx, az_fsm_state_t state, 
   az_assert(NULL != edescr);
 
   az_test_case_t *tc = az_test_curTestCase();
-  az_logt("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 2, evt));
+  az_tlog("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 2, evt));
   do {
     switch (evtid) {
       case AZ_TEST_CMD_STRT:
@@ -229,19 +229,25 @@ az_fsm_state_t az_test_fsm_handleOnNorm(void *ctx, az_fsm_state_t state, az_even
   az_event_t  sevt = NULL;
   az_r_t r = AZ_SUCCESS;
   az_fsm_t *fsm = (az_fsm_t *)ctx;
+  az_test_iter_t *iter;
 
   az_assert(NULL != edescr);
 
   az_test_case_t *tc = az_test_curTestCase();
-  az_logt("testcase:%s iter=%d/%d %s\n", tc->name, 
+  az_tlog("testcase:%s iter=%d/%d %s\n", tc->name, 
       tc->test_iter.index, tc->test_iter.remained, az_fsm_probe(ctx, 3, evt));
+
+  iter = tc->test_iter.list + tc->test_iter.index;
   do {
     switch (evtid) {
       case AZ_TEST_CMD_PLOG:
+        //memset(&iter->report, 0, sizeof(iter->report));
         if (tc->oprs.Prolog) {
           r = (tc->oprs.Prolog)(tc);
         }
         if (r < 0) {
+          //iter->report.fail++;
+          tc->report.fail++;
           tc->test_iter.index++;
           tc->test_iter.remained--;
           tc->test_iter.errored++;
@@ -261,6 +267,8 @@ az_fsm_state_t az_test_fsm_handleOnNorm(void *ctx, az_fsm_state_t state, az_even
           r = (tc->oprs.Run)(tc);
         }
         if (r < 0) {
+          //iter->report.fail++;
+          tc->report.fail++;
           tc->test_iter.index++;
           tc->test_iter.remained--;
           tc->test_iter.errored++;
@@ -283,9 +291,24 @@ az_fsm_state_t az_test_fsm_handleOnNorm(void *ctx, az_fsm_state_t state, az_even
         tc->test_iter.index++;
         tc->test_iter.remained--;
         if (r < 0) {
+          //iter->report.fail++;
+          tc->report.fail++;
           tc->test_iter.errored++;
         } else {
           tc->test_iter.completed++;
+          if (iter->result < 0) {
+            tc->report.fail++;
+          } else {
+            //iter->report.pass++;
+            tc->report.pass++;
+            if (iter->result == 0) {
+              //iter->report.success++;
+              tc->report.success++;
+            } else {
+              //iter->report.failure++;
+              tc->report.failure++;
+            }
+          }
         }
         if (tc->test_iter.remained > 0) {
           fsm->substate = AZ_TEST_SUBSTATE_PRE; 
@@ -337,7 +360,7 @@ static az_fsm_state_t az_test_fsm_handleOnTini(void *ctx, az_fsm_state_t state, 
   az_assert(NULL != edescr);
 
   az_test_case_t *tc = az_test_curTestCase();
-  az_logt("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 4, evt));
+  az_tlog("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 4, evt));
   do {
     switch (evtid) {
       case AZ_TEST_CMD_TINI:
@@ -374,7 +397,7 @@ static az_fsm_state_t az_test_fsm_handleOnIerr(void *ctx, az_fsm_state_t state, 
   az_assert(NULL != edescr);
 
   az_test_case_t *tc = az_test_curTestCase();
-  az_logt("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 5, evt));
+  az_tlog("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 5, evt));
   do {
     switch (evtid) {
       case AZ_TEST_EVT_IERR:

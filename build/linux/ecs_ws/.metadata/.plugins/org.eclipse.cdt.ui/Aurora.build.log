@@ -1,5 +1,565 @@
-20:04:17 **** Incremental Build of configuration Debug for project Aurora ****
+16:04:31 **** Incremental Build of configuration Debug for project Aurora ****
 make all 
+Building file: /home/dhkang/work/Aurora/aurora/src/test/az_test.c
+Invoking: GCC C Compiler
+gcc -Dlinux -D"BASE_FILENAME=\"az_test.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0  -fsanitize=address -MMD -MP -MF"Sources/test/az_test.d" -MT"Sources/test/az_test.o" -o "Sources/test/az_test.o" "/home/dhkang/work/Aurora/aurora/src/test/az_test.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:122:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h: In function ‘az_sys_fs_copy’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
+       wlen = sendfile(dst, src, &offset, 4096);
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:180:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdAddr2Name’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:161:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+         name = symtab[i]->name;
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h: In function ‘az_hexStringDecode’:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
+     outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
+                   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_add32’:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
+     az_array_est_element32_at(pArray, id, e);
+     ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h: At top level:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:117:0: warning: "AZ_LOG_LEVEL_DEBUG" redefined
+ #define AZ_LOG_LEVEL_DEBUG    70
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_log.h:88:0: note: this is the location of the previous definition
+ #define AZ_LOG_LEVEL_DEBUG    60
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:118:0: warning: "AZ_LOG_LEVEL_VERBOSE" redefined
+ #define AZ_LOG_LEVEL_VERBOSE  80
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_log.h:89:0: note: this is the location of the previous definition
+ #define AZ_LOG_LEVEL_VERBOSE  70
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/src/test/az_test.c: In function ‘az_tc_thread_proc_default’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
+ #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
+          ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
+     az_sys_printf(__VA_ARGS__);\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
+     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+     ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test.c:170:5: note: in expansion of macro ‘az_rprintf’
+     az_rprintf(r, "%s error..." AZ_NL, __FUNCTION__);
+     ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
+ #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+          ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
+     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+     ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test.c:170:5: note: in expansion of macro ‘az_rprintf’
+     az_rprintf(r, "%s error..." AZ_NL, __FUNCTION__);
+     ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test.c:91:7: warning: unused variable ‘tmo_count’ [-Wunused-variable]
+   int tmo_count = 0; 
+       ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test.c:90:15: warning: unused variable ‘logid’ [-Wunused-variable]
+   az_logid_t  logid;
+               ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test.c:87:17: warning: unused variable ‘emask’ [-Wunused-variable]
+   az_xu_event_t emask;
+                 ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/src/test/az_test.c: At top level:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:139:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
+ static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
+                                                      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_ion.h:81:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
+ static void az_ion_invalidate(az_ion_t *ion, int is_static)
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/src/test/az_test.c: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:94:13: note: ‘symtab’ was declared here
+   asymbol **symtab;
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:20: note: ‘nsyms’ was declared here
+   az_size_t nsize, nsyms, i;
+                    ^
+Finished building: /home/dhkang/work/Aurora/aurora/src/test/az_test.c
+ 
+Building file: /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c
+Invoking: GCC C Compiler
+gcc -Dlinux -D"BASE_FILENAME=\"az_test_event.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0  -fsanitize=address -MMD -MP -MF"Sources/test/az_test_event.d" -MT"Sources/test/az_test_event.o" -o "Sources/test/az_test_event.o" "/home/dhkang/work/Aurora/aurora/src/test/az_test_event.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:122:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h: In function ‘az_sys_fs_copy’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
+       wlen = sendfile(dst, src, &offset, 4096);
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:180:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdAddr2Name’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:161:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+         name = symtab[i]->name;
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h: In function ‘az_hexStringDecode’:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
+     outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
+                   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_add32’:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
+     az_array_est_element32_at(pArray, id, e);
+     ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h: At top level:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:117:0: warning: "AZ_LOG_LEVEL_DEBUG" redefined
+ #define AZ_LOG_LEVEL_DEBUG    70
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_log.h:88:0: note: this is the location of the previous definition
+ #define AZ_LOG_LEVEL_DEBUG    60
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:118:0: warning: "AZ_LOG_LEVEL_VERBOSE" redefined
+ #define AZ_LOG_LEVEL_VERBOSE  80
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_log.h:89:0: note: this is the location of the previous definition
+ #define AZ_LOG_LEVEL_VERBOSE  70
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:139:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
+ static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
+                                                      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_ion.h:81:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
+ static void az_ion_invalidate(az_ion_t *ion, int is_static)
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/src/test/az_test_event.c: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:94:13: note: ‘symtab’ was declared here
+   asymbol **symtab;
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:20: note: ‘nsyms’ was declared here
+   az_size_t nsize, nsyms, i;
+                    ^
+Finished building: /home/dhkang/work/Aurora/aurora/src/test/az_test_event.c
+ 
+Building file: /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c
+Invoking: GCC C Compiler
+gcc -Dlinux -D"BASE_FILENAME=\"az_test_fsm.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0  -fsanitize=address -MMD -MP -MF"Sources/test/az_test_fsm.d" -MT"Sources/test/az_test_fsm.o" -o "Sources/test/az_test_fsm.o" "/home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:122:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h: In function ‘az_sys_fs_copy’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
+       wlen = sendfile(dst, src, &offset, 4096);
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:180:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdAddr2Name’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:161:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+         name = symtab[i]->name;
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h: In function ‘az_hexStringDecode’:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
+     outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
+                   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_add32’:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
+     az_array_est_element32_at(pArray, id, e);
+     ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h: At top level:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:117:0: warning: "AZ_LOG_LEVEL_DEBUG" redefined
+ #define AZ_LOG_LEVEL_DEBUG    70
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_log.h:88:0: note: this is the location of the previous definition
+ #define AZ_LOG_LEVEL_DEBUG    60
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:118:0: warning: "AZ_LOG_LEVEL_VERBOSE" redefined
+ #define AZ_LOG_LEVEL_VERBOSE  80
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_log.h:89:0: note: this is the location of the previous definition
+ #define AZ_LOG_LEVEL_VERBOSE  70
+ ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c: In function ‘az_test_fsm_handleOnNorm’:
+/home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:229:15: warning: unused variable ‘sevt’ [-Wunused-variable]
+   az_event_t  sevt = NULL;
+               ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c: In function ‘az_test_fsm_handleOnTini’:
+/home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:357:15: warning: unused variable ‘sevt’ [-Wunused-variable]
+   az_event_t  sevt = NULL;
+               ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c: In function ‘az_test_fsm_handleOnIerr’:
+/home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:394:15: warning: unused variable ‘sevt’ [-Wunused-variable]
+   az_event_t  sevt = NULL;
+               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c: At top level:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:139:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
+ static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
+                                                      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_ion.h:81:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
+ static void az_ion_invalidate(az_ion_t *ion, int is_static)
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:94:13: note: ‘symtab’ was declared here
+   asymbol **symtab;
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:20: note: ‘nsyms’ was declared here
+   az_size_t nsize, nsyms, i;
+                    ^
+Finished building: /home/dhkang/work/Aurora/aurora/src/test/az_test_fsm.c
+ 
+Building file: /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c
+Invoking: GCC C Compiler
+gcc -Dlinux -D"BASE_FILENAME=\"az_test_iou.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0  -fsanitize=address -MMD -MP -MF"Sources/test/az_test_iou.d" -MT"Sources/test/az_test_iou.o" -o "Sources/test/az_test_iou.o" "/home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:122:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h: In function ‘az_sys_fs_copy’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
+       wlen = sendfile(dst, src, &offset, 4096);
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:180:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdAddr2Name’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:161:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+         name = symtab[i]->name;
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h: In function ‘az_hexStringDecode’:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
+     outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
+                   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_add32’:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
+     az_array_est_element32_at(pArray, id, e);
+     ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h: At top level:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:117:0: warning: "AZ_LOG_LEVEL_DEBUG" redefined
+ #define AZ_LOG_LEVEL_DEBUG    70
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_log.h:88:0: note: this is the location of the previous definition
+ #define AZ_LOG_LEVEL_DEBUG    60
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:118:0: warning: "AZ_LOG_LEVEL_VERBOSE" redefined
+ #define AZ_LOG_LEVEL_VERBOSE  80
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_log.h:89:0: note: this is the location of the previous definition
+ #define AZ_LOG_LEVEL_VERBOSE  70
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:139:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
+ static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
+                                                      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_ion.h:81:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
+ static void az_ion_invalidate(az_ion_t *ion, int is_static)
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:94:13: note: ‘symtab’ was declared here
+   asymbol **symtab;
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:20: note: ‘nsyms’ was declared here
+   az_size_t nsize, nsyms, i;
+                    ^
+Finished building: /home/dhkang/work/Aurora/aurora/src/test/az_test_iou.c
+ 
 Building file: /home/dhkang/work/Aurora/aurora/src/test/az_test_main.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_test_main.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0  -fsanitize=address -MMD -MP -MF"Sources/test/az_test_main.d" -MT"Sources/test/az_test_main.o" -o "Sources/test/az_test_main.o" "/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c"
@@ -133,7 +693,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:378:7: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:393:7: note: in expansion of macro ‘az_rprintf’
        az_rprintf(r, "loading testcase::%s config file::%s\n", 
        ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
@@ -145,7 +705,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
      az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:378:7: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:393:7: note: in expansion of macro ‘az_rprintf’
        az_rprintf(r, "loading testcase::%s config file::%s\n", 
        ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
@@ -160,7 +720,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:402:7: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:417:7: note: in expansion of macro ‘az_rprintf’
        az_rprintf(r, "%d testcase:%s config oprs not missing\n", tc->index, tc->name); 
        ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
@@ -172,7 +732,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
      az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:402:7: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:417:7: note: in expansion of macro ‘az_rprintf’
        az_rprintf(r, "%d testcase:%s config oprs not missing\n", tc->index, tc->name); 
        ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
@@ -187,7 +747,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:410:7: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:425:7: note: in expansion of macro ‘az_rprintf’
        az_rprintf(r, "%d testcase:%s  test iterations missing\n", tc->index, tc->name); 
        ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
@@ -199,10 +759,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
      az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:410:7: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:425:7: note: in expansion of macro ‘az_rprintf’
        az_rprintf(r, "%d testcase:%s  test iterations missing\n", tc->index, tc->name); 
        ^
-/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:297:17: warning: unused variable ‘ver’ [-Wunused-variable]
+/home/dhkang/work/Aurora/aurora/src/test/az_test_main.c:304:17: warning: unused variable ‘ver’ [-Wunused-variable]
    az_version_t *ver = &az_version;
                  ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
@@ -258,9 +818,279 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                     ^
 Finished building: /home/dhkang/work/Aurora/aurora/src/test/az_test_main.c
  
+Building file: /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c
+Invoking: GCC C Compiler
+gcc -Dlinux -D"BASE_FILENAME=\"az_test_report.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0  -fsanitize=address -MMD -MP -MF"Sources/test/az_test_report.d" -MT"Sources/test/az_test_report.o" -o "Sources/test/az_test_report.o" "/home/dhkang/work/Aurora/aurora/src/test/az_test_report.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:122:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h: In function ‘az_sys_fs_copy’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
+       wlen = sendfile(dst, src, &offset, 4096);
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:180:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdAddr2Name’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:161:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+         name = symtab[i]->name;
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h: In function ‘az_hexStringDecode’:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
+     outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
+                   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_add32’:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
+     az_array_est_element32_at(pArray, id, e);
+     ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h: At top level:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:117:0: warning: "AZ_LOG_LEVEL_DEBUG" redefined
+ #define AZ_LOG_LEVEL_DEBUG    70
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_log.h:88:0: note: this is the location of the previous definition
+ #define AZ_LOG_LEVEL_DEBUG    60
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:118:0: warning: "AZ_LOG_LEVEL_VERBOSE" redefined
+ #define AZ_LOG_LEVEL_VERBOSE  80
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_log.h:89:0: note: this is the location of the previous definition
+ #define AZ_LOG_LEVEL_VERBOSE  70
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:139:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
+ static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
+                                                      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_ion.h:81:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
+ static void az_ion_invalidate(az_ion_t *ion, int is_static)
+             ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test_report.c: In function ‘az_test_testproj_report’:
+/home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:116:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/src/test/az_test_report.c: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:94:13: note: ‘symtab’ was declared here
+   asymbol **symtab;
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:20: note: ‘nsyms’ was declared here
+   az_size_t nsize, nsyms, i;
+                    ^
+Finished building: /home/dhkang/work/Aurora/aurora/src/test/az_test_report.c
+ 
+Building file: /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c
+Invoking: GCC C Compiler
+gcc -Dlinux -D"BASE_FILENAME=\"az_test_xu.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0  -fsanitize=address -MMD -MP -MF"Sources/test/az_test_xu.d" -MT"Sources/test/az_test_xu.o" -o "Sources/test/az_test_xu.o" "/home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:122:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h: In function ‘az_sys_fs_copy’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
+       wlen = sendfile(dst, src, &offset, 4096);
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:180:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdAddr2Name’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:161:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+         name = symtab[i]->name;
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h: In function ‘az_hexStringDecode’:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
+     outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
+                   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_add32’:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
+     az_array_est_element32_at(pArray, id, e);
+     ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h: At top level:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:117:0: warning: "AZ_LOG_LEVEL_DEBUG" redefined
+ #define AZ_LOG_LEVEL_DEBUG    70
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_log.h:88:0: note: this is the location of the previous definition
+ #define AZ_LOG_LEVEL_DEBUG    60
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:118:0: warning: "AZ_LOG_LEVEL_VERBOSE" redefined
+ #define AZ_LOG_LEVEL_VERBOSE  80
+ ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_log.h:89:0: note: this is the location of the previous definition
+ #define AZ_LOG_LEVEL_VERBOSE  70
+ ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c: In function ‘az_test_run’:
+/home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:63:11: warning: implicit declaration of function ‘az_test_doRecvEvent’ [-Wimplicit-function-declaration]
+       r = az_test_doRecvEvent(descr);
+           ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:66:11: warning: implicit declaration of function ‘az_test_doSendEvent’ [-Wimplicit-function-declaration]
+       r = az_test_doSendEvent(descr);
+           ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:69:11: warning: implicit declaration of function ‘az_test_doSendMsgq’ [-Wimplicit-function-declaration]
+       r = az_test_doSendMsgq(descr);
+           ^
+/home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:72:11: warning: implicit declaration of function ‘az_test_doRecvMsgq’ [-Wimplicit-function-declaration]
+       r = az_test_doRecvMsgq(descr);
+           ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c: At top level:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:139:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
+ static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
+                                                      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_ion.h:81:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
+ static void az_ion_invalidate(az_ion_t *ion, int is_static)
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:94:13: note: ‘symtab’ was declared here
+   asymbol **symtab;
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:20: note: ‘nsyms’ was declared here
+   az_size_t nsize, nsyms, i;
+                    ^
+Finished building: /home/dhkang/work/Aurora/aurora/src/test/az_test_xu.c
+ 
 Building target: libAurora.a
 Invoking: GCC Archiver
-ar -r  "libAurora.a"  ./Sources/util/az_options.o  ./Sources/test/az_test.o ./Sources/test/az_test_event.o ./Sources/test/az_test_fsm.o ./Sources/test/az_test_iou.o ./Sources/test/az_test_main.o ./Sources/test/az_test_watchpoint.o ./Sources/test/az_test_xu.o  ./Sources/sys/linux/az_sys.o ./Sources/sys/linux/az_sys_fs.o ./Sources/sys/linux/az_sys_init.o ./Sources/sys/linux/az_sys_preload.o ./Sources/sys/linux/az_sys_sig.o ./Sources/sys/linux/az_sys_timer.o ./Sources/sys/linux/az_sys_xu.o  ./Sources/sys/az_dllib.o ./Sources/sys/az_fs.o ./Sources/sys/az_inet.o ./Sources/sys/az_mutex.o ./Sources/sys/az_sem.o ./Sources/sys/az_timer.o ./Sources/sys/az_xu.o ./Sources/sys/az_xu_cfg.o  ./Sources/net/az_inetUtils.o ./Sources/net/az_tcpserver.o  ./Sources/log/az_log_dup.o  ./Sources/iou/az_iou_api.o ./Sources/iou/az_iou_msgq.o ./Sources/iou/az_iou_util.o  ./Sources/frw/az_frw.o ./Sources/frw/az_frw_cfg.o ./Sources/frw/az_frw_cmd.o ./Sources/frw/az_frw_fsm.o  ./Sources/diag/az_debug.o ./Sources/diag/az_diag_typeSize.o ./Sources/diag/az_mcheck.o ./Sources/diag/az_memdisp.o ./Sources/diag/az_probe.o ./Sources/diag/az_rstdio.o ./Sources/diag/az_trace.o  ./Sources/core/az_api.o ./Sources/core/az_array_toStr.o ./Sources/core/az_buffer_toStr.o ./Sources/core/az_core.o ./Sources/core/az_core_preload.o ./Sources/core/az_event.o ./Sources/core/az_event_bus.o ./Sources/core/az_fifo_toStr.o ./Sources/core/az_ion.o ./Sources/core/az_ion_toStr.o ./Sources/core/az_link_toStr.o ./Sources/core/az_log.o ./Sources/core/az_log_port.o ./Sources/core/az_log_util.o ./Sources/core/az_malloc.o ./Sources/core/az_malloc_preload.o ./Sources/core/az_msgq.o ./Sources/core/az_ring.o ./Sources/core/az_thread_cfg.o ./Sources/core/az_trz.o ./Sources/core/az_var.o ./Sources/core/az_ver.o ./Sources/core/az_xml.o  ./Sources/cli/az_cli.o ./Sources/cli/az_cli_cmd.o ./Sources/cli/az_cli_glue.o ./Sources/cli/az_cli_memdisp.o ./Sources/cli/az_cli_svr.o   
+ar -r  "libAurora.a"  ./Sources/util/az_options.o  ./Sources/test/az_test.o ./Sources/test/az_test_event.o ./Sources/test/az_test_fsm.o ./Sources/test/az_test_iou.o ./Sources/test/az_test_main.o ./Sources/test/az_test_report.o ./Sources/test/az_test_watchpoint.o ./Sources/test/az_test_xu.o  ./Sources/sys/linux/az_sys.o ./Sources/sys/linux/az_sys_fs.o ./Sources/sys/linux/az_sys_init.o ./Sources/sys/linux/az_sys_preload.o ./Sources/sys/linux/az_sys_sig.o ./Sources/sys/linux/az_sys_timer.o ./Sources/sys/linux/az_sys_xu.o  ./Sources/sys/az_dllib.o ./Sources/sys/az_fs.o ./Sources/sys/az_inet.o ./Sources/sys/az_mutex.o ./Sources/sys/az_sem.o ./Sources/sys/az_timer.o ./Sources/sys/az_xu.o ./Sources/sys/az_xu_cfg.o  ./Sources/net/az_inetUtils.o ./Sources/net/az_tcpserver.o  ./Sources/log/az_log_dup.o  ./Sources/iou/az_iou_api.o ./Sources/iou/az_iou_msgq.o ./Sources/iou/az_iou_util.o  ./Sources/frw/az_frw.o ./Sources/frw/az_frw_cfg.o ./Sources/frw/az_frw_cmd.o ./Sources/frw/az_frw_fsm.o  ./Sources/diag/az_debug.o ./Sources/diag/az_diag_typeSize.o ./Sources/diag/az_mcheck.o ./Sources/diag/az_memdisp.o ./Sources/diag/az_probe.o ./Sources/diag/az_rstdio.o ./Sources/diag/az_trace.o  ./Sources/core/az_api.o ./Sources/core/az_array_toStr.o ./Sources/core/az_buffer_toStr.o ./Sources/core/az_core.o ./Sources/core/az_core_preload.o ./Sources/core/az_event.o ./Sources/core/az_event_bus.o ./Sources/core/az_fifo_toStr.o ./Sources/core/az_ion.o ./Sources/core/az_ion_toStr.o ./Sources/core/az_link_toStr.o ./Sources/core/az_log.o ./Sources/core/az_log_port.o ./Sources/core/az_log_util.o ./Sources/core/az_malloc.o ./Sources/core/az_malloc_preload.o ./Sources/core/az_msgq.o ./Sources/core/az_ring.o ./Sources/core/az_thread_cfg.o ./Sources/core/az_trz.o ./Sources/core/az_var.o ./Sources/core/az_ver.o ./Sources/core/az_xml.o  ./Sources/cli/az_cli.o ./Sources/cli/az_cli_cmd.o ./Sources/cli/az_cli_glue.o ./Sources/cli/az_cli_memdisp.o ./Sources/cli/az_cli_svr.o   
 Finished building target: libAurora.a
  
 make --no-print-directory post-build
@@ -268,5 +1098,5 @@ copy libAurora to build directory
 cp libAurora.a /home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Debug/lib/
  
 
-20:04:18 Build Finished (took 613ms)
+16:04:33 Build Finished (took 1s.927ms)
 

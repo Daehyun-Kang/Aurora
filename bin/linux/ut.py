@@ -177,14 +177,14 @@ def defTCInitHandler(f, fn):
   f.write("  {0} r = {1};\n\n".format(AZTestCaseHandlerRetType, "AZ_SUCCESS"))
   f.write("  if ({0}->{1} > 0) ".format(argname, attrTcIterCount)) 
   f.write("{\n")
-  f.write("    {0} = (struct {1} *)az_malloc(sizeof({2}->{3}));\n".format(array_name, struct_name, argname, attrTcIterCount)) 
+  f.write("    {0} = (struct {1} *)az_malloc(sizeof(struct {1})*({2}->{3}));\n".format(array_name, struct_name, argname, attrTcIterCount)) 
   f.write("    if (NULL == {0}) ".format(array_name))
   f.write("{\n")
   f.write("      r = AZ_ERR(MALLOC);\n") 
   f.write("    }\n")
+  f.write("    /* here you may want make up the test vector array values from xml configuration file */\n\n");
   f.write("  }\n")
   f.write("  {0}->{1} = (void *){2};\n".format(argname, attrTestVector, array_name)) 
-  f.write("  /* here you may want make up the test vector array values from xml configuration file */\n\n");
   insertTrace(f, fn)
   f.write("  return r;\n");
   f.write("}\n\n");

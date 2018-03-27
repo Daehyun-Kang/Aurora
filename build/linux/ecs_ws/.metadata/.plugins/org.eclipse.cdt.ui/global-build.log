@@ -1,4 +1,4 @@
-20:04:22 **** Build of configuration Debug for project auroraIT ****
+16:04:38 **** Build of configuration Debug for project auroraIT ****
 make all 
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/abc.c
 Invoking: GCC C Compiler
@@ -92,7 +92,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:100:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:122:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
@@ -104,7 +104,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
      az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:100:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:122:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/abc.c: In function ‘az_ut_sync_abc’:
@@ -120,7 +120,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:117:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:140:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
@@ -132,7 +132,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
      az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:117:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:140:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/abc.c: In function ‘az_ut_prolog_abc’:
@@ -148,7 +148,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:134:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:157:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
@@ -160,7 +160,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
      az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:134:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:157:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/abc.c: In function ‘az_ut_run_abc’:
@@ -176,7 +176,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:151:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:184:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
@@ -188,7 +188,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
      az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:151:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:184:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/abc.c: In function ‘az_ut_epilog_abc’:
@@ -204,7 +204,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:168:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:210:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
@@ -216,7 +216,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
      az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:168:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:210:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/abc.c: In function ‘az_ut_term_abc’:
@@ -232,7 +232,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:193:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:235:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
@@ -244,7 +244,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
      az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:193:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/abc.c:235:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,

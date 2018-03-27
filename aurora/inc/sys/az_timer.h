@@ -56,6 +56,14 @@ typedef az_timer_entity_t *   az_timer_t;
 /* variabls exposed */
 
 /* inline functions */
+static inline az_sys_timespec_t *az_timespec_diff(az_sys_timespec_t *e, az_sys_timespec_t *s)
+{
+  static az_sys_timespec_t d; 
+  d.tv_nsec = e->tv_nsec - s->tv_nsec; 
+  d.tv_sec = e->tv_sec - s->tv_sec;
+  if (d.tv_nsec < 0) { d.tv_sec--; d.tv_nsec += 1000000000; };
+  return &d;
+}
 
 /* function prototypes exposed */
 extern az_r_t  az_timer_create(const char *name, az_uint64_t interval, int repeat, void (*handler)(void *arg), void *arg, az_timer_t *pTimer);

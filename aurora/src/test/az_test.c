@@ -92,6 +92,7 @@ void *az_tc_thread_proc_default(void *arg)
   az_event_receiver_t *rcvr = &tc_evt_receiver;
   az_event_t  *evts[2];
   az_ring_t   evtq;
+  az_testcase_t *tc = (az_testcase_t *)arg;
 
   do {
     if (tc_evt_descr == NULL) {
@@ -114,13 +115,13 @@ void *az_tc_thread_proc_default(void *arg)
     }
     az_ring_init(&evtq, AZ_RING_TYPE_DSREF, 2, evts);
     az_event_receiver_init(rcvr, NULL, NULL, &evtq);
-    az_logd("rcvr=%p port=%p\n", rcvr, tc_evt_port);
+    az_dlog("rcvr=%p port=%p\n", rcvr, tc_evt_port);
     r = az_event_port_add_receiver(tc_evt_port, rcvr);
   } while (0);
 
   if (AZ_SUCCESS == r) {
     az_tc_thread_state = 1;
-    az_logi("%s start..." AZ_NL, __FUNCTION__);
+    az_ilog("%s start..." AZ_NL, __FUNCTION__);
 
     az_event_t  revt = NULL;
     uint64_t  tmo_count = 0;
@@ -149,6 +150,7 @@ void *az_tc_thread_proc_default(void *arg)
         if (received & AZ_XU_EVENT_THR_STOP) {
           az_tc_thread_state = 0;
         }
+        if (tc->timeout > 0) tc->timeout++;
         continue;
       }
       if (r < 0) {
@@ -156,6 +158,7 @@ void *az_tc_thread_proc_default(void *arg)
           if (tmo_count++ == 5) {
             r = az_test_sendEvent(AZ_TEST_CMD_STOP, 0, NULL);
           }
+          if (tc->timeout > 0) tc->timeout++;
         }
         continue;
       }

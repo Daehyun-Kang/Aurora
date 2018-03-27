@@ -186,14 +186,20 @@ static inline void az_xml_element_release(az_xml_element_t *e)
     
     do {
       l = az_double_link_getLast(&e->child_list); 
-      if (NULL == l) break;
+      if (NULL == l) {
+        az_assert(e->child_list.count == 0);
+        break;
+      }
       c = container_of(l, az_xml_element_t, link);
       az_xml_element_release(c);
     } while(1);
 
     do {
       l = az_double_link_getLast(&e->attr_list); 
-      if (NULL == l) break;
+      if (NULL == l) {
+        az_assert(e->attr_list.count == 0);
+        break;
+      }
       c = container_of(l, az_xml_element_t, link);
       az_assert(c->child_list.count == 0);
       az_assert(c->attr_list.count == 0);
@@ -205,8 +211,6 @@ static inline void az_xml_element_release(az_xml_element_t *e)
       }
     } while(1);
 
-    az_assert(e->child_list.count == 0);
-    az_assert(e->attr_list.count == 0);
 
     az_refcount_atomic_dec(&e->refCount);
     if (AZ_REFCOUNT_IS_ZERO(&e->refCount)) {
@@ -232,9 +236,11 @@ static inline az_xml_element_t *az_xml_element_add_child(az_xml_element_t *e, az
 
   return c;
 }
-static inline void az_xml_element_remove_child(az_xml_element_t *c)
+static inline void az_xml_element_remove_child(az_xml_element_t *e, az_xml_element_t *c)
 {
-    az_double_link_del(&c->link); 
+    az_double_link_remove(&e->child_list, &c->link); 
+    c->parent = NULL;
+    az_xml_element_release(c);
 }
 
 static inline az_xml_element_t *az_xml_element_add_attr(az_xml_element_t *e, az_xml_element_t *c, char *key, char *value) 
@@ -255,6 +261,7 @@ static inline az_xml_element_t *az_xml_element_next_child(az_xml_element_t *e, a
 {
   az_assert(NULL != e);
   az_double_link_t *l;
+  az_xml_element_t *prev = child;
   do {
     if (NULL == child) {
       if (e->child_list.count == 0) {
@@ -265,6 +272,7 @@ static inline az_xml_element_t *az_xml_element_next_child(az_xml_element_t *e, a
       break;
     } 
     if (child->parent != e) {
+      child = NULL;
       break;
     }
     l = child->link.next;
@@ -274,6 +282,8 @@ static inline az_xml_element_t *az_xml_element_next_child(az_xml_element_t *e, a
     }
     child = container_of(l, az_xml_element_t, link);
   } while (0);
+  
+  if (prev == child) child = NULL;
 
   return child;
 }
@@ -281,6 +291,7 @@ static inline az_xml_element_t *az_xml_element_next_attr(az_xml_element_t *e, az
 {
   az_assert(NULL != e);
   az_double_link_t *l;
+  az_xml_element_t *prev = attr;
   do {
     if (NULL == attr) {
       if (e->attr_list.count == 0) {
@@ -291,6 +302,7 @@ static inline az_xml_element_t *az_xml_element_next_attr(az_xml_element_t *e, az
       break;
     } 
     if (attr->parent != e) {
+      attr = NULL;
       break;
     }
     l = attr->link.next;
@@ -301,6 +313,7 @@ static inline az_xml_element_t *az_xml_element_next_attr(az_xml_element_t *e, az
     attr = container_of(l, az_xml_element_t, link);
   } while (0);
 
+  if (prev == attr) attr = NULL;
   return attr;
 }
 

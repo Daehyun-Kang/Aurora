@@ -8,7 +8,10 @@
     <Epilog name="az_ut_epilog_abc" />
     <Term   name="az_ut_term_abc" />
   </oprs>
-  <testVector a="int" b="int" expected_result="void" result="void" >
-    <row a="int" b="int" expected_result="void" result="void"  _onoff="1" />
+  <testVector a="int" b="int" expected_result="int" result="int" >
+    <row a="2" b="3" expected_result="5" result="5"  _onoff="1" />
+    <row a="2" b="3" expected_result="4" result="5"  _onoff="1" />
+    <row a="2" b="-3" expected_result="-1" result="5"  _onoff="1" />
+    <row a="2" b="-3" expected_result="-2" result="5"  _onoff="0" />
   </testVector>
 </testCase>

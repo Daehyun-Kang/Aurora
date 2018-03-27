@@ -34,6 +34,7 @@ extern "C"
 #define AZ_TC_PER_TP_MAX            2048
 #define AZ_ITER_PER_TC_MAX          1024
 
+#define AZ_TC_CHECK_INTERVAL_MS     100
 /* basic macros */
 #define AZ_TEST_OPT_CFG_FOLDER  AZ_FRW_OPT_CFG_FOLDER
 #define AZ_TEST_OPT_LOG_FOLDER  AZ_FRW_OPT_LOG_FOLDER
@@ -77,6 +78,12 @@ struct az_test_case;
 
 typedef az_r_t (*az_test_case_handler_t)(struct az_test_case *);
 typedef az_test_case_handler_t az_testcase_handler_t;
+struct test_result {
+  int pass;
+  int fail;
+  int success;
+  int failure;
+}; 
 
 typedef struct az_test_iter {
   int     index;
@@ -84,6 +91,8 @@ typedef struct az_test_iter {
 
   az_xml_element_t *xml;
   void    *test_vector;
+
+  //struct test_result report; 
 
   az_r_t  result;
   char    reason[AZ_PATH_MAX];
@@ -95,6 +104,10 @@ typedef struct az_test_case {
   uint16_t   index;
   char  name[AZ_NAME_MAX];
   az_bool_t   onoff;
+  int32_t     timeout;
+
+  az_sys_timespec_t stime;
+  az_sys_timespec_t etime;
 
   az_xcfg_tree_t  *xcfg_tree;
   az_xml_element_t *xml;
@@ -122,6 +135,8 @@ typedef struct az_test_case {
     az_test_case_handler_t  Epilog; 
     az_test_case_handler_t  Term; 
   } oprs;
+
+  struct test_result report; 
 } az_test_case_t;
 
 #define AZ_TEST_CUR_ITER(tc) \
@@ -132,12 +147,17 @@ typedef az_test_case_t  az_testcase_t;
 typedef struct az_test_project {
   char  name[AZ_NAME_MAX];
 
+  az_sys_timespec_t stime;
+  az_sys_timespec_t etime;
+
   int   testcase_count;
   int   testcase_enabled;
   int   testcase_completed;
   int   testcase_errored;
 
   az_test_case_t  *testcaselist;
+
+  struct test_result report; 
 } az_test_project_t;
 
 typedef az_test_project_t az_testproj_t;
@@ -188,6 +208,7 @@ typedef az_test_project_t az_testproj_t;
 #define AZ_TEST_CFG_KEY_name       "name"
 #define AZ_TEST_CFG_KEY_cfgfile    "cfgfile"
 #define AZ_TEST_CFG_KEY_onoff      "onoff"
+#define AZ_TEST_CFG_KEY_timeout   "timeout"
 #define AZ_TEST_CFG_KEY_prototype  "prototype"
 #define AZ_TEST_CFG_KEY_oprs       "oprs"
 #define AZ_TEST_CFG_KEY_Init     "Init"
@@ -278,6 +299,7 @@ static inline az_size_t az_test_get_element(az_xml_element_t *cur, az_test_var_t
 /* function prototypes exposed */
 extern az_r_t az_test_sendEvent(az_event_id_t event_id, az_uint32_t buffer_size, az_ref_t buffer_data);
 extern  void *az_tc_thread_proc_default(void *arg);
+extern  int az_test_testproj_report(az_testproj_t *testproj);
 #ifdef __cplusplus
 }
 #endif

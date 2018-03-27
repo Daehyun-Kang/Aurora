@@ -230,9 +230,15 @@ az_r_t az_test_loadTestIters(az_test_case_t *tc)
     if (tv_xe == NULL) {
       break;
     }
+    xe = NULL;
+    az_xml_element_t *xe_prev = NULL;
     do {
-      xe = az_xml_element_find_child(tv_xe, AZ_TEST_CFG_KEY_row);
-      xe = az_xml_element_next_child(tv_xe, xe); 
+      if (xe) {
+        xe_prev = xe;
+        xe = az_xml_element_next_child(tv_xe, xe); 
+      } else {
+        xe = az_xml_element_find_child(tv_xe, AZ_TEST_CFG_KEY_row);
+      }
       if (xe == NULL) break;
       if (strcmp(xe->kv.key, AZ_TEST_CFG_KEY_row)) {
         continue;
@@ -240,7 +246,8 @@ az_r_t az_test_loadTestIters(az_test_case_t *tc)
       xe_attr = az_xml_element_find_attr(xe, AZ_TEST_CFG_KEY_rowOnoff);
       if (xe_attr) {
         if (strtol(xe_attr->kv.value, NULL, 10) == 0) {
-          az_xml_element_remove_child(xe);
+          az_xml_element_remove_child(tv_xe, xe);
+          xe = xe_prev;
           continue;
         }
       }
@@ -289,7 +296,7 @@ void az_test_unloadTestIters(az_test_case_t *tc)
 int az_test_main(int argc, char *argv[])
 {
   az_r_t r;
-  az_int64_t  tmo_ns = 2000000000;
+  az_int64_t  tmo_ns = AZ_TC_CHECK_INTERVAL_MS * 1000000; // in ms
   az_xu_event_t received;
 
   az_tp_thread_default = az_xu_self();
@@ -331,11 +338,11 @@ int az_test_main(int argc, char *argv[])
     AZ_TEST_FRW_CFG_TREE(), NULL, AZ_TEST_CFG_KEY_testProj, &xe_testproj);
 
   if (NULL == xe_testproj) {
-    az_loge("test project config not found on %s\n", az_test_frw.frw_cfg_file);
+    az_elog("test project config not found on %s\n", az_test_frw.frw_cfg_file);
     exit(r);
   }
   xe = az_xml_element_find_attr(xe_testproj, AZ_TEST_CFG_KEY_name);
-  az_logi("test project::%s config found on file::%s\n", 
+  az_ilog("test project::%s config found on file::%s\n", 
       xe->kv.value, az_test_frw.frw_cfg_file);
 
   strncpy(az_testproj.name, xe->kv.value, sizeof(az_testproj.name));
@@ -347,6 +354,8 @@ int az_test_main(int argc, char *argv[])
   az_testproj.testcase_errored = 0;
   az_testproj.testcaselist = az_malloc(sizeof(az_test_case_t) * AZ_TC_PER_TP_MAX);
   az_test_case_t *tc = az_testproj.testcaselist;
+
+  clock_gettime(CLOCK_REALTIME, &az_testproj.stime);
   do {
     az_xcfg_find_element( AZ_TEST_FRW_CFG_TREE(), xe_testproj, AZ_TEST_CFG_KEY_testCase, &xe_testcase);
     if (xe_testcase == NULL) {
@@ -360,9 +369,15 @@ int az_test_main(int argc, char *argv[])
     if (xe) {
       strncpy(tc->name, xe->kv.value, sizeof(tc->name));
     }
+    xe = az_xml_element_find_attr(xe_testcase, AZ_TEST_CFG_KEY_timeout ".int32");
+    if (xe) {
+      tc->timeout = (strtol(xe->kv.value, NULL, 10)+(AZ_TC_CHECK_INTERVAL_MS-1))/AZ_TC_CHECK_INTERVAL_MS ;
+    } else {
+      tc->timeout = -1;
+    }
 
     r = az_xcfg_get_value(xe_testcase, AZ_TEST_CFG_KEY_onoff ".bool", &tc->onoff, sizeof(tc->onoff), NULL); 
-    az_logi("test case::%s onoff=%d found on test project::%s\n", 
+    az_ilog("test case::%s onoff=%d found on test project::%s\n", 
         tc->name, tc->onoff, az_testproj.name);
 
     if (tc->onoff == AZ_FALSE) {
@@ -383,7 +398,7 @@ int az_test_main(int argc, char *argv[])
       continue;
     } 
     tc->xcfg_tree = &xcfg_tree_testcase;
-    az_logd("%s %s\n", tc->xcfg_tree->xml.kv.key, tc->xcfg_tree->xml.kv.value);
+    az_dlog("%s %s\n", tc->xcfg_tree->xml.kv.key, tc->xcfg_tree->xml.kv.value);
     tc->xml = NULL;
     az_xcfg_find_element(tc->xcfg_tree, NULL, AZ_TEST_CFG_KEY_testCase, &tc->xml);
     if (tc->xml == NULL) {
@@ -414,43 +429,77 @@ int az_test_main(int argc, char *argv[])
       continue;
     }
 
+    clock_gettime(CLOCK_REALTIME, &tc->stime);
     az_tc_thread_default = NULL;
     r = az_xu_create("tcRunner", az_tc_thread_proc_default, tc, NULL, &az_tc_thread_default);
     
-    while (1) {
+    while (az_tc_thread_default) {
       received = 0;
       r = az_xu_recvEvent(0xffff, 0, tmo_ns, &received);  
       if (r < 0) {
         if (r == AZ_ERR(TIMEOUT)) {
+          //az_ilog("timeout %d\n", tc->timeout);
+          if (tc->timeout > 0) {
+            tc->timeout--;
+            if (tc->timeout <= 0) {
+              az_elog("testcase %d:%s timeout, stop in force\n", tc->index, tc->name);
+              az_testproj.testcase_errored++;
+              tc->result = AZ_ERR(TIMEOUT);
+              snprintf(tc->reason, sizeof(tc->reason), "timeout expired");
+              az_xu_stop(az_tc_thread_default);
+              az_xu_delete(az_tc_thread_default);
+              az_tc_thread_default = NULL;
+            }
+          }
         }
         continue;
       }
       if (received & AZ_XU_EVENT_TEST_STARTED) {
-        az_logi("test case::%s started\n", tc->name); 
+        az_ilog("test case::%s started\n", tc->name); 
       }
       if (received & AZ_XU_EVENT_TEST_STOPPED) {
-        az_logi("test case::%s stopped\n", tc->name); 
+        az_ilog("test case::%s stopped\n", tc->name); 
         az_testproj.testcase_completed++;
         break;
       }
       if (received & AZ_XU_EVENT_TEST_ERROR) {
-        az_logi("test case::%s errored\n", tc->name); 
+        az_ilog("test case::%s errored\n", tc->name); 
         az_testproj.testcase_errored++;
         break;
       }
     }
+    clock_gettime(CLOCK_REALTIME, &tc->etime);
+    az_testproj.report.pass += tc->report.pass;
+    az_testproj.report.fail += tc->report.fail;
+    az_testproj.report.success += tc->report.success;
+    az_testproj.report.failure += tc->report.failure;
 
     az_xcfg_free_config(&xcfg_tree_testcase);
     tc->xcfg_tree = NULL; 
     tc++;
   } while (1);
 
-  az_logi("testproj::%s all testcase::total=%d,enabled=%d,completed=%d,errored=%d\n", 
+  clock_gettime(CLOCK_REALTIME, &az_testproj.etime);
+  char *bp = az_xu_prtbuf;
+  int blen = sizeof(az_xu_prtbuf);
+  int nlen, tlen = 0;
+  _AZ_SNPRINTF(tlen, bp, blen, "testproj:%s start: ", az_testproj.name);
+  nlen = az_print_timestampInDatetime(bp, blen, AZ_TIMESTAMP_STR, &az_testproj.stime);
+  _AZ_FORMAT_UPDATE(tlen, bp, blen, nlen);
+  _AZ_SNPRINTF(tlen, bp, blen, " end: ");
+  nlen = az_print_timestampInDatetime(bp, blen, AZ_TIMESTAMP_STR, &az_testproj.etime);
+  _AZ_FORMAT_UPDATE(tlen, bp, blen, nlen);
+
+  printf("%s\n", az_xu_prtbuf);
+  printf("testproj::%s all testcase::total=%d,enabled=%d,completed=%d,errored=%d\n", 
       az_testproj.name,
       az_testproj.testcase_count,
       az_testproj.testcase_enabled,
       az_testproj.testcase_completed,
       az_testproj.testcase_errored);
+  
+  az_test_testproj_report(&az_testproj);
+
   // here we need to release all the resouce
   int j;
   tc = az_testproj.testcaselist;

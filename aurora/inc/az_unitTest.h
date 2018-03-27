@@ -23,19 +23,20 @@
 
 #include "az_args.h"
 
-#ifdef  CONFIG_UNIT_TEST
+#define AZ_UT_FLAG_TRACE       1
+
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
+#ifdef  CONFIG_UNIT_TEST
 
 /* define constants */
 
 /* define basic macros */
 
-#define AZ_UT_FLAG_TRACE       1
 extern  int az_ut_flags;
 
 /* define basic types */
@@ -467,16 +468,15 @@ int  AZ_UT_TEST_MAIN(func, int argc, char *argv[]) {\
 
 /* function prototypes exposed*/
 
-
-
-#ifdef __cplusplus
-}
-#endif
-
 #else
 #define AZ_UT_SET_REASON(func, ...) 
 #define AZ_UT_SET_OK(func, ...) 
 
 #endif
+
+#ifdef __cplusplus
+}
+#endif
+
 
 #endif

@@ -129,6 +129,7 @@ az_r_t az_xu_create(char *name, az_xu_entry_t entry, az_xu_arg_t arg, az_xu_conf
     }
   } while (0);
 
+  az_rprintf(result, "id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
   return result;
 }
 
@@ -177,6 +178,7 @@ az_r_t az_xu_start(az_xu_t xu, az_xu_entry_t entry, az_xu_arg_t arg)
     xu->cause = AZ_XU_ERROR_START;
   }
 
+  az_rprintf(result, "id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
   return result;
 }
 
@@ -189,11 +191,11 @@ az_r_t az_xu_start(az_xu_t xu, az_xu_entry_t entry, az_xu_arg_t arg)
  */
 az_r_t  az_xu_stop(az_xu_t  xu)
 {
-  az_r_t  result = AZ_FAIL;
+  az_r_t  result = AZ_SUCCESS;
   az_assert(NULL != xu);
 
   do {
-    if (xu->state & AZ_XU_STATE_START) {
+    if (!(xu->state & AZ_XU_STATE_START)) {
       result = AZ_ERR(STATE);
       break;
     }
@@ -213,8 +215,12 @@ az_r_t  az_xu_stop(az_xu_t  xu)
     }
     az_trz_flush(&xu->trz_list, NULL);
     result = az_sys_xu_delete(sys_xu);
+    if (AZ_SUCCESS == result) {
+      xu->sys_xu = NULL;
+    }
   } while (0);
 
+  az_rprintf(result, "id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
   return result;
 }
 
@@ -250,7 +256,7 @@ az_r_t az_xu_delete(az_xu_t xu)
 
     az_trz_flush(&xu->trz_list, NULL);
 
-    az_sys_eprintf("id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
+    az_eprintf("id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
 
     az_sys_xu_t     sys_xu = xu->sys_xu;
 
@@ -268,19 +274,22 @@ az_r_t az_xu_delete(az_xu_t xu)
         }
         az_sys_xu_exit(NULL);
       } else {
-        sys_xu->arg = NULL;
+        if (sys_xu) sys_xu->arg = NULL;
         if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) == 0) {
           az_free(xu);
         }
-        az_sys_xu_delete(sys_xu);
+        if (sys_xu) az_sys_xu_delete(sys_xu);
       }
     } else {
     
-      az_sys_eprintf("id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
+      az_eprintf("id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
       fflush(stdout);
     }
   } while (0);
 
+  if (result) {
+   az_rprintf(result, "id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
+  }
   return result;
 }
 
@@ -546,7 +555,7 @@ void az_xu_exit(az_xu_ret_t ret)
 
     az_trz_flush(&xu->trz_list, NULL);
 
-    az_sys_eprintf("id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion));
+    az_eprintf("id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion));
 
     az_ion_deregister(&(xu->ion));
 
@@ -558,7 +567,7 @@ void az_xu_exit(az_xu_ret_t ret)
       }
       az_sys_xu_exit((void *)ret);
     } else {
-      az_sys_eprintf("id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
+      az_eprintf("id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
       fflush(stdout);
     }
   } while (0);

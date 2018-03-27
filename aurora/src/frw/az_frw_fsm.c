@@ -70,7 +70,7 @@ static az_fsm_state_t az_frw_fsm_handleOnIdle(void *ctx, az_fsm_state_t state, a
 
   az_assert(NULL != edescr);
 
-  az_logt("%s\n", az_fsm_probe(ctx, 0, evt));
+  az_tlog("%s\n", az_fsm_probe(ctx, 0, evt));
   do {
     switch (evtid) {
       case AZ_FRW_CMD_INIT:
@@ -114,7 +114,7 @@ static az_fsm_state_t az_frw_fsm_handleOnInit(void *ctx, az_fsm_state_t state, a
 
   az_assert(NULL != edescr);
 
-  az_logt("%s\n", az_fsm_probe(ctx, 1, evt));
+  az_tlog("%s\n", az_fsm_probe(ctx, 1, evt));
   do {
     switch (evtid) {
       case AZ_FRW_CMD_CONF:
@@ -177,7 +177,7 @@ static az_fsm_state_t az_frw_fsm_handleOnCnfg(void *ctx, az_fsm_state_t state, a
 
   az_assert(NULL != edescr);
 
-  az_logt("%s\n", az_fsm_probe(ctx, 2, evt));
+  az_tlog("%s\n", az_fsm_probe(ctx, 2, evt));
   do {
     switch (evtid) {
       case AZ_FRW_CMD_SYNC:
@@ -217,7 +217,7 @@ static az_fsm_state_t az_frw_fsm_handleOnNorm(void *ctx, az_fsm_state_t state, a
 
   az_assert(NULL != edescr);
 
-  az_logt("%s\n", az_fsm_probe(ctx, 3, evt));
+  az_tlog("%s\n", az_fsm_probe(ctx, 3, evt));
   do {
     switch (evtid) {
       case AZ_FRW_CMD_SAPP:
@@ -261,7 +261,7 @@ static az_fsm_state_t az_frw_fsm_handleOnDown(void *ctx, az_fsm_state_t state, a
 
   az_assert(NULL != edescr);
 
-  az_logt("%s\n", az_fsm_probe(ctx, 4, evt));
+  az_tlog("%s\n", az_fsm_probe(ctx, 4, evt));
   do {
     switch (evtid) {
       case AZ_FRW_CMD_TINI:
@@ -299,7 +299,7 @@ static az_fsm_state_t az_frw_fsm_handleOnSync(void *ctx, az_fsm_state_t state, a
 
   az_assert(NULL != edescr);
 
-  az_logt("%s\n", az_fsm_probe(ctx, 5, evt));
+  az_tlog("%s\n", az_fsm_probe(ctx, 5, evt));
   do {
     switch (evtid) {
       case AZ_FRW_EVT_SYNC:

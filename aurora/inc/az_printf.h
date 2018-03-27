@@ -117,14 +117,14 @@ extern "C"
 #define AZ_LOG_LEVEL_DEBUG    70
 #define AZ_LOG_LEVEL_VERBOSE  80
 
-#define az_logv(...) az_log(AZ_LOG_LEVEL_VERBOSE, AZ_LOG_FLAGS_ALL, __VA_ARGS__)  
-#define az_logd(...) az_log(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)  
-#define az_logt(...) az_log(AZ_LOG_LEVEL_TRACE, AZ_LOG_FLAGS_TIME|AZ_LOG_FLAGS_PROC|AZ_LOG_FLAGS_FUNC, __VA_ARGS__)  
-#define az_logi(...) az_log(AZ_LOG_LEVEL_INFO, AZ_LOG_FLAGS_TIME|AZ_LOG_FLAGS_PROC, __VA_ARGS__)  
-#define az_logw(...) az_log(AZ_LOG_LEVEL_WARN, AZ_LOG_FLAGS_TIME|AZ_LOG_FLAGS_PROC|AZ_LOG_FLAGS_FUNC, __VA_ARGS__)  
-#define az_loge(...) az_log(AZ_LOG_LEVEL_ERROR, AZ_LOG_FLAGS_TIME|AZ_LOG_FLAGS_PROC|AZ_LOG_FLAGS_FUNC|AZ_LOG_FLAGS_LINE, __VA_ARGS__)  
-#define az_loga(...) az_log(AZ_LOG_LEVEL_ASSERT, AZ_LOG_FLAGS_ALL, __VA_ARGS__)  
-#define az_logS(...) az_log(AZ_LOG_LEVEL_SEVERE, AZ_LOG_FLAGS_ALL, __VA_ARGS__)  
+#define az_vlog(...) az_log(AZ_LOG_LEVEL_VERBOSE, AZ_LOG_FLAGS_ALL, __VA_ARGS__)  
+#define az_dlog(...) az_log(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)  
+#define az_tlog(...) az_log(AZ_LOG_LEVEL_TRACE, AZ_LOG_FLAGS_TIME|AZ_LOG_FLAGS_PROC|AZ_LOG_FLAGS_FUNC, __VA_ARGS__)  
+#define az_ilog(...) az_log(AZ_LOG_LEVEL_INFO, AZ_LOG_FLAGS_TIME|AZ_LOG_FLAGS_PROC, __VA_ARGS__)  
+#define az_wlog(...) az_log(AZ_LOG_LEVEL_WARN, AZ_LOG_FLAGS_TIME|AZ_LOG_FLAGS_PROC|AZ_LOG_FLAGS_FUNC, __VA_ARGS__)  
+#define az_elog(...) az_log(AZ_LOG_LEVEL_ERROR, AZ_LOG_FLAGS_TIME|AZ_LOG_FLAGS_PROC|AZ_LOG_FLAGS_FUNC|AZ_LOG_FLAGS_LINE, __VA_ARGS__)  
+#define az_alog(...) az_log(AZ_LOG_LEVEL_ASSERT, AZ_LOG_FLAGS_ALL, __VA_ARGS__)  
+#define az_Slog(...) az_log(AZ_LOG_LEVEL_SEVERE, AZ_LOG_FLAGS_ALL, __VA_ARGS__)  
 
 /* basic types */
 

@@ -1,9 +1,9 @@
-12:19:17 **** Build of configuration Debug for project auroraIT ****
+14:23:59 **** Build of configuration Debug for project auroraIT ****
 make all 
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_tc_abc.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"ut/az_tc_abc.d" -MT"ut/az_tc_abc.o" -o "ut/az_tc_abc.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c"
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:122:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
@@ -14,7 +14,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
        wlen = sendfile(dst, src, &offset, 4096);
               ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:180:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
@@ -29,7 +29,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
@@ -37,7 +37,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdAddr2Name’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:161:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
          name = symtab[i]->name;
               ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
@@ -56,48 +56,25 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
 /home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
      az_array_est_element32_at(pArray, id, e);
      ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h: At top level:
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:117:0: warning: "AZ_LOG_LEVEL_DEBUG" redefined
- #define AZ_LOG_LEVEL_DEBUG    70
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_log.h:88:0: note: this is the location of the previous definition
- #define AZ_LOG_LEVEL_DEBUG    60
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:118:0: warning: "AZ_LOG_LEVEL_VERBOSE" redefined
- #define AZ_LOG_LEVEL_VERBOSE  80
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_log.h:89:0: note: this is the location of the previous definition
- #define AZ_LOG_LEVEL_VERBOSE  70
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c: In function ‘az_tc_init_abc’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
  #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
                               ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
           ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
      ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
@@ -105,27 +82,47 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:84:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:93:12: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘az_r_t {aka long int}’ [-Wformat=]
+     printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__);\
+            ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
+     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:84:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c: In function ‘az_tc_sync_abc’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
  #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
                               ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
           ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
      ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
@@ -133,27 +130,47 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:101:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:93:12: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘az_r_t {aka long int}’ [-Wformat=]
+     printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__);\
+            ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
+     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:101:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c: In function ‘az_tc_prolog_abc’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
  #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
                               ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
           ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
      ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
@@ -161,14 +178,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:121:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:93:12: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘az_r_t {aka long int}’ [-Wformat=]
+     printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__);\
+            ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
+     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:121:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
@@ -176,21 +203,25 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:117:35: warning: unused variable ‘tv’ [-Wunused-variable]
    struct az_tc_testvector_st_abc *tv = AZ_TC_ITER_GET_TV(iter, az_tc_tv_abc_t);
                                    ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c: In function ‘az_tc_run_abc’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
  #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
                               ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
           ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
      ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
@@ -198,27 +229,47 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:148:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:93:12: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘az_r_t {aka long int}’ [-Wformat=]
+     printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__);\
+            ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
+     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:148:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c: In function ‘az_tc_epilog_abc’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
  #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
                               ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
           ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
      ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
@@ -226,27 +277,47 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:175:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:93:12: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘az_r_t {aka long int}’ [-Wformat=]
+     printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__);\
+            ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
+     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:175:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c: In function ‘az_tc_term_abc’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
  #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
                               ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
           ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
      ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
@@ -254,19 +325,29 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:200:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:93:12: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘az_r_t {aka long int}’ [-Wformat=]
+     printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__);\
+            ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
+     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:200:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
@@ -274,7 +355,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c: At top level:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:139:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
@@ -284,43 +365,45 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
 /home/dhkang/work/Aurora/aurora/inc/az_ion.h:81:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
  static void az_ion_invalidate(az_ion_t *ion, int is_static)
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c: In function ‘az_sys_dllib_findBfdSymbol’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
    printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
    ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:94:13: note: ‘symtab’ was declared here
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
    asymbol **symtab;
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:20: note: ‘nsyms’ was declared here
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
    az_size_t nsize, nsyms, i;
                     ^
 Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c
@@ -328,7 +411,7 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_tc_rw_lock.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"ut/az_tc_rw_lock.d" -MT"ut/az_tc_rw_lock.o" -o "ut/az_tc_rw_lock.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c"
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:122:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
@@ -339,7 +422,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
        wlen = sendfile(dst, src, &offset, 4096);
               ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:180:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
@@ -354,7 +437,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
@@ -362,7 +445,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdAddr2Name’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:161:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
          name = symtab[i]->name;
               ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
@@ -381,265 +464,237 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
 /home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
      az_array_est_element32_at(pArray, id, e);
      ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h: At top level:
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:117:0: warning: "AZ_LOG_LEVEL_DEBUG" redefined
- #define AZ_LOG_LEVEL_DEBUG    70
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_log.h:88:0: note: this is the location of the previous definition
- #define AZ_LOG_LEVEL_DEBUG    60
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:118:0: warning: "AZ_LOG_LEVEL_VERBOSE" redefined
- #define AZ_LOG_LEVEL_VERBOSE  80
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_log.h:89:0: note: this is the location of the previous definition
- #define AZ_LOG_LEVEL_VERBOSE  70
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c: In function ‘az_tc_init_rw_lock’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
-     ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
-     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:118:5: note: in expansion of macro ‘az_rprintf’
-     az_rprintf(r, "%s" AZ_NL, "...");
-     ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:118:5: note: in expansion of macro ‘az_rprintf’
-     az_rprintf(r, "%s" AZ_NL, "...");
-     ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c: In function ‘az_tc_sync_rw_lock’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
  #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
                               ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
           ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
      ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:138:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:140:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:93:12: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘az_r_t {aka long int}’ [-Wformat=]
+     printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__);\
+            ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:138:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
+     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+     ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:140:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c: In function ‘az_tc_prolog_rw_lock’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
-     ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
-     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:160:5: note: in expansion of macro ‘az_rprintf’
-     az_rprintf(r, "%s" AZ_NL, "...");
-     ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:160:5: note: in expansion of macro ‘az_rprintf’
-     az_rprintf(r, "%s" AZ_NL, "...");
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:154:39: warning: unused variable ‘tv’ [-Wunused-variable]
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:156:39: warning: unused variable ‘tv’ [-Wunused-variable]
    struct az_tc_testvector_st_rw_lock *tv = AZ_TC_ITER_GET_TV(iter, az_tc_tv_rw_lock_t);
                                        ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c: In function ‘az_tc_run_rw_lock’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
  #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
                               ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
           ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
      ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:191:12: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:193:12: note: in expansion of macro ‘az_rprintf’
      if (r) az_rprintf(r, "thread %s create\n", name);
             ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:191:12: note: in expansion of macro ‘az_rprintf’
-     if (r) az_rprintf(r, "thread %s create\n", name);
-            ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
-     ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
-     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:196:5: note: in expansion of macro ‘az_rprintf’
-     az_rprintf(r, "%s" AZ_NL, "...");
-     ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:196:5: note: in expansion of macro ‘az_rprintf’
-     az_rprintf(r, "%s" AZ_NL, "...");
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c: In function ‘az_tc_epilog_rw_lock’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:75:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:225:3: note: in expansion of macro ‘az_printf’
-   az_printf("e=%s r=%s %d\n", tv->expected_result, tv->result, iter->result); 
-   ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
-     ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
-     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:228:5: note: in expansion of macro ‘az_rprintf’
-     az_rprintf(r, "%s" AZ_NL, "...");
-     ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:228:5: note: in expansion of macro ‘az_rprintf’
-     az_rprintf(r, "%s" AZ_NL, "...");
-     ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:214:8: warning: unused variable ‘name’ [-Wunused-variable]
-   char name[] = "r0";
-        ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c: In function ‘az_tc_term_rw_lock’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:93:12: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘az_r_t {aka long int}’ [-Wformat=]
+     printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__);\
+            ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
      ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:254:5: note: in expansion of macro ‘az_rprintf’
-     az_rprintf(r, "%s" AZ_NL, "...");
-     ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:193:12: note: in expansion of macro ‘az_rprintf’
+     if (r) az_rprintf(r, "thread %s create\n", name);
+            ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
  #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
                               ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
    printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
           ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
      ^
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:254:5: note: in expansion of macro ‘az_rprintf’
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
+     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+     ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:198:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s" AZ_NL, "...");
      ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:93:12: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘az_r_t {aka long int}’ [-Wformat=]
+     printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__);\
+            ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
+     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+     ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:198:5: note: in expansion of macro ‘az_rprintf’
+     az_rprintf(r, "%s" AZ_NL, "...");
+     ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c: In function ‘az_tc_epilog_rw_lock’:
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:114:65: warning: suggest parentheses around arithmetic in operand of ‘|’ [-Wparentheses]
+ #define az_ilog(...) az_log(AZ_LOG_LEVEL_INFO, AZ_LOG_FLAGS_TIME|AZ_LOG_FLAGS_PROC, __VA_ARGS__)  
+                                                                 ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:86:7: note: in definition of macro ‘az_sys_log_printf’
+   if (flags & AZ_LOG_FLAGS_TIME) {\
+       ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:114:22: note: in expansion of macro ‘az_log’
+ #define az_ilog(...) az_log(AZ_LOG_LEVEL_INFO, AZ_LOG_FLAGS_TIME|AZ_LOG_FLAGS_PROC, __VA_ARGS__)  
+                      ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:227:3: note: in expansion of macro ‘az_ilog’
+   az_ilog("%s:%d e=%s r=%s [%s]\n", 
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 10 has type ‘az_r_t {aka long int}’ [-Wformat=]
+ #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:64:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT " [%s] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), AZ_FILENAME, __VA_ARGS__);\
+          ^
+/home/dhkang/work/Aurora/aurora/inc/az_tc.h:90:5: note: in expansion of macro ‘az_sys_printf’
+     az_sys_printf("[E] [%s] test run [%d] [%s] [%d] [%s]\n",\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_tc.h:107:7: note: in expansion of macro ‘AZ_TC_PRINT_END_FAIL’
+       AZ_TC_PRINT_END_FAIL(pCtx, pIter) \
+       ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:233:5: note: in expansion of macro ‘AZ_TC_PRINT_END’
+     AZ_TC_PRINT_END(pTC, iter);
+     ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 9 has type ‘az_r_t {aka long int}’ [-Wformat=]
+ #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:66:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
+          ^
+/home/dhkang/work/Aurora/aurora/inc/az_tc.h:90:5: note: in expansion of macro ‘az_sys_printf’
+     az_sys_printf("[E] [%s] test run [%d] [%s] [%d] [%s]\n",\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_tc.h:107:7: note: in expansion of macro ‘AZ_TC_PRINT_END_FAIL’
+       AZ_TC_PRINT_END_FAIL(pCtx, pIter) \
+       ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:233:5: note: in expansion of macro ‘AZ_TC_PRINT_END’
+     AZ_TC_PRINT_END(pTC, iter);
+     ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 10 has type ‘az_r_t {aka long int}’ [-Wformat=]
+ #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:64:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT " [%s] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), AZ_FILENAME, __VA_ARGS__);\
+          ^
+/home/dhkang/work/Aurora/aurora/inc/az_tc.h:98:5: note: in expansion of macro ‘az_sys_printf’
+     az_sys_printf("[E] [%s] test run [%d] [%s] [%d] \n",\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_tc.h:109:7: note: in expansion of macro ‘AZ_TC_PRINT_END_PASS’
+       AZ_TC_PRINT_END_PASS(pCtx, pIter) \
+       ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:233:5: note: in expansion of macro ‘AZ_TC_PRINT_END’
+     AZ_TC_PRINT_END(pTC, iter);
+     ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 9 has type ‘az_r_t {aka long int}’ [-Wformat=]
+ #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:66:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
+          ^
+/home/dhkang/work/Aurora/aurora/inc/az_tc.h:98:5: note: in expansion of macro ‘az_sys_printf’
+     az_sys_printf("[E] [%s] test run [%d] [%s] [%d] \n",\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_tc.h:109:7: note: in expansion of macro ‘AZ_TC_PRINT_END_PASS’
+       AZ_TC_PRINT_END_PASS(pCtx, pIter) \
+       ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:233:5: note: in expansion of macro ‘AZ_TC_PRINT_END’
+     AZ_TC_PRINT_END(pTC, iter);
+     ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:216:8: warning: unused variable ‘name’ [-Wunused-variable]
+   char name[] = "r0";
+        ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
@@ -647,7 +702,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c: At top level:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:139:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
@@ -657,43 +712,45 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
 /home/dhkang/work/Aurora/aurora/inc/az_ion.h:81:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
  static void az_ion_invalidate(az_ion_t *ion, int is_static)
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c: In function ‘az_sys_dllib_findBfdSymbol’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
    printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
    ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:94:13: note: ‘symtab’ was declared here
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
    asymbol **symtab;
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:20: note: ‘nsyms’ was declared here
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
    az_size_t nsize, nsyms, i;
                     ^
 Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c
@@ -701,7 +758,7 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_unitTest.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"ut/az_unitTest.d" -MT"ut/az_unitTest.o" -o "ut/az_unitTest.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c"
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:122:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
@@ -711,7 +768,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
        wlen = sendfile(dst, src, &offset, 4096);
               ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:180:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
@@ -725,14 +782,14 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdAddr2Name’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:161:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
          name = symtab[i]->name;
               ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
@@ -749,36 +806,14 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
 /home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
      az_array_est_element32_at(pArray, id, e);
      ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h: At top level:
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:117:0: warning: "AZ_LOG_LEVEL_DEBUG" redefined
- #define AZ_LOG_LEVEL_DEBUG    70
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_log.h:88:0: note: this is the location of the previous definition
- #define AZ_LOG_LEVEL_DEBUG    60
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:118:0: warning: "AZ_LOG_LEVEL_VERBOSE" redefined
- #define AZ_LOG_LEVEL_VERBOSE  80
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_log.h:89:0: note: this is the location of the previous definition
- #define AZ_LOG_LEVEL_VERBOSE  70
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:139:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c: At top level:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
@@ -787,39 +822,41 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
 /home/dhkang/work/Aurora/aurora/inc/az_ion.h:81:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
  static void az_ion_invalidate(az_ion_t *ion, int is_static)
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c: In function ‘az_sys_dllib_findBfdSymbol’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
    printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
    ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:94:13: note: ‘symtab’ was declared here
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
    asymbol **symtab;
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:20: note: ‘nsyms’ was declared here
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
    az_size_t nsize, nsyms, i;
                     ^
 Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c
@@ -827,7 +864,7 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c
 Building file: /home/dhkang/work/Aurora/aurora/src/frw/az_main.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_main.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/az_main.d" -MT"Sources/az_main.o" -o "Sources/az_main.o" "/home/dhkang/work/Aurora/aurora/src/frw/az_main.c"
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:122:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
@@ -837,7 +874,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
        wlen = sendfile(dst, src, &offset, 4096);
               ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:180:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
@@ -851,14 +888,14 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdAddr2Name’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:161:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
          name = symtab[i]->name;
               ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
@@ -875,43 +912,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
 /home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
      az_array_est_element32_at(pArray, id, e);
      ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
-                 from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h: At top level:
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:117:0: warning: "AZ_LOG_LEVEL_DEBUG" redefined
- #define AZ_LOG_LEVEL_DEBUG    70
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
-                 from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_log.h:88:0: note: this is the location of the previous definition
- #define AZ_LOG_LEVEL_DEBUG    60
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
-                 from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:118:0: warning: "AZ_LOG_LEVEL_VERBOSE" redefined
- #define AZ_LOG_LEVEL_VERBOSE  80
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_printf.h:24:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26,
-                 from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_log.h:89:0: note: this is the location of the previous definition
- #define AZ_LOG_LEVEL_VERBOSE  70
- ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
 /home/dhkang/work/Aurora/aurora/src/frw/az_main.c: In function ‘az_xu_entry3’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘az_r_t {aka long int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
  #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
                               ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:60:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
           ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_printf’
-     az_sys_printf(__VA_ARGS__);\
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
      ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
      az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
@@ -919,14 +937,23 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
 /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:96:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s count=%d recv %x\n", __FUNCTION__, count, revents); 
      ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
- #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-                              ^
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-          ^
-/home/dhkang/work/Aurora/aurora/inc/az_printf.h:99:5: note: in expansion of macro ‘az_sys_eprintf’
-     az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:93:12: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘az_r_t {aka long int}’ [-Wformat=]
+     printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__);\
+            ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:115:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_dprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:91:5: note: in expansion of macro ‘az_sys_dprintf’
+     az_sys_dprintf(__VA_ARGS__);\
+     ^
+/home/dhkang/work/Aurora/aurora/inc/az_printf.h:97:5: note: in expansion of macro ‘az_dprintf’
+     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
      ^
 /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:96:5: note: in expansion of macro ‘az_rprintf’
      az_rprintf(r, "%s count=%d recv %x\n", __FUNCTION__, count, revents); 
@@ -955,14 +982,14 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_base.h:26:0,
 /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:256:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
      return (int)az_xu_entry(az_xu_main);
             ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
 /home/dhkang/work/Aurora/aurora/src/frw/az_main.c: At top level:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:139:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
@@ -971,39 +998,41 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
 /home/dhkang/work/Aurora/aurora/inc/az_ion.h:81:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
  static void az_ion_invalidate(az_ion_t *ion, int is_static)
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
 /home/dhkang/work/Aurora/aurora/src/frw/az_main.c: In function ‘az_sys_dllib_findBfdSymbol’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
    printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
    ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:94:13: note: ‘symtab’ was declared here
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
    asymbol **symtab;
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:80:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:305:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:20: note: ‘nsyms’ was declared here
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:251:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/frw/az_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
    az_size_t nsize, nsyms, i;
                     ^
 Finished building: /home/dhkang/work/Aurora/aurora/src/frw/az_main.c

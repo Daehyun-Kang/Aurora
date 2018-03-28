@@ -71,22 +71,8 @@ extern "C"
 #define AZ_LOG_STATE_DALLOC   0x8000
 #define AZ_LOG_STATE_DBUFFER  0x4000
 
-#define AZ_LOG_FLAGS_TIME   0x0001
-#define AZ_LOG_FLAGS_FUNC   0x0002
-#define AZ_LOG_FLAGS_LINE   0x0004
-#define AZ_LOG_FLAGS_FILE   0x0008
-#define AZ_LOG_FLAGS_PROC   0x0010
-#define AZ_LOG_FLAGS_DOUT   0x0020
-#define AZ_LOG_FLAGS_SPOT   (AZ_LOG_FLAGS_FUNC|AZ_LOG_FLAGS_LINE|AZ_LOG_FLAGS_FILE)
-#define AZ_LOG_FLAGS_ALL   (AZ_LOG_FLAGS_TIME|AZ_LOG_FLAGS_SPOT|AZ_LOG_FLAGS_PROC)
-
-#define AZ_LOG_LEVEL_SEVERE   10
-#define AZ_LOG_LEVEL_ASSERT   20
-#define AZ_LOG_LEVEL_ERROR    30
-#define AZ_LOG_LEVEL_WARN     40
-#define AZ_LOG_LEVEL_INFO     50
-#define AZ_LOG_LEVEL_DEBUG    60
-#define AZ_LOG_LEVEL_VERBOSE  70
+// include for log level and flags
+#include "az_log_level.h"
 
 /* basic types */
 typedef unsigned int az_logid_t;

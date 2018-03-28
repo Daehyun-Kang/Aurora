@@ -159,6 +159,9 @@ typedef az_sys_lib_t   AurSysLibT;
 
 /* function prototypes exposed */
 
+
+#include "sys/az_sys_printf.h"
+
 #ifdef __cplusplus
 }
 #endif

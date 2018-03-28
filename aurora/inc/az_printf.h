@@ -80,7 +80,7 @@ extern "C"
   if (az_logs_count > 0) {\
     az_log_printf(0, AZ_LOG_LEVEL_ERROR, AZ_LOG_FLAGS_ALL, AZ_FILENAME, __FUNCTION__, __LINE__, __VA_ARGS__);\
   } else {\
-    az_sys_printf(__VA_ARGS__);\
+    az_sys_eprintf(__VA_ARGS__);\
   }}
 
 #define az_dprintf(...)   {\
@@ -88,7 +88,7 @@ extern "C"
   if (az_logs_count > 0) {\
     az_log_printf(0, AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, AZ_FILENAME, __FUNCTION__, __LINE__, __VA_ARGS__);\
   } else {\
-    az_sys_printf(__VA_ARGS__);\
+    az_sys_dprintf(__VA_ARGS__);\
   }}
 
 #define az_rprintf(r, fmt, ...) {\
@@ -96,7 +96,7 @@ extern "C"
   if (az_logs_count > 0) {\
     az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
   } else {\
-    az_sys_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+    az_sys_rprintf(r, fmt, __VA_ARGS__); \
   }\
 }
 
@@ -105,18 +105,9 @@ extern "C"
   if (az_logs_count > 0) {\
     az_log_printf(0, level, flags, AZ_FILENAME, __FUNCTION__, __LINE__, __VA_ARGS__);\
   } else {\
-    az_sys_printf(__VA_ARGS__);\
+    az_sys_log_printf(level, flags, __VA_ARGS__);\
   }\
 }
-#define AZ_LOG_LEVEL_SEVERE   10
-#define AZ_LOG_LEVEL_ASSERT   20
-#define AZ_LOG_LEVEL_ERROR    30
-#define AZ_LOG_LEVEL_WARN     40
-#define AZ_LOG_LEVEL_INFO     50
-#define AZ_LOG_LEVEL_TRACE    60
-#define AZ_LOG_LEVEL_DEBUG    70
-#define AZ_LOG_LEVEL_VERBOSE  80
-
 #define az_vlog(...) az_log(AZ_LOG_LEVEL_VERBOSE, AZ_LOG_FLAGS_ALL, __VA_ARGS__)  
 #define az_dlog(...) az_log(AZ_LOG_LEVEL_DEBUG, AZ_LOG_FLAGS_ALL, __VA_ARGS__)  
 #define az_tlog(...) az_log(AZ_LOG_LEVEL_TRACE, AZ_LOG_FLAGS_TIME|AZ_LOG_FLAGS_PROC|AZ_LOG_FLAGS_FUNC, __VA_ARGS__)  

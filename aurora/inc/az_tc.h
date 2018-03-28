@@ -67,39 +67,49 @@ extern "C"
 
 #define AZ_TC_PRINT_B(pCtx) \
     do { \
-    printf("\n\n[B] [%s] test run [%d]\n",pCtx->_title, pCtx->_tv_count);\
+    az_sys_printf("[B] [%s:%d]" AZ_NL,pCtx->name, pCtx->test_iter.count);\
     } while (0);
 
 #define AZ_TC_PRINT_BEGIN(pCtx) AZ_TC_PRINT_B(pCtx)
 
 #define AZ_TC_PRINT_T(pCtx) \
   do {\
-    printf("[T] [%s] test run [%d] pass [%d] fail [%d]\n",pCtx->_title, pCtx->_tv_count, pCtx->_pass, pCtx->_fail); \
+    az_sys_printf("[T] [%s:%d] pass [%d] fail [%d]" AZ_NL,\
+        pCtx->name, pCtx->test_iter.count, pCtx->report.pass, pCtx->report.fail); \
   } while (0);
 
 #define AZ_TC_PRINT_TERM(pCtx) AZ_TC_PRINT_T(pCtx)
 
-#define AZ_TC_PRINT_START(pCtx, pInput) \
+#define AZ_TC_PRINT_START(pCtx, pIter) \
   do { \
-    printf("[S] [%s] test run [%d]\n",pCtx->_title, pInput->_index); \
+    az_sys_printf("[S] [%s:%d]" AZ_NL,pCtx->name, pIter->index); \
   } while (0); 
 
-#define AZ_TC_PRINT_END_FAIL(pCtx, pInput, err) \
+#define AZ_TC_PRINT_END_FAIL(pCtx, pIter) \
   do {\
-    printf("[E] [%s] test run [%d] [%s] [%d] [%s:%d] [%s]\n",\
-            pCtx->_title, pInput->_index,\
-          (!err)? "PASS":"FAIL", err,\
-            pInput->_file, pInput->_line, pInput->_reason);\
+    az_sys_printf("[E] [%s:%d] [%s] [%d] [%s]" AZ_NL,\
+            pCtx->name, pIter->index,\
+            (pIter->result >= 0)? "PASS":"FAIL",\
+            pIter->result, pIter->reason);\
   } while (0);
 
-#define AZ_TC_PRINT_END_PASS(pCtx, pInput, err) \
+#define AZ_TC_PRINT_END_PASS(pCtx, pIter) \
   do {\
-    printf("[E] [%s] test run [%d] [%s] [%d] \n",\
-            pCtx->_title, pInput->_index,\
-          (!err)? "PASS:success":"PASS:failure", err); \
-    if (!err) pCtx->_success++;\
-    else pCtx->_failure++; \
+    az_sys_printf("[E] [%s:%d] [%s] [%d]" AZ_NL,\
+            pCtx->name, pIter->index,\
+            (pIter->result == 0)? "PASS:success":"PASS:failure",\
+            pIter->result); \
   } while (0);
+
+#define AZ_TC_PRINT_END(pCtx, pIter) \
+  do {\
+    if (pIter->result < 0) {\
+      AZ_TC_PRINT_END_FAIL(pCtx, pIter) \
+    } else {\
+      AZ_TC_PRINT_END_PASS(pCtx, pIter) \
+    }\
+  } while (0);
+    
 
 /* variabls exposed */
 extern  int az_tc_flags;

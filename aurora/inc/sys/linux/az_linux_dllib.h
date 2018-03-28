@@ -23,6 +23,7 @@
 #include "az_def.h"
 #include "az_err.h"
 #include "az_malloc.h"
+#include "az_sys_def.h"
 
 #ifdef __cplusplus
 extern "C"

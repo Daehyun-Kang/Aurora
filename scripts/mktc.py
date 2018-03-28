@@ -173,10 +173,11 @@ def defTestVectorArray(f, fn):
 def declTestVectorCur(f, fn):
   f.write("{0}({1});\n\n".format(AZTestCaseVectorCurDecl, fn))
 
-def insertTrace(f, fn):
+def insertTrace(f, fn, macro):
   f.write("  if (({0} & {2}) || ({1} & {2})) ".format(mkflags(fn), AZTestCaseFlags, AZTestCaseTraceEnable))
   f.write("{\n")
-  f.write("    az_rprintf(r, \"%s\" AZ_NL, \"...\");\n")
+  if len(macro) > 0:
+    f.write("    {0};\n".format(macro))
   f.write("  }\n")
 
 def defTCInitHandler(f, fn):
@@ -213,7 +214,7 @@ def defTCInitHandler(f, fn):
   f.write("    }\n")
   f.write("  }\n")
   f.write("  AZ_TC_SET_TV({0}, {1});\n".format(argname, array_name)) 
-  insertTrace(f, fn)
+  insertTrace(f, fn, "AZ_TC_PRINT_B(pTC)")
   f.write("  return r;\n");
   f.write("}\n\n");
 
@@ -224,7 +225,7 @@ def defTCSyncHandler(f, fn):
       AZTestCaseStruct))
   f.write("\n{\n")
   f.write("  {0} r = {1};\n\n".format(AZTestCaseHandlerRetType, "AZ_SUCCESS"))
-  insertTrace(f, fn)
+  insertTrace(f, fn, "")
   f.write("  return r;\n");
   f.write("}\n\n");
 
@@ -237,7 +238,7 @@ def defTCPrologHandler(f, fn):
   f.write("  {0} r = {1};\n".format(AZTestCaseHandlerRetType, "AZ_SUCCESS"))
   f.write("  {0} *iter = AZ_TC_CUR_ITER(pTC);\n".format(AZTestIterType))
   f.write("  {0} *tv = AZ_TC_ITER_GET_TV(iter, {1});\n\n".format(mkTVStruct(fn),mkTVType(fn)))
-  insertTrace(f, fn)
+  insertTrace(f, fn, "AZ_TC_PRINT_START(pTC, iter)")
   f.write("  return r;\n");
   f.write("}\n\n");
 
@@ -250,7 +251,7 @@ def defTCRunHandler(f, fn):
   f.write("  {0} r = {1};\n".format(AZTestCaseHandlerRetType, "AZ_SUCCESS"))
   f.write("  {0} *iter = AZ_TC_CUR_ITER(pTC);\n".format(AZTestIterType))
   f.write("  {0} *tv = AZ_TC_ITER_GET_TV(iter, {1});\n\n".format(mkTVStruct(fn),mkTVType(fn)))
-  insertTrace(f, fn)
+  insertTrace(f, fn, "")
   f.write("  return r;\n");
   f.write("}\n\n");
 
@@ -263,7 +264,7 @@ def defTCEpilogHandler(f, fn):
   f.write("  {0} r = {1};\n".format(AZTestCaseHandlerRetType, "AZ_SUCCESS"))
   f.write("  {0} *iter = AZ_TC_CUR_ITER(pTC);\n".format(AZTestIterType))
   f.write("  {0} *tv = AZ_TC_ITER_GET_TV(iter, {1});\n\n".format(mkTVStruct(fn),mkTVType(fn)))
-  insertTrace(f, fn)
+  insertTrace(f, fn, "AZ_TC_PRINT_END(pTC, iter)")
   f.write("  return r;\n");
   f.write("}\n\n");
 
@@ -286,7 +287,7 @@ def defTCTermHandler(f, fn):
   f.write("    {0} = NULL;\n".format(array_name)) 
   f.write("    AZ_TC_SET_TV(pTC, NULL);\n")
   f.write("  }\n\n")
-  insertTrace(f, fn)
+  insertTrace(f, fn, "AZ_TC_PRINT_T(pTC)")
   f.write("  return r;\n");
   f.write("}\n\n");
 

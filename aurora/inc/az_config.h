@@ -175,5 +175,9 @@
 //#undef CONFIG_AZ_TEST                    
 
 #define  CONFIG_AZ_SYS_LW_USE_SEM          1 
+
+#define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
+#define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
+
 #endif
 

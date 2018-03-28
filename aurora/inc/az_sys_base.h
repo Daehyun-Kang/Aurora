@@ -30,6 +30,7 @@
 #include "sys/az_fs.h"
 #include "sys/az_datetime.h"
 #include "sys/az_misc.h"
+#include "sys/az_dllib.h"
 
 #ifdef __cplusplus
 extern "C"

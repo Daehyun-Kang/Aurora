@@ -110,12 +110,14 @@ az_r_t az_tc_init_rw_lock(az_test_case_t *pTC)
       if (xe) tv->expected_result = xe->kv.value;
       xe = az_xml_element_find_attr(iter->xml, "result");
       if (xe) tv->result = xe->kv.value;
-      az_printf("e=%s r=%s\n", tv->expected_result, tv->result);
+      az_dlog("e=%s r=%s\n", tv->expected_result, tv->result);
     }
   }
   AZ_TC_SET_TV(pTC, az_tc_testvector_array_rw_lock);
+
+
   if ((az_tc_rw_lock_flags & AZ_TC_FLAG_TRACE) || (az_tc_flags & AZ_TC_FLAG_TRACE)) {
-    az_rprintf(r, "%s" AZ_NL, "...");
+    AZ_TC_PRINT_B(pTC);
   }
   return r;
 }
@@ -157,7 +159,7 @@ az_r_t az_tc_prolog_rw_lock(az_test_case_t *pTC)
   xus[0] = xus[1] = xus[2] = NULL; 
 
   if ((az_tc_rw_lock_flags & AZ_TC_FLAG_TRACE) || (az_tc_flags & AZ_TC_FLAG_TRACE)) {
-    az_rprintf(r, "%s" AZ_NL, "...");
+    AZ_TC_PRINT_START(pTC, iter);
   }
   return r;
 }
@@ -222,10 +224,13 @@ az_r_t az_tc_epilog_rw_lock(az_test_case_t *pTC)
     iter->result = AZ_FAIL;
   }
 
-  az_printf("e=%s r=%s %d\n", tv->expected_result, tv->result, iter->result); 
+  az_ilog("%s:%d e=%s r=%s [%s]\n", 
+      pTC->name, iter->index,
+      tv->expected_result, tv->result, 
+      az_err_str(iter->result)); 
 
   if ((az_tc_rw_lock_flags & AZ_TC_FLAG_TRACE) || (az_tc_flags & AZ_TC_FLAG_TRACE)) {
-    az_rprintf(r, "%s" AZ_NL, "...");
+    AZ_TC_PRINT_END(pTC, iter);
   }
   return r;
 }
@@ -251,7 +256,7 @@ az_r_t az_tc_term_rw_lock(az_test_case_t *pTC)
   }
 
   if ((az_tc_rw_lock_flags & AZ_TC_FLAG_TRACE) || (az_tc_flags & AZ_TC_FLAG_TRACE)) {
-    az_rprintf(r, "%s" AZ_NL, "...");
+    AZ_TC_PRINT_T(pTC);
   }
   return r;
 }

@@ -42,60 +42,7 @@ static inline az_sys_datetime_t *az_sys_localtime(az_sys_time_t *t)
 #define az_sys_errorstr() strerror(az_sys_errno)
 #define az_sys_sockerror() errno 
 
-#define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
-
-#ifdef  CONFIG_AZ_SYS_PRINT_TIMESTAMP
-#define az_sys_printf0(fmt) {\
-  az_sys_timespec_t _ts; \
-  clock_gettime(CLOCK_REALTIME, &_ts);\
-  az_sys_time_t _t = (az_sys_time_t)_ts.tv_sec;\
-  az_sys_datetime_t *tp = az_sys_localtime(&_t);\
-  printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000));\
-}
-#define az_sys_printf(fmt, ...) {\
-  az_sys_timespec_t _ts; \
-  clock_gettime(CLOCK_REALTIME, &_ts);\
-  az_sys_time_t _t = (az_sys_time_t)_ts.tv_sec;\
-  az_sys_datetime_t *tp = az_sys_localtime(&_t);\
-  printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
-}
-#else
-#define az_sys_printf0(...) printf(__VA_ARGS__)
-#define az_sys_printf(...) printf(__VA_ARGS__)
-#endif
-
-#ifdef  CONFIG_AZ_SYS_PRINT_TIMESTAMP
-#define az_sys_eprintf0(fmt) {\
-  az_sys_timespec_t _ts; \
-  clock_gettime(CLOCK_REALTIME, &_ts);\
-  az_sys_time_t _t = (az_sys_time_t)_ts.tv_sec;\
-  az_sys_datetime_t *tp = az_sys_localtime(&_t);\
-  printf( AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__);\
-}
-#define az_sys_eprintf(fmt, ...) {\
-  az_sys_timespec_t _ts; \
-  clock_gettime(CLOCK_REALTIME, &_ts);\
-  az_sys_time_t _t = (az_sys_time_t)_ts.tv_sec;\
-  az_sys_datetime_t *tp = az_sys_localtime(&_t);\
-  printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-}
-#else
-#define az_sys_eprintf0(fmt)  printf("[%s:%d] " fmt, __FUNCTION__, __LINE__)
-#define az_sys_eprintf(fmt, ...) printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__)
-#endif
-
-#ifdef  CONFIG_AZ_SYS_PRINT_TIMESTAMP
-#define az_sys_rprintf(r, fmt, ...) {\
-  az_sys_timespec_t _ts; \
-  clock_gettime(CLOCK_REALTIME, &_ts);\
-  az_sys_time_t _t = (az_sys_time_t)_ts.tv_sec;\
-  az_sys_datetime_t *tp = az_sys_localtime(&_t);\
-  printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] <%d:%s>" fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, (int)r, az_err_str(r), __VA_ARGS__); \
-}
-#else
-#define az_sys_rprintf(r, fmt, ...) printf("[%s:%d] <%d:%s>" fmt, __FUNCTION__, __LINE__, (int)r, az_err_str(r), __VA_ARGS__)
-#endif
-
+#include "sys/az_sys_printf.h"
 
 #include "az_xu_types.h"
 #include "az_ion_types.h"
@@ -178,7 +125,6 @@ static inline int futex(int *uaddr, int futex_op, int val,
 #define AZ_SYS_EVENT_OPT_PRESERVE   2
 typedef uint32_t az_sys_event_t;
 #include "az_linux_event.h"
-
 
 
 /*

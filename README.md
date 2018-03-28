@@ -18,7 +18,7 @@ Eclipse CDT
 
 ### Installing
 
-Download the package, and open Eclipse with workspace of Aurora/build/linux/ecs_ws.
+Download the package, and open Eclipse with workspace of `Aurora/build/linux/ecs_ws`.
 You can see the library project for Aurora and sample project for application.
 
 
@@ -30,7 +30,7 @@ Dae hyun Kang - Initial work
 
 This project is dual-licensed.
 For non-commercial use you and use this SW under under the "GPL version 2 or any later version".
-For commerical use you should receive written permission from the copyright hodler.
+For commerical use you should receive written permission from the copyright holder.
 
 ## Acknowledgments
 

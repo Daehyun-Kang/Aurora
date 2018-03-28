@@ -1,0 +1,23 @@
+<? xml version="1.0" encoding="iso-8859-1" ?>
+<![CDATA[ testCase version="1" ]]>
+<testCase name="az_tc_az_tc_rw_lock" prototype="char *rw_lock()" >
+  <oprs>
+    <Init   name="az_tc_init_rw_lock" />
+    <Sync   name="az_tc_sync_rw_lock" />
+    <Prolog name="az_tc_prolog_rw_lock" />
+    <Run    name="az_tc_run_rw_lock" />
+    <Epilog name="az_tc_epilog_rw_lock" />
+    <Term   name="az_tc_term_rw_lock" />
+  </oprs>
+  <testVector expected_result="char *" result="char *" >
+    <row order="rrw" expected_result="rrw" result="xxx"  _onoff="1" />
+    <row order="wrr" expected_result="wrr" result="xxx "  _onoff="1" />
+    <row order="rrw" expected_result="rrw" result="xxx"  _onoff="1" />
+    <row order="wrr" expected_result="wrr" result="xxx "  _onoff="1" />
+    <row order="rrw" expected_result="rrw" result="xxx"  _onoff="1" />
+    <row order="wrr" expected_result="wrr" result="xxx "  _onoff="1" />
+    <row order="rrw" expected_result="rrw" result="xxx"  _onoff="1" />
+    <row order="wrr" expected_result="wrr" result="xxx "  _onoff="1" />
+    <row order="rwr" expected_result="rrw" result="xxx "  _onoff="1" />
+  </testVector>
+</testCase>

@@ -1,0 +1,21 @@
+
+<testCase name="msgqTest">
+  <oprs>
+    <Init name="msgqTest_init" />
+    <Sync name="msgqTest_sync" />
+    <Run name="msgqTest_run" />
+    <Term name="msgqTest_term" />
+  </oprs>
+  <testDescr name="tc1" mode="msgq_send">
+    <iou name="msgq0" ioap.u16="0" interface="MSGQ" transport="RAW" flags="TX">
+      <tx bufferSize.u64="102400" descrCount.u16="100" frameSize.u32="1024" />
+      <remote name="Q1"/>
+    </iou>
+  </testDescr>
+  <testDescr name="tc2" mode="msgq_recv">
+    <iou name="msgq1" ioap.u16="1" interface="MSGQ" transport="RAW" flags="RX">
+      <rx bufferSize.u64="102400" descrCount.u16="100" frameSize.u32="1024" />
+      <local name="Q1"/>
+    </iou>
+  </testDescr>
+</testCase>

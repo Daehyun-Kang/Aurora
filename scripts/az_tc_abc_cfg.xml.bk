@@ -1,0 +1,15 @@
+<? xml version="1.0" encoding="iso-8859-1" ?>
+<![CDATA[ testCase version="1" ]]>
+<testCase name="az_tc_az_tc_abc" prototype="int abc(int a, int b)" >
+  <oprs>
+    <Init   name="az_tc_init_abc" />
+    <Sync   name="az_tc_sync_abc" />
+    <Prolog name="az_tc_prolog_abc" />
+    <Run    name="az_tc_run_abc" />
+    <Epilog name="az_tc_epilog_abc" />
+    <Term   name="az_tc_term_abc" />
+  </oprs>
+  <testVector a="int" b="int" expected_result="int " result="int " >
+    <row a="int" b="int" expected_result="int " result="int "  _onoff="1" />
+  </testVector>
+</testCase>

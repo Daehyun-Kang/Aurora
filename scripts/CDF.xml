@@ -1,0 +1,16 @@
+<? xml version="1.0" encoding="iso-8859-1"?>
+<![CDATA[ mercury-ics-cluster version="2" ]]>
+<mercury-ics-cluster ver="1.0">
+  <!-- 123mercury-ics-cluster456 
+  <node name="mc_repo_server">
+  -->
+    <compute-engine ceid="1"  core-mask="0x5" number-smb-blocks="8192" smb-block-size="4096"/>
+    <compute-engine ceid="2"  core-mask="0xa" number-smb-blocks="8192" smb-block-size="4096"/>
+  </node>
+</mercury-ics-cluster>
+  <!-- 789MERCURY-ics-cluster101112 -->
+  <abc a="124" />
+  <time t="124">
+    u="abc"
+  </time>
+

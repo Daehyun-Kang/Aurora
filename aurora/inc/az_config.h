@@ -56,6 +56,9 @@
 
 #define CONFIG_UNIT_TEST        1
 //#undef CONFIG_UNIT_TEST
+//
+#define CONFIG_TEST_CASE        1
+//#undef CONFIG_TEST_CASE
 
 
 #define  CONFIG_AZ_USE_STDARG   1

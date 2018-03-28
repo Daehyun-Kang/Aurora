@@ -22,6 +22,7 @@
 #define AZ_TEST_H
 
 #include "az_xcfg.h"
+#include "az_xu.h"
 #include "frw/az_frw.h"
 
 #ifdef __cplusplus

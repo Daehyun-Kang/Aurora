@@ -1,0 +1,17 @@
+<? xml version="1.0" encoding="iso-8859-1"?>
+<testCase name="az_ut_abc" prototype="void abc(int a, int b)">
+  <oprs>
+    <Init   name="az_ut_init_abc" />
+    <Sync   name="az_ut_sync_abc" />
+    <Prolog name="az_ut_prolog_abc" />
+    <Run    name="az_ut_run_abc" />
+    <Epilog name="az_ut_epilog_abc" />
+    <Term   name="az_ut_term_abc" />
+  </oprs>
+  <testVector a="int" b="int" expected_result="int" result="int" >
+    <row a="2" b="3" expected_result="5" result="5"  _onoff="1" />
+    <row a="2" b="3" expected_result="4" result="5"  _onoff="1" />
+    <row a="2" b="-3" expected_result="-1" result="5"  _onoff="1" />
+    <row a="2" b="-3" expected_result="-2" result="5"  _onoff="0" />
+  </testVector>
+</testCase>

@@ -66,7 +66,7 @@ extern "C"
 #ifdef  CONFIG_AZ_DFT_FRW_CFG_FOLDER  
 #define  AZ_FRW_CFG_FOLDER_DFT  CONFIG_AZ_DFT_FRW_CFG_FOLDER
 #else
-#define  AZ_FRW_CFG_FOLDER_DFT  "."
+#define  AZ_FRW_CFG_FOLDER_DFT  "cfg"
 #endif
 
 #ifdef  CONFIG_AZ_DFT_FRW_LOG_FOLDER

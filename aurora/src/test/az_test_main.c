@@ -25,6 +25,7 @@
 #include "az_ver.h"
 #include "mon/az_debug.h"
 #include "az_test.h"
+#include "az_tc.h"
 
 extern int az_test_xu(int argc, char *argv[]);
 extern void az_frw_cmd_init();

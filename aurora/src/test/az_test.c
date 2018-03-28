@@ -25,6 +25,7 @@
 #include "az_ver.h"
 #include "mon/az_debug.h"
 #include "az_test.h"
+#include "az_tc.h"
 
 /* declare global variables */
 int az_tc_thread_state = 0;
@@ -93,6 +94,8 @@ void *az_tc_thread_proc_default(void *arg)
   az_event_t  *evts[2];
   az_ring_t   evtq;
   az_testcase_t *tc = (az_testcase_t *)arg;
+
+  AZ_TC_SET_CUR_TC(tc);
 
   do {
     if (tc_evt_descr == NULL) {
@@ -170,6 +173,8 @@ void *az_tc_thread_proc_default(void *arg)
     az_rprintf(r, "%s error..." AZ_NL, __FUNCTION__);
     az_xu_sendEvent(az_tp_thread_default, AZ_XU_EVENT_TEST_ERROR);
   }
+
+  AZ_TC_SET_CUR_TC(NULL);
 
   return NULL;
 }

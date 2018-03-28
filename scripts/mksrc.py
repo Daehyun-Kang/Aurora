@@ -12,7 +12,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 cr_owner ='Fware'
-cr_dates='2013-2017'
+cr_dates='2013-2018'
 
 
 def mkfunctionDescrTemplate():

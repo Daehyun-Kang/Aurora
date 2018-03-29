@@ -43,7 +43,7 @@ static az_xu_config_t xu_cfg = {
   .startdelay = 0,
 };
 
-void *xu_reader_proc(void *arg)
+static void *xu_reader_proc(void *arg)
 {
   char *buffer = (char *)arg;
 
@@ -55,7 +55,7 @@ void *xu_reader_proc(void *arg)
 
   return NULL;
 }
-void *xu_writer_proc(void *arg)
+static void *xu_writer_proc(void *arg)
 {
   char *buffer = (char *)arg;
 

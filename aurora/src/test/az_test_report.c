@@ -114,4 +114,80 @@ int az_test_testproj_report(az_testproj_t *testproj)
   
   printf("\n\r");
 }
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+int az_test_perf_testproj_report(az_testproj_t *testproj)
+{
+  az_assert(NULL != testproj);
+  char *bp = az_xu_prtbuf;
+  int blen = sizeof(az_xu_prtbuf);
+  int nlen, tlen = 0;
+  az_sys_timespec_t *dtime;
+
+  char *hline = "--------------------------------------------------------------------------------";
+  char *lfmt = "%s\n";
+  char *sfmt = "%3s %20s %10s %10s %10s %10s %10s\n";
+  char *ifmt1 = "%3d %20s %10d %10d %10s %10s %3d.%06d\n";
+  char *ifmt2 = "%3s %20d %10s %10s %10ld %10.6f %3s.%-6s\n";
+  char *cfmt = "%3d %20s %10c %10c %10c %10c %3d.%06d\n";
+
+  printf("\n\r\n\r");
+  printf(lfmt, "===================== AURORA FRAMEWORK PERFORMANCE TEST RESULT ==================\n");
+  _AZ_SNPRINTF(tlen, bp, blen, "Test Project:%s %24s", testproj->name, " ");
+  nlen = az_print_timestampInDatetime(bp, blen, AZ_TIMESTAMP_STR, &testproj->stime);
+  _AZ_FORMAT_UPDATE(tlen, bp, blen, nlen);
+  _AZ_SNPRINTF(tlen, bp, blen, " - ");
+  nlen = az_print_timestampInDatetime(bp, blen, AZ_TIMESTAMP_STR, &testproj->etime);
+  _AZ_FORMAT_UPDATE(tlen, bp, blen, nlen);
+  printf("%s\n", az_xu_prtbuf); 
+
+  printf(lfmt, hline);
+  printf(sfmt, "No", "Test Case Name", 
+                  "PASS", "FAIL", "CYCLES", "TIME(ns)", "DURATION");
+  printf(lfmt, hline);
+
+  int j, k;
+  az_testcase_t *testcase = testproj->testcaselist;
+  az_testiter_t *iter; 
+
+
+  for (j = 0; j < testproj->testcase_count; j++, testcase++) {
+    dtime = az_timespec_diff(&testcase->etime, &testcase->stime);
+    if (testcase->onoff) {
+      printf(ifmt1, testcase->index, testcase->name, 
+        testcase->report.pass,
+        testcase->report.fail,
+        "-", "-",
+        dtime->tv_sec, dtime->tv_nsec/100000
+        );
+
+      iter = testcase->test_iter.list;
+      for (k = 0; k < testcase->test_iter.count; k++, iter++) {
+      printf(ifmt2, " ", iter->samples, "-", "-", 
+        iter->result, (double)(iter->result)*1000/testproj->perf_cal.mhz,
+        "-","-");
+      }
+      continue;
+    }
+      printf(cfmt, testcase->index, testcase->name, '*', '*', '*', '*',0,0);
+  }
+
+  printf(lfmt, hline);
+
+  dtime = az_timespec_diff(&testproj->etime, &testproj->stime);
+  printf(ifmt1, testproj->testcase_count, "TOTAL",
+                  testproj->report.pass, testproj->report.fail,
+                  "-", "-",
+                  dtime->tv_sec, dtime->tv_nsec/100000
+                  );
+  printf(lfmt, hline);
+  
+  printf("\n\r");
+}
 /* === end of AZ_TEST_REPORT_C === */

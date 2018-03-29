@@ -89,6 +89,7 @@ struct test_result {
 typedef struct az_test_iter {
   int     index;
   az_bool_t   onoff;
+  int     samples;
 
   az_xml_element_t *xml;
   void    *test_vector;
@@ -101,11 +102,16 @@ typedef struct az_test_iter {
 
 typedef az_test_iter_t az_testiter_t;
 
+struct az_test_project; 
+
 typedef struct az_test_case {
   uint16_t   index;
   char  name[AZ_NAME_MAX];
+  uint8_t   test_type;
   az_bool_t   onoff;
   int32_t     timeout;
+
+  struct az_test_project *test_proj; 
 
   az_sys_timespec_t stime;
   az_sys_timespec_t etime;
@@ -147,6 +153,8 @@ typedef az_test_case_t  az_testcase_t;
 
 typedef struct az_test_project {
   char  name[AZ_NAME_MAX];
+  uint8_t   test_type;
+  az_xu_t   xu;
 
   az_sys_timespec_t stime;
   az_sys_timespec_t etime;
@@ -159,6 +167,14 @@ typedef struct az_test_project {
   az_test_case_t  *testcaselist;
 
   struct test_result report; 
+
+  struct {
+    uint64_t lsc;
+    uint64_t tsc;
+    uint64_t csc;
+    double   mhz;
+  } perf_cal;
+
 } az_test_project_t;
 
 typedef az_test_project_t az_testproj_t;
@@ -183,6 +199,9 @@ typedef az_test_project_t az_testproj_t;
 #define AZ_TEST_SUBSTATE_PRE      0
 #define AZ_TEST_SUBSTATE_RUN      1
 #define AZ_TEST_SUBSTATE_END      2
+
+#define AZ_TEST_TYPE_FUNC         0
+#define AZ_TEST_TYPE_PERF         1
 
 // define eventbus events
 #ifdef  CONFIG_AZ_TEST_EVT_BASE
@@ -222,6 +241,7 @@ typedef az_test_project_t az_testproj_t;
 #define AZ_TEST_CFG_KEY_rowOnoff   "_onoff"
 #define AZ_TEST_CFG_KEY_result     "result"
 #define AZ_TEST_CFG_KEY_expected_result     "expected_result"
+#define AZ_TEST_CFG_KEY_testtype   "type"
 
 #define AZ_TEST_CFG_KEY_testDescr  "testDescr"
 #define AZ_TEST_CFG_KEY_mode       "mode"
@@ -301,6 +321,7 @@ static inline az_size_t az_test_get_element(az_xml_element_t *cur, az_test_var_t
 extern az_r_t az_test_sendEvent(az_event_id_t event_id, az_uint32_t buffer_size, az_ref_t buffer_data);
 extern  void *az_tc_thread_proc_default(void *arg);
 extern  int az_test_testproj_report(az_testproj_t *testproj);
+extern  int az_test_perf_testproj_report(az_testproj_t *testproj);
 #ifdef __cplusplus
 }
 #endif

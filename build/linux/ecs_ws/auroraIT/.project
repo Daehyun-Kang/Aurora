@@ -31,14 +31,19 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>ut</name>
-			<type>2</type>
-			<locationURI>Aurora_SRC/test/ut</locationURI>
-		</link>
-		<link>
 			<name>Sources/az_main.c</name>
 			<type>1</type>
 			<locationURI>Aurora_SRC/frw/az_main.c</locationURI>
+		</link>
+		<link>
+			<name>Sources/pt</name>
+			<type>2</type>
+			<locationURI>Aurora_SRC/test/pt</locationURI>
+		</link>
+		<link>
+			<name>Sources/ut</name>
+			<type>2</type>
+			<locationURI>Aurora_SRC/test/ut</locationURI>
 		</link>
 	</linkedResources>
 	<variableList>

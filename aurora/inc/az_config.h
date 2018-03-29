@@ -175,9 +175,15 @@
 //#undef CONFIG_AZ_TEST                    
 
 #define  CONFIG_AZ_SYS_LW_USE_SEM          1 
+#undef  CONFIG_AZ_SYS_LW_USE_SEM          
+#define  CONFIG_AZ_SYS_LW_USE_MUTEX        1 
+#undef  CONFIG_AZ_SYS_LW_USE_MUTEX     
 
 #define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
 #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
+
+#define CONFIG_AZ_PERF_MEASURE_LOOP_CNT_DFT   100000 //1000000
+#define CONFIG_AZ_PERF_MEASURE_SAMPLES_DFT    100    //1000
 
 #endif
 

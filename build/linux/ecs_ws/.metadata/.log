@@ -1354,3 +1354,82 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 
 !ENTRY org.eclipse.core.resources 2 10035 2018-03-26 18:43:59.744
 !MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2018-03-29 15:01:54.384 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.ui.ide 4 4 2018-03-29 21:44:35.389
+!MESSAGE Exception in org.eclipse.ui.dialogs.WizardNewFolderMainPage.createNewFolder(): java.lang.IllegalArgumentException: Attempted to beginRule: F/Aurora/Sources/test, does not match outer scope rule: P/auroraIT
+
+!ENTRY org.eclipse.ui.ide 4 4 2018-03-29 21:44:35.417
+!MESSAGE Exception in org.eclipse.ui.dialogs.WizardNewFolderMainPage.createNewFolder(): java.lang.IllegalArgumentException: Attempted to beginRule: F/Aurora/Sources/test, does not match outer scope rule: P/auroraIT
+!STACK 0
+java.lang.IllegalArgumentException: Attempted to beginRule: F/Aurora/Sources/test, does not match outer scope rule: P/auroraIT
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.jobs.ThreadJob.illegalPush(ThreadJob.java:134)
+	at org.eclipse.core.internal.jobs.ThreadJob.push(ThreadJob.java:333)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin(ImplicitJobs.java:63)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule(JobManager.java:307)
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:121)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.createLink(Resource.java:657)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:78)
+	at org.eclipse.core.internal.resources.Folder.ensureExists(Folder.java:145)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.createResource(RefreshLocalVisitor.java:66)
+	at org.eclipse.core.internal.localstore.RefreshLocalAliasVisitor.createResource(RefreshLocalAliasVisitor.java:39)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.synchronizeExistence(RefreshLocalVisitor.java:207)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.visit(RefreshLocalVisitor.java:284)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:111)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:974)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:960)
+	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1594)
+	at org.eclipse.core.internal.resources.Resource.createLink(Resource.java:695)
+	at org.eclipse.ui.internal.ide.undo.FolderDescription.createExistentResourceFromHandle(FolderDescription.java:94)
+	at org.eclipse.ui.internal.ide.undo.AbstractResourceDescription.createResource(AbstractResourceDescription.java:84)
+	at org.eclipse.ui.internal.ide.undo.ContainerDescription.createResource(ContainerDescription.java:1)
+	at org.eclipse.ui.internal.ide.undo.FolderDescription.createResource(FolderDescription.java:1)
+	at org.eclipse.ui.ide.undo.WorkspaceUndoUtil.recreate(WorkspaceUndoUtil.java:683)
+	at org.eclipse.ui.ide.undo.AbstractResourcesOperation.recreate(AbstractResourcesOperation.java:141)
+	at org.eclipse.ui.ide.undo.AbstractCreateResourcesOperation.doExecute(AbstractCreateResourcesOperation.java:55)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.lambda$0(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:197)
+	at org.eclipse.ui.dialogs.WizardNewFolderMainPage.lambda$1(WizardNewFolderMainPage.java:465)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.jobs 4 2 2018-03-29 21:44:44.270
+!MESSAGE An internal error occurred during: "refresh".
+!STACK 0
+java.lang.IllegalArgumentException: Attempted to beginRule: F/Aurora/Sources/test, does not match outer scope rule: P/auroraIT
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.jobs.ThreadJob.illegalPush(ThreadJob.java:134)
+	at org.eclipse.core.internal.jobs.ThreadJob.push(ThreadJob.java:333)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin(ImplicitJobs.java:63)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule(JobManager.java:307)
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:121)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.createLink(Resource.java:657)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:78)
+	at org.eclipse.core.internal.resources.Folder.ensureExists(Folder.java:145)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.createResource(RefreshLocalVisitor.java:66)
+	at org.eclipse.core.internal.localstore.RefreshLocalAliasVisitor.createResource(RefreshLocalAliasVisitor.java:39)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.synchronizeExistence(RefreshLocalVisitor.java:207)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.visit(RefreshLocalVisitor.java:284)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:111)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:974)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:960)
+	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1594)
+	at org.eclipse.ui.actions.RefreshAction.refreshResource(RefreshAction.java:271)
+	at org.eclipse.ui.actions.RefreshAction$2.execute(RefreshAction.java:231)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:107)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:128)
+	at org.eclipse.ui.internal.navigator.resources.actions.ResourceMgmtActionProvider$2$1.runInWorkspace(ResourceMgmtActionProvider.java:202)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)

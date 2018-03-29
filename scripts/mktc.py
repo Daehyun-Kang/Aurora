@@ -471,7 +471,10 @@ def main():
   f.close();
 
   filenames=filename.split('.')
-  tcname = AZTestCaseVarPrefix + '_' + filenames[0];
+  if filenames[0].find(AZTestCaseVarPrefix) < 0:
+    tcname = AZTestCaseVarPrefix + '_' + filenames[0];
+  else:
+    tcname = filenames[0];
   #filename = AZTestCaseVarPrefix +'_cfg_'+filenames[0] + '.xml'
   filename = filenames[0] + '_cfg.xml'
 

@@ -1,0 +1,17 @@
+<? xml version="1.0" encoding="iso-8859-1" ?>
+<![CDATA[ testCase version="1" ]]>
+<testCase name="az_pt_pthread_mutex" prototype="char *pthread_mutex()" >
+  <oprs>
+    <Init   name="az_pt_init_sys_lw_lock" />
+    <Sync   name="az_pt_sync_sys_lw_lock" />
+    <Prolog name="az_pt_prolog_sys_lw_lock" />
+    <Run    name="az_pt_run_sys_lw_lock" />
+    <Epilog name="az_pt_epilog_sys_lw_lock" />
+    <Term   name="az_pt_term_sys_lw_lock" />
+  </oprs>
+  <testVector result="uint64_t" >
+    <row samples="1000" result="0" _onoff="1" />
+    <row samples="10000" result="0" _onoff="1" />
+    <row samples="100000" result="0" _onoff="1" />
+  </testVector>
+</testCase>

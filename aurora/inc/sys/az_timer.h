@@ -56,14 +56,23 @@ typedef az_timer_entity_t *   az_timer_t;
 /* variabls exposed */
 
 /* inline functions */
+static inline uint64_t az_timestamp()
+{
+  uint32_t low, high;
+  asm volatile ("rdtsc":"=a"(low), "=d"(high));
+  return ((uint64_t)high << 32) | low;
+
+}
+
 static inline az_sys_timespec_t *az_timespec_diff(az_sys_timespec_t *e, az_sys_timespec_t *s)
 {
   static az_sys_timespec_t d; 
   d.tv_nsec = e->tv_nsec - s->tv_nsec; 
   d.tv_sec = e->tv_sec - s->tv_sec;
-  if (d.tv_nsec < 0) { d.tv_sec--; d.tv_nsec += 1000000000; };
+  if (d.tv_nsec < 0) { d.tv_sec--; d.tv_nsec += 1E9; };
   return &d;
 }
+#define az_timespec_value(t) ((((az_sys_timespec_t *)(t))->tv_sec * 1E9) + ((az_sys_timespec_t *)(t))->tv_nsec)
 
 /* function prototypes exposed */
 extern az_r_t  az_timer_create(const char *name, az_uint64_t interval, int repeat, void (*handler)(void *arg), void *arg, az_timer_t *pTimer);

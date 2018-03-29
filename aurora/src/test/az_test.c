@@ -95,6 +95,11 @@ void *az_tc_thread_proc_default(void *arg)
   az_ring_t   evtq;
   az_testcase_t *tc = (az_testcase_t *)arg;
 
+  az_assert(NULL != tc);
+  az_assert(NULL != tc->test_proj);
+  az_assert(NULL != tc->test_proj->xu);
+  az_xu_t tp_xu = (tc->test_proj)->xu;
+
   AZ_TC_SET_CUR_TC(tc);
 
   do {
@@ -134,9 +139,9 @@ void *az_tc_thread_proc_default(void *arg)
     r = az_test_sendEvent(AZ_TEST_CMD_INIT, 0, NULL);
     if (r < 0) {
       az_tc_thread_state = 0;
-      az_xu_sendEvent(az_tp_thread_default, AZ_XU_EVENT_TEST_ERROR);
+      az_xu_sendEvent(tp_xu, AZ_XU_EVENT_TEST_ERROR);
     } else {
-      az_xu_sendEvent(az_tp_thread_default, AZ_XU_EVENT_TEST_STARTED);
+      az_xu_sendEvent(tp_xu, AZ_XU_EVENT_TEST_STARTED);
     }
     while (az_tc_thread_state) {
       received = 0;
@@ -167,11 +172,11 @@ void *az_tc_thread_proc_default(void *arg)
       }
     }
     r = az_event_port_del_receiver(tc_evt_port, rcvr);
-    az_xu_sendEvent(az_tp_thread_default, AZ_XU_EVENT_TEST_STOPPED);
+    az_xu_sendEvent(tp_xu, AZ_XU_EVENT_TEST_STOPPED);
   } else {
     az_tc_thread_state = 0;
     az_rprintf(r, "%s error..." AZ_NL, __FUNCTION__);
-    az_xu_sendEvent(az_tp_thread_default, AZ_XU_EVENT_TEST_ERROR);
+    az_xu_sendEvent(tp_xu, AZ_XU_EVENT_TEST_ERROR);
   }
 
   AZ_TC_SET_CUR_TC(NULL);

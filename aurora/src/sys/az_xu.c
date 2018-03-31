@@ -42,7 +42,7 @@ AZ_SYS_TLS  char    az_xu_prtbuf[CONFIG_AZ_XU_PRTBUF_SZ];
  * @warning   warnings
  * @exception none
  */
-az_r_t az_xu_create(char *name, az_xu_entry_t entry, az_xu_arg_t arg, az_xu_config_t *pCfg, az_xu_t *pXu)
+az_ion_id_t az_xu_create(char *name, az_xu_entry_t entry, az_xu_arg_t arg, az_xu_config_t *pCfg, az_xu_t *pXu)
 {
   az_r_t result = AZ_SUCCESS;
   az_xu_t xu;
@@ -107,6 +107,8 @@ az_r_t az_xu_create(char *name, az_xu_entry_t entry, az_xu_arg_t arg, az_xu_conf
         *pXu = NULL;
       }
       break;
+    } else {
+      result = (az_r_t)xu->ion.id;
     }
 
 #ifdef  CONFIG_AZ_EMBED_SYS_XU
@@ -117,20 +119,26 @@ az_r_t az_xu_create(char *name, az_xu_entry_t entry, az_xu_arg_t arg, az_xu_conf
     xu->state = AZ_XU_STATE_CREATED;
 
     if (xu->attr.startdelay <= 0) {
-      result = az_xu_start(xu, NULL, NULL);
+      result = az_xu_start(xu->ion.id, NULL, NULL);
       if (AZ_SUCCESS != result) {
-        az_ion_deregister(&(xu->ion));
-        if (AZ_REFCOUNT_IS_ZERO(&xu->ion.refCount)) {
-          az_free(xu);
-          *pXu = NULL;
+        if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) > 0) {
+          az_ion_deregister(&(xu->ion));
         }
+        if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) == 0) {
+          xu = az_xu_empty(xu);
+        }
+        *pXu = NULL;
         break;
       } 
     }
   } while (0);
 
-  az_rprintf(result, "id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
-  return result;
+  if (xu) {
+    az_rprintf(result, "id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
+  } else {
+    az_rprintf(result, "id:%d \n", (az_ion_id_t)result); 
+  }
+  return (az_ion_id_t)result;
 }
 
 /**
@@ -140,12 +148,17 @@ az_r_t az_xu_create(char *name, az_xu_entry_t entry, az_xu_arg_t arg, az_xu_conf
  * @return 
  * @exception    none
  */
-az_r_t az_xu_start(az_xu_t xu, az_xu_entry_t entry, az_xu_arg_t arg)
+az_r_t az_xu_start(az_ion_id_t id, az_xu_entry_t entry, az_xu_arg_t arg)
 {
   az_r_t result = AZ_SUCCESS;
-  az_assert(NULL != xu);
+  az_xu_t xu = (az_xu_t)az_ion(id);
 
   do {
+    if (xu == NULL) {
+      result = AZ_ERR(ENTITY_NULL);
+      break;
+    }
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
     if (xu->state != AZ_XU_STATE_CREATED) {
       result = AZ_ERR(STATE);
       break;
@@ -157,6 +170,7 @@ az_r_t az_xu_start(az_xu_t xu, az_xu_entry_t entry, az_xu_arg_t arg)
     if (NULL != entry) xu->entry = entry;
     if (NULL != arg) xu->arg = arg;
 
+    az_refcount_atomic_inc(&xu->ion.refCount);
     if (xu->attr.startdelay < 0) {
       result = az_sys_xu_init(AZ_XU_NAME(xu), az_xu_entry, xu, &(xu->attr), &(xu->sys_xu)); 
     } else {
@@ -164,24 +178,45 @@ az_r_t az_xu_start(az_xu_t xu, az_xu_entry_t entry, az_xu_arg_t arg)
     }
     //az_sys_printf("xu=%p sys_xu=%p, arg=%p result=%ld\n", xu, xu->sys_xu, arg, result);
 
-    if (AZ_SUCCESS != result) {
-      break;
-    } 
-
-    az_refcount_atomic_inc(&xu->ion.refCount);
-    xu->state |= AZ_XU_STATE_START;
-    //xu->sys_xu->priv = xu;
+    if (AZ_SUCCESS == result) {
+      if (AZ_XU_ON_EXCPT(xu)) {
+        if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) > 0) {
+          az_ion_deregister(xu);
+        }
+        if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) == 0) {
+          xu = az_xu_empty(xu);
+        }
+        result = AZ_ERR(EXCEPTION);
+      } else {
+        xu->state |= AZ_XU_STATE_START;
+      }
+    } else {
+      az_refcount_atomic_dec(&xu->ion.refCount);
+      xu->state |= AZ_XU_STATE_ERROR;
+      xu->cause = AZ_XU_ERROR_START;
+    }
   } while (0);
 
-  if (result != AZ_SUCCESS) {
-    xu->state |= AZ_XU_STATE_ERROR;
-    xu->cause = AZ_XU_ERROR_START;
+  if (xu) {
+    az_rprintf(result, "id:%d ref count %d\n", id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
+  } else {
+    az_rprintf(result, "id:%d\n", id);
   }
-
-  az_rprintf(result, "id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
   return result;
 }
 
+void  az_xu_empty_sys_xu(az_xu_t xu)
+{
+  az_sys_xu_t sys_xu = xu->sys_xu;
+  az_assert(xu->state & AZ_XU_STATE_STOP);
+  az_trz_flush(&xu->trz_list, NULL);
+  if (xu->sys_xu != NULL) {
+    az_r_t result = az_sys_xu_delete(sys_xu);
+    if (AZ_SUCCESS == result) {
+      xu->sys_xu = NULL;
+    }
+  }
+}
 /**
  * @fn 
  * @brief 
@@ -189,12 +224,17 @@ az_r_t az_xu_start(az_xu_t xu, az_xu_entry_t entry, az_xu_arg_t arg)
  * @return 
  * @exception    none
  */
-az_r_t  az_xu_stop(az_xu_t  xu)
+az_r_t  az_xu_stop(az_ion_id_t  id)
 {
   az_r_t  result = AZ_SUCCESS;
-  az_assert(NULL != xu);
+  az_xu_t xu = (az_xu_t)az_ion(id);
 
   do {
+    if (xu == NULL) {
+      result = AZ_ERR(ENTITY_NULL);
+      break;
+    }
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
     if (!(xu->state & AZ_XU_STATE_START)) {
       result = AZ_ERR(STATE);
       break;
@@ -211,12 +251,11 @@ az_r_t  az_xu_stop(az_xu_t  xu)
       xu->cause = AZ_XU_ERROR_STOP|AZ_XU_ERROR_SNDEVT;
       break;
     } else {
+      xu->state &= ~AZ_XU_STATE_START;
       az_refcount_atomic_dec(&xu->ion.refCount);
     }
-    az_trz_flush(&xu->trz_list, NULL);
-    result = az_sys_xu_delete(sys_xu);
-    if (AZ_SUCCESS == result) {
-      xu->sys_xu = NULL;
+    if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) == 1) {
+      az_xu_empty_sys_xu(xu);
     }
   } while (0);
 
@@ -224,6 +263,32 @@ az_r_t  az_xu_stop(az_xu_t  xu)
   return result;
 }
 
+az_xu_t  az_xu_empty(az_xu_t xu)
+{
+  az_sys_xu_t     sys_xu = xu->sys_xu;
+
+  #ifndef  CONFIG_AZ_EMBED_SYS_XU
+  xu->sys_xu = NULL;
+  #endif
+  
+  az_xu_t save_xu = xu;
+  if (save_xu == az_xu_self()) {
+    az_xu_null();
+    if (AZ_REFCOUNT_IS_ZERO(&xu->ion.refCount) == 0) {
+      az_free(xu);
+      xu = NULL;
+    }
+    az_sys_xu_exit(NULL);
+  } else {
+    if (sys_xu) sys_xu->arg = NULL;
+    if (AZ_REFCOUNT_IS_ZERO(&xu->ion.refCount) == 0) {
+      az_free(xu);
+      xu = NULL;
+    }
+    if (sys_xu) az_sys_xu_delete(sys_xu);
+  }
+  return xu;
+}
 /**
  * @fn 
  * @brief 
@@ -231,12 +296,17 @@ az_r_t  az_xu_stop(az_xu_t  xu)
  * @return 
  * @exception    none
  */
-az_r_t az_xu_delete(az_xu_t xu)
+az_r_t az_xu_delete(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
-  az_assert(NULL != xu);
+  az_xu_t xu = (az_xu_t)az_ion(id);
 
   do {
+    if (xu == NULL) {
+      result = AZ_ERR(ENTITY_NULL);
+      break;
+    }
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
     if (!(xu->state &AZ_XU_STATE_CREATED)) {
       result = AZ_ERR(STATE);
       break;
@@ -260,26 +330,12 @@ az_r_t az_xu_delete(az_xu_t xu)
 
     az_sys_xu_t     sys_xu = xu->sys_xu;
 
-    az_ion_deregister(&(xu->ion));
+    if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) > 0) {
+      az_ion_deregister(&(xu->ion));
+    }
 
     if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) == 0) {
-      #ifndef  CONFIG_AZ_EMBED_SYS_XU
-      xu->sys_xu = NULL;
-      #endif
-      az_xu_t save_xu = xu;
-      if (save_xu == az_xu_self()) {
-        az_xu_null();
-        if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) == 0) {
-          az_free(xu);
-        }
-        az_sys_xu_exit(NULL);
-      } else {
-        if (sys_xu) sys_xu->arg = NULL;
-        if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) == 0) {
-          az_free(xu);
-        }
-        if (sys_xu) az_sys_xu_delete(sys_xu);
-      }
+      xu = az_xu_empty(xu);
     } else {
     
       az_eprintf("id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
@@ -300,11 +356,16 @@ az_r_t az_xu_delete(az_xu_t xu)
  * @return 
  * @exception    none
  */
-az_r_t  az_xu_setPriority(az_xu_t xu, az_xu_attr_t *pAttr)
+az_r_t  az_xu_setPriority(az_ion_id_t id, az_xu_attr_t *pAttr)
 {
   az_r_t result = AZ_SUCCESS;
+  az_xu_t xu = (az_xu_t)az_ion(id);
   do {
     az_if_arg_null_break(xu, result);
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
+    if (AZ_XU_ON_EXCPT(xu)) {
+      result = AZ_ERR(EXCEPTION);
+    }
 
     result = az_sys_xu_setPriority(xu->sys_xu, pAttr);
   } while (0);
@@ -319,11 +380,16 @@ az_r_t  az_xu_setPriority(az_xu_t xu, az_xu_attr_t *pAttr)
  * @return 
  * @exception    none
  */
-az_r_t  az_xu_getPriority(az_xu_t xu, az_xu_attr_t *pAttr)
+az_r_t  az_xu_getPriority(az_ion_id_t id, az_xu_attr_t *pAttr)
 {
   az_r_t result = AZ_SUCCESS;
+  az_xu_t xu = (az_xu_t)az_ion(id);
   do {
     az_if_arg_null_break(xu, result);
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
+    if (AZ_XU_ON_EXCPT(xu)) {
+      result = AZ_ERR(EXCEPTION);
+    }
 
     result = az_sys_xu_getPriority(xu->sys_xu, pAttr);
   } while (0);
@@ -338,11 +404,16 @@ az_r_t  az_xu_getPriority(az_xu_t xu, az_xu_attr_t *pAttr)
  * @return 
  * @exception    none
  */
-az_r_t  az_xu_setAffinity(az_xu_t xu, az_xu_core_mask_t core_mask)
+az_r_t  az_xu_setAffinity(az_ion_id_t id, az_xu_core_mask_t core_mask)
 {
   az_r_t result = AZ_SUCCESS;
+  az_xu_t xu = (az_xu_t)az_ion(id);
   do {
     az_if_arg_null_break(xu, result);
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
+    if (AZ_XU_ON_EXCPT(xu)) {
+      result = AZ_ERR(EXCEPTION);
+    }
 
     result = az_sys_xu_setAffinity(xu->sys_xu, core_mask);
   } while (0);
@@ -357,11 +428,16 @@ az_r_t  az_xu_setAffinity(az_xu_t xu, az_xu_core_mask_t core_mask)
  * @return 
  * @exception    none
  */
-az_r_t  az_xu_getAffinity(az_xu_t xu, az_xu_core_mask_t *pCoreMask)
+az_r_t  az_xu_getAffinity(az_ion_id_t id, az_xu_core_mask_t *pCoreMask)
 {
   az_r_t result = AZ_SUCCESS;
+  az_xu_t xu = (az_xu_t)az_ion(id);
   do {
     az_if_arg_null_break(xu, result);
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
+    if (AZ_XU_ON_EXCPT(xu)) {
+      result = AZ_ERR(EXCEPTION);
+    }
 
     result = az_sys_xu_getAffinity(xu->sys_xu, pCoreMask);
   } while (0);
@@ -445,11 +521,16 @@ void *az_xu_getarg()
  * @return 
  * @exception    none
  */
-az_r_t az_xu_suspend(az_xu_t xu)
+az_r_t az_xu_suspend(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_xu_t xu = (az_xu_t)az_ion(id);
   do {
     az_if_arg_null_break(xu, result);
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
+    if (AZ_XU_ON_EXCPT(xu)) {
+      result = AZ_ERR(EXCEPTION);
+    }
 
     result = az_sys_xu_suspend(xu->sys_xu);
   } while (0);
@@ -464,11 +545,16 @@ az_r_t az_xu_suspend(az_xu_t xu)
  * @return 
  * @exception    none
  */
-az_r_t az_xu_resume(az_xu_t xu)
+az_r_t az_xu_resume(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_xu_t xu = (az_xu_t)az_ion(id);
   do {
     az_if_arg_null_break(xu, result);
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
+    if (AZ_XU_ON_EXCPT(xu)) {
+      result = AZ_ERR(EXCEPTION);
+    }
 
     result = az_sys_xu_resume(xu->sys_xu); 
   } while (0);
@@ -550,6 +636,7 @@ void az_xu_exit(az_xu_ret_t ret)
 
     if (xu->state & AZ_XU_STATE_START) {
       xu->state |= AZ_XU_STATE_STOP;
+      xu->state &= ~AZ_XU_STATE_START;
       az_refcount_atomic_dec(&xu->ion.refCount);
     }
 
@@ -557,7 +644,9 @@ void az_xu_exit(az_xu_ret_t ret)
 
     az_eprintf("id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion));
 
-    az_ion_deregister(&(xu->ion));
+    if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) > 0) {
+      az_ion_deregister(&(xu->ion));
+    }
 
     if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) == 0) {
       xu->sys_xu = NULL;
@@ -580,18 +669,40 @@ void az_xu_exit(az_xu_ret_t ret)
  * @return 
  * @exception    none
  */
-az_r_t az_xu_sendEvent(az_xu_t xu, az_xu_event_t event)
+az_r_t az_xu_sendEvent(az_ion_id_t id, az_xu_event_t event)
 {
   az_r_t r = AZ_SUCCESS;
+  az_xu_t xu = (az_xu_t)az_ion(id);
   do {
     az_if_arg_null_break(xu, r);
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
 
-    if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) < 1) {
-      r = AZ_ERR(INVALID);
+    // need to use lock not free xu by others
+    if (AZ_XU_ON_EXCPT(xu)) {
+      r = AZ_ERR(EXCEPTION);
       break;
     }
 
+    if (xu->state & AZ_XU_STATE_STOP) {
+      r = AZ_ERR(STATE);
+      break;
+    }
+
+    az_refcount_atomic_inc(&xu->ion.refCount);
+
     r = az_sys_xu_sendEvent(xu->sys_xu, event); 
+
+    if (xu->state & (AZ_XU_STATE_STOP|AZ_XU_STATE_EXCPT)) {
+      if  (az_refcount_atomic_dec(&xu->ion.refCount) == 0) {
+        az_ion_empty(&xu->ion);
+        az_xu_empty(xu);
+      } else if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) == 1) {
+        az_xu_empty_sys_xu(xu);
+      }
+    } else {
+      az_refcount_atomic_dec(&xu->ion.refCount);
+    }
+
   } while (0);
 
   return r;
@@ -660,11 +771,17 @@ az_r_t az_xu_waitEvent(az_xu_event_t toReceive, az_int8_t options,
  * @return 
  * @exception    non
  */
-az_r_t az_xu_regEventHandler(az_xu_t xu, unsigned int vecno, az_xu_event_handler_t handler, az_xu_arg_t arg)
+az_r_t az_xu_regEventHandler(az_ion_id_t id, unsigned int vecno, az_xu_event_handler_t handler, az_xu_arg_t arg)
 {
   az_r_t r = AZ_FAIL;
+  az_xu_t xu = (az_xu_t)az_ion(id);
   do {
     az_if_arg_null_break(xu, r);
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
+    if (AZ_XU_ON_EXCPT(xu)) {
+      r = AZ_ERR(EXCEPTION);
+    }
+
     if (vecno > AZ_XU_EVENT_VECTORS) {
       r = AZ_ERR_L(OOR, 0);
       break;
@@ -696,11 +813,16 @@ az_r_t az_xu_regEventHandler(az_xu_t xu, unsigned int vecno, az_xu_event_handler
  * @return 
  * @exception    none
  */
-az_r_t az_xu_deregEventHandler(az_xu_t xu, unsigned int vecno)
+az_r_t az_xu_deregEventHandler(az_ion_id_t id, unsigned int vecno)
 {
   az_r_t r = AZ_FAIL;
+  az_xu_t xu = (az_xu_t)az_ion(id);
   do {
     az_if_arg_null_break(xu, r);
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
+    if (AZ_XU_ON_EXCPT(xu)) {
+      r = AZ_ERR(EXCEPTION);
+    }
     if (vecno > AZ_XU_EVENT_VECTORS) {
       r = AZ_ERR_L(OOR, 0);
       break;
@@ -759,8 +881,8 @@ az_xu_t az_xu_find(char *name)
 
 void *az_xu_entry(void *arg)
 {
-  az_xu_t xu = (az_xu_t)arg;
-  void *ret = NULL;
+  volatile az_xu_t xu = (az_xu_t)arg;
+  volatile void *ret = NULL;
   az_assert(NULL != xu);
 
   #ifdef  CONFIG_AZ_USE_TLS
@@ -770,7 +892,7 @@ void *az_xu_entry(void *arg)
   #ifdef  CONFIG_AZ_XU_EXP_HANDLE
   az_sys_xu_register_exception_handler();
   
-  if (0 == az_sys_xu_save_context()) {
+  if (0 == AZ_SYS_XU_SAVE_CONTEXT()) {
   #endif
    do {
     /*
@@ -789,6 +911,9 @@ void *az_xu_entry(void *arg)
 
    } while (0);
   #ifdef  CONFIG_AZ_XU_EXP_HANDLE
+   az_sys_xu_remove_context();
+  } else {
+    az_sys_eprintf("%s\n", xu->name);
   }
   #endif
 
@@ -813,5 +938,20 @@ void  az_xu_set_cleanup()
   }
 
 #endif
+}
+
+void  az_xu_set_state_excpt(void *excpt_point)
+{
+  az_xu_t xu = az_xu_self();
+  if (xu != NULL) {
+    xu->state |= AZ_XU_STATE_EXCPT; 
+    xu->excpt_point = excpt_point;
+  }
+}
+void  az_xu_reset_state_excpt(az_xu_t xu)
+{
+  if (xu != NULL) {
+    xu->state &= ~AZ_XU_STATE_EXCPT; 
+  }
 }
 /* === end of AZ_XU_C === */

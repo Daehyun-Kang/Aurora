@@ -1,7 +1,7 @@
-15:09:28 **** Clean-only build of configuration Debug for project auron ****
+12:24:15 **** Clean-only build of configuration Debug for project auron ****
 make clean 
 rm -rf  ./Sources/auron_src/addr2line.o ./Sources/auron_src/azm_main.o ./Sources/auron_src/azm_mcheck.o ./Sources/auron_src/azm_rsh.o ./Sources/auron_src/azm_rstdio.o ./Sources/auron_src/azm_trace.o  ./Sources/auron_src/addr2line.d ./Sources/auron_src/azm_main.d ./Sources/auron_src/azm_mcheck.d ./Sources/auron_src/azm_rsh.d ./Sources/auron_src/azm_rstdio.d ./Sources/auron_src/azm_trace.d  auron
  
 
-15:09:29 Build Finished (took 164ms)
+12:24:15 Build Finished (took 164ms)
 

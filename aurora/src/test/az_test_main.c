@@ -301,7 +301,8 @@ int az_test_main(int argc, char *argv[])
   az_xu_event_t received;
   az_test_project_t *testproj = &az_testproj;
 
-  testproj->xu = az_tp_thread_default = az_xu_self();
+  az_tp_thread_default = az_xu_self();
+  testproj->xu_id = az_tp_thread_default->ion.id;
 
   az_version_t *ver = &az_version;
 
@@ -448,9 +449,9 @@ int az_test_main(int argc, char *argv[])
 
     clock_gettime(CLOCK_REALTIME, &tc->stime);
     az_tc_thread_default = NULL;
-    r = az_xu_create("tcRunner", az_tc_thread_proc_default, tc, NULL, &az_tc_thread_default);
+    az_ion_id_t tc_xu_id = az_xu_create("tcRunner", az_tc_thread_proc_default, tc, NULL, &az_tc_thread_default);
     
-    while (az_tc_thread_default) {
+    while (tc_xu_id >= 0 ) {
       received = 0;
       r = az_xu_recvEvent(0xffff, 0, tmo_ns, &received);  
       if (r < 0) {
@@ -463,9 +464,10 @@ int az_test_main(int argc, char *argv[])
               testproj->testcase_errored++;
               tc->result = AZ_ERR(TIMEOUT);
               snprintf(tc->reason, sizeof(tc->reason), "timeout expired");
-              az_xu_stop(az_tc_thread_default);
-              az_xu_delete(az_tc_thread_default);
+              az_xu_stop(tc_xu_id);
+              az_xu_delete(tc_xu_id);
               az_tc_thread_default = NULL;
+              tc_xu_id = AZ_ION_ID_INVALID;
             }
           }
         }
@@ -521,6 +523,7 @@ int az_test_main(int argc, char *argv[])
     az_test_testproj_report(testproj);
   }
 
+  //az_xu_suspend(az_xu_self());
   // here we need to release all the resouce
   int j;
   tc = testproj->testcaselist;

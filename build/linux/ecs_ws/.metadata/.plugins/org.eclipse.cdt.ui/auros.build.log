@@ -1,7 +1,7 @@
-18:01:31 **** Clean-only build of configuration Release for project auros ****
+21:53:56 **** Clean-only build of configuration Release for project auros ****
 make clean 
 rm -rf  ./Sources/src/azs_main.o ./Sources/src/azs_rstdio.o  ./Sources/src/azs_main.d ./Sources/src/azs_rstdio.d  auros
  
 
-18:01:31 Build Finished (took 111ms)
+21:53:56 Build Finished (took 169ms)
 

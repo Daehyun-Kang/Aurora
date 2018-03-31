@@ -1,0 +1,50 @@
+az_sys_init:64 ...az_ion_register:135 id:7 type:32769 ion:0x6cb458/1 result=0:SUCCESS
+trace server: tracesvr start result=0:SUCCESS
+az_ion_register:135 id:9 type:32769 ion:0x6cb848/1 result=0:SUCCESS
+tcp server on (null):55001 open ok
+create main xu : 0x6cb848, result=0
+az_ion_register:135 id:12 type:32769 ion:0x6cbb08/1 result=0:SUCCESS
+aurora.log: 13
+az_ion_register:135 id:14 type:32769 ion:0x6d0f18/1 result=0:SUCCESS
+az_log_thread_proc_default start...
+az_ion_register:135 id:15 type:32769 ion:0x6d1308/1 result=0:SUCCESS
+az_log_dup_thread_proc_default start...
+az_ion_register:135 id:20 type:32769 ion:0x6d16f8/1 result=0:SUCCESS
+<1521857741.641424> [main] [az_cli_svr.c:az_cli_svr_start:132]	cli server: cliSvr start result=0:SUCCESS
+az_cli_thread_start:250 xu:0x6d16f8
+default cli shell=0x651e40/0x6d16f8
+1 err = 1
+1 err = 1
+<1521857741.641660> [cliSvr] [az_tcpserver.c:az_tcpserver_run_default:150]	tcp server on (null):53000 open ok
+<1521857741.642698> [main] [az_test_main.c:az_test_main:94]	r = 1
+<1521857741.641660> [cliSvr] [az_tcpserver.c:az_tcpserver_run_default:150]	tcp server on (null):53000 open ok
+<1521857741.642698> [main] [az_test_main.c:az_test_main:94]	r = 1
+1 err = 1
+1 err = 1
+<1521857741.643331> [main] [az_test_main.c:az_test_main:96]	r = 1
+<1521857741.643331> [main] [az_test_main.c:az_test_main:96]	r = 1
+1 err = 1
+1 err = 1
+<1521857741.644273> [main] [az_test_main.c:az_test_main:98]	r = 1
+<1521857741.644273> [main] [az_test_main.c:az_test_main:98]	r = 1
+1 err = 1
+1 err = 1
+<1521857741.644969> [main] [az_test_main.c:az_test_main:100]	r = 1
+<1521857741.644978> [main] [az_test_xu.c:az_test_xu:160]	testCase name missing
+<1521857741.644969> [main] [az_test_main.c:az_test_main:100]	r = 1
+<1521857741.644978> [main] [az_test_xu.c:az_test_xu:160]	testCase name missing
+az_ion_register:135 id:25 type:32769 ion:0x7ffff0001208/1 result=0:SUCCESS
+az_ion_register:135 id:25 type:32769 ion:0x7ffff0001208/1 result=0:SUCCESS
+az_cli_thread_start:250 xu:0x7ffff0001208
+az_cli_thread_start:250 xu:0x7ffff0001208
+<1521857750.560710> [cliSvr] [az_cli_svr.c:az_cli_svr_onClientConnection:107]	remote cli shell1 on 24 from 127.0.0.1:55452 start...r:0
+<1521857750.560710> [cliSvr] [az_cli_svr.c:az_cli_svr_onClientConnection:107]	remote cli shell1 on 24 from 127.0.0.1:55452 start...r:0
+
+
+<<
+
+<<quit
+exit...az_cli_rshell_cleanup:71 cliSh1 ...az_cli_rshell_cleanup:71 cliSh1 ...az_xu_exit:548 id:25 ref count 25
+az_xu_exit:548 id:25 ref count 25
+az_ion_deregister:170 id:-1 type:32769 ion:(nil)/0 result=0
+az_ion_deregister:170 id:-1 type:32769 ion:(nil)/0 result=0

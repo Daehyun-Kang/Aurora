@@ -87,6 +87,7 @@ typedef enum {
   AZ_ERRNO_OOR,
   AZ_ERRNO_NOT_READY,
   AZ_ERRNO_NO_APP_CFG,
+  AZ_ERRNO_EXCEPTION,
 
   AZ_ERRNO_MAX
 } az_errorno_t;
@@ -152,6 +153,7 @@ char *az_err_str_list[] = {
   AZ_ERR_STR(OOR),
   AZ_ERR_STR(NOT_READY),
   AZ_ERR_STR(NO_APP_CFG),
+  AZ_ERR_STR(EXCEPTION),
 };
 #else
 extern char *az_err_str_list[]; 

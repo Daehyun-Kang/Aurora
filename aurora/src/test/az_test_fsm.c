@@ -365,7 +365,7 @@ static az_fsm_state_t az_test_fsm_handleOnTini(void *ctx, az_fsm_state_t state, 
   do {
     switch (evtid) {
       case AZ_TEST_CMD_TINI:
-        az_xu_sendEvent(az_xu_self(), AZ_XU_EVENT_THR_STOP);
+        az_xu_sendEvent(az_xu_self()->ion.id, AZ_XU_EVENT_THR_STOP);
         state = AZ_TEST_STATE_IDLE;
         break;
       default:
@@ -402,7 +402,7 @@ static az_fsm_state_t az_test_fsm_handleOnIerr(void *ctx, az_fsm_state_t state, 
   do {
     switch (evtid) {
       case AZ_TEST_EVT_IERR:
-        az_xu_sendEvent(az_xu_self(), AZ_XU_EVENT_THR_STOP);
+        az_xu_sendEvent(az_xu_self()->ion.id, AZ_XU_EVENT_THR_STOP);
         state = AZ_TEST_STATE_IDLE;
         break;
       default:

@@ -45,13 +45,13 @@ extern "C"
 static inline az_r_t az_tcpserver_thread_start(char *name,
     void *(*entry_f)(void *), void *arg, void **pThread)
 {
-  az_r_t r = az_xu_create(name, entry_f, arg, NULL, (az_xu_t *)pThread);
+  az_r_t r = (az_r_t)az_xu_create(name, entry_f, arg, NULL, (az_xu_t *)pThread);
 
-  return r;
+  return (r < AZ_SUCCESS)? r:AZ_SUCCESS;
 }
 static inline az_r_t az_tcpserver_thread_stop(void *thread)
 {
-  az_r_t r = az_xu_delete((az_xu_t)(thread));
+  az_r_t r = az_xu_delete(((az_xu_t)(thread))->ion.id);
 
   return r;
 }

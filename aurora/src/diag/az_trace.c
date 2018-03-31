@@ -403,13 +403,13 @@ void *az_trace_thread_proc_default(void *arg)
 
 az_r_t  az_trace_start_default_thread()
 {
-  int r;
+  az_r_t r;
 
   az_trace_thread_default = NULL;
-  r = az_xu_create("traceDefault", az_trace_thread_proc_default, NULL, NULL, &az_trace_thread_default);
+  r = (az_r_t)az_xu_create("traceDefault", az_trace_thread_proc_default, NULL, NULL, &az_trace_thread_default);
   //az_sys_printf("%s: %p\n", __FUNCTION__, az_log_thread_default);
 
-  return r;
+  return (r < AZ_SUCCESS)? r:AZ_SUCCESS;
 }
 
 az_r_t  az_trace_stop_default_thread()
@@ -635,14 +635,14 @@ int az_trace_svr_onClientConnection(void *ctx, az_sock_t cliSock, void *cliAddrI
 #if defined(CONFIG_AZ_TRACE_INICONN)
 az_r_t  az_trace_start_default_thread()
 {
-  int r = AZ_SUCCESS;
+  az_r_t r = AZ_SUCCESS;
   az_trace_ctrl_t *ctrl = &az_trace_ctrl;
 
   az_cli_cmd_reg("trace", az_cli_cmd_trace, "trace [0/1] [all/thread]\t\t\t;trace functions per thread", 0);
 
   if (ctrl->state & AZ_TRACE_STATE_INIT) {
     az_trace_thread_default = NULL;
-    r = az_xu_create("traceDefault", az_trace_thread_proc_default, NULL, NULL, &az_trace_thread_default);
+    r = (az_r_t)az_xu_create("traceDefault", az_trace_thread_proc_default, NULL, NULL, &az_trace_thread_default);
   }
 
   az_trace_svr_oprs = az_tcpserver_oprs_default;

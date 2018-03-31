@@ -44,12 +44,16 @@ extern "C"
 #define   AZ_ION_TYPE_LOCAL       0x000B
 #define   AZ_ION_TYPE_MAX         0x000C
 
+#define   az_assert_ion_type(x,type)  az_assert(((x) & AZ_ION_TYPE_MASK) == type)
+
 #define   AZ_ION_TYPE_NAMES       {"NDF", "XU", "TIMER", "MUTEX", "SEM", "DIR", "FILE", "MSGQ", "IOU", "UDP", "TCP", "LOCAL"}
 /* basic macros */
 
 /* basic types */
 typedef int az_ion_id_t;
 typedef az_uint32_t az_ion_type_t;
+
+#define AZ_ION_ID_INVALID AZ_SYS_IO_INVALID
 
 /* structures */
 typedef struct az_ion {

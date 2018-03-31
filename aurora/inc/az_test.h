@@ -154,7 +154,7 @@ typedef az_test_case_t  az_testcase_t;
 typedef struct az_test_project {
   char  name[AZ_NAME_MAX];
   uint8_t   test_type;
-  az_xu_t   xu;
+  az_ion_id_t   xu_id;
 
   az_sys_timespec_t stime;
   az_sys_timespec_t etime;
@@ -322,6 +322,7 @@ extern az_r_t az_test_sendEvent(az_event_id_t event_id, az_uint32_t buffer_size,
 extern  void *az_tc_thread_proc_default(void *arg);
 extern  int az_test_testproj_report(az_testproj_t *testproj);
 extern  int az_test_perf_testproj_report(az_testproj_t *testproj);
+extern  char *az_addr2line(void *p, char *exefilename);
 #ifdef __cplusplus
 }
 #endif

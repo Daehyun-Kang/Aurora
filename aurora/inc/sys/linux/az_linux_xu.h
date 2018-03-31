@@ -48,7 +48,9 @@ typedef struct {
   char            *name;
   int             state;
 
-  jmp_buf         env;
+  int             env_index;
+  jmp_buf         env[CONFIG_AZ_XU_EXCPT_STK_SZ];
+  //jmp_buf         abc;
 } az_sys_xu_entity_t;
 
 typedef az_sys_xu_entity_t*   az_sys_xu_t;
@@ -65,6 +67,7 @@ typedef az_sys_xu_entity_t*   az_sys_xu_t;
 extern AZ_SYS_TLS az_sys_xu_t az_sys_xu;
 
 #define az_sys_xu_self()    az_sys_xu
+#define AZ_SYS_XU_SAVE_CONTEXT()  setjmp(az_sys_xu->env[(az_sys_xu->env_index < CONFIG_AZ_XU_EXCPT_STK_SZ-1)? az_sys_xu->env_index++:az_sys_xu->env_index])
 
 /* inline functions */
 /**
@@ -192,6 +195,7 @@ static inline az_r_t az_sys_xu_wait_iomux(az_sys_io_event_t *ioevt, int maxevent
 /* function prototypes exposed */
 extern void az_sys_xu_register_exception_handler();
 extern int az_sys_xu_save_context();
+extern void az_sys_xu_remove_context();
 
 extern az_r_t az_sys_xu_init(const char *name, 
     void *(*entry)(void *), void *arg, void *pOptions, az_sys_xu_t *pXu);

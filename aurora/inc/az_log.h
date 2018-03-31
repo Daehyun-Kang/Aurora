@@ -127,7 +127,7 @@ typedef struct az_log {
   az_cirbuffer_t  buffer;
   uint8_t         *buffer_area;
 
-  void  *thread;
+  az_ion_id_t     thread_id;
 
   int (*out)(struct az_log *, const char *, int);
 
@@ -442,7 +442,8 @@ extern az_xu_t az_log_thread_default;
 extern void az_log_ctrl_init();
 extern void az_log_ctrl_deinit();
 extern az_log_t  *az_log_create(az_log_t *log, az_log_config_t *cfg);
-extern int  az_log_init(az_log_t *log, uint8_t *buffer_area, void *thread,
+extern int  az_log_init(az_log_t *log, 
+    uint8_t *buffer_area, az_ion_id_t thread_id, 
     az_cirbuffer_pushdata_t pushdata, az_cirbuffer_popdata_t popdata);
 extern int  az_log_deinit(az_log_t *log);
 extern int az_log_delete(az_log_t  *log);

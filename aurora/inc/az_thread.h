@@ -34,7 +34,8 @@ extern "C"
 #define AZ_THREAD_STATE_START       0x0002
 #define AZ_THREAD_STATE_STOP        0x0004
 #define AZ_THREAD_STATE_BUSY        0x0008
-#define AZ_THREAD_STATE_ERROR       0x8000
+#define AZ_THREAD_STATE_ERROR       0x4000
+#define AZ_THREAD_STATE_EXCP        0x8000
 
 #define AZ_THREAD_ERROR_CREATE      0x0001
 #define AZ_THREAD_ERROR_START       0x0002

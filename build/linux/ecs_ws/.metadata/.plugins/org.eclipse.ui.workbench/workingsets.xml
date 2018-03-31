@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
 <workingSet editPageId="org.eclipse.cdt.ui.CElementWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1506226733086_1" label="Aurora" name="Aurora">
+<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/Aurora" type="4"/>
+<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/auron" type="4"/>
 <item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/auroraIT" type="4"/>
 <item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/auroraPL" type="4"/>
 <item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/auroraSO" type="4"/>
 <item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/auroraUT" type="4"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/Aurora" type="4"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/auron" type="4"/>
 <item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/auros" type="4"/>
+<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/aurot" type="4"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1506225029002_0" label="Window Working Set" name="Aggregate for window 1506225029002"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1520517609560_3" label="Window Working Set" name="Aggregate for window 1520517609560"/>

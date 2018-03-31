@@ -63,20 +63,20 @@ int az_test_testproj_report(az_testproj_t *testproj)
   az_sys_timespec_t *dtime;
 
   char *hline = "--------------------------------------------------------------------------------";
-  char *lfmt = "%s\n";
-  char *sfmt = "%3s %20s %10s %10s %10s %10s %10s\n";
-  char *ifmt = "%3d %20s %10d %10d %10d %10d %3d.%06d\n";
-  char *cfmt = "%3d %20s %10c %10c %10c %10c %3d.%06d\n";
+  char *lfmt = "%s" AZ_NL;
+  char *sfmt = "%3s %20s %10s %10s %10s %10s %10s" AZ_NL;
+  char *ifmt = "%3d %20s %10d %10d %10d %10d %3d.%06d" AZ_NL;
+  char *cfmt = "%3d %20s %10c %10c %10c %10c %3d.%06d" AZ_NL;
 
-  printf("\n\r\n\r");
-  printf(lfmt, "========================= AURORA FRAMEWORK TEST RESULT =========================\n");
+  printf(AZ_NL AZ_NL);
+  printf(lfmt, "========================= AURORA FRAMEWORK TEST RESULT =========================" AZ_NL);
   _AZ_SNPRINTF(tlen, bp, blen, "Test Project:%s %24s", testproj->name, " ");
   nlen = az_print_timestampInDatetime(bp, blen, AZ_TIMESTAMP_STR, &testproj->stime);
   _AZ_FORMAT_UPDATE(tlen, bp, blen, nlen);
   _AZ_SNPRINTF(tlen, bp, blen, " - ");
   nlen = az_print_timestampInDatetime(bp, blen, AZ_TIMESTAMP_STR, &testproj->etime);
   _AZ_FORMAT_UPDATE(tlen, bp, blen, nlen);
-  printf("%s\n", az_xu_prtbuf); 
+  printf("%s" AZ_NL, az_xu_prtbuf); 
 
   printf(lfmt, hline);
   printf(sfmt, "No", "Test Case Name", 
@@ -112,7 +112,37 @@ int az_test_testproj_report(az_testproj_t *testproj)
                   );
   printf(lfmt, hline);
   
-  printf("\n\r");
+  printf(AZ_NL);
+
+  if ((testproj->report.failure + testproj->report.fail) > 0) {
+    int k;
+    az_testiter_t *iter; 
+    testcase = testproj->testcaselist;
+    char *reason;
+    int reason_len;
+    printf("------------------------------- FAILURE LIST -----------------------------------" AZ_NL);
+    printf("%20s %5s %6s  %-45s" AZ_NL, "Test Case Name","iter#", "result", "reason");
+    printf(lfmt, hline);
+    for (j = 0; j < testproj->testcase_count; j++, testcase++) {
+      if (!testcase->onoff) { continue; }
+      iter = testcase->test_iter.list;
+      for (k = 0; k < testcase->test_iter.count; k++, iter++) {
+        if (iter->result == AZ_SUCCESS) continue;
+        if (iter->reason[0] == 0) continue;
+        if ((reason_len = strlen(iter->reason)) > 45) {
+          reason = iter->reason + (reason_len - 42);
+          printf("%20s %5d %6d  ...%-42s" AZ_NL,  testcase->name, 
+            iter->index, iter->result, reason);
+        } else {
+          reason = iter->reason;
+          printf("%20s %5d %6d  %-45s" AZ_NL,  testcase->name, 
+            iter->index, iter->result, reason);
+        }
+      }
+    }
+  }
+  printf(lfmt, hline);
+  printf(AZ_NL AZ_NL);
 }
 
 /**
@@ -131,21 +161,21 @@ int az_test_perf_testproj_report(az_testproj_t *testproj)
   az_sys_timespec_t *dtime;
 
   char *hline = "--------------------------------------------------------------------------------";
-  char *lfmt = "%s\n";
-  char *sfmt = "%3s %20s %10s %10s %10s %10s %10s\n";
-  char *ifmt1 = "%3d %20s %10d %10d %10s %10s %3d.%06d\n";
-  char *ifmt2 = "%3s %20d %10s %10s %10ld %10.6f %3s.%-6s\n";
-  char *cfmt = "%3d %20s %10c %10c %10c %10c %3d.%06d\n";
+  char *lfmt = "%s" AZ_NL;
+  char *sfmt = "%3s %20s %10s %10s %10s %10s %10s" AZ_NL;
+  char *ifmt1 = "%3d %20s %10d %10d %10s %10s %3d.%06d" AZ_NL;
+  char *ifmt2 = "%3s %20d %10s %10s %10ld %10.6f %3s.%-6s" AZ_NL;
+  char *cfmt = "%3d %20s %10c %10c %10c %10c %3d.%06d" AZ_NL;
 
-  printf("\n\r\n\r");
-  printf(lfmt, "===================== AURORA FRAMEWORK PERFORMANCE TEST RESULT ==================\n");
+  printf(AZ_NL AZ_NL);
+  printf(lfmt, "===================== AURORA FRAMEWORK PERFORMANCE TEST RESULT ==================" AZ_NL);
   _AZ_SNPRINTF(tlen, bp, blen, "Test Project:%s %24s", testproj->name, " ");
   nlen = az_print_timestampInDatetime(bp, blen, AZ_TIMESTAMP_STR, &testproj->stime);
   _AZ_FORMAT_UPDATE(tlen, bp, blen, nlen);
   _AZ_SNPRINTF(tlen, bp, blen, " - ");
   nlen = az_print_timestampInDatetime(bp, blen, AZ_TIMESTAMP_STR, &testproj->etime);
   _AZ_FORMAT_UPDATE(tlen, bp, blen, nlen);
-  printf("%s\n", az_xu_prtbuf); 
+  printf("%s" AZ_NL, az_xu_prtbuf); 
 
   printf(lfmt, hline);
   printf(sfmt, "No", "Test Case Name", 
@@ -188,6 +218,6 @@ int az_test_perf_testproj_report(az_testproj_t *testproj)
                   );
   printf(lfmt, hline);
   
-  printf("\n\r");
+  printf(AZ_NL AZ_NL);
 }
 /* === end of AZ_TEST_REPORT_C === */

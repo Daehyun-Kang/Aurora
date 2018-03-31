@@ -217,7 +217,7 @@ static void *xu_perf_calibrate(void *arg)
   testproj->perf_cal.csc = csc; 
   testproj->perf_cal.mhz = acc_mhz; 
 
-  az_xu_sendEvent(testproj->xu, AZ_XU_EVENT_TEST_STOPPED);
+  az_xu_sendEvent(testproj->xu_id, AZ_XU_EVENT_TEST_STOPPED);
   return NULL;
 }
 /* implement global functions */
@@ -233,19 +233,20 @@ static void *xu_perf_calibrate(void *arg)
 az_r_t az_perf_calibrate(az_testproj_t *testproj)
 {
   az_r_t  r = AZ_SUCCESS;
+  az_ion_id_t xu_id;
   az_xu_event_t received;
 
   do {
     xu = NULL;
-    r = az_xu_create("perfCal", xu_perf_calibrate, testproj, &xu_cfg, &xu);
-    if (r < 0) break;
+    xu_id = az_xu_create("perfCal", xu_perf_calibrate, testproj, &xu_cfg, &xu);
+    if (xu_id < 0) break;
 
     r = az_xu_recvEvent(0xffff, 0, -1, &received);
     if (r < 0) break;
     if (!(received & AZ_XU_EVENT_TEST_STOPPED)) {
       az_dlog("perf cal interrupted by event %x\n", received);
-      az_xu_stop(xu);
-      az_xu_delete(xu);
+      az_xu_stop(xu_id);
+      az_xu_delete(xu_id);
       xu = NULL;
       r = AZ_ERR(INTERRUPT);
       break;

@@ -84,21 +84,22 @@ az_r_t az_test_sendEvent(az_event_id_t event_id, az_uint32_t buffer_size, az_ref
 
 void *az_tc_thread_proc_default(void *arg)
 {
-  az_xu_event_t received;
+  volatile az_xu_event_t received;
   az_xu_event_t emask;
-  az_r_t  r;
-  az_int64_t  tmo_ns = 2000000000;
-  az_logid_t  logid;
-  int tmo_count = 0; 
-  az_event_receiver_t *rcvr = &tc_evt_receiver;
+  volatile az_r_t  r;
+  volatile az_int64_t  tmo_ns = 2000000000;
+  volatile int tmo_count = 0; 
+  volatile az_event_receiver_t *rcvr = &tc_evt_receiver;
   az_event_t  *evts[2];
   az_ring_t   evtq;
-  az_testcase_t *tc = (az_testcase_t *)arg;
+  volatile az_testcase_t *tc = (az_testcase_t *)arg;
 
   az_assert(NULL != tc);
   az_assert(NULL != tc->test_proj);
-  az_assert(NULL != tc->test_proj->xu);
-  az_xu_t tp_xu = (tc->test_proj)->xu;
+
+  az_ion_id_t tp_xu_id = (tc->test_proj)->xu_id;
+
+  az_sys_xu_register_exception_handler();
 
   AZ_TC_SET_CUR_TC(tc);
 
@@ -131,20 +132,21 @@ void *az_tc_thread_proc_default(void *arg)
     az_tc_thread_state = 1;
     az_ilog("%s start..." AZ_NL, __FUNCTION__);
 
-    az_event_t  revt = NULL;
-    uint64_t  tmo_count = 0;
+    volatile az_event_t  revt = NULL;
+    volatile uint64_t  tmo_count = 0;
 
     az_fsm_activate(&az_tc_fsm, az_xu_self());
 
     r = az_test_sendEvent(AZ_TEST_CMD_INIT, 0, NULL);
     if (r < 0) {
       az_tc_thread_state = 0;
-      az_xu_sendEvent(tp_xu, AZ_XU_EVENT_TEST_ERROR);
+      az_xu_sendEvent(tp_xu_id, AZ_XU_EVENT_TEST_ERROR);
     } else {
-      az_xu_sendEvent(tp_xu, AZ_XU_EVENT_TEST_STARTED);
+      az_xu_sendEvent(tp_xu_id, AZ_XU_EVENT_TEST_STARTED);
     }
     while (az_tc_thread_state) {
       received = 0;
+      az_dlog("received:%p\n", &received); 
       r = az_xu_recvEvent(AZ_XU_EVENT_THR_STOP|AZ_XU_EVENT_EVTBUS, 0, tmo_ns, &received);  
       if (r >= 0) {
         if (received & AZ_XU_EVENT_EVTBUS) {
@@ -152,7 +154,37 @@ void *az_tc_thread_proc_default(void *arg)
           if (r >= 0) {
             //az_event_toStr(az_xu_prtbuf, sizeof(az_xu_prtbuf), revt);
             //az_rprintf(r, "xu recvent %p: %s\n", revt, az_xu_prtbuf);
-            az_fsm_run(&az_tc_fsm, revt);
+            if (0 == AZ_SYS_XU_SAVE_CONTEXT()) { 
+              az_fsm_run(&az_tc_fsm, revt);
+              az_sys_xu_remove_context();
+              //tmo_ns = 2000000000;
+            } else {
+              tmo_ns = 2000000000;
+              tc = AZ_TC_GET_CUR_TC();
+              az_sys_eprintf("%s", "xu state set\n");
+              if (AZ_XU_IS_STATE_EXCPT(az_xu_self())) {
+                az_test_iter_t *iter = tc->test_iter.list + tc->test_iter.index; 
+                void *ptr = AZ_XU_EXCPT_POINT(az_xu_self());
+                strncpy(iter->reason, az_addr2line(ptr, az_getExeFileName()), sizeof(iter->reason));
+                az_xu_reset_state_excpt(az_xu_self());
+                az_ilog("testcase %s : exception during iter%d\n", tc->name, iter->index);
+                tc->report.fail++;
+                tc->test_iter.errored++;
+                iter->result = AZ_TC_RESULT_SEGV;
+                tc->test_iter.index++;
+                tc->test_iter.remained--;
+                if (tc->test_iter.remained > 0) {
+                  // continue to next iteration
+                  az_tc_fsm.substate = AZ_TEST_SUBSTATE_PRE; 
+                  r = az_test_sendEvent(AZ_TEST_CMD_PLOG, 0, NULL);
+                } else {
+                  r = az_test_sendEvent(AZ_TEST_CMD_STOP, 0, NULL);
+                }
+              } else {
+                az_eprintf("%s", "xu state not set\n");
+              } //if (AZ_XU_IS_STATE_EXCPT(az_xu_self())) 
+               
+            } //if (0 == az_sys_xu_save_context())
           }
         }
         if (received & AZ_XU_EVENT_THR_STOP) {
@@ -172,11 +204,11 @@ void *az_tc_thread_proc_default(void *arg)
       }
     }
     r = az_event_port_del_receiver(tc_evt_port, rcvr);
-    az_xu_sendEvent(tp_xu, AZ_XU_EVENT_TEST_STOPPED);
+    az_xu_sendEvent(tp_xu_id, AZ_XU_EVENT_TEST_STOPPED);
   } else {
     az_tc_thread_state = 0;
     az_rprintf(r, "%s error..." AZ_NL, __FUNCTION__);
-    az_xu_sendEvent(tp_xu, AZ_XU_EVENT_TEST_ERROR);
+    az_xu_sendEvent(tp_xu_id, AZ_XU_EVENT_TEST_ERROR);
   }
 
   AZ_TC_SET_CUR_TC(NULL);

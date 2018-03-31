@@ -1,0 +1,15 @@
+<? xml version="1.0" encoding="iso-8859-1" ?>
+<![CDATA[ testCase version="1" ]]>
+<testCase name="az_tc_segv_handle" prototype="int segv_handle()" >
+  <oprs>
+    <Init   name="az_tc_init_segv_handle" />
+    <Sync   name="az_tc_sync_segv_handle" />
+    <Prolog name="az_tc_prolog_segv_handle" />
+    <Run    name="az_tc_run_segv_handle" />
+    <Epilog name="az_tc_epilog_segv_handle" />
+    <Term   name="az_tc_term_segv_handle" />
+  </oprs>
+  <testVector expected_result="int " result="int " >
+    <row expected_result="0 " result="0 "  _onoff="1" />
+  </testVector>
+</testCase>

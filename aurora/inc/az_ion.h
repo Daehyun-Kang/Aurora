@@ -149,6 +149,9 @@ typedef char *(*az_var_value2Str_t)(void *);
 /* function prototypes exposed */
 extern az_r_t az_ion_register(az_ion_t *ion, az_ion_type_t type);
 extern az_r_t az_ion_deregister(az_ion_t *ion);
+
+extern void az_ion_empty(az_ion_t *ion);
+
 extern az_size_t az_ion_toStr(az_ion_t *ion, char *tag, char *bp, az_size_t blen);
 extern az_size_t az_ion_valuesOnRow(az_ion_t *ion, char *tag, char *wlist, az_var_value2Str_t *convlist, char *bp, az_size_t blen);
 

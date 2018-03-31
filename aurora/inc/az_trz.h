@@ -91,7 +91,7 @@ typedef struct az_transaction {
 
   time_t           timelimit;
 
-  az_xu_t          xu;
+  az_ion_id_t      xu_id;
   az_trz_handler_t handler;
   void *priv;
 
@@ -278,7 +278,7 @@ static inline int az_trz_flush(az_link_list_t *list, az_sys_lw_lock_t *lock)
   return count;
 }
 
-static inline az_r_t az_trz_add(az_trz_t *trz, az_xu_t xu, az_trz_handler_t handler, void *priv, int istate)
+static inline az_r_t az_trz_add(az_trz_t *trz, az_ion_id_t xu_id, az_trz_handler_t handler, void *priv, int istate)
 {
   az_assert(NULL != trz);
   az_trz_conn_t *trz_conn = az_trz_conn(trz->nodeid);
@@ -299,7 +299,7 @@ static inline az_r_t az_trz_add(az_trz_t *trz, az_xu_t xu, az_trz_handler_t hand
     trz->state |= AZ_TRZ_STATE_LINK;
     if (istate) trz->state |= istate;
     trz->timelimit = 0;
-    trz->xu = xu;
+    trz->xu_id = xu_id;
     trz->handler = handler;
     trz->priv = priv;
     az_sys_lw_lock(&az_trz_lock);
@@ -369,12 +369,12 @@ static inline az_r_t az_trz_reset(az_trz_t *trz, az_trz_msg_hdr_t *msgp, az_trz_
     trz->seqno = msgp->seqno;
     trz->code = code; 
     if (trz->state & AZ_TRZ_STATE_LINK) {
-      trz->xu = az_xu_self();
+      trz->xu_id = az_xu_self()->ion.id;
       trz->handler = handler; 
       trz->priv = priv; 
       trz->state |= flags;
     } else {
-      r = az_trz_add(trz, az_xu_self(), handler, priv, flags);
+      r = az_trz_add(trz, az_xu_self()->ion.id, handler, priv, flags);
     }
   } while (0);
   return r;

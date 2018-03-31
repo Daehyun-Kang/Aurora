@@ -62,6 +62,7 @@ extern "C"
 #define REASON_NULL   NULL
 
 #define AZ_TC_RESULT_SUCCESS  0
+#define AZ_TC_RESULT_FAILURE  1
 #define AZ_TC_RESULT_ERROR    -1
 #define AZ_TC_RESULT_SEGV     -11
 

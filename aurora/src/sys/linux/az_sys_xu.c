@@ -49,30 +49,58 @@ static __thread az_sys_xu_t az_sys_xu;
  * @warning   warnings
  * @exception none
  */
+#if 0
 int az_sys_xu_save_context()
 {
-  az_sys_xu_t xu = az_sys_xu;
-  int r;
+  volatile az_sys_xu_t xu = az_sys_xu;
+  volatile int r;
   
   if (xu) {
-    r = setjmp(xu->env);
+    /*
+    if (xu->env_index < CONFIG_AZ_XU_EXCPT_STK_SZ - 1) {
+      r = setjmp(xu->env[xu->env_index++]);
+    } else {
+      r = setjmp(xu->env[xu->env_index]);
+    }
+    */
+    return setjmp(xu->env);
+    if (r == 0) {
+    } else {
+      xu = az_sys_xu;
+    }
+    printf("%s:r=%d\n", xu->name, r); 
   }
 
   return r;
 }
+#endif
 void az_sys_xu_restore_context(int signo)
 {
   az_sys_xu_t xu = az_sys_xu;
   int r;
   
   if (xu) {
-    longjmp(xu->env, signo);
+    if (xu->env_index > 0) {
+      longjmp(xu->env[--(xu->env_index)], signo);
+    }
+    //az_sys_eprintf("%s\n", xu->name);
+    //longjmp(xu->env, signo);
   }
 
+}
+void az_sys_xu_remove_context()
+{
+  az_sys_xu_t xu = az_sys_xu;
+  if (xu) {
+    if (xu->env_index > 0) {
+      --(xu->env_index); 
+    }
+  }
 }
 
 static void az_sys_xu_sigsegv_handler(int sig, siginfo_t *info, void *context)
 {
+  extern void  az_xu_set_state_excpt(void *);
   void *trace[CONFIG_AZ_EXP_CALLSTACK_DEPTH];
   char  **messages = (char **)NULL;
   ucontext_t *uc = (ucontext_t *)context;
@@ -82,6 +110,15 @@ static void az_sys_xu_sigsegv_handler(int sig, siginfo_t *info, void *context)
 
   char *xu_name = (az_sys_xu == NULL)? "???":az_sys_xu->name;
   void *callsite;
+
+  trace_size = backtrace(trace, CONFIG_AZ_EXP_CALLSTACK_DEPTH);
+  messages = backtrace_symbols(trace, trace_size);
+
+  #ifdef  __SANITIZE_ADDRESS__
+  az_xu_set_state_excpt(trace[3]);
+  #else
+  az_xu_set_state_excpt(trace[2]);
+  #endif
 
   #if defined(__i386__) 
       callsite = (void *)(uc->uc_mcontext.gregs[REG_EIP]);
@@ -95,9 +132,6 @@ static void az_sys_xu_sigsegv_handler(int sig, siginfo_t *info, void *context)
       xu_name, (void *)(info->si_addr), callsite); 
   write(STDOUT_FILENO, prbuf, blen);
 
-  trace_size = backtrace(trace, CONFIG_AZ_EXP_CALLSTACK_DEPTH);
-
-  messages = backtrace_symbols(trace, trace_size);
   char *exefilename = az_getExeFileName();
 
   for (i = 2; i < trace_size && messages != NULL; ++i) {
@@ -158,7 +192,7 @@ static void az_sys_xu_prolog(az_sys_xu_t xu)
   struct sigaction sa;
   
   az_sys_xu = xu;
-
+  xu->env_index = 0;
 
   pthread_setname_np(xu->thread, xu->name);
   if (xu->attr) {
@@ -294,13 +328,16 @@ az_r_t az_sys_xu_create(const char *name,
       xu->attr = xu_attr;
       pthread_attr_init(&attr);
       pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+      if (0) {
+        size_t dft_stk_sz;
+        pthread_attr_getstacksize(&attr, &dft_stk_sz);
+        az_sys_ilog("default stacksize:%dk\n", dft_stk_sz/1024); 
+      }
       if (NULL != xu_attr) {
         if (xu_attr->stack_size > 0) {
           pthread_attr_setstacksize(&attr, xu_attr->stack_size);
         }
-      } else {
-          pthread_attr_setstacksize(&attr, 32*1024); 
-      }
+      } 
       result = pthread_create(&(xu->thread), &attr, az_sys_xu_entry, (void *)xu);
       if (AZ_SUCCESS == result) { 
         pthread_setname_np(xu->thread, xu->name);

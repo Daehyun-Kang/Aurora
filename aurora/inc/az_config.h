@@ -179,11 +179,17 @@
 #define  CONFIG_AZ_SYS_LW_USE_MUTEX        1 
 #undef  CONFIG_AZ_SYS_LW_USE_MUTEX     
 
-#define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
+#define CONFIG_AZ_LOG_LEVEL_DFT           100 // AZ_LOG_LEVEL_INFO
 #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
 
 #define CONFIG_AZ_PERF_MEASURE_LOOP_CNT_DFT   100000 //1000000
 #define CONFIG_AZ_PERF_MEASURE_SAMPLES_DFT    100    //1000
+
+#define CONFIG_AZ_XU_EXCPT_STK_SZ             16
+
+#ifdef  CONFIG_AZ_TEST
+//#define CONFIG_AZ_XU_EXP_HANDLE           1
+#endif
 
 #endif
 

@@ -144,7 +144,9 @@ typedef struct {
   const char      *name;
   int             state;
 
-  jmp_buf         env;
+  int             env_index;
+  jmp_buf         env[CONFIG_AZ_XU_EXCPT_STK_SZ];
+  //jmp_buf         env;
 } az_sys_xu_entity_t;
 
 typedef   az_sys_xu_entity_t *  az_sys_xu_t;

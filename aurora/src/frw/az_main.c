@@ -109,11 +109,11 @@ void *az_xu_entry4(void *arg)
     az_xu_sleep(2000000000);
     if (count & 1) {
       sevents = 1;
-      r = az_xu_sendEvent(xu3, sevents);
+      r = az_xu_sendEvent(xu3->ion.id, sevents);
       az_printf("%s count=%d, send %x result="AZ_FMT_RET(1)"\n", __FUNCTION__, count++, sevents, r);
     } else {
       sevents = 2;
-      r = az_xu_sendEvent(xu3, sevents);
+      r = az_xu_sendEvent(xu3->ion.id, sevents);
       az_printf("%s count=%d, send %x result="AZ_FMT_RET(1)"\n", __FUNCTION__, count++, sevents, r);
     }
   }
@@ -210,11 +210,7 @@ void *az_xu_main_entry(struct az_xu_main_arg *arg)
 {
   az_assert(NULL != arg);
 
-#ifdef  CONFIG_AZ_TEST
-  return az_test_main(arg->argc, arg->argv);
-#else
   return az_frw_main();
-#endif
 }
 
 //extern void  az_rstdio_begin(void);
@@ -245,14 +241,14 @@ int main(int argc, char *argv[])
   az_xu_main_arg.argc = argc;
   az_xu_main_arg.argv = argv;
 
-  r = az_xu_create("main", az_xu_main_entry, &az_xu_main_arg, &az_xu_main_config, &az_xu_main);
+  r = (az_r_t)az_xu_create("main", az_xu_main_entry, &az_xu_main_arg, &az_xu_main_config, &az_xu_main);
   az_printf("create main xu : %p, result=%ld\n", az_xu_main, r);
 
   #ifdef  CONFIG_AZ_TRACE_START
   az_trace_start();
   #endif
 
-  if (r == AZ_SUCCESS) {
+  if (r >= AZ_SUCCESS) {
     return (int)az_xu_entry(az_xu_main);
   } else {
     return (int)r;

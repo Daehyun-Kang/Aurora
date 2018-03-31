@@ -60,9 +60,10 @@
 									<listOptionValue builtIn="false" value="linux"/>
 									<listOptionValue builtIn="false" value="&quot;BASE_FILENAME=\&quot;$(&lt;F)\&quot;&quot;"/>
 								</option>
-								<option id="gnu.c.compiler.option.misc.other.767041252" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0  -fsanitize=address" valueType="string"/>
+								<option id="gnu.c.compiler.option.misc.other.767041252" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0  -fsanitize=address " valueType="string"/>
 								<option id="gnu.c.compiler.option.debugging.other.1262167211" name="Other debugging flags" superClass="gnu.c.compiler.option.debugging.other" useByScannerDiscovery="false" value="-finstrument-functions" valueType="string"/>
 								<option id="gnu.c.compiler.option.debugging.prof.46039169" name="Generate prof information (-p)" superClass="gnu.c.compiler.option.debugging.prof" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="gnu.c.compiler.option.optimization.flags.1868026745" name="Other optimization flags" superClass="gnu.c.compiler.option.optimization.flags" useByScannerDiscovery="false" value="" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.475402945" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.1032266142" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
@@ -73,7 +74,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Sources/test/ut|Sources/test/abc.c|Sources/core/az_thread.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Sources/test/aurot|Sources/test/pt|Sources/test/ut|Sources/test/abc.c|Sources/core/az_thread.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -147,7 +148,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Sources/test/ut|Sources/test/abc.c|Sources/core/az_thread.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Sources/test/aurot|Sources/test/pt|Sources/test/ut|Sources/test/abc.c|Sources/core/az_thread.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -227,7 +228,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Sources/test/ut|Sources/test/abc.c|Sources/core/az_thread.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Sources/test/aurot|Sources/test/pt|Sources/test/ut|Sources/test/abc.c|Sources/core/az_thread.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

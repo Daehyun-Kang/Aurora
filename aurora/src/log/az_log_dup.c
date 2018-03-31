@@ -576,12 +576,12 @@ void *az_log_dup_thread_proc_default(void *arg)
 
 az_r_t  az_log_dup_start_default_thread()
 {
-  int r;
+  az_r_t r;
 
-  r = az_xu_create("logDupDefault", az_log_dup_thread_proc_default, NULL, NULL, &az_log_dup_thread_default);
+  r = (az_r_t)az_xu_create("logDupDefault", az_log_dup_thread_proc_default, NULL, NULL, &az_log_dup_thread_default);
   //az_sys_printf("%s: %p\n", __FUNCTION__, az_log_thread_default);
 
-  return r;
+  return (r < AZ_SUCCESS)? r:AZ_SUCCESS;
 }
 
 az_r_t  az_log_dup_stop_default_thread()

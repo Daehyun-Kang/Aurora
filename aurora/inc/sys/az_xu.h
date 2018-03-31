@@ -26,7 +26,9 @@
 #include "az_macros.h"
 #include "az_malloc.h"
 #include "az_xu_types.h"
+#include "az_link.h"
 #include "az_dllib.h"
+#include "az_xcfg.h"
 #include "az_xu_cfg.h"
 
 #ifdef __cplusplus
@@ -39,7 +41,8 @@ extern "C"
 #define AZ_XU_STATE_START       0x0002
 #define AZ_XU_STATE_STOP        0x0004
 #define AZ_XU_STATE_BUSY        0x0008
-#define AZ_XU_STATE_ERROR       0x8000
+#define AZ_XU_STATE_ERROR       0x4000
+#define AZ_XU_STATE_EXCPT       0x8000
 
 #define AZ_XU_ERROR_CREATED     0x0001
 #define AZ_XU_ERROR_START       0x0002
@@ -129,6 +132,9 @@ typedef struct az_xu_entity {
 #endif
 
   az_link_list_t  trz_list;
+
+  az_rw_lock_t    lock;
+  void *excpt_point;
 } az_xu_entity_t;
 typedef   az_xu_entity_t *  az_xu_t;
 #define   AZ_XU_INVALID     NULL
@@ -144,6 +150,9 @@ typedef   az_xu_entity_t *  az_xu_t;
 /* structured types */
 
 /* macros */
+#define AZ_XU_IS_STATE_EXCPT(xu) (((xu) == NULL)? 0:((xu)->state & AZ_XU_STATE_EXCPT))
+#define AZ_XU_EXCPT_POINT(xu)  (((xu)==NULL)? NULL:((xu)->excpt_point))
+#define AZ_XU_ON_EXCPT(xu)  AZ_XU_IS_STATE_EXCPT(xu) 
 
 /* variabls exposed */
 #ifdef  CONFIG_AZ_USE_TLS
@@ -207,29 +216,32 @@ static inline az_r_t az_xu_iomux_del(az_xu_t xu, az_sys_io_t fd)
 /* function prototypes exposed */
 extern void az_sys_xu_register_exception_handler();
 
-extern az_r_t az_xu_create(char *name, az_xu_entry_t entry, az_xu_arg_t arg, az_xu_config_t *pCfg, az_xu_t *pXU);
-extern az_r_t az_xu_start(az_xu_t xu, az_xu_entry_t entry, az_xu_arg_t arg);
-extern az_r_t  az_xu_stop(az_xu_t  xu);
-extern az_r_t az_xu_delete(az_xu_t xu);
+extern az_ion_id_t az_xu_create(char *name, az_xu_entry_t entry, az_xu_arg_t arg, az_xu_config_t *pCfg, az_xu_t *pXU);
+extern az_r_t az_xu_start(az_ion_id_t id, az_xu_entry_t entry, az_xu_arg_t arg);
+extern az_r_t  az_xu_stop(az_ion_id_t id);
+extern az_r_t az_xu_delete(az_ion_id_t id);
 
-extern az_r_t az_xu_setPriority(az_xu_t xu, az_xu_attr_t *pAttr);
-extern az_r_t az_xu_getPriority(az_xu_t xu, az_xu_attr_t *pAttr);
-extern az_r_t az_xu_setAffinity(az_xu_t xu, az_xu_core_mask_t core_mask);
-extern az_r_t az_xu_getAffinity(az_xu_t xu, az_xu_core_mask_t *pCoreMask);
+extern az_r_t az_xu_setPriority(az_ion_id_t id, az_xu_attr_t *pAttr);
+extern az_r_t az_xu_getPriority(az_ion_id_t id, az_xu_attr_t *pAttr);
+extern az_r_t az_xu_setAffinity(az_ion_id_t id, az_xu_core_mask_t core_mask);
+extern az_r_t az_xu_getAffinity(az_ion_id_t id, az_xu_core_mask_t *pCoreMask);
 
-extern az_r_t az_xu_suspend(az_xu_t xu);
-extern az_r_t az_xu_resume(az_xu_t xu);
+extern az_r_t az_xu_suspend(az_ion_id_t id);
+extern az_r_t az_xu_resume(az_ion_id_t id);
 extern az_r_t az_xu_sleep(az_int64_t nsec);
-extern az_r_t az_xu_sendEvent(az_xu_t xu, az_xu_event_t event);
+extern az_r_t az_xu_sendEvent(az_ion_id_t id, az_xu_event_t event);
 extern az_r_t az_xu_recvEvent(az_xu_event_t toReceive, az_int8_t options, az_int64_t nsec, az_xu_event_t *pReceived);
 extern az_r_t az_xu_waitEvent(az_xu_event_t toReceive, az_int8_t options, az_int64_t nsec, az_xu_event_t *pReceived);
-extern az_r_t az_xu_regEventHandler(az_xu_t xu, unsigned int vecno, az_xu_event_handler_t handler, az_xu_arg_t arg); 
-extern az_r_t az_xu_deregEventHandler(az_xu_t xu, unsigned int vecno);
+extern az_r_t az_xu_regEventHandler(az_ion_id_t id, unsigned int vecno, az_xu_event_handler_t handler, az_xu_arg_t arg); 
+extern az_r_t az_xu_deregEventHandler(az_ion_id_t id, unsigned int vecno);
 
 extern az_xu_t az_xu_find(char *name);
 
 extern void* az_xu_getarg();
 extern az_r_t az_xu_getcpu();
+
+extern void  az_xu_empty_sys_xu(az_xu_t xu);
+extern az_xu_t  az_xu_empty(az_xu_t xu);
 
 extern void az_xu_cleanup(az_xu_t xu);
 extern void    az_xu_exit(az_xu_ret_t ret);
@@ -237,6 +249,8 @@ extern void    az_xu_exit(az_xu_ret_t ret);
 extern void *az_xu_entry(void *arg);
 
 extern void  az_xu_set_cleanup();
+extern void  az_xu_set_state_excpt(void *excpt_point);
+extern void  az_xu_reset_state_excpt(az_xu_t xu);
 #ifdef __cplusplus
 }
 #endif

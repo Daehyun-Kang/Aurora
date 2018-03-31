@@ -184,13 +184,13 @@ az_r_t az_tc_run_rw_lock(az_test_case_t *pTC)
     name[1] += j;
     if (tv->order[j] == 'r') {
       if (xu_cfg.policy == SCHED_FIFO) xu_cfg.priority = 1;
-      r = az_xu_create(name, xu_reader_proc, tv->result, &xu_cfg, &xus[j]);
+      r = (az_r_t)az_xu_create(name, xu_reader_proc, tv->result, &xu_cfg, &xus[j]);
     } else
     if (tv->order[j] == 'w') {
       if (xu_cfg.policy == SCHED_FIFO) xu_cfg.priority = 99;
-      r = az_xu_create(name, xu_writer_proc, tv->result, &xu_cfg, &xus[j]);
+      r = (az_r_t)az_xu_create(name, xu_writer_proc, tv->result, &xu_cfg, &xus[j]);
     }
-    if (r) az_rprintf(r, "thread %s create\n", name);
+    if (r < AZ_SUCCESS) az_rprintf(r, "thread %s create\n", name);
     az_xu_sleep(1000);
   }
 

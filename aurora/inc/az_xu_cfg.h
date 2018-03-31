@@ -21,7 +21,8 @@
 #ifndef AZ_XU_CFG_H
 #define AZ_XU_CFG_H
 
-#include  "frw/az_frw_cfg.h"
+#include "az_def.h"
+#include "az_xcfg.h"
 
 #ifdef __cplusplus
 extern "C"

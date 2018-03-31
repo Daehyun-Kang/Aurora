@@ -1433,3 +1433,23 @@ java.lang.IllegalArgumentException: Attempted to beginRule: F/Aurora/Sources/tes
 	at org.eclipse.ui.internal.navigator.resources.actions.ResourceMgmtActionProvider$2$1.runInWorkspace(ResourceMgmtActionProvider.java:202)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2018-03-30 20:20:44.037 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-03-30 23:21:15.822
+!MESSAGE Indexed 'aurot' (7 sources, 245 headers) in 2.2 sec: 12,367 declarations; 24,543 references; 0 unresolved inclusions; 207 syntax errors; 0 unresolved names (0%)
+!SESSION 2018-03-30 23:34:12.532 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-03-31 13:47:22.270
+!MESSAGE Indexed 'aurot' (7 sources, 245 headers) in 2.04 sec: 12,240 declarations; 23,235 references; 0 unresolved inclusions; 169 syntax errors; 0 unresolved names (0%)

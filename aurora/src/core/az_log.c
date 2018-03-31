@@ -120,13 +120,13 @@ int az_log_pushdata_default(void *priv, int push, uint8_t *src, int len)
     az_memcpy(log->buffer_area + push, src, len);
   } while (0);
 
-  if (NULL != log->thread) {
-    az_r_t r = az_xu_sendEvent(log->thread, 1 << log->logid);
+  if (AZ_ION_ID_INVALID != log->thread_id) {
+    az_r_t r = az_xu_sendEvent(log->thread_id, 1 << log->logid);
     if (r < 0) {
-      az_sys_rprintf(r, "thread=%p" AZ_NL, log->thread);
+      az_sys_rprintf(r, "thread_id=%d" AZ_NL, log->thread_id);
     }
   } else {
-    az_sys_eprintf("%s" AZ_NL, "thread null");
+    az_sys_eprintf("%s" AZ_NL, "thread invalid");
   }
   return len;
 }
@@ -177,7 +177,7 @@ az_log_t  *az_log_create(az_log_t *log, az_log_config_t *cfg)
     if (NULL != cfg) {
       log->config = *cfg;
     }
-    log->thread = NULL;
+    log->thread_id = AZ_ION_ID_INVALID;
     az_log_t  **pLog = az_logs;
     for (logid = 0; logid < CONFIG_AZ_LOG_MAX; logid++, pLog++) {
       if (*pLog == NULL) {
@@ -210,7 +210,7 @@ az_log_t  *az_log_create(az_log_t *log, az_log_config_t *cfg)
  * @return 
  * @exception    none
  */
-int  az_log_init(az_log_t *log, uint8_t *buffer_area, void *thread,
+int  az_log_init(az_log_t *log, uint8_t *buffer_area, az_ion_id_t thread_id,
     az_cirbuffer_pushdata_t pushdata, az_cirbuffer_popdata_t popdata)
 {
   int r = AZ_SUCCESS;
@@ -236,8 +236,8 @@ int  az_log_init(az_log_t *log, uint8_t *buffer_area, void *thread,
     if (NULL == popdata) popdata = az_log_popdata_default;
     az_cirbuffer_setcallbacks(&(log->buffer), log, pushdata, popdata);
 
-    log->thread = thread;
-    //az_sys_printf("%s: thread=%p bp=%p\n", __FUNCTION__, thread, log->buffer_area); 
+    log->thread_id = thread_id;
+    //az_sys_printf("%s: thread_id=%p bp=%p\n", __FUNCTION__, thread_id, log->buffer_area); 
 
     log->state |= AZ_LOG_STATE_START;
   } while (0);
@@ -264,7 +264,7 @@ int  az_log_deinit(az_log_t *log)
     }
     log->state &= ~AZ_LOG_STATE_INIT;
 
-    log->thread = NULL;
+    log->thread_id = AZ_ION_ID_INVALID;
     az_cirbuffer_deinit(&(log->buffer));
     if (log->state & AZ_LOG_STATE_DBUFFER) {
       az_free(log->buffer_area);
@@ -371,12 +371,12 @@ void *az_log_thread_proc_default(void *arg)
 
 az_r_t  az_log_start_default_thread()
 {
-  int r;
+  az_r_t r;
 
-  r = az_xu_create("logDefault", az_log_thread_proc_default, NULL, NULL, &az_log_thread_default);
+  r = (az_r_t)az_xu_create("logDefault", az_log_thread_proc_default, NULL, NULL, &az_log_thread_default);
   //az_sys_printf("%s: %p\n", __FUNCTION__, az_log_thread_default);
 
-  return r;
+  return (r < AZ_SUCCESS)? r:AZ_SUCCESS;
 }
 
 az_r_t  az_log_stop_default_thread()
@@ -436,7 +436,7 @@ az_r_t  az_log_start()
     r = az_log_start_default_thread();
     if (r != AZ_SUCCESS) break;
 
-    r = (az_r_t)az_log_init(&az_log_default, NULL, az_log_thread_default, NULL, NULL);
+    r = (az_r_t)az_log_init(&az_log_default, NULL, az_log_thread_default->ion.id, NULL, NULL);
     if (r != AZ_SUCCESS) break;
     r = (az_r_t)az_log_port_addFileOutput(az_log_default.logid, "aurora.log", &az_log_file_port_default); 
   

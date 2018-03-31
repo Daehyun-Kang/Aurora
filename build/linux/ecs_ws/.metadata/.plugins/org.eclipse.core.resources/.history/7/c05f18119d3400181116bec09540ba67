@@ -1,0 +1,34 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+/home/dhkang/work/Aurora/aurora/src/util/az_addr2line.c \
+/home/dhkang/work/Aurora/aurora/src/util/az_options.c 
+
+OBJS += \
+./Sources/util/az_addr2line.o \
+./Sources/util/az_options.o 
+
+C_DEPS += \
+./Sources/util/az_addr2line.d \
+./Sources/util/az_options.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+Sources/util/az_addr2line.o: /home/dhkang/work/Aurora/aurora/src/util/az_addr2line.c
+	@echo 'Building file: $<'
+	@echo 'Invoking: GCC C Compiler'
+	gcc -Dlinux -D"BASE_FILENAME=\"$(<F)\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0  -fsanitize=address -fsanitize-recover=address -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/util/az_options.o: /home/dhkang/work/Aurora/aurora/src/util/az_options.c
+	@echo 'Building file: $<'
+	@echo 'Invoking: GCC C Compiler'
+	gcc -Dlinux -D"BASE_FILENAME=\"$(<F)\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0  -fsanitize=address -fsanitize-recover=address -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

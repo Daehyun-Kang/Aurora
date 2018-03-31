@@ -189,7 +189,7 @@ az_r_t az_pt_run_sys_lw_lock(az_test_case_t *pTC)
 
   char name[] = "measureRwLock"; 
 
-  r = az_xu_create(name, xu_measure_proc, pTC, &xu_cfg, &xu);
+  r = (az_r_t)az_xu_create(name, xu_measure_proc, pTC, &xu_cfg, &xu);
   if (r) az_rprintf(r, "thread %s create\n", name);
 
 

@@ -139,6 +139,17 @@ az_r_t az_ion_register(az_ion_t *ion, az_ion_type_t type)
   return result;
 }
 
+void az_ion_empty(az_ion_t *ion)
+{
+  az_assert(NULL != ion);
+  az_atomic_dec32(&AZ_ION_LIST()->count);
+  az_ions[ion->id] = NULL;
+  if (ion->type & AZ_ION_FLAG_AUTOALLOC) {
+    az_sys_io_delete(ion->id); 
+  }
+  ion->id = AZ_SYS_IO_INVALID;
+}
+
 az_r_t az_ion_deregister(az_ion_t *ion)
 {
   az_r_t result = AZ_SUCCESS; 
@@ -164,12 +175,7 @@ az_r_t az_ion_deregister(az_ion_t *ion)
     az_eprintf("id:%d type:%d ion:%p/%d result="AZ_FMT_RET(1)"\n",ion->id, 
         ion->type, az_ion(ion->id), AZ_REFCOUNT_VALUE(&ion->refCount), result); 
     if  (az_refcount_atomic_dec(&ion->refCount) == 0) {
-      az_atomic_dec32(&AZ_ION_LIST()->count);
-      az_ions[ion->id] = NULL;
-      if (ion->type & AZ_ION_FLAG_AUTOALLOC) {
-        az_sys_io_delete(ion->id); 
-      }
-      ion->id = AZ_SYS_IO_INVALID;
+      az_ion_empty(ion);
     } else if (AZ_REFCOUNT_VALUE(&ion->refCount) < 0) {
       // may reset the refcount to zero
       result = AZ_ERR(AGAIN);
@@ -184,5 +190,4 @@ char *__az_weak az_app_ion_type_name(az_ion_type_t ion)
 {
   return "UDF";
 }
-
 /* === end of AZ_ION_C === */

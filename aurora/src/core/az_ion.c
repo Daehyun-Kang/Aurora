@@ -23,8 +23,14 @@
 #include "az_printf.h"
 
 /* declare global variables */
-#ifdef  CONFIG_AZ_DYNAMIC_ION
-az_array_t *az_ion_PRefList = NULL;
+#ifdef  CONFIG_AZ_ION_NONIO
+az_ion_list_t az_ion_list = {0};
+az_ion_t  *az_ions_io[AZ_ION_MAX] = {0};
+az_ion_t  *az_ions_nonio_list[AZ_ION_MAX * 2];
+az_array_t az_ions_nonio = {
+  .size = AZ_ION_MAX * 2,
+  .list = az_ions_nonio_list,
+};
 #else
 az_ion_list_t az_ion_list = {0};
 az_ion_t  *az_ions[AZ_ION_MAX] = {0};
@@ -57,26 +63,149 @@ char *az_ion_type_names[] = AZ_ION_TYPE_NAMES;
  * @warning   warnings
  * @exception none
  */
-#ifdef  CONFIG_AZ_DYNAMIC_ION
+#ifdef  CONFIG_AZ_ION_NONIO
+static inline az_r_t az_ion_register_io(az_ion_t *ion, az_ion_type_t type)
+{
+  az_r_t result = AZ_SUCCESS; 
+    az_ion_id_t id = ion->id;
+
+    do {
+      if (id < 0) {
+        if (type & AZ_ION_FLAG_AUTOALLOC) {
+          id = ion->id = az_sys_io_create(); 
+        }
+      }
+      if (id < 0 || id > AZ_ION_LIST()->size) {
+        result = AZ_ERR(OVERFLOW);
+        break;
+      } 
+      if (az_refcount_atomic_inc(&ion->refCount) == 1) {
+        if (az_ions_io[id] == NULL) {
+          ion->type = type;
+          az_ions_io[id] = ion;
+          az_atomic_inc32(&AZ_ION_LIST()->count);
+        } else if (ion == az_ions_io[id]) { 
+          result = AZ_ERR(AGAIN);
+        } else {
+          result = AZ_ERR(INVALID);
+        } 
+      }
+    } while (0);
+    az_sys_rprintf(result, "id:%d type:%d ion:%p/%d\n",id, type, 
+        ion, AZ_REFCOUNT_VALUE(&ion->refCount));
+
+  return result;
+}
+static inline az_r_t az_ion_register_nonio(az_ion_t *ion, az_ion_type_t type)
+{
+  az_r_t result = AZ_SUCCESS; 
+    az_ion_id_t id;
+
+    do {
+      id = az_array_addptr(AZ_ION_LIST()->nonio_ions, ion);
+      if (id < 0) {
+        result = AZ_ERR(OVERFLOW);
+        break;
+      }
+      ion->id = id | AZ_ION_ID_FLAG_NONIO;
+      if (az_refcount_atomic_inc(&ion->refCount) > 1) {
+          az_atomic_inc32(&AZ_ION_LIST()->count);
+      }
+    } while (0);
+    az_sys_rprintf(result, "id:%d type:%d ion:%p/%d\n",id, type, 
+        ion, AZ_REFCOUNT_VALUE(&ion->refCount));
+
+  return result;
+}
 az_r_t az_ion_register(az_ion_t *ion, az_ion_type_t type)
 {
   az_r_t result = AZ_SUCCESS; 
-  if (NULL == ion) {
-    result = AZ_ERR(ARG_NULL);
-  } else {
-    az_ion_id_t id;
-
-    id = (az_ion_id_t)az_array_addptr(AZ_ION_LIST(), (az_array_element_t)ion);
-    if (id < 0) {
-      result = AZ_ERR(OVERFLOW);
-    } else {
-      ion->id = id;
-      ion->type = type;
-      az_refcount_atomic_inc(&ion->refCount);
+  do {
+    if (NULL == ion) {
+      result = AZ_ERR(ARG_NULL);
+      break;
     }
-    az_sys_eprintf("id:%d type:%d ion:%p/%d result="AZ_FMT_RET(1)"\n",id, type, 
-        ion, AZ_REFCOUNT_VALUE(&ion->refCount), result); 
+    result = (type & AZ_ION_FLAG_NONIO)? az_ion_register_nonio(ion, type):az_ion_register_io(ion, type);
+  } while (0);
+
+  return result;
+}
+
+void az_ion_empty(az_ion_t *ion)
+{
+  az_assert(NULL != ion);
+  az_atomic_dec32(&AZ_ION_LIST()->count);
+  if (ion->id & AZ_ION_ID_FLAG_NONIO) {
+    az_ions_io[ion->id] = NULL;
+    if (ion->type & AZ_ION_FLAG_AUTOALLOC) {
+      az_sys_io_delete(ion->id); 
+    }
+  } else {
+    az_array_delptr(AZ_ION_LIST()->nonio_ions, ion->id & ~AZ_ION_ID_FLAG_NONIO);
   }
+  ion->id = AZ_SYS_IO_INVALID;
+}
+
+static inline az_r_t az_ion_deregister_io(az_ion_t *ion)
+{
+  az_r_t result = AZ_SUCCESS; 
+
+  do {
+    az_ion_id_t id = ion->id;
+
+    if (id < 0 || id > AZ_ION_LIST()->size) {
+      az_xu_t xu = az_xu_self();
+      az_sys_eprintf("ion %d(%p) OOR xu:%p\n", id, ion, xu);
+      result = AZ_ERR(OVERFLOW);
+      break;
+    } 
+    if (ion != az_ions_io[id]) {
+      az_xu_t xu = az_xu_self();
+      az_sys_eprintf("ion %d(%p) mismatch xu:%p\n", id, ion, xu);
+      result = AZ_ERR(INVALID);
+      break;
+    }
+    az_eprintf("id:%d type:%d ion:%p/%d result="AZ_FMT_RET(1)"\n",ion->id, 
+        ion->type, az_ion(ion->id), AZ_REFCOUNT_VALUE(&ion->refCount), result); 
+    if  (az_refcount_atomic_dec(&ion->refCount) == 0) {
+      az_ion_empty(ion);
+    } else if (AZ_REFCOUNT_VALUE(&ion->refCount) < 0) {
+      // may reset the refcount to zero
+      result = AZ_ERR(AGAIN);
+    }
+  } while (0);
+
+  return result;
+}
+
+az_r_t az_ion_deregister_nonio(az_ion_t *ion)
+{
+  az_r_t result = AZ_SUCCESS; 
+
+  do {
+    az_ion_id_t id = ion->id & ~AZ_ION_ID_FLAG_NONIO;
+
+    if (id < 0 || id > AZ_ION_LIST()->nonio_ions->size) {
+      az_xu_t xu = az_xu_self();
+      az_sys_eprintf("ion %d(%p) OOR xu:%p\n", id, ion, xu);
+      result = AZ_ERR(OVERFLOW);
+      break;
+    } 
+    if (ion != az_ions_nonio_list[id]) {
+      az_xu_t xu = az_xu_self();
+      az_sys_eprintf("ion %d(%p) mismatch xu:%p\n", id, ion, xu);
+      result = AZ_ERR(INVALID);
+      break;
+    }
+    az_eprintf("id:%d type:%d ion:%p/%d result="AZ_FMT_RET(1)"\n",ion->id, 
+        ion->type, az_ion(ion->id), AZ_REFCOUNT_VALUE(&ion->refCount), result); 
+    if  (az_refcount_atomic_dec(&ion->refCount) == 0) {
+      az_ion_empty(ion);
+    } else if (AZ_REFCOUNT_VALUE(&ion->refCount) < 0) {
+      // may reset the refcount to zero
+      result = AZ_ERR(AGAIN);
+    }
+  } while (0);
 
   return result;
 }
@@ -88,15 +217,9 @@ az_r_t az_ion_deregister(az_ion_t *ion)
   do {
     if (NULL == ion) {
       result = AZ_ERR(ARG_NULL);
+      break;
     }
-    result = az_array_delptr(AZ_ION_LIST(), ion->id);
-    if (result == AZ_SUCCESS) {
-      az_refcount_atomic_dec(&ion->refCount);
-    } else {
-      az_sys_eprintf("%ld:%s\n", result, az_err_str(result));
-    }
-    az_sys_eprintf("id:%d type:%d ion:%p/%d result="AZ_FMT_RET(1)"\n",ion->id, 
-        ion->type, az_ion(ion->id), AZ_REFCOUNT_VALUE(&ion->refCount), result); 
+    result = (ion->type & AZ_ION_FLAG_NONIO)? az_ion_deregister_nonio(ion):az_ion_deregister_io(ion);
   } while (0);
 
   return result;

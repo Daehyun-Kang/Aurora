@@ -55,12 +55,12 @@ typedef az_sem_entity_t *                  az_sem_t;
 /* inline functions */
 
 /* function prototypes exposed */
-extern az_r_t  az_sem_create(const char *name, int options, unsigned int value, az_sem_t *pMutex);
-extern az_r_t  az_sem_delete(az_sem_t sem);
-extern az_r_t  az_sem_wait(az_sem_t sem);
-extern az_r_t  az_sem_trywait(az_sem_t sem);
-extern az_r_t  az_sem_timedwait(az_sem_t sem, az_uint64_t tmo_ns);
-extern az_r_t  az_sem_post(az_sem_t sem);
+extern az_ion_id_t  az_sem_create(const char *name, int options, unsigned int value, az_sem_t *pMutex);
+extern az_r_t  az_sem_delete(az_ion_id_t id);
+extern az_r_t  az_sem_wait(az_ion_id_t id);
+extern az_r_t  az_sem_trywait(az_ion_id_t id);
+extern az_r_t  az_sem_timedwait(az_ion_id_t id, az_uint64_t tmo_ns);
+extern az_r_t  az_sem_post(az_ion_id_t id);
 
 #ifdef __cplusplus
 }

@@ -41,8 +41,13 @@ extern "C"
 #include "az_ion_types.h"
 
 /* structured types */
-#ifdef  CONFIG_AZ_DYNAMIC_ION
-typedef az_array_t az_ion_list_t;
+#ifdef  CONFIG_AZ_ION_NONIO
+typedef struct az_ion_list {
+  int count;
+  int size;
+  az_ion_t  **io_ions;
+  az_array_t *nonio_ions;
+} az_ion_list_t;
 #else
 typedef struct az_ion_list {
   int count;
@@ -53,16 +58,24 @@ typedef struct az_ion_list {
 /* macros */
 
 /* variabls exposed */
-#ifdef  CONFIG_AZ_DYNAMIC_ION
-  extern az_ion_list_t *az_ion_PRefList;
-  #define AZ_ION_LIST() az_ion_PRefList
+#ifdef  CONFIG_AZ_ION_NONIO
+  extern az_ion_list_t az_ion_list; 
+  extern az_array_t az_ions_nonio;
+  extern az_ion_t *az_ions_io[];
+  #define AZ_ION_LIST() ((az_ion_list_t *)&az_ion_list)
 
-  #define AZ_ION_IDLE() (NULL == AZ_ION_LIST())
-  #define AZ_ION_BUSY() (NULL != AZ_ION_LIST())
+  #define AZ_ION_IDLE() (0 == AZ_ION_LIST()->size)
+  #define AZ_ION_BUSY() (0 != AZ_ION_LIST()->size)
+
+  #define az_ion_io(_index) \
+    (((unsigned)(_index) < (unsigned)(AZ_ION_LIST()->size))? (AZ_ION_LIST()->io_ions)[_index]:NULL) 
+
+  #define az_ion_nonio(_index) \
+    (az_ion_t *)(((unsigned)(_index) < (unsigned)(AZ_ION_LIST()->nonio_ions->size))? \
+    (az_ions_nonio.list[(_index) & ~AZ_ION_ID_FLAG_NONIO]):NULL)
 
   #define az_ion(_index) \
-    (((unsigned)(_index) < (unsigned)(AZ_ION_LIST()->size))? \
-    ((az_ion_t *)(*az_array_element_ptr_at(AZ_ION_LIST(), _index))):NULL) 
+    ((_index & AZ_ION_ID_FLAG_NONIO)? az_ion_nonio(_index & ~AZ_ION_ID_FLAG_NONIO):az_ion_io(_index))
 #else
   extern az_ion_list_t az_ion_list; 
   extern az_ion_t *az_ions[];
@@ -72,7 +85,7 @@ typedef struct az_ion_list {
   #define AZ_ION_BUSY() (0 != az_ion_list.size)
 
   #define az_ion(_index) \
-    (((unsigned)(_index) < (unsigned)(AZ_ION_LIST()->size))? az_ions[_index]:NULL) 
+    (az_ion_t *)(((unsigned)(_index) < (unsigned)(AZ_ION_LIST()->size))? az_ions[_index]:NULL) 
 #endif
 
 #define az_ion_lock()
@@ -94,9 +107,14 @@ static void az_ion_invalidate(az_ion_t *ion, int is_static)
 static inline void az_ion_init(az_array_t *refList)
 {
   if (AZ_ION_IDLE()) {
-    #ifdef  CONFIG_AZ_DYNAMIC_ION
-    az_ion_PRefList = refList;
-    az_array_init(refList, refList->size, refList->list, NULL, sizeof(az_ref_t)); 
+    #ifdef  CONFIG_AZ_ION_NONIO
+    az_ion_list.count = 0;
+    az_ion_list.size = AZ_ION_MAX;
+    memset(az_ions_io, 0, sizeof(az_ion_t *) * AZ_ION_MAX);
+    az_ion_list.io_ions = az_ions_io;
+    az_refcount_init_static(&az_ions_nonio.refCount);
+    az_array_init(&az_ions_nonio, az_ions_nonio.size, az_ions_nonio.list, NULL, sizeof(az_ref_t)); 
+    az_ion_list.nonio_ions = &az_ions_nonio;
     #else
     az_ion_list.count = 0;
     az_ion_list.size = AZ_ION_MAX;
@@ -107,9 +125,13 @@ static inline void az_ion_init(az_array_t *refList)
 static inline void az_ion_deinit()
 {
   if (AZ_ION_BUSY()) {
-    #ifdef  CONFIG_AZ_DYNAMIC_ION
-    az_array_deinit(az_ion_PRefList);
-    az_ion_PRefList = NULL;
+    #ifdef  CONFIG_AZ_ION_NONIO
+    az_array_deinit(az_ion_list.nonio_ions);
+    az_ion_list.nonio_ions = NULL;
+    az_ion_list.count = 0;
+    az_ion_list.size = 0; 
+    az_ion_list.io_ions = NULL;
+    memset(az_ions_io, 0, sizeof(az_ion_t) * AZ_ION_MAX);
     #else
     az_ion_list.count = 0;
     az_ion_list.size = 0; 
@@ -127,7 +149,11 @@ static inline az_ion_t *az_ion_find(void *var, az_ion_compare_t compare_f)
   az_ion_t  *ion = NULL;
   int count = list->count;
   for (j = 0; j < list->size && count > 0; j++) {
+    #ifdef  CONFIG_AZ_ION_NONIO
+    ion = az_ion_io(j); 
+    #else
     ion = az_ion(j); 
+    #endif
     //az_sys_eprintf("sz:%ld count:%d %p\n", list->size, count, ion);
     if (ion == NULL) continue;
     if (!compare_f(var, ion)) {
@@ -136,13 +162,32 @@ static inline az_ion_t *az_ion_find(void *var, az_ion_compare_t compare_f)
     count--;
   }
   if (count == 0) ion = NULL;
+  #ifdef  CONFIG_AZ_ION_NONIO
+  if (count == 0) {
+    count = list->nonio_ions->count;
+    for (j = 0; j < list->nonio_ions->size && count > 0; j++) {
+      ion = az_ion_nonio(j); 
+      //az_sys_eprintf("sz:%ld count:%d %p\n", list->size, count, ion);
+      if (ion == NULL) continue;
+      if (!compare_f(var, ion)) {
+        break;
+      }
+      count--;
+    }
+    if (count == 0) ion = NULL;
+  }
+  #endif
 
   return ion;
 }
 static inline az_size_t az_ion_count()
 {
   az_ion_list_t *list = AZ_ION_LIST();
+  #ifdef  CONFIG_AZ_ION_NONIO
+  return list->count + list->nonio_ions->count;
+  #else
   return list->count;
+  #endif
 }
 typedef char *(*az_var_value2Str_t)(void *);
 

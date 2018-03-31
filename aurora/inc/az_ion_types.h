@@ -30,11 +30,16 @@ extern "C"
 
 /* constants */
 #define   AZ_ION_FLAG_AUTOALLOC   0x8000
+#ifdef  CONFIG_AZ_ION_NONIO
+#define   AZ_ION_FLAG_NONIO       0x0800
+#else
+#define   AZ_ION_FLAG_NONIO       0x0000
+#endif
 #define   AZ_ION_TYPE_MASK        0x0fff
 #define   AZ_ION_TYPE_XU          0x0001
 #define   AZ_ION_TYPE_TIMER       0x0002
-#define   AZ_ION_TYPE_MUTEX       0x0003
-#define   AZ_ION_TYPE_SEM         0x0004
+#define   AZ_ION_TYPE_MUTEX       (0x0003|AZ_ION_FLAG_NONIO)
+#define   AZ_ION_TYPE_SEM         (0x0004|AZ_ION_FLAG_NONIO)
 #define   AZ_ION_TYPE_DIR         0x0005
 #define   AZ_ION_TYPE_FILE        0x0006
 #define   AZ_ION_TYPE_MSGQ        0x0007
@@ -54,6 +59,11 @@ typedef int az_ion_id_t;
 typedef az_uint32_t az_ion_type_t;
 
 #define AZ_ION_ID_INVALID AZ_SYS_IO_INVALID
+#ifdef  CONFIG_AZ_ION_NONIO
+#define AZ_ION_ID_FLAG_NONIO 0x40000000 
+#else
+#define AZ_ION_ID_FLAG_NONIO 0x00000000 
+#endif
 
 /* structures */
 typedef struct az_ion {

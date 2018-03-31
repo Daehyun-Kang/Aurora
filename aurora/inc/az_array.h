@@ -44,9 +44,9 @@ typedef az_ref_t    az_array_element_ref_t;
 typedef az_pos_t    az_array_id_t;
 
 typedef struct az_array {
-  az_array_element_ref_t  list;
   az_size_t           size;
   az_size_t           count;
+  az_array_element_ref_t  *list;
   az_size_t           last;
   az_size_t           element_size;
 
@@ -193,7 +193,6 @@ static inline az_r_t az_array_init(az_array_t *pArray, az_size_t size,
     if (NULL == list) {
       list = az_malloc(size * element_size);
       if (NULL == list) break;
-      memset(list, 0, size * element_size);
       pArray->_list = list;
     } else {
       pArray->_list = NULL;
@@ -201,6 +200,7 @@ static inline az_r_t az_array_init(az_array_t *pArray, az_size_t size,
     err = AZ_SUCCESS;
     pArray->list = list;
     pArray->size = size;
+    memset(list, 0, size * element_size);
 
     az_index_pool_init(&(pArray->id_list), size, ids);
 

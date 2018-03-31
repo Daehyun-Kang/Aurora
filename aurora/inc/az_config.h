@@ -186,10 +186,16 @@
 #define CONFIG_AZ_PERF_MEASURE_SAMPLES_DFT    100    //1000
 
 #define CONFIG_AZ_XU_EXCPT_STK_SZ             16
+#define CONFIG_AZ_XU_MSG_SZ                   64
+#define CONFIG_AZ_XU_MSG_QUEUE_SZ             128
 
 #ifdef  CONFIG_AZ_TEST
 //#define CONFIG_AZ_XU_EXP_HANDLE           1
 #endif
 
+#define CONFIG_AZ_XU_EXP_HANDLE           1
+
+#define CONFIG_AZ_ION_NONIO                 1
+//#undef CONFIG_AZ_ION_NONIO                 
 #endif
 

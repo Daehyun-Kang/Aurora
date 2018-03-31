@@ -41,7 +41,6 @@ typedef struct {
   char      name[CONFIG_AZ_NAME_MAX];
 
   az_sys_timer_t         sys_timer;
-  az_refcount_t  refCount;
 } az_timer_entity_t;
 
 typedef az_timer_entity_t *   az_timer_t;
@@ -75,10 +74,10 @@ static inline az_sys_timespec_t *az_timespec_diff(az_sys_timespec_t *e, az_sys_t
 #define az_timespec_value(t) ((((az_sys_timespec_t *)(t))->tv_sec * 1E9) + ((az_sys_timespec_t *)(t))->tv_nsec)
 
 /* function prototypes exposed */
-extern az_r_t  az_timer_create(const char *name, az_uint64_t interval, int repeat, void (*handler)(void *arg), void *arg, az_timer_t *pTimer);
-extern az_r_t  az_timer_delete(az_timer_t timer);
-extern az_r_t  az_timer_start(az_timer_t timer);
-extern az_r_t  az_timer_stop(az_timer_t timer);
+extern az_ion_id_t  az_timer_create(const char *name, az_uint64_t interval, int repeat, void (*handler)(void *arg), void *arg, az_timer_t *pTimer);
+extern az_r_t  az_timer_delete(az_ion_id_t id);
+extern az_r_t  az_timer_start(az_ion_id_t id);
+extern az_r_t  az_timer_stop(az_ion_id_t id);
 
 #ifdef __cplusplus
 }

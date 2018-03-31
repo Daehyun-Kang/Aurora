@@ -48,7 +48,7 @@
  * @warning   warnings
  * @exception none
  */
-az_r_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex)
+az_ion_id_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex)
 {
   az_r_t result = AZ_SUCCESS;
   az_mutex_t m;
@@ -72,7 +72,11 @@ az_r_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex)
       }
       break;
     }
+    #ifdef  CONFIG_AZ_ION_NONIO
+    result = az_ion_register(&(m->ion), AZ_ION_TYPE_MUTEX);
+    #else
     result = az_ion_register(&(m->ion), AZ_ION_TYPE_MUTEX|AZ_ION_FLAG_AUTOALLOC);
+    #endif
     if (AZ_SUCCESS != result) {
       az_sys_mutex_delete(m->mutex);
       if (AZ_REFCOUNT_IS_ZERO(&m->ion.refCount)) {
@@ -87,7 +91,7 @@ az_r_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex)
     *pMutex = m;
   } while (0);
 
-  return result;
+  return (result < 0)? (az_ion_id_t)result:m->ion.id;
 }
 
 /**
@@ -97,11 +101,13 @@ az_r_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex)
  * @return 
  * @exception    none
  */
-az_r_t  az_mutex_delete(az_mutex_t m)
+az_r_t  az_mutex_delete(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_mutex_t m = (az_mutex_t)az_ion(id); 
   do {
     az_if_arg_null_break(m, result);
+    az_assert_ion_type(m->ion.type, AZ_ION_TYPE_MUTEX);
     
     if (az_refcount_atomic_dec(&m->ion.refCount) <= 0) {
       result = AZ_ERR(AGAIN);
@@ -131,11 +137,13 @@ az_r_t  az_mutex_delete(az_mutex_t m)
  * @return 
  * @exception    none
  */
-az_r_t  az_mutex_lock(az_mutex_t m)
+az_r_t  az_mutex_lock(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_mutex_t m = (az_mutex_t)az_ion(id); 
   do {
     az_if_arg_null_break(m, result);
+    az_assert_ion_type(m->ion.type, AZ_ION_TYPE_MUTEX);
 
     if ((AZ_REFCOUNT_VALUE(&m->ion.refCount)) < 1) {
       result = AZ_ERR(INVALID);
@@ -158,11 +166,13 @@ az_r_t  az_mutex_lock(az_mutex_t m)
  * @return 
  * @exception    none
  */
-az_r_t  az_mutex_trylock(az_mutex_t m)
+az_r_t  az_mutex_trylock(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_mutex_t m = (az_mutex_t)az_ion(id); 
   do {
     az_if_arg_null_break(m, result);
+    az_assert_ion_type(m->ion.type, AZ_ION_TYPE_MUTEX);
 
     if ((AZ_REFCOUNT_VALUE(&m->ion.refCount)) < 1) {
       result = AZ_ERR(INVALID);
@@ -185,11 +195,13 @@ az_r_t  az_mutex_trylock(az_mutex_t m)
  * @return 
  * @exception    none
  */
-az_r_t  az_mutex_unlock(az_mutex_t m)
+az_r_t  az_mutex_unlock(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_mutex_t m = (az_mutex_t)az_ion(id); 
   do {
     az_if_arg_null_break(m, result);
+    az_assert_ion_type(m->ion.type, AZ_ION_TYPE_MUTEX);
 
     if ((AZ_REFCOUNT_VALUE(&m->ion.refCount)) < 1) {
       result = AZ_ERR(INVALID);

@@ -28,14 +28,6 @@
 
 /* declare static variables */
 static az_state_t az_core_state = AZ_ST_IDLE;
-#ifdef  CONFIG_AZ_DYNAMIC_ION
-static az_array_t az_ion_list = {
-  .list = NULL,
-  .size = AZ_ION_MAX,
-  .count = 0,
-  .refCount = AZ_REFCOUNT_STATIC_ZERO
-};
-#endif
 
 /* implement static functions */
 

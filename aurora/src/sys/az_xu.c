@@ -91,6 +91,12 @@ az_ion_id_t az_xu_create(char *name, az_xu_entry_t entry, az_xu_arg_t arg, az_xu
     }
     az_assert(NULL != xu->entry);
     
+    xu->wait_xu_id = (az_xu_self() == NULL)? AZ_ION_ID_INVALID:az_xu_self()->ion.id;
+    #if (CONFIG_AZ_XU_MSG_SZ == 64)
+    az_ring_init(&xu->msgq, AZ_RING_TYPE_DS64, CONFIG_AZ_XU_MSG_QUEUE_SZ, xu->msgs);
+    #else
+    az_ring_init(&xu->msgq, AZ_RING_TYPE_DS32, CONFIG_AZ_XU_MSG_QUEUE_SZ, xu->msgs);
+    #endif
     strncpy(AZ_XU_NAME(xu), name, sizeof(AZ_XU_NAME(xu)));
     xu->flags = AZ_XU_FLAGS_INI_VAL;
     xu->evectors = 0;
@@ -129,7 +135,9 @@ az_ion_id_t az_xu_create(char *name, az_xu_entry_t entry, az_xu_arg_t arg, az_xu
         }
         *pXu = NULL;
         break;
-      } 
+      } else {
+        result = (az_r_t)xu->ion.id;
+      }
     }
   } while (0);
 
@@ -707,6 +715,90 @@ az_r_t az_xu_sendEvent(az_ion_id_t id, az_xu_event_t event)
 
   return r;
 }
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_xu_sendMsg(az_ion_id_t id, az_xu_msg_t msg)
+{
+  az_r_t r = AZ_SUCCESS;
+  az_xu_t xu = (az_xu_t)az_ion(id);
+  do {
+    if (msg == 0) {
+      r = AZ_ERR(EMPTY);
+      break;
+    }
+    az_if_arg_null_break(xu, r);
+    az_assert_ion_type(xu->ion.type, AZ_ION_TYPE_XU);
+
+    // need to use lock not free xu by others
+    if (AZ_XU_ON_EXCPT(xu)) {
+      r = AZ_ERR(EXCEPTION);
+      break;
+    }
+
+    if (xu->state & AZ_XU_STATE_STOP) {
+      r = AZ_ERR(STATE);
+      break;
+    }
+
+    az_refcount_atomic_inc(&xu->ion.refCount);
+    #if (CONFIG_AZ_XU_MSG_SZ == 64)
+    r = az_ring_push64(&xu->msgq, &msg);
+    #else
+    r = az_ring_push32(&xu->msgq, &msg);
+    #endif
+    if (r < 0) {
+      break;
+    }
+    r = az_sys_xu_sendEvent(xu->sys_xu, AZ_XU_EVENT_MSG); 
+    if (xu->state & (AZ_XU_STATE_STOP|AZ_XU_STATE_EXCPT)) {
+      if  (az_refcount_atomic_dec(&xu->ion.refCount) == 0) {
+        az_ion_empty(&xu->ion);
+        az_xu_empty(xu);
+      } else if (AZ_REFCOUNT_VALUE(&xu->ion.refCount) == 1) {
+        az_xu_empty_sys_xu(xu);
+      }
+    } else {
+      az_refcount_atomic_dec(&xu->ion.refCount);
+    }
+
+  } while (0);
+
+  return r;
+}
+
+/**
+ * @fn 
+ * @brief 
+ * @param 
+ * @return 
+ * @exception    none
+ */
+az_r_t az_xu_recvMsg(az_xu_msg_t *pMsg)
+{
+  az_r_t r = AZ_SUCCESS;
+  az_xu_t xu = az_xu_self(); 
+  az_assert(NULL != pMsg);
+  do {
+    if (NULL == xu) {
+      r = AZ_ERR(ENTITY_NULL);
+      break;
+    }
+    #if (CONFIG_AZ_XU_MSG_SZ == 64)
+    r = az_ring_pop64(&xu->msgq, pMsg);
+    #else
+    r = az_ring_push32(&xu->msgq, pMsg);
+    #endif
+
+  } while (0);
+
+  return r;
+}
 /**
  * @fn 
  * @brief 
@@ -913,7 +1005,8 @@ void *az_xu_entry(void *arg)
   #ifdef  CONFIG_AZ_XU_EXP_HANDLE
    az_sys_xu_remove_context();
   } else {
-    az_sys_eprintf("%s\n", xu->name);
+    az_xu_sendMsg(xu->wait_xu_id, AZ_XU_MSG_EXCEPTION|xu->ion.id);
+    az_sys_dlog("%s\n", AZ_XU_NAME(xu));
   }
   #endif
 

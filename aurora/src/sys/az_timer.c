@@ -37,7 +37,7 @@
  * @warning   warnings
  * @exception none
  */
-az_r_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat, void (*handler)(void *arg), void *arg, az_timer_t *pTimer)
+az_ion_id_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat, void (*handler)(void *arg), void *arg, az_timer_t *pTimer)
 {
   az_r_t result = AZ_SUCCESS;
   az_timer_t t;
@@ -83,7 +83,7 @@ az_r_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat, voi
     *pTimer = t;
   } while (0);
 
-  return result;
+  return (result < 0)? (az_ion_id_t)result:t->ion.id;
 }
 
 /**
@@ -93,11 +93,13 @@ az_r_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat, voi
  * @return 
  * @exception    none
  */
-az_r_t  az_timer_delete(az_timer_t t)
+az_r_t  az_timer_delete(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_timer_t t = (az_timer_t)az_ion(id);
   do {
     az_if_arg_null_break(t, result);
+    az_assert_ion_type(t->ion.type, AZ_ION_TYPE_TIMER);
     if (az_refcount_atomic_dec(&t->ion.refCount) <= 0) {
       result = AZ_ERR(AGAIN);
       break;
@@ -125,11 +127,13 @@ az_r_t  az_timer_delete(az_timer_t t)
  * @return 
  * @exception    none
  */
-az_r_t  az_timer_start(az_timer_t t)
+az_r_t  az_timer_start(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_timer_t t = (az_timer_t)az_ion(id);
   do {
     az_if_arg_null_break(t, result);
+    az_assert_ion_type(t->ion.type, AZ_ION_TYPE_TIMER);
 
     if ((AZ_REFCOUNT_VALUE(&t->ion.refCount)) < 1) {
       result = AZ_ERR(INVALID);
@@ -153,12 +157,14 @@ az_r_t  az_timer_start(az_timer_t t)
  * @return 
  * @exception    none
  */
-az_r_t  az_timer_stop(az_timer_t t)
+az_r_t  az_timer_stop(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_timer_t t = (az_timer_t)az_ion(id);
 
   do {
     az_if_arg_null_break(t, result);
+    az_assert_ion_type(t->ion.type, AZ_ION_TYPE_TIMER);
 
     if ((AZ_REFCOUNT_VALUE(&t->ion.refCount)) < 1) {
       result = AZ_ERR(INVALID);
@@ -167,8 +173,7 @@ az_r_t  az_timer_stop(az_timer_t t)
     
     result = az_sys_timer_stop(t->sys_timer);
 
-    if (result == AZ_SUCCESS) {
-      if (az_refcount_atomic_dec(&t->ion.refCount) == 0) {
+    if (result == AZ_SUCCESS) { if (az_refcount_atomic_dec(&t->ion.refCount) == 0) {
         result = az_sys_timer_delete(t->sys_timer);
       }
       if (AZ_REFCOUNT_IS_ZERO(&t->ion.refCount)) {

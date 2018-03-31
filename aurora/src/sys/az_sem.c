@@ -48,7 +48,7 @@
  * @warning   warnings
  * @exception none
  */
-az_r_t  az_sem_create(const char *name, int options, unsigned int value, az_sem_t *pSem)
+az_ion_id_t  az_sem_create(const char *name, int options, unsigned int value, az_sem_t *pSem)
 {
   az_r_t result = AZ_SUCCESS;
   az_sem_t m;
@@ -75,7 +75,11 @@ az_r_t  az_sem_create(const char *name, int options, unsigned int value, az_sem_
       break;
     }
 
+    #ifdef  CONFIG_AZ_ION_NONIO
+    result = az_ion_register(&(m->ion), AZ_ION_TYPE_SEM);
+    #else
     result = az_ion_register(&(m->ion), AZ_ION_TYPE_SEM|AZ_ION_FLAG_AUTOALLOC);
+    #endif
     if (AZ_SUCCESS != result) {
       az_sys_sem_delete(m->sys_sem);
       if (AZ_REFCOUNT_IS_ZERO(&m->ion.refCount)) {
@@ -98,11 +102,14 @@ az_r_t  az_sem_create(const char *name, int options, unsigned int value, az_sem_
  * @return 
  * @exception    none
  */
-az_r_t  az_sem_delete(az_sem_t m)
+az_r_t  az_sem_delete(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_sem_t m = (az_sem_t)az_ion(id); 
   do {
     az_if_arg_null_break(m, result);
+    az_assert_ion_type(m->ion.type, AZ_ION_TYPE_SEM);
+
     if (az_refcount_atomic_dec(&m->ion.refCount) <= 0) {
       result = AZ_ERR(AGAIN);
       break;
@@ -130,11 +137,13 @@ az_r_t  az_sem_delete(az_sem_t m)
  * @return 
  * @exception    none
  */
-az_r_t  az_sem_wait(az_sem_t m)
+az_r_t  az_sem_wait(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_sem_t m = (az_sem_t)az_ion(id); 
   do {
     az_if_arg_null_break(m, result);
+    az_assert_ion_type(m->ion.type, AZ_ION_TYPE_SEM);
 
     if ((AZ_REFCOUNT_VALUE(&m->ion.refCount)) < 1) {
       result = AZ_ERR(INVALID);
@@ -158,11 +167,13 @@ az_r_t  az_sem_wait(az_sem_t m)
  * @return 
  * @exception    none
  */
-az_r_t  az_sem_trywait(az_sem_t m)
+az_r_t  az_sem_trywait(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_sem_t m = (az_sem_t)az_ion(id); 
   do {
     az_if_arg_null_break(m, result);
+    az_assert_ion_type(m->ion.type, AZ_ION_TYPE_SEM);
 
     if ((AZ_REFCOUNT_VALUE(&m->ion.refCount)) < 1) {
       result = AZ_ERR(INVALID);
@@ -186,11 +197,13 @@ az_r_t  az_sem_trywait(az_sem_t m)
  * @return 
  * @exception    none
  */
-az_r_t  az_sem_timedwait(az_sem_t m, az_uint64_t tmo_ns)
+az_r_t  az_sem_timedwait(az_ion_id_t id, az_uint64_t tmo_ns)
 {
   az_r_t result = AZ_SUCCESS;
+  az_sem_t m = (az_sem_t)az_ion(id); 
   do {
     az_if_arg_null_break(m, result);
+    az_assert_ion_type(m->ion.type, AZ_ION_TYPE_SEM);
 
     if ((AZ_REFCOUNT_VALUE(&m->ion.refCount)) < 1) {
       result = AZ_ERR(INVALID);
@@ -214,11 +227,13 @@ az_r_t  az_sem_timedwait(az_sem_t m, az_uint64_t tmo_ns)
  * @return 
  * @exception    none
  */
-az_r_t  az_sem_post(az_sem_t m)
+az_r_t  az_sem_post(az_ion_id_t id)
 {
   az_r_t result = AZ_SUCCESS;
+  az_sem_t m = (az_sem_t)az_ion(id); 
   do {
     az_if_arg_null_break(m, result);
+    az_assert_ion_type(m->ion.type, AZ_ION_TYPE_SEM);
 
     if ((AZ_REFCOUNT_VALUE(&m->ion.refCount)) < 1) {
       result = AZ_ERR(INVALID);

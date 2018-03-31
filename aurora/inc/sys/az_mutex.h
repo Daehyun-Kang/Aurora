@@ -56,11 +56,11 @@ typedef az_mutex_entity_t *        az_mutex_t;
 /* inline functions */
 
 /* function prototypes exposed */
-extern az_r_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex);
-extern az_r_t  az_mutex_delete(az_mutex_t mutex);
-extern az_r_t  az_mutex_lock(az_mutex_t mutex);
-extern az_r_t  az_mutex_trylock(az_mutex_t mutex);
-extern az_r_t  az_mutex_unlock(az_mutex_t mutex);
+extern az_ion_id_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex);
+extern az_r_t  az_mutex_delete(az_ion_id_t id);
+extern az_r_t  az_mutex_lock(az_ion_id_t id);
+extern az_r_t  az_mutex_trylock(az_ion_id_t id);
+extern az_r_t  az_mutex_unlock(az_ion_id_t id);
 
 #ifdef __cplusplus
 }

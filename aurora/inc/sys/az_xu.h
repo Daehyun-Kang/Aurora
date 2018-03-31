@@ -56,6 +56,17 @@ extern "C"
 #define AZ_XU_EVENT_THR_STOP        0x00020000
 #define AZ_XU_EVENT_TRZ             0x00040000
 #define AZ_XU_EVENT_EVTBUS          0x00080000
+#define AZ_XU_EVENT_MSG             0x00100000
+
+#if (CONFIG_AZ_XU_MSG_SZ == 64)
+#define AZ_XU_MSG_EXCEPTION         (0x80000000L << 32) 
+#define AZ_XU_MSG_STATECHG          (0x40000000L << 32) 
+#define AZ_XU_MSG_CAT_MASK          (0xffffffffL << 32) 
+#else
+#define AZ_XU_MSG_EXCEPTION         (0x80000000) 
+#define AZ_XU_MSG_STATECHG          (0x40000000) 
+#define AZ_XU_MSG_CAT_MASK          (0xffff0000) 
+#endif
 
 #define AZ_XU_FLAGS_LOG_ERR         0x00000001
 #define AZ_XU_FLAGS_TRACE           0x00000002
@@ -77,6 +88,11 @@ typedef short az_xu_state_t;
 typedef short az_xu_cause_t;
 typedef int   az_xu_flags_t;
 typedef az_sys_event_t  az_xu_event_t;
+#if (CONFIG_AZ_XU_MSG_SZ == 64)
+typedef uint64_t        az_xu_msg_t;
+#else
+typedef uint32_t        az_xu_msg_t;
+#endif
 
 typedef void *az_xu_arg_t;
 typedef void *az_xu_ret_t;
@@ -135,6 +151,11 @@ typedef struct az_xu_entity {
 
   az_rw_lock_t    lock;
   void *excpt_point;
+
+  az_ion_id_t wait_xu_id;
+  az_ring_t   msgq;
+  az_xu_msg_t msgs[CONFIG_AZ_XU_MSG_QUEUE_SZ]; 
+
 } az_xu_entity_t;
 typedef   az_xu_entity_t *  az_xu_t;
 #define   AZ_XU_INVALID     NULL
@@ -150,11 +171,19 @@ typedef   az_xu_entity_t *  az_xu_t;
 /* structured types */
 
 /* macros */
+#define AZ_XU_EVENT_OPT_AND_ALL    AZ_SYS_EVENT_OPT_AND_ALL 
+#define AZ_XU_EVENT_OPT_PRESERVE   AZ_SYS_EVENT_OPT_PRESERVE
+
 #define AZ_XU_IS_STATE_EXCPT(xu) (((xu) == NULL)? 0:((xu)->state & AZ_XU_STATE_EXCPT))
-#define AZ_XU_EXCPT_POINT(xu)  (((xu)==NULL)? NULL:((xu)->excpt_point))
-#define AZ_XU_ON_EXCPT(xu)  AZ_XU_IS_STATE_EXCPT(xu) 
+#define AZ_XU_EXCPT_POINT(xu)   (((xu)==NULL)? NULL:((xu)->excpt_point))
+#define AZ_XU_ON_EXCPT(xu)      AZ_XU_IS_STATE_EXCPT(xu) 
+#define AZ_XU_REPORT_EXCPT()    az_xu_sendMsg(az_xu_self()->wait_xu_id, AZ_XU_MSG_EXCEPTION|az_xu_self()->ion.id)
+
+#define AZ_XU_MSG_CATEGORY(msg)  ((msg) & AZ_XU_MSG_CAT_MASK)
+#define AZ_XU_MSG_GET_ION_ID(msg) (az_ion_id_t)((msg) & 0xffffffff)
 
 /* variabls exposed */
+
 #ifdef  CONFIG_AZ_USE_TLS
 extern AZ_SYS_TLS az_xu_t az_xu;
 extern AZ_SYS_TLS  char   az_xu_prtbuf[CONFIG_AZ_XU_PRTBUF_SZ];
@@ -230,6 +259,8 @@ extern az_r_t az_xu_suspend(az_ion_id_t id);
 extern az_r_t az_xu_resume(az_ion_id_t id);
 extern az_r_t az_xu_sleep(az_int64_t nsec);
 extern az_r_t az_xu_sendEvent(az_ion_id_t id, az_xu_event_t event);
+extern az_r_t az_xu_sendMsg(az_ion_id_t id, az_xu_msg_t msg);
+extern az_r_t az_xu_recvMsg(az_xu_msg_t *msg);
 extern az_r_t az_xu_recvEvent(az_xu_event_t toReceive, az_int8_t options, az_int64_t nsec, az_xu_event_t *pReceived);
 extern az_r_t az_xu_waitEvent(az_xu_event_t toReceive, az_int8_t options, az_int64_t nsec, az_xu_event_t *pReceived);
 extern az_r_t az_xu_regEventHandler(az_ion_id_t id, unsigned int vecno, az_xu_event_handler_t handler, az_xu_arg_t arg); 

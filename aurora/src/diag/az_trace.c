@@ -243,8 +243,10 @@ void __cyg_profile_func_enter(void *func, void *caller)
     info.caller = caller;
 
     send(az_trace_ctrl.write_fd, &info, info.length, 0);
-    //az_sys_eprintf("%u %u\n", info.code, info.length);
-    //write(STDOUT_FILENO, "E0\n", 3);
+    //if (xu_info) {
+    //  az_sys_eprintf("%s %p\n", info.xu_name, info.func);
+      //write(STDOUT_FILENO, "E0\n", 3);
+    //}
   } while (0);
 }
 void __cyg_profile_func_exit(void *func, void *caller)
@@ -279,13 +281,17 @@ void __cyg_profile_func_exit(void *func, void *caller)
     }
     clock_gettime(CLOCK_REALTIME, &info.ts);
     info.code = AZ_TRACE_CODE_FUNC_EXIT;
-    info.length = sizeof(info);
+    //info.length = sizeof(info);
+    info.length = AZ_TRACE_INFO_LEN_DFT;
     info.func = func;
     info.caller = caller;
 
-    send(az_trace_ctrl.write_fd, &info, info.length, 0);
-    //az_sys_eprintf("%u %u\n", info.code, info.length);
-    //write(STDOUT_FILENO, "X0\n", 3);
+    int snt = send(az_trace_ctrl.write_fd, &info, info.length, 0);
+    //if (xu_info) {
+      //az_sys_eprintf("%s %p %d\n", info.xu_name, info.func, snt);
+      //write(STDOUT_FILENO, "E0\n", 3);
+      //az_memdisp(STDOUT_FILENO, &info, info.length, 1, 0, STDIN_FILENO); 
+    //}
   } while (0);
 }
 

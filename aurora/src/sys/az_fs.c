@@ -201,7 +201,7 @@ az_size_t  az_fs_dirSize(char *path)
  * @return 
  * @exception    none
  */
-az_r_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile)
+az_ion_id_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile)
 {
   az_r_t r = AZ_ERR(ARG_NULL);
   az_file_t file;
@@ -243,7 +243,7 @@ az_r_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile)
     *pfile = file;
   } while (0);
 
-  return r;
+  return (r < 0)? (az_ion_id_t)r:(file->ion.id);
 }
 
 /**
@@ -253,9 +253,10 @@ az_r_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile)
  * @return 
  * @exception    none
  */
-az_r_t  az_fs_deleteFile(const az_str_t path, az_file_t file)
+az_r_t  az_fs_deleteFile(const az_str_t path, az_ion_id_t id)
 {
   az_r_t r = AZ_ERR(ARG_NULL);
+  az_file_t file = (az_file_t)az_ion(id);
   do {
     if (NULL != path && NULL == file) {
       r = az_sys_fs_delete(path);
@@ -268,7 +269,7 @@ az_r_t  az_fs_deleteFile(const az_str_t path, az_file_t file)
       r = AZ_ERR(AGAIN);
       break;
     }
-    if (az_refcount_atomic_dec(&file->ion.refCount) > 0) {
+    if (az_ion_deregister(&file->ion.refCount) > 0) {
       r = AZ_ERR(BUSY);
       break;
     }
@@ -294,7 +295,7 @@ az_r_t  az_fs_deleteFile(const az_str_t path, az_file_t file)
  * @return 
  * @exception    none
  */
-az_r_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *pfile)
+az_ion_id_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *pfile)
 {
   az_r_t r = AZ_ERR(ARG_NULL);
   az_file_t file;
@@ -308,7 +309,7 @@ az_r_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *pfile
         r = AZ_ERR(ALLOC);
         break;
       }
-      az_refcount_init_dynamic(&file->ion.refCount);
+      az_ion_invalidate(&file->ion, 0);
     }
 
     az_sys_file_t sys_file;
@@ -335,7 +336,7 @@ az_r_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *pfile
   } while (0);
 
   *pfile = file;
-  return r;
+  return (r < 0)? (az_ion_id_t)r:file->ion.id;
 }
 
 /**
@@ -345,20 +346,26 @@ az_r_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *pfile
  * @return 
  * @exception    none
  */
-az_r_t  az_fs_closeFile(az_file_t file)
+az_r_t  az_fs_closeFile(az_ion_id_t id)
 {
   az_r_t r = AZ_ERR(ARG_NULL);
+  az_file_t file = (az_file_t)az_ion(id);
   do {
-    if (NULL != file) break;
+    if (NULL != file) {
+      r = AZ_ERR(ENTITY_NULL);
+      break;
+    }
     if (AZ_SYS_FILE_INVALID == file->ion.id) {
       r = AZ_ERR(INVALID);
       break;
     }
-    if (az_refcount_atomic_dec(&file->ion.refCount) <= 0) {
+    az_assert_ion_type(file->ion.type, AZ_ION_TYPE_FILE);
+
+    if (AZ_REFCOUNT_VALUE(&file->ion.refCount) == 0) {
       r = AZ_ERR(AGAIN);
       break;
     }
-    if (AZ_REFCOUNT_VALUE(&file->ion.refCount) != 0) {
+    if (az_ion_deregister(&file->ion) > 0) {
       r = AZ_ERR(BUSY);
       break;
     }
@@ -393,9 +400,10 @@ az_bool_t  az_fs_exist(const az_str_t path)
  * @return 
  * @exception    none
  */
-az_size_t  az_fs_fileSize(const az_str_t path, az_file_t file)
+az_size_t  az_fs_fileSize(const az_str_t path, az_ion_id_t id)
 {
-  az_size_t size;
+  az_size_t size = -1;
+  az_file_t file = (az_file_t)az_ion(id);
   if (NULL != path) {
     size =  az_sys_fs_size(path);
   }
@@ -413,11 +421,15 @@ az_size_t  az_fs_fileSize(const az_str_t path, az_file_t file)
  * @return 
  * @exception    none
  */
-az_size_t  az_fs_readFile(az_file_t file, az_uint8_t *bp, az_size_t size)
+az_size_t  az_fs_readFile(az_ion_id_t id, az_uint8_t *bp, az_size_t size)
 {
   az_size_t result = (az_size_t)AZ_ERR(ARG_NULL);
-  az_assert(NULL != file);
+  az_file_t file = (az_file_t)az_ion(id);
   do {
+    if (NULL != file) {
+      result = AZ_ERR(ENTITY_NULL);
+      break;
+    }
     if (AZ_REFCOUNT_VALUE(&file->ion.refCount) == 0) {
       result = (az_size_t)AZ_ERR(INVALID);
       break;
@@ -435,11 +447,15 @@ az_size_t  az_fs_readFile(az_file_t file, az_uint8_t *bp, az_size_t size)
  * @return 
  * @exception    none
  */
-az_size_t  az_fs_writeFile(az_file_t file, az_uint8_t *bp, az_size_t size)
+az_size_t  az_fs_writeFile(az_ion_id_t id, az_uint8_t *bp, az_size_t size)
 {
   az_size_t result = (az_size_t)AZ_ERR(ARG_NULL);
-  az_assert(NULL != file);
+  az_file_t file = (az_file_t)az_ion(id);
   do {
+    if (NULL != file) {
+      result = AZ_ERR(ENTITY_NULL);
+      break;
+    }
     if (AZ_REFCOUNT_VALUE(&file->ion.refCount) == 0) {
       result = (az_size_t)AZ_ERR(INVALID);
       break;
@@ -457,11 +473,15 @@ az_size_t  az_fs_writeFile(az_file_t file, az_uint8_t *bp, az_size_t size)
  * @return 
  * @exception    none
  */
-az_size_t  az_fs_lseekFile(az_file_t file, az_pos_t offset, int whence)
+az_size_t  az_fs_lseekFile(az_ion_id_t id, az_pos_t offset, int whence)
 {
   az_size_t result = (az_size_t)AZ_ERR(ARG_NULL);
-  az_assert(NULL != file);
+  az_file_t file = (az_file_t)az_ion(id);
   do {
+    if (NULL != file) {
+      result = AZ_ERR(ENTITY_NULL);
+      break;
+    }
     if (AZ_REFCOUNT_VALUE(&file->ion.refCount) == 0) {
       result = (az_size_t)AZ_ERR(INVALID);
       break;
@@ -478,8 +498,9 @@ az_size_t  az_fs_lseekFile(az_file_t file, az_pos_t offset, int whence)
  * @return 
  * @exception    none
  */
-az_r_t  az_fs_truncate(const az_str_t path, az_file_t file, az_size_t size)
+az_r_t  az_fs_truncate(const az_str_t path, az_ion_id_t id, az_size_t size)
 {
+  az_file_t file = (az_file_t)az_ion(id);
   do {
     if (NULL != path && NULL == file) {
       size =  az_sys_fs_truncate(path, size);

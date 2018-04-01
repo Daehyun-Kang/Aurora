@@ -31,7 +31,7 @@ typedef time_t                    az_sys_time_t;
 typedef struct timespec          az_sys_timespec_t;
 typedef struct tm                az_sys_datetime_t;
 
-static inline az_sys_datetime_t *az_sys_localtime(az_sys_time_t *t)
+static inline az_sys_datetime_t * az_attr_no_instrument az_sys_localtime(az_sys_time_t *t)
 {
   return localtime(t);
 }
@@ -114,7 +114,7 @@ typedef az_sys_shm_entity_t*   az_sys_shm_t;
  */
 #ifndef AZ_LINUX_FUTEX_DEFINED
 #define AZ_LINUX_FUTEX_DEFINED    1
-static inline int futex(int *uaddr, int futex_op, int val,
+static inline int az_attr_no_instrument futex(int *uaddr, int futex_op, int val,
     const struct timespec *timeout, int *uaddr2, int val3)
 {
   return syscall(SYS_futex, uaddr, futex_op, val, timeout, uaddr2, val3);

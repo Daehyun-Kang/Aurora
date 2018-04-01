@@ -222,8 +222,16 @@ int main(int argc, char *argv[])
 
   //setvbuf(stdout, NULL, _IONBF, 0);
   //setvbuf(stdin, NULL, _IONBF, 0);
+  
+  extern int az_core_check_preload();
 
-  //az_rstdio_begin();
+  #ifdef  CONFIG_AZ_TRACE
+  az_core_check_preload();
+  #endif
+
+  #ifdef  CONFIG_AZ_RSTDIO_ENABLED
+  az_rstdio_begin();
+  #endif
 
   az_core_init();
 

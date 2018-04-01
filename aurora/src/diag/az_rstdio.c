@@ -39,8 +39,8 @@ az_rstdio_ctrl_t az_rstdio_ctrl = {
   .read_fd = AZ_SOCK_INVALID,
   .write_fd = AZ_SOCK_INVALID,
   .log_fd = AZ_SYS_FD_INVALID,
-  //.svrIpStr = "127.0.0.1",
-  .svrIpStr = "192.168.9.32", //"127.0.0.1",
+  .svrIpStr = "127.0.0.1",
+  //.svrIpStr = "192.168.9.32", //"127.0.0.1",
   .svrPort = CONFIG_AZ_REMOTE_STDIO_SVR_PORT,
 };
 

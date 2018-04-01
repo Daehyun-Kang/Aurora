@@ -68,6 +68,7 @@ az_file_entity_t az_stdout = {.ion.id = STDOUT_FILENO, .sys_file=STDOUT_FILENO }
 az_file_entity_t az_stdin = {.ion.id = STDIN_FILENO, .sys_file=STDIN_FILENO };
 az_file_entity_t az_stderr = {.ion.id = STDERR_FILENO, .sys_file = STDERR_FILENO};
 
+int az_core_preload_done = 0;
 
 int az_core_preload() 
 {
@@ -101,16 +102,27 @@ int az_core_preload()
 
   az_core_init();
 
+  az_core_preload_done = 1;
+
   return r;
 }
+
 void az_core_postload() 
 {
   #ifdef  CONFIG_AZ_TRACE
   void  az_trace_end(void);
-  #endif
 
   az_trace_end();
+  #endif
 }
 
+int az_core_check_preload()
+{
+  if (! az_core_preload_done) {
+    return az_core_preload() ;
+  } else {
+    return 1;
+  }
+}
 
 /* === end of AZ_CORE_PRELOAD_C === */

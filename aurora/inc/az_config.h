@@ -122,6 +122,7 @@
 
 #define CONFIG_AZ_TRACE_INICONN         1
 //#undef  CONFIG_AZ_TRACE_INICONN         
+
 #if defined(CONFIG_AZ_TRACE_INICONN)
 #undef  CONFIG_AZ_TRACE_SELF 
 #endif
@@ -138,6 +139,9 @@
 #define CONFIG_AZ_TRACE_PRB_SVR_PORT         55000 
 #define CONFIG_AZ_REMOTE_STDIO_SVR_PORT      59000 
 #define CONFIG_AZ_TRZ_SVR_PORT_BASE          58000 
+
+#define CONFIG_AZ_RSTDIO_ENABLED              1
+//#undef CONFIG_AZ_RSTDIO_ENABLED              
 
 #ifdef  CONFIG_AZ_MALLOC
 #define CONFIG_AZ_MTRACE                1
@@ -179,7 +183,7 @@
 #define  CONFIG_AZ_SYS_LW_USE_MUTEX        1 
 #undef  CONFIG_AZ_SYS_LW_USE_MUTEX     
 
-#define CONFIG_AZ_LOG_LEVEL_DFT           100 // AZ_LOG_LEVEL_INFO
+#define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
 #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
 
 #define CONFIG_AZ_PERF_MEASURE_LOOP_CNT_DFT   100000 //1000000

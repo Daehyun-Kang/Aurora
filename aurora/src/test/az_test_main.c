@@ -80,7 +80,7 @@ az_r_t az_test_parse_options(int argc, char *argv[])
   az_test_frw.frw_build_time = az_build_time;
 
   do {
-    r = (az_r_t)az_options_parse(argc, argv, opt_kv, 4);
+    r = (az_r_t)az_options_parse(argc, argv, opt_kv, 3);
     if (r < 0) break;
 
     az_kv_t *kv = opt_kv;

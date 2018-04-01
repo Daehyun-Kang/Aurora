@@ -389,7 +389,7 @@ az_r_t  az_log_stop_default_thread()
   return r;
 }
 
-az_r_t az_err_log_and_set(const char *f, const char *s, int n, az_r_t err, int level)
+az_r_t az_attr_no_instrument az_err_log_and_set(const char *f, const char *s, int n, az_r_t err, int level)
 {
   if (level > 0) {
     do {

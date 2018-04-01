@@ -247,19 +247,19 @@ extern az_r_t   az_fs_listDir(char *path, az_dirent_t *list, az_size_t listCount
 extern az_r_t   az_fs_findDir(char *path, char *entryname, az_dirent_t *); 
 extern az_size_t   az_fs_dirSize(char *path);
 
-extern az_r_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile);
-extern az_r_t  az_fs_deleteFile(const az_str_t path, az_file_t file);
-extern az_r_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *pfile);
-extern az_r_t  az_fs_closeFile(az_file_t file);
+extern az_ion_id_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile);
+extern az_r_t  az_fs_deleteFile(const az_str_t path, az_ion_id_t id);
+extern az_ion_id_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *pfile);
+extern az_r_t  az_fs_closeFile(az_ion_id_t id);
 
 extern az_bool_t  az_fs_exist(const az_str_t path);
-extern az_size_t  az_fs_fileSize(const az_str_t path, az_file_t file);
+extern az_size_t  az_fs_fileSize(const az_str_t path, az_ion_id_t id);
 
-extern az_size_t  az_fs_readFile(az_file_t file, az_uint8_t *bp, az_size_t size);
-extern az_size_t  az_fs_writeFile(az_file_t file, az_uint8_t *bp, az_size_t size);
-extern az_size_t  az_fs_lseekFile(az_file_t file, az_pos_t offset, int whence);
+extern az_size_t  az_fs_readFile(az_ion_id_t id, az_uint8_t *bp, az_size_t size);
+extern az_size_t  az_fs_writeFile(az_ion_id_t id, az_uint8_t *bp, az_size_t size);
+extern az_size_t  az_fs_lseekFile(az_ion_id_t id, az_pos_t offset, int whence);
 
-extern az_r_t  az_fs_truncate(const az_str_t path, az_file_t file, az_size_t size);
+extern az_r_t  az_fs_truncate(const az_str_t path, az_ion_id_t id, az_size_t size);
 
 extern az_size_t  az_fs_file2mem(const az_str_t path, az_ref_t *pMem);
 

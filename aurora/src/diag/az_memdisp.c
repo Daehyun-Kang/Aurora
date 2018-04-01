@@ -76,6 +76,7 @@ int az_memdisp_row8(char *bp, int blen, void *addr)
   unsigned char *v = (unsigned char *)addr;
   nlen = snprintf(bp, blen, fmt, v[0], v[1], v[2], v[3], v[4], v[5],v[6], v[7]);
   tlen += nlen; bp += nlen; blen -= nlen;
+  if (blen <= 0) return tlen;
   nlen = snprintf(bp, blen, fmt, v[8], v[9], v[10], v[11], v[12],v[13], v[14], v[15]);
   tlen += nlen; bp += nlen; blen -= nlen;
 
@@ -124,6 +125,7 @@ int az_memdisp_row(char *bp, int blen, char *addr, int mode)
 
   nlen = snprintf(bp, blen, "%16p ", (unsigned long)addr);
   tlen += nlen; bp += nlen; blen -= nlen;
+  if (blen <= 0) return tlen;
 
   switch (mode) {
       case 1: f = az_memdisp_row8; break;
@@ -134,11 +136,15 @@ int az_memdisp_row(char *bp, int blen, char *addr, int mode)
   az_assert(NULL != f);
   nlen = (f)(bp, blen, (void *)addr);
   tlen += nlen; bp += nlen; blen -= nlen;
+  if (blen <= 0) return tlen;
 
   nlen = snprintf(bp, blen, "   \"%c%c%c%c%c%c%c%c", A(0), A(1), A(2), A(3), A(4), A(5), A(6), A(7)); 
   tlen += nlen; bp += nlen; blen -= nlen;
+  if (blen <= 0) return tlen;
+
   nlen = snprintf(bp, blen, "%c%c%c%c%c%c%c%c\"",A(8), A(9), A(10), A(11), A(12), A(13), A(14), A(15)); 
   tlen += nlen; bp += nlen; blen -= nlen;
+  if (blen <= 0) return tlen;
 
   return tlen;
 }
@@ -247,9 +253,9 @@ int az_memdisp_row_partial(char *bp, int blen, char *addr, int32_t len, int mode
 
 #undef A(i) 
 
-int az_memdisp(az_sys_fd_t fd, char *addr, int32_t len, int mode, int interfactive, az_sys_fd_t rfd) 
+  static char buf[512]; 
+int az_attr_no_instrument az_memdisp(az_sys_fd_t fd, char *addr, int32_t len, int mode, int interfactive, az_sys_fd_t rfd) 
 { 
-  char buf[128]; 
   int nlen;
   int tlen = 0;
   char ch;

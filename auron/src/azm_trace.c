@@ -44,6 +44,70 @@ azm_trace_ctrl_t azm_trace_ctrl = {
 
 int azm_trace_thread_state = 0;
 az_xu_t azm_trace_thread_default = NULL;
+
+#define AZM_TRACE_FILTER_MAX  16
+struct azm_trace_filter {
+  int   count;
+  char  keyword[AZM_TRACE_FILTER_MAX][CONFIG_AZ_NAME_MAX]; 
+};
+
+struct azm_trace_filter xu_filter = {0}; 
+struct azm_trace_filter func_filter = {0}; 
+
+int azm_trace_filter_matched(char *name, struct azm_trace_filter *filter)
+{
+  int j, k;
+  if (filter->count <= 0) return 0;
+  for (j = 0, k = filter->count; j < AZM_TRACE_FILTER_MAX && k > 0; j++) {
+    if (filter->keyword[j][0] == 0) continue;
+    k--;
+    if (!strcmp(name, filter->keyword[j])) return 1; 
+  }
+  return 0;
+}
+int azm_trace_filter_show(struct azm_trace_filter *filter)
+{
+  int j, k = 0;
+  if (filter->count <= 0) return 1;
+  for (j = 0; j < AZM_TRACE_FILTER_MAX && k < filter->count; j++) {
+    if (filter->keyword[j][0] == 0) continue;
+    k++;
+    if (k % 8 == 0) { 
+      az_cli_printf("%s" AZ_NL, filter->keyword[j]);
+    } else {
+      az_cli_printf("%s" "  ", filter->keyword[j]);
+    }
+  }
+  return 0;
+}
+int azm_trace_filter_add(struct azm_trace_filter *filter, char *name)
+{
+  int j, k = AZM_TRACE_FILTER_MAX - filter->count;
+  if (k <= 0) return 0;
+  for (j = 0; j < AZM_TRACE_FILTER_MAX && k > 0; j++) {
+    if (filter->keyword[j][0] == 0) {
+      strncpy(filter->keyword[j], name, CONFIG_AZ_NAME_MAX);
+      filter->count++;
+      return 1;
+    }
+    k--;
+  }
+  return 0;
+}
+int azm_trace_filter_del(struct azm_trace_filter *filter, char *name)
+{
+  int j, k = 0;
+  if (filter->count <= 0) return 0;
+  for (j = 0; j < AZM_TRACE_FILTER_MAX && k < filter->count; j++) {
+    if (!strcmp(filter->keyword[j], name)) {
+      filter->count--;
+      filter->keyword[j][0] = 0;
+      return 1;
+    }
+    k++;
+  }
+  return 0;
+}
 /* declare static variables */
 
 
@@ -79,19 +143,23 @@ extern int az_attr_no_instrument libtrace_resolve(
  * @return 
  * @exception    none
  */
-int azm_trace_proc_recv(int resolve_symbol)
+int resolve_symbol = 0;
+az_diag_info_t rxinfo;
+static char buf[256];
+int azm_trace_proc_recv(int fd)
 {
   azm_trace_ctrl_t *ctrl = &azm_trace_ctrl; 
   int nlen, tlen, qlen;
-  az_diag_info_t rxinfo;
   az_trace_info_t *info = &rxinfo.trace;
   char  *bp = info;
-  char buf[256];
+  static uint64_t pkts = 0;
 
+  //memset(info,0, sizeof(*info)); 
+  info->length = 0;
   tlen = 0;
   qlen = sizeof(info->code) + sizeof(info->length); 
   do {
-    nlen = read(ctrl->read_fd, bp, qlen - tlen);
+    nlen = recv(ctrl->read_fd, bp, qlen - tlen, 0);
     if (nlen < 0) {
       return AZ_ERR(FAIL);
       break;
@@ -102,34 +170,38 @@ int azm_trace_proc_recv(int resolve_symbol)
     }
   } while (1);
 
-  /*
+  if (0) {
   if (info->code < 0x20) {
     az_sys_eprintf("%u  %u\n", info->code, info->length);
   } else {
     az_sys_eprintf("%c  %u\n", info->code, info->length);
   }
-  */
+  }
 
   qlen = info->length; 
   do {
-    nlen = read(ctrl->read_fd, bp, qlen-tlen);  
+    nlen = recv(ctrl->read_fd, bp, qlen-tlen, 0);  
     if (nlen < 0) {
       return AZ_ERR(FAIL);
       break;
     }
     tlen += nlen; bp += nlen;
-    if (tlen != qlen) {
-      continue;
-    }
+  } while (tlen != qlen);
+  //az_memdisp(STDOUT_FILENO, &info, tlen, 1, 0, STDIN_FILENO);
+
+  nlen = 0;
+    pkts++;
+    char  func_name[AZ_NAME_MAX + 1] = {0};
+    char  file_name[AZ_PATH_MAX + 1] = {0};
     if (info->code < 0x20) {
       az_mchk_info_t *mchk_info = (az_mchk_info_t *)info;
       int lcnt = AZ_MCK_INFO_LIST_SZ(mchk_info->length);
       int j, slen;
       az_ref_t addr, callsite;
       uint32_t size;
-      char  func_name[AZ_NAME_MAX + 1] = {0};
-      char  file_name[AZ_PATH_MAX + 1] = {0};
       if (mchk_info->code == AZ_TRACE_CODE_RPT_MALLOC) {
+        if ((xu_filter.count + func_filter.count) > 0) {
+        } else {
         AZM_MALLOC_STATS()->nTotal = mchk_info->nTotal;
         if (resolve_symbol) {
           for (j = 0; j < lcnt; j++) {
@@ -152,9 +224,11 @@ int azm_trace_proc_recv(int resolve_symbol)
             write(STDOUT_FILENO, buf, slen);
           }
         }
-        break;
-      } 
+        }
+      } else 
       if (mchk_info->code == AZ_TRACE_CODE_RPT_FREE ) {
+        if ((xu_filter.count + func_filter.count) > 0) {
+        } else {
         AZM_MALLOC_STATS()->nTotal = mchk_info->nTotal;
         if (resolve_symbol) {
           for (j = 0; j < lcnt; j++) {
@@ -177,57 +251,67 @@ int azm_trace_proc_recv(int resolve_symbol)
             write(STDOUT_FILENO, buf, slen);
           }
         }
-        break;
-      } 
-
+        }
+      } else 
       if (info->code == AZ_TRACE_CODE_RSP_QUERY) {
         azm_trace_proc_query_rsp(info->query, info->data, sizeof(info->data));
-        break;
-      }
+      } else
       if (info->code == AZ_TRACE_CODE_FILENAME) {
         az_trace_fileinfo_t *fileinfo = (az_trace_fileinfo_t *)info;
         strncpy(ctrl->filepath, fileinfo->filename, sizeof(ctrl->filepath)-1);
-        az_sys_printf("libtrace init for %s\n", ctrl->filepath); 
+        az_printf("libtrace init for %s\n", ctrl->filepath); 
         if (ctrl->filepath[0]) {
           int r = libtrace_init(ctrl->filepath, NULL, NULL);
           if (r < 0) {
-            az_sys_printf("libtrace init fail for %s\n", ctrl->filepath);
+            az_printf("libtrace init fail for %s\n", ctrl->filepath);
             resolve_symbol = 0;
           } else {
-            az_sys_printf("libtrace init ok for %s\n", ctrl->filepath);
+            az_printf("libtrace init ok for %s\n", ctrl->filepath);
             resolve_symbol = 1; 
           }
         }
-      }
-      break;
-    }
-    char *xu_name = (info->xu_name[0])? info->xu_name:"????";
-    if (resolve_symbol) {
-      char  func_name[AZ_NAME_MAX + 1] = {0};
-      char  file_name[AZ_PATH_MAX + 1] = {0};
-      libtrace_resolve(info->func, func_name, AZ_NAME_MAX, NULL, 0);
-      if (ctrl->flags == AZM_TRACE_DISP_LONG_FORMAT) {
-        libtrace_resolve(info->caller, NULL, 0, file_name, AZ_PATH_MAX);
-        nlen = sprintf(buf, "%c %10s:%p [%02d] %lu.%lu %21s %21s\n", 
-            info->code, xu_name, info->xu, info->depth, 
-            info->ts.tv_sec%3600, info->ts.tv_nsec/1000, func_name, file_name); 
       } else {
-        nlen = sprintf(buf, "%c %10s [%02d] %lu.%lu %21s\n", 
-            info->code, xu_name, info->depth, 
-            info->ts.tv_sec%3600, info->ts.tv_nsec/1000, func_name); 
+        az_sys_printf("INVALID CODE: %x\n", info->code);
       }
     } else {
-      nlen = sprintf(buf, "%c %10s:%p [%02d] %p %p %lu.%lu\n", 
-          info->code, xu_name, info->xu, info->depth,
+      char *xu_name = (info->xu_name[0])? info->xu_name:"????";
+      if (resolve_symbol) {
+      char  ok = 0;
+      libtrace_resolve(info->func, func_name, AZ_NAME_MAX, NULL, 0);
+      if ((xu_filter.count + func_filter.count) > 0) {
+        if (azm_trace_filter_matched(xu_name, &xu_filter ) > 0) ok = 1; 
+        if (!ok) {
+        if (azm_trace_filter_matched(func_name, &func_filter ) > 0) ok = 1; 
+        }
+      } else {
+        ok = 1;
+      }
+      if (ok) {
+      if (ctrl->flags == AZM_TRACE_DISP_LONG_FORMAT) {
+        libtrace_resolve(info->caller, NULL, 0, file_name, AZ_PATH_MAX);
+        nlen = sprintf(buf, "%c%ld %10s:%p [%02d] %lu.%lu %21s %21s\n", 
+            info->code, pkts, xu_name, info->xu, info->depth, 
+            info->ts.tv_sec%3600, info->ts.tv_nsec/1000, func_name, file_name); 
+      } else {
+        nlen = sprintf(buf, "%c%ld %10s [%02d] %lu.%lu %p:%21s\n", 
+            info->code, pkts, xu_name, info->depth, 
+            info->ts.tv_sec%3600, info->ts.tv_nsec/1000, info->func, func_name); 
+      }
+      }
+    } else {
+      if (azm_trace_filter_matched(xu_name, &xu_filter )) { 
+      nlen = sprintf(buf, "%c%ld %10s:%p [%02d] %p %p %lu.%lu\n", 
+          info->code, pkts, xu_name, info->xu, info->depth,
           info->func, info->caller, info->ts.tv_sec, info->ts.tv_nsec); 
+      }
     }
-    //buf[nlen] = 0;
-    //printf("%s", buf);
-    write(STDOUT_FILENO, buf, nlen);
-    break;
-  } while (1);
+    if (nlen > 0) {
+      write(STDOUT_FILENO, buf, nlen);
+      if (fd > 0) write(fd, buf, nlen);
+    }
+    }
 
-  return resolve_symbol;
+  return nlen;
 }
 /**
  * @fn 
@@ -241,22 +325,22 @@ int azm_trace_proc_default(void *arg)
   azm_trace_ctrl_t *ctrl = &azm_trace_ctrl; 
   az_trace_info_t info;
   int r;
-  int resolve_symbol = 0;
 
-  az_sys_printf("%s start...\n", __FUNCTION__);
+  az_printf("%s start...\n", __FUNCTION__);
 
   az_sys_xu_open_iomux();
 
   if (ctrl->filepath[0]) {
     r = libtrace_init(ctrl->filepath, NULL, NULL);
     if (r < 0) {
-      az_sys_printf("libtrace init fail for %s\n", ctrl->filepath);
+      az_printf("libtrace init fail for %s\n", ctrl->filepath);
       resolve_symbol = 0;
     } else {
-      az_sys_printf("libtrace init ok for %s\n", ctrl->filepath);
+      az_printf("libtrace init ok for %s\n", ctrl->filepath);
       resolve_symbol = 1;
     }
   }
+  int fd = open("/tmp/xxx", O_RDWR|O_CREAT|O_CLOEXEC, 0666);  
   
   if (ctrl->state == AZ_TRACE_STATE_IDLE) {
     az_sys_socket_t cliSock;
@@ -292,7 +376,10 @@ int azm_trace_proc_default(void *arg)
       if (ioevt.events & AZ_SYS_IO_HUP) {
         break;
       }
-      resolve_symbol =  azm_trace_proc_recv(resolve_symbol);
+      //do {
+        r =  azm_trace_proc_recv(fd);
+      //} while (r >= 0);
+
     }
     if (r == 0) {
       //az_sys_eprintf("timeout: %ld\n", count++);
@@ -306,6 +393,7 @@ int azm_trace_proc_default(void *arg)
       break;
     }
   }
+  if (fd > 0) close(fd);
 
   ctrl->filepath[0] = 0;
 
@@ -328,7 +416,7 @@ int azm_trace_proc_default(void *arg)
   ctrl->state &= ~AZ_TRACE_STATE_BUSY;
   azm_trace_thread_state = 0;
 
-  az_sys_printf("%s end...\n", __FUNCTION__);
+  az_printf("%s end...\n", __FUNCTION__);
   fflush(stdout);
 
   return r;
@@ -461,7 +549,7 @@ int azm_trace_enable_remote(int onoff)
     info.depth = (short)onoff;
     send(ctrl->write_fd, &info, sizeof(info), 0);
   } else {
-    az_printf("remote target not connected\n");
+    az_printf("%s", "remote target not connected\n");
     r = AZ_FAIL;
   }
   return r;
@@ -489,7 +577,7 @@ int azm_trace_send_query_cmd(short query, char *data, int datalen)
     }
     send(ctrl->write_fd, &info, sizeof(info), 0);
   } else {
-    az_printf("remote target not connected\n");
+    //az_sys_printf("%s", "remote target not connected\n");
     r = AZ_FAIL;
   }
   return r;
@@ -636,6 +724,37 @@ int azm_trace_cli_cmd(int argc, char *argv[])
       }
       break;
     }
+    if (!strcmp(argv[1], "f")) { 
+      if (argc < 3) {
+        if (azm_trace_filter_show(&xu_filter)) {
+          az_cli_printf("no xu filters\n");
+        }
+        if (azm_trace_filter_show(&func_filter)) {
+          az_cli_printf("no function filters\n");
+        }
+        az_cli_printf("usage: %s %s [xa/xd/fa/fd] [name]\n", argv[0], argv[1]);
+      } else if (argc == 4) {
+        if (argv[2][0] == 'x') {
+          if (argv[2][1] == 'a') {
+            if (azm_trace_filter_add(&xu_filter, argv[3])) {
+              az_cli_printf("add %s success\n", argv[3]);
+            } else {
+              az_cli_printf("add %s fail\n", argv[3]);
+            }
+          } else if (argv[2][1] == 'd') {
+            azm_trace_filter_del(&xu_filter, argv[3]);
+          }
+        } else 
+        if (argv[2][0] == 'f') {
+          if (argv[2][1] == 'a') {
+            azm_trace_filter_add(&func_filter, argv[3]);
+          } else if (argv[2][1] == 'd') {
+            azm_trace_filter_del(&func_filter, argv[3]);
+          }
+        }
+      }
+      break;
+    }
     int onoff = strtol(argv[1], NULL, 10);
     if (onoff == 1 || onoff == 0) {
       if (argc < 3) {
@@ -661,7 +780,7 @@ int azm_trace_cli_cmd(int argc, char *argv[])
 int azm_trace_init()
 {
   int r;
-  az_cli_cmd_reg("rt", azm_trace_cli_cmd, "rtrace [s/t/0/1/q] [thread/cliport]\t\t\t; remote trace control", 0);
+  az_cli_cmd_reg("rt", azm_trace_cli_cmd, "rtrace [s/t/0/1/q/f] [thread/cliport]\t\t\t; remote trace control", 0);
 
   azm_mcheck_init();
 
@@ -683,6 +802,8 @@ int azm_trace_deinit()
   r = azm_trace_stop();
   return r;
 }
+#if 0
+#endif
 #endif // __GNUC__
 
 /* === end of AZM_TRACE_C === */

@@ -1,8 +1,8 @@
-04:34:02 **** Build of configuration Debug for project aurot ****
+16:32:51 **** Build of configuration Release for project aurot ****
 make all 
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_tc_abc.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/ut/az_tc_abc.d" -MT"Sources/ut/az_tc_abc.o" -o "Sources/ut/az_tc_abc.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_tc_abc.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_abc.d" -MT"Sources/ut/az_tc_abc.o" -o "Sources/ut/az_tc_abc.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -14,6 +14,34 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
        wlen = sendfile(dst, src, &offset, 4096);
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h: In function ‘az_sys_mutex_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:66:28: note: in expansion of macro ‘az_malloc’
+     m = (pthread_mutex_t *)az_malloc(sizeof(pthread_mutex_t));
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h: In function ‘az_sys_sem_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h:67:18: note: in expansion of macro ‘az_malloc’
+     m = (sem_t *)az_malloc(sizeof(sem_t));
+                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -29,6 +57,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:120:28: note: in expansion of macro ‘az_malloc’
+       az_symtab = symtab = az_malloc(nsize);
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -40,6 +86,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
          name = symtab[i]->name;
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h: In function ‘az_probe_register’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:73:9: note: in expansion of macro ‘az_malloc’
+     p = az_malloc(sizeof(az_probe_t));
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
@@ -48,6 +112,43 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
 /home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
      outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
                    ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_index.h: In function ‘az_index_pool_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_index.h:238:26: note: in expansion of macro ‘az_malloc’
+     list = pool->_list = az_malloc(size * pool->index_unit_size);
+                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:181:14: note: in expansion of macro ‘az_malloc’
+     pArray = az_malloc(sizeof(az_array_t));
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:194:14: note: in expansion of macro ‘az_malloc’
+       list = az_malloc(size * element_size);
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
@@ -56,6 +157,44 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
 /home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
      az_array_est_element32_at(pArray, id, e);
      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:162:11: note: in expansion of macro ‘az_malloc’
+       e = az_malloc(sizeof(az_xml_element_t));
+           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h: In function ‘az_fs_allocateFile’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h:86:20: note: in expansion of macro ‘az_malloc’
+   az_file_t file = az_malloc(sizeof(az_file_entity_t));
+                    ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c: In function ‘az_tc_init_abc’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:57:68: note: in expansion of macro ‘az_malloc’
+     az_tc_testvector_array_abc = (struct az_tc_testvector_st_abc *)az_malloc(AZ_TC_TV_SZ(pTC, az_tc_tv_abc_t));
+                                                                    ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -63,7 +202,6 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c: In function ‘az_tc_init_abc’:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘az_r_t {aka long int}’ [-Wformat=]
  #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
                               ^
@@ -365,52 +503,11 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
 /home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
  static void az_ion_invalidate(az_ion_t *ion, int is_static)
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c: In function ‘az_sys_dllib_findBfdSymbol’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
-   asymbol **symtab;
-             ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
-   az_size_t nsize, nsyms, i;
-                    ^
 Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_tc_report_excpt.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/ut/az_tc_report_excpt.d" -MT"Sources/ut/az_tc_report_excpt.o" -o "Sources/ut/az_tc_report_excpt.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_tc_report_excpt.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_report_excpt.d" -MT"Sources/ut/az_tc_report_excpt.o" -o "Sources/ut/az_tc_report_excpt.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -422,6 +519,34 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
        wlen = sendfile(dst, src, &offset, 4096);
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h: In function ‘az_sys_mutex_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:66:28: note: in expansion of macro ‘az_malloc’
+     m = (pthread_mutex_t *)az_malloc(sizeof(pthread_mutex_t));
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h: In function ‘az_sys_sem_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h:67:18: note: in expansion of macro ‘az_malloc’
+     m = (sem_t *)az_malloc(sizeof(sem_t));
+                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -437,6 +562,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:120:28: note: in expansion of macro ‘az_malloc’
+       az_symtab = symtab = az_malloc(nsize);
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -448,6 +591,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
          name = symtab[i]->name;
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:22:
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h: In function ‘az_probe_register’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:73:9: note: in expansion of macro ‘az_malloc’
+     p = az_malloc(sizeof(az_probe_t));
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
@@ -456,6 +617,43 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
 /home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
      outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
                    ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_index.h: In function ‘az_index_pool_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_index.h:238:26: note: in expansion of macro ‘az_malloc’
+     list = pool->_list = az_malloc(size * pool->index_unit_size);
+                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:181:14: note: in expansion of macro ‘az_malloc’
+     pArray = az_malloc(sizeof(az_array_t));
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:194:14: note: in expansion of macro ‘az_malloc’
+       list = az_malloc(size * element_size);
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
@@ -464,6 +662,44 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
 /home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
      az_array_est_element32_at(pArray, id, e);
      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:162:11: note: in expansion of macro ‘az_malloc’
+       e = az_malloc(sizeof(az_xml_element_t));
+           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h: In function ‘az_fs_allocateFile’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h:86:20: note: in expansion of macro ‘az_malloc’
+   az_file_t file = az_malloc(sizeof(az_file_entity_t));
+                    ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c: In function ‘az_tc_init_report_excpt’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:57:86: note: in expansion of macro ‘az_malloc’
+     az_tc_testvector_array_report_excpt = (struct az_tc_testvector_st_report_excpt *)az_malloc(AZ_TC_TV_SZ(pTC, az_tc_tv_report_excpt_t));
+                                                                                      ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c: In function ‘az_tc_prolog_report_excpt’:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:107:44: warning: unused variable ‘tv’ [-Wunused-variable]
    struct az_tc_testvector_st_report_excpt *tv = AZ_TC_ITER_GET_TV(iter, az_tc_tv_report_excpt_t);
@@ -602,52 +838,11 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
 /home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
  static void az_ion_invalidate(az_ion_t *ion, int is_static)
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:22:
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c: In function ‘az_sys_dllib_findBfdSymbol’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
-   asymbol **symtab;
-             ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
-   az_size_t nsize, nsyms, i;
-                    ^
 Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_tc_rw_lock.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/ut/az_tc_rw_lock.d" -MT"Sources/ut/az_tc_rw_lock.o" -o "Sources/ut/az_tc_rw_lock.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_tc_rw_lock.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_rw_lock.d" -MT"Sources/ut/az_tc_rw_lock.o" -o "Sources/ut/az_tc_rw_lock.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -659,6 +854,34 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
        wlen = sendfile(dst, src, &offset, 4096);
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h: In function ‘az_sys_mutex_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:66:28: note: in expansion of macro ‘az_malloc’
+     m = (pthread_mutex_t *)az_malloc(sizeof(pthread_mutex_t));
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h: In function ‘az_sys_sem_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h:67:18: note: in expansion of macro ‘az_malloc’
+     m = (sem_t *)az_malloc(sizeof(sem_t));
+                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -674,6 +897,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:120:28: note: in expansion of macro ‘az_malloc’
+       az_symtab = symtab = az_malloc(nsize);
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -685,6 +926,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
          name = symtab[i]->name;
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h: In function ‘az_probe_register’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:73:9: note: in expansion of macro ‘az_malloc’
+     p = az_malloc(sizeof(az_probe_t));
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
@@ -693,6 +952,43 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
 /home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
      outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
                    ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_index.h: In function ‘az_index_pool_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_index.h:238:26: note: in expansion of macro ‘az_malloc’
+     list = pool->_list = az_malloc(size * pool->index_unit_size);
+                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:181:14: note: in expansion of macro ‘az_malloc’
+     pArray = az_malloc(sizeof(az_array_t));
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:194:14: note: in expansion of macro ‘az_malloc’
+       list = az_malloc(size * element_size);
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
@@ -701,6 +997,44 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
 /home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
      az_array_est_element32_at(pArray, id, e);
      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:162:11: note: in expansion of macro ‘az_malloc’
+       e = az_malloc(sizeof(az_xml_element_t));
+           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h: In function ‘az_fs_allocateFile’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h:86:20: note: in expansion of macro ‘az_malloc’
+   az_file_t file = az_malloc(sizeof(az_file_entity_t));
+                    ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c: In function ‘az_tc_init_rw_lock’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:94:76: note: in expansion of macro ‘az_malloc’
+     az_tc_testvector_array_rw_lock = (struct az_tc_testvector_st_rw_lock *)az_malloc(AZ_TC_TV_SZ(pTC, az_tc_tv_rw_lock_t));
+                                                                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -949,52 +1283,11 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
 /home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
  static void az_ion_invalidate(az_ion_t *ion, int is_static)
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c: In function ‘az_sys_dllib_findBfdSymbol’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
-   asymbol **symtab;
-             ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
-   az_size_t nsize, nsyms, i;
-                    ^
 Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_tc_segv_handle.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/ut/az_tc_segv_handle.d" -MT"Sources/ut/az_tc_segv_handle.o" -o "Sources/ut/az_tc_segv_handle.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_tc_segv_handle.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_segv_handle.d" -MT"Sources/ut/az_tc_segv_handle.o" -o "Sources/ut/az_tc_segv_handle.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1006,6 +1299,34 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
        wlen = sendfile(dst, src, &offset, 4096);
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h: In function ‘az_sys_mutex_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:66:28: note: in expansion of macro ‘az_malloc’
+     m = (pthread_mutex_t *)az_malloc(sizeof(pthread_mutex_t));
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h: In function ‘az_sys_sem_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h:67:18: note: in expansion of macro ‘az_malloc’
+     m = (sem_t *)az_malloc(sizeof(sem_t));
+                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1021,6 +1342,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:120:28: note: in expansion of macro ‘az_malloc’
+       az_symtab = symtab = az_malloc(nsize);
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1032,6 +1371,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
          name = symtab[i]->name;
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:22:
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h: In function ‘az_probe_register’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:73:9: note: in expansion of macro ‘az_malloc’
+     p = az_malloc(sizeof(az_probe_t));
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
@@ -1040,6 +1397,43 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
 /home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
      outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
                    ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_index.h: In function ‘az_index_pool_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_index.h:238:26: note: in expansion of macro ‘az_malloc’
+     list = pool->_list = az_malloc(size * pool->index_unit_size);
+                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:181:14: note: in expansion of macro ‘az_malloc’
+     pArray = az_malloc(sizeof(az_array_t));
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:194:14: note: in expansion of macro ‘az_malloc’
+       list = az_malloc(size * element_size);
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
@@ -1048,6 +1442,44 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
 /home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
      az_array_est_element32_at(pArray, id, e);
      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:162:11: note: in expansion of macro ‘az_malloc’
+       e = az_malloc(sizeof(az_xml_element_t));
+           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h: In function ‘az_fs_allocateFile’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h:86:20: note: in expansion of macro ‘az_malloc’
+   az_file_t file = az_malloc(sizeof(az_file_entity_t));
+                    ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c: In function ‘az_tc_init_segv_handle’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:57:84: note: in expansion of macro ‘az_malloc’
+     az_tc_testvector_array_segv_handle = (struct az_tc_testvector_st_segv_handle *)az_malloc(AZ_TC_TV_SZ(pTC, az_tc_tv_segv_handle_t));
+                                                                                    ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c: In function ‘az_tc_prolog_segv_handle’:
 /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:107:43: warning: unused variable ‘tv’ [-Wunused-variable]
    struct az_tc_testvector_st_segv_handle *tv = AZ_TC_ITER_GET_TV(iter, az_tc_tv_segv_handle_t);
@@ -1157,52 +1589,11 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
 /home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
  static void az_ion_invalidate(az_ion_t *ion, int is_static)
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:22:
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c: In function ‘az_sys_dllib_findBfdSymbol’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
-   asymbol **symtab;
-             ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
-   az_size_t nsize, nsyms, i;
-                    ^
 Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_unitTest.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/ut/az_unitTest.d" -MT"Sources/ut/az_unitTest.o" -o "Sources/ut/az_unitTest.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_unitTest.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_unitTest.d" -MT"Sources/ut/az_unitTest.o" -o "Sources/ut/az_unitTest.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1213,6 +1604,33 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
        wlen = sendfile(dst, src, &offset, 4096);
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h: In function ‘az_sys_mutex_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:66:28: note: in expansion of macro ‘az_malloc’
+     m = (pthread_mutex_t *)az_malloc(sizeof(pthread_mutex_t));
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h: In function ‘az_sys_sem_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h:67:18: note: in expansion of macro ‘az_malloc’
+     m = (sem_t *)az_malloc(sizeof(sem_t));
+                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1227,6 +1645,23 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:120:28: note: in expansion of macro ‘az_malloc’
+       az_symtab = symtab = az_malloc(nsize);
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1237,6 +1672,23 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
          name = symtab[i]->name;
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h: In function ‘az_probe_register’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:73:9: note: in expansion of macro ‘az_malloc’
+     p = az_malloc(sizeof(az_probe_t));
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
@@ -1244,6 +1696,42 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
 /home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
      outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
                    ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_index.h: In function ‘az_index_pool_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_index.h:238:26: note: in expansion of macro ‘az_malloc’
+     list = pool->_list = az_malloc(size * pool->index_unit_size);
+                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:181:14: note: in expansion of macro ‘az_malloc’
+     pArray = az_malloc(sizeof(az_array_t));
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:194:14: note: in expansion of macro ‘az_malloc’
+       list = az_malloc(size * element_size);
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
@@ -1251,6 +1739,33 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
 /home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
      az_array_est_element32_at(pArray, id, e);
      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:162:11: note: in expansion of macro ‘az_malloc’
+       e = az_malloc(sizeof(az_xml_element_t));
+           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h: In function ‘az_fs_allocateFile’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h:86:20: note: in expansion of macro ‘az_malloc’
+   az_file_t file = az_malloc(sizeof(az_file_entity_t));
+                    ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1267,48 +1782,11 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
 /home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
  static void az_ion_invalidate(az_ion_t *ion, int is_static)
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
-/home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c: In function ‘az_sys_dllib_findBfdSymbol’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
-   asymbol **symtab;
-             ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
-   az_size_t nsize, nsyms, i;
-                    ^
 Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_pt_az_log_printf.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/pt/az_pt_az_log_printf.d" -MT"Sources/pt/az_pt_az_log_printf.o" -o "Sources/pt/az_pt_az_log_printf.o" "/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_pt_az_log_printf.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/pt/az_pt_az_log_printf.d" -MT"Sources/pt/az_pt_az_log_printf.o" -o "Sources/pt/az_pt_az_log_printf.o" "/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1320,6 +1798,34 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
        wlen = sendfile(dst, src, &offset, 4096);
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h: In function ‘az_sys_mutex_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:66:28: note: in expansion of macro ‘az_malloc’
+     m = (pthread_mutex_t *)az_malloc(sizeof(pthread_mutex_t));
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h: In function ‘az_sys_sem_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h:67:18: note: in expansion of macro ‘az_malloc’
+     m = (sem_t *)az_malloc(sizeof(sem_t));
+                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1335,6 +1841,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:120:28: note: in expansion of macro ‘az_malloc’
+       az_symtab = symtab = az_malloc(nsize);
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1346,6 +1870,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
          name = symtab[i]->name;
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:22:
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h: In function ‘az_probe_register’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:73:9: note: in expansion of macro ‘az_malloc’
+     p = az_malloc(sizeof(az_probe_t));
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
@@ -1354,6 +1896,43 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
 /home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
      outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
                    ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_index.h: In function ‘az_index_pool_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_index.h:238:26: note: in expansion of macro ‘az_malloc’
+     list = pool->_list = az_malloc(size * pool->index_unit_size);
+                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:181:14: note: in expansion of macro ‘az_malloc’
+     pArray = az_malloc(sizeof(az_array_t));
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:194:14: note: in expansion of macro ‘az_malloc’
+       list = az_malloc(size * element_size);
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
@@ -1362,6 +1941,44 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
 /home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
      az_array_est_element32_at(pArray, id, e);
      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:162:11: note: in expansion of macro ‘az_malloc’
+       e = az_malloc(sizeof(az_xml_element_t));
+           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h: In function ‘az_fs_allocateFile’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h:86:20: note: in expansion of macro ‘az_malloc’
+   az_file_t file = az_malloc(sizeof(az_file_entity_t));
+                    ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c: In function ‘az_pt_init_az_log_printf’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:57:88: note: in expansion of macro ‘az_malloc’
+     az_pt_testvector_array_az_log_printf = (struct az_pt_testvector_st_az_log_printf *)az_malloc(AZ_TC_TV_SZ(pTC, az_pt_tv_az_log_printf_t));
+                                                                                        ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c: In function ‘az_pt_prolog_az_log_printf’:
 /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:107:45: warning: unused variable ‘tv’ [-Wunused-variable]
    struct az_pt_testvector_st_az_log_printf *tv = AZ_TC_ITER_GET_TV(iter, az_pt_tv_az_log_printf_t);
@@ -1459,52 +2076,11 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
 /home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
  static void az_ion_invalidate(az_ion_t *ion, int is_static)
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:22:
-/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c: In function ‘az_sys_dllib_findBfdSymbol’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
-   asymbol **symtab;
-             ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
-   az_size_t nsize, nsyms, i;
-                    ^
 Finished building: /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_pt_sys_lw_lock.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/pt/az_pt_sys_lw_lock.d" -MT"Sources/pt/az_pt_sys_lw_lock.o" -o "Sources/pt/az_pt_sys_lw_lock.o" "/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_pt_sys_lw_lock.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/pt/az_pt_sys_lw_lock.d" -MT"Sources/pt/az_pt_sys_lw_lock.o" -o "Sources/pt/az_pt_sys_lw_lock.o" "/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1516,6 +2092,34 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
        wlen = sendfile(dst, src, &offset, 4096);
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h: In function ‘az_sys_mutex_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:66:28: note: in expansion of macro ‘az_malloc’
+     m = (pthread_mutex_t *)az_malloc(sizeof(pthread_mutex_t));
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h: In function ‘az_sys_sem_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h:67:18: note: in expansion of macro ‘az_malloc’
+     m = (sem_t *)az_malloc(sizeof(sem_t));
+                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1531,6 +2135,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:120:28: note: in expansion of macro ‘az_malloc’
+       az_symtab = symtab = az_malloc(nsize);
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1542,6 +2164,24 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
          name = symtab[i]->name;
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h: In function ‘az_probe_register’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:73:9: note: in expansion of macro ‘az_malloc’
+     p = az_malloc(sizeof(az_probe_t));
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
@@ -1550,6 +2190,43 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
 /home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
      outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
                    ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_index.h: In function ‘az_index_pool_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_index.h:238:26: note: in expansion of macro ‘az_malloc’
+     list = pool->_list = az_malloc(size * pool->index_unit_size);
+                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:181:14: note: in expansion of macro ‘az_malloc’
+     pArray = az_malloc(sizeof(az_array_t));
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:194:14: note: in expansion of macro ‘az_malloc’
+       list = az_malloc(size * element_size);
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
@@ -1558,11 +2235,56 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
 /home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
      az_array_est_element32_at(pArray, id, e);
      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:162:11: note: in expansion of macro ‘az_malloc’
+       e = az_malloc(sizeof(az_xml_element_t));
+           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h: In function ‘az_fs_allocateFile’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h:86:20: note: in expansion of macro ‘az_malloc’
+   az_file_t file = az_malloc(sizeof(az_file_entity_t));
+                    ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c: In function ‘xu_measure_proc’:
 /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:51:19: warning: variable ‘mtime’ set but not used [-Wunused-but-set-variable]
    uint64_t stime, mtime, etime; 
                    ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:22:
 /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c: In function ‘az_pt_init_sys_lw_lock’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:108:84: note: in expansion of macro ‘az_malloc’
+     az_pt_testvector_array_sys_lw_lock = (struct az_pt_testvector_st_sys_lw_lock *)az_malloc(AZ_TC_TV_SZ(pTC, az_pt_tv_sys_lw_lock_t));
+                                                                                    ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:124:26: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
        if (xe) tv->result = xe->kv.value;
                           ^
@@ -1821,52 +2543,16 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
 /home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
  static void az_ion_invalidate(az_ion_t *ion, int is_static)
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c: In function ‘az_sys_dllib_findBfdSymbol’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
-   asymbol **symtab;
-             ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
-   az_size_t nsize, nsyms, i;
-                    ^
+/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c: In function ‘xu_measure_proc’:
+/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:79:22: warning: ‘etime’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   tv->result = etime - stime;
+                      ^
+/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:79:22: warning: ‘stime’ may be used uninitialized in this function [-Wmaybe-uninitialized]
 Finished building: /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_main.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/aurot/az_main.d" -MT"Sources/aurot/az_main.o" -o "Sources/aurot/az_main.o" "/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_main.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/aurot/az_main.d" -MT"Sources/aurot/az_main.o" -o "Sources/aurot/az_main.o" "/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1877,6 +2563,33 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
        wlen = sendfile(dst, src, &offset, 4096);
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h: In function ‘az_sys_mutex_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:66:28: note: in expansion of macro ‘az_malloc’
+     m = (pthread_mutex_t *)az_malloc(sizeof(pthread_mutex_t));
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h: In function ‘az_sys_sem_create’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_sem.h:67:18: note: in expansion of macro ‘az_malloc’
+     m = (sem_t *)az_malloc(sizeof(sem_t));
+                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1891,6 +2604,23 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:120:28: note: in expansion of macro ‘az_malloc’
+       az_symtab = symtab = az_malloc(nsize);
+                            ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
@@ -1901,6 +2631,23 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
          name = symtab[i]->name;
               ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h: In function ‘az_probe_register’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:73:9: note: in expansion of macro ‘az_malloc’
+     p = az_malloc(sizeof(az_probe_t));
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
@@ -1908,6 +2655,42 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
 /home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
      outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
                    ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_index.h: In function ‘az_index_pool_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_index.h:238:26: note: in expansion of macro ‘az_malloc’
+     list = pool->_list = az_malloc(size * pool->index_unit_size);
+                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:181:14: note: in expansion of macro ‘az_malloc’
+     pArray = az_malloc(sizeof(az_array_t));
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:194:14: note: in expansion of macro ‘az_malloc’
+       list = az_malloc(size * element_size);
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
@@ -1915,6 +2698,33 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
 /home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
      az_array_est_element32_at(pArray, id, e);
      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:78,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_init’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:162:11: note: in expansion of macro ‘az_malloc’
+       e = az_malloc(sizeof(az_xml_element_t));
+           ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h: In function ‘az_fs_allocateFile’:
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:174:42: warning: passing argument 2 of ‘_az_malloc’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
+                                          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_fs.h:86:20: note: in expansion of macro ‘az_malloc’
+   az_file_t file = az_malloc(sizeof(az_file_entity_t));
+                    ^
+/home/dhkang/work/Aurora/aurora/inc/az_malloc.h:175:43: note: expected ‘char *’ but argument is of type ‘const char *’
+ static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
+                                           ^
 /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c: In function ‘az_xu_main_entry’:
 /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:73:10: warning: implicit declaration of function ‘az_test_main’ [-Wimplicit-function-declaration]
    return az_test_main(arg->argc, arg->argv);
@@ -1955,54 +2765,17 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
 /home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
  static void az_ion_invalidate(az_ion_t *ion, int is_static)
              ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
-/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c: In function ‘az_sys_dllib_findBfdSymbol’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
-   asymbol **symtab;
-             ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
-   ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:253:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
-   az_size_t nsize, nsyms, i;
-                    ^
 Finished building: /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c
  
 Building target: aurot
 Invoking: GCC C++ Linker
-g++ -L"/home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Debug/lib" -o "aurot"  ./Sources/ut/az_tc_abc.o ./Sources/ut/az_tc_report_excpt.o ./Sources/ut/az_tc_rw_lock.o ./Sources/ut/az_tc_segv_handle.o ./Sources/ut/az_unitTest.o  ./Sources/pt/az_pt_az_log_printf.o ./Sources/pt/az_pt_sys_lw_lock.o  ./Sources/aurot/az_main.o   -lAurora -lasan -lbfd -ldl -lrt -lstdc++ -lm -lgcc -lpthread
+g++ -L"/home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Release/lib" -o "aurot"  ./Sources/ut/az_tc_abc.o ./Sources/ut/az_tc_report_excpt.o ./Sources/ut/az_tc_rw_lock.o ./Sources/ut/az_tc_segv_handle.o ./Sources/ut/az_unitTest.o  ./Sources/pt/az_pt_az_log_printf.o ./Sources/pt/az_pt_sys_lw_lock.o  ./Sources/aurot/az_main.o   -lAurora -lbfd -ldl -lrt -lstdc++ -lm -lgcc -lpthread
 Finished building target: aurot
  
 make --no-print-directory post-build
 copy exeutable to output location
-cp aurot /home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Debug/bin/; cp aurot /home/dhkang/work/Aurora/bin/linux/
+cp aurot /home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Release/bin/; cp aurot /home/dhkang/work/Aurora/bin/linux/
  
 
-04:34:04 Build Finished (took 2s.167ms)
+16:32:52 Build Finished (took 1s.716ms)
 

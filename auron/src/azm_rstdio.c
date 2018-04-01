@@ -20,12 +20,12 @@
 
 /* include header files */
 #include "aurora.h"
-#include "mon/az_rstdio.h"
+#include "mon/az_trace.h"
 #include "cli/az_cli_api.h"
 #include "net/az_tcpserver.h"
 #include "auron.h"
 #include "azm_mcheck.h"
-#include "azm_rstdio.h"
+#include "azm_trace.h"
 
 typedef azm_trace_ctrl_t  azm_rstdio_ctrl_t;
 
@@ -77,30 +77,33 @@ int azm_rstdio_proc_default(void *arg)
     ctrl->state |= AZ_TRACE_STATE_BUSY;
     azm_rstdio_thread_state = 1;
     az_sys_xu_iomux_add(ctrl->read_fd, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
-    az_sys_xu_iomux_add(STDIN, AZ_SYS_IO_IN);
+    az_sys_xu_iomux_add(STDIN_FILENO, AZ_SYS_IO_IN);
   }
 
   long count = 0;
   az_sys_io_event_t ioevt[2];
+  int j;
   while (azm_rstdio_thread_state) {
     r = az_sys_xu_wait_iomux(ioevt, 2, 3000);
     if (r > 0) {
-      if (ioevt.events & AZ_SYS_IO_HUP) {
-        break;
-      }
-      char  *bp = azm_rstdio_rxbuffer;
-      int qlen = sizeof(azm_rstdio_rxbuffer);
-      int nlen;
-      if (ioevt.data.fd == ctrl->read_fd) { 
-        nlen = read(ctrl->read_fd, bp, qlen); 
-        if (nlen > 0) {
-          write(STDOUT_FILENO, bp, nlen);
+      for(j = 0; j < 2; j++) {
+        if (ioevt[j].events & AZ_SYS_IO_HUP) {
+          break;
         }
-      }
-      if (ioevt.data.fd == STDIN) { 
-        nlen = read(STDIN, bp, qlen); 
-        if (nlen > 0) {
-          write(ctrl->write_fd, bp, nlen);
+        char  *bp = azm_rstdio_rxbuffer;
+        int qlen = sizeof(azm_rstdio_rxbuffer);
+        int nlen;
+        if (ioevt[j].data.fd == ctrl->read_fd) { 
+          nlen = read(ctrl->read_fd, bp, qlen); 
+          if (nlen > 0) {
+            write(STDOUT_FILENO, bp, nlen);
+          }
+        }
+        if (ioevt[j].data.fd == STDIN_FILENO) { 
+          nlen = read(STDIN_FILENO, bp, qlen); 
+          if (nlen > 0) {
+            write(ctrl->write_fd, bp, nlen);
+          }
         }
       }
     }
@@ -110,7 +113,7 @@ int azm_rstdio_proc_default(void *arg)
     }
     if (r < 0) {
       az_sys_xu_iomux_del(ctrl->read_fd);
-     az_sys_xu_iomux_del(STDIN);
+     az_sys_xu_iomux_del(STDIN_FILENO);
       az_sys_socket_delete(ctrl->read_fd);
       ctrl->read_fd = AZ_SOCK_INVALID;
       ctrl->write_fd = AZ_SOCK_INVALID;
@@ -120,7 +123,7 @@ int azm_rstdio_proc_default(void *arg)
 
   if (ctrl->write_fd != AZ_SOCK_INVALID) {
     az_sys_xu_iomux_del(ctrl->read_fd);
-    az_sys_xu_iomux_del(STDIN);
+    az_sys_xu_iomux_del(STDIN_FILENO);
     az_sys_socket_delete(ctrl->write_fd);
     ctrl->read_fd = AZ_SOCK_INVALID;
     ctrl->write_fd = AZ_SOCK_INVALID;
@@ -141,7 +144,7 @@ az_tcpserver_t azm_rstdio_svr = {
   .state = 0,
   .config.name = "rstdioSvr", 
   .config.ipAddrStr = NULL, 
-  .config.port = CONFIG_AZM_REMOTE_STDIO_SVR_PORT,
+  .config.port = CONFIG_AZ_REMOTE_STDIO_SVR_PORT,
   .config.backlog = 16, 
   .config.flags = 0, 
   .sock = AZ_SOCK_INVALID, 
@@ -233,7 +236,7 @@ int azm_rstdio_stop()
   az_tcpserver_t *svr = (az_tcpserver_t *)&azm_rstdio_svr;
   do {
     if (azm_rstdio_thread_state && svr->state & AZ_TCPSERVER_STATE_CLIBUSY) { 
-      r = azm_rstdio_stop_default_thread();
+      azm_rstdio_thread_state = 0;
     }
     r = (svr->oprs->stop)(svr);
     if (r) break;

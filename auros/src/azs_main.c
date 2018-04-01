@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
   r = az_xu_create("main", azs_xu_main_entry, &azs_xu_main_arg, &azs_xu_main_config, &azs_xu_main);
   az_printf("create main xu : %p, result=%ld\n", azs_xu_main, r);
 
-  if (r == AZ_SUCCESS) {
+  if (r >= AZ_SUCCESS) {
     return (int)az_xu_entry(azs_xu_main);
   } else {
     return (int)r;

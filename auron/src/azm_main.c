@@ -74,7 +74,7 @@ void *azm_xu_main_entry(struct azm_xu_main_arg *arg)
   az_assert(NULL != arg);
 
 #ifdef CONFIG_AZ_LOG
-  az_log_start();
+  //az_log_start();
 #endif // CONFIG_AZ_LOG
 
 #ifdef CONFIG_AZ_CLI
@@ -107,9 +107,9 @@ int main(int argc, char *argv[])
 
   azm_rsh_init();
 
-  az_log_dup_stdout_start(); 
+  //az_log_dup_stdout_start(); 
 
-  az_trace_start_default_thread();
+  //az_trace_start_default_thread();
 
   azm_xu_main_arg.argc = argc;
   azm_xu_main_arg.argv = argv;
@@ -117,10 +117,10 @@ int main(int argc, char *argv[])
   r = az_xu_create("main", azm_xu_main_entry, &azm_xu_main_arg, &azm_xu_main_config, &azm_xu_main);
   az_printf("create main xu : %p, result=%ld\n", azm_xu_main, r);
 
-  az_trace_start();
+  //az_trace_start();
 
 
-  if (r == AZ_SUCCESS) {
+  if (r >= AZ_SUCCESS) {
     return (int)az_xu_entry(azm_xu_main);
   } else {
     return (int)r;

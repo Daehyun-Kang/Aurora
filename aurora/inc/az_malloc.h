@@ -170,7 +170,7 @@ static inline void az_attr_no_instrument az_malloc_init()
   }
   */
 }
-#ifdef  _CONFIG_AZ_MTRACE
+#ifdef  CONFIG_AZ_MTRACE
 #define az_malloc(size) _az_malloc(size, __FUNCTION__, __LINE__)
 static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)
 #else

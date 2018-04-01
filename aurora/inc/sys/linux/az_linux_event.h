@@ -240,7 +240,7 @@ static inline az_r_t az_sys_ep_recv(az_sys_ep_t *ep, az_sys_event_t aevents, az_
  * @return 
  * @exception    none
  */
-static inline az_r_t az_sys_ep_wait(az_sys_ep_t *ep, az_int64_t nsec)
+static inline az_r_t az_attr_no_instrument az_sys_ep_wait(az_sys_ep_t *ep, az_int64_t nsec)
 {
   int r = AZ_FAIL;
   struct timespec tmo;

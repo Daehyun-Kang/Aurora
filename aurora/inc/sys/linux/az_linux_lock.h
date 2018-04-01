@@ -85,7 +85,7 @@ static inline az_r_t az_sys_lw_lock_deinit(az_sys_lw_lock_t *p)
   return r;
 }
 
-static inline az_r_t az_sys_lw_lock(az_sys_lw_lock_t *p)
+static inline az_r_t az_attr_no_instrument az_sys_lw_lock(az_sys_lw_lock_t *p)
 {
   az_r_t r = AZ_SUCCESS;
   az_assert(NULL != p);
@@ -98,7 +98,7 @@ static inline az_r_t az_sys_lw_lock(az_sys_lw_lock_t *p)
   return r;
 }
 
-static inline az_r_t az_sys_lw_unlock(az_sys_lw_lock_t *p)
+static inline az_r_t az_attr_no_instrument az_sys_lw_unlock(az_sys_lw_lock_t *p)
 {
   az_r_t r = AZ_SUCCESS;
   az_assert(NULL != p);

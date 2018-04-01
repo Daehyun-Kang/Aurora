@@ -60,7 +60,7 @@ int az_options_parse(int argc, char *argv[], az_kv_t *listOptKV, int nOptKV)
     if (*option++ != '-') continue;
     while (*option) {
       kv = listOptKV;
-      for (k = 0; k < nOptKV; k++) {
+      for (k = 0; k < nOptKV; k++, kv++) {
         if (*option == *(kv->key)) {
           if (kv->value == NULL) {
             if (++j == argc) {

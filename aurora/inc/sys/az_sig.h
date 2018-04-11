@@ -49,7 +49,7 @@ typedef struct az_sighandler_descr {
 typedef struct az_sig_descr {
   int signo;
   az_sigaction_t org_action;
-  az_sighandler_t *handlerlist;
+  az_sighandler_descr_t **descrlist;
 } az_sig_descr_t;
 
 /* macros */
@@ -61,8 +61,9 @@ typedef struct az_sig_descr {
 /* function prototypes exposed */
 extern int  az_sig_initDescr(int sig);
 extern int  az_sig_deinitDescr(int sig);
-extern int  az_sig_regSighandler(az_sighandler_t);
-extern int  az_sig_deregSighandler(az_sighandler_t);
+extern int  az_sig_setSighandlerList(int sig, az_sighandler_descr_t **);
+extern int  az_sig_regSighandler(int sig, az_sighandler_descr_t *);
+extern int  az_sig_deregSighandler(int sig, az_sighandler_descr_t *);
 extern int  az_sig_send(int sig, int dest);
 
 #ifdef __cplusplus

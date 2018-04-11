@@ -3094,6 +3094,21 @@ azm_malloc_stats	../inc/azm_mcheck.h	/^struct azm_malloc_stats {$/;"	s
 azm_malloc_stats	azm_mcheck.c	/^struct azm_malloc_stats azm_malloc_stats;$/;"	v	typeref:struct:azm_malloc_stats
 azm_mcheck_cli_cmd	azm_mcheck.c	/^int azm_mcheck_cli_cmd(int argc, char *argv[])$/;"	f
 azm_mcheck_init	azm_mcheck.c	/^void az_attr_no_instrument azm_mcheck_init()$/;"	f
+azm_probe_ctrl	azm_probe.c	/^az_probe_ctrl_t azm_probe_ctrl = {$/;"	v
+azm_probe_deinit	azm_probe.c	/^int azm_probe_deinit()$/;"	f
+azm_probe_init	azm_probe.c	/^int azm_probe_init()$/;"	f
+azm_probe_proc_default	azm_probe.c	/^int azm_probe_proc_default(void *arg)$/;"	f
+azm_probe_proc_recv	azm_probe.c	/^int azm_probe_proc_recv(int fd)$/;"	f
+azm_probe_start	azm_probe.c	/^int azm_probe_start()$/;"	f
+azm_probe_start_default_thread	azm_probe.c	/^az_r_t  azm_probe_start_default_thread()$/;"	f
+azm_probe_stop	azm_probe.c	/^int azm_probe_stop()$/;"	f
+azm_probe_stop_default_thread	azm_probe.c	/^az_r_t  azm_probe_stop_default_thread()$/;"	f
+azm_probe_svr	azm_probe.c	/^az_tcpserver_t azm_probe_svr = {$/;"	v
+azm_probe_svr_onClientConnection	azm_probe.c	/^int azm_probe_svr_onClientConnection(void *ctx, az_sock_t cliSock, void *cliAddrIn)$/;"	f
+azm_probe_svr_oprs	azm_probe.c	/^struct az_tcpserver_oprs azm_probe_svr_oprs;$/;"	v	typeref:struct:az_tcpserver_oprs
+azm_probe_thread_default	azm_probe.c	/^az_xu_t azm_probe_thread_default = NULL;$/;"	v
+azm_probe_thread_proc_default	azm_probe.c	/^void *azm_probe_thread_proc_default(void *arg)$/;"	f
+azm_probe_thread_state	azm_probe.c	/^int azm_probe_thread_state = 0;$/;"	v
 azm_rsh_cli_cmd	azm_rsh.c	/^int azm_rsh_cli_cmd(int argc, char *argv[])$/;"	f
 azm_rsh_ctrl	../inc/azm_rsh.h	/^typedef struct azm_rsh_ctrl {$/;"	s
 azm_rsh_ctrl	azm_rsh.c	/^azm_rsh_ctrl_t azm_rsh_ctrl = {$/;"	v
@@ -3134,6 +3149,7 @@ azm_trace_init	azm_trace.c	/^int azm_trace_init()$/;"	f
 azm_trace_proc_default	azm_trace.c	/^int azm_trace_proc_default(void *arg)$/;"	f
 azm_trace_proc_query_rsp	azm_trace.c	/^int azm_trace_proc_query_rsp(short query, char *data, int datalen)$/;"	f
 azm_trace_proc_recv	azm_trace.c	/^int azm_trace_proc_recv()$/;"	f
+azm_trace_proc_recv	azm_trace.c	/^int azm_trace_proc_recv(int fd)$/;"	f
 azm_trace_proc_recv	azm_trace.c	/^int azm_trace_proc_recv(int resolve_symbol)$/;"	f
 azm_trace_send_query_cmd	azm_trace.c	/^int azm_trace_send_query_cmd(short query, char *data, int datalen)$/;"	f
 azm_trace_start	azm_trace.c	/^int azm_trace_start()$/;"	f
@@ -3170,6 +3186,8 @@ block_size	../../aurora/inc/az_bio.h	/^  az_size_t   block_size;$/;"	m	struct:__
 block_size	../../aurora/inc/az_iou.h	/^    az_int8_t block_size;$/;"	m	struct:az_iou_config::__anon19
 block_size	../../aurora/inc/az_iou.h	/^    az_int8_t block_size;$/;"	m	struct:az_iou_config::__anon20
 breakpoints	../../aurora/src/diag/az_debug.c	/^az_ref_t  breakpoints[4] = {0};$/;"	v
+buf	azm_probe.c	/^static az_probe_sample_t buf[AZ_PROBE_SAMPLE_SEND_MAX];$/;"	v	file:
+buf	azm_trace.c	/^static char buf[256];$/;"	v	file:
 buffer	../../aurora/inc/az_log.h	/^  az_cirbuffer_t  buffer;$/;"	m	struct:az_log
 buffer	../../aurora/inc/cli/az_cli.h	/^  char  buffer[CONFIG_AZ_CLI_TX_BUFFER_SZ];$/;"	m	struct:az_cli_shell
 buffer_area	../../aurora/inc/az_log.h	/^  uint8_t         *buffer_area;$/;"	m	struct:az_log
@@ -3735,6 +3753,7 @@ rxBytes	../../aurora/inc/az_iou.h	/^  az_usize_t  rxBytes;$/;"	m	struct:az_iou_s
 rxCount	../../aurora/inc/az_iou.h	/^  az_usize_t  rxCount;$/;"	m	struct:az_iou_status
 rxRate	../../aurora/inc/az_iou.h	/^  az_usize_t  rxRate;$/;"	m	struct:az_iou_status
 rxfrwd	../../aurora/inc/cli/az_cli.h	/^  az_cli_port_t   rxfrwd;$/;"	m	struct:az_cli_shell
+rxinfo	azm_trace.c	/^az_diag_info_t rxinfo;$/;"	v
 rxport	../../aurora/inc/cli/az_cli.h	/^  az_cli_port_t   txport, rxport;$/;"	m	struct:az_cli_shell
 s	../../aurora/inc/az_var.h	/^  char*             s;$/;"	m	union:__anon48
 s	../inc/demangle.h	/^      const char *s;$/;"	m	struct:demangle_component::__anon1::__anon2

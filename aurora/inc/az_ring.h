@@ -52,8 +52,8 @@ typedef union {
 
 typedef struct az_ring {
   az_pos_t  push, pop;
-  az_size_t size;
-  az_size_t count;
+  az_uint32_t size;
+  az_uint32_t count;
   az_ring_type_t type;
   az_ref_t  data;
 
@@ -103,7 +103,7 @@ static inline void az_ring_init(az_ring_t *ring, az_ring_type_t type, az_size_t 
 
   az_assert(NULL != ring);
   ring->push = ring->pop = 0;
-  ring->size = size;
+  ring->size = (az_uint32_t)size;
   ring->count = 0;
   ring->type = type;
   ring->data = data;
@@ -163,6 +163,7 @@ static inline void az_ring_init(az_ring_t *ring, az_ring_type_t type, az_size_t 
 static inline void az_ring_deinit(az_ring_t *ring)
 {
   az_assert(NULL != ring);
+  ring->size = 0;
   ring->data = NULL;
 }
 
@@ -425,6 +426,7 @@ static inline az_pos_t az_ring_push64(az_ring_t *ring, az_ref_t pValue)
   az_uint64_t value = *(az_uint64_t *)pValue;
 
   if (0 == az_atomic_compare_and_swap64(dp, 0, value)) {
+    //az_sys_eprintf("push:%ld %lx %lx\n", push, value, *dp);
     ring->push = npush;
     ring->count++;
   } else {
@@ -459,6 +461,7 @@ static inline az_pos_t az_ring_pop64(az_ring_t *ring, az_ref_t pValue)
     oldval = az_atomic_compare_and_swap64(dp, curval, 0);
     if (oldval == curval) {
       *(az_uint64_t *)pValue = oldval;
+      //az_sys_eprintf("pop:%ld %lx\n", pop, oldval);
       ring->pop = npop;
       ring->count--;
     } else{

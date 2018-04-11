@@ -218,9 +218,12 @@ void *az_frw_main()
       break;
     }
     uint32_t tmo_count = 0;
+    AZ_PROBE_INC();
     while (1) {
       received = 0;
+      AZ_PROBE_DEC();
       r = az_xu_recvEvent(AZ_XU_EVENT_EVTBUS, 0, tmo_ns, &received);  
+      AZ_PROBE_INC();
       if (r >= 0 && (received & AZ_XU_EVENT_EVTBUS)) {
         r = az_event_recv(rcvr, &revt);
         if (r >= 0) {

@@ -364,7 +364,7 @@ int azm_trace_proc_default(void *arg)
   if (ctrl->read_fd != AZ_SOCK_INVALID) {
     ctrl->state |= AZ_TRACE_STATE_BUSY;
     azm_trace_thread_state = 1;
-    az_sys_xu_iomux_add(ctrl->read_fd, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
+    az_sys_xu_iomux_add(ctrl->read_fd, AZ_SYS_IO_IN|AZ_SYS_IO_HUP|AZ_SYS_IO_RDHUP);
   }
 
   long count = 0;
@@ -372,14 +372,19 @@ int azm_trace_proc_default(void *arg)
   while (azm_trace_thread_state) {
     r = az_sys_xu_wait_iomux(&ioevt, 1, 3000);
     if (r > 0) {
-      if (ioevt.data.fd != ctrl->read_fd) continue;
-      if (ioevt.events & AZ_SYS_IO_HUP) {
+      if (ioevt.data.fd != ctrl->read_fd) {
+        continue;
+      }
+      if (ioevt.events & (AZ_SYS_IO_HUP|AZ_SYS_IO_RDHUP)) {
+          az_sys_eprintf("disconnected %x\n", ioevt.events);
+          break;
+      }
+      if (ioevt.events & AZ_SYS_IO_IN) {
+        r =  azm_trace_proc_recv(fd);
+      } else {
+        az_sys_eprintf("events %x\n", ioevt.events);
         break;
       }
-      //do {
-        r =  azm_trace_proc_recv(fd);
-      //} while (r >= 0);
-
     }
     if (r == 0) {
       //az_sys_eprintf("timeout: %ld\n", count++);

@@ -23,12 +23,27 @@
 #include "mon/az_probe.h"
 
 /* declare global variables */
-az_pos_t az_probe_size;
-az_pos_t az_probe_count;
-az_probe_ref_t az_probe_last;
-az_probe_t *az_probe_list[];
+az_sys_timespec_t  az_probe_tstamp_base;
+az_ring_t az_probe_samples;
+#ifdef  CONFIG_AZ_PROBE_VAR_SAMPLE_BUFFER
+az_probe_sample_t *az_probe_sample_buffer = NULL;
+uint32_t  az_probe_samples_size = AZ_PROBE_SAMPLES_MAX;
+#else
+az_probe_sample_t az_probe_sample_buffer[AZ_PROBE_SAMPLES_MAX];
+const uint32_t  az_probe_samples_size = AZ_PROBE_SAMPLES_MAX;
+#endif
+
+az_probe_ctrl_t az_probe_ctrl = {
+  .state = AZ_PROBE_STATE_IDLE,
+  .ctrl_sock = AZ_SOCK_INVALID,
+  .data_sock = AZ_SOCK_INVALID,
+  .last_sample = 0,
+  .svrIpStr = "127.0.0.1",
+  .svrPort = CONFIG_AZ_PROBE_SVR_PORT, 
+};
 
 /* declare static variables */
+AZ_SYS_TLS uint8_t az_probe_level = 0;
 
 
 /* implement static functions */
@@ -42,7 +57,6 @@ az_probe_t *az_probe_list[];
  * @exception none
  */
 
-
 /* implement global functions */
 
 /**
@@ -53,6 +67,105 @@ az_probe_t *az_probe_list[];
  * @warning   warnings
  * @exception none
  */
+void  az_probe_init()
+{
+  int r;
+  az_probe_ctrl_t *ctrl = &az_probe_ctrl; 
+  do {
+    clock_gettime(AZ_PROBE_CLOCK_ID, &az_probe_tstamp_base);
+    #ifdef  CONFIG_AZ_PROBE_VAR_SAMPLE_BUFFER
+    az_probe_sample_buffer = (az_probe_sample_t *)az_malloc(az_probe_samples_size);
+    #endif
+    if (!az_probe_sample_buffer) break;
+    az_ring_init(&az_probe_samples, AZ_RING_TYPE_DS64, az_probe_samples_size,
+        az_probe_sample_buffer);
 
+    ctrl->state = AZ_PROBE_STATE_READY|AZ_PROBE_STATE_DSND;
+
+    r = az_inet_openTcpClient(ctrl->svrIpStr, ctrl->svrPort, NULL, 0,
+        &ctrl->ctrl_sock);
+    if (r != AZ_SUCCESS) {
+      az_sys_eprintf("connect ctrl to probe server %s:%u error = %d" AZ_NL,
+          ctrl->svrIpStr, ctrl->svrPort, r);
+      break;
+    }
+    r = az_inet_openTcpClient(ctrl->svrIpStr, ctrl->svrPort, NULL, 0,
+        &ctrl->data_sock);
+    if (r != AZ_SUCCESS) {
+      az_sys_eprintf("connect data to probe server %s:%u error = %d" AZ_NL,
+          ctrl->svrIpStr, ctrl->svrPort, r);
+      break;
+    }
+    az_sys_eprintf("connect to probe server %s:%u OK" AZ_NL,
+          ctrl->svrIpStr, ctrl->svrPort);
+
+  } while (0);
+}
+void  az_probe_deinit()
+{
+  az_probe_ctrl_t *ctrl = &az_probe_ctrl; 
+  do {
+    if (!(ctrl->state & AZ_PROBE_STATE_INIT)) {
+      break;
+    }
+    ctrl->state &= ~AZ_PROBE_STATE_INIT;
+    if (ctrl->data_sock != AZ_SOCK_INVALID) {
+      az_sys_socket_delete(ctrl->data_sock);
+      ctrl->data_sock = AZ_SOCK_INVALID;
+    }
+    if (ctrl->ctrl_sock != AZ_SOCK_INVALID) {
+      az_sys_socket_delete(ctrl->ctrl_sock);
+      ctrl->ctrl_sock = AZ_SOCK_INVALID;
+    }
+    az_ring_deinit(&az_probe_samples);
+    #ifdef  CONFIG_AZ_PROBE_VAR_SAMPLE_BUFFER
+    if (az_probe_sample_buffer) {
+      az_free(az_probe_sample_buffer);
+      az_probe_sample_buffer = NULL;
+    }
+    #endif
+    ctrl->state = AZ_PROBE_STATE_IDLE; 
+  } while (0);
+
+  az_sys_eprintf0("end\n");
+  fflush(stdout);
+}
+
+static az_probe_sample_t az_probe_sendbuffer[sizeof(az_probe_sample_t) * AZ_PROBE_SAMPLE_SEND_MAX];
+
+void az_probe_send()
+{
+  int j;
+  ssize_t sent = 0;
+  for (j = 0; j < AZ_PROBE_SAMPLE_SEND_MAX; j++) {
+    if (AZ_PROBE_GET_SAMPLE(&az_probe_sendbuffer[j]) < 0) {
+      break;
+    }
+  }
+  if (j > 0 && az_probe_ctrl.data_sock != AZ_SOCK_INVALID) {
+    sent = send(az_probe_ctrl.data_sock, az_probe_sendbuffer, j * sizeof(az_probe_sample_t), 0); 
+  }
+  if (sent <= 0) {
+    az_sys_eprintf("sent %d = %d\n", j*sizeof(az_probe_sample_t), sent); 
+  } else {
+    //az_memdisp(STDOUT_FILENO, az_probe_sendbuffer, sent, sizeof(az_probe_sample_t), 0, STDIN_FILENO);
+  }
+}
+
+void az_probe_proc()
+{
+  az_probe_ctrl_t *ctrl = &az_probe_ctrl; 
+  az_sys_timespec_t tmo = {
+    .tv_sec = 0,
+    .tv_nsec = 1E8, // 100ms
+  };
+  ctrl->state &= ~AZ_PROBE_STATE_DSND;
+  while (ctrl->state & AZ_PROBE_STATE_INIT) {
+    AZ_PROBE_WAIT_SAMPLE(&tmo);
+    do {
+      az_probe_send();
+    } while (az_probe_samples.count > 0);
+  }
+}
 
 /* === end of AZ_PROBE_C === */

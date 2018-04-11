@@ -29,7 +29,7 @@ extern "C"
 /* constants */
 
 /* basic macros */
-#define az_prof_tdiff(a,b)  ((a.tv_sec-b.tv_sec)*1000000000 + (a.tv_nsec-b.tv_nsec))
+#define az_prof_tdiff(a,b)  ((a.tv_sec-b.tv_sec)*1E9 + (a.tv_nsec-b.tv_nsec))
 
 /* basic types */
 typedef struct az_prof_elm {
@@ -58,7 +58,7 @@ static inline az_int64_t az_prof_getres(az_int64_t lcnt)
     res.tv_nsec = (res.tv_nsec + a.tv_nsec)/2;
   }
 
-  return res.tv_sec*1000000000 + res.tv_nsec;
+  return res.tv_sec*1E9 + res.tv_nsec;
 }
 
 static inline az_int64_t az_prof_measure_gettime(az_int64_t lcnt)
@@ -96,6 +96,7 @@ static inline void az_prof_elm_init(az_prof_elm_t *p, az_int64_t lcnt)
 }
 static inline void az_prof_elm_measure(az_prof_elm_t *p)
 {
+  az_sys_timespec_t t0, t1;
   if (p->count & 1) {
     clock_gettime(CLOCK_REALTIME, &(p->t1));
     if (0 == p->time) p->time = az_prof_tdiff(t1, t0);

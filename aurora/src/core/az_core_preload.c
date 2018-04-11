@@ -24,7 +24,7 @@
 
 /* declare global variables */
 int az_attr_no_instrument az_core_preload() az_attr_constructor;
-void az_attr_no_instrument az_core_postload() az_attr_destructor;
+void az_attr_no_instrument az_core_postload(int) az_attr_destructor;
 
 /* declare static variables */
 
@@ -79,6 +79,9 @@ int az_core_preload()
   r += az_syscall_find_symbol("free", (void **)&az_real_free); 
   #endif
 
+  az_init_cleanup_sighandler();
+  az_register_cleanup_sighandler(az_core_postload);
+
   az_ion_init(NULL);
 
   az_ion_register(&az_stdout, AZ_ION_TYPE_FILE);
@@ -100,6 +103,10 @@ int az_core_preload()
   az_trace_begin();
   #endif
 
+  #ifdef  CONFIG_AZ_PROBE
+  az_probe_init();
+  #endif
+
   az_core_init();
 
   az_core_preload_done = 1;
@@ -107,13 +114,20 @@ int az_core_preload()
   return r;
 }
 
-void az_core_postload() 
+void az_core_postload(int sig) 
 {
   #ifdef  CONFIG_AZ_TRACE
-  void  az_trace_end(void);
+  extern void  az_trace_end(void);
 
   az_trace_end();
   #endif
+
+  #ifdef  CONFIG_AZ_PROBE
+  az_probe_deinit();
+  #endif
+
+  az_sys_eprintf("%s", "end...");
+  fflush(stdout);
 }
 
 int az_core_check_preload()

@@ -21,6 +21,7 @@
 /* include header files */
 #include "az_xu.h"
 #include "az_trz.h"
+#include "mon/az_probe.h"
 
 /* declare global variables */
 #ifdef  CONFIG_AZ_USE_TLS
@@ -579,7 +580,11 @@ az_r_t az_xu_resume(az_ion_id_t id)
  */
 az_r_t az_xu_sleep(az_int64_t nsec)
 {
-  return az_sys_xu_sleep(nsec);
+  AZ_PROBE_INC();
+  az_r_t r = az_sys_xu_sleep(nsec);
+  AZ_PROBE_DEC();
+
+  return r;
 }
 
 /**

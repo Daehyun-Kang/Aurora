@@ -21,7 +21,11 @@
 #ifndef AZ_PROBE_H
 #define AZ_PROBE_H
 
-#include "az_core.h"
+#include "az_def.h"
+#include "az_ring.h"
+#include "az_prof.h"
+#include "sys/az_xu.h"
+#include "sys/az_inet.h"
 
 
 #ifdef __cplusplus
@@ -32,106 +36,120 @@ extern "C"
 /* constants */
 
 /* basic macros */
-#define AZ_PROBE_REF_INVALID   (az_probe_ref_t)(-1)
-#define AZ_PROBE_DEF_REF(var) az_probe_ref_t  var;
-#define AZ_PROBE_REG(_t, _m, _p, _f) \
-  do { (_m)->_p = az_probe_register(_t, _m, _f); } while (0);
+#ifdef  CONFIG_AZ_PROBE_SAMPLES_MAX
+#define AZ_PROBE_SAMPLES_MAX CONFIG_AZ_PROBE_SAMPLES_MAX
+#else
+#define AZ_PROBE_SAMPLES_MAX 409600 
+#endif
 
+#ifdef  CONFIG_AZ_PROBE_SAMPLE_SEND_MAX
+#define  AZ_PROBE_SAMPLE_SEND_MAX CONFIG_AZ_PROBE_SAMPLE_SEND_MAX
+#else
+#define  AZ_PROBE_SAMPLE_SEND_MAX 180
+#endif
+
+#define AZ_PROBE_STATE_IDLE        0x00
+#define AZ_PROBE_STATE_INIT        0x01
+#define AZ_PROBE_STATE_ENAB        0x02
+#define AZ_PROBE_STATE_DSND        0x04
+#define AZ_PROBE_STATE_FULL        0x80
+
+#define AZ_PROBE_STATE_READY       (AZ_PROBE_STATE_INIT|AZ_PROBE_STATE_ENAB) 
+/* probe value structure src:level:tstamp = 16:4:44 */
+#define AZ_PROBE_MK_SAMPLE(src, level, tstamp) \
+  (((uint64_t)(src) << 48) + ((uint64_t)(level & 0x0f) << 44) + (uint64_t)(tstamp))
+#define AZ_PROBE_SRC(val) ((val) >> 48) 
+#define AZ_PROBE_LEVEL(val) (((val) >> 44) & 0x0f) 
+#define AZ_PROBE_TSTAMP(val) ((val) & 0xfffffffffff) 
+
+#define AZ_PROBE_CLOCK_ID CLOCK_REALTIME
 /* basic types */
-typedef uint32_t   az_probe_ref_t;
-typedef char  *(*az_probe_callback_t)(void *,...);
-typedef struct az_probe {
-  az_probe_ref_t  index;
-  char  *tag;
-  void  *module;
-  char  *(*cb_f)(void *,...);
-} az_probe_t;
+typedef uint64_t   az_probe_sample_t;
 
 /* structures */
+typedef struct az_probe_ctrl {
+  uint8_t   state;
+  az_sock_t ctrl_sock;
+  az_sock_t data_sock;
+
+  az_probe_sample_t last_sample;
+
+  char  svrIpStr[CONFIG_AZ_NAME_MAX];
+  uint16_t  svrPort;
+} az_probe_ctrl_t;
 
 /* structured types */
 
 /* macros */
 
 /* variabls exposed */
-extern az_pos_t az_probe_size;
-extern az_pos_t az_probe_count;
-extern az_probe_ref_t az_probe_last;
-extern az_probe_t *az_probe_list[];
+extern AZ_SYS_TLS uint8_t az_probe_level;
+extern az_sys_timespec_t  az_probe_tstamp_base;
+extern az_ring_t az_probe_samples;
+
+#ifdef  CONFIG_AZ_PROBE_VAR_SAMPLE_BUFFER
+extern uint32_t az_probe_samples_size;
+#else
+extern const uint32_t az_probe_samples_size;
+#endif
+
+extern az_probe_ctrl_t  az_probe_ctrl;
 
 /* inline functions */
-static inline az_probe_ref_t az_probe_register(char *tag, void *m,  
-  char  *(*cb_f)(void *,...)) 
-{
-  az_probe_ref_t index = AZ_PROBE_REF_INVALID;
-  do {
-    az_probe_t *p;
-
-    if (az_probe_last == az_probe_size) {
-      break;
-    }
-    p = az_malloc(sizeof(az_probe_t));
-  
-    if (az_probe_last == az_probe_count) {
-      index = az_probe_last++;
-      az_probe_count++;
-    } else {
-      for (index = 0; index < az_probe_last; index++) {
-        if (az_probe_list[index] == NULL) {
-          az_probe_count++;
-          break;
-        }
-      }
-      if (az_probe_last == index) {
-        index = az_probe_last++;
-        az_probe_count++;
-      }
-    }
-    p->tag = tag;
-    p->module = m;
-    p->cb_f = cb_f;
-    az_probe_list[index] = p;
+#ifdef  CONFIG_AZ_PROBE_ENABLE
+#define AZ_PROBE_SET(level) \
+  do {\
+    az_xu_t _xu = az_xu_self();  \
+    az_probe_sample_t _sample;\
+    az_sys_timespec_t  _cur;\
+    if ((AZ_PROBE_STATE_READY & az_probe_ctrl.state) != AZ_PROBE_STATE_READY) {\
+      break;\
+    }\
+    clock_gettime(AZ_PROBE_CLOCK_ID, &_cur);\
+    if (_xu) {\
+      _sample = AZ_PROBE_MK_SAMPLE(_xu->ion.id, level, \
+          az_prof_tdiff(_cur, az_probe_tstamp_base));\
+    } else {\
+      _sample = AZ_PROBE_MK_SAMPLE(0, level, \
+          az_prof_tdiff(_cur, az_probe_tstamp_base));\
+    }\
+    if (az_probe_ctrl.state & AZ_PROBE_STATE_DSND){\
+      if (az_probe_samples.count >= AZ_PROBE_SAMPLE_SEND_MAX) { \
+          az_probe_send();\
+          az_probe_ctrl.last_sample = _sample;\
+      } else if ((AZ_PROBE_TSTAMP(_sample) - AZ_PROBE_TSTAMP(az_probe_ctrl.last_sample)) > 1E8) {\
+        if (az_probe_samples.count > 0) { \
+          az_probe_send();\
+          az_probe_ctrl.last_sample = _sample;\
+        }\
+      }\
+      az_ring_push64(&az_probe_samples, &_sample);\
+      break;\
+    }\
+    if (az_ring_push64(&az_probe_samples, &_sample) < 0) {\
+      az_probe_ctrl.state |= AZ_PROBE_STATE_FULL;\
+    } else if (az_probe_samples.count == 1) {\
+      futex((int *)&az_probe_samples.count, FUTEX_WAKE, 1, NULL, NULL, 0);\
+    }\
   } while (0);
+#else
+#define AZ_PROBE_SET(level)
+#endif
 
-  return index;
-}
-static inline void az_probe_deregister(az_probe_ref_t index)
-{
-  do {
-    az_probe_t *p;
+#define AZ_PROBE_INC()    AZ_PROBE_SET(++az_probe_level)
+#define AZ_PROBE_DEC()    AZ_PROBE_SET(--az_probe_level)
 
-    if (index >= az_probe_last) break;
-    p = az_probe_list[index];
-    if (p == NULL) break;
-    az_probe_list[index] = NULL;
-    az_free(p);
-    if (index == (az_probe_last-1)) {
-      az_probe_last--;
-    }
-    az_probe_count--;
-  } while (0);
-}
+#define AZ_PROBE_GET_SAMPLE(_pSample) \
+          az_ring_pop64(&az_probe_samples, _pSample)
 
-#define AZ_PROBE(_id, _loc, ...) \
-  do { \
-    if (_id >= az_probe_last) break; \
-    az_probe_t *_p = az_probe_list[_id]; \
-    if (NULL == _p->cb_f) break;\
-    char *_info = (_p->cb_f)(_p->module, _loc, __VA_ARGS__); \
-    az_printf("%s\n", _info); \
-  } while (0);
-
-#define AZ_PROBE_PRINTF(_id, _loc, ...) \
-  do { \
-    char _buffer[128];\
-    if (_id >= az_probe_last) break; \
-    az_probe_t *_p = az_probe_list[_id]; \
-    if (snprintf(_buffer, sizeof(_buffer), __VA_ARGS__) <= 0) break;\
-    az_printf("%s: (%d) %s\n", _p->tag, _loc, _buffer); \
-  } while (0);
-
+#define AZ_PROBE_WAIT_SAMPLE(_pTMO) \
+          futex((int *)&az_probe_samples.count, FUTEX_WAIT, 0, _pTMO, NULL, 0)
+          
 
 /* function prototypes exposed */
+extern void az_probe_init();
+extern void az_probe_send();
+extern void az_probe_proc();
 
 #ifdef __cplusplus
 }

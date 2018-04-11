@@ -25,6 +25,7 @@
 #include "az_sys_base.h"
 #include "az_printf.h"
 #include "az_api.h"
+#include "mon/az_probe.h"
 
 #ifdef __cplusplus
 extern "C"

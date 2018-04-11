@@ -38,6 +38,7 @@
 #include "az_ring.h"
 #include "az_event.h"
 #include "az_event_bus.h"
+#include "az_sighandle.h"
 
 #ifdef __cplusplus
 extern "C"

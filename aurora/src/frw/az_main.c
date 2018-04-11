@@ -220,6 +220,7 @@ int main(int argc, char *argv[])
 {
   az_r_t r;
 
+
   //setvbuf(stdout, NULL, _IONBF, 0);
   //setvbuf(stdin, NULL, _IONBF, 0);
   
@@ -256,11 +257,13 @@ int main(int argc, char *argv[])
   az_trace_start();
   #endif
 
+
   if (r >= AZ_SUCCESS) {
     return (int)az_xu_entry(az_xu_main);
   } else {
     return (int)r;
   }
+
 }
 
 /* === end of AZ_MAIN_C === */

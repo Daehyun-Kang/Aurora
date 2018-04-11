@@ -22,7 +22,6 @@
 #define AZ_FSM_H
 
 #include "az_event.h"
-#include "mon/az_probe.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -61,8 +60,6 @@ typedef struct az_fsm {
   void  (*onError)(void *, az_fsm_state_t, az_event_t);
 
   void                 *owner;
-
-  AZ_PROBE_DEF_REF(probe);
 } az_fsm_t;
 
 /* macros */
@@ -73,7 +70,7 @@ static inline void az_fsm_set_owner(az_fsm_t *fsm, void *owner)
   az_assert(NULL != fsm);
   fsm->owner = owner;
 }
-static inline char *az_fsm_probe(az_fsm_t *fsm, int loc, az_event_t event)
+static inline char *az_fsm_prtstate(az_fsm_t *fsm, int loc, az_event_t event)
 {
   az_assert(fsm != NULL);
   az_assert(fsm->vcur != NULL);
@@ -97,7 +94,6 @@ static inline void az_fsm_run_state_seq(az_fsm_t *fsm, az_event_t event)
   az_fsm_state_t nstate;
   az_fsm_vector_t *vector = fsm->vcur;
   az_assert(vector != NULL);
-  AZ_PROBE(fsm->probe, 1, event);
   do {
     nstate = (vector->handler)(fsm, vector->state, event);
     if (nstate < 0 || nstate >= fsm->size) {
@@ -110,8 +106,7 @@ static inline void az_fsm_run_state_seq(az_fsm_t *fsm, az_event_t event)
     }
     fsm->vcur = &fsm->vtable[nstate];
   } while (0);
-  //az_logt("%s\n", az_fsm_probe(fsm, 2, event));
-  //AZ_PROBE(fsm->probe, 2, event);
+  //az_logt("%s\n", az_fsm_prtstate(fsm, 2, event));
 }
 
 static inline void az_fsm_run_state_arb(az_fsm_t *fsm, az_event_t event)
@@ -119,9 +114,6 @@ static inline void az_fsm_run_state_arb(az_fsm_t *fsm, az_event_t event)
   az_fsm_state_t nstate;
   az_fsm_vector_t *vector = fsm->vcur;
   az_assert(vector != NULL);
-  AZ_PROBE_PRINTF(fsm->probe, 3, "state=h%x event=(h"AZ_FMT_EVENT_ID(1)":%d:h%p)\n",
-      vector->state, AZ_EVENT_ID(event), 
-      AZ_EVENT_BUFFER_SIZE(event), AZ_EVENT_BUFFER_DATA(event));
   int16_t size = 0;
   do {
     nstate = (vector->handler)(fsm, vector->state, event);
@@ -140,9 +132,6 @@ static inline void az_fsm_run_state_arb(az_fsm_t *fsm, az_event_t event)
       break;
     }
   } while (0);
-  AZ_PROBE_PRINTF(fsm->probe, 4, "state=h%x event=(h"AZ_FMT_EVENT_ID(1)":%d:h%p)\n",
-      fsm->vcur->state, AZ_EVENT_ID(event), 
-      AZ_EVENT_BUFFER_SIZE(event), AZ_EVENT_BUFFER_DATA(event));
 }
 
 static inline void az_fsm_activate(az_fsm_t *fsm, void *owner)
@@ -150,7 +139,6 @@ static inline void az_fsm_activate(az_fsm_t *fsm, void *owner)
   az_assert(fsm != NULL);
   if (fsm->owner == NULL) {
     fsm->owner = owner;
-    AZ_PROBE_REG(fsm->name, fsm, probe, (az_probe_callback_t)az_fsm_probe);
   } else {
     az_sys_printf("%s activate again\n", fsm->name);
   }
@@ -208,10 +196,10 @@ static inline void az_fsm_init(az_fsm_t *fsm, char *name, int8_t type,
     .owner=_owner, \
     .run = az_fsm_run_state_seq, \
     .onError = _onError, \
-    .probe = AZ_PROBE_REF_INVALID};
+    };
 
 #define AZ_FSM_INIT_ARB(_name, _size, _vector, _vcur, _onError, _owner) \
-  { .name = _name, .size = _size, .type=AZ_FSM_TYPE_STATE_ARB, .vtable = _vector, .vcur = _vcur, .owner=_owner, .run = az_fsm_run_state_arb, .onError = _onError, .probe = AZ_PROBE_REF_INVALID};
+  { .name = _name, .size = _size, .type=AZ_FSM_TYPE_STATE_ARB, .vtable = _vector, .vcur = _vcur, .owner=_owner, .run = az_fsm_run_state_arb, .onError = _onError, };
 
 /* function prototypes exposed */
 

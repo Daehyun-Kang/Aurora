@@ -25,6 +25,8 @@
 #include "az_err.h"
 #include "az_macros.h"
 #include "az_malloc.h"
+#include "az_ring.h"
+#include "az_ion.h"
 
 #ifdef __cplusplus
 extern "C"

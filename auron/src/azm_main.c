@@ -88,6 +88,8 @@ void *azm_xu_main_entry(struct azm_xu_main_arg *arg)
 
   azm_trace_init();
 
+  azm_probe_init();
+
   while (1) {
     az_xu_sleep(1000000000L * 3);
   }

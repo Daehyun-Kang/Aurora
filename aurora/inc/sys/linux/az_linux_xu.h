@@ -48,6 +48,8 @@ typedef struct {
   char            *name;
   int             state;
 
+  pid_t           tid;
+
   int             env_index;
   jmp_buf         env[CONFIG_AZ_XU_EXCPT_STK_SZ];
   //jmp_buf         abc;

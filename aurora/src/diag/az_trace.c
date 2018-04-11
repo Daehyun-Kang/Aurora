@@ -164,7 +164,8 @@ void  az_trace_end(void)
   ctrl->read_fd = AZ_SOCK_INVALID;
   #endif
 
-  //az_sys_eprintf0("end\n");
+  az_sys_eprintf0("end\n");
+  fflush(stdout);
 }
 
 int az_trace_start()

@@ -193,6 +193,7 @@ static void az_sys_xu_prolog(az_sys_xu_t xu)
   
   az_sys_xu = xu;
   xu->env_index = 0;
+  xu->tid = syscall(SYS_gettid);
 
   pthread_setname_np(xu->thread, xu->name);
   if (xu->attr) {

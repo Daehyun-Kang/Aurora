@@ -24,12 +24,15 @@
 #include "az_def.h"
 #include "az_err.h"
 #include "az_macros.h"
+#include "az_rw_lock.h"
 #include "az_malloc.h"
 #include "az_xu_types.h"
 #include "az_link.h"
 #include "az_dllib.h"
 #include "az_xcfg.h"
 #include "az_xu_cfg.h"
+#include "az_ring.h"
+#include "az_ion.h"
 
 #ifdef __cplusplus
 extern "C"

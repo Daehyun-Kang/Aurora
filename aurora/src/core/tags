@@ -4,6 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+A	../diag/az_memdisp.c	254;"	d	file:
+A	../diag/az_memdisp.c	69;"	d	file:
 ALLOC_ERR_STR	../core/az_core.c	21;"	d	file:
 ALLOC_ERR_STR	../core/az_core.c	23;"	d	file:
 ALLOC_ERR_STR	az_core.c	21;"	d	file:
@@ -106,7 +108,13 @@ AZ_DEF_H	../../inc/az_def.h	26;"	d
 AZ_DEF_H	../../inc/az_def.h	27;"	d
 AZ_DEF_LE	../../inc/sys/linux/az_linux_endian.h	48;"	d
 AZ_DEF_LE	../../inc/sys/linux/az_linux_endian.h	84;"	d
+AZ_DIAG_PRT_PTR	../diag/az_diag_typeSize.c	28;"	d	file:
+AZ_DIAG_PRT_STR	../diag/az_diag_typeSize.c	31;"	d	file:
+AZ_DIAG_PRT_TYPE_SIZE	../diag/az_diag_typeSize.c	25;"	d	file:
 AZ_DIR_INVALID	../../inc/sys/az_fs.h	63;"	d
+AZ_EN_BREAKPOINT	../diag/az_debug.c	27;"	d	file:
+AZ_EN_BREAK_LEN	../diag/az_debug.c	29;"	d	file:
+AZ_EN_BREAK_OPRS	../diag/az_debug.c	28;"	d	file:
 AZ_EQUAL_PTR	../../inc/az_def.h	119;"	d
 AZ_ERR	../../inc/az_err.h	162;"	d
 AZ_ERR	../../inc/az_err.h	164;"	d
@@ -516,6 +524,10 @@ AZ_FSM_TYPE_STATE_SEQ	../../inc/az_fsm.h	34;"	d
 AZ_FSM_TYPE_STATE_SEQ	../../inc/az_fsm.h	35;"	d
 AZ_FSM_TYPE_STATE_SEQ	../../inc/az_fsm.h	36;"	d
 AZ_FS_H	../../inc/sys/az_fs.h	22;"	d
+AZ_GET_DR6_BD	../diag/az_debug.c	34;"	d	file:
+AZ_GET_DR6_BR	../diag/az_debug.c	31;"	d	file:
+AZ_GET_DR6_BS	../diag/az_debug.c	33;"	d	file:
+AZ_GET_DR6_BT	../diag/az_debug.c	32;"	d	file:
 AZ_INDEX_H	../../inc/az_index.h	21;"	d
 AZ_INDEX_H	../../inc/az_index.h	22;"	d
 AZ_INDEX_POOL_COUNT	../../inc/az_index.h	184;"	d
@@ -2033,6 +2045,8 @@ _VFUNC_	../../inc/az_args.h	36;"	d
 __GNU_SOURCE	../../inc/sys/linux/az_sys_linux.h	27;"	d
 __USE_GNU	../../inc/sys/linux/az_sys_linux.h	24;"	d
 __az_weak	../../inc/az_def.h	130;"	d
+__cyg_profile_func_enter	../diag/az_trace.c	/^void __cyg_profile_func_enter(void *func, void *caller)$/;"	f
+__cyg_profile_func_exit	../diag/az_trace.c	/^void __cyg_profile_func_exit(void *func, void *caller)$/;"	f
 __section	../../inc/az_def.h	112;"	d
 __section	../../inc/az_def.h	119;"	d
 __section	../../inc/az_def.h	120;"	d
@@ -2475,6 +2489,7 @@ az_cli_cmd_exec_t	../../inc/cli/az_cli_cmd.h	/^typedef int32_t (*az_cli_cmd_exec
 az_cli_cmd_table	../../inc/cli/az_cli_cmd.h	/^typedef struct az_cli_cmd_table {$/;"	s
 az_cli_cmd_table_t	../../inc/cli/az_cli_api.h	/^typedef struct az_cli_cmd_table az_cli_cmd_table_t;$/;"	t	typeref:struct:az_cli_cmd_table
 az_cli_cmd_table_t	../../inc/cli/az_cli_cmd.h	/^} az_cli_cmd_table_t;$/;"	t	typeref:struct:az_cli_cmd_table
+az_cli_cmd_trace	../diag/az_trace.c	/^int az_cli_cmd_trace(int argc, char *argv[])$/;"	f
 az_cli_key_cmd	../../inc/cli/az_cli_api.h	/^struct az_cli_key_cmd {$/;"	s
 az_cli_port_t	../../inc/cli/az_cli.h	/^typedef int az_cli_port_t; $/;"	t
 az_cli_read_t	../../inc/cli/az_cli.h	/^typedef int (*az_cli_read_t)(az_cli_port_t, char *, int);$/;"	t
@@ -2492,6 +2507,13 @@ az_core_preload	az_core_preload.c	/^int az_core_preload() $/;"	f
 az_core_state	../core/az_core.c	/^static az_state_t az_core_state = AZ_ST_IDLE;$/;"	v	file:
 az_core_state	az_core.c	/^static az_state_t az_core_state = AZ_ST_IDLE;$/;"	v	file:
 az_creat	az_api.c	/^int az_creat(const char *pathname, mode_t mode)$/;"	f
+az_debug_get_value	../diag/az_debug.c	/^int az_debug_get_value()$/;"	f
+az_debug_init_watchpoint	../diag/az_debug.c	/^int az_debug_init_watchpoint()$/;"	f
+az_debug_reset_watchpoint	../diag/az_debug.c	/^int az_debug_reset_watchpoint(int bpno)$/;"	f
+az_debug_set_watchpoint	../diag/az_debug.c	/^int az_debug_set_watchpoint(int bpno, void *addr, int var_size) $/;"	f
+az_debug_trap	../diag/az_debug.c	/^void az_debug_trap(int sig, siginfo_t *info, void *context)$/;"	f
+az_debugreg_t	../diag/az_debug.c	/^typedef unsigned long long int az_debugreg_t;$/;"	t	file:
+az_diag_prt_type_size	../diag/az_diag_typeSize.c	/^void az_diag_prt_type_size()$/;"	f
 az_dir_entity_t	../../inc/sys/az_fs.h	/^} az_dir_entity_t; $/;"	t	typeref:struct:__anon1
 az_dir_t	../../inc/sys/az_fs.h	/^typedef az_dir_entity_t * az_dir_t;$/;"	t
 az_dirent_t	../../inc/sys/az_fs.h	/^typedef az_sys_dirent_t   az_dirent_t;$/;"	t
@@ -3109,7 +3131,28 @@ az_malloc_sign_t	../../inc/az_malloc.h	/^} az_malloc_sign_t;$/;"	t	typeref:struc
 az_malloc_stats	../../inc/az_malloc.h	/^struct az_malloc_stats {$/;"	s
 az_malloc_stats	az_core.c	/^struct az_malloc_stats az_malloc_stats;$/;"	v	typeref:struct:az_malloc_stats
 az_malloc_stats	az_malloc.c	/^struct az_malloc_stats az_malloc_stats = {0};$/;"	v	typeref:struct:az_malloc_stats
+az_mcheck_cli_cmd	../diag/az_mcheck.c	/^int az_mcheck_cli_cmd(int argc, char *argv[])$/;"	f
+az_mcheck_deinit	../diag/az_mcheck.c	/^az_r_t az_mcheck_deinit()$/;"	f
+az_mcheck_disableMtrace	../diag/az_mcheck.c	/^void az_mcheck_disableMtrace()$/;"	f
+az_mcheck_dispMallocList	../diag/az_mcheck.c	/^void az_mcheck_dispMallocList()$/;"	f
+az_mcheck_init	../diag/az_mcheck.c	/^az_r_t az_mcheck_init()$/;"	f
+az_mcheck_mkFreeRpt	../diag/az_mcheck.c	/^int az_mcheck_mkFreeRpt(az_mchk_info_t *info)$/;"	f
+az_mcheck_mkMallocRpt	../diag/az_mcheck.c	/^int az_mcheck_mkMallocRpt(az_mchk_info_t *info)$/;"	f
+az_mcheck_printMallocStats	../diag/az_mcheck.c	/^int az_mcheck_printMallocStats(char *bp, int blen)$/;"	f
+az_mcheck_state	../diag/az_mcheck.c	/^static int az_mcheck_state = 0;$/;"	v	file:
 az_memcpy	../../inc/az_string.h	/^static inline void *az_memcpy(void *dest, const void *src, az_size_t size)$/;"	f
+az_memdisp	../diag/az_memdisp.c	/^int az_attr_no_instrument az_memdisp(az_sys_fd_t fd, char *addr, int32_t len, int mode, int interfactive, az_sys_fd_t rfd) $/;"	f
+az_memdisp_header	../diag/az_memdisp.c	/^int az_memdisp_header(char *bp, int blen, int32_t len, int mode) $/;"	f
+az_memdisp_row	../diag/az_memdisp.c	/^int az_memdisp_row(char *bp, int blen, char *addr, int mode) $/;"	f
+az_memdisp_row16	../diag/az_memdisp.c	/^int az_memdisp_row16(char *bp, int blen, void *addr)$/;"	f
+az_memdisp_row32	../diag/az_memdisp.c	/^int az_memdisp_row32(char *bp, int blen, void *addr)$/;"	f
+az_memdisp_row64	../diag/az_memdisp.c	/^int az_memdisp_row64(char *bp, int blen, void *addr)$/;"	f
+az_memdisp_row8	../diag/az_memdisp.c	/^int az_memdisp_row8(char *bp, int blen, void *addr)$/;"	f
+az_memdisp_row_partial	../diag/az_memdisp.c	/^int az_memdisp_row_partial(char *bp, int blen, char *addr, int32_t len, int mode) $/;"	f
+az_memdisp_row_partial16	../diag/az_memdisp.c	/^int az_memdisp_row_partial16(char *bp, int blen, void *addr, int32_t len) $/;"	f
+az_memdisp_row_partial32	../diag/az_memdisp.c	/^int az_memdisp_row_partial32(char *bp, int blen, void *addr, int32_t len) $/;"	f
+az_memdisp_row_partial64	../diag/az_memdisp.c	/^int az_memdisp_row_partial64(char *bp, int blen, void *addr, int32_t len) $/;"	f
+az_memdisp_row_partial8	../diag/az_memdisp.c	/^int az_memdisp_row_partial8(char *bp, int blen, void *addr, int32_t len) $/;"	f
 az_memset	../../inc/az_string.h	/^static inline void *az_memset(void *s, int c, az_size_t n)$/;"	f
 az_mkTableHeaderStr	../../inc/az_string.h	/^static inline int az_mkTableHeaderStr(int cols, char *wlist, char *nlist[], char *bp, int blen)$/;"	f
 az_msgq	../../inc/az_msgq.h	/^typedef struct az_msgq {$/;"	s
@@ -3163,10 +3206,23 @@ az_printf	../../inc/az_printf.h	63;"	d
 az_printf	../../inc/az_printf.h	64;"	d
 az_printf	../../inc/az_printf.h	70;"	d
 az_probe	../../inc/mon/az_probe.h	/^typedef struct az_probe {$/;"	s
+az_probe_ctrl	../diag/az_probe.c	/^az_probe_ctrl_t az_probe_ctrl = {$/;"	v
+az_probe_deinit	../diag/az_probe.c	/^void  az_probe_deinit()$/;"	f
 az_probe_deregister	../../inc/mon/az_probe.h	/^static inline void az_probe_deregister(az_probe_ref_t index)$/;"	f
+az_probe_init	../diag/az_probe.c	/^void  az_probe_init()$/;"	f
+az_probe_level	../diag/az_probe.c	/^AZ_SYS_TLS uint8_t az_probe_level = 0;$/;"	v
+az_probe_proc	../diag/az_probe.c	/^void az_probe_proc()$/;"	f
 az_probe_ref_t	../../inc/mon/az_probe.h	/^typedef uint32_t   az_probe_ref_t;$/;"	t
 az_probe_register	../../inc/mon/az_probe.h	/^static inline az_probe_ref_t az_probe_register(char *tag, void *m,  $/;"	f
+az_probe_sample_buffer	../diag/az_probe.c	/^az_probe_sample_t *az_probe_sample_buffer = NULL;$/;"	v
+az_probe_sample_buffer	../diag/az_probe.c	/^az_probe_sample_t az_probe_sample_buffer[AZ_PROBE_SAMPLES_MAX];$/;"	v
+az_probe_samples	../diag/az_probe.c	/^az_ring_t az_probe_samples;$/;"	v
+az_probe_samples_size	../diag/az_probe.c	/^const uint32_t  az_probe_samples_size = AZ_PROBE_SAMPLES_MAX;$/;"	v
+az_probe_samples_size	../diag/az_probe.c	/^uint32_t  az_probe_samples_size = AZ_PROBE_SAMPLES_MAX;$/;"	v
+az_probe_send	../diag/az_probe.c	/^void az_probe_send()$/;"	f
+az_probe_sendbuffer	../diag/az_probe.c	/^static az_probe_sendbuffer[sizeof(az_probe_sample_t) * AZ_PROBE_SAMPLE_SEND_MAX];$/;"	v	file:
 az_probe_t	../../inc/mon/az_probe.h	/^} az_probe_t;$/;"	t	typeref:struct:az_probe
+az_probe_tstamp_base	../diag/az_probe.c	/^az_sys_timespec_t  az_probe_tstamp_base;$/;"	v
 az_prof_elm	../../inc/az_prof.h	/^typedef struct az_prof_elm {$/;"	s
 az_prof_elm_end	../../inc/az_prof.h	/^static inline void az_prof_elm_end(az_prof_elm_t *p)$/;"	f
 az_prof_elm_init	../../inc/az_prof.h	/^static inline void az_prof_elm_init(az_prof_elm_t *p, az_int64_t lcnt)$/;"	f
@@ -3177,6 +3233,7 @@ az_prof_measure_gettime	../../inc/az_prof.h	/^static inline az_int64_t az_prof_m
 az_prof_measure_loop	../../inc/az_prof.h	/^static inline az_int64_t az_prof_measure_loop(az_int64_t lcnt)$/;"	f
 az_prof_tdiff	../../inc/az_prof.h	31;"	d
 az_prof_tdiff	../../inc/az_prof.h	32;"	d
+az_pthread_trace_info	../diag/az_trace.c	/^AZ_SYS_TLS az_xu_trace_info_t *az_pthread_trace_info = NULL;$/;"	v
 az_r_t	../../inc/az_def.h	/^typedef az_size_t      az_r_t;$/;"	t
 az_range	../../inc/az_def.h	/^typedef struct az_range {$/;"	s
 az_range_t	../../inc/az_def.h	/^} az_range_t;$/;"	t	typeref:struct:az_range
@@ -3247,6 +3304,10 @@ az_ring_value_t	../../inc/az_ring.h	/^} az_ring_value_t;$/;"	t	typeref:union:__a
 az_ring_value_t	../../inc/az_ring.h	/^} az_ring_value_t;$/;"	t	typeref:union:__anon24
 az_ring_value_t	../../inc/az_ring.h	/^} az_ring_value_t;$/;"	t	typeref:union:__anon25
 az_rprintf	../../inc/az_printf.h	78;"	d
+az_rstdio_begin	../diag/az_rstdio.c	/^void  az_rstdio_begin(void)$/;"	f
+az_rstdio_ctrl	../diag/az_rstdio.c	/^az_rstdio_ctrl_t az_rstdio_ctrl = {$/;"	v
+az_rstdio_ctrl	../diag/az_rstdio.c	/^typedef struct az_rstdio_ctrl {$/;"	s	file:
+az_rstdio_ctrl_t	../diag/az_rstdio.c	/^} az_rstdio_ctrl_t;$/;"	t	typeref:struct:az_rstdio_ctrl	file:
 az_rw_lock	../../inc/az_rw_lock.h	/^typedef struct az_rw_lock {$/;"	s
 az_rw_lock_deinit	../../inc/az_rw_lock.h	/^static inline az_r_t az_rw_lock_deinit(az_rw_lock_t *p)$/;"	f
 az_rw_lock_init	../../inc/az_rw_lock.h	/^static inline az_r_t az_rw_lock_init(az_rw_lock_t *p)$/;"	f
@@ -3565,6 +3626,20 @@ az_timer_entity_t	../../inc/sys/az_timer.h	/^} az_timer_entity_t;$/;"	t	typeref:
 az_timer_start	../sys/az_timer.c	/^az_r_t  az_timer_start(az_timer_t t)$/;"	f
 az_timer_stop	../sys/az_timer.c	/^az_r_t  az_timer_stop(az_timer_t t)$/;"	f
 az_timer_t	../../inc/sys/az_timer.h	/^typedef az_timer_entity_t *   az_timer_t;$/;"	t
+az_trace_begin	../diag/az_trace.c	/^void  az_trace_begin(void)$/;"	f
+az_trace_ctrl	../diag/az_trace.c	/^az_trace_ctrl_t az_trace_ctrl = {$/;"	v
+az_trace_enable	../diag/az_trace.c	/^int az_trace_enable(int onoff)$/;"	f
+az_trace_end	../diag/az_trace.c	/^void  az_trace_end(void)$/;"	f
+az_trace_start	../diag/az_trace.c	/^int az_trace_start()$/;"	f
+az_trace_start_default_thread	../diag/az_trace.c	/^az_r_t  az_trace_start_default_thread()$/;"	f
+az_trace_stop	../diag/az_trace.c	/^int az_trace_stop()$/;"	f
+az_trace_stop_default_thread	../diag/az_trace.c	/^az_r_t  az_trace_stop_default_thread()$/;"	f
+az_trace_svr	../diag/az_trace.c	/^az_tcpserver_t az_trace_svr = {$/;"	v
+az_trace_svr_onClientConnection	../diag/az_trace.c	/^int az_trace_svr_onClientConnection(void *ctx, az_sock_t cliSock, void *cliAddrIn)$/;"	f
+az_trace_svr_oprs	../diag/az_trace.c	/^struct az_tcpserver_oprs az_trace_svr_oprs;$/;"	v	typeref:struct:az_tcpserver_oprs
+az_trace_thread_default	../diag/az_trace.c	/^az_xu_t az_trace_thread_default = NULL;$/;"	v
+az_trace_thread_proc_default	../diag/az_trace.c	/^void *az_trace_thread_proc_default(void *arg)$/;"	f
+az_trace_thread_state	../diag/az_trace.c	/^int az_trace_thread_state = 0;$/;"	v
 az_transaction	../../inc/az_trz.h	/^typedef struct az_transaction {$/;"	s
 az_transaction_connection	../../inc/az_trz.h	/^typedef struct az_transaction_connection {$/;"	s
 az_transaction_node	../../inc/az_trz.h	/^typedef struct az_transaction_node {$/;"	s
@@ -3879,6 +3954,8 @@ block_size	../../inc/az_iou.h	/^    az_int8_t block_size;$/;"	m	struct:az_iou_co
 block_size	../../inc/az_iou.h	/^    az_int8_t block_size;$/;"	m	struct:az_iou_config::__anon17
 block_size	../../inc/az_iou.h	/^    az_int8_t block_size;$/;"	m	struct:az_iou_config::__anon19
 block_size	../../inc/az_iou.h	/^    az_int8_t block_size;$/;"	m	struct:az_iou_config::__anon20
+breakpoints	../diag/az_debug.c	/^az_ref_t  breakpoints[4] = {0};$/;"	v
+buf	../diag/az_memdisp.c	/^  static char buf[512]; $/;"	v	file:
 buffer	../../inc/az_log.h	/^  az_cirbuffer_t  buffer;$/;"	m	struct:az_log
 buffer	../../inc/cli/az_cli.h	/^  char  buffer[CONFIG_AZ_CLI_TX_BUFFER_SZ];$/;"	m	struct:az_cli_shell
 buffer_area	../../inc/az_log.h	/^  uint8_t         *buffer_area;$/;"	m	struct:az_log
@@ -3990,6 +4067,9 @@ domain	../../inc/az_sys_def.h	/^    int32_t    domain;$/;"	m	struct:__anon32::__
 domain	../../inc/az_sys_def.h	/^    int32_t    domain;$/;"	m	struct:__anon33::__anon34
 domain	../../inc/az_sys_def.h	/^    int32_t    domain;$/;"	m	struct:__anon36::__anon37
 domain	../../inc/az_sys_def.h	/^    int32_t    domain;$/;"	m	struct:__anon37::__anon38
+dr	../diag/az_debug.c	/^az_debugreg_t dr[4];$/;"	v
+dr7	../diag/az_debug.c	/^az_debugreg_t dr7 = 0;$/;"	v
+drlen	../diag/az_debug.c	/^int           drlen[4];$/;"	v
 element_size	../../inc/az_array.h	/^  az_size_t           element_size;$/;"	m	struct:az_array
 empty	../../inc/az_event.h	/^    int empty;$/;"	m	struct:az_event_receiver_stats::__anon10
 empty	../../inc/az_event.h	/^    int empty;$/;"	m	struct:az_event_receiver_stats::__anon12
@@ -4211,9 +4291,11 @@ lock	../../inc/az_event.h	/^  az_rw_lock_t      *lock;$/;"	m	struct:az_event_rec
 lock	../../inc/sys/linux/az_linux_event.h	/^  az_sys_lw_lock_t  lock;$/;"	m	struct:__anon4
 lock	az_event_bus.c	/^  az_sys_lw_lock_t  lock; $/;"	m	struct:__anon1	file:
 log_fd	../../inc/az_log_dup.h	/^  az_sys_fd_t log_fd;$/;"	m	struct:az_log_dump_ctrl
+log_fd	../diag/az_rstdio.c	/^  az_sys_fd_t log_fd;$/;"	m	struct:az_rstdio_ctrl	file:
 logfilepath	../../inc/az_log_dup.h	/^  char  logfilepath[AZ_PATH_MAX];$/;"	m	struct:az_log_dump_ctrl
 logfileprefix	../../inc/az_log_dup.h	/^  char  *logfileprefix;$/;"	m	struct:az_log_dump_ctrl
 logid	../../inc/az_log.h	/^  az_logid_t  logid;$/;"	m	struct:az_log
+main	../diag/az_diag_typeSize.c	/^int main(int argc, char *argv[])$/;"	f
 main	../frw/az_main.c	/^int main(int argc, char *argv[])$/;"	f
 major	../../inc/az_ver.h	/^  unsigned char   major;$/;"	m	struct:az_version
 malloc	az_malloc_preload.c	/^void *malloc(size_t size)$/;"	f
@@ -4471,6 +4553,7 @@ r	../../inc/az_var.h	/^  az_r_t            r;$/;"	m	union:__anon45
 read	../sys/linux/az_sys_preload.c	/^ssize_t read(int fd, void *buf, size_t count)$/;"	f
 readCount	../../inc/az_rw_lock.h	/^  int32_t           readCount;$/;"	m	struct:az_rw_lock
 read_fd	../../inc/az_log_dup.h	/^  az_sys_fd_t read_fd;$/;"	m	struct:az_log_dump_ctrl
+read_fd	../diag/az_rstdio.c	/^  az_sock_t   read_fd;$/;"	m	struct:az_rstdio_ctrl	file:
 read_lock	../../inc/az_rw_lock.h	/^  az_sys_lw_lock_t  read_lock; $/;"	m	struct:az_rw_lock
 receiver_list	../../inc/az_event.h	/^  az_link_list_t        receiver_list;$/;"	m	struct:az_event_port_entity
 receiver_list	../../inc/az_event.h	/^  az_link_list_t receiver_list;$/;"	m	struct:az_event_port
@@ -4635,6 +4718,7 @@ state	../../inc/az_trz.h	/^  uint16_t        state;$/;"	m	struct:az_transaction
 state	../../inc/cli/az_cli.h	/^  int state;$/;"	m	struct:az_cli_shell
 state	../../inc/net/az_tcpserver.h	/^  volatile int state;$/;"	m	struct:az_tcpserver
 state	../../inc/sys/linux/az_linux_def.h	/^  int           state;$/;"	m	struct:__anon2
+state	../diag/az_rstdio.c	/^  int state;$/;"	m	struct:az_rstdio_ctrl	file:
 state_list	../../inc/az_event.h	/^  int                 *state_list;$/;"	m	struct:az_event_port_mux
 state_list	../../inc/az_event.h	/^  int             *state_list;$/;"	m	struct:az_event_acc
 stats	../../inc/az_event.h	/^  az_event_receiver_stats_t *stats;$/;"	m	struct:az_event_receiver
@@ -4654,6 +4738,8 @@ substate	../../inc/az_event.h	/^    az_uint32_t substate:8;$/;"	m	struct:__anon9
 substate	../../inc/az_event.h	/^    az_uint32_t substate:8;$/;"	m	struct:__anon9::__anon11
 success	../../inc/az_unitTest.h	/^  int   success;$/;"	m	struct:az_ut_testCaseResult
 success	../../inc/az_unitTest.h	/^  int   success;$/;"	m	struct:az_ut_testProjResult
+svrIpStr	../diag/az_rstdio.c	/^  char      svrIpStr[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_rstdio_ctrl	file:
+svrPort	../diag/az_rstdio.c	/^  uint16_t  svrPort;$/;"	m	struct:az_rstdio_ctrl	file:
 sys_dir	../../inc/sys/az_fs.h	/^  az_sys_dir_t  sys_dir;$/;"	m	struct:__anon1
 sys_file	../../inc/sys/az_fs.h	/^  az_sys_file_t   sys_file;$/;"	m	struct:__anon2
 sys_port	../../inc/az_event.h	/^  az_sys_ep_t       *sys_port;$/;"	m	struct:az_event_receiver
@@ -4688,6 +4774,7 @@ to_lower	../../inc/az_string.h	/^static inline char to_lower(char c) {$/;"	f
 tpHead	../../inc/az_unitTest.h	/^  az_ut_testProjResult_t  *tpHead;$/;"	m	struct:az_ut_result
 tpTail	../../inc/az_unitTest.h	/^  az_ut_testProjResult_t  *tpTail;$/;"	m	struct:az_ut_result
 transportType	../../inc/az_iou.h	/^  az_uint16_t   transportType;$/;"	m	struct:az_iou_config
+trap_action_save	../diag/az_debug.c	/^struct sigaction trap_action_save;$/;"	v	typeref:struct:sigaction
 tx	../../inc/az_iou.h	/^  } tx;$/;"	m	struct:az_iou	typeref:struct:az_iou::__anon17
 tx	../../inc/az_iou.h	/^  } tx;$/;"	m	struct:az_iou	typeref:struct:az_iou::__anon18
 tx	../../inc/az_iou.h	/^  } tx;$/;"	m	struct:az_iou	typeref:struct:az_iou::__anon21
@@ -4771,6 +4858,7 @@ vtable	../../inc/az_fsm.h	/^  az_fsm_vector_t       *vtable;$/;"	m	struct:az_fsm
 width_list	../../inc/az_var.h	/^  char  *width_list;$/;"	m	struct:az_var_print_format
 write	../sys/linux/az_sys_preload.c	/^ssize_t write(int fd, const void *buf, size_t count)$/;"	f
 write_fd	../../inc/az_log_dup.h	/^  az_sys_fd_t write_fd;$/;"	m	struct:az_log_dump_ctrl
+write_fd	../diag/az_rstdio.c	/^  az_sock_t   write_fd;$/;"	m	struct:az_rstdio_ctrl	file:
 write_lock	../../inc/az_rw_lock.h	/^  az_sys_lw_lock_t  write_lock; $/;"	m	struct:az_rw_lock
 xml	../../inc/az_test.h	/^  az_xml_element_t  xml;$/;"	m	struct:az_test_config
 xml	../../inc/az_test.h	/^  az_xml_element_t *xml;$/;"	m	struct:az_test_descr_t

@@ -92,7 +92,7 @@
 //#undef CONFIG_AZ_CLI           
 
 #define CONFIG_AZM                      1
-#undef  CONFIG_AZM                      
+//#undef  CONFIG_AZM                      
 
 #ifdef CONFIG_AZM                      
 #define CONFIG_AZ_CLI_SHELL_PROMPT      "$$"

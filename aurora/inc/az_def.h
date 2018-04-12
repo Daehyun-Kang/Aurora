@@ -126,6 +126,10 @@ typedef struct az_range {
 #define __used    __attribute__((__used__))
 #endif
 
+#ifndef __az_unused
+#define __unused    __attribute__((unused))
+#endif
+
 #ifndef __az_weak
 #define __az_weak __attribute__((weak))
 #endif

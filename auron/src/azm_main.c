@@ -90,9 +90,14 @@ void *azm_xu_main_entry(struct azm_xu_main_arg *arg)
 
   azm_probe_init();
 
+#ifdef  CONFIG_AZM_GTK
+  extern int azm_gtk_main(int , char **);
+  azm_gtk_main(arg->argc, arg->argv);
+#else
   while (1) {
     az_xu_sleep(1000000000L * 3);
   }
+#endif
   return NULL;
 }
 

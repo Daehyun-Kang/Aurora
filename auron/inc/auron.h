@@ -21,7 +21,7 @@
 #ifndef AURON_H
 #define AURON_H
 
-#include "az_config.h"
+#include "azm_config.h"
 
 #ifdef __cplusplus
 extern "C"

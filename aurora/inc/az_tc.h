@@ -86,6 +86,11 @@ extern "C"
     az_sys_printf("[S] [%s:%d]" AZ_NL,pCtx->name, pIter->index); \
   } while (0); 
 
+#define AZ_TC_PRINT_RUN(pCtx, pIter) \
+  do { \
+    az_sys_printf("[R] [%s:%d]" AZ_NL,pCtx->name, pIter->index); \
+  } while (0); 
+
 #define AZ_TC_PRINT_END_FAIL(pCtx, pIter) \
   do {\
     az_sys_printf("[E] [%s:%d] [%s] [%d] [%s]" AZ_NL,\

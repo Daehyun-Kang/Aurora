@@ -19,6 +19,7 @@
  */
 
 /* include header files */
+#include "az_ion.h"
 #include "az_timer.h"
 
 /* declare global variables */
@@ -56,9 +57,12 @@ az_ion_id_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat
       t = az_malloc(sizeof(az_timer_entity_t));
       az_if_alloc_null_break(t, result);
       az_ion_invalidate(&t->ion, 0);
+    } else {
+      az_ion_invalidate(&t->ion, 1);
     }
     az_assert(t->ion.id == AZ_SYS_IO_INVALID);
     strncpy(t->name, name, sizeof(t->name));
+    t->sys_timer = NULL;
     result = az_sys_timer_create(name, interval, repeat, handler, arg, &(t->sys_timer));
     if (AZ_SUCCESS != result) {
       if (AZ_REFCOUNT_IS_ZERO(&t->ion.refCount)) {
@@ -67,7 +71,8 @@ az_ion_id_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat
       break;
     } 
     
-    t->ion.id = t->sys_timer;
+    t->ion.id = t->sys_timer->timer;
+    t->xu = NULL;
 
     result = az_ion_register(&(t->ion), AZ_ION_TYPE_TIMER);
     if (AZ_SUCCESS != result) {
@@ -83,6 +88,9 @@ az_ion_id_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat
     *pTimer = t;
   } while (0);
 
+  if (result < 0) {
+    az_sys_rprintf(result, "timer id %d\n",(t == NULL)? -1:t->ion.id);
+  }
   return (result < 0)? (az_ion_id_t)result:t->ion.id;
 }
 
@@ -103,6 +111,10 @@ az_r_t  az_timer_delete(az_ion_id_t id)
     if (az_refcount_atomic_dec(&t->ion.refCount) <= 0) {
       result = AZ_ERR(AGAIN);
       break;
+    }
+
+    if (0) {
+      az_sys_eprintf("timer%d refCount=%d\n", id, AZ_REFCOUNT_VALUE(&t->ion.refCount));
     }
 
     result = az_ion_deregister(&(t->ion));
@@ -143,10 +155,17 @@ az_r_t  az_timer_start(az_ion_id_t id)
     result = az_sys_timer_start(t->sys_timer);
 
     if (AZ_SUCCESS == result) {
+      t->xu = az_xu_self();
+      if (az_sys_xu_iomux_is_valid()) {
+        az_sys_xu_iomux_add(t->ion.id, AZ_SYS_IO_IN|AZ_SYS_IO_ET);
+      }
       az_refcount_atomic_inc(&t->ion.refCount);
     }
   } while (0);
 
+  if (0) {
+    az_sys_eprintf("timer%d refCount=%d\n", id, AZ_REFCOUNT_VALUE(&t->ion.refCount));
+  }
   return result;
 }
 
@@ -173,7 +192,14 @@ az_r_t  az_timer_stop(az_ion_id_t id)
     
     result = az_sys_timer_stop(t->sys_timer);
 
-    if (result == AZ_SUCCESS) { if (az_refcount_atomic_dec(&t->ion.refCount) == 0) {
+    if (result == AZ_SUCCESS) { 
+      if (t->xu != NULL) {
+        if (az_sys_iomux_is_valid(t->xu->sys_xu)) {
+          az_sys_iomux_xu_del(t->xu->sys_xu, t->ion.id);
+        }
+        t->xu = NULL;
+      }
+      if (az_refcount_atomic_dec(&t->ion.refCount) == 0) {
         result = az_sys_timer_delete(t->sys_timer);
       }
       if (AZ_REFCOUNT_IS_ZERO(&t->ion.refCount)) {
@@ -182,6 +208,9 @@ az_r_t  az_timer_stop(az_ion_id_t id)
     }
   } while (0);
 
+  if (0) {
+    az_sys_eprintf("timer%d refCount=%d\n", id, AZ_REFCOUNT_VALUE(&t->ion.refCount));
+  }
   return result;
 }
 

@@ -27,7 +27,7 @@
 #include "az_xu.h"
 #include "az_linux_timer.h"
 
-#define AZ_SYS_TIMER_CLOCKID    CLOCK_REALTIME
+#define AZ_SYS_TIMER_CLOCKID    CLOCK_MONOTONIC
 
 #ifdef  CONFIG_AZ_SYS_TIMER_USE_TIMER_SIG
 
@@ -244,6 +244,10 @@ az_r_t  az_sys_timer_start(az_sys_timer_t t)
     result = timer_settime(t->timer, 0, &itimer, NULL);
   } while (0);
 
+  if (result < 0) {
+    az_sys_eprintf("result=%d sys errno = %d\n", result, az_sys_errno); 
+  }
+
   return result;
 }
 
@@ -266,6 +270,10 @@ az_r_t  az_sys_timer_stop(az_sys_timer_t t)
     itimer.it_value = itimer.it_interval; 
     result = timer_settime(t->timer, 0, &itimer, NULL);
   } while (0);
+
+  if (result < 0) {
+    az_sys_eprintf("result=%d sys errno = %d\n", result, az_sys_errno); 
+  }
 
   return result;
 }
@@ -302,6 +310,7 @@ az_r_t  az_sys_timer_create(const char *name, az_uint64_t interval,  int repeat,
     if (NULL == t) {
       t = az_malloc(sizeof(az_sys_timer_entity_t));
       t->state = 1;
+      *pTimer = t;
     } else {
       t->state = 0;
     }
@@ -324,6 +333,13 @@ az_r_t  az_sys_timer_create(const char *name, az_uint64_t interval,  int repeat,
     t->name = name;
   } while (0);
 
+  if (result < 0) {
+    az_sys_eprintf("timer%d repeat:%d interval:%ld result = %ld errno=%d\n", 
+        ((t == NULL)? -1:t->timer), 
+        repeat, interval,
+        result, az_sys_errno);
+
+  }
   return result;
 }
 
@@ -369,6 +385,13 @@ az_r_t  az_sys_timer_start(az_sys_timer_t t)
     result = timerfd_settime(t->timer, 0, &itimer, NULL);
   } while (0);
 
+  if (result < 0) {
+    az_sys_eprintf("timer%d interval:%ld.%ld result = %ld errno=%d\n", 
+        ((t == NULL)? -1:t->timer), 
+        itimer.it_interval.tv_sec,
+        itimer.it_interval.tv_nsec,
+        result, az_sys_errno);
+  }
   return result;
 }
 

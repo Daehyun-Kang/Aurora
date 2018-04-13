@@ -70,7 +70,7 @@ static az_fsm_state_t az_test_fsm_handleOnIdle(void *ctx, az_fsm_state_t state, 
   az_assert(NULL != edescr);
 
   az_test_case_t *tc = az_test_curTestCase();
-  az_tlog("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 0, evt));
+  az_tlog("testcase:%s %s\n", tc->name, az_fsm_prtstate(ctx, 0, evt));
   do {
     switch (evtid) {
       case AZ_TEST_CMD_INIT:
@@ -122,7 +122,7 @@ static az_fsm_state_t az_test_fsm_handleOnInit(void *ctx, az_fsm_state_t state, 
   az_assert(NULL != edescr);
 
   az_test_case_t *tc = az_test_curTestCase();
-  az_tlog("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 1, evt));
+  az_tlog("testcase:%s %s\n", tc->name, az_fsm_prtstate(ctx, 1, evt));
   do {
     switch (evtid) {
       case AZ_TEST_CMD_SYNC:
@@ -172,7 +172,7 @@ static az_fsm_state_t az_test_fsm_handleOnSync(void *ctx, az_fsm_state_t state, 
   az_assert(NULL != edescr);
 
   az_test_case_t *tc = az_test_curTestCase();
-  az_tlog("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 2, evt));
+  az_tlog("testcase:%s %s\n", tc->name, az_fsm_prtstate(ctx, 2, evt));
   do {
     switch (evtid) {
       case AZ_TEST_CMD_STRT:
@@ -238,7 +238,7 @@ az_fsm_state_t az_test_fsm_handleOnNorm(void *ctx, az_fsm_state_t state, az_even
       tc->index, tc->name, 
       tc->report.pass, tc->report.fail,
       tc->test_iter.index, 
-      tc->test_iter.remained, az_fsm_probe(ctx, 3, evt));
+      tc->test_iter.remained, az_fsm_prtstate(ctx, 3, evt));
 
   if (tc->test_iter.index < tc->test_iter.count) {
     iter = tc->test_iter.list + tc->test_iter.index;
@@ -361,7 +361,7 @@ static az_fsm_state_t az_test_fsm_handleOnTini(void *ctx, az_fsm_state_t state, 
   az_assert(NULL != edescr);
 
   az_test_case_t *tc = az_test_curTestCase();
-  az_tlog("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 4, evt));
+  az_tlog("testcase:%s %s\n", tc->name, az_fsm_prtstate(ctx, 4, evt));
   do {
     switch (evtid) {
       case AZ_TEST_CMD_TINI:
@@ -398,7 +398,7 @@ static az_fsm_state_t az_test_fsm_handleOnIerr(void *ctx, az_fsm_state_t state, 
   az_assert(NULL != edescr);
 
   az_test_case_t *tc = az_test_curTestCase();
-  az_tlog("testcase:%s %s\n", tc->name, az_fsm_probe(ctx, 5, evt));
+  az_tlog("testcase:%s %s\n", tc->name, az_fsm_prtstate(ctx, 5, evt));
   do {
     switch (evtid) {
       case AZ_TEST_EVT_IERR:

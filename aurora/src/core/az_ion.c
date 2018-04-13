@@ -136,12 +136,12 @@ void az_ion_empty(az_ion_t *ion)
   az_assert(NULL != ion);
   az_atomic_dec32(&AZ_ION_LIST()->count);
   if (ion->id & AZ_ION_ID_FLAG_NONIO) {
+    az_array_delptr(AZ_ION_LIST()->nonio_ions, ion->id & ~AZ_ION_ID_FLAG_NONIO);
+  } else {
     az_ions_io[ion->id] = NULL;
     if (ion->type & AZ_ION_FLAG_AUTOALLOC) {
       az_sys_io_delete(ion->id); 
     }
-  } else {
-    az_array_delptr(AZ_ION_LIST()->nonio_ions, ion->id & ~AZ_ION_ID_FLAG_NONIO);
   }
   ion->id = AZ_SYS_IO_INVALID;
 }

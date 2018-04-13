@@ -381,6 +381,9 @@ def main():
   funcret = funcstruct['ret'];
   funcargs = funcstruct['args'];
 
+  if funcname[:3] == 'az_':
+    funcname = funcname[3:]
+
   if funcret == "void":
     func_has_return = False
   else:

@@ -43,6 +43,9 @@
 #define _GNU_SOURCE
 #endif
 
+#define CONFIG_AZ_DEBUG             1
+#undef CONFIG_AZ_DEBUG             
+
 #define CONFIG_AZ_DEBUG_NATIVE_APP  1
 #undef CONFIG_AZ_DEBUG_NATIVE_APP 
 
@@ -92,7 +95,7 @@
 //#undef CONFIG_AZ_CLI           
 
 #define CONFIG_AZM                      1
-//#undef  CONFIG_AZM                      
+#undef  CONFIG_AZM                      
 
 #ifdef CONFIG_AZM                      
 #define CONFIG_AZ_CLI_SHELL_PROMPT      "$$"
@@ -186,6 +189,11 @@
 
 #define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
 #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
+
+#ifdef  CONFIG_AZ_DEBUG
+#define CONFIG_AZ_LOG_LEVEL_DFT           70    // AZ_LOG_LEVEL_DEBUG
+#define CONFIG_AZ_LOG_FLAGS_DFT           0x0f  // plain print 
+#endif
 
 #define CONFIG_AZ_PERF_MEASURE_LOOP_CNT_DFT   100000 //1000000
 #define CONFIG_AZ_PERF_MEASURE_SAMPLES_DFT    100    //1000

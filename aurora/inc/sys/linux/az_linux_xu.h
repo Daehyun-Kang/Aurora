@@ -94,12 +94,19 @@ static inline az_sys_ep_t *az_sys_xu_eport()
  * @return 
  * @exception    none
  */
-static inline az_sys_iomux_t az_sys_xu_iomux()
+static inline az_sys_iomux_t az_sys_iomux(az_sys_xu_t xu)
 {
-  az_sys_xu_t xu = az_sys_xu;
   if (NULL == xu) return AZ_SYS_IOMUX_INVALID;
   else return xu->iomux;
+
 }
+static inline az_sys_iomux_t az_sys_xu_iomux()
+{
+  return az_sys_iomux(az_sys_xu);
+}
+
+#define az_sys_xu_iomux_is_valid(xu) (az_sys_xu_iomux() != AZ_SYS_IOMUX_INVALID)
+#define az_sys_iomux_is_valid(xu) (az_sys_iomux(xu) != AZ_SYS_IOMUX_INVALID)
 
 /**
  * @fn 
@@ -120,6 +127,7 @@ static inline az_r_t az_sys_xu_open_iomux()
     }
     if (xu->iomux == AZ_SYS_IOMUX_INVALID) {
       r = AZ_FAIL;
+      break;
     }
     az_sys_iomux_add_ep(xu->iomux, &xu->ep);
   } while (0);
@@ -153,15 +161,25 @@ static inline az_r_t az_sys_xu_close_iomux()
 
   return r;
 }
+static inline az_r_t az_sys_iomux_xu_add(az_sys_xu_t xu, az_sys_io_t fd, uint32_t ioevt)
+{
+  az_assert(NULL != xu);
+  return (az_r_t)az_sys_iomux_add(xu->iomux, fd, ioevt);
+}
 static inline az_r_t az_sys_xu_iomux_add(az_sys_io_t fd, uint32_t ioevt)
 {
   az_assert(NULL != az_sys_xu);
-  return (az_r_t)az_sys_iomux_add(az_sys_xu->iomux, fd, ioevt);
+  return (az_r_t)az_sys_iomux_xu_add(az_sys_xu, fd, ioevt);
+}
+static inline az_r_t az_sys_iomux_xu_del(az_sys_xu_t xu, az_sys_io_t fd)
+{
+  az_assert(NULL != xu);
+  return (az_r_t)az_sys_iomux_del(xu->iomux, fd);
 }
 static inline az_r_t az_sys_xu_iomux_del(az_sys_io_t fd)
 {
   az_assert(NULL != az_sys_xu);
-  return (az_r_t)az_sys_iomux_del(az_sys_xu->iomux, fd);
+  return az_sys_iomux_xu_del(az_sys_xu, fd);
 }
 
 

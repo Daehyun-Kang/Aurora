@@ -25,6 +25,7 @@
 #include "az_err.h"
 #include "az_macros.h"
 #include "az_malloc.h"
+#include "sys/az_xu.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -41,6 +42,8 @@ typedef struct {
   char      name[CONFIG_AZ_NAME_MAX];
 
   az_sys_timer_t         sys_timer;
+
+  az_xu_t xu;
 } az_timer_entity_t;
 
 typedef az_timer_entity_t *   az_timer_t;

@@ -362,6 +362,10 @@ static inline void az_sys_iomux_add_ep(az_sys_iomux_t mux, az_sys_ep_t *ep)
 {
   int r = AZ_FAIL;
   do {
+    if (ep->fd != AZ_SYS_FD_INVALID) {
+      r = AZ_ERR(AGAIN);
+      break;
+    }
     if (ep->fd == AZ_SYS_FD_INVALID) {
       ep->fd = az_sys_io_create(); 
     }

@@ -21,7 +21,7 @@
 /* include header files */
 #include "az_core.h"
 #include "az_printf.h"
-#include "sys/az_xu.h"
+#include "az_thread.h"
 
 /* declare global variables */
 // define az_event_store
@@ -145,8 +145,8 @@ az_r_t  az_event_descr_create(az_event_descr_t **pDescr, az_event_id_t event_id,
       *pDescr = descr;
       az_refcount_init_dynamic(&descr->refCount);
       az_ring_init(&descr->event_cache, AZ_RING_TYPE_DSREF, cache_size, descr+1);
-      //az_ring_toStr(az_xu_prtbuf, sizeof(az_xu_prtbuf), &descr->event_cache);
-      //az_sys_printf("event_cache: %s\n", az_xu_prtbuf);
+      //az_ring_toStr(az_thread_prtbuf, sizeof(az_thread_prtbuf), &descr->event_cache);
+      //az_sys_printf("event_cache: %s\n", az_thread_prtbuf);
     }
     az_refcount_atomic_inc(&descr->refCount);
 
@@ -211,8 +211,8 @@ az_event_t az_event_alloc(az_event_descr_t *descr, az_uint32_t buffer_size,
   az_event_t  evt = NULL;
   
   do {
-      //az_ring_toStr(az_xu_prtbuf, sizeof(az_xu_prtbuf), &descr->event_cache);
-      //az_sys_printf("event_cache: %s\n", az_xu_prtbuf);
+      //az_ring_toStr(az_thread_prtbuf, sizeof(az_thread_prtbuf), &descr->event_cache);
+      //az_sys_printf("event_cache: %s\n", az_thread_prtbuf);
     az_ring_pop(&descr->event_cache, &evt);
     if (NULL != evt) { 
       if (evt->buffer.size >= buffer_size) {
@@ -398,7 +398,7 @@ az_r_t az_event_receiver_init(az_event_receiver_t *rcvr, az_event_t event, az_ev
 
   az_link_init(&rcvr->link);
   rcvr->sys_port = az_sys_xu_eport();
-  rcvr->signo = AZ_XU_EVENT_EVTBUS;
+  rcvr->signo = AZ_THREAD_BEAM_EVTBUS;
   rcvr->event = event;
   rcvr->event_mux = event_mux;
   rcvr->event_q = event_q;
@@ -424,8 +424,8 @@ az_r_t az_event_receiver_in_default(az_event_receiver_t *rcvr, az_event_t evt)
   do {
     if (AZ_EVENT_IS_TYPE_EDGE(evt)) {
       r = az_ring_push(rcvr->event_q, &evt);
-      //az_ring_toStr(az_xu_prtbuf, sizeof(az_xu_prtbuf), rcvr->event_q);
-      //az_rprintf(r, "rcvr %p ring: %s\n", rcvr, az_xu_prtbuf);
+      //az_ring_toStr(az_thread_prtbuf, sizeof(az_thread_prtbuf), rcvr->event_q);
+      //az_rprintf(r, "rcvr %p ring: %s\n", rcvr, az_thread_prtbuf);
       if (r < 0) {
         rcvr->stats.err.qfull++;
         break;
@@ -570,8 +570,8 @@ az_r_t az_event_receiver_out_default(az_event_receiver_t *rcvr, az_event_t *pEvt
       }
     }
     r = az_ring_pop(rcvr->event_q, pEvt);
-    //az_ring_toStr(az_xu_prtbuf, sizeof(az_xu_prtbuf), rcvr->event_q);
-    //az_rprintf(r, "rcvr %p ring: %s\n", rcvr, az_xu_prtbuf);
+    //az_ring_toStr(az_thread_prtbuf, sizeof(az_thread_prtbuf), rcvr->event_q);
+    //az_rprintf(r, "rcvr %p ring: %s\n", rcvr, az_thread_prtbuf);
     if (r < 0) {
       r = AZ_ERR(NO_DATA);
       break;

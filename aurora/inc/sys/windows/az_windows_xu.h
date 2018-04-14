@@ -40,7 +40,7 @@ typedef struct {
   HANDLE        thread;
   void          *(*entry)(void *); 
   void          *arg;
-  az_xu_attr_t    *attr;
+  az_thread_attr_t    *attr;
 
   az_sys_ep_t   ep;
 
@@ -77,10 +77,10 @@ extern az_r_t az_sys_xu_create(const char *name, void *(*entry)(void *),
                     void *arg, void *pOptions, az_sys_xu_t *pXu);
 extern az_r_t az_sys_xu_delete(az_sys_xu_t xu);
 
-extern az_r_t az_sys_xu_setPriority(az_sys_xu_t xu, az_xu_attr_t *pAttr);
-extern az_r_t az_sys_xu_getPriority(az_sys_xu_t xu, az_xu_attr_t *pAttr);
-extern az_r_t az_sys_xu_setAffinity(az_sys_xu_t xu, az_xu_core_mask_t );
-extern az_r_t az_sys_xu_getAffinity(az_sys_xu_t xu, az_xu_core_mask_t *);
+extern az_r_t az_sys_xu_setPriority(az_sys_xu_t xu, az_thread_attr_t *pAttr);
+extern az_r_t az_sys_xu_getPriority(az_sys_xu_t xu, az_thread_attr_t *pAttr);
+extern az_r_t az_sys_xu_setAffinity(az_sys_xu_t xu, az_thread_core_mask_t );
+extern az_r_t az_sys_xu_getAffinity(az_sys_xu_t xu, az_thread_core_mask_t *);
 
 extern az_r_t az_sys_xu_suspend(az_sys_xu_t xu);
 extern az_r_t az_sys_xu_resume(az_sys_xu_t xu);

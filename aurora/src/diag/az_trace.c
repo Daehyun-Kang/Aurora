@@ -203,35 +203,35 @@ void az_attr_no_instrument __cyg_profile_func_enter(void *func, void *caller);
 void az_attr_no_instrument __cyg_profile_func_exit(void *func, void *caller);
 
 #ifdef  CONFIG_AZ_TRACE_PTHREAD
-AZ_SYS_TLS az_xu_trace_info_t *az_pthread_trace_info = NULL;
+AZ_SYS_TLS az_thread_trace_info_t *az_pthread_trace_info = NULL;
 #endif
 void __cyg_profile_func_enter(void *func, void *caller)
 {
   az_trace_info_t info;
-  az_xu_trace_info_t *xu_info;
+  az_thread_trace_info_t *xu_info;
   do {
     if (!AZ_TRACE_IS_ACTV()) break;
 
     #ifdef  CONFIG_AZ_TRACE_PTHREAD
     if (az_pthread_trace_info == NULL) {
-      az_pthread_trace_info = az_malloc(sizeof(az_xu_trace_info_t));
+      az_pthread_trace_info = az_malloc(sizeof(az_thread_trace_info_t));
       az_pthread_trace_info->thread = pthread_self();
     }
     xu_info = az_pthread_trace_info; 
     if (xu_info) {
       info.xu = xu_info->thread; 
     #else
-    xu_info = az_xu_traceinfo(); 
+    xu_info = az_thread_traceinfo(); 
     if (xu_info) {
-      info.xu = az_xu_self();
+      info.xu = az_thread_self();
     #endif
-      if (!AZ_XU_TRACE_ENABLED(xu_info)) break;
-      AZ_XU_TRACE_SET_CURFUNC(xu_info, func);
+      if (!AZ_THREAD_TRACE_ENABLED(xu_info)) break;
+      AZ_THREAD_TRACE_SET_CURFUNC(xu_info, func);
       info.depth = xu_info->depth++;
       #ifdef  CONFIG_AZ_TRACE_PTHREAD
       strncpy(info.xu_name, xu_info->name, sizeof(info.xu_name)-1);
       #else
-      strncpy(info.xu_name, AZ_XU_NAME(info.xu), sizeof(info.xu_name)-1);
+      strncpy(info.xu_name, AZ_THREAD_NAME(info.xu), sizeof(info.xu_name)-1);
       #endif
     } else {
       info.xu = NULL;
@@ -253,7 +253,7 @@ void __cyg_profile_func_enter(void *func, void *caller)
 void __cyg_profile_func_exit(void *func, void *caller)
 {
   az_trace_info_t info;
-  az_xu_trace_info_t *xu_info;
+  az_thread_trace_info_t *xu_info;
   do {
     if (!AZ_TRACE_IS_ACTV()) return;
 
@@ -262,19 +262,19 @@ void __cyg_profile_func_exit(void *func, void *caller)
     if (xu_info) {
       info.xu = xu_info->thread;
     #else
-    xu_info = az_xu_traceinfo(); 
+    xu_info = az_thread_traceinfo(); 
     if (xu_info) {
-      info.xu = az_xu_self();
+      info.xu = az_thread_self();
     #endif
-      if (!AZ_XU_TRACE_ENABLED(xu_info)) break;
+      if (!AZ_THREAD_TRACE_ENABLED(xu_info)) break;
       xu_info->depth--;
       if  (xu_info->depth < 0) xu_info->depth = 0; 
       info.depth = xu_info->depth;
-      AZ_XU_TRACE_SET_CURFUNC(xu_info, NULL);
+      AZ_THREAD_TRACE_SET_CURFUNC(xu_info, NULL);
       #ifdef  CONFIG_AZ_TRACE_PTHREAD
       strncpy(info.xu_name, xu_info->name, sizeof(info.xu_name)-1);
       #else
-      strncpy(info.xu_name, AZ_XU_NAME(info.xu), sizeof(info.xu_name)-1);
+      strncpy(info.xu_name, AZ_THREAD_NAME(info.xu), sizeof(info.xu_name)-1);
       #endif
     } else {
       info.xu = NULL;
@@ -311,12 +311,12 @@ int az_cli_cmd_trace(int argc, char *argv[])
       az_cli_printf("trace all %s\n", onoff? "on":"off");
       break;
     }
-    az_xu_t xu = az_xu_find(argv[2]);
+    az_thread_t xu = az_thread_find(argv[2]);
     if (xu == NULL) {
       az_cli_printf("thread %s not found\n", argv[2]);
       break;
     }
-    onoff = az_xu_set_trace(&xu->trace_info, onoff);
+    onoff = az_thread_set_trace(&xu->trace_info, onoff);
     az_cli_printf("trace %s %s\n", argv[2], onoff? "on":"off");
   } while (0);
 
@@ -324,7 +324,7 @@ int az_cli_cmd_trace(int argc, char *argv[])
 }
 
 int az_trace_thread_state = 0;
-az_xu_t az_trace_thread_default = NULL;
+az_thread_t az_trace_thread_default = NULL;
 
 #ifdef  CONFIG_AZ_TRACE_SELF
 
@@ -413,7 +413,7 @@ az_r_t  az_trace_start_default_thread()
   az_r_t r;
 
   az_trace_thread_default = NULL;
-  r = (az_r_t)az_xu_create("traceDefault", az_trace_thread_proc_default, NULL, NULL, &az_trace_thread_default);
+  r = (az_r_t)az_thread_create("traceDefault", az_trace_thread_proc_default, NULL, NULL, &az_trace_thread_default);
   //az_sys_printf("%s: %p\n", __FUNCTION__, az_log_thread_default);
 
   return (r < AZ_SUCCESS)? r:AZ_SUCCESS;
@@ -424,7 +424,7 @@ az_r_t  az_trace_stop_default_thread()
   int r;
 
   az_trace_thread_state = 0;
-  r = az_xu_delete(az_trace_thread_default);
+  r = az_thread_delete(az_trace_thread_default);
 
   return r;
 }
@@ -649,7 +649,7 @@ az_r_t  az_trace_start_default_thread()
 
   if (ctrl->state & AZ_TRACE_STATE_INIT) {
     az_trace_thread_default = NULL;
-    r = (az_r_t)az_xu_create("traceDefault", az_trace_thread_proc_default, NULL, NULL, &az_trace_thread_default);
+    r = (az_r_t)az_thread_create("traceDefault", az_trace_thread_proc_default, NULL, NULL, &az_trace_thread_default);
   }
 
   az_trace_svr_oprs = az_tcpserver_oprs_default;
@@ -679,7 +679,7 @@ az_r_t  az_trace_stop_default_thread()
       if (az_trace_thread_state) {
         az_trace_thread_state = 0;
         while (ctrl->state & AZ_TRACE_STATE_INIT) {
-          az_xu_sleep(1000000);
+          az_thread_sleep(1000000);
         }
       }
     }
@@ -727,7 +727,7 @@ az_r_t  az_trace_stop_default_thread()
       if (az_trace_thread_state) {
         az_trace_thread_state = 0;
         while (ctrl->state & AZ_TRACE_STATE_INIT) {
-          az_xu_sleep(1000000);
+          az_thread_sleep(1000000);
         }
       }
     }

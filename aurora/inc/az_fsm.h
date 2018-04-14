@@ -74,12 +74,12 @@ static inline char *az_fsm_prtstate(az_fsm_t *fsm, int loc, az_event_t event)
 {
   az_assert(fsm != NULL);
   az_assert(fsm->vcur != NULL);
-  snprintf(az_xu_prtbuf,sizeof(az_xu_prtbuf), 
+  snprintf(az_thread_prtbuf,sizeof(az_thread_prtbuf), 
       "%s: (%d) state=h%x event=(h"AZ_FMT_EVENT_ID(1)":%d:h%p)\n",
       fsm->name, loc, 
       fsm->vcur->state, AZ_EVENT_ID(event), 
       AZ_EVENT_BUFFER_SIZE(event), AZ_EVENT_BUFFER_DATA(event));
-  return az_xu_prtbuf;
+  return az_thread_prtbuf;
 }
 
 /* inline functions */

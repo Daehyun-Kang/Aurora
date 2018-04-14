@@ -22,7 +22,7 @@
 #define AZ_LOG_H
 
 #include "az_cirbuffer.h"
-#include "sys/az_xu.h"
+#include "az_thread.h"
 #include "sys/az_datetime.h"
 
 #ifdef  CONFIG_AZ_USE_STDARG
@@ -188,8 +188,8 @@ static inline int az_print_timestamp(char *bp, int blen, const char *fmt, az_sys
 {\
   int _nlen;\
   char *_bp = bp;\
-  az_xu_t xu = az_xu_self();\
-  char *xu_name = ((xu == NULL)? "????":AZ_XU_NAME(xu));\
+  az_thread_t xu = az_thread_self();\
+  char *xu_name = ((xu == NULL)? "????":AZ_THREAD_NAME(xu));\
   _nlen = sprintf(_bp, "[%s]  ", xu_name);\
   blen -= _nlen; tlen += _nlen;\
 }
@@ -436,7 +436,7 @@ static inline int az_log_printf(az_logid_t logid, az_log_level_t level, az_log_f
 
 
 extern az_log_t az_log_default;
-extern az_xu_t az_log_thread_default;
+extern az_thread_t az_log_thread_default;
 
 /* function prototypes exposed */
 extern void az_log_ctrl_init();

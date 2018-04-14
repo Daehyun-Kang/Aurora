@@ -22,7 +22,7 @@
 #define AZ_TEST_H
 
 #include "az_xcfg.h"
-#include "az_xu.h"
+#include "az_thread.h"
 #include "frw/az_frw.h"
 
 #ifdef __cplusplus
@@ -182,11 +182,11 @@ typedef az_test_project_t az_testproj_t;
 /* structured types */
 
 /* macros */
-#define az_test_curTestCase() ((az_test_case_t *)(az_xu_self()->arg))
+#define az_test_curTestCase() ((az_test_case_t *)(az_thread_self()->arg))
 // define xu events
-#define AZ_XU_EVENT_TEST_STARTED      0x00008000
-#define AZ_XU_EVENT_TEST_STOPPED      0x00004000
-#define AZ_XU_EVENT_TEST_ERROR        0x00002000
+#define AZ_THREAD_BEAM_TEST_STARTED      0x00008000
+#define AZ_THREAD_BEAM_TEST_STOPPED      0x00004000
+#define AZ_THREAD_BEAM_TEST_ERROR        0x00002000
 
 // define test fsm state
 #define AZ_TEST_STATE_IDLE        0
@@ -279,10 +279,10 @@ typedef az_test_project_t az_testproj_t;
 extern az_test_framework_t  az_test_frw;
 extern az_xcfg_tree_t       az_test_frw_cfg_tree;
 
-extern az_xu_t          az_tp_thread_default;
+extern az_thread_t          az_tp_thread_default;
 
 extern int              az_tc_thread_state;
-extern az_xu_t          az_tc_thread_default;
+extern az_thread_t          az_tc_thread_default;
 extern az_fsm_vector_t  az_tc_fsm_table[];
 extern az_fsm_t         az_tc_fsm;
 /* inline functions */

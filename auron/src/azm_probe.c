@@ -37,7 +37,7 @@ az_probe_ctrl_t azm_probe_ctrl = {
 };
 
 int azm_probe_thread_state = 0;
-az_xu_t azm_probe_thread_default = NULL;
+az_thread_t azm_probe_thread_default = NULL;
 
 extern az_r_t  azm_probe_stop_default_thread();
 /* declare static variables */
@@ -335,7 +335,7 @@ az_r_t  azm_probe_start_default_thread()
 
   if (azm_probe_thread_state == 0) {
     azm_probe_thread_default = NULL;
-    r = az_xu_create("rprobeDefault", azm_probe_thread_proc_default, NULL, NULL, &azm_probe_thread_default);
+    r = az_thread_create("rprobeDefault", azm_probe_thread_proc_default, NULL, NULL, &azm_probe_thread_default);
   } else {
     r = AZ_ERR(AGAIN);
     az_cli_printf("already started!\n");
@@ -359,7 +359,7 @@ az_r_t  azm_probe_stop_default_thread()
   if (azm_probe_thread_state) {
     azm_probe_thread_state = 0;
     while (ctrl->state & AZ_PROBE_STATE_ENAB) {
-      az_xu_sleep(1000000);
+      az_thread_sleep(1000000);
     }
     ctrl->state = AZ_PROBE_STATE_IDLE;
   } else {

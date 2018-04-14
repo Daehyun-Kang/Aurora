@@ -44,14 +44,14 @@
  */
 
 
-static az_xu_config_t xu_cfg = {
+static az_thread_config_t xu_cfg = {
   .stackSize = 0,
   .policy = SCHED_FIFO,
   .priority = 99,
   .coremask = 0x0002,
   .startdelay = 0,
 };
-static az_xu_t xu = NULL;
+static az_thread_t xu = NULL;
 
 static void *xu_perf_calibrate(void *arg)
 {
@@ -217,7 +217,7 @@ static void *xu_perf_calibrate(void *arg)
   testproj->perf_cal.csc = csc; 
   testproj->perf_cal.mhz = acc_mhz; 
 
-  az_xu_sendEvent(testproj->xu_id, AZ_XU_EVENT_TEST_STOPPED);
+  az_thread_send_beam(testproj->xu_id, AZ_THREAD_BEAM_TEST_STOPPED);
   return NULL;
 }
 /* implement global functions */
@@ -234,19 +234,19 @@ az_r_t az_perf_calibrate(az_testproj_t *testproj)
 {
   az_r_t  r = AZ_SUCCESS;
   az_ion_id_t xu_id;
-  az_xu_event_t received;
+  az_thread_beam_t received;
 
   do {
     xu = NULL;
-    xu_id = az_xu_create("perfCal", xu_perf_calibrate, testproj, &xu_cfg, &xu);
+    xu_id = az_thread_create("perfCal", xu_perf_calibrate, testproj, &xu_cfg, &xu);
     if (xu_id < 0) break;
 
-    r = az_xu_recvEvent(0xffff, 0, -1, &received);
+    r = az_thread_recv_beam(0xffff, 0, -1, &received);
     if (r < 0) break;
-    if (!(received & AZ_XU_EVENT_TEST_STOPPED)) {
+    if (!(received & AZ_THREAD_BEAM_TEST_STOPPED)) {
       az_dlog("perf cal interrupted by event %x\n", received);
-      az_xu_stop(xu_id);
-      az_xu_delete(xu_id);
+      az_thread_stop(xu_id);
+      az_thread_delete(xu_id);
       xu = NULL;
       r = AZ_ERR(INTERRUPT);
       break;

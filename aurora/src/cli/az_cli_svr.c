@@ -71,7 +71,7 @@ void az_cli_rshell_cleanup(az_cli_shell_t *pSh)
   //az_sys_eprintf("%s ..." AZ_NL,pSh->name);
 	az_inet_closeSocket(pSh->rxport);
 
-  az_xu_sleep(1000000000);
+  az_thread_sleep(1000000000);
 
   void *thread = pSh->thread;
   if (pSh->state & AZ_CLI_SHELL_STATE_DMALLOC) {

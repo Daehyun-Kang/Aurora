@@ -22,7 +22,7 @@
 
 #include "az_sys_windows.h"
 #include "az_ion_types.h"
-#include "az_xu_types.h"
+#include "az_thread_types.h"
 #include "az_err.h"
 #include "az_assert.h"
 
@@ -120,7 +120,7 @@ typedef struct {
   HANDLE        thread;
   void          *(*entry)(void *); 
   void          *arg;
-  az_xu_attr_t    *attr;
+  az_thread_attr_t    *attr;
 
   az_sys_ep_t   ep;
 

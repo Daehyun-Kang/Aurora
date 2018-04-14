@@ -25,7 +25,7 @@
 #include "az_err.h"
 #include "az_macros.h"
 #include "az_malloc.h"
-#include "sys/az_xu.h"
+#include "az_thread.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -43,7 +43,7 @@ typedef struct {
 
   az_sys_timer_t         sys_timer;
 
-  az_xu_t xu;
+  az_thread_t xu;
 } az_timer_entity_t;
 
 typedef az_timer_entity_t *   az_timer_t;

@@ -41,7 +41,7 @@
 
 
 /* implement global functions */
-az_xu_t test_xu[AZ_TEST_DESCR_MAX];
+az_thread_t test_xu[AZ_TEST_DESCR_MAX];
 
 /**
  * @fn        function name
@@ -140,7 +140,7 @@ int az_test_doTestCase(az_test_config_t *pCfg, az_xml_element_t *pTestCase, char
         az_free(descr);
         continue;
       }
-      r = az_xu_create(descr->name, az_test_xu_entry, descr, NULL, &test_xu[index]);
+      r = az_thread_create(descr->name, az_test_xu_entry, descr, NULL, &test_xu[index]);
       index++;
   } while (index < AZ_TEST_DESCR_MAX);
 

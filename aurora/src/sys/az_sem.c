@@ -51,18 +51,24 @@
 az_ion_id_t  az_sem_create(const char *name, int options, unsigned int value, az_sem_t *pSem)
 {
   az_r_t result = AZ_SUCCESS;
-  az_sem_t m;
+  az_sem_t m = NULL;
 
   do {
     az_if_arg_null_break(name, result);
-    az_if_arg_null_break(pSem, result);
 
-    m = *pSem;
+    if (pSem) {
+      m = *pSem;
+    }
     
     if (NULL == m) {
       m = az_malloc(sizeof(az_sem_entity_t));
       az_if_alloc_null_break(m, result);
       az_ion_invalidate(&m->ion, 0);
+    } else {
+      if (!AZ_ION_IS_IDLE_VALID(&m->ion, AZ_ION_TYPE_SEM)) {
+        result = AZ_ERR(INVALID_ARG);
+        break;
+      }
     }
     az_assert(m->ion.id == AZ_SYS_IO_INVALID);
 
@@ -85,11 +91,12 @@ az_ion_id_t  az_sem_create(const char *name, int options, unsigned int value, az
       if (AZ_REFCOUNT_IS_ZERO(&m->ion.refCount)) {
         az_free(m);
       }
+      if (pSem) *pSem = NULL;
       break;
     } else {
       az_refcount_atomic_inc(&m->ion.refCount);
     }
-    *pSem = m;
+    if (pSem) *pSem = m;
   } while (0);
 
   return result;

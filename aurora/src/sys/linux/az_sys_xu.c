@@ -57,7 +57,7 @@ int az_sys_xu_save_context()
   
   if (xu) {
     /*
-    if (xu->env_index < CONFIG_AZ_XU_EXCPT_STK_SZ - 1) {
+    if (xu->env_index < CONFIG_AZ_THRED_EXCPT_STK_SZ - 1) {
       r = setjmp(xu->env[xu->env_index++]);
     } else {
       r = setjmp(xu->env[xu->env_index]);
@@ -100,7 +100,7 @@ void az_sys_xu_remove_context()
 
 static void az_sys_xu_sigsegv_handler(int sig, siginfo_t *info, void *context)
 {
-  extern void  az_xu_set_state_excpt(void *);
+  extern void  az_thread_set_state_excpt(void *);
   void *trace[CONFIG_AZ_EXP_CALLSTACK_DEPTH];
   char  **messages = (char **)NULL;
   ucontext_t *uc = (ucontext_t *)context;
@@ -115,9 +115,9 @@ static void az_sys_xu_sigsegv_handler(int sig, siginfo_t *info, void *context)
   messages = backtrace_symbols(trace, trace_size);
 
   #ifdef  __SANITIZE_ADDRESS__
-  az_xu_set_state_excpt(trace[3]);
+  az_thread_set_state_excpt(trace[3]);
   #else
-  az_xu_set_state_excpt(trace[2]);
+  az_thread_set_state_excpt(trace[2]);
   #endif
 
   #if defined(__i386__) 
@@ -241,7 +241,7 @@ az_r_t az_sys_xu_init(const char *name,
 {
   az_r_t result = AZ_SUCCESS;
   az_sys_xu_t xu;
-  az_xu_attr_t *xu_attr = (az_xu_attr_t *)pOptions;
+  az_thread_attr_t *xu_attr = (az_thread_attr_t *)pOptions;
 
   do {
     az_if_arg_null_break(name, result);
@@ -297,7 +297,7 @@ az_r_t az_sys_xu_create(const char *name,
 {
   az_r_t result = AZ_SUCCESS;
   az_sys_xu_t xu;
-  az_xu_attr_t *xu_attr = (az_xu_attr_t *)pOptions;
+  az_thread_attr_t *xu_attr = (az_thread_attr_t *)pOptions;
 
   do {
     az_if_arg_null_break(name, result);
@@ -415,7 +415,7 @@ az_r_t az_sys_xu_delete(az_sys_xu_t xu)
  * @return 
  * @exception    none
  */
-az_r_t  az_sys_xu_setPriority(az_sys_xu_t xu, az_xu_attr_t *pAttr)
+az_r_t  az_sys_xu_setPriority(az_sys_xu_t xu, az_thread_attr_t *pAttr)
 {
   az_r_t result = AZ_SUCCESS;
   do {
@@ -437,7 +437,7 @@ az_r_t  az_sys_xu_setPriority(az_sys_xu_t xu, az_xu_attr_t *pAttr)
  * @return 
  * @exception    none
  */
-az_r_t  az_sys_xu_getPriority(az_sys_xu_t xu, az_xu_attr_t *pAttr)
+az_r_t  az_sys_xu_getPriority(az_sys_xu_t xu, az_thread_attr_t *pAttr)
 {
   az_r_t result = AZ_SUCCESS;
   do {
@@ -460,7 +460,7 @@ az_r_t  az_sys_xu_getPriority(az_sys_xu_t xu, az_xu_attr_t *pAttr)
  * @return 
  * @exception    none
  */
-az_r_t  az_sys_xu_setAffinity(az_sys_xu_t xu, az_xu_core_mask_t core_mask)
+az_r_t  az_sys_xu_setAffinity(az_sys_xu_t xu, az_thread_core_mask_t core_mask)
 {
   az_r_t result = AZ_SUCCESS;
   do {
@@ -490,7 +490,7 @@ az_r_t  az_sys_xu_setAffinity(az_sys_xu_t xu, az_xu_core_mask_t core_mask)
  * @return 
  * @exception    none
  */
-az_r_t  az_sys_xu_getAffinity(az_sys_xu_t xu, az_xu_core_mask_t *pCoreMask)
+az_r_t  az_sys_xu_getAffinity(az_sys_xu_t xu, az_thread_core_mask_t *pCoreMask)
 {
   az_r_t result = AZ_SUCCESS;
   do {

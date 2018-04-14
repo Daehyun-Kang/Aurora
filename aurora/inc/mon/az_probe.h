@@ -24,7 +24,7 @@
 #include "az_def.h"
 #include "az_ring.h"
 #include "az_prof.h"
-#include "sys/az_xu.h"
+#include "az_thread.h"
 #include "sys/az_inet.h"
 
 
@@ -99,7 +99,7 @@ extern az_probe_ctrl_t  az_probe_ctrl;
 #ifdef  CONFIG_AZ_PROBE_ENABLE
 #define AZ_PROBE_SET(level) \
   do {\
-    az_xu_t _xu = az_xu_self();  \
+    az_thread_t _xu = az_thread_self();  \
     az_probe_sample_t _sample;\
     az_sys_timespec_t  _cur;\
     if ((AZ_PROBE_STATE_READY & az_probe_ctrl.state) != AZ_PROBE_STATE_READY) {\

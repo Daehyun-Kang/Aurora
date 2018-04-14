@@ -21,7 +21,7 @@
 #ifndef AZ_TRACE_H
 #define AZ_TRACE_H
 
-#include "az_xu.h"
+#include "az_thread.h"
 #include "mon/az_mcheck.h"
 
 #ifdef __cplusplus
@@ -81,7 +81,7 @@ typedef AZ_PACKED_STRUCT(az_trace_info) {
       #ifdef  CONFIG_AZ_TRACE_PTHREAD
       pthread_t xu; 
       #else
-      az_xu_t xu; 
+      az_thread_t xu; 
       #endif
       void    *func;
       void    *caller;
@@ -125,7 +125,7 @@ static inline int az_attr_no_instrument az_trace_enable_on_pthread(int onoff, ch
   int r = 0;
   do {
     if (az_pthread_trace_info == NULL) {
-      az_pthread_trace_info = az_malloc(sizeof(az_xu_trace_info_t));
+      az_pthread_trace_info = az_malloc(sizeof(az_thread_trace_info_t));
       if (az_pthread_trace_info == NULL) {
         r = AZ_ERR(MALLOC);
         break;
@@ -136,9 +136,9 @@ static inline int az_attr_no_instrument az_trace_enable_on_pthread(int onoff, ch
       pthread_setname_np(az_pthread_trace_info->thread, name);
     }
     if (onoff) {
-      AZ_XU_TRACE_ENABLE(az_pthread_trace_info);
+      AZ_THREAD_TRACE_ENABLE(az_pthread_trace_info);
     } else {
-      AZ_XU_TRACE_DISABLE(az_pthread_trace_info);
+      AZ_THREAD_TRACE_DISABLE(az_pthread_trace_info);
     }
 
   } while (0);

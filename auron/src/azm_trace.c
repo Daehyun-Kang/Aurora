@@ -43,7 +43,7 @@ azm_trace_ctrl_t azm_trace_ctrl = {
 };
 
 int azm_trace_thread_state = 0;
-az_xu_t azm_trace_thread_default = NULL;
+az_thread_t azm_trace_thread_default = NULL;
 
 #define AZM_TRACE_FILTER_MAX  16
 struct azm_trace_filter {
@@ -405,7 +405,7 @@ int azm_trace_proc_default(void *arg)
   if (ctrl->write_fd != AZ_SOCK_INVALID) {
     info.code = AZ_TRACE_CODE_CMD_STOP;
     send(ctrl->write_fd, &info, sizeof(info), 0);
-    az_xu_sleep(1000000);
+    az_thread_sleep(1000000);
 
     az_sys_xu_iomux_del(ctrl->read_fd);
     az_sys_socket_delete(ctrl->write_fd);
@@ -645,7 +645,7 @@ az_r_t  azm_trace_start_default_thread()
 
   if (azm_trace_thread_state == 0) {
     azm_trace_thread_default = NULL;
-    r = az_xu_create("rtraceDefault", azm_trace_thread_proc_default, NULL, NULL, &azm_trace_thread_default);
+    r = az_thread_create("rtraceDefault", azm_trace_thread_proc_default, NULL, NULL, &azm_trace_thread_default);
   } else {
     r = AZ_ERR(AGAIN);
     az_cli_printf("already started!\n");
@@ -669,7 +669,7 @@ az_r_t  azm_trace_stop_default_thread()
   if (azm_trace_thread_state) {
     azm_trace_thread_state = 0;
     while (ctrl->state & AZ_TRACE_STATE_BUSY) {
-      az_xu_sleep(1000000);
+      az_thread_sleep(1000000);
     }
     ctrl->state = AZ_TRACE_STATE_IDLE;
   } else {

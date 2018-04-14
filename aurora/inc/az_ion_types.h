@@ -36,7 +36,7 @@ extern "C"
 #define   AZ_ION_FLAG_NONIO       0x0000
 #endif
 #define   AZ_ION_TYPE_MASK        0x0fff
-#define   AZ_ION_TYPE_XU          0x0001
+#define   AZ_ION_TYPE_THREAD      0x0001
 #define   AZ_ION_TYPE_TIMER       0x0002
 #define   AZ_ION_TYPE_MUTEX       (0x0003|AZ_ION_FLAG_NONIO)
 #define   AZ_ION_TYPE_SEM         (0x0004|AZ_ION_FLAG_NONIO)
@@ -44,10 +44,9 @@ extern "C"
 #define   AZ_ION_TYPE_FILE        0x0006
 #define   AZ_ION_TYPE_MSGQ        0x0007
 #define   AZ_ION_TYPE_IOU         0x0008
-#define   AZ_ION_TYPE_UDP         0x0009
-#define   AZ_ION_TYPE_TCP         0x000A
-#define   AZ_ION_TYPE_LOCAL       0x000B
-#define   AZ_ION_TYPE_MAX         0x000C
+#define   AZ_ION_TYPE_SOCK        0x0009
+#define   AZ_ION_TYPE_LOCAL       0x000A
+#define   AZ_ION_TYPE_MAX         0x000B
 
 #define   az_assert_ion_type(x,type)  az_assert(((x) & AZ_ION_TYPE_MASK) == type)
 
@@ -58,7 +57,8 @@ extern "C"
 typedef int az_ion_id_t;
 typedef az_uint32_t az_ion_type_t;
 
-#define AZ_ION_ID_INVALID AZ_SYS_IO_INVALID
+#define AZ_ION_ID_INVALID         AZ_SYS_IO_INVALID
+
 #ifdef  CONFIG_AZ_ION_NONIO
 #define AZ_ION_ID_FLAG_NONIO 0x40000000 
 #else

@@ -120,9 +120,9 @@ az_r_t az_tc_prolog_report_excpt(az_test_case_t *pTC)
  * @exception	none
  */
 
-static az_xu_t xu = NULL; 
+static az_thread_t xu = NULL; 
 
-static az_xu_config_t xu_cfg = {
+static az_thread_config_t xu_cfg = {
   .stackSize = 0,
   .policy = SCHED_RR,
   .priority = 50,
@@ -141,8 +141,8 @@ static void *xu_proc(void *arg)
 az_r_t az_tc_run_report_excpt(az_test_case_t *pTC)
 {
   az_r_t r = AZ_SUCCESS;
-  az_xu_event_t evt;
-  az_xu_msg_t msg;
+  az_thread_beam_t evt;
+  az_thread_msg_t msg;
   az_test_iter_t *iter = AZ_TC_CUR_ITER(pTC);
   struct az_tc_testvector_st_report_excpt *tv = AZ_TC_ITER_GET_TV(iter, az_tc_tv_report_excpt_t);
 
@@ -150,19 +150,19 @@ az_r_t az_tc_run_report_excpt(az_test_case_t *pTC)
 
   az_ion_id_t xu_id;
   do {
-    xu_id = (az_r_t)az_xu_create("excpt", xu_proc, (void *)0x12345678, &xu_cfg, &xu);
+    xu_id = (az_r_t)az_thread_create("excpt", xu_proc, (void *)0x12345678, &xu_cfg, &xu);
     if (xu_id < 0) {
       tv->result = AZ_FAIL;
       break;
     }
 
-    r = az_xu_recvEvent(AZ_XU_EVENT_MSG, AZ_XU_EVENT_OPT_PRESERVE, 1000000000, &evt); 
+    r = az_thread_recv_beam(AZ_THREAD_BEAM_MSG, AZ_THREAD_BEAM_OPT_PRESERVE, 1000000000, &evt); 
     if (r >= 0) {
-      r = az_xu_recvMsg(&msg);
+      r = az_thread_recv_msg(&msg);
       az_rprintf(r, "xu msg: %lx from %x\n", msg, xu_id);
-      switch(AZ_XU_MSG_CATEGORY(msg)) {
-        case AZ_XU_MSG_EXCEPTION:
-          if (xu_id == AZ_XU_MSG_GET_ION_ID(msg)) {
+      switch(AZ_THREAD_MSG_CATEGORY(msg)) {
+        case AZ_THREAD_MSG_EXCEPTION:
+          if (xu_id == AZ_THREAD_MSG_GET_ION_ID(msg)) {
             tv->result = tv->expected_result;
           }
           break;

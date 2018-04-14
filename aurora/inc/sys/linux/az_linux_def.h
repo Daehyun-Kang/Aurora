@@ -44,7 +44,7 @@ static inline az_sys_datetime_t * az_attr_no_instrument az_sys_localtime(az_sys_
 
 #include "sys/az_sys_printf.h"
 
-#include "az_xu_types.h"
+#include "az_thread_types.h"
 #include "az_ion_types.h"
 #include "az_err.h"
 
@@ -134,7 +134,7 @@ typedef struct {
   pthread_t       thread;
   void            *(*entry)(void *); 
   void            *arg;
-  az_xu_attr_t    *attr;
+  az_thread_attr_t    *attr;
 
   az_sys_ep_t     ep;
   sem_t           sem_suspend;
@@ -147,7 +147,7 @@ typedef struct {
   pid_t           tid;
 
   int             env_index;
-  jmp_buf         env[CONFIG_AZ_XU_EXCPT_STK_SZ];
+  jmp_buf         env[CONFIG_AZ_THREAD_EXCPT_STK_SZ];
   //jmp_buf         env;
 } az_sys_xu_entity_t;
 

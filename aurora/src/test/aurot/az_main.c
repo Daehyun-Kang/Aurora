@@ -51,7 +51,7 @@
  * @warning   warnings
  * @exception none
  */
-az_xu_config_t az_xu_main_config = {
+az_thread_config_t az_thread_main_config = {
   .arg_name[0] = 0,
   .stackSize = 0,
   .coremask = 0x1,
@@ -59,18 +59,22 @@ az_xu_config_t az_xu_main_config = {
   .priority = 1,
   .startdelay = -1,
 };
-az_xu_t az_xu_main = NULL;
+az_thread_t az_thread_main = NULL;
 
-struct az_xu_main_arg {
+struct az_thread_main_arg {
   int argc;
   char **argv;
-} az_xu_main_arg;
+} az_thread_main_arg;
 
-void *az_xu_main_entry(struct az_xu_main_arg *arg)
+void *az_thread_main_entry(struct az_thread_main_arg *arg)
 {
   az_assert(NULL != arg);
 
-  return az_test_main(arg->argc, arg->argv);
+  az_test_main(arg->argc, arg->argv);
+
+  while (1) {
+    az_thread_sleep(3 * 1E9);
+  }
 }
 
 //extern void  az_rstdio_begin(void);
@@ -98,18 +102,18 @@ int main(int argc, char *argv[])
     exit(r);
   }
 
-  az_xu_main_arg.argc = argc;
-  az_xu_main_arg.argv = argv;
+  az_thread_main_arg.argc = argc;
+  az_thread_main_arg.argv = argv;
 
-  r = (az_r_t)az_xu_create("main", az_xu_main_entry, &az_xu_main_arg, &az_xu_main_config, &az_xu_main);
-  az_printf("create main xu : %p, result=%ld\n", az_xu_main, r);
+  r = (az_r_t)az_thread_create("main", az_thread_main_entry, &az_thread_main_arg, &az_thread_main_config, &az_thread_main);
+  az_printf("create main xu : %p, result=%ld\n", az_thread_main, r);
 
   #ifdef  CONFIG_AZ_TRACE_START
   az_trace_start();
   #endif
 
   if (r >= AZ_SUCCESS) {
-    return (int)az_xu_entry(az_xu_main);
+    return (int)az_thread_entry(az_thread_main);
   } else {
     return (int)r;
   }

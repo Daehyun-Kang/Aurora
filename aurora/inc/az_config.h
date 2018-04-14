@@ -95,7 +95,7 @@
 //#undef CONFIG_AZ_CLI           
 
 #define CONFIG_AZM                      1
-#undef  CONFIG_AZM                      
+//#undef  CONFIG_AZM                      
 
 #ifdef CONFIG_AZM                      
 #define CONFIG_AZ_CLI_SHELL_PROMPT      "$$"
@@ -177,7 +177,7 @@
 #define CONFIG_AZ_TRZ_NODEID_DEFAULT      0 
 
 #define CONFIG_AZ_SYS_PRINT_TIMESTAMP     1
-#define CONFIG_AZ_XU_PRTBUF_SZ           128 
+#define CONFIG_AZ_THREAD_PRTBUF_SZ           128 
 
 #define CONFIG_AZ_TEST                    1
 //#undef CONFIG_AZ_TEST                    
@@ -198,15 +198,15 @@
 #define CONFIG_AZ_PERF_MEASURE_LOOP_CNT_DFT   100000 //1000000
 #define CONFIG_AZ_PERF_MEASURE_SAMPLES_DFT    100    //1000
 
-#define CONFIG_AZ_XU_EXCPT_STK_SZ             16
-#define CONFIG_AZ_XU_MSG_SZ                   64
-#define CONFIG_AZ_XU_MSG_QUEUE_SZ             128
+#define CONFIG_AZ_THREAD_EXCPT_STK_SZ             16
+#define CONFIG_AZ_THREAD_MSG_SZ                   64
+#define CONFIG_AZ_THREAD_MSG_QUEUE_SZ             128
 
 #ifdef  CONFIG_AZ_TEST
-//#define CONFIG_AZ_XU_EXP_HANDLE           1
+//#define CONFIG_AZ_THREAD_EXP_HANDLE           1
 #endif
 
-#define CONFIG_AZ_XU_EXP_HANDLE           1
+#define CONFIG_AZ_THREAD_EXP_HANDLE           1
 
 #define CONFIG_AZ_ION_NONIO                 1
 //#undef CONFIG_AZ_ION_NONIO                 

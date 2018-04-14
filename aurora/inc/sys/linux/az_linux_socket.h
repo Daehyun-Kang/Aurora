@@ -55,6 +55,8 @@ typedef struct sockaddr   az_sys_sockaddr_t;
 static inline az_r_t az_sys_socket_create(int domain, int type, int protocol, az_sys_socket_t *p)
 {
   az_r_t r = AZ_SUCCESS;
+  az_assert(NULL != p);
+
   int sd = socket(domain, type, protocol);
   if (sd < 0) {
     *p = AZ_SYS_SOCKET_INVALID;

@@ -67,7 +67,7 @@ int az_inet_openTcpClient(char *svrIpStr, uint16_t svrPort,
 
     saddr.sin_family = AF_INET;
     saddr.sin_port = htons(svrPort);
-    sd = socket(AF_INET, SOCK_STREAM, 0);
+    sd = az_socket_create(AF_INET, SOCK_STREAM, 0, NULL);
     if (sd < 0) {
       break;
     }
@@ -77,26 +77,26 @@ int az_inet_openTcpClient(char *svrIpStr, uint16_t svrPort,
       saddr.sin_port = htons(cliPort);
       r = az_inet_str2IpAddr(&caddr, cliIpStr); 
       if (r < 0) {
-        close(sd);
+        az_socket_delete(sd);
         sd = AZ_SOCK_INVALID;
         break;
       }
       r = bind(sd, (struct sockaddr *)&saddr, sizeof(saddr));
       if (r < 0) {
-        close(sd);
+        az_socket_delete(sd);
         sd = AZ_SOCK_INVALID;
         break;
       }
     }
     r = az_inet_setTcpNodelay(sd);
     if (r < 0) {
-      close(sd);
+      az_socket_delete(sd);
       sd = AZ_SOCK_INVALID;
       break;
     }
     r = connect(sd, (struct sockaddr *)&saddr, sizeof(struct sockaddr_in));
     if (r < 0) {
-      close(sd);
+      az_socket_delete(sd);
       sd = AZ_SOCK_INVALID;
       break;
     }
@@ -111,7 +111,7 @@ int az_inet_closeTcpClient(az_sock_t sd)
 {
   int r = AZ_SUCCESS;
 
-  close(sd);
+  az_socket_delete(sd);
 
   return r;
 }
@@ -136,19 +136,19 @@ int az_inet_openTcpServer(char *svrIpStr, uint16_t svrPort, az_sock_t *pSock)
       saddr.sin_addr.s_addr = htonl(INADDR_ANY);
     }
 
-    sd = socket(AF_INET, SOCK_STREAM, 0);
+    sd = az_socket_create(AF_INET, SOCK_STREAM, 0, NULL);
     if (sd < 0) {
       break;
     }
     r = bind(sd, (struct sockaddr *)&saddr, sizeof(saddr));
     if (r < 0) {
-      close(sd);
+      az_socket_delete(sd);
       sd = AZ_SOCK_INVALID;
       break;
     }
     r = az_inet_setReuseAddr(sd);
     if (r < 0) {
-      close(sd);
+      az_socket_delete(sd);
       sd = AZ_SOCK_INVALID;
       break;
     }
@@ -164,7 +164,7 @@ int az_inet_closeTcpServer(az_sock_t sd)
 {
   int r = AZ_SUCCESS;
 
-  close(sd);
+  az_socket_delete(sd);
 
   return r;
 }

@@ -51,17 +51,23 @@
 az_ion_id_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex)
 {
   az_r_t result = AZ_SUCCESS;
-  az_mutex_t m;
+  az_mutex_t m = NULL;
 
   do {
     az_if_arg_null_break(name, result);
-    az_if_arg_null_break(pMutex, result);
 
-    m = *pMutex;
+    if (pMutex) {
+      m = *pMutex;
+    }
     if (NULL == m) {
       m = az_malloc(sizeof(az_mutex_entity_t));
       az_if_alloc_null_break(m, result);
       az_ion_invalidate(&m->ion, 0);
+    } else {
+      if (!AZ_ION_IS_IDLE_VALID(&m->ion, AZ_ION_TYPE_MUTEX)) {
+        result = AZ_ERR(INVALID_ARG);
+        break;
+      }
     }
     az_assert(m->ion.id == AZ_SYS_IO_INVALID);
     strncpy(m->name, name, sizeof(m->name));
@@ -81,14 +87,14 @@ az_ion_id_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex)
       az_sys_mutex_delete(m->mutex);
       if (AZ_REFCOUNT_IS_ZERO(&m->ion.refCount)) {
         az_free(m);
-        *pMutex = NULL;
+        if (pMutex)*pMutex = NULL;
       }
       break;
     } else {
       az_refcount_atomic_inc(&m->ion.refCount);
     }
     
-    *pMutex = m;
+    if (pMutex) *pMutex = m;
   } while (0);
 
   return (result < 0)? (az_ion_id_t)result:m->ion.id;

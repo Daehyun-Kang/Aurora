@@ -38,7 +38,7 @@ typedef struct {
   pthread_t       thread;
   void            *(*entry)(void *); 
   void            *arg;
-  az_xu_attr_t    *attr;
+  az_thread_attr_t    *attr;
 
   az_sys_ep_t     ep;
   sem_t           sem_suspend;
@@ -51,7 +51,7 @@ typedef struct {
   pid_t           tid;
 
   int             env_index;
-  jmp_buf         env[CONFIG_AZ_XU_EXCPT_STK_SZ];
+  jmp_buf         env[CONFIG_AZ_THREAD_EXCPT_STK_SZ];
   //jmp_buf         abc;
 } az_sys_xu_entity_t;
 
@@ -69,7 +69,7 @@ typedef az_sys_xu_entity_t*   az_sys_xu_t;
 extern AZ_SYS_TLS az_sys_xu_t az_sys_xu;
 
 #define az_sys_xu_self()    az_sys_xu
-#define AZ_SYS_XU_SAVE_CONTEXT()  setjmp(az_sys_xu->env[(az_sys_xu->env_index < CONFIG_AZ_XU_EXCPT_STK_SZ-1)? az_sys_xu->env_index++:az_sys_xu->env_index])
+#define AZ_SYS_XU_SAVE_CONTEXT()  setjmp(az_sys_xu->env[(az_sys_xu->env_index < CONFIG_AZ_THREAD_EXCPT_STK_SZ-1)? az_sys_xu->env_index++:az_sys_xu->env_index])
 
 /* inline functions */
 /**
@@ -226,10 +226,10 @@ extern void az_sys_xu_cleanup(az_sys_xu_t xu);
 
 extern az_r_t az_sys_xu_delete(az_sys_xu_t xu);
 
-extern az_r_t az_sys_xu_setPriority(az_sys_xu_t xu, az_xu_attr_t *pAttr);
-extern az_r_t az_sys_xu_getPriority(az_sys_xu_t xu, az_xu_attr_t *pAttr);
-extern az_r_t az_sys_xu_setAffinity(az_sys_xu_t xu, az_xu_core_mask_t );
-extern az_r_t az_sys_xu_getAffinity(az_sys_xu_t xu, az_xu_core_mask_t *);
+extern az_r_t az_sys_xu_setPriority(az_sys_xu_t xu, az_thread_attr_t *pAttr);
+extern az_r_t az_sys_xu_getPriority(az_sys_xu_t xu, az_thread_attr_t *pAttr);
+extern az_r_t az_sys_xu_setAffinity(az_sys_xu_t xu, az_thread_core_mask_t );
+extern az_r_t az_sys_xu_getAffinity(az_sys_xu_t xu, az_thread_core_mask_t *);
 
 extern az_r_t az_sys_xu_suspend(az_sys_xu_t xu);
 extern az_r_t az_sys_xu_resume(az_sys_xu_t xu);

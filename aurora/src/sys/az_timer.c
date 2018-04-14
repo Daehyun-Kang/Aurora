@@ -41,24 +41,27 @@
 az_ion_id_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat, void (*handler)(void *arg), void *arg, az_timer_t *pTimer)
 {
   az_r_t result = AZ_SUCCESS;
-  az_timer_t t;
+  az_timer_t t = NULL;
 
   az_assert(NULL != name);
   az_assert(0 != repeat);
-  az_assert(NULL != pTimer);
 
   do {
     az_if_arg_null_break(name, result);
-    az_if_arg_null_break(pTimer, result);
 
-    t = *pTimer;
+    if (pTimer) {
+      t = *pTimer;
+    }
 
     if (NULL == t) {
       t = az_malloc(sizeof(az_timer_entity_t));
       az_if_alloc_null_break(t, result);
       az_ion_invalidate(&t->ion, 0);
     } else {
-      az_ion_invalidate(&t->ion, 1);
+      if (!AZ_ION_IS_IDLE_VALID(&(t->ion), AZ_ION_TYPE_TIMER)) {
+        result = AZ_ERR(INVALID_ARG);
+        break;
+      }
     }
     az_assert(t->ion.id == AZ_SYS_IO_INVALID);
     strncpy(t->name, name, sizeof(t->name));
@@ -79,13 +82,13 @@ az_ion_id_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat
       az_sys_timer_delete(t->sys_timer);
       if (AZ_REFCOUNT_IS_ZERO(&t->ion.refCount)) {
         az_free(t);
-        *pTimer = NULL;
+        if (pTimer) *pTimer = NULL;
       }
       break;
     } else {
       az_refcount_atomic_inc(&t->ion.refCount);
     }
-    *pTimer = t;
+    if (pTimer) *pTimer = t;
   } while (0);
 
   if (result < 0) {
@@ -155,7 +158,7 @@ az_r_t  az_timer_start(az_ion_id_t id)
     result = az_sys_timer_start(t->sys_timer);
 
     if (AZ_SUCCESS == result) {
-      t->xu = az_xu_self();
+      t->xu = az_thread_self();
       if (az_sys_xu_iomux_is_valid()) {
         az_sys_xu_iomux_add(t->ion.id, AZ_SYS_IO_IN|AZ_SYS_IO_ET);
       }

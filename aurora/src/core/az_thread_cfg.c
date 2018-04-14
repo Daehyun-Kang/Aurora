@@ -53,7 +53,7 @@ az_xml_element_t *az_thread_cfg_getlist(int cfg_cat)
 {
   az_xml_element_t *list;
   az_xml_element_t *next = NULL;
-  char  *key = AZ_THR_CFG_KEY_threadlist;
+  char  *key = AZ_THREAD_CFG_KEY_threadlist;
   az_xcfg_tree_t  *tree = AZ_THREAD_CFG_TREE(cfg_cat);
 
   list = az_xcfg_find_element(tree, NULL, key, &next);
@@ -66,7 +66,7 @@ az_xml_element_t *az_thread_cfg_getfirst(int cfg_cat)
   az_xml_element_t *parent = NULL;
   az_xml_element_t *next = NULL;
   az_xml_element_t *cfg = NULL;
-  char  *key = AZ_THR_CFG_KEY_thread;
+  char  *key = AZ_THREAD_CFG_KEY_thread;
   az_xcfg_tree_t  *tree = AZ_THREAD_CFG_TREE(cfg_cat);
 
   do {
@@ -83,7 +83,7 @@ az_xml_element_t *az_thread_cfg_getnext(int cfg_cat, az_xml_element_t *cur)
   az_xml_element_t *parent = NULL;
   az_xml_element_t *next = cur;
   az_xml_element_t *cfg = NULL;
-  char  *key = AZ_THR_CFG_KEY_thread;
+  char  *key = AZ_THREAD_CFG_KEY_thread;
   az_xcfg_tree_t  *tree = AZ_THREAD_CFG_TREE(cfg_cat);
 
   do {
@@ -100,10 +100,10 @@ az_r_t az_thread_cfg_convPolicy(az_xml_element_t *attr, void *pVar, int varlen)
   az_assert(NULL != pVar);
   az_r_t r = AZ_SUCCESS;
   az_assert(varlen == sizeof(az_thread_policy_t));
-  if (!strcmp(attr->kv.value, AZ_THR_CFG_VAL_policy_SCHED_RR)) {
+  if (!strcmp(attr->kv.value, AZ_THREAD_CFG_VAL_policy_SCHED_RR)) {
     *(az_thread_policy_t *)pVar = SCHED_RR;
   } else
-  if (!strcmp(attr->kv.value, AZ_THR_CFG_VAL_policy_SCHED_FIFO)) {
+  if (!strcmp(attr->kv.value, AZ_THREAD_CFG_VAL_policy_SCHED_FIFO)) {
     *(az_thread_policy_t *)pVar = SCHED_FIFO;
   } else {
     *(az_thread_policy_t *)pVar = SCHED_OTHER;
@@ -118,25 +118,25 @@ az_r_t az_thread_cfg_xml2cfg(az_xml_element_t *elem, az_thread_config_t *cfg)
 
   az_assert(NULL != cfg);
   do {
-    r = az_xcfg_get_value(elem, AZ_THR_CFG_KEY_name, cfg->name, sizeof(cfg->name), NULL);
+    r = az_xcfg_get_value(elem, AZ_THREAD_CFG_KEY_name, cfg->name, sizeof(cfg->name), NULL);
     if (r < 0) break;
-    r = az_xcfg_get_value(elem, AZ_THR_CFG_KEY_entry_name, cfg->entry_name, sizeof(cfg->entry_name), NULL);
+    r = az_xcfg_get_value(elem, AZ_THREAD_CFG_KEY_entry_name, cfg->entry_name, sizeof(cfg->entry_name), NULL);
     if (r < 0) break;
-    r = az_xcfg_get_value(elem, AZ_THR_CFG_KEY_arg_name, cfg->arg_name, sizeof(cfg->arg_name), NULL);
+    r = az_xcfg_get_value(elem, AZ_THREAD_CFG_KEY_arg_name, cfg->arg_name, sizeof(cfg->arg_name), NULL);
     if (r < 0) break;
-    r = az_xcfg_get_value(elem, AZ_THR_CFG_KEY_stackSize, &cfg->stackSize, sizeof(cfg->stackSize), NULL);
+    r = az_xcfg_get_value(elem, AZ_THREAD_CFG_KEY_stackSize, &cfg->stackSize, sizeof(cfg->stackSize), NULL);
     if (r < 0) break;
 
-    child = az_xml_element_find_child(elem, AZ_THR_CFG_KEY_schedule);
+    child = az_xml_element_find_child(elem, AZ_THREAD_CFG_KEY_schedule);
     if (NULL == child) {
       r = AZ_ERR(NOT_FOUND);
       break;
     }
-    r = az_xcfg_get_value(child, AZ_THR_CFG_KEY_coremask, &cfg->coremask, sizeof(cfg->coremask), NULL);
+    r = az_xcfg_get_value(child, AZ_THREAD_CFG_KEY_coremask, &cfg->coremask, sizeof(cfg->coremask), NULL);
     if (r < 0) break;
-    r = az_xcfg_get_value(child, AZ_THR_CFG_KEY_policy, &cfg->policy, sizeof(cfg->policy), az_thread_cfg_convPolicy);
+    r = az_xcfg_get_value(child, AZ_THREAD_CFG_KEY_policy, &cfg->policy, sizeof(cfg->policy), az_thread_cfg_convPolicy);
     if (r < 0) break;
-    r = az_xcfg_get_value(child, AZ_THR_CFG_KEY_priority, &cfg->priority, sizeof(cfg->priority), NULL);
+    r = az_xcfg_get_value(child, AZ_THREAD_CFG_KEY_priority, &cfg->priority, sizeof(cfg->priority), NULL);
     if (r < 0) break;
   } while (0);
 

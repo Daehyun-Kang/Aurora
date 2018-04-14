@@ -74,7 +74,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Sources/test/aurot|Sources/test/pt|Sources/test/ut|Sources/test/abc.c|Sources/core/az_thread.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Sources/test/aurot|Sources/test/pt|Sources/test/ut|Sources/test/abc.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -148,7 +148,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Sources/test/aurot|Sources/test/pt|Sources/test/ut|Sources/test/abc.c|Sources/core/az_thread.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Sources/test/aurot|Sources/test/pt|Sources/test/ut|Sources/test/abc.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -228,7 +228,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Sources/test/aurot|Sources/test/pt|Sources/test/ut|Sources/test/abc.c|Sources/core/az_thread.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Sources/test/aurot|Sources/test/pt|Sources/test/ut|Sources/test/abc.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -307,7 +307,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Sources/test/aurot|Sources/test/pt|Sources/test/ut|Sources/test/abc.c|Sources/core/az_thread.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Sources/test/aurot|Sources/test/pt|Sources/test/ut|Sources/test/abc.c|Sources/frw/az_main.c|Sources/sys/windows" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

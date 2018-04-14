@@ -91,7 +91,7 @@ int az_cli_cmd_memdisp(int argc, char *argv[])
         size = (char *)strtol(argv[2], NULL, 0); 
       break;
     }
-    az_cli_shell_t *pSh = (az_cli_shell_t *)az_xu_getarg();
+    az_cli_shell_t *pSh = (az_cli_shell_t *)az_thread_getarg();
     if (NULL != pSh) {
       az_memdisp(pSh->txport, addr, size, mode, 1, pSh->rxport);
       r = AZ_CLI_CMD_SUCCESS; 

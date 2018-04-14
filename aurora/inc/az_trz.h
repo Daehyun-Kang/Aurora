@@ -24,7 +24,7 @@
 #include "az_def.h"
 #include "az_link.h"
 #include "sys/az_inet.h"
-#include "sys/az_xu.h"
+#include "az_thread.h"
 #include "az_printf.h"
 
 #ifdef __cplusplus
@@ -369,12 +369,12 @@ static inline az_r_t az_trz_reset(az_trz_t *trz, az_trz_msg_hdr_t *msgp, az_trz_
     trz->seqno = msgp->seqno;
     trz->code = code; 
     if (trz->state & AZ_TRZ_STATE_LINK) {
-      trz->xu_id = az_xu_self()->ion.id;
+      trz->xu_id = az_thread_self()->ion.id;
       trz->handler = handler; 
       trz->priv = priv; 
       trz->state |= flags;
     } else {
-      r = az_trz_add(trz, az_xu_self()->ion.id, handler, priv, flags);
+      r = az_trz_add(trz, az_thread_self()->ion.id, handler, priv, flags);
     }
   } while (0);
   return r;

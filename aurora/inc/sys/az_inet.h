@@ -27,6 +27,7 @@
 #include "az_assert.h"
 #include "az_macros.h"
 #include "az_malloc.h"
+#include "sys/az_socket.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -38,13 +39,8 @@ extern "C"
 /* basic macros */
 
 /* basic types */
-#ifdef  AZ_SYS_SOCK_T
-typedef az_sys_sock_t az_sock_t;
-#define AZ_SOCK_INVALID   AZ_SYS_SOCK_INVALID
-#else
-typedef int           az_sock_t;
-#define AZ_SOCK_INVALID   -1 
-#endif
+typedef az_ion_id_t       az_sock_t;
+#define AZ_SOCK_INVALID   AZ_ION_ID_INVALID
 
 /* structures */
 

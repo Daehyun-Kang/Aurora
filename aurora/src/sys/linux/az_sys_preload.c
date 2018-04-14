@@ -97,6 +97,16 @@ ssize_t write(int fd, const void *buf, size_t count)
   return az_write(fd, buf, count);
 }
 
+ssize_t send(int sockfd, const void *buf, size_t len, int flags)
+{
+  return az_send(sockfd, buf, len, flags);
+}
+
+ssize_t recv(int sockfd, void *buf, size_t len, int flags)
+{
+  return az_recv(sockfd, buf, len, flags);
+}
+
 
 #endif
 /* === end of AZ_SYS_PRELOAD_C === */

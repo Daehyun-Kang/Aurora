@@ -21,7 +21,7 @@
 #ifndef AZ_CLI_GLUE_H
 #define AZ_CLI_GLUE_H
 
-#include "sys/az_xu.h"
+#include "az_thread.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -52,7 +52,7 @@ extern az_cli_shell_t  *az_cli_shell_list[];
 /* inline functions */
 static inline az_cli_shell_t *az_cli_thread_curShell()
 {
-  return (az_cli_shell_t *)az_xu_getarg();
+  return (az_cli_shell_t *)az_thread_getarg();
 }
 
 static inline az_cli_shell_t  *az_cli_get_default()

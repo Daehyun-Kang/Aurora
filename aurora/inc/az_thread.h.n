@@ -1,0 +1,102 @@
+/**
+ * @file   az_thread.h
+ * @brief  
+ * @date   09/11/17
+ * @author dhkang
+ *
+ * @copyright 
+ * Copyright (c) Fware, 2013-2017 - All Rights Reserved
+ * You may use, distribute and modify this code under the 
+ * terms of the "Aurora Source Code License".
+ * See the file LICENSE for full license details.\n\n
+ * 
+ * You should have received a copy of  the LICENSE with this file.\n\n
+ * 
+ * If not, please contact to Fware with the information in the file CONTACTS.
+ *
+ * History:
+ *   - 2017-11-09 dhkang initial create
+ */
+
+#ifndef AZ_THREAD_H
+#define AZ_THREAD_H
+
+#include "az_thread_cfg.h"
+#include "sys/az_xu.h"
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+/* constants */
+
+/* basic macros */
+#define AZ_THREAD_STATE(s)  AZ_XU_STATE_##s
+#define AZ_THREAD_ERROR(e)  AZ_XU_ERROR_##e
+#define AZ_THREAD_EVENT(e)  AZ_XU_EVENT_##e
+#define AZ_THREAD_MSG(e)    AZ_XU_MSG_##e
+#define AZ_THREAD_FLAGS(e)    AZ_XU_FLAGS_##e
+
+#define AZ_THREAD_ID_INVALID  AZ_ION_ID_INVALID
+
+/* basic types */
+typedef az_ion_id_t     az_thread_id_t;
+
+typedef az_xu_entity_t  az_thread_entity_t;
+typedef az_xu_t         az_thread_t;
+
+typedef void *az_thread_arg_t;
+typedef void *az_thread_ret_t;
+typedef az_thread_ret_t (*az_thread_entyr_t)(az_thread_arg_t);   
+
+typedef uint32_t  az_thread_beam_t;
+typedef void (*az_thread_beam_handler_t)(int, void *);
+
+typedef az_xu_msg_t     az_thread_msg_t;
+/* structures */
+
+/* structured types */
+
+/* macros */
+#define az_thread_self()  (az_xu_self())
+
+/* variabls exposed */
+
+/* inline functions */
+
+/* function prototypes exposed */
+
+extern az_thread_id_t az_thread_create(char *name, az_thread_entry_t entry, az_thread_arg_t arg, az_thread_config_t *pCfg, az_thread_t *pThread);
+
+extern az_r_t az_thread_start(az_thread_id_t id, az_thread_entry_t entry, az_thread_arg_t arg);
+extern az_r_t  az_thread_stop(az_thread_id_t id);
+extern az_r_t az_thread_delete(az_thread_id_t id);
+
+extern az_r_t az_thread_suspend(az_thread_id_t id);
+extern az_r_t az_thread_resume(az_thread_id_t id);
+extern az_r_t az_thread_sleep(az_int64_t nsec);
+
+extern void az_thread_exit(az_thread_ret_t ret);
+
+extern az_thread_id_t az_thread_find(char *name);
+
+extern az_r_t az_thread_set(az_thread_id_t id, int attr_id, void *pAttr);
+extern az_r_t az_thread_get(az_thread_id_t id, int attr_id, void *pAttr);
+
+extern az_r_t az_thread_send_beam(az_thread_id_t id, az_thread_beam_t beam);
+
+extern az_r_t az_thread_recv_beam(az_thread_beam_t toReceive, az_int8_t options, az_int64_t nsec, az_thread_beam_t *pReceived);
+
+extern az_r_t az_thread_wait_beam(az_thread_beam_t toReceive, az_int8_t options, az_int64_t nsec, az_thread_beam_t *pReceived);
+
+extern az_r_t az_thread_regBeamHandler(az_thread_id_t id, unsigned int vecno, az_thread_beam_handler handler, void * arg); 
+extern az_r_t az_thread_deregBeamHandler(az_thread_id_t id, unsigned int vecno);
+
+extern az_r_t az_thread_send_msg(az_thread_id_t id, az_thread_msg_t msg);
+extern az_r_t az_thread_recv_msg(az_thread_msg_t *msg);
+
+#ifdef __cplusplus
+}
+#endif
+#endif

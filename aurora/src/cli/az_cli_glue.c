@@ -246,7 +246,7 @@ int az_cli_thread_start(void *(*entry_f)(az_cli_shell_t *),
   az_r_t  r;
 
   pSh->thread = NULL;
-  r = (az_r_t)az_xu_create(pSh->name, (az_xu_entry_t)entry_f, pSh, NULL, (az_xu_t *)&(pSh->thread));
+  r = (az_r_t)az_thread_create(pSh->name, (az_thread_entry_t)entry_f, pSh, NULL, (az_thread_t *)&(pSh->thread));
   az_sys_eprintf("xu:%p\n", pSh->thread);
 
   return (r < AZ_SUCCESS)? r:AZ_SUCCESS;
@@ -264,8 +264,8 @@ int az_cli_thread_stop(void *thread)
   az_assert(NULL != thread);
   az_r_t r = AZ_ERR_L(ARG_NULL, 0);
   if (thread) {
-    r = az_xu_stop(((az_xu_t)thread)->ion.id);
-    r = az_xu_delete(((az_xu_t)thread)->ion.id);
+    r = az_thread_stop(((az_thread_t)thread)->ion.id);
+    r = az_thread_delete(((az_thread_t)thread)->ion.id);
   }
 
   return r;
@@ -296,7 +296,7 @@ az_sys_fd_t az_cli_shell_change_txport(az_cli_shell_t *pSh, az_sys_fd_t fd, int 
  */
 int az_cli_printf(const char *fmt, ...)
 {
-  az_cli_shell_t *pSh = (az_cli_shell_t *)az_xu_getarg();
+  az_cli_shell_t *pSh = (az_cli_shell_t *)az_thread_getarg();
   //az_cli_shell_t *pSh = az_cli_thread_curShell();
   int r, len;
   va_list ap;
@@ -333,7 +333,7 @@ int az_cli_printf(const char *fmt, ...)
  */
 int az_cli_write(char *dp, int len)
 {
-  az_cli_shell_t *pSh = (az_cli_shell_t *)az_xu_getarg();
+  az_cli_shell_t *pSh = (az_cli_shell_t *)az_thread_getarg();
   //az_cli_shell_t *pSh = az_cli_thread_curShell();
   int r;
   //va_list ap;

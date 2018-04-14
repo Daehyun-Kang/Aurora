@@ -36,7 +36,7 @@ azs_rstdio_ctrl_t azs_rstdio_ctrl = {
 };
 
 int azs_rstdio_thread_state = 0;
-az_xu_t azs_rstdio_thread_default = NULL;
+az_thread_t azs_rstdio_thread_default = NULL;
 /* declare static variables */
 char  azs_rstdio_rxbuffer[2048];
 
@@ -236,7 +236,7 @@ int azs_rstdio_stop()
   do {
     if (azs_rstdio_thread_state && svr->state & AZ_TCPSERVER_STATE_CLIBUSY) { 
       azs_rstdio_thread_state = 0;
-      az_xu_sleep(3000000000);
+      az_thread_sleep(3000000000);
     }
     r = (svr->oprs->stop)(svr);
     if (r) break;

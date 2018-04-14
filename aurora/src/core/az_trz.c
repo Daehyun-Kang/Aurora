@@ -48,7 +48,7 @@ az_trz_conn_t az_trz_conn_default;
 az_trz_conn_t *az_trz_conn_list[AZ_TRZ_NODEID_MAX];
 
 int az_trz_thread_state = 0;
-az_xu_t az_trz_thread_default = NULL;
+az_thread_t az_trz_thread_default = NULL;
 
 /* declare static variables */
 
@@ -98,14 +98,14 @@ void az_trz_default_req_handler(az_trz_t *trz, az_sock_t sock)
 {
   az_assert(NULL != trz);
   az_r_t r = AZ_SUCCESS;
-  az_xu_t xu = az_ion(trz->xu_id);
+  az_thread_t xu = az_ion(trz->xu_id);
   do {
     if (xu == NULL) {
       r = AZ_ERR(ENTITY_NULL);
       break;
     }
     az_trz_put(&xu->trz_list, trz, NULL);
-    r = az_xu_sendEvent(xu->ion.id, AZ_XU_EVENT_TRZ);
+    r = az_thread_send_beam(xu->ion.id, AZ_THREAD_BEAM_TRZ);
   } while (0);
   return r;
 }
@@ -114,14 +114,14 @@ void az_trz_default_rsp_handler(az_trz_t *trz, az_sock_t sock)
 {
   az_assert(NULL != trz);
   az_r_t r = AZ_SUCCESS;
-  az_xu_t xu = az_ion(trz->xu_id);
+  az_thread_t xu = az_ion(trz->xu_id);
   do {
     if (xu == NULL) {
       r = AZ_ERR(ENTITY_NULL);
       break;
     }
     az_trz_put(&xu->trz_list, trz, NULL);
-    r = az_xu_sendEvent(xu->ion.id, AZ_XU_EVENT_TRZ);
+    r = az_thread_send_beam(xu->ion.id, AZ_THREAD_BEAM_TRZ);
   } while (0);
   return r;
 }
@@ -216,7 +216,7 @@ az_r_t az_trz_send_request(az_trz_t *trz, az_trz_msg_hdr_t *msgp, az_trz_handler
         r = AZ_ERR(MALLOC);
         break;
       }
-      r = az_trz_add(trz, az_xu_self()->ion.id, handler, priv, flags);
+      r = az_trz_add(trz, az_thread_self()->ion.id, handler, priv, flags);
     } else {
       // reset the trz info to be consistent with req msg
       r = az_trz_reset(trz, msgp, msgp->code & AZ_TRZ_CODE_MASK,
@@ -244,7 +244,7 @@ az_r_t az_trz_send_request(az_trz_t *trz, az_trz_msg_hdr_t *msgp, az_trz_handler
       if (r != AZ_SUCCESS) {
         break;
       }
-      r = az_xu_iomux_add(az_trz_thread_default, trz_conn->sock, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
+      r = az_thread_iomux_add(az_trz_thread_default, trz_conn->sock, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
       if (r < 0) break;
     }
 
@@ -290,7 +290,7 @@ az_r_t az_trz_send_control_msg(az_trz_node_t *peer, az_trz_msg_hdr_t *msgp, az_t
       r = AZ_ERR(MALLOC);
       break;
     }
-    r = az_trz_add(trz, az_xu_self()->ion.id, handler, priv, flags);
+    r = az_trz_add(trz, az_thread_self()->ion.id, handler, priv, flags);
     if (r != AZ_SUCCESS) {
       break;
     }
@@ -307,7 +307,7 @@ az_r_t az_trz_send_control_msg(az_trz_node_t *peer, az_trz_msg_hdr_t *msgp, az_t
       if (r != AZ_SUCCESS) {
         break;
       }
-      r = az_xu_iomux_add(az_trz_thread_default, peer->sock, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
+      r = az_thread_iomux_add(az_trz_thread_default, peer->sock, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
       if (r < 0) break;
     }
 
@@ -409,7 +409,7 @@ void az_trz_msg_query_nodeid_rsp_handler(az_trz_t *trz, az_sock_t sock)
       // register transaction handler from remote node
       az_trz_t *trz = az_trz_alloc(rsp->remote_nodeid, AZ_TRZ_SEQNO_ALL, AZ_TRZ_CODE_REQ(KEEPALIVE));
       if (trz) { 
-        az_trz_add(trz, az_xu_self()->ion.id, az_trz_msg_keepalive_req_handler, NULL, 0);
+        az_trz_add(trz, az_thread_self()->ion.id, az_trz_msg_keepalive_req_handler, NULL, 0);
       }
       az_printf("register trz conn for remote=%d result=%ld\n", rsp->remote_nodeid, r);
     }
@@ -605,8 +605,8 @@ int az_trz_recv_proc(az_sock_t sock)
  */
 void *az_trz_thread_proc_default(void *arg)
 {
-  az_xu_event_t received;
-  az_xu_event_t emask;
+  az_thread_beam_t received;
+  az_thread_beam_t emask;
   az_r_t  r;
   az_int64_t  tmo_ns = 1000000000; // 1 sec
   int tmo_count = 0; 
@@ -653,7 +653,7 @@ void *az_trz_thread_proc_default(void *arg)
 
   az_trz_t *trz = az_trz_alloc(AZ_TRZ_NODEID_ALL, AZ_TRZ_SEQNO_ALL, AZ_TRZ_CODE_REQ(QUERY_NODEID));
   if (trz) {
-    az_trz_add(trz, az_xu_self()->ion.id, az_trz_msg_query_nodeid_req_handler, NULL, 0);
+    az_trz_add(trz, az_thread_self()->ion.id, az_trz_msg_query_nodeid_req_handler, NULL, 0);
   }
 
   if (local->nodeid != svr->nodeid) {
@@ -708,7 +708,7 @@ az_r_t  az_trz_start_default_thread()
 {
   int r;
 
-  r = (az_r_t)az_xu_create("trzDefault", az_trz_thread_proc_default, NULL, NULL, &az_trz_thread_default);
+  r = (az_r_t)az_thread_create("trzDefault", az_trz_thread_proc_default, NULL, NULL, &az_trz_thread_default);
   //az_sys_printf("%s: %p\n", __FUNCTION__, az_trz_thread_default);
 
   return (r < AZ_SUCCESS)? r:AZ_SUCCESS;
@@ -719,7 +719,7 @@ az_r_t  az_trz_stop_default_thread()
   int r;
 
   az_trz_thread_state = 0;
-  r = az_xu_delete(az_trz_thread_default);
+  r = az_thread_delete(az_trz_thread_default);
 
   return r;
 }

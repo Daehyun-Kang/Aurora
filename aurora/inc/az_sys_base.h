@@ -23,7 +23,6 @@
 
 #include "az_core.h"
 
-#include "sys/az_xu.h"
 #include "sys/az_mutex.h"
 #include "sys/az_sem.h"
 #include "sys/az_timer.h"

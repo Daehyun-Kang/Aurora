@@ -29,7 +29,7 @@
 
 /* declare global variables */
 int az_tc_thread_state = 0;
-az_xu_t az_tc_thread_default = NULL;
+az_thread_t az_tc_thread_default = NULL;
 
 az_event_descr_t    *tc_evt_descr = NULL;
 az_event_receiver_t tc_evt_receiver;
@@ -84,8 +84,8 @@ az_r_t az_test_sendEvent(az_event_id_t event_id, az_uint32_t buffer_size, az_ref
 
 void *az_tc_thread_proc_default(void *arg)
 {
-  volatile az_xu_event_t received;
-  az_xu_event_t emask;
+  volatile az_thread_beam_t received;
+  az_thread_beam_t emask;
   volatile az_r_t  r;
   volatile az_int64_t  tmo_ns = 2000000000;
   volatile int tmo_count = 0; 
@@ -135,25 +135,25 @@ void *az_tc_thread_proc_default(void *arg)
     volatile az_event_t  revt = NULL;
     volatile uint64_t  tmo_count = 0;
 
-    az_fsm_activate(&az_tc_fsm, az_xu_self());
+    az_fsm_activate(&az_tc_fsm, az_thread_self());
 
     r = az_test_sendEvent(AZ_TEST_CMD_INIT, 0, NULL);
     if (r < 0) {
       az_tc_thread_state = 0;
-      az_xu_sendEvent(tp_xu_id, AZ_XU_EVENT_TEST_ERROR);
+      az_thread_send_beam(tp_xu_id, AZ_THREAD_BEAM_TEST_ERROR);
     } else {
-      az_xu_sendEvent(tp_xu_id, AZ_XU_EVENT_TEST_STARTED);
+      az_thread_send_beam(tp_xu_id, AZ_THREAD_BEAM_TEST_STARTED);
     }
     while (az_tc_thread_state) {
       received = 0;
       az_dlog("received:%p\n", &received); 
-      r = az_xu_recvEvent(AZ_XU_EVENT_THR_STOP|AZ_XU_EVENT_EVTBUS, 0, tmo_ns, &received);  
+      r = az_thread_recv_beam(AZ_THREAD_BEAM_THR_STOP|AZ_THREAD_BEAM_EVTBUS, 0, tmo_ns, &received);  
       if (r >= 0) {
-        if (received & AZ_XU_EVENT_EVTBUS) {
+        if (received & AZ_THREAD_BEAM_EVTBUS) {
           r = az_event_recv(rcvr, &revt);
           if (r >= 0) {
-            //az_event_toStr(az_xu_prtbuf, sizeof(az_xu_prtbuf), revt);
-            //az_rprintf(r, "xu recvent %p: %s\n", revt, az_xu_prtbuf);
+            //az_event_toStr(az_thread_prtbuf, sizeof(az_thread_prtbuf), revt);
+            //az_rprintf(r, "xu recvent %p: %s\n", revt, az_thread_prtbuf);
             if (0 == AZ_SYS_XU_SAVE_CONTEXT()) { 
               az_fsm_run(&az_tc_fsm, revt);
               az_sys_xu_remove_context();
@@ -162,11 +162,11 @@ void *az_tc_thread_proc_default(void *arg)
               tmo_ns = 2000000000;
               tc = AZ_TC_GET_CUR_TC();
               az_sys_eprintf("%s", "xu state set\n");
-              if (AZ_XU_IS_STATE_EXCPT(az_xu_self())) {
+              if (AZ_THREAD_IS_STATE_EXCPT(az_thread_self())) {
                 az_test_iter_t *iter = tc->test_iter.list + tc->test_iter.index; 
-                void *ptr = AZ_XU_EXCPT_POINT(az_xu_self());
+                void *ptr = AZ_THREAD_EXCPT_POINT(az_thread_self());
                 strncpy(iter->reason, az_addr2line(ptr, az_getExeFileName()), sizeof(iter->reason));
-                az_xu_reset_state_excpt(az_xu_self());
+                az_thread_reset_state_excpt(az_thread_self());
                 az_ilog("testcase %s : exception during iter%d\n", tc->name, iter->index);
                 tc->report.fail++;
                 tc->test_iter.errored++;
@@ -182,12 +182,12 @@ void *az_tc_thread_proc_default(void *arg)
                 }
               } else {
                 az_eprintf("%s", "xu state not set\n");
-              } //if (AZ_XU_IS_STATE_EXCPT(az_xu_self())) 
+              } //if (AZ_THREAD_IS_STATE_EXCPT(az_thread_self())) 
                
             } //if (0 == az_sys_xu_save_context())
           }
         }
-        if (received & AZ_XU_EVENT_THR_STOP) {
+        if (received & AZ_THREAD_BEAM_THR_STOP) {
           az_tc_thread_state = 0;
         }
         if (tc->timeout > 0) tc->timeout++;
@@ -204,11 +204,11 @@ void *az_tc_thread_proc_default(void *arg)
       }
     }
     r = az_event_port_del_receiver(tc_evt_port, rcvr);
-    az_xu_sendEvent(tp_xu_id, AZ_XU_EVENT_TEST_STOPPED);
+    az_thread_send_beam(tp_xu_id, AZ_THREAD_BEAM_TEST_STOPPED);
   } else {
     az_tc_thread_state = 0;
     az_rprintf(r, "%s error..." AZ_NL, __FUNCTION__);
-    az_xu_sendEvent(tp_xu_id, AZ_XU_EVENT_TEST_ERROR);
+    az_thread_send_beam(tp_xu_id, AZ_THREAD_BEAM_TEST_ERROR);
   }
 
   AZ_TC_SET_CUR_TC(NULL);

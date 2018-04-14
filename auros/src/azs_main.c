@@ -20,6 +20,7 @@
 
 /* include header files */
 #include "aurora.h"
+#include "az_thread.h"
 #include "cli/az_cli.h"
 
 #include "auros.h"
@@ -53,7 +54,7 @@
  * @exception none
  */
 
-az_xu_config_t azs_xu_main_config = {
+az_thread_config_t azs_xu_main_config = {
   .arg_name[0] = 0,
   .stackSize = 0,
   .coremask = 0x1,
@@ -61,7 +62,7 @@ az_xu_config_t azs_xu_main_config = {
   .priority = 1,
   .startdelay = -1,
 };
-az_xu_t azs_xu_main = NULL;
+az_thread_t azs_xu_main = NULL;
 
 struct azs_xu_main_arg {
   int argc;
@@ -79,7 +80,7 @@ void *azs_xu_main_entry(struct azs_xu_main_arg *arg)
   azs_rstdio_init();
 
   while (1) {
-    az_xu_sleep(1000000000L * 3);
+    az_thread_sleep(1000000000L * 3);
   }
   return NULL;
 }
@@ -102,11 +103,11 @@ int main(int argc, char *argv[])
   azs_xu_main_arg.argc = argc;
   azs_xu_main_arg.argv = argv;
 
-  r = az_xu_create("main", azs_xu_main_entry, &azs_xu_main_arg, &azs_xu_main_config, &azs_xu_main);
+  r = az_thread_create("main", azs_xu_main_entry, &azs_xu_main_arg, &azs_xu_main_config, &azs_xu_main);
   az_printf("create main xu : %p, result=%ld\n", azs_xu_main, r);
 
   if (r >= AZ_SUCCESS) {
-    return (int)az_xu_entry(azs_xu_main);
+    return (int)az_thread_entry(azs_xu_main);
   } else {
     return (int)r;
   }

@@ -154,13 +154,13 @@ static inline az_r_t az_ion_deregister_io(az_ion_t *ion)
     az_ion_id_t id = ion->id;
 
     if (id < 0 || id > AZ_ION_LIST()->size) {
-      az_xu_t xu = az_xu_self();
+      az_thread_t xu = az_thread_self();
       az_sys_eprintf("ion %d(%p) OOR xu:%p\n", id, ion, xu);
       result = AZ_ERR(OVERFLOW);
       break;
     } 
     if (ion != az_ions_io[id]) {
-      az_xu_t xu = az_xu_self();
+      az_thread_t xu = az_thread_self();
       az_sys_eprintf("ion %d(%p) mismatch xu:%p\n", id, ion, xu);
       result = AZ_ERR(INVALID);
       break;
@@ -186,13 +186,13 @@ az_r_t az_ion_deregister_nonio(az_ion_t *ion)
     az_ion_id_t id = ion->id & ~AZ_ION_ID_FLAG_NONIO;
 
     if (id < 0 || id > AZ_ION_LIST()->nonio_ions->size) {
-      az_xu_t xu = az_xu_self();
+      az_thread_t xu = az_thread_self();
       az_sys_eprintf("ion %d(%p) OOR xu:%p\n", id, ion, xu);
       result = AZ_ERR(OVERFLOW);
       break;
     } 
     if (ion != az_ions_nonio_list[id]) {
-      az_xu_t xu = az_xu_self();
+      az_thread_t xu = az_thread_self();
       az_sys_eprintf("ion %d(%p) mismatch xu:%p\n", id, ion, xu);
       result = AZ_ERR(INVALID);
       break;
@@ -284,13 +284,13 @@ az_r_t az_ion_deregister(az_ion_t *ion)
     az_ion_id_t id = ion->id;
 
     if (id < 0 || id > AZ_ION_LIST()->size) {
-      az_xu_t xu = az_xu_self();
+      az_thread_t xu = az_thread_self();
       az_sys_eprintf("ion %d(%p) OOR xu:%p\n", id, ion, xu);
       result = AZ_ERR(OVERFLOW);
       break;
     } 
     if (ion != az_ions[id]) {
-      az_xu_t xu = az_xu_self();
+      az_thread_t xu = az_thread_self();
       az_sys_eprintf("ion %d(%p) mismatch xu:%p\n", id, ion, xu);
       result = AZ_ERR(INVALID);
       break;

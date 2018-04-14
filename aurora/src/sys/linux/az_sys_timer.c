@@ -24,7 +24,6 @@
 #include "az_assert.h"
 #include "az_malloc.h"
 #include "az_ring.h"
-#include "az_xu.h"
 #include "az_linux_timer.h"
 
 #define AZ_SYS_TIMER_CLOCKID    CLOCK_MONOTONIC

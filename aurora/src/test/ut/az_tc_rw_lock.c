@@ -33,9 +33,9 @@ struct az_tc_testvector_st_rw_lock *az_tc_testvector_array_rw_lock = NULL;
 static az_rw_lock_t  rw_lock;
 static int exec_order;
 
-static az_xu_t xus[3] = {0};
+static az_thread_t xus[3] = {0};
 
-static az_xu_config_t xu_cfg = {
+static az_thread_config_t xu_cfg = {
   .stackSize = 0,
   .policy = SCHED_RR,
   .priority = 50,
@@ -50,7 +50,7 @@ static void *xu_reader_proc(void *arg)
   az_rw_lock_read(&rw_lock);
   buffer[exec_order] = 'r';
   exec_order++;
-  az_xu_sleep(100000000);
+  az_thread_sleep(100000000);
   az_rw_unlock_read(&rw_lock);
 
   return NULL;
@@ -62,7 +62,7 @@ static void *xu_writer_proc(void *arg)
   az_rw_lock_write(&rw_lock);
   buffer[exec_order] = 'w';
   exec_order++;
-  az_xu_sleep(100000000);
+  az_thread_sleep(100000000);
   az_rw_unlock_write(&rw_lock);
 
   return NULL;
@@ -184,14 +184,14 @@ az_r_t az_tc_run_rw_lock(az_test_case_t *pTC)
     name[1] += j;
     if (tv->order[j] == 'r') {
       if (xu_cfg.policy == SCHED_FIFO) xu_cfg.priority = 1;
-      r = (az_r_t)az_xu_create(name, xu_reader_proc, tv->result, &xu_cfg, &xus[j]);
+      r = (az_r_t)az_thread_create(name, xu_reader_proc, tv->result, &xu_cfg, &xus[j]);
     } else
     if (tv->order[j] == 'w') {
       if (xu_cfg.policy == SCHED_FIFO) xu_cfg.priority = 99;
-      r = (az_r_t)az_xu_create(name, xu_writer_proc, tv->result, &xu_cfg, &xus[j]);
+      r = (az_r_t)az_thread_create(name, xu_writer_proc, tv->result, &xu_cfg, &xus[j]);
     }
     if (r < AZ_SUCCESS) az_rprintf(r, "thread %s create\n", name);
-    az_xu_sleep(1000);
+    az_thread_sleep(1000);
   }
 
   if ((az_tc_rw_lock_flags & AZ_TC_FLAG_TRACE) || (az_tc_flags & AZ_TC_FLAG_TRACE)) {
@@ -215,7 +215,7 @@ az_r_t az_tc_epilog_rw_lock(az_test_case_t *pTC)
 
   char name[] = "r0";
   while (exec_order < 3) {
-    az_xu_sleep(1000000000);
+    az_thread_sleep(1000000000);
   }
 
   if (!strncmp(tv->expected_result, tv->result, 3)) {

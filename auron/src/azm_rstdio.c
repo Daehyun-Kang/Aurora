@@ -39,7 +39,7 @@ azm_rstdio_ctrl_t azm_rstdio_ctrl = {
 };
 
 int azm_rstdio_thread_state = 0;
-az_xu_t azm_rstdio_thread_default = NULL;
+az_thread_t azm_rstdio_thread_default = NULL;
 /* declare static variables */
 char  azm_rstdio_rxbuffer[2048];
 

@@ -22,7 +22,9 @@
 #define AZM_CONFIG_H
 #include "az_config.h"
 
+#ifdef AZM_GUI
 #define CONFIG_AZM_GTK  1
+#endif
 
 #endif
 

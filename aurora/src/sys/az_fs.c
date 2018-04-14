@@ -204,11 +204,12 @@ az_size_t  az_fs_dirSize(char *path)
 az_ion_id_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile)
 {
   az_r_t r = AZ_ERR(ARG_NULL);
-  az_file_t file;
+  az_file_t file = NULL;
   az_assert(NULL != path);
-  az_assert(NULL != pfile);
   do {
-    file = *pfile;
+    if (pfile) {
+      file = *pfile;
+    }
     if (NULL == file) {
       file = az_fs_allocateFile();
       if (NULL == file) {
@@ -216,7 +217,12 @@ az_ion_id_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile)
         break;
       }
       az_ion_invalidate(&file->ion, 0);
-    } 
+    } else {
+      if (!AZ_ION_IS_IDLE_VALID(&file->ion, AZ_ION_TYPE_FILE)) {
+        r = AZ_ERR(INVALID_ARG);
+        break;
+      }
+    }
     az_assert(file->ion.id == AZ_SYS_IO_INVALID);
     az_sys_file_t sys_file;
     r = az_sys_fs_create(path, mode, file);
@@ -240,7 +246,7 @@ az_ion_id_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile)
     } else {
       az_refcount_atomic_inc(&file->ion.refCount);
     }
-    *pfile = file;
+    if (pfile) *pfile = file;
   } while (0);
 
   return (r < 0)? (az_ion_id_t)r:(file->ion.id);
@@ -298,11 +304,12 @@ az_r_t  az_fs_deleteFile(const az_str_t path, az_ion_id_t id)
 az_ion_id_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *pfile)
 {
   az_r_t r = AZ_ERR(ARG_NULL);
-  az_file_t file;
+  az_file_t file = NULL;
   az_assert(NULL != path);
-  az_assert(NULL != pfile);
   do {
-    file = *pfile;
+    if (pfile) {
+      file = *pfile;
+    }
     if (NULL == file) {
       file = az_fs_allocateFile();
       if (NULL == file) {
@@ -310,6 +317,11 @@ az_ion_id_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *
         break;
       }
       az_ion_invalidate(&file->ion, 0);
+    } else {
+      if (!AZ_ION_IS_IDLE_VALID(&file->ion, AZ_ION_TYPE_FILE)) {
+        r = AZ_ERR(INVALID_ARG);
+        break;
+      }
     }
 
     az_sys_file_t sys_file;
@@ -335,7 +347,7 @@ az_ion_id_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *
     }
   } while (0);
 
-  *pfile = file;
+  if (pfile) *pfile = file;
   return (r < 0)? (az_ion_id_t)r:file->ion.id;
 }
 

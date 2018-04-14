@@ -153,13 +153,13 @@ az_r_t az_tc_epilog_segv_handle(az_test_case_t *pTC)
 
   if (tv->result == tv->expected_result) {
     iter->result = AZ_SUCCESS;
-    if (AZ_XU_IS_STATE_EXCPT(az_xu_self())) {
+    if (AZ_THREAD_IS_STATE_EXCPT(az_thread_self())) {
       iter->result |= AZ_TC_RESULT_FAILURE;
       //iter->result = AZ_TC_RESULT_SEGV;
-      void *ptr = AZ_XU_EXCPT_POINT(az_xu_self());
+      void *ptr = AZ_THREAD_EXCPT_POINT(az_thread_self());
       az_ilog("excpt: %p\n", ptr); 
       strncpy(iter->reason, az_addr2line(ptr, az_getExeFileName()), sizeof(iter->reason)); 
-      az_xu_reset_state_excpt(az_xu_self());
+      az_thread_reset_state_excpt(az_thread_self());
     }
   } else {
     iter->result = AZ_FAIL;

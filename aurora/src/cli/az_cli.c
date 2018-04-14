@@ -133,7 +133,7 @@ void *az_cli_shell_run(az_cli_shell_t *pSh)
   int promptlen = strlen(pSh->prompt);
 
 #ifdef  CONFIG_AZ_TRACE
-  az_xu_set_trace(az_xu_traceinfo(), 0);
+  az_thread_set_trace(az_thread_traceinfo(), 0);
 #endif
 
   az_cli_shell_add(pSh);

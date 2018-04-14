@@ -20,7 +20,7 @@
 
 #ifndef AZ_TCPSERVER_GLUE_H
 #define AZ_TCPSERVER_GLUE_H
-#include "sys/az_xu.h"
+#include "az_thread.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -45,13 +45,13 @@ extern "C"
 static inline az_r_t az_tcpserver_thread_start(char *name,
     void *(*entry_f)(void *), void *arg, void **pThread)
 {
-  az_r_t r = (az_r_t)az_xu_create(name, entry_f, arg, NULL, (az_xu_t *)pThread);
+  az_r_t r = (az_r_t)az_thread_create(name, entry_f, arg, NULL, (az_thread_t *)pThread);
 
   return (r < AZ_SUCCESS)? r:AZ_SUCCESS;
 }
 static inline az_r_t az_tcpserver_thread_stop(void *thread)
 {
-  az_r_t r = az_xu_delete(((az_xu_t)(thread))->ion.id);
+  az_r_t r = az_thread_delete(((az_thread_t)(thread))->ion.id);
 
   return r;
 }

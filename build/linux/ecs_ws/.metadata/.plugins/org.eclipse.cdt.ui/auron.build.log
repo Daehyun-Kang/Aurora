@@ -1,11 +1,11 @@
-18:14:11 **** Build of configuration Debug2 for project auron ****
+11:23:08 **** Build of configuration Debug2 for project auron ****
 make all 
 Building file: /home/dhkang/work/Aurora/auron/src/addr2line.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"addr2line.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -I"/home/dhkang/work/Aurora/auron/inc" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/auron_src/addr2line.d" -MT"Sources/auron_src/addr2line.o" -o "Sources/auron_src/addr2line.o" "/home/dhkang/work/Aurora/auron/src/addr2line.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/addr2line.c:25:
@@ -15,21 +15,21 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
               ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/addr2line.c:25:
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:377:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:392:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/addr2line.c:25:
@@ -55,10 +55,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
                  from /home/dhkang/work/Aurora/auron/src/addr2line.c:25:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 /home/dhkang/work/Aurora/auron/src/addr2line.c: At top level:
@@ -67,7 +67,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                                  ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/addr2line.c:25:
@@ -82,7 +82,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/addr2line.c:25:
@@ -92,7 +92,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/addr2line.c:25:
@@ -101,7 +101,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/addr2line.c:25:
@@ -110,7 +110,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/addr2line.c:25:
@@ -124,7 +124,7 @@ Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"azm_main.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -I"/home/dhkang/work/Aurora/auron/inc" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/auron_src/azm_main.d" -MT"Sources/auron_src/azm_main.o" -o "Sources/auron_src/azm_main.o" "/home/dhkang/work/Aurora/auron/src/azm_main.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
@@ -134,21 +134,21 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
               ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:377:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:392:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
@@ -174,35 +174,35 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
                  from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 /home/dhkang/work/Aurora/auron/src/azm_main.c: In function ‘azm_xu_main_entry’:
-/home/dhkang/work/Aurora/auron/src/azm_main.c:86:3: warning: implicit declaration of function ‘az_frw_cmd_init’ [-Wimplicit-function-declaration]
+/home/dhkang/work/Aurora/auron/src/azm_main.c:87:3: warning: implicit declaration of function ‘az_frw_cmd_init’ [-Wimplicit-function-declaration]
    az_frw_cmd_init();
    ^
-/home/dhkang/work/Aurora/auron/src/azm_main.c:91:3: warning: implicit declaration of function ‘azm_probe_init’ [-Wimplicit-function-declaration]
+/home/dhkang/work/Aurora/auron/src/azm_main.c:92:3: warning: implicit declaration of function ‘azm_probe_init’ [-Wimplicit-function-declaration]
    azm_probe_init();
    ^
 /home/dhkang/work/Aurora/auron/src/azm_main.c: In function ‘main’:
-/home/dhkang/work/Aurora/auron/src/azm_main.c:119:28: warning: passing argument 2 of ‘az_xu_create’ from incompatible pointer type [-Wincompatible-pointer-types]
-   r = az_xu_create("main", azm_xu_main_entry, &azm_xu_main_arg, &azm_xu_main_config, &azm_xu_main);
-                            ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_base.h:26:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:25,
+/home/dhkang/work/Aurora/auron/src/azm_main.c:125:32: warning: passing argument 2 of ‘az_thread_create’ from incompatible pointer type [-Wincompatible-pointer-types]
+   r = az_thread_create("main", azm_xu_main_entry, &azm_xu_main_arg, &azm_xu_main_config, &azm_xu_main);
+                                ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:42:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_xu.h:251:20: note: expected ‘az_xu_entry_t {aka void * (*)(void *)}’ but argument is of type ‘void * (*)(struct azm_xu_main_arg *)’
- extern az_ion_id_t az_xu_create(char *name, az_xu_entry_t entry, az_xu_arg_t arg, az_xu_config_t *pCfg, az_xu_t *pXU);
+/home/dhkang/work/Aurora/aurora/inc/az_thread.h:256:20: note: expected ‘az_thread_entry_t {aka void * (*)(void *)}’ but argument is of type ‘void * (*)(struct azm_xu_main_arg *)’
+ extern az_ion_id_t az_thread_create(char *name, az_thread_entry_t entry, az_thread_arg_t arg, az_thread_config_t *pCfg, az_thread_t *pXU);
                     ^
-/home/dhkang/work/Aurora/auron/src/azm_main.c:126:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-     return (int)az_xu_entry(azm_xu_main);
+/home/dhkang/work/Aurora/auron/src/azm_main.c:132:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     return (int)az_thread_entry(azm_xu_main);
             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
@@ -218,7 +218,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
@@ -228,7 +228,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
@@ -237,7 +237,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
@@ -246,7 +246,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
@@ -260,7 +260,7 @@ Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"azm_mcheck.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -I"/home/dhkang/work/Aurora/auron/inc" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/auron_src/azm_mcheck.d" -MT"Sources/auron_src/azm_mcheck.o" -o "Sources/auron_src/azm_mcheck.o" "/home/dhkang/work/Aurora/auron/src/azm_mcheck.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_mcheck.c:22:
@@ -270,21 +270,21 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
               ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_mcheck.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:377:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:392:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_mcheck.c:22:
@@ -310,10 +310,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
                  from /home/dhkang/work/Aurora/auron/src/azm_mcheck.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 /home/dhkang/work/Aurora/auron/src/azm_mcheck.c: In function ‘azm_mcheck_cli_cmd’:
@@ -322,7 +322,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_mcheck.c:22:
@@ -338,7 +338,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_mcheck.c:22:
@@ -348,7 +348,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_mcheck.c:22:
@@ -357,7 +357,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_mcheck.c:22:
@@ -366,7 +366,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_mcheck.c:22:
@@ -380,7 +380,7 @@ Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"azm_probe.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -I"/home/dhkang/work/Aurora/auron/inc" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/auron_src/azm_probe.d" -MT"Sources/auron_src/azm_probe.o" -o "Sources/auron_src/azm_probe.o" "/home/dhkang/work/Aurora/auron/src/azm_probe.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
@@ -390,21 +390,21 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
               ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:377:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:392:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
@@ -430,10 +430,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
                  from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 /home/dhkang/work/Aurora/auron/src/azm_probe.c: In function ‘azm_probe_proc_default’:
@@ -453,7 +453,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
        ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
@@ -469,7 +469,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
@@ -479,7 +479,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
@@ -488,7 +488,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
@@ -497,7 +497,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
@@ -511,7 +511,7 @@ Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"azm_rsh.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -I"/home/dhkang/work/Aurora/auron/inc" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/auron_src/azm_rsh.d" -MT"Sources/auron_src/azm_rsh.o" -o "Sources/auron_src/azm_rsh.o" "/home/dhkang/work/Aurora/auron/src/azm_rsh.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
@@ -521,21 +521,21 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
               ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:377:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:392:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
@@ -561,10 +561,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
                  from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:25:0,
@@ -586,7 +586,7 @@ In file included from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:23:0:
                ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
@@ -604,7 +604,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
        ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
@@ -632,7 +632,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
        ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
@@ -656,7 +656,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
@@ -666,7 +666,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
@@ -675,7 +675,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
@@ -684,7 +684,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
@@ -698,7 +698,7 @@ Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"azm_rstdio.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -I"/home/dhkang/work/Aurora/auron/inc" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/auron_src/azm_rstdio.d" -MT"Sources/auron_src/azm_rstdio.o" -o "Sources/auron_src/azm_rstdio.o" "/home/dhkang/work/Aurora/auron/src/azm_rstdio.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:22:
@@ -708,21 +708,21 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
               ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:377:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:392:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:22:
@@ -748,10 +748,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
                  from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:25:0,
@@ -770,7 +770,7 @@ In file included from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:23:0:
         ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:22:
@@ -786,7 +786,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:22:
@@ -796,7 +796,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:22:
@@ -805,7 +805,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:22:
@@ -814,7 +814,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:22:
@@ -828,7 +828,7 @@ Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"azm_trace.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -I"/home/dhkang/work/Aurora/auron/inc" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/auron_src/azm_trace.d" -MT"Sources/auron_src/azm_trace.o" -o "Sources/auron_src/azm_trace.o" "/home/dhkang/work/Aurora/auron/src/azm_trace.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_trace.c:22:
@@ -838,21 +838,21 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
               ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_trace.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:373:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:377:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
-/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:388:10: warning: ‘return’ with a value, in function returning void
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:392:10: warning: ‘return’ with a value, in function returning void
    return r;
           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_trace.c:22:
@@ -878,10 +878,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
                  from /home/dhkang/work/Aurora/auron/src/azm_trace.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:25:0,
@@ -915,7 +915,7 @@ In file included from /home/dhkang/work/Aurora/auron/src/azm_trace.c:23:0:
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_trace.c:22:
@@ -931,7 +931,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_trace.c:22:
@@ -941,7 +941,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_trace.c:22:
@@ -950,7 +950,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_trace.c:22:
@@ -959,7 +959,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
-                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:185,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_trace.c:22:
@@ -978,5 +978,5 @@ copy exeutable to output location
 cp auron /home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Debug2/bin/; cp auron /home/dhkang/work/Aurora/bin/linux/
  
 
-18:14:13 Build Finished (took 1s.619ms)
+11:23:10 Build Finished (took 1s.739ms)
 

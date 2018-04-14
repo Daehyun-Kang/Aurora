@@ -1,8 +1,25 @@
-19:43:56 **** Build of configuration Debug2 for project aurot ****
+11:12:42 **** Build of configuration Debug2 for project aurot ****
 make all 
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_tc_abc.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_abc.d" -MT"Sources/ut/az_tc_abc.o" -o "Sources/ut/az_tc_abc.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_def.h:22:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:194:0: warning: "CONFIG_AZ_LOG_LEVEL_DFT" redefined
+ #define CONFIG_AZ_LOG_LEVEL_DFT           70    // AZ_LOG_LEVEL_DEBUG
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:190:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:195:0: warning: "CONFIG_AZ_LOG_FLAGS_DFT" redefined
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0x0f  // plain print 
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:191:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
+ ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -172,10 +189,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
@@ -550,6 +567,23 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_tc_report_excpt.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_report_excpt.d" -MT"Sources/ut/az_tc_report_excpt.o" -o "Sources/ut/az_tc_report_excpt.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_def.h:22:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:194:0: warning: "CONFIG_AZ_LOG_LEVEL_DFT" redefined
+ #define CONFIG_AZ_LOG_LEVEL_DFT           70    // AZ_LOG_LEVEL_DEBUG
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:190:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:195:0: warning: "CONFIG_AZ_LOG_FLAGS_DFT" redefined
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0x0f  // plain print 
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:191:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
+ ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -719,10 +753,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
@@ -927,6 +961,23 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excp
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_tc_rw_lock.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_rw_lock.d" -MT"Sources/ut/az_tc_rw_lock.o" -o "Sources/ut/az_tc_rw_lock.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_def.h:22:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:194:0: warning: "CONFIG_AZ_LOG_LEVEL_DFT" redefined
+ #define CONFIG_AZ_LOG_LEVEL_DFT           70    // AZ_LOG_LEVEL_DEBUG
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:190:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:195:0: warning: "CONFIG_AZ_LOG_FLAGS_DFT" redefined
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0x0f  // plain print 
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:191:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
+ ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -1096,10 +1147,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
@@ -1414,6 +1465,23 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_tc_segv_handle.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_segv_handle.d" -MT"Sources/ut/az_tc_segv_handle.o" -o "Sources/ut/az_tc_segv_handle.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_def.h:22:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:194:0: warning: "CONFIG_AZ_LOG_LEVEL_DFT" redefined
+ #define CONFIG_AZ_LOG_LEVEL_DFT           70    // AZ_LOG_LEVEL_DEBUG
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:190:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:195:0: warning: "CONFIG_AZ_LOG_FLAGS_DFT" redefined
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0x0f  // plain print 
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:191:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
+ ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -1583,10 +1651,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
@@ -1762,6 +1830,23 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_timer_start.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_tc_timer_start.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_timer_start.d" -MT"Sources/ut/az_tc_timer_start.o" -o "Sources/ut/az_tc_timer_start.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_timer_start.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_def.h:22:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_timer_start.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_timer_start.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:194:0: warning: "CONFIG_AZ_LOG_LEVEL_DFT" redefined
+ #define CONFIG_AZ_LOG_LEVEL_DFT           70    // AZ_LOG_LEVEL_DEBUG
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:190:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:195:0: warning: "CONFIG_AZ_LOG_FLAGS_DFT" redefined
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0x0f  // plain print 
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:191:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
+ ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -1931,10 +2016,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_timer_start.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_timer_start.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
@@ -2230,6 +2315,22 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_timer_start
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_unitTest.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_unitTest.d" -MT"Sources/ut/az_unitTest.o" -o "Sources/ut/az_unitTest.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_def.h:22:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:194:0: warning: "CONFIG_AZ_LOG_LEVEL_DFT" redefined
+ #define CONFIG_AZ_LOG_LEVEL_DFT           70    // AZ_LOG_LEVEL_DEBUG
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:190:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:195:0: warning: "CONFIG_AZ_LOG_FLAGS_DFT" redefined
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0x0f  // plain print 
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:191:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
+ ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -2389,10 +2490,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
                  from /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
@@ -2453,6 +2554,23 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c
 Building file: /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_pt_az_log_printf.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/pt/az_pt_az_log_printf.d" -MT"Sources/pt/az_pt_az_log_printf.o" -o "Sources/pt/az_pt_az_log_printf.o" "/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_def.h:22:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:194:0: warning: "CONFIG_AZ_LOG_LEVEL_DFT" redefined
+ #define CONFIG_AZ_LOG_LEVEL_DFT           70    // AZ_LOG_LEVEL_DEBUG
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:190:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:195:0: warning: "CONFIG_AZ_LOG_FLAGS_DFT" redefined
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0x0f  // plain print 
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:191:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
+ ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -2622,10 +2740,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_mutex.h:26:0,
@@ -2789,6 +2907,23 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_prin
 Building file: /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_pt_sys_lw_lock.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/pt/az_pt_sys_lw_lock.d" -MT"Sources/pt/az_pt_sys_lw_lock.o" -o "Sources/pt/az_pt_sys_lw_lock.o" "/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_def.h:22:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:194:0: warning: "CONFIG_AZ_LOG_LEVEL_DFT" redefined
+ #define CONFIG_AZ_LOG_LEVEL_DFT           70    // AZ_LOG_LEVEL_DEBUG
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:190:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:195:0: warning: "CONFIG_AZ_LOG_FLAGS_DFT" redefined
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0x0f  // plain print 
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:191:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
+ ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -2958,10 +3093,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c: In function ‘xu_measure_proc’:
@@ -3290,6 +3425,22 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock
 Building file: /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c
 Invoking: GCC C Compiler
 gcc -Dlinux -D"BASE_FILENAME=\"az_main.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/aurot/az_main.d" -MT"Sources/aurot/az_main.o" -o "Sources/aurot/az_main.o" "/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_def.h:22:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:194:0: warning: "CONFIG_AZ_LOG_LEVEL_DFT" redefined
+ #define CONFIG_AZ_LOG_LEVEL_DFT           70    // AZ_LOG_LEVEL_DEBUG
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:190:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_LEVEL_DFT           50 // AZ_LOG_LEVEL_INFO
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:195:0: warning: "CONFIG_AZ_LOG_FLAGS_DFT" redefined
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0x0f  // plain print 
+ ^
+/home/dhkang/work/Aurora/aurora/inc/az_config.h:191:0: note: this is the location of the previous definition
+ #define CONFIG_AZ_LOG_FLAGS_DFT           0  // plain print 
+ ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -3449,35 +3600,34 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
                  from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:200:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:150:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
-/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c: In function ‘az_xu_main_entry’:
-/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:73:10: warning: implicit declaration of function ‘az_test_main’ [-Wimplicit-function-declaration]
-   return az_test_main(arg->argc, arg->argv);
-          ^
-/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:73:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c: In function ‘az_thread_main_entry’:
+/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:73:3: warning: implicit declaration of function ‘az_test_main’ [-Wimplicit-function-declaration]
+   az_test_main(arg->argc, arg->argv);
+   ^
 /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c: In function ‘main’:
-/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:92:3: warning: implicit declaration of function ‘az_trace_start_default_thread’ [-Wimplicit-function-declaration]
+/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:96:3: warning: implicit declaration of function ‘az_trace_start_default_thread’ [-Wimplicit-function-declaration]
    az_trace_start_default_thread();
    ^
-/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:94:3: warning: implicit declaration of function ‘az_mcheck_init’ [-Wimplicit-function-declaration]
+/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:98:3: warning: implicit declaration of function ‘az_mcheck_init’ [-Wimplicit-function-declaration]
    az_mcheck_init();
    ^
-/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:104:36: warning: passing argument 2 of ‘az_xu_create’ from incompatible pointer type [-Wincompatible-pointer-types]
-   r = (az_r_t)az_xu_create("main", az_xu_main_entry, &az_xu_main_arg, &az_xu_main_config, &az_xu_main);
-                                    ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_base.h:26:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:25,
+/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:108:40: warning: passing argument 2 of ‘az_thread_create’ from incompatible pointer type [-Wincompatible-pointer-types]
+   r = (az_r_t)az_thread_create("main", az_thread_main_entry, &az_thread_main_arg, &az_thread_main_config, &az_thread_main);
+                                        ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:42:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_xu.h:251:20: note: expected ‘az_xu_entry_t {aka void * (*)(void *)}’ but argument is of type ‘void * (*)(struct az_xu_main_arg *)’
- extern az_ion_id_t az_xu_create(char *name, az_xu_entry_t entry, az_xu_arg_t arg, az_xu_config_t *pCfg, az_xu_t *pXU);
+/home/dhkang/work/Aurora/aurora/inc/az_thread.h:256:20: note: expected ‘az_thread_entry_t {aka void * (*)(void *)}’ but argument is of type ‘void * (*)(struct az_thread_main_arg *)’
+ extern az_ion_id_t az_thread_create(char *name, az_thread_entry_t entry, az_thread_arg_t arg, az_thread_config_t *pCfg, az_thread_t *pXU);
                     ^
-/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:112:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-     return (int)az_xu_entry(az_xu_main);
+/home/dhkang/work/Aurora/aurora/src/test/aurot/az_main.c:116:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     return (int)az_thread_entry(az_thread_main);
             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
@@ -3544,5 +3694,5 @@ copy exeutable to output location
 cp aurot /home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Debug2/bin/; cp aurot /home/dhkang/work/Aurora/bin/linux/
  
 
-19:43:58 Build Finished (took 2s.403ms)
+11:12:44 Build Finished (took 2s.176ms)
 

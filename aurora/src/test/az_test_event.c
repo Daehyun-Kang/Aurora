@@ -184,7 +184,7 @@ az_r_t az_test_doSendEvent(az_test_descr_t *descr)
     }
 
     az_event_t *event;
-    az_xu_sleep(2000000000);
+    az_event_sleep(2000000000);
     srand(NULL);
     int count = 0;
     int acc = 1;
@@ -206,7 +206,7 @@ az_r_t az_test_doSendEvent(az_test_descr_t *descr)
       }
       az_printf("%s: eport %d post %d %p(%x) ok\n", descr->name, eport->no, 
           count, event, event->id); 
-      az_xu_sleep(((rand()%100000) + 100000)*1000);
+      az_event_sleep(((rand()%100000) + 100000)*1000);
       count++;
       //break;
     } while (1);
@@ -283,14 +283,14 @@ az_r_t az_test_doRecvEvent(az_test_descr_t *descr)
       
     az_event_id_st_t *eid_str = &event_id;
     az_int64_t tmo_ns = 2000000000;
-    az_xu_event_t revent = 0; 
+    az_event_event_t revent = 0; 
     int count = 0;
     az_event_t *event;
     int j;
 
     do {
-      //r = az_xu_recvEvent((1 << eid_str->sig), 0, tmo_ns, &revent); 
-      //r = az_xu_recvEvent(0xffffffff, 0, tmo_ns, &revent); 
+      //r = az_event_recvEvent((1 << eid_str->sig), 0, tmo_ns, &revent); 
+      //r = az_event_recvEvent(0xffffffff, 0, tmo_ns, &revent); 
       r = az_event_recv_wait(&rcvr, tmo_ns);
       if (r == AZ_ERR(TIMEOUT)) {
         az_printf("eport %d timeout %d \n", eport->no, count++);

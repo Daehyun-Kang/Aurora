@@ -176,16 +176,16 @@ az_r_t az_sys_xu_setPriority(az_sys_xu_t xu, az_xu_attr_t *pAttr)
             nPriority = THREAD_PRIORITY_TIME_CRITICAL;
             break;
         case SCHED_RR:
-            if (priority == AZ_XU_PRIORITY_MAX) {
+            if (priority == AZ_THREAD_PRIORITY_MAX) {
                 nPriority = THREAD_PRIORITY_HIGHEST;
             } else 
-            if (priority == AZ_XU_PRIORITY_MIN) {
+            if (priority == AZ_THREAD_PRIORITY_MIN) {
                 nPriority = THREAD_PRIORITY_LOWEST;
             } else 
-            if (priority == (AZ_XU_PRIORITY_MIN+AZ_XU_PRIORITY_MAX)/2) {
+            if (priority == (AZ_THREAD_PRIORITY_MIN+AZ_THREAD_PRIORITY_MAX)/2) {
                 nPriority = THREAD_PRIORITY_NORMAL;
             } else 
-            if (priority > (AZ_XU_PRIORITY_MIN+AZ_XU_PRIORITY_MAX)/2) {
+            if (priority > (AZ_THREAD_PRIORITY_MIN+AZ_THREAD_PRIORITY_MAX)/2) {
                 nPriority = THREAD_PRIORITY_ABOVE_NORMAL;
             } else {
                 nPriority = THREAD_PRIORITY_BELOW_NORMAL;
@@ -243,21 +243,21 @@ az_r_t az_sys_xu_getPriority(az_sys_xu_t xu, az_xu_attr_t *pAttr)
         default:
             sched_policy = SCHED_RR;
             if (nPriority == THREAD_PRIORITY_HIGHEST) {
-                priority = AZ_XU_PRIORITY_MAX;
+                priority = AZ_THREAD_PRIORITY_MAX;
             } else 
             if (nPriority == THREAD_PRIORITY_LOWEST) {
-                priority = AZ_XU_PRIORITY_MIN;
+                priority = AZ_THREAD_PRIORITY_MIN;
             } else 
             if ( nPriority == THREAD_PRIORITY_NORMAL) {
-                priority = (AZ_XU_PRIORITY_MIN+AZ_XU_PRIORITY_MAX)/2; 
+                priority = (AZ_THREAD_PRIORITY_MIN+AZ_THREAD_PRIORITY_MAX)/2; 
             } else 
             if (nPriority == THREAD_PRIORITY_ABOVE_NORMAL) {
                 if (priority == 0) {
-                    priority = (AZ_XU_PRIORITY_MIN+AZ_XU_PRIORITY_MAX)/2 + 1;
+                    priority = (AZ_THREAD_PRIORITY_MIN+AZ_THREAD_PRIORITY_MAX)/2 + 1;
                 }
             } else { //nPriority == THREAD_PRIORITY_BELOW_NORMAL
                 if (priority == 0) {
-                    priority = (AZ_XU_PRIORITY_MIN+AZ_XU_PRIORITY_MAX)/2 - 1;
+                    priority = (AZ_THREAD_PRIORITY_MIN+AZ_THREAD_PRIORITY_MAX)/2 - 1;
                 }
             }
             break;

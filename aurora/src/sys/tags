@@ -93,6 +93,7 @@ AZ_DIAG_PRT_TYPE_SIZE	../diag/az_diag_typeSize.c	25;"	d	file:
 AZ_DIR_INVALID	../../inc/sys/az_fs.h	62;"	d
 AZ_DIR_INVALID	../../inc/sys/az_fs.h	63;"	d
 AZ_DIR_INVALID	../../inc/sys/az_fs.h	64;"	d
+AZ_DIR_INVALID	../../inc/sys/az_fs.h	66;"	d
 AZ_DLLIB_H	../../inc/sys/az_dllib.h	22;"	d
 AZ_EQUAL_PTR	../../inc/az_def.h	119;"	d
 AZ_ERR	../../inc/az_err.h	166;"	d
@@ -299,6 +300,7 @@ AZ_FILENAME	../../inc/az_def.h	157;"	d
 AZ_FILE_INVALID	../../inc/sys/az_fs.h	69;"	d
 AZ_FILE_INVALID	../../inc/sys/az_fs.h	70;"	d
 AZ_FILE_INVALID	../../inc/sys/az_fs.h	71;"	d
+AZ_FILE_INVALID	../../inc/sys/az_fs.h	73;"	d
 AZ_FMT_EVENT_ID	../../inc/az_event.h	49;"	d
 AZ_FMT_EVENT_ID	../../inc/az_event.h	56;"	d
 AZ_FMT_KV_EXP	../../inc/az_printf.h	44;"	d
@@ -402,6 +404,7 @@ AZ_INDEX_POOL_SIZE	../../inc/az_index.h	57;"	d
 AZ_INDEX_POOL_TEST_AND_SET	../../inc/az_index.h	53;"	d
 AZ_INDEX_POOL_TEST_AND_SET	../../inc/az_index.h	54;"	d
 AZ_INET_H	../../inc/sys/az_inet.h	22;"	d
+AZ_INET_PORT	../../inc/sys/az_inet.h	51;"	d
 AZ_INET_PORT	../../inc/sys/az_inet.h	52;"	d
 AZ_INET_PORT	../../inc/sys/az_inet.h	55;"	d
 AZ_IN_RANGE	../../inc/az_def.h	102;"	d
@@ -420,9 +423,14 @@ AZ_ION_IDLE	../../inc/az_ion.h	51;"	d
 AZ_ION_IDLE	../../inc/az_ion.h	52;"	d
 AZ_ION_IDLE	../../inc/az_ion.h	67;"	d
 AZ_ION_IDLE	../../inc/az_ion.h	84;"	d
+AZ_ION_ID_FLAG_NONIO	../../inc/az_ion_types.h	62;"	d
 AZ_ION_ID_FLAG_NONIO	../../inc/az_ion_types.h	63;"	d
+AZ_ION_ID_FLAG_NONIO	../../inc/az_ion_types.h	64;"	d
 AZ_ION_ID_FLAG_NONIO	../../inc/az_ion_types.h	65;"	d
+AZ_ION_ID_INVALID	../../inc/az_ion_types.h	60;"	d
 AZ_ION_ID_INVALID	../../inc/az_ion_types.h	61;"	d
+AZ_ION_INIT_STATIC	../../inc/az_ion.h	105;"	d
+AZ_ION_IS_IDLE_VALID	../../inc/az_ion.h	110;"	d
 AZ_ION_LIST	../../inc/az_ion.h	48;"	d
 AZ_ION_LIST	../../inc/az_ion.h	49;"	d
 AZ_ION_LIST	../../inc/az_ion.h	50;"	d
@@ -444,18 +452,22 @@ AZ_ION_TYPE_FILE	../../inc/az_ion_types.h	37;"	d
 AZ_ION_TYPE_FILE	../../inc/az_ion_types.h	44;"	d
 AZ_ION_TYPE_IOU	../../inc/az_ion_types.h	39;"	d
 AZ_ION_TYPE_IOU	../../inc/az_ion_types.h	46;"	d
+AZ_ION_TYPE_LOCAL	../../inc/az_ion_types.h	48;"	d
 AZ_ION_TYPE_LOCAL	../../inc/az_ion_types.h	49;"	d
 AZ_ION_TYPE_MASK	../../inc/az_ion_types.h	38;"	d
+AZ_ION_TYPE_MAX	../../inc/az_ion_types.h	49;"	d
 AZ_ION_TYPE_MAX	../../inc/az_ion_types.h	50;"	d
 AZ_ION_TYPE_MSGQ	../../inc/az_ion_types.h	38;"	d
 AZ_ION_TYPE_MSGQ	../../inc/az_ion_types.h	45;"	d
 AZ_ION_TYPE_MUTEX	../../inc/az_ion_types.h	33;"	d
 AZ_ION_TYPE_MUTEX	../../inc/az_ion_types.h	34;"	d
 AZ_ION_TYPE_MUTEX	../../inc/az_ion_types.h	41;"	d
+AZ_ION_TYPE_NAMES	../../inc/az_ion_types.h	53;"	d
 AZ_ION_TYPE_NAMES	../../inc/az_ion_types.h	54;"	d
 AZ_ION_TYPE_SEM	../../inc/az_ion_types.h	34;"	d
 AZ_ION_TYPE_SEM	../../inc/az_ion_types.h	35;"	d
 AZ_ION_TYPE_SEM	../../inc/az_ion_types.h	42;"	d
+AZ_ION_TYPE_SOCK	../../inc/az_ion_types.h	47;"	d
 AZ_ION_TYPE_TCP	../../inc/az_ion_types.h	48;"	d
 AZ_ION_TYPE_TIMER	../../inc/az_ion_types.h	32;"	d
 AZ_ION_TYPE_TIMER	../../inc/az_ion_types.h	33;"	d
@@ -668,6 +680,7 @@ AZ_NAME_MAX	../../inc/sys/az_fs.h	49;"	d
 AZ_NAME_MAX	../../inc/sys/az_fs.h	50;"	d
 AZ_NAME_MAX	../../inc/sys/az_fs.h	51;"	d
 AZ_NAME_MAX	../../inc/sys/az_fs.h	52;"	d
+AZ_NAME_MAX	../../inc/sys/az_fs.h	54;"	d
 AZ_NL	../../inc/az_log.h	48;"	d
 AZ_NL	../../inc/az_log.h	50;"	d
 AZ_NL	../../inc/az_log.h	61;"	d
@@ -693,17 +706,21 @@ AZ_PATH_COMP_MAX	../../inc/sys/az_fs.h	43;"	d
 AZ_PATH_COMP_MAX	../../inc/sys/az_fs.h	44;"	d
 AZ_PATH_COMP_MAX	../../inc/sys/az_fs.h	45;"	d
 AZ_PATH_COMP_MAX	../../inc/sys/az_fs.h	46;"	d
+AZ_PATH_COMP_MAX	../../inc/sys/az_fs.h	48;"	d
 AZ_PATH_DELIMITER	../../inc/sys/az_fs.h	53;"	d
 AZ_PATH_DELIMITER	../../inc/sys/az_fs.h	54;"	d
 AZ_PATH_DELIMITER	../../inc/sys/az_fs.h	55;"	d
+AZ_PATH_DELIMITER	../../inc/sys/az_fs.h	57;"	d
 AZ_PATH_MAX	../../inc/sys/az_fs.h	36;"	d
 AZ_PATH_MAX	../../inc/sys/az_fs.h	37;"	d
 AZ_PATH_MAX	../../inc/sys/az_fs.h	38;"	d
 AZ_PATH_MAX	../../inc/sys/az_fs.h	39;"	d
 AZ_PATH_MAX	../../inc/sys/az_fs.h	40;"	d
+AZ_PATH_MAX	../../inc/sys/az_fs.h	42;"	d
 AZ_PATH_SEPERATOR	../../inc/sys/az_fs.h	54;"	d
 AZ_PATH_SEPERATOR	../../inc/sys/az_fs.h	55;"	d
 AZ_PATH_SEPERATOR	../../inc/sys/az_fs.h	56;"	d
+AZ_PATH_SEPERATOR	../../inc/sys/az_fs.h	58;"	d
 AZ_PRINTF_BUF_SZ	../../inc/az_log.h	42;"	d
 AZ_PRINTF_BUF_SZ	../../inc/az_log.h	44;"	d
 AZ_PRINTF_BUF_SZ	../../inc/az_log.h	55;"	d
@@ -859,8 +876,12 @@ AZ_TC_PER_TP_MAX	../../inc/az_test.h	35;"	d
 AZ_TC_PRINT_B	../../inc/az_tc.h	69;"	d
 AZ_TC_PRINT_BEGIN	../../inc/az_tc.h	74;"	d
 AZ_TC_PRINT_END	../../inc/az_tc.h	105;"	d
+AZ_TC_PRINT_END	../../inc/az_tc.h	110;"	d
 AZ_TC_PRINT_END_FAIL	../../inc/az_tc.h	89;"	d
+AZ_TC_PRINT_END_FAIL	../../inc/az_tc.h	94;"	d
+AZ_TC_PRINT_END_PASS	../../inc/az_tc.h	102;"	d
 AZ_TC_PRINT_END_PASS	../../inc/az_tc.h	97;"	d
+AZ_TC_PRINT_RUN	../../inc/az_tc.h	89;"	d
 AZ_TC_PRINT_START	../../inc/az_tc.h	84;"	d
 AZ_TC_PRINT_T	../../inc/az_tc.h	76;"	d
 AZ_TC_PRINT_TERM	../../inc/az_tc.h	82;"	d
@@ -870,7 +891,9 @@ AZ_TC_RESULT_SEGV	../../inc/az_tc.h	67;"	d
 AZ_TC_RESULT_SUCCESS	../../inc/az_tc.h	64;"	d
 AZ_TC_SET_CUR_TC	../../inc/az_tc.h	42;"	d
 AZ_TC_SET_OK	../../inc/az_tc.h	125;"	d
+AZ_TC_SET_OK	../../inc/az_tc.h	130;"	d
 AZ_TC_SET_REASON	../../inc/az_tc.h	124;"	d
+AZ_TC_SET_REASON	../../inc/az_tc.h	129;"	d
 AZ_TC_SET_TV	../../inc/az_tc.h	46;"	d
 AZ_TC_TV_SZ	../../inc/az_tc.h	44;"	d
 AZ_TEST_CFG_FILE_DEFAULT	../../inc/az_test.h	48;"	d
@@ -1064,6 +1087,7 @@ AZ_TIMER_H	../../inc/sys/az_timer.h	22;"	d
 AZ_TIMER_INVALID	../../inc/sys/az_timer.h	45;"	d
 AZ_TIMER_INVALID	../../inc/sys/az_timer.h	46;"	d
 AZ_TIMER_INVALID	../../inc/sys/az_timer.h	48;"	d
+AZ_TIMER_INVALID	../../inc/sys/az_timer.h	50;"	d
 AZ_TIMESTAMP_STR	../../inc/az_log.h	38;"	d
 AZ_TIMESTAMP_STR	../../inc/az_log.h	51;"	d
 AZ_TIMESTAMP_STR	../../inc/az_log.h	52;"	d
@@ -1483,71 +1507,116 @@ AZ_XU_CFG_VAL_policy_SCHED_RR	../../inc/az_xu_cfg.h	45;"	d
 AZ_XU_CFG_VAL_policy_SCHED_RR	../../inc/az_xu_cfg.h	46;"	d
 AZ_XU_ERROR_CREATED	../../inc/sys/az_xu.h	44;"	d
 AZ_XU_ERROR_CREATED	../../inc/sys/az_xu.h	45;"	d
+AZ_XU_ERROR_CREATED	../../inc/sys/az_xu.h	50;"	d
 AZ_XU_ERROR_DELETE	../../inc/sys/az_xu.h	47;"	d
 AZ_XU_ERROR_DELETE	../../inc/sys/az_xu.h	48;"	d
+AZ_XU_ERROR_DELETE	../../inc/sys/az_xu.h	53;"	d
 AZ_XU_ERROR_RCVEVT	../../inc/sys/az_xu.h	49;"	d
 AZ_XU_ERROR_RCVEVT	../../inc/sys/az_xu.h	50;"	d
+AZ_XU_ERROR_RCVEVT	../../inc/sys/az_xu.h	55;"	d
 AZ_XU_ERROR_SNDEVT	../../inc/sys/az_xu.h	48;"	d
 AZ_XU_ERROR_SNDEVT	../../inc/sys/az_xu.h	49;"	d
+AZ_XU_ERROR_SNDEVT	../../inc/sys/az_xu.h	54;"	d
 AZ_XU_ERROR_START	../../inc/sys/az_xu.h	45;"	d
 AZ_XU_ERROR_START	../../inc/sys/az_xu.h	46;"	d
+AZ_XU_ERROR_START	../../inc/sys/az_xu.h	51;"	d
 AZ_XU_ERROR_STOP	../../inc/sys/az_xu.h	46;"	d
 AZ_XU_ERROR_STOP	../../inc/sys/az_xu.h	47;"	d
+AZ_XU_ERROR_STOP	../../inc/sys/az_xu.h	52;"	d
 AZ_XU_EVENT_EVTBUS	../../inc/sys/az_xu.h	56;"	d
+AZ_XU_EVENT_EVTBUS	../../inc/sys/az_xu.h	61;"	d
+AZ_XU_EVENT_MSG	../../inc/sys/az_xu.h	62;"	d
+AZ_XU_EVENT_OPT_AND_ALL	../../inc/sys/az_xu.h	178;"	d
 AZ_XU_EVENT_OPT_AND_ALL	../../inc/sys/az_xu.h	36;"	d
 AZ_XU_EVENT_OPT_AND_ALL	../../inc/sys/az_xu.h	37;"	d
 AZ_XU_EVENT_OPT_AND_ALL	../../inc/sys/az_xu.h	66;"	d
 AZ_XU_EVENT_OPT_AND_ALL	../../inc/sys/az_xu.h	70;"	d
+AZ_XU_EVENT_OPT_AND_ALL	../../inc/sys/az_xu.h	87;"	d
+AZ_XU_EVENT_OPT_PRESERVE	../../inc/sys/az_xu.h	179;"	d
 AZ_XU_EVENT_OPT_PRESERVE	../../inc/sys/az_xu.h	37;"	d
 AZ_XU_EVENT_OPT_PRESERVE	../../inc/sys/az_xu.h	38;"	d
 AZ_XU_EVENT_OPT_PRESERVE	../../inc/sys/az_xu.h	67;"	d
 AZ_XU_EVENT_OPT_PRESERVE	../../inc/sys/az_xu.h	71;"	d
+AZ_XU_EVENT_OPT_PRESERVE	../../inc/sys/az_xu.h	88;"	d
 AZ_XU_EVENT_TEST_ERROR	../../inc/az_test.h	189;"	d
 AZ_XU_EVENT_TEST_STARTED	../../inc/az_test.h	187;"	d
 AZ_XU_EVENT_TEST_STOPPED	../../inc/az_test.h	188;"	d
 AZ_XU_EVENT_THR_START	../../inc/sys/az_xu.h	52;"	d
 AZ_XU_EVENT_THR_START	../../inc/sys/az_xu.h	53;"	d
+AZ_XU_EVENT_THR_START	../../inc/sys/az_xu.h	58;"	d
 AZ_XU_EVENT_THR_STOP	../../inc/sys/az_xu.h	53;"	d
 AZ_XU_EVENT_THR_STOP	../../inc/sys/az_xu.h	54;"	d
+AZ_XU_EVENT_THR_STOP	../../inc/sys/az_xu.h	59;"	d
 AZ_XU_EVENT_TRZ	../../inc/sys/az_xu.h	55;"	d
+AZ_XU_EVENT_TRZ	../../inc/sys/az_xu.h	60;"	d
 AZ_XU_EVENT_VECTORS	../../inc/sys/az_xu.h	51;"	d
 AZ_XU_EVENT_VECTORS	../../inc/sys/az_xu.h	52;"	d
+AZ_XU_EVENT_VECTORS	../../inc/sys/az_xu.h	57;"	d
 AZ_XU_EXCPT_POINT	../../inc/sys/az_xu.h	151;"	d
+AZ_XU_EXCPT_POINT	../../inc/sys/az_xu.h	182;"	d
 AZ_XU_FLAGS_INI_VAL	../../inc/sys/az_xu.h	58;"	d
 AZ_XU_FLAGS_INI_VAL	../../inc/sys/az_xu.h	60;"	d
 AZ_XU_FLAGS_INI_VAL	../../inc/sys/az_xu.h	61;"	d
 AZ_XU_FLAGS_INI_VAL	../../inc/sys/az_xu.h	63;"	d
+AZ_XU_FLAGS_INI_VAL	../../inc/sys/az_xu.h	78;"	d
+AZ_XU_FLAGS_INI_VAL	../../inc/sys/az_xu.h	80;"	d
 AZ_XU_FLAGS_LOG_ERR	../../inc/sys/az_xu.h	55;"	d
 AZ_XU_FLAGS_LOG_ERR	../../inc/sys/az_xu.h	58;"	d
+AZ_XU_FLAGS_LOG_ERR	../../inc/sys/az_xu.h	74;"	d
 AZ_XU_FLAGS_TRACE	../../inc/sys/az_xu.h	56;"	d
 AZ_XU_FLAGS_TRACE	../../inc/sys/az_xu.h	59;"	d
+AZ_XU_FLAGS_TRACE	../../inc/sys/az_xu.h	75;"	d
 AZ_XU_H	../../inc/sys/az_xu.h	21;"	d
 AZ_XU_H	../../inc/sys/az_xu.h	22;"	d
 AZ_XU_INVALID	../../inc/sys/az_xu.h	124;"	d
 AZ_XU_INVALID	../../inc/sys/az_xu.h	137;"	d
+AZ_XU_INVALID	../../inc/sys/az_xu.h	165;"	d
 AZ_XU_INVALID	../../inc/sys/az_xu.h	56;"	d
 AZ_XU_INVALID	../../inc/sys/az_xu.h	57;"	d
 AZ_XU_IS_STATE_EXCPT	../../inc/sys/az_xu.h	150;"	d
+AZ_XU_IS_STATE_EXCPT	../../inc/sys/az_xu.h	181;"	d
+AZ_XU_MSG_CATEGORY	../../inc/sys/az_xu.h	186;"	d
+AZ_XU_MSG_CAT_MASK	../../inc/sys/az_xu.h	67;"	d
+AZ_XU_MSG_CAT_MASK	../../inc/sys/az_xu.h	71;"	d
+AZ_XU_MSG_EXCEPTION	../../inc/sys/az_xu.h	65;"	d
+AZ_XU_MSG_EXCEPTION	../../inc/sys/az_xu.h	69;"	d
+AZ_XU_MSG_GET_ION_ID	../../inc/sys/az_xu.h	187;"	d
+AZ_XU_MSG_STATECHG	../../inc/sys/az_xu.h	66;"	d
+AZ_XU_MSG_STATECHG	../../inc/sys/az_xu.h	70;"	d
 AZ_XU_NAME	../../inc/sys/az_xu.h	140;"	d
 AZ_XU_NAME	../../inc/sys/az_xu.h	142;"	d
+AZ_XU_NAME	../../inc/sys/az_xu.h	168;"	d
+AZ_XU_NAME	../../inc/sys/az_xu.h	170;"	d
+AZ_XU_ON_EXCPT	../../inc/sys/az_xu.h	183;"	d
 AZ_XU_PRIORITY_MAX	../../inc/sys/az_xu_types.h	32;"	d
 AZ_XU_PRIORITY_MAX	../../inc/sys/az_xu_types.h	33;"	d
 AZ_XU_PRIORITY_MAX	../../inc/sys/az_xu_types.h	34;"	d
 AZ_XU_PRIORITY_MIN	../../inc/sys/az_xu_types.h	31;"	d
 AZ_XU_PRIORITY_MIN	../../inc/sys/az_xu_types.h	32;"	d
 AZ_XU_PRIORITY_MIN	../../inc/sys/az_xu_types.h	33;"	d
+AZ_XU_REPORT_EXCPT	../../inc/sys/az_xu.h	184;"	d
 AZ_XU_STATE_BUSY	../../inc/sys/az_xu.h	41;"	d
+AZ_XU_STATE_BUSY	../../inc/sys/az_xu.h	46;"	d
 AZ_XU_STATE_CREATED	../../inc/sys/az_xu.h	38;"	d
+AZ_XU_STATE_CREATED	../../inc/sys/az_xu.h	43;"	d
 AZ_XU_STATE_ERROR	../../inc/sys/az_xu.h	42;"	d
+AZ_XU_STATE_ERROR	../../inc/sys/az_xu.h	47;"	d
 AZ_XU_STATE_EXCPT	../../inc/sys/az_xu.h	43;"	d
+AZ_XU_STATE_EXCPT	../../inc/sys/az_xu.h	48;"	d
 AZ_XU_STATE_START	../../inc/sys/az_xu.h	39;"	d
+AZ_XU_STATE_START	../../inc/sys/az_xu.h	44;"	d
 AZ_XU_STATE_STOP	../../inc/sys/az_xu.h	40;"	d
+AZ_XU_STATE_STOP	../../inc/sys/az_xu.h	45;"	d
 AZ_XU_TRACE_DISABLE	../../inc/sys/az_xu.h	68;"	d
+AZ_XU_TRACE_DISABLE	../../inc/sys/az_xu.h	85;"	d
 AZ_XU_TRACE_ENABLE	../../inc/sys/az_xu.h	67;"	d
+AZ_XU_TRACE_ENABLE	../../inc/sys/az_xu.h	84;"	d
 AZ_XU_TRACE_ENABLED	../../inc/sys/az_xu.h	63;"	d
 AZ_XU_TRACE_ENABLED	../../inc/sys/az_xu.h	66;"	d
+AZ_XU_TRACE_ENABLED	../../inc/sys/az_xu.h	83;"	d
 AZ_XU_TRACE_SET_CURFUNC	../../inc/sys/az_xu.h	167;"	d
 AZ_XU_TRACE_SET_CURFUNC	../../inc/sys/az_xu.h	193;"	d
+AZ_XU_TRACE_SET_CURFUNC	../../inc/sys/az_xu.h	230;"	d
 AZ_XU_TYPES_H	../../inc/sys/az_xu_types.h	21;"	d
 AZ_XU_TYPES_H	../../inc/sys/az_xu_types.h	22;"	d
 Accept	../../inc/az_sys_def.h	/^  } Accept;$/;"	m	union:__anon16	typeref:struct:__anon16::__anon21
@@ -1571,44 +1640,70 @@ CALL_AZ_UT_SET_REASON	../../inc/az_unitTest.h	328;"	d
 CONFIG_AZM	../../inc/az_config.h	84;"	d
 CONFIG_AZM	../../inc/az_config.h	85;"	d
 CONFIG_AZM	../../inc/az_config.h	94;"	d
+CONFIG_AZM	../../inc/az_config.h	97;"	d
+CONFIG_AZM	../../inc/az_config.h	98;"	d
 CONFIG_AZ_APP_CFG_FILE	../../inc/az_config.h	116;"	d
 CONFIG_AZ_APP_CFG_FILE	../../inc/az_config.h	159;"	d
+CONFIG_AZ_APP_CFG_FILE	../../inc/az_config.h	162;"	d
 CONFIG_AZ_CFG_FOLDER	../../inc/az_config.h	113;"	d
 CONFIG_AZ_CFG_FOLDER	../../inc/az_config.h	156;"	d
+CONFIG_AZ_CFG_FOLDER	../../inc/az_config.h	159;"	d
 CONFIG_AZ_CLI	../../inc/az_config.h	61;"	d
 CONFIG_AZ_CLI	../../inc/az_config.h	81;"	d
 CONFIG_AZ_CLI	../../inc/az_config.h	91;"	d
+CONFIG_AZ_CLI	../../inc/az_config.h	94;"	d
 CONFIG_AZ_CLI_CMDBUF_SZ	../../inc/cli/az_cli_cmd.h	41;"	d
 CONFIG_AZ_CLI_INPUT_FRWD	../../inc/az_config.h	117;"	d
+CONFIG_AZ_CLI_INPUT_FRWD	../../inc/az_config.h	120;"	d
 CONFIG_AZ_CLI_INPUT_FRWD	../../inc/az_config.h	90;"	d
 CONFIG_AZ_CLI_MAX_ARGS	../../inc/cli/az_cli_cmd.h	45;"	d
 CONFIG_AZ_CLI_MAX_CMDS	../../inc/cli/az_cli_cmd.h	37;"	d
 CONFIG_AZ_CLI_SHELL_PROMPT	../../inc/az_config.h	100;"	d
+CONFIG_AZ_CLI_SHELL_PROMPT	../../inc/az_config.h	101;"	d
+CONFIG_AZ_CLI_SHELL_PROMPT	../../inc/az_config.h	103;"	d
 CONFIG_AZ_CLI_SHELL_PROMPT	../../inc/az_config.h	98;"	d
 CONFIG_AZ_CLI_SVR_PORT	../../inc/az_config.h	137;"	d
+CONFIG_AZ_CLI_SVR_PORT	../../inc/az_config.h	140;"	d
 CONFIG_AZ_CLI_TX_BUFFER_SZ	../../inc/cli/az_cli.h	35;"	d
+CONFIG_AZ_DEBUG	../../inc/az_config.h	46;"	d
+CONFIG_AZ_DEBUG	../../inc/az_config.h	47;"	d
 CONFIG_AZ_DEBUG_NATIVE_APP	../../inc/az_config.h	46;"	d
 CONFIG_AZ_DEBUG_NATIVE_APP	../../inc/az_config.h	47;"	d
+CONFIG_AZ_DEBUG_NATIVE_APP	../../inc/az_config.h	49;"	d
+CONFIG_AZ_DEBUG_NATIVE_APP	../../inc/az_config.h	50;"	d
 CONFIG_AZ_DYN_THR_ALLOC	../../inc/az_config.h	47;"	d
 CONFIG_AZ_DYN_THR_ALLOC	../../inc/az_config.h	54;"	d
+CONFIG_AZ_DYN_THR_ALLOC	../../inc/az_config.h	57;"	d
 CONFIG_AZ_ERR_LOG	../../inc/az_config.h	118;"	d
 CONFIG_AZ_ERR_LOG	../../inc/az_config.h	161;"	d
+CONFIG_AZ_ERR_LOG	../../inc/az_config.h	164;"	d
 CONFIG_AZ_EXP_CALLSTACK_DEPTH	../../inc/az_config.h	167;"	d
+CONFIG_AZ_EXP_CALLSTACK_DEPTH	../../inc/az_config.h	170;"	d
 CONFIG_AZ_ION_NONIO	../../inc/az_config.h	203;"	d
+CONFIG_AZ_ION_NONIO	../../inc/az_config.h	211;"	d
 CONFIG_AZ_LOG	../../inc/az_config.h	58;"	d
 CONFIG_AZ_LOG	../../inc/az_config.h	65;"	d
 CONFIG_AZ_LOG	../../inc/az_config.h	75;"	d
+CONFIG_AZ_LOG	../../inc/az_config.h	78;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	106;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	68;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	69;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	78;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	79;"	d
+CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	81;"	d
+CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	82;"	d
 CONFIG_AZ_LOG_DUP_USE_LOCAL_SOCKET	../../inc/az_config.h	71;"	d
 CONFIG_AZ_LOG_DUP_USE_LOCAL_SOCKET	../../inc/az_config.h	81;"	d
+CONFIG_AZ_LOG_DUP_USE_LOCAL_SOCKET	../../inc/az_config.h	84;"	d
 CONFIG_AZ_LOG_FLAGS_DFT	../../inc/az_config.h	188;"	d
+CONFIG_AZ_LOG_FLAGS_DFT	../../inc/az_config.h	191;"	d
+CONFIG_AZ_LOG_FLAGS_DFT	../../inc/az_config.h	195;"	d
 CONFIG_AZ_LOG_FOLDER	../../inc/az_config.h	114;"	d
 CONFIG_AZ_LOG_FOLDER	../../inc/az_config.h	157;"	d
+CONFIG_AZ_LOG_FOLDER	../../inc/az_config.h	160;"	d
 CONFIG_AZ_LOG_LEVEL_DFT	../../inc/az_config.h	187;"	d
+CONFIG_AZ_LOG_LEVEL_DFT	../../inc/az_config.h	190;"	d
+CONFIG_AZ_LOG_LEVEL_DFT	../../inc/az_config.h	194;"	d
 CONFIG_AZ_LOG_MAX	../../inc/az_log.h	40;"	d
 CONFIG_AZ_LOG_MAX	../../inc/az_log.h	41;"	d
 CONFIG_AZ_LOG_OUTPORT_MAX	../../inc/az_log.h	44;"	d
@@ -1617,21 +1712,32 @@ CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../inc/az_config.h	74;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../inc/az_config.h	75;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../inc/az_config.h	84;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../inc/az_config.h	85;"	d
+CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../inc/az_config.h	87;"	d
+CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../inc/az_config.h	88;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE_PREFIX	../../inc/az_config.h	78;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE_PREFIX	../../inc/az_config.h	88;"	d
+CONFIG_AZ_LOG_STDOUT_DUMP_FILE_PREFIX	../../inc/az_config.h	91;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE_SIZE	../../inc/az_config.h	77;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE_SIZE	../../inc/az_config.h	87;"	d
+CONFIG_AZ_LOG_STDOUT_DUMP_FILE_SIZE	../../inc/az_config.h	90;"	d
 CONFIG_AZ_LOG_USE_SELECT	../../inc/az_config.h	106;"	d
 CONFIG_AZ_LOG_USE_SELECT	../../inc/az_config.h	107;"	d
+CONFIG_AZ_LOG_USE_SELECT	../../inc/az_config.h	109;"	d
+CONFIG_AZ_LOG_USE_SELECT	../../inc/az_config.h	110;"	d
 CONFIG_AZ_MALLOC	../../inc/az_config.h	44;"	d
 CONFIG_AZ_MALLOC	../../inc/az_config.h	51;"	d
+CONFIG_AZ_MALLOC	../../inc/az_config.h	54;"	d
 CONFIG_AZ_MTRACE	../../inc/az_config.h	148;"	d
+CONFIG_AZ_MTRACE	../../inc/az_config.h	151;"	d
 CONFIG_AZ_MTRACE	../../inc/az_config.h	153;"	d
+CONFIG_AZ_MTRACE	../../inc/az_config.h	156;"	d
 CONFIG_AZ_MTRACE_LIST_SZ	../../inc/az_config.h	149;"	d
+CONFIG_AZ_MTRACE_LIST_SZ	../../inc/az_config.h	152;"	d
 CONFIG_AZ_NAME_MAX	../../inc/az_config.h	44;"	d
 CONFIG_AZ_NAME_MAX	../../inc/az_config.h	49;"	d
 CONFIG_AZ_NAME_MAX	../../inc/az_config.h	56;"	d
 CONFIG_AZ_NAME_MAX	../../inc/az_config.h	66;"	d
+CONFIG_AZ_NAME_MAX	../../inc/az_config.h	69;"	d
 CONFIG_AZ_PATH_MAX	../../inc/az_config.h	47;"	d
 CONFIG_AZ_PATH_MAX	../../inc/az_config.h	49;"	d
 CONFIG_AZ_PATH_MAX	../../inc/az_config.h	52;"	d
@@ -1640,64 +1746,107 @@ CONFIG_AZ_PATH_MAX	../../inc/az_config.h	59;"	d
 CONFIG_AZ_PATH_MAX	../../inc/az_config.h	61;"	d
 CONFIG_AZ_PATH_MAX	../../inc/az_config.h	69;"	d
 CONFIG_AZ_PATH_MAX	../../inc/az_config.h	71;"	d
+CONFIG_AZ_PATH_MAX	../../inc/az_config.h	72;"	d
+CONFIG_AZ_PATH_MAX	../../inc/az_config.h	74;"	d
 CONFIG_AZ_PERF_MEASURE_LOOP_CNT_DFT	../../inc/az_config.h	190;"	d
+CONFIG_AZ_PERF_MEASURE_LOOP_CNT_DFT	../../inc/az_config.h	198;"	d
 CONFIG_AZ_PERF_MEASURE_SAMPLES_DFT	../../inc/az_config.h	191;"	d
+CONFIG_AZ_PERF_MEASURE_SAMPLES_DFT	../../inc/az_config.h	199;"	d
 CONFIG_AZ_PROBE	../../inc/az_config.h	206;"	d
+CONFIG_AZ_PROBE	../../inc/az_config.h	214;"	d
 CONFIG_AZ_PROBE_ENABLE	../../inc/az_config.h	207;"	d
+CONFIG_AZ_PROBE_ENABLE	../../inc/az_config.h	215;"	d
 CONFIG_AZ_PROBE_SAMPLES_MAX	../../inc/az_config.h	208;"	d
+CONFIG_AZ_PROBE_SAMPLES_MAX	../../inc/az_config.h	216;"	d
 CONFIG_AZ_PROBE_SVR_PORT	../../inc/az_config.h	140;"	d
+CONFIG_AZ_PROBE_SVR_PORT	../../inc/az_config.h	143;"	d
 CONFIG_AZ_REMOTE_STDIO_SVR_PORT	../../inc/az_config.h	141;"	d
+CONFIG_AZ_REMOTE_STDIO_SVR_PORT	../../inc/az_config.h	144;"	d
 CONFIG_AZ_RSTDIO_ENABLED	../../inc/az_config.h	144;"	d
+CONFIG_AZ_RSTDIO_ENABLED	../../inc/az_config.h	147;"	d
 CONFIG_AZ_SEGV_TEST	../../inc/az_config.h	169;"	d
 CONFIG_AZ_SEGV_TEST	../../inc/az_config.h	170;"	d
+CONFIG_AZ_SEGV_TEST	../../inc/az_config.h	172;"	d
+CONFIG_AZ_SEGV_TEST	../../inc/az_config.h	173;"	d
 CONFIG_AZ_SIGHANDLE_MAX	../../inc/sys/az_sig.h	31;"	d
 CONFIG_AZ_SYS_CFG_FILE	../../inc/az_config.h	115;"	d
 CONFIG_AZ_SYS_CFG_FILE	../../inc/az_config.h	158;"	d
+CONFIG_AZ_SYS_CFG_FILE	../../inc/az_config.h	161;"	d
 CONFIG_AZ_SYS_LW_USE_MUTEX	../../inc/az_config.h	184;"	d
 CONFIG_AZ_SYS_LW_USE_MUTEX	../../inc/az_config.h	185;"	d
+CONFIG_AZ_SYS_LW_USE_MUTEX	../../inc/az_config.h	187;"	d
+CONFIG_AZ_SYS_LW_USE_MUTEX	../../inc/az_config.h	188;"	d
 CONFIG_AZ_SYS_LW_USE_SEM	../../inc/az_config.h	182;"	d
 CONFIG_AZ_SYS_LW_USE_SEM	../../inc/az_config.h	183;"	d
+CONFIG_AZ_SYS_LW_USE_SEM	../../inc/az_config.h	185;"	d
+CONFIG_AZ_SYS_LW_USE_SEM	../../inc/az_config.h	186;"	d
 CONFIG_AZ_SYS_PRINT_TIMESTAMP	../../inc/az_config.h	176;"	d
+CONFIG_AZ_SYS_PRINT_TIMESTAMP	../../inc/az_config.h	179;"	d
 CONFIG_AZ_TCPSERVER_USE_SELECT	../../inc/az_config.h	103;"	d
 CONFIG_AZ_TCPSERVER_USE_SELECT	../../inc/az_config.h	104;"	d
+CONFIG_AZ_TCPSERVER_USE_SELECT	../../inc/az_config.h	106;"	d
+CONFIG_AZ_TCPSERVER_USE_SELECT	../../inc/az_config.h	107;"	d
 CONFIG_AZ_TCP_SVR_PORT_INC_MAX	../../inc/az_config.h	122;"	d
 CONFIG_AZ_TCP_SVR_PORT_INC_MAX	../../inc/az_config.h	165;"	d
+CONFIG_AZ_TCP_SVR_PORT_INC_MAX	../../inc/az_config.h	168;"	d
 CONFIG_AZ_TEST	../../inc/az_config.h	179;"	d
+CONFIG_AZ_TEST	../../inc/az_config.h	182;"	d
 CONFIG_AZ_TRACE	../../inc/az_config.h	109;"	d
+CONFIG_AZ_TRACE	../../inc/az_config.h	112;"	d
 CONFIG_AZ_TRACE	../../inc/az_config.h	116;"	d
+CONFIG_AZ_TRACE	../../inc/az_config.h	119;"	d
 CONFIG_AZ_TRACE	../../inc/az_config.h	87;"	d
 CONFIG_AZ_TRACE	../../inc/az_config.h	89;"	d
 CONFIG_AZ_TRACE_DEPTH_MAX	../../inc/az_config.h	103;"	d
 CONFIG_AZ_TRACE_DEPTH_MAX	../../inc/az_config.h	131;"	d
+CONFIG_AZ_TRACE_DEPTH_MAX	../../inc/az_config.h	134;"	d
 CONFIG_AZ_TRACE_INICONN	../../inc/az_config.h	123;"	d
+CONFIG_AZ_TRACE_INICONN	../../inc/az_config.h	126;"	d
 CONFIG_AZ_TRACE_INICONN	../../inc/az_config.h	96;"	d
 CONFIG_AZ_TRACE_MON_SVR_PORT	../../inc/az_config.h	109;"	d
 CONFIG_AZ_TRACE_MON_SVR_PORT	../../inc/az_config.h	138;"	d
+CONFIG_AZ_TRACE_MON_SVR_PORT	../../inc/az_config.h	141;"	d
 CONFIG_AZ_TRACE_PRB_SVR_PORT	../../inc/az_config.h	110;"	d
 CONFIG_AZ_TRACE_PRB_SVR_PORT	../../inc/az_config.h	139;"	d
+CONFIG_AZ_TRACE_PRB_SVR_PORT	../../inc/az_config.h	142;"	d
 CONFIG_AZ_TRACE_PTHREAD	../../inc/az_config.h	112;"	d
+CONFIG_AZ_TRACE_PTHREAD	../../inc/az_config.h	115;"	d
 CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	120;"	d
+CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	123;"	d
 CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	127;"	d
+CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	130;"	d
 CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	93;"	d
 CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	94;"	d
 CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	99;"	d
 CONFIG_AZ_TRACE_TASKS	../../inc/az_config.h	102;"	d
 CONFIG_AZ_TRACE_TASKS	../../inc/az_config.h	130;"	d
+CONFIG_AZ_TRACE_TASKS	../../inc/az_config.h	133;"	d
 CONFIG_AZ_TRZ_LOG_SVR_NODE	../../inc/az_config.h	173;"	d
+CONFIG_AZ_TRZ_LOG_SVR_NODE	../../inc/az_config.h	176;"	d
 CONFIG_AZ_TRZ_NODEID_DEFAULT	../../inc/az_config.h	174;"	d
+CONFIG_AZ_TRZ_NODEID_DEFAULT	../../inc/az_config.h	177;"	d
 CONFIG_AZ_TRZ_NODEID_MAX	../../inc/az_config.h	172;"	d
+CONFIG_AZ_TRZ_NODEID_MAX	../../inc/az_config.h	175;"	d
 CONFIG_AZ_TRZ_SVR_PORT_BASE	../../inc/az_config.h	142;"	d
+CONFIG_AZ_TRZ_SVR_PORT_BASE	../../inc/az_config.h	145;"	d
 CONFIG_AZ_USE_STDARG	../../inc/az_config.h	42;"	d
 CONFIG_AZ_USE_STDARG	../../inc/az_config.h	47;"	d
 CONFIG_AZ_USE_STDARG	../../inc/az_config.h	54;"	d
 CONFIG_AZ_USE_STDARG	../../inc/az_config.h	64;"	d
+CONFIG_AZ_USE_STDARG	../../inc/az_config.h	67;"	d
 CONFIG_AZ_USE_TLS	../../inc/az_config.h	42;"	d
 CONFIG_AZ_USE_TLS	../../inc/az_config.h	49;"	d
+CONFIG_AZ_USE_TLS	../../inc/az_config.h	52;"	d
 CONFIG_AZ_XU_EXCPT_STK_SZ	../../inc/az_config.h	193;"	d
+CONFIG_AZ_XU_EXCPT_STK_SZ	../../inc/az_config.h	201;"	d
 CONFIG_AZ_XU_EXP_HANDLE	../../inc/az_config.h	201;"	d
+CONFIG_AZ_XU_EXP_HANDLE	../../inc/az_config.h	209;"	d
 CONFIG_AZ_XU_MSG_QUEUE_SZ	../../inc/az_config.h	195;"	d
+CONFIG_AZ_XU_MSG_QUEUE_SZ	../../inc/az_config.h	203;"	d
 CONFIG_AZ_XU_MSG_SZ	../../inc/az_config.h	194;"	d
+CONFIG_AZ_XU_MSG_SZ	../../inc/az_config.h	202;"	d
 CONFIG_AZ_XU_PRTBUF_SZ	../../inc/az_config.h	177;"	d
+CONFIG_AZ_XU_PRTBUF_SZ	../../inc/az_config.h	180;"	d
 CONFIG_LINUX	../../inc/az_config.h	24;"	d
 CONFIG_LINUX	../../inc/az_config.h	25;"	d
 CONFIG_M32	../../inc/az_config.h	36;"	d
@@ -1709,10 +1858,12 @@ CONFIG_M64	../../inc/az_config.h	30;"	d
 CONFIG_M64	../../inc/az_config.h	31;"	d
 CONFIG_M64	../../inc/az_config.h	32;"	d
 CONFIG_TEST_CASE	../../inc/az_config.h	60;"	d
+CONFIG_TEST_CASE	../../inc/az_config.h	63;"	d
 CONFIG_UNIT_TEST	../../inc/az_config.h	40;"	d
 CONFIG_UNIT_TEST	../../inc/az_config.h	43;"	d
 CONFIG_UNIT_TEST	../../inc/az_config.h	50;"	d
 CONFIG_UNIT_TEST	../../inc/az_config.h	57;"	d
+CONFIG_UNIT_TEST	../../inc/az_config.h	60;"	d
 CONFIG_WINDOWS	../../inc/az_config.h	27;"	d
 CONFIG_WINDOWS	../../inc/az_config.h	28;"	d
 Cleanup	../../inc/cli/az_cli.h	/^  az_cli_cleanup_t  Cleanup;$/;"	m	struct:az_cli_shell
@@ -2080,6 +2231,7 @@ az_array_unlock_write	../../inc/az_array.h	68;"	d
 az_array_unlock_write	../../inc/az_array.h	69;"	d
 az_assert	../../inc/az_assert.h	31;"	d
 az_assert	../../inc/az_assert.h	32;"	d
+az_assert_ion_type	../../inc/az_ion_types.h	51;"	d
 az_assert_ion_type	../../inc/az_ion_types.h	52;"	d
 az_atomic_add_and_fetch16	../../inc/az_atomic_gnuc.h	99;"	d
 az_atomic_add_and_fetch32	../../inc/az_atomic_gnuc.h	101;"	d
@@ -2534,15 +2686,18 @@ az_fs_chdir	../sys/az_fs.c	/^az_r_t  az_fs_chdir(char *path)$/;"	f
 az_fs_chdir	az_fs.c	/^az_r_t  az_fs_chdir(char *path)$/;"	f
 az_fs_closeFile	../sys/az_fs.c	/^az_r_t  az_fs_closeFile(az_file_t file)$/;"	f
 az_fs_closeFile	az_fs.c	/^az_r_t  az_fs_closeFile(az_file_t file)$/;"	f
+az_fs_closeFile	az_fs.c	/^az_r_t  az_fs_closeFile(az_ion_id_t id)$/;"	f
 az_fs_combinePath	../../inc/sys/az_fs.h	/^static inline az_r_t az_fs_combinePath(char *path1, char *path2, char *dest)$/;"	f
 az_fs_createDir	../sys/az_fs.c	/^az_r_t  az_fs_createDir(const az_str_t path, int mode)$/;"	f
 az_fs_createDir	az_fs.c	/^az_r_t  az_fs_createDir(const az_str_t path, int mode)$/;"	f
 az_fs_createFile	../sys/az_fs.c	/^az_r_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile)$/;"	f
+az_fs_createFile	az_fs.c	/^az_ion_id_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile)$/;"	f
 az_fs_createFile	az_fs.c	/^az_r_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile)$/;"	f
 az_fs_deleteDir	../sys/az_fs.c	/^az_r_t  az_fs_deleteDir(const az_str_t path)$/;"	f
 az_fs_deleteDir	az_fs.c	/^az_r_t  az_fs_deleteDir(const az_str_t path)$/;"	f
 az_fs_deleteFile	../sys/az_fs.c	/^az_r_t  az_fs_deleteFile(const az_str_t path, az_file_t file)$/;"	f
 az_fs_deleteFile	az_fs.c	/^az_r_t  az_fs_deleteFile(const az_str_t path, az_file_t file)$/;"	f
+az_fs_deleteFile	az_fs.c	/^az_r_t  az_fs_deleteFile(const az_str_t path, az_ion_id_t id)$/;"	f
 az_fs_dirSize	../sys/az_fs.c	/^az_size_t  az_fs_dirSize(char *path)$/;"	f
 az_fs_dirSize	az_fs.c	/^az_size_t  az_fs_dirSize(char *path)$/;"	f
 az_fs_exist	../sys/az_fs.c	/^az_bool_t  az_fs_exist(const az_str_t path)$/;"	f
@@ -2551,6 +2706,7 @@ az_fs_file2mem	../sys/az_fs.c	/^az_size_t az_fs_file2mem(const az_str_t path, az
 az_fs_file2mem	az_fs.c	/^az_size_t az_fs_file2mem(const az_str_t path, az_ref_t *pMem)$/;"	f
 az_fs_fileSize	../sys/az_fs.c	/^az_size_t  az_fs_fileSize(const az_str_t path, az_file_t file)$/;"	f
 az_fs_fileSize	az_fs.c	/^az_size_t  az_fs_fileSize(const az_str_t path, az_file_t file)$/;"	f
+az_fs_fileSize	az_fs.c	/^az_size_t  az_fs_fileSize(const az_str_t path, az_ion_id_t id)$/;"	f
 az_fs_findDir	../sys/az_fs.c	/^az_r_t  az_fs_findDir(char *path, char *entryname, az_dirent_t *entry)$/;"	f
 az_fs_findDir	az_fs.c	/^az_r_t  az_fs_findDir(char *path, char *entryname, az_dirent_t *entry)$/;"	f
 az_fs_freeFile	../../inc/sys/az_fs.h	/^static inline void az_fs_freeFile(az_file_t file)$/;"	f
@@ -2568,16 +2724,21 @@ az_fs_listDir	../sys/az_fs.c	/^az_r_t  az_fs_listDir(char *path, az_dirent_t *li
 az_fs_listDir	az_fs.c	/^az_r_t  az_fs_listDir(char *path, az_dirent_t *list, az_size_t listCount, void **ctx) $/;"	f
 az_fs_lseekFile	../sys/az_fs.c	/^az_size_t  az_fs_lseekFile(az_file_t file, az_pos_t offset, int whence)$/;"	f
 az_fs_lseekFile	az_fs.c	/^az_size_t  az_fs_lseekFile(az_file_t file, az_pos_t offset, int whence)$/;"	f
+az_fs_lseekFile	az_fs.c	/^az_size_t  az_fs_lseekFile(az_ion_id_t id, az_pos_t offset, int whence)$/;"	f
 az_fs_makePath	../../inc/sys/az_fs.h	/^static inline az_r_t az_fs_makePath(char *comp[], char *dest)$/;"	f
 az_fs_openFile	../sys/az_fs.c	/^az_r_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *pfile)$/;"	f
+az_fs_openFile	az_fs.c	/^az_ion_id_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *pfile)$/;"	f
 az_fs_openFile	az_fs.c	/^az_r_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *pfile)$/;"	f
 az_fs_parsePath	../../inc/sys/az_fs.h	/^static inline az_r_t  az_fs_parsePath(const char *path, char *parsed_path, char *comp[])$/;"	f
 az_fs_readFile	../sys/az_fs.c	/^az_size_t  az_fs_readFile(az_file_t file, az_uint8_t *bp, az_size_t size)$/;"	f
 az_fs_readFile	az_fs.c	/^az_size_t  az_fs_readFile(az_file_t file, az_uint8_t *bp, az_size_t size)$/;"	f
+az_fs_readFile	az_fs.c	/^az_size_t  az_fs_readFile(az_ion_id_t id, az_uint8_t *bp, az_size_t size)$/;"	f
 az_fs_truncate	../sys/az_fs.c	/^az_r_t  az_fs_truncate(const az_str_t path, az_file_t file, az_size_t size)$/;"	f
 az_fs_truncate	az_fs.c	/^az_r_t  az_fs_truncate(const az_str_t path, az_file_t file, az_size_t size)$/;"	f
+az_fs_truncate	az_fs.c	/^az_r_t  az_fs_truncate(const az_str_t path, az_ion_id_t id, az_size_t size)$/;"	f
 az_fs_writeFile	../sys/az_fs.c	/^az_size_t  az_fs_writeFile(az_file_t file, az_uint8_t *bp, az_size_t size)$/;"	f
 az_fs_writeFile	az_fs.c	/^az_size_t  az_fs_writeFile(az_file_t file, az_uint8_t *bp, az_size_t size)$/;"	f
+az_fs_writeFile	az_fs.c	/^az_size_t  az_fs_writeFile(az_ion_id_t id, az_uint8_t *bp, az_size_t size)$/;"	f
 az_fsm	../../inc/az_fsm.h	/^typedef struct az_fsm {$/;"	s
 az_fsm_activate	../../inc/az_fsm.h	/^static inline void az_fsm_activate(az_fsm_t *fsm, void *owner)$/;"	f
 az_fsm_handle_t	../../inc/az_fsm.h	/^typedef az_fsm_state_t (*az_fsm_handle_t)(void *, az_fsm_state_t, az_event_t );$/;"	t
@@ -2925,17 +3086,22 @@ az_msgq_send64	../core/az_msgq.c	/^az_size_t az_msgq_send64(struct az_msgq *msgq
 az_msgq_send_t	../../inc/az_msgq.h	/^typedef az_size_t (*az_msgq_send_t)(struct az_msgq *, void *bp, az_size_t size);$/;"	t
 az_msgq_t	../../inc/az_msgq.h	/^} az_msgq_t;$/;"	t	typeref:struct:az_msgq
 az_mutex_create	../sys/az_mutex.c	/^az_r_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex)$/;"	f
+az_mutex_create	az_mutex.c	/^az_ion_id_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex)$/;"	f
 az_mutex_create	az_mutex.c	/^az_r_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex)$/;"	f
 az_mutex_delete	../sys/az_mutex.c	/^az_r_t  az_mutex_delete(az_mutex_t m)$/;"	f
+az_mutex_delete	az_mutex.c	/^az_r_t  az_mutex_delete(az_ion_id_t id)$/;"	f
 az_mutex_delete	az_mutex.c	/^az_r_t  az_mutex_delete(az_mutex_t m)$/;"	f
 az_mutex_entity_t	../../inc/sys/az_mutex.h	/^} az_mutex_entity_t;$/;"	t	typeref:struct:__anon3
 az_mutex_entity_t	../../inc/sys/az_mutex.h	/^} az_mutex_entity_t;$/;"	t	typeref:struct:__anon6
 az_mutex_lock	../sys/az_mutex.c	/^az_r_t  az_mutex_lock(az_mutex_t m)$/;"	f
+az_mutex_lock	az_mutex.c	/^az_r_t  az_mutex_lock(az_ion_id_t id)$/;"	f
 az_mutex_lock	az_mutex.c	/^az_r_t  az_mutex_lock(az_mutex_t m)$/;"	f
 az_mutex_t	../../inc/sys/az_mutex.h	/^typedef az_mutex_entity_t *        az_mutex_t;$/;"	t
 az_mutex_trylock	../sys/az_mutex.c	/^az_r_t  az_mutex_trylock(az_mutex_t m)$/;"	f
+az_mutex_trylock	az_mutex.c	/^az_r_t  az_mutex_trylock(az_ion_id_t id)$/;"	f
 az_mutex_trylock	az_mutex.c	/^az_r_t  az_mutex_trylock(az_mutex_t m)$/;"	f
 az_mutex_unlock	../sys/az_mutex.c	/^az_r_t  az_mutex_unlock(az_mutex_t m)$/;"	f
+az_mutex_unlock	az_mutex.c	/^az_r_t  az_mutex_unlock(az_ion_id_t id)$/;"	f
 az_mutex_unlock	az_mutex.c	/^az_r_t  az_mutex_unlock(az_mutex_t m)$/;"	f
 az_not_success_do_break	../../inc/az_macros.h	40;"	d
 az_not_success_do_break	../../inc/az_macros.h	41;"	d
@@ -3054,19 +3220,25 @@ az_rw_lock_write	../../inc/az_rw_lock.h	/^static inline az_r_t az_rw_lock_write(
 az_rw_unlock_read	../../inc/az_rw_lock.h	/^static inline az_r_t az_rw_unlock_read(az_rw_lock_t *p)$/;"	f
 az_rw_unlock_write	../../inc/az_rw_lock.h	/^static inline az_r_t az_rw_unlock_write(az_rw_lock_t *p)$/;"	f
 az_sem_create	../sys/az_sem.c	/^az_r_t  az_sem_create(const char *name, int options, unsigned int value, az_sem_t *pSem)$/;"	f
+az_sem_create	az_sem.c	/^az_ion_id_t  az_sem_create(const char *name, int options, unsigned int value, az_sem_t *pSem)$/;"	f
 az_sem_create	az_sem.c	/^az_r_t  az_sem_create(const char *name, int options, unsigned int value, az_sem_t *pSem)$/;"	f
 az_sem_delete	../sys/az_sem.c	/^az_r_t  az_sem_delete(az_sem_t m)$/;"	f
+az_sem_delete	az_sem.c	/^az_r_t  az_sem_delete(az_ion_id_t id)$/;"	f
 az_sem_delete	az_sem.c	/^az_r_t  az_sem_delete(az_sem_t m)$/;"	f
 az_sem_entity_t	../../inc/sys/az_sem.h	/^} az_sem_entity_t;$/;"	t	typeref:struct:__anon4
 az_sem_entity_t	../../inc/sys/az_sem.h	/^} az_sem_entity_t;$/;"	t	typeref:struct:__anon7
 az_sem_post	../sys/az_sem.c	/^az_r_t  az_sem_post(az_sem_t m)$/;"	f
+az_sem_post	az_sem.c	/^az_r_t  az_sem_post(az_ion_id_t id)$/;"	f
 az_sem_post	az_sem.c	/^az_r_t  az_sem_post(az_sem_t m)$/;"	f
 az_sem_t	../../inc/sys/az_sem.h	/^typedef az_sem_entity_t *                  az_sem_t;$/;"	t
 az_sem_timedwait	../sys/az_sem.c	/^az_r_t  az_sem_timedwait(az_sem_t m, az_uint64_t tmo_ns)$/;"	f
+az_sem_timedwait	az_sem.c	/^az_r_t  az_sem_timedwait(az_ion_id_t id, az_uint64_t tmo_ns)$/;"	f
 az_sem_timedwait	az_sem.c	/^az_r_t  az_sem_timedwait(az_sem_t m, az_uint64_t tmo_ns)$/;"	f
 az_sem_trywait	../sys/az_sem.c	/^az_r_t  az_sem_trywait(az_sem_t m)$/;"	f
+az_sem_trywait	az_sem.c	/^az_r_t  az_sem_trywait(az_ion_id_t id)$/;"	f
 az_sem_trywait	az_sem.c	/^az_r_t  az_sem_trywait(az_sem_t m)$/;"	f
 az_sem_wait	../sys/az_sem.c	/^az_r_t  az_sem_wait(az_sem_t m)$/;"	f
+az_sem_wait	az_sem.c	/^az_r_t  az_sem_wait(az_ion_id_t id)$/;"	f
 az_sem_wait	az_sem.c	/^az_r_t  az_sem_wait(az_sem_t m)$/;"	f
 az_sig_deinitDescr	linux/az_sys_sig.c	/^int az_sig_deinitDescr(int  signo)$/;"	f
 az_sig_descr	../../inc/sys/az_sig.h	/^typedef struct az_sig_descr {$/;"	s
@@ -3092,8 +3264,13 @@ az_size_t	../../inc/az_def.h	/^typedef int16_t   az_size_t;$/;"	t
 az_size_t	../../inc/az_def.h	/^typedef int32_t   az_size_t;$/;"	t
 az_size_t	../../inc/az_def.h	/^typedef int64_t   az_size_t;$/;"	t
 az_size_t	../../inc/az_def.h	/^typedef int8_t   az_size_t;$/;"	t
+az_sock_t	../../inc/sys/az_inet.h	/^typedef az_ion_id_t       az_sock_t;$/;"	t
 az_sock_t	../../inc/sys/az_inet.h	/^typedef az_sys_sock_t az_sock_t;$/;"	t
 az_sock_t	../../inc/sys/az_inet.h	/^typedef int           az_sock_t;$/;"	t
+az_socket_create	az_socket.c	/^az_ion_id_t az_socket_create(int domain, int type, int protocol, az_socket_t *p)$/;"	f
+az_socket_delete	az_socket.c	/^az_r_t az_socket_delete(az_ion_id_t id)$/;"	f
+az_socket_entity_t	../../inc/sys/az_socket.h	/^} az_socket_entity_t;$/;"	t	typeref:struct:__anon5
+az_socket_t	../../inc/sys/az_socket.h	/^typedef az_socket_entity_t  *az_socket_t;$/;"	t
 az_socket_t	../../inc/sys/az_socket.h	/^} az_socket_t;$/;"	t	typeref:struct:__anon5
 az_socket_t	../../inc/sys/az_socket.h	/^} az_socket_t;$/;"	t	typeref:struct:__anon8
 az_state_t	../../inc/az_def.h	/^} az_state_t;$/;"	t	typeref:enum:__anon2
@@ -3363,19 +3540,24 @@ az_thread_status_t	../../inc/az_thread.h	/^} az_thread_status_t;$/;"	t	typeref:s
 az_thread_stop	../core/az_thread.c	/^az_r_t  az_thread_stop(az_thread_t thr)$/;"	f
 az_thread_t	../../inc/az_thread.h	/^typedef az_thread_entity_t  *az_thread_t;$/;"	t
 az_timer_create	../sys/az_timer.c	/^az_r_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat, void (*handler)(void *arg), void *arg, az_timer_t *pTimer)$/;"	f
+az_timer_create	az_timer.c	/^az_ion_id_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat, void (*handler)(void *arg), void *arg, az_timer_t *pTimer)$/;"	f
 az_timer_create	az_timer.c	/^az_r_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat, void (*handler)(void *arg), void *arg, az_timer_t *pTimer)$/;"	f
 az_timer_delete	../sys/az_timer.c	/^az_r_t  az_timer_delete(az_timer_t t)$/;"	f
+az_timer_delete	az_timer.c	/^az_r_t  az_timer_delete(az_ion_id_t id)$/;"	f
 az_timer_delete	az_timer.c	/^az_r_t  az_timer_delete(az_timer_t t)$/;"	f
 az_timer_entity_t	../../inc/sys/az_timer.h	/^} az_timer_entity_t;$/;"	t	typeref:struct:__anon5
 az_timer_entity_t	../../inc/sys/az_timer.h	/^} az_timer_entity_t;$/;"	t	typeref:struct:__anon6
 az_timer_entity_t	../../inc/sys/az_timer.h	/^} az_timer_entity_t;$/;"	t	typeref:struct:__anon9
 az_timer_start	../sys/az_timer.c	/^az_r_t  az_timer_start(az_timer_t t)$/;"	f
+az_timer_start	az_timer.c	/^az_r_t  az_timer_start(az_ion_id_t id)$/;"	f
 az_timer_start	az_timer.c	/^az_r_t  az_timer_start(az_timer_t t)$/;"	f
 az_timer_stop	../sys/az_timer.c	/^az_r_t  az_timer_stop(az_timer_t t)$/;"	f
+az_timer_stop	az_timer.c	/^az_r_t  az_timer_stop(az_ion_id_t id)$/;"	f
 az_timer_stop	az_timer.c	/^az_r_t  az_timer_stop(az_timer_t t)$/;"	f
 az_timer_t	../../inc/sys/az_timer.h	/^typedef az_timer_entity_t *   az_timer_t;$/;"	t
 az_timespec_diff	../../inc/sys/az_timer.h	/^static inline az_sys_timespec_t *az_timespec_diff(az_sys_timespec_t *e, az_sys_timespec_t *s)$/;"	f
 az_timespec_value	../../inc/sys/az_timer.h	75;"	d
+az_timespec_value	../../inc/sys/az_timer.h	77;"	d
 az_timestamp	../../inc/sys/az_timer.h	/^static inline uint64_t az_timestamp()$/;"	f
 az_tlog	../../inc/az_printf.h	113;"	d
 az_trace_begin	../diag/az_trace.c	/^void  az_attr_constructor  az_trace_begin(void)$/;"	f
@@ -3564,7 +3746,9 @@ az_xu_delete	../sys/az_xu.c	/^az_r_t az_xu_delete(az_xu_t xu)$/;"	f
 az_xu_delete	az_xu.c	/^az_r_t az_xu_delete(az_ion_id_t id)$/;"	f
 az_xu_delete	az_xu.c	/^az_r_t az_xu_delete(az_xu_t xu)$/;"	f
 az_xu_deregEventHandler	../sys/az_xu.c	/^az_r_t az_xu_deregEventHandler(az_xu_t xu, unsigned int vecno)$/;"	f
+az_xu_deregEventHandler	az_xu.c	/^az_r_t az_xu_deregEventHandler(az_ion_id_t id, unsigned int vecno)$/;"	f
 az_xu_deregEventHandler	az_xu.c	/^az_r_t az_xu_deregEventHandler(az_xu_t xu, unsigned int vecno)$/;"	f
+az_xu_empty	az_xu.c	/^az_xu_t  az_xu_empty(az_xu_t xu)$/;"	f
 az_xu_empty	az_xu.c	/^void  az_xu_empty(az_xu_t xu)$/;"	f
 az_xu_empty_sys_xu	az_xu.c	/^void  az_xu_empty_sys_xu(az_xu_t xu)$/;"	f
 az_xu_entity	../../inc/sys/az_xu.h	/^typedef struct az_xu_entity {$/;"	s
@@ -3607,13 +3791,18 @@ az_xu_main_arg	../frw/az_main.c	/^struct az_xu_main_arg {$/;"	s	file:
 az_xu_main_arg	../frw/az_main.c	/^} az_xu_main_arg;$/;"	v	typeref:struct:az_xu_main_arg
 az_xu_main_config	../frw/az_main.c	/^az_xu_config_t az_xu_main_config = {$/;"	v
 az_xu_main_entry	../frw/az_main.c	/^void *az_xu_main_entry(struct az_xu_main_arg *arg)$/;"	f
+az_xu_msg_t	../../inc/sys/az_xu.h	/^typedef uint32_t        az_xu_msg_t;$/;"	t
+az_xu_msg_t	../../inc/sys/az_xu.h	/^typedef uint64_t        az_xu_msg_t;$/;"	t
 az_xu_null	../../inc/sys/az_xu.h	159;"	d
+az_xu_null	../../inc/sys/az_xu.h	196;"	d
 az_xu_null	az_xu.c	/^void az_xu_null()$/;"	f
 az_xu_policy_t	../../inc/az_xu_cfg.h	/^typedef int az_xu_policy_t;$/;"	t
 az_xu_prtbuf	az_xu.c	/^AZ_SYS_TLS  char    az_xu_prtbuf[CONFIG_AZ_XU_PRTBUF_SZ];$/;"	v
 az_xu_recvEvent	../sys/az_xu.c	/^az_r_t az_xu_recvEvent(az_xu_event_t toReceive, az_int8_t options,$/;"	f
 az_xu_recvEvent	az_xu.c	/^az_r_t az_xu_recvEvent(az_xu_event_t toReceive, az_int8_t options,$/;"	f
+az_xu_recvMsg	az_xu.c	/^az_r_t az_xu_recvMsg(az_xu_msg_t *pMsg)$/;"	f
 az_xu_regEventHandler	../sys/az_xu.c	/^az_r_t az_xu_regEventHandler(az_xu_t xu, unsigned int vecno, az_xu_event_handler_t handler, az_xu_arg_t arg)$/;"	f
+az_xu_regEventHandler	az_xu.c	/^az_r_t az_xu_regEventHandler(az_ion_id_t id, unsigned int vecno, az_xu_event_handler_t handler, az_xu_arg_t arg)$/;"	f
 az_xu_regEventHandler	az_xu.c	/^az_r_t az_xu_regEventHandler(az_xu_t xu, unsigned int vecno, az_xu_event_handler_t handler, az_xu_arg_t arg)$/;"	f
 az_xu_reset_flags	../../inc/sys/az_xu.h	/^static inline void az_attr_no_instrument az_xu_reset_flags(int flags)$/;"	f
 az_xu_reset_flags	../../inc/sys/az_xu.h	/^static inline void az_xu_reset_flags(int flags)$/;"	f
@@ -3624,10 +3813,13 @@ az_xu_resume	az_xu.c	/^az_r_t az_xu_resume(az_xu_t xu)$/;"	f
 az_xu_ret_t	../../inc/sys/az_xu.h	/^typedef void *az_xu_ret_t;$/;"	t
 az_xu_self	../../inc/sys/az_xu.h	136;"	d
 az_xu_self	../../inc/sys/az_xu.h	158;"	d
+az_xu_self	../../inc/sys/az_xu.h	195;"	d
 az_xu_self	../sys/az_xu.c	/^az_xu_t az_xu_self()$/;"	f
 az_xu_self	az_xu.c	/^az_xu_t az_xu_self()$/;"	f
 az_xu_sendEvent	../sys/az_xu.c	/^az_r_t az_xu_sendEvent(az_xu_t xu, az_xu_event_t event)$/;"	f
+az_xu_sendEvent	az_xu.c	/^az_r_t az_xu_sendEvent(az_ion_id_t id, az_xu_event_t event)$/;"	f
 az_xu_sendEvent	az_xu.c	/^az_r_t az_xu_sendEvent(az_xu_t xu, az_xu_event_t event)$/;"	f
+az_xu_sendMsg	az_xu.c	/^az_r_t az_xu_sendMsg(az_ion_id_t id, az_xu_msg_t msg)$/;"	f
 az_xu_setAffinity	../sys/az_xu.c	/^az_r_t  az_xu_setAffinity(az_xu_t xu, az_xu_core_mask_t core_mask)$/;"	f
 az_xu_setAffinity	az_xu.c	/^az_r_t  az_xu_setAffinity(az_ion_id_t id, az_xu_core_mask_t core_mask)$/;"	f
 az_xu_setAffinity	az_xu.c	/^az_r_t  az_xu_setAffinity(az_xu_t xu, az_xu_core_mask_t core_mask)$/;"	f
@@ -3656,6 +3848,7 @@ az_xu_t	../../inc/sys/az_xu.h	/^typedef   az_xu_entity_t *  az_xu_t;$/;"	t
 az_xu_trace_info	../../inc/sys/az_xu.h	/^typedef struct az_xu_trace_info {$/;"	s
 az_xu_trace_info_t	../../inc/sys/az_xu.h	/^} az_xu_trace_info_t;$/;"	t	typeref:struct:az_xu_trace_info
 az_xu_traceinfo	../../inc/sys/az_xu.h	160;"	d
+az_xu_traceinfo	../../inc/sys/az_xu.h	197;"	d
 az_xu_traceinfo	az_xu.c	/^az_xu_trace_info_t *az_xu_traceinfo()$/;"	f
 az_xu_waitEvent	../sys/az_xu.c	/^az_r_t az_xu_waitEvent(az_xu_event_t toReceive, az_int8_t options,$/;"	f
 az_xu_waitEvent	az_xu.c	/^az_r_t az_xu_waitEvent(az_xu_event_t toReceive, az_int8_t options,$/;"	f
@@ -3798,6 +3991,7 @@ descr_size	../../inc/az_iou.h	/^    az_int8_t descr_size;$/;"	m	struct:az_iou_co
 descr_size	../../inc/az_iou.h	/^    az_int8_t descr_size;$/;"	m	struct:az_iou_config::__anon19
 descr_size	../../inc/az_iou.h	/^    az_int8_t descr_size;$/;"	m	struct:az_iou_config::__anon20
 descr_type	../../inc/az_bio.h	/^  az_int32_t  descr_type;$/;"	m	struct:__anon1
+descrlist	../../inc/sys/az_sig.h	/^  az_sighandler_descr_t **descrlist;$/;"	m	struct:az_sig_descr
 devname	../../inc/az_iou.h	/^      char  devname[AZ_IOU_ADDR_NAME_LEN];$/;"	m	struct:__anon12::__anon14
 devname	../../inc/az_iou.h	/^      char  devname[AZ_IOU_ADDR_NAME_LEN];$/;"	m	struct:__anon16::__anon18
 dirp	../../inc/sys/linux/az_linux_fs.h	/^  DIR *dirp;$/;"	m	struct:__anon5
@@ -4013,6 +4207,7 @@ lock	../../inc/az_cirbuffer.h	/^  az_sys_lw_lock_t  *lock;$/;"	m	struct:az_cirbu
 lock	../../inc/az_event.h	/^  az_rw_lock_t          *lock;$/;"	m	struct:az_event_port
 lock	../../inc/az_event.h	/^  az_rw_lock_t          *lock;$/;"	m	struct:az_event_port_entity
 lock	../../inc/az_event.h	/^  az_rw_lock_t      *lock;$/;"	m	struct:az_event_receiver
+lock	../../inc/sys/az_xu.h	/^  az_rw_lock_t    lock;$/;"	m	struct:az_xu_entity
 lock	../../inc/sys/linux/az_linux_event.h	/^  az_sys_lw_lock_t  lock;$/;"	m	struct:__anon4
 lock	../core/az_event_bus.c	/^  az_sys_lw_lock_t  lock; $/;"	m	struct:__anon1	file:
 log_fd	../../inc/az_log_dup.h	/^  az_sys_fd_t log_fd;$/;"	m	struct:az_log_dump_ctrl
@@ -4042,6 +4237,8 @@ mode	../../inc/az_var.h	/^  az_var_print_mode_t mode;$/;"	m	struct:az_var_print_
 module	../../inc/mon/az_probe.h	/^  void  *module;$/;"	m	struct:az_probe
 monSvrIpStr	../../inc/mon/az_trace.h	/^  char      monSvrIpStr[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_trace_ctrl
 monSvrPort	../../inc/mon/az_trace.h	/^  uint16_t  monSvrPort;$/;"	m	struct:az_trace_ctrl
+msgq	../../inc/sys/az_xu.h	/^  az_ring_t   msgq;$/;"	m	struct:az_xu_entity
+msgs	../../inc/sys/az_xu.h	/^  az_xu_msg_t msgs[CONFIG_AZ_XU_MSG_QUEUE_SZ]; $/;"	m	struct:az_xu_entity
 mtrace_state	../../inc/az_malloc.h	/^  long  mtrace_state;$/;"	m	struct:az_malloc_stats
 mutex	../../inc/sys/az_mutex.h	/^  az_sys_mutex_t     mutex;       $/;"	m	struct:__anon3
 mutex	../../inc/sys/az_mutex.h	/^  az_sys_mutex_t     mutex;       $/;"	m	struct:__anon6
@@ -4504,6 +4701,7 @@ vcur	../../inc/az_fsm.h	/^  az_fsm_vector_t       *vcur;$/;"	m	struct:az_fsm
 vector	../../inc/az_fsm.h	/^  az_fsm_vector_t       *vector;$/;"	m	struct:az_fsm
 virAddr	../../inc/sys/linux/az_linux_def.h	/^  az_ref_t         virAddr;$/;"	m	struct:__anon1
 vtable	../../inc/az_fsm.h	/^  az_fsm_vector_t       *vtable;$/;"	m	struct:az_fsm
+wait_xu_id	../../inc/sys/az_xu.h	/^  az_ion_id_t wait_xu_id;$/;"	m	struct:az_xu_entity
 width_list	../../inc/az_var.h	/^  char  *width_list;$/;"	m	struct:az_var_print_format
 write_fd	../../inc/az_log_dup.h	/^  az_sys_fd_t write_fd;$/;"	m	struct:az_log_dump_ctrl
 write_fd	../../inc/mon/az_trace.h	/^  az_sys_fd_t write_fd;$/;"	m	struct:az_trace_ctrl
@@ -4551,6 +4749,7 @@ xml_tag_start	../../inc/az_xml.h	/^  xml_tag_start,$/;"	e	enum:az_xml_parser_sta
 xu	../../inc/az_thread.h	/^  az_xu_entity_t      xu;$/;"	m	struct:az_thread_entity
 xu	../../inc/mon/az_trace.h	/^      az_xu_t xu; $/;"	m	struct:az_trace_info::__anon1::__anon2
 xu	../../inc/mon/az_trace.h	/^      pthread_t xu; $/;"	m	struct:az_trace_info::__anon1::__anon2
+xu	../../inc/sys/az_timer.h	/^  az_xu_t xu;$/;"	m	struct:__anon6
 xu1	../frw/az_main.c	/^az_xu_t xu1 = NULL, xu2 = NULL;$/;"	v
 xu2	../frw/az_main.c	/^az_xu_t xu1 = NULL, xu2 = NULL;$/;"	v
 xu3	../frw/az_main.c	/^az_xu_t xu3 = NULL, xu4 = NULL;$/;"	v

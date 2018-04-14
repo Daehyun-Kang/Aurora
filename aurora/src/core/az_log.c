@@ -121,7 +121,7 @@ int az_log_pushdata_default(void *priv, int push, uint8_t *src, int len)
   } while (0);
 
   if (AZ_ION_ID_INVALID != log->thread_id) {
-    az_r_t r = az_xu_sendEvent(log->thread_id, 1 << log->logid);
+    az_r_t r = az_thread_send_beam(log->thread_id, 1 << log->logid);
     if (r < 0) {
       az_sys_rprintf(r, "thread_id=%d" AZ_NL, log->thread_id);
     }
@@ -334,12 +334,12 @@ int az_log_proc_data_default(az_log_t *log)
 }
 
 int az_log_thread_state = 0;
-az_xu_t az_log_thread_default = NULL;
+az_thread_t az_log_thread_default = NULL;
 
 void *az_log_thread_proc_default(void *arg)
 {
-  az_xu_event_t received;
-  az_xu_event_t emask;
+  az_thread_beam_t received;
+  az_thread_beam_t emask;
   az_r_t  r;
   az_int64_t  tmo_ns = 2000000000;
   az_logid_t  logid;
@@ -348,13 +348,13 @@ void *az_log_thread_proc_default(void *arg)
   az_log_thread_state = 1;
   az_sys_printf("%s start..." AZ_NL, __FUNCTION__);
   while (az_log_thread_state) {
-    r = az_xu_recvEvent(0xffff, 0, tmo_ns, &received);  
+    r = az_thread_recv_beam(0xffff, 0, tmo_ns, &received);  
     if (az_log_thread_state & 2) continue;
     //az_sys_printf("%s: r=%d received=%x\n", __FUNCTION__, r, received);
     if (r < 0) {
       //az_sys_printf("%s: tmo\n", __FUNCTION__);
       if (++tmo_count == 3) {
-        az_xu_reset_flags(AZ_XU_FLAGS_LOG_ERR);
+        az_thread_reset_flags(AZ_THREAD_FLAGS_LOG_ERR);
       }
       continue;
     }
@@ -373,7 +373,7 @@ az_r_t  az_log_start_default_thread()
 {
   az_r_t r;
 
-  r = (az_r_t)az_xu_create("logDefault", az_log_thread_proc_default, NULL, NULL, &az_log_thread_default);
+  r = (az_r_t)az_thread_create("logDefault", az_log_thread_proc_default, NULL, NULL, &az_log_thread_default);
   //az_sys_printf("%s: %p\n", __FUNCTION__, az_log_thread_default);
 
   return (r < AZ_SUCCESS)? r:AZ_SUCCESS;
@@ -384,7 +384,7 @@ az_r_t  az_log_stop_default_thread()
   int r;
 
   az_log_thread_state = 0;
-  r = az_xu_delete(az_log_thread_default);
+  r = az_thread_delete(az_log_thread_default);
 
   return r;
 }
@@ -394,11 +394,11 @@ az_r_t az_attr_no_instrument az_err_log_and_set(const char *f, const char *s, in
   if (level > 0) {
     do {
       char *err_str = az_err_str(err);
-      az_xu_t xu = az_xu_self(); 
-      if (xu && !(xu->flags & AZ_XU_FLAGS_LOG_ERR)) {
+      az_thread_t xu = az_thread_self(); 
+      if (xu && !(xu->flags & AZ_THREAD_FLAGS_LOG_ERR)) {
         break;
       }
-      char *xu_name = ((xu == NULL)? "????":AZ_XU_NAME(xu));
+      char *xu_name = ((xu == NULL)? "????":AZ_THREAD_NAME(xu));
       if (az_logs_count > 0) {
         az_log_printf(0, 0, f, s, n, "[%s] error:%s(%ld)\n", xu_name, err_str, err);
       } else {

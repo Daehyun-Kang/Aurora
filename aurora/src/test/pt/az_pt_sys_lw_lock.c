@@ -32,9 +32,9 @@ struct az_pt_testvector_st_sys_lw_lock *az_pt_testvector_array_sys_lw_lock = NUL
 
 static az_sys_lw_lock_t  sys_lw_lock;
 
-static az_xu_t xu = NULL;
+static az_thread_t xu = NULL;
 
-static az_xu_config_t xu_cfg = {
+static az_thread_config_t xu_cfg = {
   .stackSize = 0,
   .policy = SCHED_FIFO,
   .priority = 50,
@@ -189,7 +189,7 @@ az_r_t az_pt_run_sys_lw_lock(az_test_case_t *pTC)
 
   char name[] = "measureRwLock"; 
 
-  r = (az_r_t)az_xu_create(name, xu_measure_proc, pTC, &xu_cfg, &xu);
+  r = (az_r_t)az_thread_create(name, xu_measure_proc, pTC, &xu_cfg, &xu);
   if (r) az_rprintf(r, "thread %s create\n", name);
 
 
@@ -214,7 +214,7 @@ az_r_t az_pt_epilog_sys_lw_lock(az_test_case_t *pTC)
 
 
   do {
-    az_xu_sleep(1000);
+    az_thread_sleep(1000);
   } while (xu);
 
   iter->samples = tv->samples;

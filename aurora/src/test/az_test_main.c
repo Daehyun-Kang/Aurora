@@ -40,7 +40,7 @@ az_test_framework_t az_test_frw = {
 };
 az_xcfg_tree_t      az_test_frw_cfg_tree;
 
-az_xu_t az_tp_thread_default = NULL;
+az_thread_t az_tp_thread_default = NULL;
 
 az_test_project_t az_testproj;
 /* declare static variables */
@@ -298,10 +298,10 @@ int az_test_main(int argc, char *argv[])
 {
   az_r_t r;
   az_int64_t  tmo_ns = AZ_TC_CHECK_INTERVAL_MS * 1000000; // in ms
-  az_xu_event_t received;
+  az_thread_beam_t received;
   az_test_project_t *testproj = &az_testproj;
 
-  az_tp_thread_default = az_xu_self();
+  az_tp_thread_default = az_thread_self();
   testproj->xu_id = az_tp_thread_default->ion.id;
 
   az_version_t *ver = &az_version;
@@ -449,11 +449,11 @@ int az_test_main(int argc, char *argv[])
 
     clock_gettime(CLOCK_REALTIME, &tc->stime);
     az_tc_thread_default = NULL;
-    az_ion_id_t tc_xu_id = az_xu_create("tcRunner", az_tc_thread_proc_default, tc, NULL, &az_tc_thread_default);
+    az_ion_id_t tc_xu_id = az_thread_create("tcRunner", az_tc_thread_proc_default, tc, NULL, &az_tc_thread_default);
     
     while (tc_xu_id >= 0 ) {
       received = 0;
-      r = az_xu_recvEvent(0xffff, 0, tmo_ns, &received);  
+      r = az_thread_recv_beam(0xffff, 0, tmo_ns, &received);  
       if (r < 0) {
         if (r == AZ_ERR(TIMEOUT)) {
           //az_ilog("timeout %d\n", tc->timeout);
@@ -464,8 +464,8 @@ int az_test_main(int argc, char *argv[])
               testproj->testcase_errored++;
               tc->result = AZ_ERR(TIMEOUT);
               snprintf(tc->reason, sizeof(tc->reason), "timeout expired");
-              az_xu_stop(tc_xu_id);
-              az_xu_delete(tc_xu_id);
+              az_thread_stop(tc_xu_id);
+              az_thread_delete(tc_xu_id);
               az_tc_thread_default = NULL;
               tc_xu_id = AZ_ION_ID_INVALID;
             }
@@ -473,15 +473,15 @@ int az_test_main(int argc, char *argv[])
         }
         continue;
       }
-      if (received & AZ_XU_EVENT_TEST_STARTED) {
+      if (received & AZ_THREAD_BEAM_TEST_STARTED) {
         az_ilog("test case::%s started\n", tc->name); 
       }
-      if (received & AZ_XU_EVENT_TEST_STOPPED) {
+      if (received & AZ_THREAD_BEAM_TEST_STOPPED) {
         az_ilog("test case::%s stopped\n", tc->name); 
         testproj->testcase_completed++;
         break;
       }
-      if (received & AZ_XU_EVENT_TEST_ERROR) {
+      if (received & AZ_THREAD_BEAM_TEST_ERROR) {
         az_ilog("test case::%s errored\n", tc->name); 
         testproj->testcase_errored++;
         break;
@@ -499,8 +499,8 @@ int az_test_main(int argc, char *argv[])
   } while (1);
 
   clock_gettime(CLOCK_REALTIME, &testproj->etime);
-  char *bp = az_xu_prtbuf;
-  int blen = sizeof(az_xu_prtbuf);
+  char *bp = az_thread_prtbuf;
+  int blen = sizeof(az_thread_prtbuf);
   int nlen, tlen = 0;
   _AZ_SNPRINTF(tlen, bp, blen, "testproj:%s start: ", testproj->name);
   nlen = az_print_timestampInDatetime(bp, blen, AZ_TIMESTAMP_STR, &testproj->stime);
@@ -509,7 +509,7 @@ int az_test_main(int argc, char *argv[])
   nlen = az_print_timestampInDatetime(bp, blen, AZ_TIMESTAMP_STR, &testproj->etime);
   _AZ_FORMAT_UPDATE(tlen, bp, blen, nlen);
 
-  printf("%s\n", az_xu_prtbuf);
+  printf("%s\n", az_thread_prtbuf);
   printf("testproj::%s all testcase::total=%d,enabled=%d,completed=%d,errored=%d\n", 
       testproj->name,
       testproj->testcase_count,
@@ -523,7 +523,7 @@ int az_test_main(int argc, char *argv[])
     az_test_testproj_report(testproj);
   }
 
-  //az_xu_suspend(az_xu_self());
+  //az_thread_suspend(az_thread_self());
   // here we need to release all the resouce
   int j;
   tc = testproj->testcaselist;

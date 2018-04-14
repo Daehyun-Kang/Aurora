@@ -102,6 +102,16 @@ static void az_ion_invalidate(az_ion_t *ion, int is_static)
     az_refcount_init_dynamic(&ion->refCount);
   }
 }
+#define AZ_ION_INIT_STATIC(ion, _type) \
+  do { \
+    az_ion_invalidate((az_ion_t *)ion); \
+    ((az_ion_t *)(ion))-> type = _type; } while (0);
+
+#define AZ_ION_IS_IDLE_VALID(ion, _type) \
+    (((ion) != NULL) && \
+     (AZ_REFCOUNT_VALUE(&(((az_ion_t *)(ion))->refCount)) == 0) && \
+     (((az_ion_t *)(ion)->type) == _type)) 
+
 
 /* inline functions */
 static inline void az_ion_init(az_array_t *refList)

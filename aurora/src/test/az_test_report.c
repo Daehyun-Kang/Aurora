@@ -57,8 +57,8 @@
 int az_test_testproj_report(az_testproj_t *testproj)
 {
   az_assert(NULL != testproj);
-  char *bp = az_xu_prtbuf;
-  int blen = sizeof(az_xu_prtbuf);
+  char *bp = az_thread_prtbuf;
+  int blen = sizeof(az_thread_prtbuf);
   int nlen, tlen = 0;
   az_sys_timespec_t *dtime;
 
@@ -76,7 +76,7 @@ int az_test_testproj_report(az_testproj_t *testproj)
   _AZ_SNPRINTF(tlen, bp, blen, " - ");
   nlen = az_print_timestampInDatetime(bp, blen, AZ_TIMESTAMP_STR, &testproj->etime);
   _AZ_FORMAT_UPDATE(tlen, bp, blen, nlen);
-  printf("%s" AZ_NL, az_xu_prtbuf); 
+  printf("%s" AZ_NL, az_thread_prtbuf); 
 
   printf(lfmt, hline);
   printf(sfmt, "No", "Test Case Name", 
@@ -155,8 +155,8 @@ int az_test_testproj_report(az_testproj_t *testproj)
 int az_test_perf_testproj_report(az_testproj_t *testproj)
 {
   az_assert(NULL != testproj);
-  char *bp = az_xu_prtbuf;
-  int blen = sizeof(az_xu_prtbuf);
+  char *bp = az_thread_prtbuf;
+  int blen = sizeof(az_thread_prtbuf);
   int nlen, tlen = 0;
   az_sys_timespec_t *dtime;
 
@@ -175,7 +175,7 @@ int az_test_perf_testproj_report(az_testproj_t *testproj)
   _AZ_SNPRINTF(tlen, bp, blen, " - ");
   nlen = az_print_timestampInDatetime(bp, blen, AZ_TIMESTAMP_STR, &testproj->etime);
   _AZ_FORMAT_UPDATE(tlen, bp, blen, nlen);
-  printf("%s" AZ_NL, az_xu_prtbuf); 
+  printf("%s" AZ_NL, az_thread_prtbuf); 
 
   printf(lfmt, hline);
   printf(sfmt, "No", "Test Case Name", 

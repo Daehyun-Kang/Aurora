@@ -78,7 +78,7 @@ int az_test_watchpoint()
 
   int count = 0;
   while (count < 64) {
-    az_xu_sleep(1000000000 * 1);
+    az_thread_sleep(1000000000 * 1);
     count++;
    if (count == 8) {
      az_g_var8 = count;

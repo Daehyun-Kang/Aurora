@@ -21,7 +21,6 @@
 /* include header files */
 #include "az_core.h"
 #include "az_event_bus.h"
-#include "az_xu.h"
 #include "az_printf.h"
 #include "az_malloc.h"
 

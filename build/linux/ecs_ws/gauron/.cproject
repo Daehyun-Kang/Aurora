@@ -96,6 +96,7 @@
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.155540856" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="linux"/>
 									<listOptionValue builtIn="false" value="&quot;BASE_FILENAME=\&quot;$(&lt;F)\&quot;&quot;"/>
+									<listOptionValue builtIn="false" value="AZM_GUI=1"/>
 								</option>
 								<option id="gnu.c.compiler.option.misc.other.1930673854" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -fsanitize=address" valueType="string"/>
 								<option id="gnu.c.compiler.option.debugging.other.1630343141" name="Other debugging flags" superClass="gnu.c.compiler.option.debugging.other" useByScannerDiscovery="false" value="-finstrument-functions" valueType="string"/>
@@ -300,6 +301,7 @@
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.898523265" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="linux"/>
 									<listOptionValue builtIn="false" value="&quot;BASE_FILENAME=\&quot;$(&lt;F)\&quot;&quot;"/>
+									<listOptionValue builtIn="false" value="AZM_GUI=1"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1321472820" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -330,7 +332,7 @@
 								<option id="gnu.cpp.link.option.paths.793777082" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${Aurora_LIB_OUT}&quot;"/>
 								</option>
-								<option id="gnu.cpp.link.option.flags.1030344050" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="-Wl,--export-dynamic" valueType="string"/>
+								<option id="gnu.cpp.link.option.flags.1030344050" name="Linker flags" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="-Wl,--export-dynamic" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1708793370" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -503,6 +505,7 @@
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.475946518" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="linux"/>
 									<listOptionValue builtIn="false" value="&quot;BASE_FILENAME=\&quot;$(&lt;F)\&quot;&quot;"/>
+									<listOptionValue builtIn="false" value="AZM_GUI=1"/>
 								</option>
 								<option id="gnu.c.compiler.option.misc.other.1095535036" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 " valueType="string"/>
 								<option id="gnu.c.compiler.option.debugging.other.1920212250" name="Other debugging flags" superClass="gnu.c.compiler.option.debugging.other" useByScannerDiscovery="false" value="-finstrument-functions" valueType="string"/>

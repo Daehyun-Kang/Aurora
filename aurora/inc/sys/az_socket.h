@@ -24,6 +24,7 @@
 #include  "az_def.h"
 #include  "az_err.h"
 #include  "az_macros.h"
+#include  "az_ion.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -38,7 +39,9 @@ extern "C"
 typedef struct {
   az_ion_t    ion;
   az_sys_socket_t sys_socket;
-} az_socket_t;
+} az_socket_entity_t;
+
+typedef az_socket_entity_t  *az_socket_t;
 
 /* structures */
 
@@ -51,6 +54,8 @@ typedef struct {
 /* inline functions */
 
 /* function prototypes exposed */
+extern az_ion_id_t az_socket_create(int domain, int type, int protocol, az_socket_t *p);
+extern az_r_t az_socket_delete(az_ion_id_t id);
 
 #ifdef __cplusplus
 }

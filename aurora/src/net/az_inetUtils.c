@@ -53,7 +53,7 @@ int az_inet_interface_flags(char *ifname)
 {
   struct ifreq  if_req;
   int result = 0;
-  az_sock_t sd;
+  az_socket_id_t sd;
   do {
     result  = (int)az_sys_socket_create(AF_INET, SOCK_DGRAM, IPPROTO_IP, &sd);
     if (result < 0) break;

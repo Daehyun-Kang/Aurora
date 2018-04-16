@@ -35,8 +35,8 @@ const uint32_t  az_probe_samples_size = AZ_PROBE_SAMPLES_MAX;
 
 az_probe_ctrl_t az_probe_ctrl = {
   .state = AZ_PROBE_STATE_IDLE,
-  .ctrl_sock = AZ_SOCK_INVALID,
-  .data_sock = AZ_SOCK_INVALID,
+  .ctrl_sock = NULL,
+  .data_sock = NULL,
   .last_sample = 0,
   .svrIpStr = "127.0.0.1",
   .svrPort = CONFIG_AZ_PROBE_SVR_PORT, 
@@ -81,6 +81,8 @@ void  az_probe_init()
         az_probe_sample_buffer);
 
     ctrl->state = AZ_PROBE_STATE_READY|AZ_PROBE_STATE_DSND;
+    ctrl->ctrl_sock = &ctrl->_ctrl_sock;
+    AZ_SOCKET_INIT_STATIC(ctrl->ctrl_sock);
 
     r = az_inet_openTcpClient(ctrl->svrIpStr, ctrl->svrPort, NULL, 0,
         &ctrl->ctrl_sock);
@@ -89,6 +91,9 @@ void  az_probe_init()
           ctrl->svrIpStr, ctrl->svrPort, r);
       break;
     }
+
+    ctrl->data_sock = &ctrl->_data_sock;
+    AZ_SOCKET_INIT_STATIC(ctrl->data_sock);
     r = az_inet_openTcpClient(ctrl->svrIpStr, ctrl->svrPort, NULL, 0,
         &ctrl->data_sock);
     if (r != AZ_SUCCESS) {
@@ -109,13 +114,13 @@ void  az_probe_deinit()
       break;
     }
     ctrl->state &= ~AZ_PROBE_STATE_INIT;
-    if (ctrl->data_sock != AZ_SOCK_INVALID) {
-      az_sys_socket_delete(ctrl->data_sock);
-      ctrl->data_sock = AZ_SOCK_INVALID;
+    if (ctrl->data_sock->sys_socket != AZ_SOCK_INVALID) {
+      az_socket_delete(ctrl->data_sock->sys_socket);
+      ctrl->data_sock->sys_socket = AZ_SOCK_INVALID;
     }
-    if (ctrl->ctrl_sock != AZ_SOCK_INVALID) {
-      az_sys_socket_delete(ctrl->ctrl_sock);
-      ctrl->ctrl_sock = AZ_SOCK_INVALID;
+    if (ctrl->ctrl_sock->sys_socket != AZ_SOCK_INVALID) {
+      az_socket_delete(ctrl->ctrl_sock->sys_socket);
+      ctrl->ctrl_sock->sys_socket = AZ_SOCK_INVALID;
     }
     az_ring_deinit(&az_probe_samples);
     #ifdef  CONFIG_AZ_PROBE_VAR_SAMPLE_BUFFER
@@ -142,8 +147,8 @@ void az_probe_send()
       break;
     }
   }
-  if (j > 0 && az_probe_ctrl.data_sock != AZ_SOCK_INVALID) {
-    sent = send(az_probe_ctrl.data_sock, az_probe_sendbuffer, j * sizeof(az_probe_sample_t), 0); 
+  if (j > 0 && az_probe_ctrl.data_sock->sys_socket != AZ_SOCK_INVALID) {
+    sent = send(az_probe_ctrl.data_sock->sys_socket, az_probe_sendbuffer, j * sizeof(az_probe_sample_t), 0); 
   }
   if (sent <= 0) {
     az_sys_eprintf("sent %d = %d\n", j*sizeof(az_probe_sample_t), sent); 

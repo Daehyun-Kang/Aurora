@@ -1,4 +1,4 @@
-11:23:08 **** Build of configuration Debug2 for project auron ****
+01:35:11 **** Build of configuration Debug2 for project auron ****
 make all 
 Building file: /home/dhkang/work/Aurora/auron/src/addr2line.c
 Invoking: GCC C Compiler
@@ -52,13 +52,16 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
      az_array_est_element32_at(pArray, id, e);
      ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_probe.h:25,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_thread.h:36,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:43,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/addr2line.c:25:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:194:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:144:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 /home/dhkang/work/Aurora/auron/src/addr2line.c: At top level:
@@ -74,12 +77,6 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/auron/src/addr2line.c:25:
-/home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
- static void az_ion_invalidate(az_ion_t *ion, int is_static)
-             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -171,13 +168,16 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
      az_array_est_element32_at(pArray, id, e);
      ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_probe.h:25,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_thread.h:36,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:43,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:194:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:144:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 /home/dhkang/work/Aurora/auron/src/azm_main.c: In function ‘azm_xu_main_entry’:
@@ -191,10 +191,10 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
 /home/dhkang/work/Aurora/auron/src/azm_main.c:125:32: warning: passing argument 2 of ‘az_thread_create’ from incompatible pointer type [-Wincompatible-pointer-types]
    r = az_thread_create("main", azm_xu_main_entry, &azm_xu_main_arg, &azm_xu_main_config, &azm_xu_main);
                                 ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:42:0,
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:43:0,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_thread.h:256:20: note: expected ‘az_thread_entry_t {aka void * (*)(void *)}’ but argument is of type ‘void * (*)(struct azm_xu_main_arg *)’
+/home/dhkang/work/Aurora/aurora/inc/az_thread.h:274:20: note: expected ‘az_thread_entry_t {aka void * (*)(void *)}’ but argument is of type ‘void * (*)(struct azm_xu_main_arg *)’
  extern az_ion_id_t az_thread_create(char *name, az_thread_entry_t entry, az_thread_arg_t arg, az_thread_config_t *pCfg, az_thread_t *pXU);
                     ^
 /home/dhkang/work/Aurora/auron/src/azm_main.c:132:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
@@ -210,12 +210,6 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/auron/src/azm_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
- static void az_ion_invalidate(az_ion_t *ion, int is_static)
-             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -307,13 +301,16 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
      az_array_est_element32_at(pArray, id, e);
      ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_probe.h:25,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_thread.h:36,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:43,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_mcheck.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:194:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:144:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 /home/dhkang/work/Aurora/auron/src/azm_mcheck.c: In function ‘azm_mcheck_cli_cmd’:
@@ -330,12 +327,6 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/auron/src/azm_mcheck.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
- static void az_ion_invalidate(az_ion_t *ion, int is_static)
-             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -427,28 +418,193 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
      az_array_est_element32_at(pArray, id, e);
      ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_probe.h:25,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_thread.h:36,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:43,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:194:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:144:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
+/home/dhkang/work/Aurora/auron/src/azm_probe.c: At top level:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:188:33: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ #define AZ_SYS_SOCKET_INVALID   (-1)
+                                 ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_socket.h:36:30: note: in expansion of macro ‘AZ_SYS_SOCKET_INVALID’
+ #define AZ_SOCK_INVALID      AZ_SYS_SOCKET_INVALID
+                              ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:35:16: note: in expansion of macro ‘AZ_SOCK_INVALID’
+   .ctrl_sock = AZ_SOCK_INVALID,
+                ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:188:33: note: (near initialization for ‘azm_probe_ctrl.ctrl_sock’)
+ #define AZ_SYS_SOCKET_INVALID   (-1)
+                                 ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_socket.h:36:30: note: in expansion of macro ‘AZ_SYS_SOCKET_INVALID’
+ #define AZ_SOCK_INVALID      AZ_SYS_SOCKET_INVALID
+                              ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:35:16: note: in expansion of macro ‘AZ_SOCK_INVALID’
+   .ctrl_sock = AZ_SOCK_INVALID,
+                ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:188:33: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ #define AZ_SYS_SOCKET_INVALID   (-1)
+                                 ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_socket.h:36:30: note: in expansion of macro ‘AZ_SYS_SOCKET_INVALID’
+ #define AZ_SOCK_INVALID      AZ_SYS_SOCKET_INVALID
+                              ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:36:16: note: in expansion of macro ‘AZ_SOCK_INVALID’
+   .data_sock = AZ_SOCK_INVALID,
+                ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:188:33: note: (near initialization for ‘azm_probe_ctrl.data_sock’)
+ #define AZ_SYS_SOCKET_INVALID   (-1)
+                                 ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_socket.h:36:30: note: in expansion of macro ‘AZ_SYS_SOCKET_INVALID’
+ #define AZ_SOCK_INVALID      AZ_SYS_SOCKET_INVALID
+                              ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:36:16: note: in expansion of macro ‘AZ_SOCK_INVALID’
+   .data_sock = AZ_SOCK_INVALID,
+                ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c: In function ‘azm_probe_proc_recv’:
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:83:19: warning: passing argument 1 of ‘recv’ makes integer from pointer without a cast [-Wint-conversion]
+     rcount = recv(ctrl->data_sock, buf, sizeof(buf), 0);
+                   ^
+In file included from /usr/include/netinet/in.h:23:0,
+                 from /usr/include/netdb.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_sys_linux.h:52,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys.h:45,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:23,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
+/usr/include/x86_64-linux-gnu/sys/socket.h:156:16: note: expected ‘int’ but argument is of type ‘az_socket_t {aka struct <anonymous> *}’
+ extern ssize_t recv (int __fd, void *__buf, size_t __n, int __flags);
+                ^
 /home/dhkang/work/Aurora/auron/src/azm_probe.c: In function ‘azm_probe_proc_default’:
-/home/dhkang/work/Aurora/auron/src/azm_probe.c:129:8: warning: unused variable ‘count’ [-Wunused-variable]
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:127:23: warning: comparison between pointer and integer
+   if (ctrl->ctrl_sock != AZ_SOCK_INVALID) {
+                       ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:129:25: warning: passing argument 1 of ‘az_sys_xu_iomux_add’ makes integer from pointer without a cast [-Wint-conversion]
+     az_sys_xu_iomux_add(ctrl->ctrl_sock, AZ_SYS_IO_IN|AZ_SYS_IO_HUP|AZ_SYS_IO_RDHUP);
+                         ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:156:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_xu.h:169:22: note: expected ‘az_sys_io_t {aka int}’ but argument is of type ‘az_socket_t {aka struct <anonymous> *}’
+ static inline az_r_t az_sys_xu_iomux_add(az_sys_io_t fd, uint32_t ioevt)
+                      ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:131:23: warning: comparison between pointer and integer
+   if (ctrl->data_sock != AZ_SOCK_INVALID) {
+                       ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:132:25: warning: passing argument 1 of ‘az_sys_xu_iomux_add’ makes integer from pointer without a cast [-Wint-conversion]
+     az_sys_xu_iomux_add(ctrl->data_sock, AZ_SYS_IO_IN|AZ_SYS_IO_HUP|AZ_SYS_IO_RDHUP);
+                         ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:156:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_xu.h:169:22: note: expected ‘az_sys_io_t {aka int}’ but argument is of type ‘az_socket_t {aka struct <anonymous> *}’
+ static inline az_r_t az_sys_xu_iomux_add(az_sys_io_t fd, uint32_t ioevt)
+                      ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:159:27: warning: passing argument 1 of ‘az_sys_xu_iomux_del’ makes integer from pointer without a cast [-Wint-conversion]
+       az_sys_xu_iomux_del(ctrl->ctrl_sock);
+                           ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:156:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_xu.h:179:22: note: expected ‘az_sys_io_t {aka int}’ but argument is of type ‘az_socket_t {aka struct <anonymous> *}’
+ static inline az_r_t az_sys_xu_iomux_del(az_sys_io_t fd)
+                      ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:160:28: warning: passing argument 1 of ‘az_sys_socket_delete’ makes integer from pointer without a cast [-Wint-conversion]
+       az_sys_socket_delete(ctrl->data_sock);
+                            ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:189:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_socket.h:69:22: note: expected ‘az_sys_socket_t {aka int}’ but argument is of type ‘az_socket_t {aka struct <anonymous> *}’
+ static inline az_r_t az_sys_socket_delete(az_sys_socket_t sd)
+                      ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:161:23: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+       ctrl->data_sock = AZ_SOCK_INVALID;
+                       ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:162:23: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+       ctrl->ctrl_sock = AZ_SOCK_INVALID;
+                       ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:168:23: warning: comparison between pointer and integer
+   if (ctrl->ctrl_sock != AZ_SOCK_INVALID) {
+                       ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:169:25: warning: passing argument 1 of ‘az_sys_xu_iomux_del’ makes integer from pointer without a cast [-Wint-conversion]
+     az_sys_xu_iomux_del(ctrl->ctrl_sock);
+                         ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:156:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_xu.h:179:22: note: expected ‘az_sys_io_t {aka int}’ but argument is of type ‘az_socket_t {aka struct <anonymous> *}’
+ static inline az_r_t az_sys_xu_iomux_del(az_sys_io_t fd)
+                      ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:170:26: warning: passing argument 1 of ‘az_sys_socket_delete’ makes integer from pointer without a cast [-Wint-conversion]
+     az_sys_socket_delete(ctrl->data_sock);
+                          ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:189:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_socket.h:69:22: note: expected ‘az_sys_socket_t {aka int}’ but argument is of type ‘az_socket_t {aka struct <anonymous> *}’
+ static inline az_r_t az_sys_socket_delete(az_sys_socket_t sd)
+                      ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:171:21: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+     ctrl->ctrl_sock = AZ_SOCK_INVALID;
+                     ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:172:21: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+     ctrl->data_sock = AZ_SOCK_INVALID;
+                     ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:137:8: warning: unused variable ‘count’ [-Wunused-variable]
    long count = 0;
         ^
 /home/dhkang/work/Aurora/auron/src/azm_probe.c: In function ‘azm_probe_svr_onClientConnection’:
-/home/dhkang/work/Aurora/auron/src/azm_probe.c:213:5: warning: ‘return’ with no value, in function returning non-void
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:216:23: warning: comparison between pointer and integer
+   if (ctrl->ctrl_sock == AZ_SOCK_INVALID) {
+                       ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:217:21: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+     ctrl->ctrl_sock = cliSock;
+                     ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:221:5: warning: ‘return’ with no value, in function returning non-void
      return;
      ^
-/home/dhkang/work/Aurora/auron/src/azm_probe.c:224:5: warning: ‘return’ with no value, in function returning non-void
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:222:30: warning: comparison between pointer and integer
+   } else if (ctrl->data_sock == AZ_SOCK_INVALID) {
+                              ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:223:21: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+     ctrl->data_sock = cliSock;
+                     ^
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:232:5: warning: ‘return’ with no value, in function returning non-void
      return;
      ^
 /home/dhkang/work/Aurora/auron/src/azm_probe.c: In function ‘azm_probe_thread_proc_default’:
-/home/dhkang/work/Aurora/auron/src/azm_probe.c:318:7: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+/home/dhkang/work/Aurora/auron/src/azm_probe.c:326:7: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
    int r;
        ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
@@ -461,12 +617,6 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/auron/src/azm_probe.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
- static void az_ion_invalidate(az_ion_t *ion, int is_static)
-             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -558,13 +708,16 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
      az_array_est_element32_at(pArray, id, e);
      ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_probe.h:25,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_thread.h:36,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:43,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:194:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:144:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:25:0,
@@ -574,14 +727,14 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:25:0,
  } az_mchk_info_t;
  ^
 In file included from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:23:0:
-/home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:102:1: warning: no semicolon at end of struct or union
+/home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:104:1: warning: no semicolon at end of struct or union
  } az_trace_info_t;
  ^
 /home/dhkang/work/Aurora/auron/src/azm_rsh.c: In function ‘azm_rsh_proc_default’:
-/home/dhkang/work/Aurora/auron/src/azm_rsh.c:118:20: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/azm_rsh.c:121:20: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
          char *bp = &info;
                     ^
-/home/dhkang/work/Aurora/auron/src/azm_rsh.c:118:15: warning: unused variable ‘bp’ [-Wunused-variable]
+/home/dhkang/work/Aurora/auron/src/azm_rsh.c:121:15: warning: unused variable ‘bp’ [-Wunused-variable]
          char *bp = &info;
                ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
@@ -599,7 +752,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:111:29: note: in expansion of macro ‘az_sys_log_printf’
  #define az_sys_eprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_ERROR, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
                              ^
-/home/dhkang/work/Aurora/auron/src/azm_rsh.c:125:7: note: in expansion of macro ‘az_sys_eprintf’
+/home/dhkang/work/Aurora/auron/src/azm_rsh.c:128:7: note: in expansion of macro ‘az_sys_eprintf’
        az_sys_eprintf("timeout %d\n", count++);
        ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
@@ -614,7 +767,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:111:29: note: in expansion of macro ‘az_sys_log_printf’
  #define az_sys_eprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_ERROR, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
                              ^
-/home/dhkang/work/Aurora/auron/src/azm_rsh.c:125:7: note: in expansion of macro ‘az_sys_eprintf’
+/home/dhkang/work/Aurora/auron/src/azm_rsh.c:128:7: note: in expansion of macro ‘az_sys_eprintf’
        az_sys_eprintf("timeout %d\n", count++);
        ^
 /home/dhkang/work/Aurora/auron/src/azm_rsh.c:74:7: warning: unused variable ‘nfds’ [-Wunused-variable]
@@ -627,7 +780,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
    int resolve_symbol = 0;
        ^
 /home/dhkang/work/Aurora/auron/src/azm_rsh.c: In function ‘azm_rsh_thread_proc_default’:
-/home/dhkang/work/Aurora/auron/src/azm_rsh.c:160:7: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+/home/dhkang/work/Aurora/auron/src/azm_rsh.c:163:7: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
    int r;
        ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
@@ -640,18 +793,12 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/auron/src/azm_rsh.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
- static void az_ion_invalidate(az_ion_t *ion, int is_static)
-             ^
 /home/dhkang/work/Aurora/auron/src/azm_rsh.c: In function ‘azm_rsh_deinit’:
-/home/dhkang/work/Aurora/auron/src/azm_rsh.c:276:10: warning: ‘r’ is used uninitialized in this function [-Wuninitialized]
+/home/dhkang/work/Aurora/auron/src/azm_rsh.c:279:10: warning: ‘r’ is used uninitialized in this function [-Wuninitialized]
    return r;
           ^
 /home/dhkang/work/Aurora/auron/src/azm_rsh.c: In function ‘azm_rsh_init’:
-/home/dhkang/work/Aurora/auron/src/azm_rsh.c:262:10: warning: ‘r’ is used uninitialized in this function [-Wuninitialized]
+/home/dhkang/work/Aurora/auron/src/azm_rsh.c:265:10: warning: ‘r’ is used uninitialized in this function [-Wuninitialized]
    return r;
           ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
@@ -745,13 +892,16 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
      az_array_est_element32_at(pArray, id, e);
      ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_probe.h:25,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_thread.h:36,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:43,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:194:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:144:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:25:0,
@@ -761,7 +911,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:25:0,
  } az_mchk_info_t;
  ^
 In file included from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:23:0:
-/home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:102:1: warning: no semicolon at end of struct or union
+/home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:104:1: warning: no semicolon at end of struct or union
  } az_trace_info_t;
  ^
 /home/dhkang/work/Aurora/auron/src/azm_rstdio.c: In function ‘azm_rstdio_proc_default’:
@@ -778,12 +928,6 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/auron/src/azm_rstdio.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
- static void az_ion_invalidate(az_ion_t *ion, int is_static)
-             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -875,13 +1019,16 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
      az_array_est_element32_at(pArray, id, e);
      ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_probe.h:25,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_thread.h:36,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:43,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/azm_trace.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:194:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:144:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:25:0,
@@ -891,7 +1038,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:25:0,
  } az_mchk_info_t;
  ^
 In file included from /home/dhkang/work/Aurora/auron/src/azm_trace.c:23:0:
-/home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:102:1: warning: no semicolon at end of struct or union
+/home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:104:1: warning: no semicolon at end of struct or union
  } az_trace_info_t;
  ^
 /home/dhkang/work/Aurora/auron/src/azm_trace.c: In function ‘azm_trace_proc_recv’:
@@ -899,18 +1046,18 @@ In file included from /home/dhkang/work/Aurora/auron/src/azm_trace.c:23:0:
    char  *bp = info;
                ^
 /home/dhkang/work/Aurora/auron/src/azm_trace.c: In function ‘azm_trace_proc_default’:
-/home/dhkang/work/Aurora/auron/src/azm_trace.c:370:8: warning: unused variable ‘count’ [-Wunused-variable]
+/home/dhkang/work/Aurora/auron/src/azm_trace.c:373:8: warning: unused variable ‘count’ [-Wunused-variable]
    long count = 0;
         ^
 /home/dhkang/work/Aurora/auron/src/azm_trace.c: In function ‘azm_trace_thread_proc_default’:
-/home/dhkang/work/Aurora/auron/src/azm_trace.c:628:7: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+/home/dhkang/work/Aurora/auron/src/azm_trace.c:631:7: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
    int r;
        ^
 /home/dhkang/work/Aurora/auron/src/azm_trace.c: In function ‘azm_trace_cli_cmd’:
-/home/dhkang/work/Aurora/auron/src/azm_trace.c:769:18: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+/home/dhkang/work/Aurora/auron/src/azm_trace.c:772:18: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
        void *xu = strtol(argv[2], NULL, 16);
                   ^
-/home/dhkang/work/Aurora/auron/src/azm_trace.c:769:13: warning: unused variable ‘xu’ [-Wunused-variable]
+/home/dhkang/work/Aurora/auron/src/azm_trace.c:772:13: warning: unused variable ‘xu’ [-Wunused-variable]
        void *xu = strtol(argv[2], NULL, 16);
              ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
@@ -923,12 +1070,6 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/auron/src/azm_trace.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
- static void az_ion_invalidate(az_ion_t *ion, int is_static)
-             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -978,5 +1119,5 @@ copy exeutable to output location
 cp auron /home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Debug2/bin/; cp auron /home/dhkang/work/Aurora/bin/linux/
  
 
-11:23:10 Build Finished (took 1s.739ms)
+01:35:12 Build Finished (took 1s.724ms)
 

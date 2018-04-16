@@ -95,7 +95,7 @@
 //#undef CONFIG_AZ_CLI           
 
 #define CONFIG_AZM                      1
-//#undef  CONFIG_AZM                      
+#undef  CONFIG_AZM                      
 
 #ifdef CONFIG_AZM                      
 #define CONFIG_AZ_CLI_SHELL_PROMPT      "$$"
@@ -215,5 +215,6 @@
 #define CONFIG_AZ_PROBE_ENABLE            1
 #define CONFIG_AZ_PROBE_SAMPLES_MAX       409600
 
+#define CONFIG_AZ_PROBE_SYS               1
 #endif
 

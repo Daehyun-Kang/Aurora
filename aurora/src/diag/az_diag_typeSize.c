@@ -105,11 +105,11 @@ void az_diag_prt_type_size()
     AZ_DIAG_PRT_PTR(long *l + 1, l+1, buf, sizeof(buf)); AZ_DIAG_PRT_STR(buf);
   }
 }
-
+/*
 int main(int argc, char *argv[])
 {
 
   az_diag_prt_type_size();
 }
-
+*/
 /* === end of AZ_DIAG_TYPESIZE_C === */

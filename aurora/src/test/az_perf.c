@@ -45,6 +45,7 @@
 
 
 static az_thread_config_t xu_cfg = {
+  .tag = 'p',
   .stackSize = 0,
   .policy = SCHED_FIFO,
   .priority = 99,

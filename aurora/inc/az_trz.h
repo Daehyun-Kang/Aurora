@@ -67,7 +67,7 @@ typedef uint16_t  az_trz_seqno_t;
 typedef uint16_t  az_trz_code_t;
 typedef uint16_t  az_trz_len_t;
 struct az_transaction; 
-typedef void (*az_trz_handler_t)(struct az_transaction *, az_sock_t );
+typedef void (*az_trz_handler_t)(struct az_transaction *, az_socket_id_t );
 
 /* structures */
 
@@ -104,16 +104,18 @@ typedef struct az_transaction_node {
   char      *ipAddr;
   int       backlog;
 
-  az_sock_t sock;
+  az_socket_t sock;
+  az_socket_entity_t  _sock;
 } az_trz_node_t;
 
 typedef struct az_transaction_connection {
   az_trz_nodeid_t  nodeid; //destination nodeid
-  az_sock_t sock;
+  az_socket_t      sock;
 
   az_trz_node_t *peer;
 
   az_link_list_t list;
+  az_socket_entity_t  _sock;
 } az_trz_conn_t;
 
 /* macros */
@@ -156,7 +158,7 @@ static inline void az_trz_free(az_trz_t *trz)
 }
 
 
-static inline az_r_t az_trz_conn_register(az_trz_nodeid_t nodeid, az_sock_t sock, az_trz_node_t *node)
+static inline az_r_t az_trz_conn_register(az_trz_nodeid_t nodeid, az_socket_id_t sockid, az_trz_node_t *node)
 {
   az_trz_conn_t *trz_conn = az_trz_conn(nodeid);
   az_r_t r = AZ_SUCCESS;
@@ -168,13 +170,13 @@ static inline az_r_t az_trz_conn_register(az_trz_nodeid_t nodeid, az_sock_t sock
         break;
       }
       trz_conn->nodeid = nodeid;
-      trz_conn->sock = sock;
+      trz_conn->sock = (az_socket_t)az_ion(sockid);
       trz_conn->peer = node;
 
       az_link_initList(&trz_conn->list);
       break;
     }
-    if (trz_conn->nodeid != nodeid || trz_conn->sock != sock) {
+    if (trz_conn->nodeid != nodeid || trz_conn->sock->sys_socket != sockid) {
       r = AZ_ERR(INVALID);
       break;
     }
@@ -202,14 +204,14 @@ static inline az_r_t az_trz_conn_deregister(az_trz_nodeid_t nodeid)
 
   return r;
 }
-static inline az_trz_conn_t *az_trz_conn_find(az_sock_t sock)
+static inline az_trz_conn_t *az_trz_conn_find(az_socket_id_t sockid)
 {
   az_trz_conn_t *trz_conn;
   int nodeid = 0;
   for (; nodeid < AZ_TRZ_NODEID_MAX; nodeid++) {
     trz_conn = az_trz_conn_list[nodeid];
     if (trz_conn == NULL) continue;
-    if (trz_conn->sock == sock) {
+    if (trz_conn->sock->sys_socket == sockid) {
       break;
     }
   }
@@ -217,7 +219,7 @@ static inline az_trz_conn_t *az_trz_conn_find(az_sock_t sock)
 
   return trz_conn;
 }
-static inline az_trz_conn_t *az_trz_conn_getfree(az_sock_t sock, az_trz_node_t *node)
+static inline az_trz_conn_t *az_trz_conn_getfree(az_socket_id_t sockid, az_trz_node_t *node)
 {
   extern az_trz_node_t az_trz_node_local;
   az_trz_conn_t *trz_conn;
@@ -228,7 +230,7 @@ static inline az_trz_conn_t *az_trz_conn_getfree(az_sock_t sock, az_trz_node_t *
     if (nodeid == az_trz_node_local.nodeid) continue;
     trz_conn = az_trz_conn_list[nodeid];
     if (trz_conn == NULL) {
-      r = az_trz_conn_register(nodeid, sock, node);
+      r = az_trz_conn_register(nodeid, sockid, node);
       if (r == AZ_SUCCESS) break;
     }
   }
@@ -384,12 +386,12 @@ static inline az_r_t az_trz_reset(az_trz_t *trz, az_trz_msg_hdr_t *msgp, az_trz_
 extern  void az_trz_init_vars();
 extern az_r_t az_trz_send_request(az_trz_t *trz, az_trz_msg_hdr_t *msgp, 
     az_trz_handler_t handler, void *priv, int timeout, int flags); 
-extern az_r_t az_trz_proc_request(az_trz_msg_hdr_t *msgp, az_sock_t sock);
-extern az_r_t az_trz_proc_response(az_trz_msg_hdr_t *msgp, az_sock_t sock);
+extern az_r_t az_trz_proc_request(az_trz_msg_hdr_t *msgp, az_socket_id_t sockid);
+extern az_r_t az_trz_proc_response(az_trz_msg_hdr_t *msgp, az_socket_id_t sockid);
 extern az_r_t az_trz_send_response(az_trz_t *trz, az_trz_msg_hdr_t *msgp, int flags); 
 
 extern az_r_t az_trz_send_control_msg(az_trz_node_t *peer, az_trz_msg_hdr_t *msgp, az_trz_handler_t handler, void *priv, int timeout, int flags);
-extern void az_trz_msg_query_nodeid_rsp_handler(az_trz_t *trz, az_sock_t sock);
+extern void az_trz_msg_query_nodeid_rsp_handler(az_trz_t *trz, az_socket_id_t sockid);
 #ifdef __cplusplus
 }
 #endif

@@ -110,9 +110,11 @@ void  az_trace_begin(void)
     */
     ctrl->state |= AZ_TRACE_STATE_INIT;
     #elif defined(CONFIG_AZ_TRACE_INICONN)
-    az_sys_socket_t cliSock;
+    az_socket_t pCliSock = &ctrl->_sock;
+    AZ_SOCKET_INIT_STATIC(pCliSock);
+
     int r = az_inet_openTcpClient(ctrl->monSvrIpStr, ctrl->monSvrPort,
-        NULL, 0, &cliSock);
+        NULL, 0, &pCliSock);
     if (r != AZ_SUCCESS) {
       az_sys_eprintf("connect to trace mon %s:%u error = %d" AZ_NL, 
           ctrl->monSvrIpStr, ctrl->monSvrPort, r);
@@ -121,8 +123,8 @@ void  az_trace_begin(void)
       az_sys_eprintf("connect to trace mon %s:%u ok" AZ_NL, 
           ctrl->monSvrIpStr, ctrl->monSvrPort);
     }
-    ctrl->read_fd = cliSock;
-    ctrl->write_fd = cliSock;
+    ctrl->read_fd = pCliSock->sys_socket;
+    ctrl->write_fd = pCliSock->sys_socket;
     ctrl->state |= AZ_TRACE_STATE_INIT;
   
     az_trace_fileinfo_t fileinfo = {
@@ -156,10 +158,10 @@ void  az_trace_end(void)
   ctrl->write_fd = AZ_SYS_FD_INVALID;
   az_sys_fs_close(fd);
   #elif defined(CONFIG_AZ_TRACE_INICONN)
-  az_sys_socket_t cliSock = ctrl->write_fd;
+  az_socket_t cliSock = ctrl->write_fd;
   ctrl->write_fd = AZ_SOCK_INVALID;
   if (cliSock != AZ_SOCK_INVALID) {
-    az_sys_socket_delete(cliSock);
+    az_socket_delete(cliSock);
   }
   ctrl->read_fd = AZ_SOCK_INVALID;
   #endif
@@ -361,7 +363,7 @@ void *az_trace_thread_proc_default(void *arg)
     //}
     //tv.tv_sec = 3;
     //r = select(nfds + 1, &fds, NULL, NULL, &tv);
-    r = az_sys_xu_wait(&ioevt, 1, 3000);
+    r = az_thread_wait_iomux(&ioevt, 1, 3000);
     if (r > 0) {
     //if (FD_ISSET(ctrl->read_fd, &fds)) {
       if (ioevt.data.fd != ctrl->read_fd) continue;
@@ -437,7 +439,7 @@ az_tcpserver_t az_trace_svr = {
   .config.port = CONFIG_AZ_TRACE_PRB_SVR_PORT,
   .config.backlog = 16, 
   .config.flags = 0, 
-  .sock = AZ_SOCK_INVALID, 
+  .sock = NULL, 
   .thread = NULL,
   .priv = NULL,
   .oprs = &az_trace_svr_oprs, 
@@ -605,7 +607,7 @@ void *az_trace_thread_proc_default(void *arg)
   return NULL;
 }
 
-int az_trace_svr_onClientConnection(void *ctx, az_sock_t cliSock, void *cliAddrIn)
+int az_trace_svr_onClientConnection(void *ctx, az_socket_id_t cliSock, void *cliAddrIn)
 {
   int r = AZ_SUCCESS;
   az_trace_ctrl_t *ctrl = &az_trace_ctrl;
@@ -617,7 +619,7 @@ int az_trace_svr_onClientConnection(void *ctx, az_sock_t cliSock, void *cliAddrI
   if (ctrl->state & AZ_TRACE_STATE_INIT) {
     az_sys_eprintf("new trace connection from %s:%u..., but trace busy" AZ_NL,
         cliIpStr, AZ_INET_PORT(cliAddr));
-    az_sys_socket_delete(cliSock);
+    az_socket_delete(cliSock);
   } else {
     ctrl->write_fd = cliSock;
     ctrl->read_fd = cliSock;

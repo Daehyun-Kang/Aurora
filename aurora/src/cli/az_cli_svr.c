@@ -33,7 +33,7 @@ az_tcpserver_t  az_cli_svr = {
   .config.port = AZ_CLI_SVR_PORT,
   .config.backlog = 16,
   .config.flags = 0,
-  .sock = AZ_SOCK_INVALID,
+  .sock = NULL,
   .thread = NULL,
   .priv = NULL,
   .oprs = &az_cli_svr_oprs,
@@ -80,7 +80,7 @@ void az_cli_rshell_cleanup(az_cli_shell_t *pSh)
   fflush(stdout);
   az_cli_thread_stop(thread);
 }
-int az_cli_svr_onClientConnection(void *ctx, az_sock_t cliSock, void *cliAddrIn)
+int az_cli_svr_onClientConnection(void *ctx, az_socket_id_t cliSock, void *cliAddrIn)
 {
   int r;
   az_cli_shell_t  *pRShell = NULL;

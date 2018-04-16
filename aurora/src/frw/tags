@@ -396,6 +396,8 @@ AZ_FILENAME	../../inc/az_def.h	147;"	d
 AZ_FILENAME	../../inc/az_def.h	149;"	d
 AZ_FILENAME	../../inc/az_def.h	151;"	d
 AZ_FILENAME	../../inc/az_def.h	153;"	d
+AZ_FILENAME	../../inc/az_def.h	155;"	d
+AZ_FILENAME	../../inc/az_def.h	157;"	d
 AZ_FILE_INVALID	../../inc/sys/az_fs.h	70;"	d
 AZ_FILE_INVALID	../../inc/sys/az_fs.h	71;"	d
 AZ_FILE_INVALID	../../inc/sys/az_fs.h	73;"	d
@@ -591,7 +593,10 @@ AZ_ION_IDLE	../../inc/az_ion.h	71;"	d
 AZ_ION_IDLE	../../inc/az_ion.h	84;"	d
 AZ_ION_ID_FLAG_NONIO	../../inc/az_ion_types.h	63;"	d
 AZ_ION_ID_FLAG_NONIO	../../inc/az_ion_types.h	65;"	d
+AZ_ION_ID_FLAG_NONIO	../../inc/az_ion_types.h	67;"	d
 AZ_ION_ID_INVALID	../../inc/az_ion_types.h	61;"	d
+AZ_ION_INIT_STATIC	../../inc/az_ion.h	106;"	d
+AZ_ION_IS_IDLE_VALID	../../inc/az_ion.h	111;"	d
 AZ_ION_LIST	../../inc/az_ion.h	48;"	d
 AZ_ION_LIST	../../inc/az_ion.h	49;"	d
 AZ_ION_LIST	../../inc/az_ion.h	50;"	d
@@ -605,6 +610,7 @@ AZ_ION_MAX	../../inc/az_ion.h	36;"	d
 AZ_ION_MAX	../../inc/az_ion.h	37;"	d
 AZ_ION_MAX	../../inc/az_ion.h	38;"	d
 AZ_ION_SET_STATIC	../../inc/az_ion_types.h	60;"	d
+AZ_ION_TAG_INVALID	../../inc/az_ion_types.h	62;"	d
 AZ_ION_TYPES_H	../../inc/az_ion_types.h	21;"	d
 AZ_ION_TYPES_H	../../inc/az_ion_types.h	22;"	d
 AZ_ION_TYPE_DIR	../../inc/az_ion_types.h	35;"	d
@@ -619,10 +625,12 @@ AZ_ION_TYPE_IOU	../../inc/az_ion_types.h	39;"	d
 AZ_ION_TYPE_IOU	../../inc/az_ion_types.h	41;"	d
 AZ_ION_TYPE_IOU	../../inc/az_ion_types.h	46;"	d
 AZ_ION_TYPE_LOCAL	../../inc/az_ion_types.h	44;"	d
+AZ_ION_TYPE_LOCAL	../../inc/az_ion_types.h	48;"	d
 AZ_ION_TYPE_LOCAL	../../inc/az_ion_types.h	49;"	d
 AZ_ION_TYPE_MASK	../../inc/az_ion_types.h	33;"	d
 AZ_ION_TYPE_MASK	../../inc/az_ion_types.h	38;"	d
 AZ_ION_TYPE_MAX	../../inc/az_ion_types.h	45;"	d
+AZ_ION_TYPE_MAX	../../inc/az_ion_types.h	49;"	d
 AZ_ION_TYPE_MAX	../../inc/az_ion_types.h	50;"	d
 AZ_ION_TYPE_MSGQ	../../inc/az_ion_types.h	38;"	d
 AZ_ION_TYPE_MSGQ	../../inc/az_ion_types.h	40;"	d
@@ -632,13 +640,16 @@ AZ_ION_TYPE_MUTEX	../../inc/az_ion_types.h	34;"	d
 AZ_ION_TYPE_MUTEX	../../inc/az_ion_types.h	36;"	d
 AZ_ION_TYPE_MUTEX	../../inc/az_ion_types.h	41;"	d
 AZ_ION_TYPE_NAMES	../../inc/az_ion_types.h	47;"	d
+AZ_ION_TYPE_NAMES	../../inc/az_ion_types.h	53;"	d
 AZ_ION_TYPE_NAMES	../../inc/az_ion_types.h	54;"	d
 AZ_ION_TYPE_SEM	../../inc/az_ion_types.h	34;"	d
 AZ_ION_TYPE_SEM	../../inc/az_ion_types.h	35;"	d
 AZ_ION_TYPE_SEM	../../inc/az_ion_types.h	37;"	d
 AZ_ION_TYPE_SEM	../../inc/az_ion_types.h	42;"	d
+AZ_ION_TYPE_SOCK	../../inc/az_ion_types.h	47;"	d
 AZ_ION_TYPE_TCP	../../inc/az_ion_types.h	43;"	d
 AZ_ION_TYPE_TCP	../../inc/az_ion_types.h	48;"	d
+AZ_ION_TYPE_THREAD	../../inc/az_ion_types.h	39;"	d
 AZ_ION_TYPE_TIMER	../../inc/az_ion_types.h	32;"	d
 AZ_ION_TYPE_TIMER	../../inc/az_ion_types.h	33;"	d
 AZ_ION_TYPE_TIMER	../../inc/az_ion_types.h	35;"	d
@@ -1135,8 +1146,12 @@ AZ_TC_PER_TP_MAX	../../inc/az_test.h	35;"	d
 AZ_TC_PRINT_B	../../inc/az_tc.h	69;"	d
 AZ_TC_PRINT_BEGIN	../../inc/az_tc.h	74;"	d
 AZ_TC_PRINT_END	../../inc/az_tc.h	105;"	d
+AZ_TC_PRINT_END	../../inc/az_tc.h	110;"	d
 AZ_TC_PRINT_END_FAIL	../../inc/az_tc.h	89;"	d
+AZ_TC_PRINT_END_FAIL	../../inc/az_tc.h	94;"	d
+AZ_TC_PRINT_END_PASS	../../inc/az_tc.h	102;"	d
 AZ_TC_PRINT_END_PASS	../../inc/az_tc.h	97;"	d
+AZ_TC_PRINT_RUN	../../inc/az_tc.h	89;"	d
 AZ_TC_PRINT_START	../../inc/az_tc.h	84;"	d
 AZ_TC_PRINT_T	../../inc/az_tc.h	76;"	d
 AZ_TC_PRINT_TERM	../../inc/az_tc.h	82;"	d
@@ -1146,7 +1161,9 @@ AZ_TC_RESULT_SEGV	../../inc/az_tc.h	67;"	d
 AZ_TC_RESULT_SUCCESS	../../inc/az_tc.h	64;"	d
 AZ_TC_SET_CUR_TC	../../inc/az_tc.h	42;"	d
 AZ_TC_SET_OK	../../inc/az_tc.h	125;"	d
+AZ_TC_SET_OK	../../inc/az_tc.h	130;"	d
 AZ_TC_SET_REASON	../../inc/az_tc.h	124;"	d
+AZ_TC_SET_REASON	../../inc/az_tc.h	129;"	d
 AZ_TC_SET_TV	../../inc/az_tc.h	46;"	d
 AZ_TC_TV_SZ	../../inc/az_tc.h	44;"	d
 AZ_TEST_CFG_FILE_DEFAULT	../../inc/az_test.h	48;"	d
@@ -1301,27 +1318,96 @@ AZ_TEST_SUBSTATE_PRE	../../inc/az_test.h	199;"	d
 AZ_TEST_SUBSTATE_RUN	../../inc/az_test.h	200;"	d
 AZ_TEST_TYPE_FUNC	../../inc/az_test.h	203;"	d
 AZ_TEST_TYPE_PERF	../../inc/az_test.h	204;"	d
+AZ_THREAD_BEAM_EVTBUS	../../inc/az_thread.h	62;"	d
+AZ_THREAD_BEAM_MSG	../../inc/az_thread.h	63;"	d
+AZ_THREAD_BEAM_OPT_AND_ALL	../../inc/az_thread.h	92;"	d
+AZ_THREAD_BEAM_OPT_PRESERVE	../../inc/az_thread.h	93;"	d
+AZ_THREAD_BEAM_TEST_ERROR	../../inc/az_test.h	189;"	d
+AZ_THREAD_BEAM_TEST_STARTED	../../inc/az_test.h	187;"	d
+AZ_THREAD_BEAM_TEST_STOPPED	../../inc/az_test.h	188;"	d
+AZ_THREAD_BEAM_THR_START	../../inc/az_thread.h	59;"	d
+AZ_THREAD_BEAM_THR_STOP	../../inc/az_thread.h	60;"	d
+AZ_THREAD_BEAM_TRZ	../../inc/az_thread.h	61;"	d
+AZ_THREAD_BEAM_VECTORS	../../inc/az_thread.h	58;"	d
+AZ_THREAD_CFG_CAT_APP	../../inc/az_thread_cfg.h	51;"	d
+AZ_THREAD_CFG_CAT_SYS	../../inc/az_thread_cfg.h	50;"	d
 AZ_THREAD_CFG_H	../../inc/az_thread_cfg.h	22;"	d
+AZ_THREAD_CFG_KEY_arg_name	../../inc/az_thread_cfg.h	39;"	d
+AZ_THREAD_CFG_KEY_coremask	../../inc/az_thread_cfg.h	43;"	d
+AZ_THREAD_CFG_KEY_entry_name	../../inc/az_thread_cfg.h	38;"	d
+AZ_THREAD_CFG_KEY_name	../../inc/az_thread_cfg.h	37;"	d
+AZ_THREAD_CFG_KEY_policy	../../inc/az_thread_cfg.h	44;"	d
+AZ_THREAD_CFG_KEY_priority	../../inc/az_thread_cfg.h	45;"	d
+AZ_THREAD_CFG_KEY_schedule	../../inc/az_thread_cfg.h	42;"	d
+AZ_THREAD_CFG_KEY_stackSize	../../inc/az_thread_cfg.h	41;"	d
+AZ_THREAD_CFG_KEY_tag	../../inc/az_thread_cfg.h	40;"	d
+AZ_THREAD_CFG_KEY_thread	../../inc/az_thread_cfg.h	36;"	d
+AZ_THREAD_CFG_KEY_threadlist	../../inc/az_thread_cfg.h	35;"	d
+AZ_THREAD_CFG_NAME_LEN	../../inc/az_thread_cfg.h	33;"	d
 AZ_THREAD_CFG_TREE	../../inc/az_thread_cfg.h	52;"	d
+AZ_THREAD_CFG_TREE	../../inc/az_thread_cfg.h	54;"	d
+AZ_THREAD_CFG_VAL_policy_SCHED_FIFO	../../inc/az_thread_cfg.h	48;"	d
+AZ_THREAD_CFG_VAL_policy_SCHED_RR	../../inc/az_thread_cfg.h	47;"	d
 AZ_THREAD_ERROR_CREATE	../../inc/az_thread.h	39;"	d
 AZ_THREAD_ERROR_CREATE	../../inc/az_thread.h	40;"	d
+AZ_THREAD_ERROR_CREATED	../../inc/az_thread.h	51;"	d
 AZ_THREAD_ERROR_DELETE	../../inc/az_thread.h	42;"	d
 AZ_THREAD_ERROR_DELETE	../../inc/az_thread.h	43;"	d
+AZ_THREAD_ERROR_DELETE	../../inc/az_thread.h	54;"	d
 AZ_THREAD_ERROR_RCVEVT	../../inc/az_thread.h	44;"	d
 AZ_THREAD_ERROR_RCVEVT	../../inc/az_thread.h	45;"	d
+AZ_THREAD_ERROR_RCVEVT	../../inc/az_thread.h	56;"	d
 AZ_THREAD_ERROR_SNDEVT	../../inc/az_thread.h	43;"	d
 AZ_THREAD_ERROR_SNDEVT	../../inc/az_thread.h	44;"	d
+AZ_THREAD_ERROR_SNDEVT	../../inc/az_thread.h	55;"	d
 AZ_THREAD_ERROR_START	../../inc/az_thread.h	40;"	d
 AZ_THREAD_ERROR_START	../../inc/az_thread.h	41;"	d
+AZ_THREAD_ERROR_START	../../inc/az_thread.h	52;"	d
 AZ_THREAD_ERROR_STOP	../../inc/az_thread.h	41;"	d
 AZ_THREAD_ERROR_STOP	../../inc/az_thread.h	42;"	d
+AZ_THREAD_ERROR_STOP	../../inc/az_thread.h	53;"	d
+AZ_THREAD_EXCPT_POINT	../../inc/az_thread.h	190;"	d
+AZ_THREAD_FLAGS_INI_VAL	../../inc/az_thread.h	81;"	d
+AZ_THREAD_FLAGS_INI_VAL	../../inc/az_thread.h	83;"	d
+AZ_THREAD_FLAGS_LOG_ERR	../../inc/az_thread.h	75;"	d
+AZ_THREAD_FLAGS_MASK	../../inc/az_thread.h	78;"	d
+AZ_THREAD_FLAGS_PROBE	../../inc/az_thread.h	77;"	d
+AZ_THREAD_FLAGS_TRACE	../../inc/az_thread.h	76;"	d
 AZ_THREAD_H	../../inc/az_thread.h	22;"	d
+AZ_THREAD_ID_INVALID	../../inc/az_thread.h	89;"	d
+AZ_THREAD_INVALID	../../inc/az_thread.h	175;"	d
+AZ_THREAD_IS_STATE_EXCPT	../../inc/az_thread.h	189;"	d
+AZ_THREAD_MSG_CATEGORY	../../inc/az_thread.h	194;"	d
+AZ_THREAD_MSG_CAT_MASK	../../inc/az_thread.h	68;"	d
+AZ_THREAD_MSG_CAT_MASK	../../inc/az_thread.h	72;"	d
+AZ_THREAD_MSG_EXCEPTION	../../inc/az_thread.h	66;"	d
+AZ_THREAD_MSG_EXCEPTION	../../inc/az_thread.h	70;"	d
+AZ_THREAD_MSG_GET_ION_ID	../../inc/az_thread.h	195;"	d
+AZ_THREAD_MSG_STATECHG	../../inc/az_thread.h	67;"	d
+AZ_THREAD_MSG_STATECHG	../../inc/az_thread.h	71;"	d
+AZ_THREAD_NAME	../../inc/az_thread.h	178;"	d
+AZ_THREAD_NAME	../../inc/az_thread.h	180;"	d
+AZ_THREAD_ON_EXCPT	../../inc/az_thread.h	191;"	d
+AZ_THREAD_PRIORITY_MAX	../../inc/az_thread_types.h	32;"	d
+AZ_THREAD_PRIORITY_MIN	../../inc/az_thread_types.h	31;"	d
+AZ_THREAD_REPORT_EXCPT	../../inc/az_thread.h	192;"	d
 AZ_THREAD_STATE_BUSY	../../inc/az_thread.h	36;"	d
+AZ_THREAD_STATE_BUSY	../../inc/az_thread.h	47;"	d
 AZ_THREAD_STATE_CREATED	../../inc/az_thread.h	33;"	d
+AZ_THREAD_STATE_CREATED	../../inc/az_thread.h	44;"	d
 AZ_THREAD_STATE_ERROR	../../inc/az_thread.h	37;"	d
+AZ_THREAD_STATE_ERROR	../../inc/az_thread.h	48;"	d
 AZ_THREAD_STATE_EXCP	../../inc/az_thread.h	38;"	d
+AZ_THREAD_STATE_EXCPT	../../inc/az_thread.h	49;"	d
 AZ_THREAD_STATE_START	../../inc/az_thread.h	34;"	d
+AZ_THREAD_STATE_START	../../inc/az_thread.h	45;"	d
 AZ_THREAD_STATE_STOP	../../inc/az_thread.h	35;"	d
+AZ_THREAD_STATE_STOP	../../inc/az_thread.h	46;"	d
+AZ_THREAD_TRACE_DISABLE	../../inc/az_thread.h	88;"	d
+AZ_THREAD_TRACE_ENABLE	../../inc/az_thread.h	87;"	d
+AZ_THREAD_TRACE_ENABLED	../../inc/az_thread.h	86;"	d
+AZ_THREAD_TRACE_SET_CURFUNC	../../inc/az_thread.h	238;"	d
+AZ_THREAD_TYPES_H	../../inc/az_thread_types.h	22;"	d
 AZ_THR_CFG_CAT_APP	../../inc/az_thread_cfg.h	49;"	d
 AZ_THR_CFG_CAT_SYS	../../inc/az_thread_cfg.h	48;"	d
 AZ_THR_CFG_KEY_arg_name	../../inc/az_thread_cfg.h	38;"	d
@@ -1626,6 +1712,7 @@ AZ_VAR_TYPE_ARRAY	../../inc/az_var.h	/^  AZ_VAR_TYPE_ARRAY,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_ARRAY	../../inc/az_var.h	/^  AZ_VAR_TYPE_ARRAY,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_ARRAY	../../inc/az_var.h	/^  AZ_VAR_TYPE_ARRAY,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_ARRAY	../../inc/az_var.h	/^  AZ_VAR_TYPE_ARRAY,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_ARRAY	../../inc/az_var.h	/^  AZ_VAR_TYPE_ARRAY,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_BIT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT16,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_BIT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT16,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_BIT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT16,$/;"	e	enum:__anon25
@@ -1633,6 +1720,7 @@ AZ_VAR_TYPE_BIT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT16,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_BIT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT16,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_BIT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT16,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_BIT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT16,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_BIT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT16,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_BIT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT32,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_BIT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT32,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_BIT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT32,$/;"	e	enum:__anon25
@@ -1640,6 +1728,7 @@ AZ_VAR_TYPE_BIT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT32,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_BIT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT32,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_BIT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT32,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_BIT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT32,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_BIT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT32,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_BIT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT64,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_BIT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT64,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_BIT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT64,$/;"	e	enum:__anon25
@@ -1647,6 +1736,7 @@ AZ_VAR_TYPE_BIT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT64,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_BIT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT64,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_BIT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT64,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_BIT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT64,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_BIT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT64,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_BIT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT8,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_BIT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT8,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_BIT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT8,$/;"	e	enum:__anon25
@@ -1654,6 +1744,7 @@ AZ_VAR_TYPE_BIT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT8,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_BIT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT8,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_BIT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT8,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_BIT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT8,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_BIT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_BIT8,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_BOOL	../../inc/az_var.h	/^  AZ_VAR_TYPE_BOOL,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_BOOL	../../inc/az_var.h	/^  AZ_VAR_TYPE_BOOL,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_BOOL	../../inc/az_var.h	/^  AZ_VAR_TYPE_BOOL,$/;"	e	enum:__anon25
@@ -1661,6 +1752,7 @@ AZ_VAR_TYPE_BOOL	../../inc/az_var.h	/^  AZ_VAR_TYPE_BOOL,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_BOOL	../../inc/az_var.h	/^  AZ_VAR_TYPE_BOOL,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_BOOL	../../inc/az_var.h	/^  AZ_VAR_TYPE_BOOL,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_BOOL	../../inc/az_var.h	/^  AZ_VAR_TYPE_BOOL,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_BOOL	../../inc/az_var.h	/^  AZ_VAR_TYPE_BOOL,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_CHAR	../../inc/az_var.h	/^  AZ_VAR_TYPE_CHAR,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_CHAR	../../inc/az_var.h	/^  AZ_VAR_TYPE_CHAR,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_CHAR	../../inc/az_var.h	/^  AZ_VAR_TYPE_CHAR,$/;"	e	enum:__anon25
@@ -1668,6 +1760,7 @@ AZ_VAR_TYPE_CHAR	../../inc/az_var.h	/^  AZ_VAR_TYPE_CHAR,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_CHAR	../../inc/az_var.h	/^  AZ_VAR_TYPE_CHAR,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_CHAR	../../inc/az_var.h	/^  AZ_VAR_TYPE_CHAR,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_CHAR	../../inc/az_var.h	/^  AZ_VAR_TYPE_CHAR,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_CHAR	../../inc/az_var.h	/^  AZ_VAR_TYPE_CHAR,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_DESCR	../../inc/az_var.h	/^  AZ_VAR_TYPE_DESCR,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_DESCR	../../inc/az_var.h	/^  AZ_VAR_TYPE_DESCR,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_DESCR	../../inc/az_var.h	/^  AZ_VAR_TYPE_DESCR,$/;"	e	enum:__anon25
@@ -1675,6 +1768,7 @@ AZ_VAR_TYPE_DESCR	../../inc/az_var.h	/^  AZ_VAR_TYPE_DESCR,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_DESCR	../../inc/az_var.h	/^  AZ_VAR_TYPE_DESCR,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_DESCR	../../inc/az_var.h	/^  AZ_VAR_TYPE_DESCR,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_DESCR	../../inc/az_var.h	/^  AZ_VAR_TYPE_DESCR,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_DESCR	../../inc/az_var.h	/^  AZ_VAR_TYPE_DESCR,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_DOUBLE	../../inc/az_var.h	/^  AZ_VAR_TYPE_DOUBLE,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_DOUBLE	../../inc/az_var.h	/^  AZ_VAR_TYPE_DOUBLE,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_DOUBLE	../../inc/az_var.h	/^  AZ_VAR_TYPE_DOUBLE,$/;"	e	enum:__anon25
@@ -1682,6 +1776,7 @@ AZ_VAR_TYPE_DOUBLE	../../inc/az_var.h	/^  AZ_VAR_TYPE_DOUBLE,$/;"	e	enum:__anon3
 AZ_VAR_TYPE_DOUBLE	../../inc/az_var.h	/^  AZ_VAR_TYPE_DOUBLE,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_DOUBLE	../../inc/az_var.h	/^  AZ_VAR_TYPE_DOUBLE,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_DOUBLE	../../inc/az_var.h	/^  AZ_VAR_TYPE_DOUBLE,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_DOUBLE	../../inc/az_var.h	/^  AZ_VAR_TYPE_DOUBLE,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_ENUM	../../inc/az_var.h	/^  AZ_VAR_TYPE_ENUM,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_ENUM	../../inc/az_var.h	/^  AZ_VAR_TYPE_ENUM,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_ENUM	../../inc/az_var.h	/^  AZ_VAR_TYPE_ENUM,$/;"	e	enum:__anon25
@@ -1689,6 +1784,7 @@ AZ_VAR_TYPE_ENUM	../../inc/az_var.h	/^  AZ_VAR_TYPE_ENUM,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_ENUM	../../inc/az_var.h	/^  AZ_VAR_TYPE_ENUM,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_ENUM	../../inc/az_var.h	/^  AZ_VAR_TYPE_ENUM,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_ENUM	../../inc/az_var.h	/^  AZ_VAR_TYPE_ENUM,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_ENUM	../../inc/az_var.h	/^  AZ_VAR_TYPE_ENUM,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_FLOAT	../../inc/az_var.h	/^  AZ_VAR_TYPE_FLOAT,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_FLOAT	../../inc/az_var.h	/^  AZ_VAR_TYPE_FLOAT,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_FLOAT	../../inc/az_var.h	/^  AZ_VAR_TYPE_FLOAT,$/;"	e	enum:__anon25
@@ -1696,6 +1792,7 @@ AZ_VAR_TYPE_FLOAT	../../inc/az_var.h	/^  AZ_VAR_TYPE_FLOAT,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_FLOAT	../../inc/az_var.h	/^  AZ_VAR_TYPE_FLOAT,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_FLOAT	../../inc/az_var.h	/^  AZ_VAR_TYPE_FLOAT,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_FLOAT	../../inc/az_var.h	/^  AZ_VAR_TYPE_FLOAT,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_FLOAT	../../inc/az_var.h	/^  AZ_VAR_TYPE_FLOAT,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_INT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT16,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_INT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT16,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_INT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT16,$/;"	e	enum:__anon25
@@ -1703,6 +1800,7 @@ AZ_VAR_TYPE_INT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT16,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_INT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT16,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_INT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT16,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_INT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT16,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_INT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT16,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_INT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT32,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_INT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT32,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_INT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT32,$/;"	e	enum:__anon25
@@ -1710,6 +1808,7 @@ AZ_VAR_TYPE_INT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT32,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_INT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT32,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_INT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT32,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_INT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT32,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_INT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT32,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_INT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT64,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_INT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT64,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_INT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT64,$/;"	e	enum:__anon25
@@ -1717,6 +1816,7 @@ AZ_VAR_TYPE_INT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT64,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_INT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT64,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_INT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT64,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_INT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT64,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_INT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT64,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_INT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT8,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_INT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT8,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_INT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT8,$/;"	e	enum:__anon25
@@ -1724,6 +1824,7 @@ AZ_VAR_TYPE_INT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT8,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_INT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT8,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_INT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT8,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_INT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT8,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_INT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_INT8,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_KEY_ARRAY	../../inc/az_xcfg.h	80;"	d
 AZ_VAR_TYPE_KEY_BIT16	../../inc/az_xcfg.h	66;"	d
 AZ_VAR_TYPE_KEY_BIT32	../../inc/az_xcfg.h	67;"	d
@@ -1757,6 +1858,7 @@ AZ_VAR_TYPE_MAX	../../inc/az_var.h	/^  AZ_VAR_TYPE_MAX,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_MAX	../../inc/az_var.h	/^  AZ_VAR_TYPE_MAX,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_MAX	../../inc/az_var.h	/^  AZ_VAR_TYPE_MAX,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_MAX	../../inc/az_var.h	/^  AZ_VAR_TYPE_MAX,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_MAX	../../inc/az_var.h	/^  AZ_VAR_TYPE_MAX,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_NULL	../../inc/az_var.h	/^  AZ_VAR_TYPE_NULL = 0,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_NULL	../../inc/az_var.h	/^  AZ_VAR_TYPE_NULL = 0,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_NULL	../../inc/az_var.h	/^  AZ_VAR_TYPE_NULL = 0,$/;"	e	enum:__anon25
@@ -1764,6 +1866,7 @@ AZ_VAR_TYPE_NULL	../../inc/az_var.h	/^  AZ_VAR_TYPE_NULL = 0,$/;"	e	enum:__anon3
 AZ_VAR_TYPE_NULL	../../inc/az_var.h	/^  AZ_VAR_TYPE_NULL = 0,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_NULL	../../inc/az_var.h	/^  AZ_VAR_TYPE_NULL = 0,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_NULL	../../inc/az_var.h	/^  AZ_VAR_TYPE_NULL = 0,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_NULL	../../inc/az_var.h	/^  AZ_VAR_TYPE_NULL = 0,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_POS	../../inc/az_var.h	/^  AZ_VAR_TYPE_POS,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_POS	../../inc/az_var.h	/^  AZ_VAR_TYPE_POS,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_POS	../../inc/az_var.h	/^  AZ_VAR_TYPE_POS,$/;"	e	enum:__anon25
@@ -1771,6 +1874,7 @@ AZ_VAR_TYPE_POS	../../inc/az_var.h	/^  AZ_VAR_TYPE_POS,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_POS	../../inc/az_var.h	/^  AZ_VAR_TYPE_POS,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_POS	../../inc/az_var.h	/^  AZ_VAR_TYPE_POS,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_POS	../../inc/az_var.h	/^  AZ_VAR_TYPE_POS,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_POS	../../inc/az_var.h	/^  AZ_VAR_TYPE_POS,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_REF	../../inc/az_var.h	/^  AZ_VAR_TYPE_REF,  \/\/ void *$/;"	e	enum:__anon20
 AZ_VAR_TYPE_REF	../../inc/az_var.h	/^  AZ_VAR_TYPE_REF,  \/\/ void *$/;"	e	enum:__anon23
 AZ_VAR_TYPE_REF	../../inc/az_var.h	/^  AZ_VAR_TYPE_REF,  \/\/ void *$/;"	e	enum:__anon25
@@ -1778,6 +1882,7 @@ AZ_VAR_TYPE_REF	../../inc/az_var.h	/^  AZ_VAR_TYPE_REF,  \/\/ void *$/;"	e	enum:
 AZ_VAR_TYPE_REF	../../inc/az_var.h	/^  AZ_VAR_TYPE_REF,  \/\/ void *$/;"	e	enum:__anon44
 AZ_VAR_TYPE_REF	../../inc/az_var.h	/^  AZ_VAR_TYPE_REF,  \/\/ void *$/;"	e	enum:__anon46
 AZ_VAR_TYPE_REF	../../inc/az_var.h	/^  AZ_VAR_TYPE_REF,  \/\/ void *$/;"	e	enum:__anon47
+AZ_VAR_TYPE_REF	../../inc/az_var.h	/^  AZ_VAR_TYPE_REF,  \/\/ void *$/;"	e	enum:__anon48
 AZ_VAR_TYPE_RET	../../inc/az_var.h	/^  AZ_VAR_TYPE_RET,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_RET	../../inc/az_var.h	/^  AZ_VAR_TYPE_RET,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_RET	../../inc/az_var.h	/^  AZ_VAR_TYPE_RET,$/;"	e	enum:__anon25
@@ -1785,6 +1890,7 @@ AZ_VAR_TYPE_RET	../../inc/az_var.h	/^  AZ_VAR_TYPE_RET,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_RET	../../inc/az_var.h	/^  AZ_VAR_TYPE_RET,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_RET	../../inc/az_var.h	/^  AZ_VAR_TYPE_RET,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_RET	../../inc/az_var.h	/^  AZ_VAR_TYPE_RET,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_RET	../../inc/az_var.h	/^  AZ_VAR_TYPE_RET,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_SIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_SIZE,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_SIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_SIZE,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_SIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_SIZE,$/;"	e	enum:__anon25
@@ -1792,6 +1898,7 @@ AZ_VAR_TYPE_SIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_SIZE,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_SIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_SIZE,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_SIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_SIZE,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_SIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_SIZE,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_SIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_SIZE,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_STRING	../../inc/az_var.h	/^  AZ_VAR_TYPE_STRING,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_STRING	../../inc/az_var.h	/^  AZ_VAR_TYPE_STRING,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_STRING	../../inc/az_var.h	/^  AZ_VAR_TYPE_STRING,$/;"	e	enum:__anon25
@@ -1799,6 +1906,7 @@ AZ_VAR_TYPE_STRING	../../inc/az_var.h	/^  AZ_VAR_TYPE_STRING,$/;"	e	enum:__anon3
 AZ_VAR_TYPE_STRING	../../inc/az_var.h	/^  AZ_VAR_TYPE_STRING,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_STRING	../../inc/az_var.h	/^  AZ_VAR_TYPE_STRING,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_STRING	../../inc/az_var.h	/^  AZ_VAR_TYPE_STRING,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_STRING	../../inc/az_var.h	/^  AZ_VAR_TYPE_STRING,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_UINT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT16,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_UINT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT16,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_UINT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT16,$/;"	e	enum:__anon25
@@ -1806,6 +1914,7 @@ AZ_VAR_TYPE_UINT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT16,$/;"	e	enum:__anon3
 AZ_VAR_TYPE_UINT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT16,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_UINT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT16,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_UINT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT16,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_UINT16	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT16,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_UINT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT32,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_UINT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT32,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_UINT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT32,$/;"	e	enum:__anon25
@@ -1813,6 +1922,7 @@ AZ_VAR_TYPE_UINT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT32,$/;"	e	enum:__anon3
 AZ_VAR_TYPE_UINT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT32,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_UINT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT32,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_UINT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT32,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_UINT32	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT32,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_UINT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT64,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_UINT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT64,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_UINT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT64,$/;"	e	enum:__anon25
@@ -1820,6 +1930,7 @@ AZ_VAR_TYPE_UINT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT64,$/;"	e	enum:__anon3
 AZ_VAR_TYPE_UINT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT64,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_UINT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT64,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_UINT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT64,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_UINT64	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT64,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_UINT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT8,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_UINT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT8,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_UINT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT8,$/;"	e	enum:__anon25
@@ -1827,6 +1938,7 @@ AZ_VAR_TYPE_UINT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT8,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_UINT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT8,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_UINT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT8,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_UINT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT8,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_UINT8	../../inc/az_var.h	/^  AZ_VAR_TYPE_UINT8,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_UPOS	../../inc/az_var.h	/^  AZ_VAR_TYPE_UPOS,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_UPOS	../../inc/az_var.h	/^  AZ_VAR_TYPE_UPOS,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_UPOS	../../inc/az_var.h	/^  AZ_VAR_TYPE_UPOS,$/;"	e	enum:__anon25
@@ -1834,6 +1946,7 @@ AZ_VAR_TYPE_UPOS	../../inc/az_var.h	/^  AZ_VAR_TYPE_UPOS,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_UPOS	../../inc/az_var.h	/^  AZ_VAR_TYPE_UPOS,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_UPOS	../../inc/az_var.h	/^  AZ_VAR_TYPE_UPOS,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_UPOS	../../inc/az_var.h	/^  AZ_VAR_TYPE_UPOS,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_UPOS	../../inc/az_var.h	/^  AZ_VAR_TYPE_UPOS,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_USIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_USIZE,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_USIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_USIZE,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_USIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_USIZE,$/;"	e	enum:__anon25
@@ -1841,6 +1954,7 @@ AZ_VAR_TYPE_USIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_USIZE,$/;"	e	enum:__anon39
 AZ_VAR_TYPE_USIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_USIZE,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_USIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_USIZE,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_USIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_USIZE,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_USIZE	../../inc/az_var.h	/^  AZ_VAR_TYPE_USIZE,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_VECTOR	../../inc/az_var.h	/^  AZ_VAR_TYPE_VECTOR,$/;"	e	enum:__anon20
 AZ_VAR_TYPE_VECTOR	../../inc/az_var.h	/^  AZ_VAR_TYPE_VECTOR,$/;"	e	enum:__anon23
 AZ_VAR_TYPE_VECTOR	../../inc/az_var.h	/^  AZ_VAR_TYPE_VECTOR,$/;"	e	enum:__anon25
@@ -1848,6 +1962,7 @@ AZ_VAR_TYPE_VECTOR	../../inc/az_var.h	/^  AZ_VAR_TYPE_VECTOR,$/;"	e	enum:__anon3
 AZ_VAR_TYPE_VECTOR	../../inc/az_var.h	/^  AZ_VAR_TYPE_VECTOR,$/;"	e	enum:__anon44
 AZ_VAR_TYPE_VECTOR	../../inc/az_var.h	/^  AZ_VAR_TYPE_VECTOR,$/;"	e	enum:__anon46
 AZ_VAR_TYPE_VECTOR	../../inc/az_var.h	/^  AZ_VAR_TYPE_VECTOR,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_VECTOR	../../inc/az_var.h	/^  AZ_VAR_TYPE_VECTOR,$/;"	e	enum:__anon48
 AZ_VER_H	../../inc/az_ver.h	22;"	d
 AZ_XCFG_H	../../inc/az_xcfg.h	22;"	d
 AZ_XML_CDATA_END_TAG	../../inc/az_xml.h	44;"	d
@@ -2026,52 +2141,69 @@ CONFIG_AZM	../../inc/az_config.h	91;"	d
 CONFIG_AZM	../../inc/az_config.h	92;"	d
 CONFIG_AZM	../../inc/az_config.h	94;"	d
 CONFIG_AZM	../../inc/az_config.h	95;"	d
+CONFIG_AZM	../../inc/az_config.h	97;"	d
 CONFIG_AZ_APP_CFG_FILE	../../inc/az_config.h	126;"	d
 CONFIG_AZ_APP_CFG_FILE	../../inc/az_config.h	151;"	d
 CONFIG_AZ_APP_CFG_FILE	../../inc/az_config.h	159;"	d
+CONFIG_AZ_APP_CFG_FILE	../../inc/az_config.h	162;"	d
 CONFIG_AZ_APP_CFG_FILE	../../inc/az_config.h	73;"	d
 CONFIG_AZ_CFG_FOLDER	../../inc/az_config.h	123;"	d
 CONFIG_AZ_CFG_FOLDER	../../inc/az_config.h	148;"	d
 CONFIG_AZ_CFG_FOLDER	../../inc/az_config.h	156;"	d
+CONFIG_AZ_CFG_FOLDER	../../inc/az_config.h	159;"	d
 CONFIG_AZ_CFG_FOLDER	../../inc/az_config.h	70;"	d
 CONFIG_AZ_CLI	../../inc/az_config.h	66;"	d
 CONFIG_AZ_CLI	../../inc/az_config.h	81;"	d
 CONFIG_AZ_CLI	../../inc/az_config.h	88;"	d
 CONFIG_AZ_CLI	../../inc/az_config.h	91;"	d
+CONFIG_AZ_CLI	../../inc/az_config.h	94;"	d
 CONFIG_AZ_CLI_CMDBUF_SZ	../../inc/cli/az_cli_cmd.h	37;"	d
 CONFIG_AZ_CLI_CMDBUF_SZ	../../inc/cli/az_cli_cmd.h	41;"	d
 CONFIG_AZ_CLI_INPUT_FRWD	../../inc/az_config.h	114;"	d
 CONFIG_AZ_CLI_INPUT_FRWD	../../inc/az_config.h	117;"	d
+CONFIG_AZ_CLI_INPUT_FRWD	../../inc/az_config.h	120;"	d
 CONFIG_AZ_CLI_INPUT_FRWD	../../inc/az_config.h	92;"	d
 CONFIG_AZ_CLI_MAX_ARGS	../../inc/cli/az_cli_cmd.h	41;"	d
 CONFIG_AZ_CLI_MAX_ARGS	../../inc/cli/az_cli_cmd.h	45;"	d
 CONFIG_AZ_CLI_MAX_CMDS	../../inc/cli/az_cli_cmd.h	33;"	d
 CONFIG_AZ_CLI_MAX_CMDS	../../inc/cli/az_cli_cmd.h	37;"	d
 CONFIG_AZ_CLI_SHELL_PROMPT	../../inc/az_config.h	100;"	d
+CONFIG_AZ_CLI_SHELL_PROMPT	../../inc/az_config.h	101;"	d
+CONFIG_AZ_CLI_SHELL_PROMPT	../../inc/az_config.h	103;"	d
 CONFIG_AZ_CLI_SHELL_PROMPT	../../inc/az_config.h	95;"	d
 CONFIG_AZ_CLI_SHELL_PROMPT	../../inc/az_config.h	97;"	d
 CONFIG_AZ_CLI_SHELL_PROMPT	../../inc/az_config.h	98;"	d
 CONFIG_AZ_CLI_SVR_PORT	../../inc/az_config.h	133;"	d
 CONFIG_AZ_CLI_SVR_PORT	../../inc/az_config.h	137;"	d
+CONFIG_AZ_CLI_SVR_PORT	../../inc/az_config.h	140;"	d
 CONFIG_AZ_CLI_TX_BUFFER_SZ	../../inc/cli/az_cli.h	34;"	d
 CONFIG_AZ_CLI_TX_BUFFER_SZ	../../inc/cli/az_cli.h	35;"	d
 CONFIG_AZ_CLI_TX_BUFFER_SZ	../../inc/cli/az_cli.h	41;"	d
+CONFIG_AZ_DEBUG	../../inc/az_config.h	46;"	d
+CONFIG_AZ_DEBUG	../../inc/az_config.h	47;"	d
 CONFIG_AZ_DEBUG_NATIVE_APP	../../inc/az_config.h	46;"	d
 CONFIG_AZ_DEBUG_NATIVE_APP	../../inc/az_config.h	47;"	d
+CONFIG_AZ_DEBUG_NATIVE_APP	../../inc/az_config.h	49;"	d
+CONFIG_AZ_DEBUG_NATIVE_APP	../../inc/az_config.h	50;"	d
 CONFIG_AZ_DYN_THR_ALLOC	../../inc/az_config.h	45;"	d
 CONFIG_AZ_DYN_THR_ALLOC	../../inc/az_config.h	47;"	d
 CONFIG_AZ_DYN_THR_ALLOC	../../inc/az_config.h	54;"	d
+CONFIG_AZ_DYN_THR_ALLOC	../../inc/az_config.h	57;"	d
 CONFIG_AZ_ERR_LOG	../../inc/az_config.h	128;"	d
 CONFIG_AZ_ERR_LOG	../../inc/az_config.h	153;"	d
 CONFIG_AZ_ERR_LOG	../../inc/az_config.h	161;"	d
+CONFIG_AZ_ERR_LOG	../../inc/az_config.h	164;"	d
 CONFIG_AZ_ERR_LOG	../../inc/az_config.h	75;"	d
 CONFIG_AZ_EXP_CALLSTACK_DEPTH	../../inc/az_config.h	159;"	d
 CONFIG_AZ_EXP_CALLSTACK_DEPTH	../../inc/az_config.h	167;"	d
+CONFIG_AZ_EXP_CALLSTACK_DEPTH	../../inc/az_config.h	170;"	d
 CONFIG_AZ_ION_NONIO	../../inc/az_config.h	203;"	d
+CONFIG_AZ_ION_NONIO	../../inc/az_config.h	211;"	d
 CONFIG_AZ_LOG	../../inc/az_config.h	63;"	d
 CONFIG_AZ_LOG	../../inc/az_config.h	65;"	d
 CONFIG_AZ_LOG	../../inc/az_config.h	72;"	d
 CONFIG_AZ_LOG	../../inc/az_config.h	75;"	d
+CONFIG_AZ_LOG	../../inc/az_config.h	78;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	108;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	68;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	69;"	d
@@ -2079,15 +2211,23 @@ CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	75;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	76;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	78;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	79;"	d
+CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	81;"	d
+CONFIG_AZ_LOG_DUP_STDOUT	../../inc/az_config.h	82;"	d
 CONFIG_AZ_LOG_DUP_USE_LOCAL_SOCKET	../../inc/az_config.h	71;"	d
 CONFIG_AZ_LOG_DUP_USE_LOCAL_SOCKET	../../inc/az_config.h	78;"	d
 CONFIG_AZ_LOG_DUP_USE_LOCAL_SOCKET	../../inc/az_config.h	81;"	d
+CONFIG_AZ_LOG_DUP_USE_LOCAL_SOCKET	../../inc/az_config.h	84;"	d
 CONFIG_AZ_LOG_FLAGS_DFT	../../inc/az_config.h	188;"	d
+CONFIG_AZ_LOG_FLAGS_DFT	../../inc/az_config.h	191;"	d
+CONFIG_AZ_LOG_FLAGS_DFT	../../inc/az_config.h	195;"	d
 CONFIG_AZ_LOG_FOLDER	../../inc/az_config.h	124;"	d
 CONFIG_AZ_LOG_FOLDER	../../inc/az_config.h	149;"	d
 CONFIG_AZ_LOG_FOLDER	../../inc/az_config.h	157;"	d
+CONFIG_AZ_LOG_FOLDER	../../inc/az_config.h	160;"	d
 CONFIG_AZ_LOG_FOLDER	../../inc/az_config.h	71;"	d
 CONFIG_AZ_LOG_LEVEL_DFT	../../inc/az_config.h	187;"	d
+CONFIG_AZ_LOG_LEVEL_DFT	../../inc/az_config.h	190;"	d
+CONFIG_AZ_LOG_LEVEL_DFT	../../inc/az_config.h	194;"	d
 CONFIG_AZ_LOG_MAX	../../inc/az_log.h	40;"	d
 CONFIG_AZ_LOG_MAX	../../inc/az_log.h	41;"	d
 CONFIG_AZ_LOG_OUTPORT_MAX	../../inc/az_log.h	44;"	d
@@ -2098,34 +2238,45 @@ CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../inc/az_config.h	81;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../inc/az_config.h	82;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../inc/az_config.h	84;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../inc/az_config.h	85;"	d
+CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../inc/az_config.h	87;"	d
+CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../inc/az_config.h	88;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE_PREFIX	../../inc/az_config.h	78;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE_PREFIX	../../inc/az_config.h	85;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE_PREFIX	../../inc/az_config.h	88;"	d
+CONFIG_AZ_LOG_STDOUT_DUMP_FILE_PREFIX	../../inc/az_config.h	91;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE_SIZE	../../inc/az_config.h	77;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE_SIZE	../../inc/az_config.h	84;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE_SIZE	../../inc/az_config.h	87;"	d
+CONFIG_AZ_LOG_STDOUT_DUMP_FILE_SIZE	../../inc/az_config.h	90;"	d
 CONFIG_AZ_LOG_USE_SELECT	../../inc/az_config.h	103;"	d
 CONFIG_AZ_LOG_USE_SELECT	../../inc/az_config.h	104;"	d
 CONFIG_AZ_LOG_USE_SELECT	../../inc/az_config.h	106;"	d
 CONFIG_AZ_LOG_USE_SELECT	../../inc/az_config.h	107;"	d
+CONFIG_AZ_LOG_USE_SELECT	../../inc/az_config.h	109;"	d
+CONFIG_AZ_LOG_USE_SELECT	../../inc/az_config.h	110;"	d
 CONFIG_AZ_MALLOC	../../inc/az_config.h	42;"	d
 CONFIG_AZ_MALLOC	../../inc/az_config.h	44;"	d
 CONFIG_AZ_MALLOC	../../inc/az_config.h	51;"	d
+CONFIG_AZ_MALLOC	../../inc/az_config.h	54;"	d
 CONFIG_AZ_MTRACE	../../inc/az_config.h	115;"	d
 CONFIG_AZ_MTRACE	../../inc/az_config.h	120;"	d
 CONFIG_AZ_MTRACE	../../inc/az_config.h	140;"	d
 CONFIG_AZ_MTRACE	../../inc/az_config.h	145;"	d
 CONFIG_AZ_MTRACE	../../inc/az_config.h	148;"	d
+CONFIG_AZ_MTRACE	../../inc/az_config.h	151;"	d
 CONFIG_AZ_MTRACE	../../inc/az_config.h	153;"	d
+CONFIG_AZ_MTRACE	../../inc/az_config.h	156;"	d
 CONFIG_AZ_MTRACE_LIST_SZ	../../inc/az_config.h	116;"	d
 CONFIG_AZ_MTRACE_LIST_SZ	../../inc/az_config.h	141;"	d
 CONFIG_AZ_MTRACE_LIST_SZ	../../inc/az_config.h	149;"	d
+CONFIG_AZ_MTRACE_LIST_SZ	../../inc/az_config.h	152;"	d
 CONFIG_AZ_NAME_MAX	../../inc/az_config.h	44;"	d
 CONFIG_AZ_NAME_MAX	../../inc/az_config.h	49;"	d
 CONFIG_AZ_NAME_MAX	../../inc/az_config.h	54;"	d
 CONFIG_AZ_NAME_MAX	../../inc/az_config.h	56;"	d
 CONFIG_AZ_NAME_MAX	../../inc/az_config.h	63;"	d
 CONFIG_AZ_NAME_MAX	../../inc/az_config.h	66;"	d
+CONFIG_AZ_NAME_MAX	../../inc/az_config.h	69;"	d
 CONFIG_AZ_PATH_MAX	../../inc/az_config.h	47;"	d
 CONFIG_AZ_PATH_MAX	../../inc/az_config.h	49;"	d
 CONFIG_AZ_PATH_MAX	../../inc/az_config.h	52;"	d
@@ -2137,84 +2288,127 @@ CONFIG_AZ_PATH_MAX	../../inc/az_config.h	66;"	d
 CONFIG_AZ_PATH_MAX	../../inc/az_config.h	68;"	d
 CONFIG_AZ_PATH_MAX	../../inc/az_config.h	69;"	d
 CONFIG_AZ_PATH_MAX	../../inc/az_config.h	71;"	d
+CONFIG_AZ_PATH_MAX	../../inc/az_config.h	72;"	d
+CONFIG_AZ_PATH_MAX	../../inc/az_config.h	74;"	d
 CONFIG_AZ_PERF_MEASURE_LOOP_CNT_DFT	../../inc/az_config.h	190;"	d
+CONFIG_AZ_PERF_MEASURE_LOOP_CNT_DFT	../../inc/az_config.h	198;"	d
 CONFIG_AZ_PERF_MEASURE_SAMPLES_DFT	../../inc/az_config.h	191;"	d
+CONFIG_AZ_PERF_MEASURE_SAMPLES_DFT	../../inc/az_config.h	199;"	d
 CONFIG_AZ_PROBE	../../inc/az_config.h	206;"	d
+CONFIG_AZ_PROBE	../../inc/az_config.h	214;"	d
 CONFIG_AZ_PROBE_ENABLE	../../inc/az_config.h	207;"	d
+CONFIG_AZ_PROBE_ENABLE	../../inc/az_config.h	215;"	d
 CONFIG_AZ_PROBE_SAMPLES_MAX	../../inc/az_config.h	208;"	d
+CONFIG_AZ_PROBE_SAMPLES_MAX	../../inc/az_config.h	216;"	d
 CONFIG_AZ_PROBE_SVR_PORT	../../inc/az_config.h	140;"	d
+CONFIG_AZ_PROBE_SVR_PORT	../../inc/az_config.h	143;"	d
+CONFIG_AZ_PROBE_SYS	../../inc/az_config.h	218;"	d
 CONFIG_AZ_REMOTE_STDIO_SVR_PORT	../../inc/az_config.h	136;"	d
 CONFIG_AZ_REMOTE_STDIO_SVR_PORT	../../inc/az_config.h	141;"	d
+CONFIG_AZ_REMOTE_STDIO_SVR_PORT	../../inc/az_config.h	144;"	d
 CONFIG_AZ_RSTDIO_ENABLED	../../inc/az_config.h	144;"	d
+CONFIG_AZ_RSTDIO_ENABLED	../../inc/az_config.h	147;"	d
 CONFIG_AZ_SEGV_TEST	../../inc/az_config.h	161;"	d
 CONFIG_AZ_SEGV_TEST	../../inc/az_config.h	162;"	d
 CONFIG_AZ_SEGV_TEST	../../inc/az_config.h	169;"	d
 CONFIG_AZ_SEGV_TEST	../../inc/az_config.h	170;"	d
+CONFIG_AZ_SEGV_TEST	../../inc/az_config.h	172;"	d
+CONFIG_AZ_SEGV_TEST	../../inc/az_config.h	173;"	d
 CONFIG_AZ_SIGHANDLE_MAX	../../inc/sys/az_sig.h	31;"	d
 CONFIG_AZ_SYS_CFG_FILE	../../inc/az_config.h	125;"	d
 CONFIG_AZ_SYS_CFG_FILE	../../inc/az_config.h	150;"	d
 CONFIG_AZ_SYS_CFG_FILE	../../inc/az_config.h	158;"	d
+CONFIG_AZ_SYS_CFG_FILE	../../inc/az_config.h	161;"	d
 CONFIG_AZ_SYS_CFG_FILE	../../inc/az_config.h	72;"	d
 CONFIG_AZ_SYS_LW_USE_MUTEX	../../inc/az_config.h	184;"	d
 CONFIG_AZ_SYS_LW_USE_MUTEX	../../inc/az_config.h	185;"	d
+CONFIG_AZ_SYS_LW_USE_MUTEX	../../inc/az_config.h	187;"	d
+CONFIG_AZ_SYS_LW_USE_MUTEX	../../inc/az_config.h	188;"	d
 CONFIG_AZ_SYS_LW_USE_SEM	../../inc/az_config.h	182;"	d
 CONFIG_AZ_SYS_LW_USE_SEM	../../inc/az_config.h	183;"	d
+CONFIG_AZ_SYS_LW_USE_SEM	../../inc/az_config.h	185;"	d
+CONFIG_AZ_SYS_LW_USE_SEM	../../inc/az_config.h	186;"	d
 CONFIG_AZ_SYS_PRINT_TIMESTAMP	../../inc/az_config.h	168;"	d
 CONFIG_AZ_SYS_PRINT_TIMESTAMP	../../inc/az_config.h	176;"	d
+CONFIG_AZ_SYS_PRINT_TIMESTAMP	../../inc/az_config.h	179;"	d
 CONFIG_AZ_TCPSERVER_USE_SELECT	../../inc/az_config.h	100;"	d
 CONFIG_AZ_TCPSERVER_USE_SELECT	../../inc/az_config.h	101;"	d
 CONFIG_AZ_TCPSERVER_USE_SELECT	../../inc/az_config.h	103;"	d
 CONFIG_AZ_TCPSERVER_USE_SELECT	../../inc/az_config.h	104;"	d
+CONFIG_AZ_TCPSERVER_USE_SELECT	../../inc/az_config.h	106;"	d
+CONFIG_AZ_TCPSERVER_USE_SELECT	../../inc/az_config.h	107;"	d
 CONFIG_AZ_TCP_SVR_PORT_INC_MAX	../../inc/az_config.h	132;"	d
 CONFIG_AZ_TCP_SVR_PORT_INC_MAX	../../inc/az_config.h	157;"	d
 CONFIG_AZ_TCP_SVR_PORT_INC_MAX	../../inc/az_config.h	165;"	d
+CONFIG_AZ_TCP_SVR_PORT_INC_MAX	../../inc/az_config.h	168;"	d
 CONFIG_AZ_TEST	../../inc/az_config.h	179;"	d
+CONFIG_AZ_TEST	../../inc/az_config.h	182;"	d
+CONFIG_AZ_THREAD_EXCPT_STK_SZ	../../inc/az_config.h	201;"	d
+CONFIG_AZ_THREAD_EXP_HANDLE	../../inc/az_config.h	209;"	d
+CONFIG_AZ_THREAD_MSG_QUEUE_SZ	../../inc/az_config.h	203;"	d
+CONFIG_AZ_THREAD_MSG_SZ	../../inc/az_config.h	202;"	d
+CONFIG_AZ_THREAD_PRTBUF_SZ	../../inc/az_config.h	180;"	d
 CONFIG_AZ_TRACE	../../inc/az_config.h	106;"	d
 CONFIG_AZ_TRACE	../../inc/az_config.h	109;"	d
+CONFIG_AZ_TRACE	../../inc/az_config.h	112;"	d
 CONFIG_AZ_TRACE	../../inc/az_config.h	113;"	d
 CONFIG_AZ_TRACE	../../inc/az_config.h	116;"	d
+CONFIG_AZ_TRACE	../../inc/az_config.h	119;"	d
 CONFIG_AZ_TRACE	../../inc/az_config.h	87;"	d
 CONFIG_AZ_TRACE	../../inc/az_config.h	88;"	d
 CONFIG_AZ_TRACE	../../inc/az_config.h	91;"	d
 CONFIG_AZ_TRACE_DEPTH_MAX	../../inc/az_config.h	105;"	d
 CONFIG_AZ_TRACE_DEPTH_MAX	../../inc/az_config.h	127;"	d
 CONFIG_AZ_TRACE_DEPTH_MAX	../../inc/az_config.h	131;"	d
+CONFIG_AZ_TRACE_DEPTH_MAX	../../inc/az_config.h	134;"	d
 CONFIG_AZ_TRACE_INICONN	../../inc/az_config.h	120;"	d
 CONFIG_AZ_TRACE_INICONN	../../inc/az_config.h	123;"	d
+CONFIG_AZ_TRACE_INICONN	../../inc/az_config.h	126;"	d
 CONFIG_AZ_TRACE_INICONN	../../inc/az_config.h	98;"	d
 CONFIG_AZ_TRACE_MON_SVR_PORT	../../inc/az_config.h	111;"	d
 CONFIG_AZ_TRACE_MON_SVR_PORT	../../inc/az_config.h	134;"	d
 CONFIG_AZ_TRACE_MON_SVR_PORT	../../inc/az_config.h	138;"	d
+CONFIG_AZ_TRACE_MON_SVR_PORT	../../inc/az_config.h	141;"	d
 CONFIG_AZ_TRACE_PRB_SVR_PORT	../../inc/az_config.h	112;"	d
 CONFIG_AZ_TRACE_PRB_SVR_PORT	../../inc/az_config.h	135;"	d
 CONFIG_AZ_TRACE_PRB_SVR_PORT	../../inc/az_config.h	139;"	d
+CONFIG_AZ_TRACE_PRB_SVR_PORT	../../inc/az_config.h	142;"	d
 CONFIG_AZ_TRACE_PTHREAD	../../inc/az_config.h	109;"	d
 CONFIG_AZ_TRACE_PTHREAD	../../inc/az_config.h	112;"	d
+CONFIG_AZ_TRACE_PTHREAD	../../inc/az_config.h	115;"	d
 CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	101;"	d
 CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	117;"	d
 CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	120;"	d
 CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	123;"	d
 CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	127;"	d
+CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	130;"	d
 CONFIG_AZ_TRACE_SELF	../../inc/az_config.h	95;"	d
 CONFIG_AZ_TRACE_TASKS	../../inc/az_config.h	104;"	d
 CONFIG_AZ_TRACE_TASKS	../../inc/az_config.h	126;"	d
 CONFIG_AZ_TRACE_TASKS	../../inc/az_config.h	130;"	d
+CONFIG_AZ_TRACE_TASKS	../../inc/az_config.h	133;"	d
 CONFIG_AZ_TRZ_LOG_SVR_NODE	../../inc/az_config.h	165;"	d
 CONFIG_AZ_TRZ_LOG_SVR_NODE	../../inc/az_config.h	173;"	d
+CONFIG_AZ_TRZ_LOG_SVR_NODE	../../inc/az_config.h	176;"	d
 CONFIG_AZ_TRZ_NODEID_DEFAULT	../../inc/az_config.h	166;"	d
 CONFIG_AZ_TRZ_NODEID_DEFAULT	../../inc/az_config.h	174;"	d
+CONFIG_AZ_TRZ_NODEID_DEFAULT	../../inc/az_config.h	177;"	d
 CONFIG_AZ_TRZ_NODEID_MAX	../../inc/az_config.h	164;"	d
 CONFIG_AZ_TRZ_NODEID_MAX	../../inc/az_config.h	172;"	d
+CONFIG_AZ_TRZ_NODEID_MAX	../../inc/az_config.h	175;"	d
 CONFIG_AZ_TRZ_SVR_PORT_BASE	../../inc/az_config.h	137;"	d
 CONFIG_AZ_TRZ_SVR_PORT_BASE	../../inc/az_config.h	142;"	d
+CONFIG_AZ_TRZ_SVR_PORT_BASE	../../inc/az_config.h	145;"	d
 CONFIG_AZ_USE_STDARG	../../inc/az_config.h	42;"	d
 CONFIG_AZ_USE_STDARG	../../inc/az_config.h	47;"	d
 CONFIG_AZ_USE_STDARG	../../inc/az_config.h	52;"	d
 CONFIG_AZ_USE_STDARG	../../inc/az_config.h	54;"	d
 CONFIG_AZ_USE_STDARG	../../inc/az_config.h	61;"	d
 CONFIG_AZ_USE_STDARG	../../inc/az_config.h	64;"	d
+CONFIG_AZ_USE_STDARG	../../inc/az_config.h	67;"	d
 CONFIG_AZ_USE_TLS	../../inc/az_config.h	42;"	d
 CONFIG_AZ_USE_TLS	../../inc/az_config.h	49;"	d
+CONFIG_AZ_USE_TLS	../../inc/az_config.h	52;"	d
 CONFIG_AZ_XU_EXCPT_STK_SZ	../../inc/az_config.h	193;"	d
 CONFIG_AZ_XU_EXP_HANDLE	../../inc/az_config.h	201;"	d
 CONFIG_AZ_XU_MSG_QUEUE_SZ	../../inc/az_config.h	195;"	d
@@ -2232,6 +2426,7 @@ CONFIG_M64	../../inc/az_config.h	30;"	d
 CONFIG_M64	../../inc/az_config.h	31;"	d
 CONFIG_M64	../../inc/az_config.h	32;"	d
 CONFIG_TEST_CASE	../../inc/az_config.h	60;"	d
+CONFIG_TEST_CASE	../../inc/az_config.h	63;"	d
 CONFIG_UNIT_TEST	../../inc/az_config.h	35;"	d
 CONFIG_UNIT_TEST	../../inc/az_config.h	40;"	d
 CONFIG_UNIT_TEST	../../inc/az_config.h	43;"	d
@@ -2239,6 +2434,7 @@ CONFIG_UNIT_TEST	../../inc/az_config.h	44;"	d
 CONFIG_UNIT_TEST	../../inc/az_config.h	48;"	d
 CONFIG_UNIT_TEST	../../inc/az_config.h	50;"	d
 CONFIG_UNIT_TEST	../../inc/az_config.h	57;"	d
+CONFIG_UNIT_TEST	../../inc/az_config.h	60;"	d
 CONFIG_WINDOWS	../../inc/az_config.h	27;"	d
 CONFIG_WINDOWS	../../inc/az_config.h	28;"	d
 Cleanup	../../inc/cli/az_cli.h	/^  az_cli_cleanup_t  Cleanup;$/;"	m	struct:az_cli_shell
@@ -2364,16 +2560,19 @@ _AZ_FORMAT	../../inc/az_def.h	129;"	d
 _AZ_FORMAT	../../inc/az_def.h	145;"	d
 _AZ_FORMAT	../../inc/az_def.h	152;"	d
 _AZ_FORMAT	../../inc/az_def.h	156;"	d
+_AZ_FORMAT	../../inc/az_def.h	160;"	d
 _AZ_FORMAT_UPDATE	../../inc/az_def.h	133;"	d
 _AZ_FORMAT_UPDATE	../../inc/az_def.h	141;"	d
 _AZ_FORMAT_UPDATE	../../inc/az_def.h	157;"	d
 _AZ_FORMAT_UPDATE	../../inc/az_def.h	164;"	d
 _AZ_FORMAT_UPDATE	../../inc/az_def.h	168;"	d
+_AZ_FORMAT_UPDATE	../../inc/az_def.h	172;"	d
 _AZ_SNPRINTF	../../inc/az_def.h	130;"	d
 _AZ_SNPRINTF	../../inc/az_def.h	137;"	d
 _AZ_SNPRINTF	../../inc/az_def.h	153;"	d
 _AZ_SNPRINTF	../../inc/az_def.h	160;"	d
 _AZ_SNPRINTF	../../inc/az_def.h	164;"	d
+_AZ_SNPRINTF	../../inc/az_def.h	168;"	d
 _AZ_UT_EXE_FUNC2	../../inc/az_unitTest.h	134;"	d
 _AZ_UT_EXE_FUNC2	../../inc/az_unitTest.h	238;"	d
 _AZ_UT_EXE_FUNC2	../../inc/az_unitTest.h	240;"	d
@@ -2515,10 +2714,12 @@ _VFUNC_	../../inc/az_args.h	36;"	d
 __GNU_SOURCE	../../inc/sys/linux/az_sys_linux.h	27;"	d
 __USE_GNU	../../inc/sys/linux/az_sys_linux.h	24;"	d
 __az_weak	../../inc/az_def.h	130;"	d
+__az_weak	../../inc/az_def.h	134;"	d
 __section	../../inc/az_def.h	105;"	d
 __section	../../inc/az_def.h	120;"	d
 __section	../../inc/az_def.h	122;"	d
 __section	../../inc/az_def.h	97;"	d
+__unused	../../inc/az_def.h	130;"	d
 __used	../../inc/az_def.h	101;"	d
 __used	../../inc/az_def.h	109;"	d
 __used	../../inc/az_def.h	124;"	d
@@ -2537,6 +2738,7 @@ _az_bitmask_rfilled_size64	../../inc/az_bits.h	/^static inline int _az_bitmask_r
 _az_bitmask_rfilled_size8	../../inc/az_bits.h	/^static inline int _az_bitmask_rfilled_size8(uint8_t n)$/;"	f
 _az_ion_type_name	../../inc/az_ion_types.h	/^static char *_az_ion_type_name[] = {$/;"	v
 _az_malloc	../../inc/az_malloc.h	/^static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)$/;"	f
+_beamtable	../../inc/az_thread.h	/^  struct az_thread_beam _beamtable[AZ_THREAD_BEAM_VECTORS];$/;"	m	struct:az_thread_entity	typeref:struct:az_thread_entity::az_thread_beam
 _ctx	../../inc/az_iou_msgq.h	/^  struct az_iou_msgq_ctx *_ctx; $/;"	m	struct:az_iou_msgq_ctx	typeref:struct:az_iou_msgq_ctx::az_iou_msgq_ctx
 _data_buffer	../../inc/az_msgq.h	/^  az_ref_t  _data_buffer;$/;"	m	struct:az_msgq
 _descr_list	../../inc/az_msgq.h	/^  az_ref_t  _descr_list;$/;"	m	struct:az_msgq
@@ -2553,12 +2755,14 @@ _lock	../../inc/az_event.h	/^  az_rw_lock_t          _lock;$/;"	m	struct:az_even
 _lock	../../inc/az_event.h	/^  az_rw_lock_t      _lock;$/;"	m	struct:az_event_port
 _port_index	../../inc/az_event.h	/^  int                 _port_index;$/;"	m	struct:az_event_receiver
 _port_no	../../inc/az_event.h	/^  az_event_port_no_t  _port_no;$/;"	m	struct:az_event_receiver
+_sys_xu	../../inc/az_thread.h	/^  az_sys_xu_entity_t  _sys_xu;$/;"	m	struct:az_thread_entity
 _sys_xu	../../inc/sys/az_xu.h	/^  az_sys_xu_entity_t  _sys_xu;$/;"	m	struct:__anon7
 _sys_xu	../../inc/sys/az_xu.h	/^  az_sys_xu_entity_t  _sys_xu;$/;"	m	struct:az_xu_entity
 a	../../inc/az_var.h	/^  az_ref_t          a;$/;"	m	union:__anon40
 a	../../inc/az_var.h	/^  az_ref_t          a;$/;"	m	union:__anon45
 a	../../inc/az_var.h	/^  az_ref_t          a;$/;"	m	union:__anon47
 a	../../inc/az_var.h	/^  az_ref_t          a;$/;"	m	union:__anon48
+a	../../inc/az_var.h	/^  az_ref_t          a;$/;"	m	union:__anon49
 alloc_call	../../inc/az_malloc.h	/^  az_ref_t  alloc_call[CONFIG_AZ_MTRACE_LIST_SZ];$/;"	m	struct:az_malloc_stats
 alloc_list	../../inc/az_malloc.h	/^  az_ref_t  alloc_list[CONFIG_AZ_MTRACE_LIST_SZ];$/;"	m	struct:az_malloc_stats
 alloc_size	../../inc/az_malloc.h	/^  uint32_t  alloc_size[CONFIG_AZ_MTRACE_LIST_SZ];$/;"	m	struct:az_malloc_stats
@@ -2576,6 +2780,8 @@ arg	../../inc/az_sys_def.h	/^    az_ref_t arg;$/;"	m	struct:__anon15::__anon16
 arg	../../inc/az_sys_def.h	/^    az_ref_t arg;$/;"	m	struct:__anon29::__anon30
 arg	../../inc/az_sys_def.h	/^    az_ref_t arg;$/;"	m	struct:__anon34::__anon35
 arg	../../inc/az_sys_def.h	/^    az_ref_t arg;$/;"	m	struct:__anon36::__anon37
+arg	../../inc/az_thread.h	/^  az_thread_arg_t           arg;$/;"	m	struct:az_thread_beam
+arg	../../inc/az_thread.h	/^  az_thread_arg_t     arg;$/;"	m	struct:az_thread_entity
 arg	../../inc/az_thread.h	/^  az_xu_arg_t arg;$/;"	m	struct:az_thread_status
 arg	../../inc/sys/az_xu.h	/^  az_xu_arg_t           arg;$/;"	m	struct:az_xu_evector
 arg	../../inc/sys/az_xu.h	/^  az_xu_arg_t     arg;$/;"	m	struct:az_xu_entity
@@ -2583,6 +2789,7 @@ arg	../../inc/sys/linux/az_linux_def.h	/^  void            *arg;$/;"	m	struct:__
 arg	../../inc/sys/linux/az_linux_def.h	/^  void            *arg;$/;"	m	struct:__anon3
 arg	../../inc/sys/linux/az_linux_timer.h	/^  void            *arg;$/;"	m	struct:__anon6
 arg	../../inc/sys/linux/az_linux_xu.h	/^  void            *arg;$/;"	m	struct:__anon7
+arg_name	../../inc/az_thread_cfg.h	/^  char            arg_name[AZ_THREAD_CFG_NAME_LEN];$/;"	m	struct:az_thread_config
 arg_name	../../inc/az_thread_cfg.h	/^  char  arg_name[AZ_THR_CFG_NAME_LEN];$/;"	m	struct:az_thread_config
 arg_name	../../inc/az_xu_cfg.h	/^  char            arg_name[AZ_XU_CFG_NAME_LEN];$/;"	m	struct:az_xu_config
 arg_name	../../inc/az_xu_cfg.h	/^  char  arg_name[AZ_XU_CFG_NAME_LEN];$/;"	m	struct:az_xu_config
@@ -2593,6 +2800,7 @@ array_size	../../inc/az_def.h	127;"	d
 array_size	../../inc/az_def.h	142;"	d
 array_size	../../inc/az_def.h	144;"	d
 array_size	../../inc/az_def.h	148;"	d
+array_size	../../inc/az_def.h	152;"	d
 attr	../../inc/az_sys_def.h	/^    uint32_t  attr;$/;"	m	struct:__anon10::__anon11
 attr	../../inc/az_sys_def.h	/^    uint32_t  attr;$/;"	m	struct:__anon10::__anon12
 attr	../../inc/az_sys_def.h	/^    uint32_t  attr;$/;"	m	struct:__anon24::__anon25
@@ -2605,6 +2813,7 @@ attr	../../inc/az_sys_def.h	/^    uint32_t  attr;$/;"	m	struct:__anon5::__anon6
 attr	../../inc/az_sys_def.h	/^    uint32_t  attr;$/;"	m	struct:__anon5::__anon7
 attr	../../inc/az_sys_def.h	/^    uint32_t  attr;$/;"	m	struct:__anon8::__anon10
 attr	../../inc/az_sys_def.h	/^    uint32_t  attr;$/;"	m	struct:__anon8::__anon9
+attr	../../inc/az_thread.h	/^  az_thread_attr_t    attr;$/;"	m	struct:az_thread_entity
 attr	../../inc/sys/az_xu.h	/^  az_xu_attr_t    *attr;$/;"	m	struct:__anon7
 attr	../../inc/sys/az_xu.h	/^  az_xu_attr_t    attr;$/;"	m	struct:az_xu_entity
 attr	../../inc/sys/linux/az_linux_def.h	/^  az_xu_attr_t    *attr;$/;"	m	struct:__anon2
@@ -2616,6 +2825,7 @@ az_addr	../../inc/az_def.h	120;"	d
 az_addr	../../inc/az_def.h	135;"	d
 az_addr	../../inc/az_def.h	137;"	d
 az_addr	../../inc/az_def.h	141;"	d
+az_addr	../../inc/az_def.h	145;"	d
 az_alog	../../inc/az_printf.h	117;"	d
 az_app_cfg_tree	../frw/az_frw_cfg.c	/^az_xcfg_tree_t az_app_cfg_tree;$/;"	v
 az_app_cfg_tree	az_frw_cfg.c	/^az_xcfg_tree_t az_app_cfg_tree;$/;"	v
@@ -2694,6 +2904,7 @@ az_array_unlock_write	../../inc/az_array.h	68;"	d
 az_array_unlock_write	../../inc/az_array.h	69;"	d
 az_assert	../../inc/az_assert.h	31;"	d
 az_assert	../../inc/az_assert.h	32;"	d
+az_assert_ion_type	../../inc/az_ion_types.h	51;"	d
 az_assert_ion_type	../../inc/az_ion_types.h	52;"	d
 az_atomic_add_and_fetch16	../../inc/az_atomic_gnuc.h	99;"	d
 az_atomic_add_and_fetch32	../../inc/az_atomic_gnuc.h	101;"	d
@@ -2919,6 +3130,7 @@ az_core_deinit	../core/az_core.c	/^az_r_t az_core_deinit()$/;"	f
 az_core_get_state	../core/az_core.c	/^az_state_t az_core_get_state()$/;"	f
 az_core_init	../core/az_core.c	/^az_r_t az_core_init()$/;"	f
 az_core_postload	../core/az_core_preload.c	/^void az_core_postload() $/;"	f
+az_core_postload	../core/az_core_preload.c	/^void az_core_postload(int sig) $/;"	f
 az_core_preload	../core/az_core_preload.c	/^int az_core_preload() $/;"	f
 az_core_preload_done	../core/az_core_preload.c	/^int az_core_preload_done = 0;$/;"	v
 az_core_state	../core/az_core.c	/^static az_state_t az_core_state = AZ_ST_IDLE;$/;"	v	file:
@@ -3288,6 +3500,7 @@ az_inet_setTcpNodelay	../../inc/sys/az_inet.h	/^static inline int az_inet_setTcp
 az_inet_str2IpAddr	../../inc/sys/az_inet.h	/^static inline int az_inet_str2IpAddr(struct sockaddr_in *addr, char *ipAddrStr) $/;"	f
 az_inet_tcpRead	../sys/az_inet.c	/^int az_inet_tcpRead(az_sock_t sock, uint8_t *bp, ssize_t len)$/;"	f
 az_inet_tcpWrite	../sys/az_inet.c	/^int az_inet_tcpWrite(az_sock_t sock, uint8_t *bp, ssize_t len)$/;"	f
+az_init_cleanup_sighandler	../core/az_sighandle.c	/^int az_init_cleanup_sighandler()$/;"	f
 az_int16_t	../../inc/az_def.h	/^typedef int16_t  az_int16_t;$/;"	t
 az_int32_t	../../inc/az_def.h	/^typedef int32_t  az_int32_t;$/;"	t
 az_int64_t	../../inc/az_def.h	/^typedef int64_t  az_int64_t;$/;"	t
@@ -3302,6 +3515,7 @@ az_ion	../../inc/az_ion.h	87;"	d
 az_ion	../../inc/az_ion_types.h	/^typedef struct az_ion {$/;"	s
 az_ion_PRefList	../core/az_ion.c	/^az_array_t *az_ion_PRefList = NULL;$/;"	v
 az_ion_compare_t	../../inc/az_ion.h	/^typedef int (*az_ion_compare_t)(void *, void *);$/;"	t
+az_ion_compare_type_and_tag	../core/az_ion.c	/^static int az_ion_compare_type_and_tag(void *arg, void *target)$/;"	f	file:
 az_ion_count	../../inc/az_ion.h	/^static inline az_size_t az_ion_count()$/;"	f
 az_ion_deinit	../../inc/az_ion.h	/^static inline void az_ion_deinit()$/;"	f
 az_ion_deregister	../core/az_ion.c	/^az_r_t az_ion_deregister(az_ion_t *ion)$/;"	f
@@ -3310,9 +3524,12 @@ az_ion_deregister_nonio	../core/az_ion.c	/^az_r_t az_ion_deregister_nonio(az_ion
 az_ion_empty	../core/az_ion.c	/^void az_ion_empty(az_ion_t *ion)$/;"	f
 az_ion_find	../../inc/az_ion.h	/^static inline az_ion_t *az_ion_find(void *var, az_ion_compare_t compare_f) $/;"	f
 az_ion_find	../../inc/az_ion.h	/^static inline az_ion_t *az_ion_find(void *var, int (*compare_f)(void *, void *))$/;"	f
+az_ion_find_by_tag	../core/az_ion.c	/^az_ion_t *az_ion_find_by_tag(az_ion_type_t type, az_ion_tag_t tag)$/;"	f
+az_ion_get_tag	../../inc/az_ion.h	/^static inline az_ion_tag_t az_ion_get_tag(az_ion_t *ion)$/;"	f
 az_ion_id_t	../../inc/az_ion_types.h	/^typedef az_int32_t az_ion_id_t;$/;"	t
 az_ion_id_t	../../inc/az_ion_types.h	/^typedef int az_ion_id_t;$/;"	t
 az_ion_init	../../inc/az_ion.h	/^static inline void az_ion_init(az_array_t *refList)$/;"	f
+az_ion_invalidate	../../inc/az_ion.h	/^static inline void az_ion_invalidate(az_ion_t *ion, int is_static)$/;"	f
 az_ion_invalidate	../../inc/az_ion.h	/^static void az_ion_invalidate(az_ion_t *ion, int is_static)$/;"	f
 az_ion_io	../../inc/az_ion.h	70;"	d
 az_ion_list	../../inc/az_ion.h	/^typedef struct az_ion_list {$/;"	s
@@ -3331,8 +3548,10 @@ az_ion_register	../core/az_ion.c	/^az_r_t az_ion_register(az_ion_t *ion)$/;"	f
 az_ion_register	../core/az_ion.c	/^az_r_t az_ion_register(az_ion_t *ion, az_ion_type_t type)$/;"	f
 az_ion_register_io	../core/az_ion.c	/^static inline az_r_t az_ion_register_io(az_ion_t *ion, az_ion_type_t type)$/;"	f	file:
 az_ion_register_nonio	../core/az_ion.c	/^static inline az_r_t az_ion_register_nonio(az_ion_t *ion, az_ion_type_t type)$/;"	f	file:
+az_ion_set_tag	../../inc/az_ion.h	/^static inline void az_ion_set_tag(az_ion_t *ion, az_ion_tag_t tag)$/;"	f
 az_ion_t	../../inc/az_ion_types.h	/^} az_ion_t;$/;"	t	typeref:struct:az_ion
 az_ion_t_descr	../core/az_ion_toStr.c	/^az_var_descr_t az_ion_t_descr[] = {$/;"	v
+az_ion_tag_t	../../inc/az_ion_types.h	/^typedef az_uint16_t az_ion_tag_t;$/;"	t
 az_ion_toStr	../core/az_ion_toStr.c	/^az_size_t az_ion_toStr(az_ion_t *ion, char *tag, char *bp, az_size_t blen)$/;"	f
 az_ion_toStr	../core/az_ion_toStr.c	/^az_size_t az_ion_toStr(az_ion_t ion, char *tag, char *bp, az_size_t blen)$/;"	f
 az_ion_type_name	../../inc/az_ion_types.h	/^static inline char * az_ion_type_name(az_ion_type_t type) {$/;"	f
@@ -3341,6 +3560,7 @@ az_ion_type_name	../../inc/az_ion_types.h	68;"	d
 az_ion_type_name	../core/az_ion.c	/^char *az_ion_type_name[] = {$/;"	v
 az_ion_type_names	../core/az_ion.c	/^char *az_ion_type_names[] = AZ_ION_TYPE_NAMES; $/;"	v
 az_ion_type_t	../../inc/az_ion_types.h	/^typedef az_int32_t az_ion_type_t;$/;"	t
+az_ion_type_t	../../inc/az_ion_types.h	/^typedef az_uint16_t az_ion_type_t;$/;"	t
 az_ion_type_t	../../inc/az_ion_types.h	/^typedef az_uint32_t az_ion_type_t;$/;"	t
 az_ion_unlock	../../inc/az_ion.h	54;"	d
 az_ion_unlock	../../inc/az_ion.h	55;"	d
@@ -3542,6 +3762,7 @@ az_log_start_default_thread	../core/az_log.c	/^az_r_t  az_log_start_default_thre
 az_log_stop	../core/az_log.c	/^az_r_t  az_log_stop()$/;"	f
 az_log_stop_default_thread	../core/az_log.c	/^az_r_t  az_log_stop_default_thread()$/;"	f
 az_log_t	../../inc/az_log.h	/^} az_log_t;$/;"	t	typeref:struct:az_log
+az_log_thread_default	../core/az_log.c	/^az_thread_t az_log_thread_default = NULL;$/;"	v
 az_log_thread_default	../core/az_log.c	/^az_xu_t az_log_thread_default = NULL;$/;"	v
 az_log_thread_default	../core/az_log.c	/^az_xu_t az_log_thread_default;$/;"	v
 az_log_thread_proc_default	../core/az_log.c	/^void *az_log_thread_proc_default(void *arg)$/;"	f
@@ -3659,6 +3880,7 @@ az_refcount_init_dynamic	../../inc/az_refcount.h	/^static inline void az_refcoun
 az_refcount_init_static	../../inc/az_refcount.h	/^static inline void az_refcount_init_static(az_refcount_t *p)$/;"	f
 az_refcount_t	../../inc/az_def.h	/^typedef int32_t   az_refcount_t;$/;"	t
 az_refcount_t	../../inc/az_refcount.h	/^} az_refcount_t;$/;"	t	typeref:struct:az_refcount
+az_register_cleanup_sighandler	../core/az_sighandle.c	/^int az_register_cleanup_sighandler(az_sighandler_t handler)$/;"	f
 az_ring	../../inc/az_ring.h	/^typedef struct az_ring {$/;"	s
 az_ring	../../inc/az_ring_n.h	/^typedef struct az_ring {$/;"	s
 az_ring	../frw/az_main.c	/^az_ring_t az_ring;$/;"	v
@@ -4062,24 +4284,84 @@ az_testcase_handler_t	../../inc/az_test.h	/^typedef az_test_case_handler_t az_te
 az_testcase_t	../../inc/az_test.h	/^typedef az_test_case_t  az_testcase_t;$/;"	t
 az_testiter_t	../../inc/az_test.h	/^typedef az_test_iter_t az_testiter_t;$/;"	t
 az_testproj_t	../../inc/az_test.h	/^typedef az_test_project_t az_testproj_t;$/;"	t
+az_thread	../core/az_thread.c	/^AZ_SYS_TLS  az_thread_t az_thread = NULL;$/;"	v
+az_thread_arg_t	../../inc/az_thread.h	/^typedef void *az_thread_arg_t;$/;"	t
+az_thread_attr_t	../../inc/az_thread_types.h	/^} az_thread_attr_t;$/;"	t	typeref:struct:__anon47
+az_thread_beam	../../inc/az_thread.h	/^struct az_thread_beam {$/;"	s
+az_thread_beam_handler_t	../../inc/az_thread.h	/^typedef void (*az_thread_beam_handler_t)(int, az_thread_arg_t);$/;"	t
+az_thread_beam_t	../../inc/az_thread.h	/^typedef az_sys_event_t  az_thread_beam_t;$/;"	t
+az_thread_cause_t	../../inc/az_thread.h	/^typedef short az_thread_cause_t;$/;"	t
 az_thread_cfg_convPolicy	../core/az_thread_cfg.c	/^az_r_t az_thread_cfg_convPolicy(az_xml_element_t *attr, void *pVar, int varlen)$/;"	f
 az_thread_cfg_getfirst	../core/az_thread_cfg.c	/^az_xml_element_t *az_thread_cfg_getfirst(int cfg_cat)$/;"	f
 az_thread_cfg_getlist	../core/az_thread_cfg.c	/^az_xml_element_t *az_thread_cfg_getlist(int cfg_cat)$/;"	f
 az_thread_cfg_getnext	../core/az_thread_cfg.c	/^az_xml_element_t *az_thread_cfg_getnext(int cfg_cat, az_xml_element_t *cur)$/;"	f
 az_thread_cfg_xml2cfg	../core/az_thread_cfg.c	/^az_r_t az_thread_cfg_xml2cfg(az_xml_element_t *elem, az_thread_config_t *cfg)$/;"	f
+az_thread_cleanup	../core/az_thread.c	/^void az_thread_cleanup(az_thread_t xu)$/;"	f
+az_thread_comparebyname	../core/az_thread.c	/^int az_thread_comparebyname(char *name, az_thread_t xu)$/;"	f
 az_thread_config	../../inc/az_thread_cfg.h	/^typedef struct az_thread_config {$/;"	s
 az_thread_config_t	../../inc/az_thread_cfg.h	/^} az_thread_config_t;$/;"	t	typeref:struct:az_thread_config
+az_thread_core_mask_t	../../inc/az_thread_types.h	/^typedef uint64_t az_thread_core_mask_t;$/;"	t
+az_thread_create	../core/az_thread.c	/^az_ion_id_t az_thread_create(char *name, az_thread_entry_t entry, az_thread_arg_t arg, az_thread_config_t *pCfg, az_thread_t *pXu)$/;"	f
 az_thread_create	../core/az_thread.c	/^az_r_t  az_thread_create(az_thread_config_t *cfg, az_thread_t *pThr)$/;"	f
 az_thread_delete	../core/az_thread.c	/^az_r_t  az_thread_delete(az_thread_t thr)$/;"	f
+az_thread_delete	../core/az_thread.c	/^az_r_t az_thread_delete(az_ion_id_t id)$/;"	f
+az_thread_deregBeamHandler	../core/az_thread.c	/^az_r_t az_thread_deregBeamHandler(az_ion_id_t id, unsigned int vecno)$/;"	f
+az_thread_empty	../core/az_thread.c	/^az_thread_t  az_thread_empty(az_thread_t xu)$/;"	f
+az_thread_empty_sys_xu	../core/az_thread.c	/^void  az_thread_empty_sys_xu(az_thread_t xu)$/;"	f
 az_thread_entity	../../inc/az_thread.h	/^typedef struct az_thread_entity {$/;"	s
 az_thread_entity_t	../../inc/az_thread.h	/^} az_thread_entity_t;$/;"	t	typeref:struct:az_thread_entity
 az_thread_entry	../core/az_thread.c	/^void *az_thread_entry(void *arg)$/;"	f
+az_thread_entry_t	../../inc/az_thread.h	/^typedef az_thread_ret_t (*az_thread_entry_t)(az_thread_arg_t);$/;"	t
+az_thread_exit	../core/az_thread.c	/^void az_thread_exit(az_thread_ret_t ret)$/;"	f
+az_thread_find	../core/az_thread.c	/^az_thread_id_t az_thread_find(char *name) $/;"	f
+az_thread_flags_t	../../inc/az_thread.h	/^typedef int   az_thread_flags_t;$/;"	t
+az_thread_getAffinity	../core/az_thread.c	/^az_r_t  az_thread_getAffinity(az_ion_id_t id, az_thread_core_mask_t *pCoreMask)$/;"	f
+az_thread_getPriority	../core/az_thread.c	/^az_r_t  az_thread_getPriority(az_ion_id_t id, az_thread_attr_t *pAttr)$/;"	f
+az_thread_getarg	../core/az_thread.c	/^void *az_thread_getarg()$/;"	f
+az_thread_getcpu	../core/az_thread.c	/^az_r_t  az_thread_getcpu()$/;"	f
+az_thread_id_t	../../inc/az_thread.h	/^typedef az_ion_id_t     az_thread_id_t;$/;"	t
+az_thread_iomux_add	../../inc/az_thread.h	/^static inline az_r_t az_thread_iomux_add(az_thread_t xu, az_sys_io_t fd, uint32_t ioevt)$/;"	f
+az_thread_iomux_del	../../inc/az_thread.h	/^static inline az_r_t az_thread_iomux_del(az_thread_t xu, az_sys_io_t fd)$/;"	f
+az_thread_msg_t	../../inc/az_thread.h	/^typedef uint32_t        az_thread_msg_t;$/;"	t
+az_thread_msg_t	../../inc/az_thread.h	/^typedef uint64_t        az_thread_msg_t;$/;"	t
+az_thread_null	../../inc/az_thread.h	204;"	d
+az_thread_null	../core/az_thread.c	/^void az_thread_null()$/;"	f
 az_thread_policy_t	../../inc/az_thread_cfg.h	/^typedef int az_thread_policy_t;$/;"	t
+az_thread_prtbuf	../core/az_thread.c	/^AZ_SYS_TLS  char    az_thread_prtbuf[CONFIG_AZ_THREAD_PRTBUF_SZ];$/;"	v
+az_thread_recv_beam	../core/az_thread.c	/^az_r_t az_thread_recv_beam(az_thread_beam_t toReceive, az_int8_t options,$/;"	f
+az_thread_recv_msg	../core/az_thread.c	/^az_r_t az_thread_recv_msg(az_thread_msg_t *pMsg)$/;"	f
+az_thread_regBeamHandler	../core/az_thread.c	/^az_r_t az_thread_regBeamHandler(az_ion_id_t id, unsigned int vecno, az_thread_beam_handler_t handler, az_thread_arg_t arg)$/;"	f
+az_thread_reset_flags	../../inc/az_thread.h	/^static inline void az_attr_no_instrument az_thread_reset_flags(int flags)$/;"	f
+az_thread_reset_state_excpt	../core/az_thread.c	/^void  az_thread_reset_state_excpt(az_thread_t xu)$/;"	f
+az_thread_resume	../core/az_thread.c	/^az_r_t az_thread_resume(az_ion_id_t id)$/;"	f
+az_thread_ret_t	../../inc/az_thread.h	/^typedef void *az_thread_ret_t;$/;"	t
+az_thread_self	../../inc/az_thread.h	203;"	d
+az_thread_self	../core/az_thread.c	/^az_thread_t az_thread_self()$/;"	f
+az_thread_send_beam	../core/az_thread.c	/^az_r_t az_thread_send_beam(az_ion_id_t id, az_thread_beam_t event)$/;"	f
+az_thread_send_msg	../core/az_thread.c	/^az_r_t az_thread_send_msg(az_ion_id_t id, az_thread_msg_t msg)$/;"	f
+az_thread_setAffinity	../core/az_thread.c	/^az_r_t  az_thread_setAffinity(az_ion_id_t id, az_thread_core_mask_t core_mask)$/;"	f
+az_thread_setPriority	../core/az_thread.c	/^az_r_t  az_thread_setPriority(az_ion_id_t id, az_thread_attr_t *pAttr)$/;"	f
+az_thread_set_cleanup	../core/az_thread.c	/^void  az_thread_set_cleanup()$/;"	f
+az_thread_set_flags	../../inc/az_thread.h	/^static inline void az_attr_no_instrument az_thread_set_flags(int flags)$/;"	f
+az_thread_set_state_excpt	../core/az_thread.c	/^void  az_thread_set_state_excpt(void *excpt_point)$/;"	f
+az_thread_set_trace	../../inc/az_thread.h	/^static inline int az_attr_no_instrument az_thread_set_trace(az_thread_trace_info_t *info, int onoff)$/;"	f
+az_thread_sleep	../core/az_thread.c	/^az_r_t az_thread_sleep(az_int64_t nsec)$/;"	f
 az_thread_start	../core/az_thread.c	/^az_r_t  az_thread_start(az_thread_t thr, char *entry_name, char *arg_name,$/;"	f
+az_thread_start	../core/az_thread.c	/^az_r_t az_thread_start(az_ion_id_t id, az_thread_entry_t entry, az_thread_arg_t arg)$/;"	f
+az_thread_state_t	../../inc/az_thread.h	/^typedef short az_thread_state_t;$/;"	t
 az_thread_status	../../inc/az_thread.h	/^typedef struct az_thread_status {$/;"	s
 az_thread_status_t	../../inc/az_thread.h	/^} az_thread_status_t;$/;"	t	typeref:struct:az_thread_status
+az_thread_stop	../core/az_thread.c	/^az_r_t  az_thread_stop(az_ion_id_t  id)$/;"	f
 az_thread_stop	../core/az_thread.c	/^az_r_t  az_thread_stop(az_thread_t thr)$/;"	f
+az_thread_suspend	../core/az_thread.c	/^az_r_t az_thread_suspend(az_ion_id_t id)$/;"	f
+az_thread_t	../../inc/az_thread.h	/^typedef   az_thread_entity_t *  az_thread_t;$/;"	t
 az_thread_t	../../inc/az_thread.h	/^typedef az_thread_entity_t  *az_thread_t;$/;"	t
+az_thread_trace_info	../../inc/az_thread.h	/^typedef struct az_thread_trace_info {$/;"	s
+az_thread_trace_info_t	../../inc/az_thread.h	/^} az_thread_trace_info_t;$/;"	t	typeref:struct:az_thread_trace_info
+az_thread_traceinfo	../../inc/az_thread.h	205;"	d
+az_thread_traceinfo	../core/az_thread.c	/^az_thread_trace_info_t *az_thread_traceinfo()$/;"	f
+az_thread_wait_beam	../core/az_thread.c	/^az_r_t az_thread_wait_beam(az_thread_beam_t toReceive, az_int8_t options,$/;"	f
+az_thread_wait_iomux	../../inc/az_thread.h	/^static inline az_r_t az_thread_wait_iomux(az_sys_io_event_t *ioevt, int maxevents, int tmo_ms)$/;"	f
 az_timer_create	../sys/az_timer.c	/^az_r_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat, void (*handler)(void *arg), void *arg, az_timer_t *pTimer)$/;"	f
 az_timer_delete	../sys/az_timer.c	/^az_r_t  az_timer_delete(az_timer_t t)$/;"	f
 az_timer_entity_t	../../inc/sys/az_timer.h	/^} az_timer_entity_t;$/;"	t	typeref:struct:__anon6
@@ -4145,6 +4427,7 @@ az_trz_start_default_thread	../core/az_trz.c	/^az_r_t  az_trz_start_default_thre
 az_trz_state	../core/az_trz.c	/^int  az_trz_state = 0;$/;"	v
 az_trz_stop_default_thread	../core/az_trz.c	/^az_r_t  az_trz_stop_default_thread()$/;"	f
 az_trz_t	../../inc/az_trz.h	/^} az_trz_t;$/;"	t	typeref:struct:az_transaction
+az_trz_thread_default	../core/az_trz.c	/^az_thread_t az_trz_thread_default = NULL;$/;"	v
 az_trz_thread_default	../core/az_trz.c	/^az_xu_t az_trz_thread_default = NULL;$/;"	v
 az_trz_thread_proc_default	../core/az_trz.c	/^void *az_trz_thread_proc_default(void *arg)$/;"	f
 az_trz_thread_state	../core/az_trz.c	/^int az_trz_thread_state = 0;$/;"	v
@@ -4220,12 +4503,14 @@ az_var_type_t	../../inc/az_var.h	/^} az_var_type_t;$/;"	t	typeref:enum:__anon39
 az_var_type_t	../../inc/az_var.h	/^} az_var_type_t;$/;"	t	typeref:enum:__anon44
 az_var_type_t	../../inc/az_var.h	/^} az_var_type_t;$/;"	t	typeref:enum:__anon46
 az_var_type_t	../../inc/az_var.h	/^} az_var_type_t;$/;"	t	typeref:enum:__anon47
+az_var_type_t	../../inc/az_var.h	/^} az_var_type_t;$/;"	t	typeref:enum:__anon48
 az_var_value2Str_t	../../inc/az_ion.h	/^typedef char *(*az_var_value2Str_t)(void *);$/;"	t
 az_var_value2Str_t	../../inc/az_var.h	/^typedef char *(*az_var_value2Str_t)(void *);$/;"	t
 az_var_value_t	../../inc/az_var.h	/^} az_var_value_t;$/;"	t	typeref:union:__anon40
 az_var_value_t	../../inc/az_var.h	/^} az_var_value_t;$/;"	t	typeref:union:__anon45
 az_var_value_t	../../inc/az_var.h	/^} az_var_value_t;$/;"	t	typeref:union:__anon47
 az_var_value_t	../../inc/az_var.h	/^} az_var_value_t;$/;"	t	typeref:union:__anon48
+az_var_value_t	../../inc/az_var.h	/^} az_var_value_t;$/;"	t	typeref:union:__anon49
 az_version	../../inc/az_ver.h	/^typedef struct az_version {$/;"	s
 az_version	../core/az_ver.c	/^az_version_t  az_version = {$/;"	v
 az_version_t	../../inc/az_ver.h	/^} az_version_t;$/;"	t	typeref:struct:az_version
@@ -4358,6 +4643,7 @@ b	../../inc/az_var.h	/^  az_bool_t         b;$/;"	m	union:__anon40
 b	../../inc/az_var.h	/^  az_bool_t         b;$/;"	m	union:__anon45
 b	../../inc/az_var.h	/^  az_bool_t         b;$/;"	m	union:__anon47
 b	../../inc/az_var.h	/^  az_bool_t         b;$/;"	m	union:__anon48
+b	../../inc/az_var.h	/^  az_bool_t         b;$/;"	m	union:__anon49
 b16	../../inc/az_ring.h	/^  az_uint16_t  b16;$/;"	m	union:__anon20
 b16	../../inc/az_ring.h	/^  az_uint16_t  b16;$/;"	m	union:__anon25
 b16	../../inc/az_ring.h	/^  az_uint16_t  b16;$/;"	m	union:__anon27
@@ -4367,6 +4653,7 @@ b16	../../inc/az_var.h	/^  az_uint16_t       b16;$/;"	m	union:__anon40
 b16	../../inc/az_var.h	/^  az_uint16_t       b16;$/;"	m	union:__anon45
 b16	../../inc/az_var.h	/^  az_uint16_t       b16;$/;"	m	union:__anon47
 b16	../../inc/az_var.h	/^  az_uint16_t       b16;$/;"	m	union:__anon48
+b16	../../inc/az_var.h	/^  az_uint16_t       b16;$/;"	m	union:__anon49
 b32	../../inc/az_ring.h	/^  az_uint32_t  b32;$/;"	m	union:__anon20
 b32	../../inc/az_ring.h	/^  az_uint32_t  b32;$/;"	m	union:__anon25
 b32	../../inc/az_ring.h	/^  az_uint32_t  b32;$/;"	m	union:__anon27
@@ -4376,6 +4663,7 @@ b32	../../inc/az_var.h	/^  az_uint32_t       b32;$/;"	m	union:__anon40
 b32	../../inc/az_var.h	/^  az_uint32_t       b32;$/;"	m	union:__anon45
 b32	../../inc/az_var.h	/^  az_uint32_t       b32;$/;"	m	union:__anon47
 b32	../../inc/az_var.h	/^  az_uint32_t       b32;$/;"	m	union:__anon48
+b32	../../inc/az_var.h	/^  az_uint32_t       b32;$/;"	m	union:__anon49
 b64	../../inc/az_ring.h	/^  az_uint64_t  b64;$/;"	m	union:__anon20
 b64	../../inc/az_ring.h	/^  az_uint64_t  b64;$/;"	m	union:__anon25
 b64	../../inc/az_ring.h	/^  az_uint64_t  b64;$/;"	m	union:__anon27
@@ -4385,6 +4673,7 @@ b64	../../inc/az_var.h	/^  az_uint64_t       b64;$/;"	m	union:__anon40
 b64	../../inc/az_var.h	/^  az_uint64_t       b64;$/;"	m	union:__anon45
 b64	../../inc/az_var.h	/^  az_uint64_t       b64;$/;"	m	union:__anon47
 b64	../../inc/az_var.h	/^  az_uint64_t       b64;$/;"	m	union:__anon48
+b64	../../inc/az_var.h	/^  az_uint64_t       b64;$/;"	m	union:__anon49
 b8	../../inc/az_ring.h	/^  az_uint8_t   b8;$/;"	m	union:__anon20
 b8	../../inc/az_ring.h	/^  az_uint8_t   b8;$/;"	m	union:__anon25
 b8	../../inc/az_ring.h	/^  az_uint8_t   b8;$/;"	m	union:__anon27
@@ -4394,6 +4683,7 @@ b8	../../inc/az_var.h	/^  az_uint8_t        b8;$/;"	m	union:__anon40
 b8	../../inc/az_var.h	/^  az_uint8_t        b8;$/;"	m	union:__anon45
 b8	../../inc/az_var.h	/^  az_uint8_t        b8;$/;"	m	union:__anon47
 b8	../../inc/az_var.h	/^  az_uint8_t        b8;$/;"	m	union:__anon48
+b8	../../inc/az_var.h	/^  az_uint8_t        b8;$/;"	m	union:__anon49
 backlog	../../inc/az_sys_def.h	/^    int32_t    backlog;$/;"	m	struct:__anon13::__anon16
 backlog	../../inc/az_sys_def.h	/^    int32_t    backlog;$/;"	m	struct:__anon16::__anon19
 backlog	../../inc/az_sys_def.h	/^    int32_t    backlog;$/;"	m	struct:__anon18::__anon21
@@ -4402,6 +4692,9 @@ backlog	../../inc/az_sys_def.h	/^    int32_t    backlog;$/;"	m	struct:__anon37::
 backlog	../../inc/az_sys_def.h	/^    int32_t    backlog;$/;"	m	struct:__anon39::__anon42
 backlog	../../inc/az_trz.h	/^  int       backlog;$/;"	m	struct:az_transaction_node
 backlog	../../inc/net/az_tcpserver.h	/^  int   backlog;$/;"	m	struct:az_tcpserver_cfg
+beamcount	../../inc/az_thread.h	/^  int             beamcount;$/;"	m	struct:az_thread_entity
+beams	../../inc/az_thread.h	/^  az_thread_beam_t   beams;$/;"	m	struct:az_thread_entity
+beamtable	../../inc/az_thread.h	/^  struct az_thread_beam *beamtable; $/;"	m	struct:az_thread_entity	typeref:struct:az_thread_entity::az_thread_beam
 bio	../../inc/az_msgq.h	/^  az_bio_t  bio;$/;"	m	struct:az_msgq
 block_size	../../inc/az_bio.h	/^  az_size_t   block_size;$/;"	m	struct:__anon1
 block_size	../../inc/az_iou.h	/^    az_int8_t block_size;$/;"	m	struct:az_iou_config::__anon15
@@ -4429,6 +4722,7 @@ c	../../inc/az_var.h	/^  char              c;$/;"	m	union:__anon40
 c	../../inc/az_var.h	/^  char              c;$/;"	m	union:__anon45
 c	../../inc/az_var.h	/^  char              c;$/;"	m	union:__anon47
 c	../../inc/az_var.h	/^  char              c;$/;"	m	union:__anon48
+c	../../inc/az_var.h	/^  char              c;$/;"	m	union:__anon49
 cAlloc	../../inc/az_malloc.h	/^  long  cAlloc;$/;"	m	struct:az_malloc_stats
 cAlloc	../../inc/az_malloc.h	/^  unsigned long  cAlloc;$/;"	m	struct:az_malloc_stats
 cAllocPoped	../../inc/az_malloc.h	/^  unsigned long  cAllocPoped;$/;"	m	struct:az_malloc_stats
@@ -4442,7 +4736,9 @@ cFree	../../inc/az_malloc.h	/^  long  cFree;$/;"	m	struct:az_malloc_stats
 cFree	../../inc/az_malloc.h	/^  unsigned long  cFree;$/;"	m	struct:az_malloc_stats
 cFreePoped	../../inc/az_malloc.h	/^  unsigned long  cFreePoped;$/;"	m	struct:az_malloc_stats
 call_site	../../inc/az_malloc.h	/^  az_ref_t  call_site[CONFIG_AZ_MTRACE_LIST_SZ];$/;"	m	struct:az_malloc_stats
+callstack	../../inc/az_thread.h	/^  void  *callstack[CONFIG_AZ_TRACE_DEPTH_MAX];$/;"	m	struct:az_thread_trace_info
 callstack	../../inc/sys/az_xu.h	/^  void  *callstack[CONFIG_AZ_TRACE_DEPTH_MAX];$/;"	m	struct:az_xu_trace_info
+cause	../../inc/az_thread.h	/^  az_thread_cause_t   cause;$/;"	m	struct:az_thread_entity
 cause	../../inc/az_thread.h	/^  int cause;$/;"	m	struct:az_thread_status
 cause	../../inc/sys/az_xu.h	/^  az_xu_cause_t   cause;$/;"	m	struct:az_xu_entity
 cb_f	../../inc/mon/az_probe.h	/^  char  *(*cb_f)(void *,...);$/;"	m	struct:az_probe
@@ -4451,6 +4747,7 @@ cfg	../../inc/az_test.h	/^  az_test_config_t *cfg;$/;"	m	struct:az_test_descr_t
 cfg_folder	../../inc/az_test.h	/^  char  cfg_folder[AZ_PATH_MAX];$/;"	m	struct:az_test_framework
 cfg_folder	../../inc/frw/az_frw.h	/^  char  cfg_folder[AZ_PATH_MAX];$/;"	m	struct:az_framework
 child_list	../../inc/az_xml.h	/^  az_double_link_list_t child_list;$/;"	m	struct:az_xml_element
+cleanup_handler_descr_head	../core/az_sighandle.c	/^static az_sighandler_descr_t *cleanup_handler_descr_head = NULL;$/;"	v	file:
 cmd	../../inc/cli/az_cli_api.h	/^  int32_t (*cmd)(int, char *[]);$/;"	m	struct:az_cli_key_cmd
 cmd_table	../../inc/cli/az_cli.h	/^  az_cli_cmd_table_t *cmd_table;$/;"	m	struct:az_cli_shell
 cmdbuffer	../../inc/cli/az_cli.h	/^  char  cmdbuffer[CONFIG_AZ_CLI_CMDBUF_SZ];	$/;"	m	struct:az_cli_shell
@@ -4466,10 +4763,13 @@ container_of	../../inc/az_def.h	122;"	d
 container_of	../../inc/az_def.h	137;"	d
 container_of	../../inc/az_def.h	139;"	d
 container_of	../../inc/az_def.h	143;"	d
+container_of	../../inc/az_def.h	147;"	d
 content_width	../../inc/az_var.h	/^  int   content_width;$/;"	m	struct:az_var_print_format
+core_mask	../../inc/az_thread_types.h	/^    az_thread_core_mask_t core_mask;$/;"	m	struct:__anon47
 core_mask	../../inc/sys/az_xu_types.h	/^    az_xu_core_mask_t core_mask;$/;"	m	struct:__anon7
 core_mask	../../inc/sys/az_xu_types.h	/^    az_xu_core_mask_t core_mask;$/;"	m	struct:__anon8
 coremask	../../inc/az_thread_cfg.h	/^  uint64_t                coremask;$/;"	m	struct:az_thread_config
+coremask	../../inc/az_thread_cfg.h	/^  uint64_t        coremask;$/;"	m	struct:az_thread_config
 coremask	../../inc/az_xu_cfg.h	/^  uint64_t                coremask;$/;"	m	struct:az_xu_config
 coremask	../../inc/az_xu_cfg.h	/^  uint64_t        coremask;$/;"	m	struct:az_xu_config
 count	../../inc/az_array.h	/^  az_size_t           count;$/;"	m	struct:az_array
@@ -4502,9 +4802,11 @@ d	../../inc/az_var.h	/^  double            d;$/;"	m	union:__anon40
 d	../../inc/az_var.h	/^  double            d;$/;"	m	union:__anon45
 d	../../inc/az_var.h	/^  double            d;$/;"	m	union:__anon47
 d	../../inc/az_var.h	/^  double            d;$/;"	m	union:__anon48
+d	../../inc/az_var.h	/^  double            d;$/;"	m	union:__anon49
 data	../../inc/az_ring.h	/^  az_ref_t  data;$/;"	m	struct:az_ring
 data	../../inc/az_ring_n.h	/^  az_ref_t  data;$/;"	m	struct:az_ring
 data_sock	../../inc/mon/az_probe.h	/^  az_sock_t data_sock;$/;"	m	struct:az_probe_ctrl
+depth	../../inc/az_thread.h	/^  short depth;$/;"	m	struct:az_thread_trace_info
 depth	../../inc/sys/az_xu.h	/^  short depth;$/;"	m	struct:az_xu_trace_info
 descr	../../inc/az_event.h	/^  az_event_descr_t descr;$/;"	m	union:__anon7
 descr_count	../../inc/az_bio.h	/^  az_size_t   descr_count;$/;"	m	struct:__anon1
@@ -4544,10 +4846,12 @@ entry	../../inc/az_sys_def.h	/^    void (*entry)(az_ref_t);$/;"	m	struct:__anon1
 entry	../../inc/az_sys_def.h	/^    void (*entry)(az_ref_t);$/;"	m	struct:__anon29::__anon30
 entry	../../inc/az_sys_def.h	/^    void (*entry)(az_ref_t);$/;"	m	struct:__anon34::__anon35
 entry	../../inc/az_sys_def.h	/^    void (*entry)(az_ref_t);$/;"	m	struct:__anon36::__anon37
+entry	../../inc/az_thread.h	/^  az_thread_entry_t   entry;$/;"	m	struct:az_thread_entity
 entry	../../inc/az_thread.h	/^  az_xu_entry_t entry;$/;"	m	struct:az_thread_status
 entry	../../inc/sys/az_xu.h	/^  az_xu_entry_t   entry;$/;"	m	struct:az_xu_entity
 entry	../../inc/sys/linux/az_linux_def.h	/^  void            *(*entry)(void *); $/;"	m	struct:__anon2
 entry	../../inc/sys/linux/az_linux_xu.h	/^  void            *(*entry)(void *); $/;"	m	struct:__anon7
+entry_name	../../inc/az_thread_cfg.h	/^  char            entry_name[AZ_THREAD_CFG_NAME_LEN];$/;"	m	struct:az_thread_config
 entry_name	../../inc/az_thread_cfg.h	/^  char  entry_name[AZ_THR_CFG_NAME_LEN];$/;"	m	struct:az_thread_config
 entry_name	../../inc/az_xu_cfg.h	/^  char            entry_name[AZ_XU_CFG_NAME_LEN];$/;"	m	struct:az_xu_config
 entry_name	../../inc/az_xu_cfg.h	/^  char  entry_name[AZ_XU_CFG_NAME_LEN];$/;"	m	struct:az_xu_config
@@ -4606,12 +4910,14 @@ event_port	../../inc/az_msgq.h	/^  az_event_port_t *event_port;$/;"	m	struct:az_
 event_port	../../inc/az_msgq.h	/^  az_event_port_t event_port;$/;"	m	struct:az_msgq
 event_q	../../inc/az_event.h	/^  az_ring_t         *event_q;$/;"	m	struct:az_event_receiver
 events	../../inc/sys/linux/az_linux_event.h	/^  az_sys_event_t   events;$/;"	m	struct:__anon4
+excpt_point	../../inc/az_thread.h	/^  void *excpt_point;$/;"	m	struct:az_thread_entity
 excpt_point	../../inc/sys/az_xu.h	/^  void *excpt_point;$/;"	m	struct:az_xu_entity
 exec	../../inc/cli/az_cli_cmd.h	/^  az_cli_cmd_exec_t exec;$/;"	m	struct:az_cli_cmd_descr
 f	../../inc/az_var.h	/^  float             f;$/;"	m	union:__anon40
 f	../../inc/az_var.h	/^  float             f;$/;"	m	union:__anon45
 f	../../inc/az_var.h	/^  float             f;$/;"	m	union:__anon47
 f	../../inc/az_var.h	/^  float             f;$/;"	m	union:__anon48
+f	../../inc/az_var.h	/^  float             f;$/;"	m	union:__anon49
 fail	../../inc/az_test.h	/^  int fail;$/;"	m	struct:test_result
 fail	../../inc/az_unitTest.h	/^  int   fail;$/;"	m	struct:az_ut_testCaseResult
 fail	../../inc/az_unitTest.h	/^  int   fail;$/;"	m	struct:az_ut_testProjResult
@@ -4636,6 +4942,9 @@ flags	../../inc/az_event.h	/^  az_event_port_flags_t flags;$/;"	m	struct:az_even
 flags	../../inc/az_iou.h	/^  az_uint32_t   flags;$/;"	m	struct:az_iou_config
 flags	../../inc/az_log.h	/^  az_log_flag_t   flags;$/;"	m	struct:az_log_config
 flags	../../inc/az_log.h	/^  int   flags;$/;"	m	struct:az_log_config
+flags	../../inc/az_thread.h	/^  az_thread_flags_t   flags;$/;"	m	struct:az_thread_entity
+flags	../../inc/az_thread.h	/^  short flags;$/;"	m	struct:az_thread_trace_info
+flags	../../inc/az_thread_cfg.h	/^  uint32_t        flags;$/;"	m	struct:az_thread_config
 flags	../../inc/net/az_tcpserver.h	/^  int   flags;$/;"	m	struct:az_tcpserver_cfg
 flags	../../inc/sys/az_xu.h	/^  az_xu_flags_t   flags;$/;"	m	struct:az_xu_entity
 flags	../../inc/sys/az_xu.h	/^  short flags;$/;"	m	struct:az_xu_trace_info
@@ -4667,7 +4976,9 @@ get_aligned_size	../../inc/az_def.h	125;"	d
 get_aligned_size	../../inc/az_def.h	140;"	d
 get_aligned_size	../../inc/az_def.h	142;"	d
 get_aligned_size	../../inc/az_def.h	146;"	d
+get_aligned_size	../../inc/az_def.h	150;"	d
 handler	../../inc/az_fsm.h	/^  az_fsm_handle_t handler;$/;"	m	struct:az_fsm_vector
+handler	../../inc/az_thread.h	/^  az_thread_beam_handler_t handler;$/;"	m	struct:az_thread_beam
 handler	../../inc/az_trz.h	/^  az_trz_handler_t handler;$/;"	m	struct:az_transaction
 handler	../../inc/sys/az_sig.h	/^  az_sighandler_t handler;$/;"	m	struct:az_sighandler_descr
 handler	../../inc/sys/az_xu.h	/^  az_xu_event_handler_t handler;$/;"	m	struct:az_xu_evector
@@ -4679,18 +4990,22 @@ i16	../../inc/az_var.h	/^  az_int16_t        i16;$/;"	m	union:__anon40
 i16	../../inc/az_var.h	/^  az_int16_t        i16;$/;"	m	union:__anon45
 i16	../../inc/az_var.h	/^  az_int16_t        i16;$/;"	m	union:__anon47
 i16	../../inc/az_var.h	/^  az_int16_t        i16;$/;"	m	union:__anon48
+i16	../../inc/az_var.h	/^  az_int16_t        i16;$/;"	m	union:__anon49
 i32	../../inc/az_var.h	/^  az_int32_t        i32;$/;"	m	union:__anon40
 i32	../../inc/az_var.h	/^  az_int32_t        i32;$/;"	m	union:__anon45
 i32	../../inc/az_var.h	/^  az_int32_t        i32;$/;"	m	union:__anon47
 i32	../../inc/az_var.h	/^  az_int32_t        i32;$/;"	m	union:__anon48
+i32	../../inc/az_var.h	/^  az_int32_t        i32;$/;"	m	union:__anon49
 i64	../../inc/az_var.h	/^  az_int64_t        i64;$/;"	m	union:__anon40
 i64	../../inc/az_var.h	/^  az_int64_t        i64;$/;"	m	union:__anon45
 i64	../../inc/az_var.h	/^  az_int64_t        i64;$/;"	m	union:__anon47
 i64	../../inc/az_var.h	/^  az_int64_t        i64;$/;"	m	union:__anon48
+i64	../../inc/az_var.h	/^  az_int64_t        i64;$/;"	m	union:__anon49
 i8	../../inc/az_var.h	/^  az_int8_t         i8;$/;"	m	union:__anon40
 i8	../../inc/az_var.h	/^  az_int8_t         i8;$/;"	m	union:__anon45
 i8	../../inc/az_var.h	/^  az_int8_t         i8;$/;"	m	union:__anon47
 i8	../../inc/az_var.h	/^  az_int8_t         i8;$/;"	m	union:__anon48
+i8	../../inc/az_var.h	/^  az_int8_t         i8;$/;"	m	union:__anon49
 id	../../inc/az_array.h	/^  az_array_id_t id;$/;"	m	struct:az_array_id_info
 id	../../inc/az_ion_types.h	/^  az_ion_id_t   id;$/;"	m	struct:az_ion
 id_list	../../inc/az_array.h	/^  az_index_pool_t     id_list; $/;"	m	struct:az_array
@@ -4726,6 +5041,7 @@ iomux	../../inc/sys/linux/az_linux_def.h	/^  az_sys_iomux_t  iomux;$/;"	m	struct
 iomux	../../inc/sys/linux/az_linux_xu.h	/^  az_sys_iomux_t  iomux;$/;"	m	struct:__anon7
 ion	../../inc/az_iou.h	/^  az_ion_t          ion;$/;"	m	struct:az_iou
 ion	../../inc/az_msgq.h	/^  az_ion_t  ion;$/;"	m	struct:az_msgq
+ion	../../inc/az_thread.h	/^  az_ion_t        ion;$/;"	m	struct:az_thread_entity
 ion	../../inc/sys/az_fs.h	/^  az_ion_t        ion;$/;"	m	struct:__anon2
 ion	../../inc/sys/az_fs.h	/^  az_ion_t        ion;$/;"	m	struct:__anon3
 ion	../../inc/sys/az_fs.h	/^  az_ion_t      ion;$/;"	m	struct:__anon1
@@ -4791,6 +5107,7 @@ lock	../../inc/az_cirbuffer.h	/^  az_sys_lw_lock_t  *lock;$/;"	m	struct:az_cirbu
 lock	../../inc/az_event.h	/^  az_rw_lock_t          *lock;$/;"	m	struct:az_event_port
 lock	../../inc/az_event.h	/^  az_rw_lock_t          *lock;$/;"	m	struct:az_event_port_entity
 lock	../../inc/az_event.h	/^  az_rw_lock_t      *lock;$/;"	m	struct:az_event_receiver
+lock	../../inc/az_thread.h	/^  az_rw_lock_t    lock;$/;"	m	struct:az_thread_entity
 lock	../../inc/sys/az_xu.h	/^  az_rw_lock_t    lock;$/;"	m	struct:az_xu_entity
 lock	../../inc/sys/linux/az_linux_event.h	/^  az_sys_lw_lock_t  lock;$/;"	m	struct:__anon4
 lock	../core/az_event_bus.c	/^  az_sys_lw_lock_t  lock; $/;"	m	struct:__anon1	file:
@@ -4830,7 +5147,9 @@ mode	../../inc/az_var.h	/^  az_var_print_mode_t mode;$/;"	m	struct:az_var_print_
 module	../../inc/mon/az_probe.h	/^  void  *module;$/;"	m	struct:az_probe
 monSvrIpStr	../../inc/mon/az_trace.h	/^  char      monSvrIpStr[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_trace_ctrl
 monSvrPort	../../inc/mon/az_trace.h	/^  uint16_t  monSvrPort;$/;"	m	struct:az_trace_ctrl
+msgq	../../inc/az_thread.h	/^  az_ring_t   msgq;$/;"	m	struct:az_thread_entity
 msgq	../../inc/sys/az_xu.h	/^  az_ring_t   msgq;$/;"	m	struct:az_xu_entity
+msgs	../../inc/az_thread.h	/^  az_thread_msg_t msgs[CONFIG_AZ_THREAD_MSG_QUEUE_SZ]; $/;"	m	struct:az_thread_entity
 msgs	../../inc/sys/az_xu.h	/^  az_xu_msg_t msgs[CONFIG_AZ_XU_MSG_QUEUE_SZ]; $/;"	m	struct:az_xu_entity
 mtrace_state	../../inc/az_malloc.h	/^  long  mtrace_state;$/;"	m	struct:az_malloc_stats
 mutex	../../inc/sys/az_mutex.h	/^  az_sys_mutex_t     mutex;       $/;"	m	struct:__anon3
@@ -4853,6 +5172,9 @@ name	../../inc/az_sys_def.h	/^    char  name[AZ_SYS_SHM_NAME_MAX];$/;"	m	struct:
 name	../../inc/az_test.h	/^  char  *name;$/;"	m	struct:az_test_descr_t
 name	../../inc/az_test.h	/^  char  name[AZ_NAME_MAX];$/;"	m	struct:az_test_case
 name	../../inc/az_test.h	/^  char  name[AZ_NAME_MAX];$/;"	m	struct:az_test_project
+name	../../inc/az_thread.h	/^  char            name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_thread_entity
+name	../../inc/az_thread.h	/^  char            name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_thread_trace_info
+name	../../inc/az_thread_cfg.h	/^  char            name[AZ_THREAD_CFG_NAME_LEN];$/;"	m	struct:az_thread_config
 name	../../inc/az_thread_cfg.h	/^  char  name[AZ_THR_CFG_NAME_LEN];$/;"	m	struct:az_thread_config
 name	../../inc/az_unitTest.h	/^  char  *name;$/;"	m	struct:az_ut_testCaseResult
 name	../../inc/az_unitTest.h	/^  char  *name;$/;"	m	struct:az_ut_testProjResult
@@ -4905,6 +5227,8 @@ offsetof	../../inc/az_def.h	131;"	d
 offsetof	../../inc/az_def.h	133;"	d
 offsetof	../../inc/az_def.h	135;"	d
 offsetof	../../inc/az_def.h	137;"	d
+offsetof	../../inc/az_def.h	139;"	d
+offsetof	../../inc/az_def.h	141;"	d
 onClientConnection	../../inc/net/az_tcpserver.h	/^  int (*onClientConnection)(void *, az_sock_t cliSock, void *cliAddr);$/;"	m	struct:az_tcpserver_oprs
 onError	../../inc/az_fsm.h	/^  void  (*onError)(void *, az_fsm_state_t, az_event_t);$/;"	m	struct:az_fsm
 onoff	../../inc/az_test.h	/^  az_bool_t   onoff;$/;"	m	struct:az_test_case
@@ -4976,6 +5300,7 @@ policy	../../inc/az_sys_def.h	/^    int32_t  policy;$/;"	m	struct:__anon32::__an
 policy	../../inc/az_sys_def.h	/^    int32_t  policy;$/;"	m	struct:__anon34::__anon35
 policy	../../inc/az_sys_def.h	/^    int32_t  policy;$/;"	m	struct:__anon8::__anon9
 policy	../../inc/az_thread_cfg.h	/^  az_thread_policy_t      policy;$/;"	m	struct:az_thread_config
+policy	../../inc/az_thread_cfg.h	/^  az_thread_policy_t  policy;$/;"	m	struct:az_thread_config
 policy	../../inc/az_xu_cfg.h	/^  az_xu_policy_t      policy;$/;"	m	struct:az_xu_config
 policy	../../inc/az_xu_cfg.h	/^  az_xu_policy_t  policy;$/;"	m	struct:az_xu_config
 pop	../../inc/az_cirbuffer.h	/^  az_pos_t  pop;$/;"	m	struct:az_cirbuffer
@@ -5011,6 +5336,7 @@ pos	../../inc/az_var.h	/^  az_pos_t          pos;$/;"	m	union:__anon40
 pos	../../inc/az_var.h	/^  az_pos_t          pos;$/;"	m	union:__anon45
 pos	../../inc/az_var.h	/^  az_pos_t          pos;$/;"	m	union:__anon47
 pos	../../inc/az_var.h	/^  az_pos_t          pos;$/;"	m	union:__anon48
+pos	../../inc/az_var.h	/^  az_pos_t          pos;$/;"	m	union:__anon49
 prev	../../inc/az_link.h	/^  az_link_t *prev;$/;"	m	struct:az_link_list
 prev	../../inc/az_link.h	/^  struct az_double_link *prev;$/;"	m	struct:az_double_link	typeref:struct:az_double_link::az_double_link
 prev	../../inc/az_link.h	/^  struct az_double_link *prev;$/;"	m	struct:az_double_link_list	typeref:struct:az_double_link_list::az_double_link
@@ -5023,6 +5349,8 @@ priority	../../inc/az_sys_def.h	/^    int32_t  priority;$/;"	m	struct:__anon32::
 priority	../../inc/az_sys_def.h	/^    int32_t  priority;$/;"	m	struct:__anon34::__anon35
 priority	../../inc/az_sys_def.h	/^    int32_t  priority;$/;"	m	struct:__anon8::__anon9
 priority	../../inc/az_thread_cfg.h	/^  uint32_t                priority;$/;"	m	struct:az_thread_config
+priority	../../inc/az_thread_cfg.h	/^  uint32_t        priority;$/;"	m	struct:az_thread_config
+priority	../../inc/az_thread_types.h	/^    int priority;$/;"	m	struct:__anon47
 priority	../../inc/az_xu_cfg.h	/^  uint32_t                priority;$/;"	m	struct:az_xu_config
 priority	../../inc/az_xu_cfg.h	/^  uint32_t        priority;$/;"	m	struct:az_xu_config
 priority	../../inc/sys/az_xu_types.h	/^    int priority;$/;"	m	struct:__anon7
@@ -5063,6 +5391,7 @@ r	../../inc/az_var.h	/^  az_r_t            r;$/;"	m	union:__anon40
 r	../../inc/az_var.h	/^  az_r_t            r;$/;"	m	union:__anon45
 r	../../inc/az_var.h	/^  az_r_t            r;$/;"	m	union:__anon47
 r	../../inc/az_var.h	/^  az_r_t            r;$/;"	m	union:__anon48
+r	../../inc/az_var.h	/^  az_r_t            r;$/;"	m	union:__anon49
 readCount	../../inc/az_rw_lock.h	/^  int32_t           readCount;$/;"	m	struct:az_rw_lock
 read_fd	../../inc/az_log_dup.h	/^  az_sys_fd_t read_fd;$/;"	m	struct:az_log_dump_ctrl
 read_fd	../../inc/mon/az_trace.h	/^  az_sys_fd_t read_fd;$/;"	m	struct:az_trace_ctrl
@@ -5082,6 +5411,7 @@ ref	../../inc/az_var.h	/^  az_ref_t          ref;$/;"	m	union:__anon40
 ref	../../inc/az_var.h	/^  az_ref_t          ref;$/;"	m	union:__anon45
 ref	../../inc/az_var.h	/^  az_ref_t          ref;$/;"	m	union:__anon47
 ref	../../inc/az_var.h	/^  az_ref_t          ref;$/;"	m	union:__anon48
+ref	../../inc/az_var.h	/^  az_ref_t          ref;$/;"	m	union:__anon49
 refCount	../../inc/az_array.h	/^  az_refcount_t refCount;$/;"	m	struct:az_array
 refCount	../../inc/az_event.h	/^    az_refcount_t         refCount;$/;"	m	struct:__anon7::__anon8
 refCount	../../inc/az_event.h	/^  az_refcount_t         refCount;$/;"	m	struct:az_event_port_entity
@@ -5129,8 +5459,10 @@ s	../../inc/az_var.h	/^  char*             s;$/;"	m	union:__anon40
 s	../../inc/az_var.h	/^  char*             s;$/;"	m	union:__anon45
 s	../../inc/az_var.h	/^  char*             s;$/;"	m	union:__anon47
 s	../../inc/az_var.h	/^  char*             s;$/;"	m	union:__anon48
+s	../../inc/az_var.h	/^  char*             s;$/;"	m	union:__anon49
 sa4	../../inc/az_sys_def.h	/^  struct sockaddr_in    sa4;$/;"	m	union:az_sys_inet_address	typeref:struct:az_sys_inet_address::sockaddr_in
 samples	../../inc/az_test.h	/^  int     samples;$/;"	m	struct:az_test_iter
+sched_policy	../../inc/az_thread_types.h	/^    int sched_policy;$/;"	m	struct:__anon47
 sched_policy	../../inc/sys/az_xu_types.h	/^    int sched_policy;$/;"	m	struct:__anon7
 sched_policy	../../inc/sys/az_xu_types.h	/^    int sched_policy;$/;"	m	struct:__anon8
 sem	../../inc/sys/linux/az_linux_lock.h	/^  int   sem;$/;"	m	struct:az_sys_lw_lock
@@ -5145,6 +5477,8 @@ serial	../../inc/az_iou.h	/^    } serial;$/;"	m	union:__anon18	typeref:struct:__
 setflag	../../inc/az_ring.h	/^    az_r_t   (*setflag)(struct az_ring *, az_pos_t , az_ref_t);$/;"	m	struct:az_ring::__anon21
 setflag	../../inc/az_ring.h	/^    az_r_t   (*setflag)(struct az_ring *, az_pos_t , az_ref_t);$/;"	m	struct:az_ring::__anon26
 setflag	../../inc/az_ring.h	/^    az_r_t   (*setflag)(struct az_ring *, az_pos_t , az_ref_t);$/;"	m	struct:az_ring::__anon28
+sig_handler_descr_count	../core/az_sighandle.c	/^static int sig_handler_descr_count = 0;$/;"	v	file:
+sig_handler_descrs	../core/az_sighandle.c	/^static az_sighandler_descr_t sig_handler_descrs[AZ_MAX_SIG_HANDLERS];$/;"	v	file:
 sign	../../inc/az_malloc.h	/^  int sign;$/;"	m	struct:az_malloc_sign
 signo	../../inc/az_event.h	/^  az_sys_event_t    signo;$/;"	m	struct:az_event_receiver
 signo	../../inc/sys/az_sig.h	/^  int signo;$/;"	m	struct:az_sig_descr
@@ -5174,6 +5508,7 @@ size	../../inc/az_var.h	/^  az_size_t         size;$/;"	m	union:__anon40
 size	../../inc/az_var.h	/^  az_size_t         size;$/;"	m	union:__anon45
 size	../../inc/az_var.h	/^  az_size_t         size;$/;"	m	union:__anon47
 size	../../inc/az_var.h	/^  az_size_t         size;$/;"	m	union:__anon48
+size	../../inc/az_var.h	/^  az_size_t         size;$/;"	m	union:__anon49
 size	../../inc/az_var.h	/^  az_size_t   size;$/;"	m	struct:az_var_descr
 sizelimit	../../inc/az_log_dup.h	/^  int sizelimit;$/;"	m	struct:az_log_dump_ctrl
 sock	../../inc/az_log.h	/^  az_sys_socket_t sock;$/;"	m	union:__anon23
@@ -5204,13 +5539,17 @@ st	../../inc/az_event.h	/^  } st;$/;"	m	union:__anon7	typeref:struct:__anon7::__
 st	../../inc/az_event.h	/^  } st;$/;"	m	union:__anon9	typeref:struct:__anon9::__anon10
 st	../../inc/az_event.h	/^  } st;$/;"	m	union:__anon9	typeref:struct:__anon9::__anon11
 stackSize	../../inc/az_thread_cfg.h	/^  uint32_t                stackSize;$/;"	m	struct:az_thread_config
+stackSize	../../inc/az_thread_cfg.h	/^  uint32_t        stackSize;$/;"	m	struct:az_thread_config
 stackSize	../../inc/az_xu_cfg.h	/^  uint32_t                stackSize;$/;"	m	struct:az_xu_config
 stackSize	../../inc/az_xu_cfg.h	/^  uint32_t        stackSize;$/;"	m	struct:az_xu_config
+stack_size	../../inc/az_thread_types.h	/^    az_size_t   stack_size;$/;"	m	struct:__anon47
 stack_size	../../inc/sys/az_xu_types.h	/^    az_size_t   stack_size;$/;"	m	struct:__anon7
 stack_size	../../inc/sys/az_xu_types.h	/^    az_size_t   stack_size;$/;"	m	struct:__anon8
 stage	../../inc/az_ver.h	/^  unsigned char   stage;  \/\/alpha,beta,rc,relase,stable$/;"	m	struct:az_version
 start	../../inc/net/az_tcpserver.h	/^  int (*start)(struct az_tcpserver *);$/;"	m	struct:az_tcpserver_oprs
 startdelay	../../inc/az_thread_cfg.h	/^  int                     startdelay;$/;"	m	struct:az_thread_config
+startdelay	../../inc/az_thread_cfg.h	/^  int             startdelay;$/;"	m	struct:az_thread_config
+startdelay	../../inc/az_thread_types.h	/^    int startdelay;$/;"	m	struct:__anon47
 startdelay	../../inc/az_xu_cfg.h	/^  int                     startdelay;$/;"	m	struct:az_xu_config
 startdelay	../../inc/az_xu_cfg.h	/^  int             startdelay;$/;"	m	struct:az_xu_config
 startdelay	../../inc/sys/az_xu_types.h	/^    int startdelay;$/;"	m	struct:__anon7
@@ -5228,6 +5567,7 @@ state	../../inc/az_iou.h	/^  az_int32_t  state;$/;"	m	struct:az_iou_status
 state	../../inc/az_log.h	/^  az_log_port_state_t state;$/;"	m	struct:az_log_port_entity
 state	../../inc/az_log.h	/^  int   state;$/;"	m	struct:az_log
 state	../../inc/az_log.h	/^  int state;$/;"	m	struct:az_log_outport
+state	../../inc/az_thread.h	/^  az_thread_state_t   state;$/;"	m	struct:az_thread_entity
 state	../../inc/az_thread.h	/^  int state;$/;"	m	struct:az_thread_status
 state	../../inc/az_trz.h	/^  uint16_t        state;$/;"	m	struct:az_transaction
 state	../../inc/cli/az_cli.h	/^  int state;$/;"	m	struct:az_cli_shell
@@ -5271,11 +5611,14 @@ sys_socket	../../inc/sys/az_socket.h	/^  az_sys_socket_t sys_socket;$/;"	m	struc
 sys_socket	../../inc/sys/az_socket.h	/^  az_sys_socket_t sys_socket;$/;"	m	struct:__anon6
 sys_timer	../../inc/sys/az_timer.h	/^  az_sys_timer_t         sys_timer;$/;"	m	struct:__anon6
 sys_timer	../../inc/sys/az_timer.h	/^  az_sys_timer_t         sys_timer;$/;"	m	struct:__anon7
+sys_xu	../../inc/az_thread.h	/^  az_sys_xu_t     sys_xu;$/;"	m	struct:az_thread_entity
 sys_xu	../../inc/sys/az_xu.h	/^  az_sys_xu_t     sys_xu;$/;"	m	struct:__anon7
 sys_xu	../../inc/sys/az_xu.h	/^  az_sys_xu_t     sys_xu;$/;"	m	struct:az_xu_entity
 t0	../../inc/az_prof.h	/^  az_sys_timespec_t t0, t1;$/;"	m	struct:az_prof_elm
 t1	../../inc/az_prof.h	/^  az_sys_timespec_t t0, t1;$/;"	m	struct:az_prof_elm
 tab_str	../core/az_xml.c	/^static char *tab_str[] = {$/;"	v	file:
+tag	../../inc/az_ion_types.h	/^  az_ion_tag_t  tag;$/;"	m	struct:az_ion
+tag	../../inc/az_thread_cfg.h	/^  uint16_t        tag;$/;"	m	struct:az_thread_config
 tag	../../inc/az_var.h	/^  char  *tag;$/;"	m	struct:az_var_print_format
 tag	../../inc/mon/az_probe.h	/^  char  *tag;$/;"	m	struct:az_probe
 tcHead	../../inc/az_unitTest.h	/^  az_ut_testCaseResult_t *tcHead;$/;"	m	struct:az_ut_testProjResult
@@ -5298,6 +5641,7 @@ testcase_enabled	../../inc/az_test.h	/^  int   testcase_enabled;$/;"	m	struct:az
 testcase_errored	../../inc/az_test.h	/^  int   testcase_errored;$/;"	m	struct:az_test_project
 testcaselist	../../inc/az_test.h	/^  az_test_case_t  *testcaselist;$/;"	m	struct:az_test_project
 thread	../../inc/az_log.h	/^  void  *thread;$/;"	m	struct:az_log
+thread	../../inc/az_thread.h	/^  pthread_t thread;$/;"	m	struct:az_thread_trace_info
 thread	../../inc/cli/az_cli.h	/^  void  *thread;$/;"	m	struct:az_cli_shell
 thread	../../inc/net/az_tcpserver.h	/^  void  *thread;$/;"	m	struct:az_tcpserver
 thread	../../inc/sys/az_xu.h	/^  pthread_t thread;$/;"	m	struct:az_xu_trace_info
@@ -5315,8 +5659,10 @@ to_lower	../../inc/az_string.h	/^static inline char to_lower(char c) {$/;"	f
 tpHead	../../inc/az_unitTest.h	/^  az_ut_testProjResult_t  *tpHead;$/;"	m	struct:az_ut_result
 tpTail	../../inc/az_unitTest.h	/^  az_ut_testProjResult_t  *tpTail;$/;"	m	struct:az_ut_result
 trace	../../inc/mon/az_trace.h	/^  az_trace_info_t trace;$/;"	m	union:__anon1
+trace_info	../../inc/az_thread.h	/^  az_thread_trace_info_t trace_info; $/;"	m	struct:az_thread_entity
 trace_info	../../inc/sys/az_xu.h	/^  az_xu_trace_info_t trace_info; $/;"	m	struct:az_xu_entity
 transportType	../../inc/az_iou.h	/^  az_uint16_t   transportType;$/;"	m	struct:az_iou_config
+trz_list	../../inc/az_thread.h	/^  az_link_list_t  trz_list;$/;"	m	struct:az_thread_entity
 trz_list	../../inc/sys/az_xu.h	/^  az_link_list_t  trz_list;$/;"	m	struct:az_xu_entity
 tsc	../../inc/az_test.h	/^    uint64_t tsc;$/;"	m	struct:az_test_project::__anon46
 tx	../../inc/az_iou.h	/^  } tx;$/;"	m	struct:az_iou	typeref:struct:az_iou::__anon17
@@ -5352,32 +5698,39 @@ u16	../../inc/az_var.h	/^  az_uint16_t       u16;$/;"	m	union:__anon40
 u16	../../inc/az_var.h	/^  az_uint16_t       u16;$/;"	m	union:__anon45
 u16	../../inc/az_var.h	/^  az_uint16_t       u16;$/;"	m	union:__anon47
 u16	../../inc/az_var.h	/^  az_uint16_t       u16;$/;"	m	union:__anon48
+u16	../../inc/az_var.h	/^  az_uint16_t       u16;$/;"	m	union:__anon49
 u32	../../inc/az_event.h	/^  az_uint32_t   u32;$/;"	m	union:__anon7
 u32	../../inc/az_event.h	/^  az_uint32_t   u32;$/;"	m	union:__anon9
 u32	../../inc/az_var.h	/^  az_uint32_t       u32;$/;"	m	union:__anon40
 u32	../../inc/az_var.h	/^  az_uint32_t       u32;$/;"	m	union:__anon45
 u32	../../inc/az_var.h	/^  az_uint32_t       u32;$/;"	m	union:__anon47
 u32	../../inc/az_var.h	/^  az_uint32_t       u32;$/;"	m	union:__anon48
+u32	../../inc/az_var.h	/^  az_uint32_t       u32;$/;"	m	union:__anon49
 u64	../../inc/az_var.h	/^  az_uint64_t       u64;$/;"	m	union:__anon40
 u64	../../inc/az_var.h	/^  az_uint64_t       u64;$/;"	m	union:__anon45
 u64	../../inc/az_var.h	/^  az_uint64_t       u64;$/;"	m	union:__anon47
 u64	../../inc/az_var.h	/^  az_uint64_t       u64;$/;"	m	union:__anon48
+u64	../../inc/az_var.h	/^  az_uint64_t       u64;$/;"	m	union:__anon49
 u8	../../inc/az_var.h	/^  az_uint8_t        u8;$/;"	m	union:__anon40
 u8	../../inc/az_var.h	/^  az_uint8_t        u8;$/;"	m	union:__anon45
 u8	../../inc/az_var.h	/^  az_uint8_t        u8;$/;"	m	union:__anon47
 u8	../../inc/az_var.h	/^  az_uint8_t        u8;$/;"	m	union:__anon48
+u8	../../inc/az_var.h	/^  az_uint8_t        u8;$/;"	m	union:__anon49
 upos	../../inc/az_var.h	/^  az_upos_t         upos;$/;"	m	union:__anon40
 upos	../../inc/az_var.h	/^  az_upos_t         upos;$/;"	m	union:__anon45
 upos	../../inc/az_var.h	/^  az_upos_t         upos;$/;"	m	union:__anon47
 upos	../../inc/az_var.h	/^  az_upos_t         upos;$/;"	m	union:__anon48
+upos	../../inc/az_var.h	/^  az_upos_t         upos;$/;"	m	union:__anon49
 usize	../../inc/az_var.h	/^  az_usize_t        usize;$/;"	m	union:__anon40
 usize	../../inc/az_var.h	/^  az_usize_t        usize;$/;"	m	union:__anon45
 usize	../../inc/az_var.h	/^  az_usize_t        usize;$/;"	m	union:__anon47
 usize	../../inc/az_var.h	/^  az_usize_t        usize;$/;"	m	union:__anon48
+usize	../../inc/az_var.h	/^  az_usize_t        usize;$/;"	m	union:__anon49
 v	../../inc/az_var.h	/^  az_ref_t          v;$/;"	m	union:__anon40
 v	../../inc/az_var.h	/^  az_ref_t          v;$/;"	m	union:__anon45
 v	../../inc/az_var.h	/^  az_ref_t          v;$/;"	m	union:__anon47
 v	../../inc/az_var.h	/^  az_ref_t          v;$/;"	m	union:__anon48
+v	../../inc/az_var.h	/^  az_ref_t          v;$/;"	m	union:__anon49
 value	../../inc/az_kv.h	/^  char  *value;$/;"	m	struct:az_kv
 value	../../inc/az_var.h	/^  az_var_value_t  value;$/;"	m	struct:az_var
 value2Str	../../inc/az_var.h	/^  az_var_value2Str_t value2Str;$/;"	m	struct:az_var_print_format
@@ -5388,6 +5741,7 @@ vcur	../../inc/az_fsm.h	/^  az_fsm_vector_t       *vcur;$/;"	m	struct:az_fsm
 vector	../../inc/az_fsm.h	/^  az_fsm_vector_t       *vector;$/;"	m	struct:az_fsm
 virAddr	../../inc/sys/linux/az_linux_def.h	/^  az_ref_t         virAddr;$/;"	m	struct:__anon1
 vtable	../../inc/az_fsm.h	/^  az_fsm_vector_t       *vtable;$/;"	m	struct:az_fsm
+wait_thread_id	../../inc/az_thread.h	/^  az_ion_id_t wait_thread_id;$/;"	m	struct:az_thread_entity
 wait_xu_id	../../inc/sys/az_xu.h	/^  az_ion_id_t wait_xu_id;$/;"	m	struct:az_xu_entity
 width_list	../../inc/az_var.h	/^  char  *width_list;$/;"	m	struct:az_var_print_format
 write_fd	../../inc/az_log_dup.h	/^  az_sys_fd_t write_fd;$/;"	m	struct:az_log_dump_ctrl

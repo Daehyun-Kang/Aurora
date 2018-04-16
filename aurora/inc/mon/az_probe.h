@@ -69,13 +69,16 @@ typedef uint64_t   az_probe_sample_t;
 /* structures */
 typedef struct az_probe_ctrl {
   uint8_t   state;
-  az_sock_t ctrl_sock;
-  az_sock_t data_sock;
+  az_socket_t ctrl_sock;
+  az_socket_t data_sock;
 
   az_probe_sample_t last_sample;
 
   char  svrIpStr[CONFIG_AZ_NAME_MAX];
   uint16_t  svrPort;
+
+  az_socket_entity_t _ctrl_sock;
+  az_socket_entity_t _data_sock;
 } az_probe_ctrl_t;
 
 /* structured types */
@@ -102,17 +105,23 @@ extern az_probe_ctrl_t  az_probe_ctrl;
     az_thread_t _xu = az_thread_self();  \
     az_probe_sample_t _sample;\
     az_sys_timespec_t  _cur;\
+    uint8_t _level = level;\
     if ((AZ_PROBE_STATE_READY & az_probe_ctrl.state) != AZ_PROBE_STATE_READY) {\
       break;\
     }\
-    clock_gettime(AZ_PROBE_CLOCK_ID, &_cur);\
     if (_xu) {\
-      _sample = AZ_PROBE_MK_SAMPLE(_xu->ion.id, level, \
+      if (!(_xu->flags & AZ_THREAD_FLAGS_PROBE)) {\
+        break;\
+      }\
+      clock_gettime(AZ_PROBE_CLOCK_ID, &_cur);\
+      _sample = AZ_PROBE_MK_SAMPLE(_xu->ion.tag, _level, \
           az_prof_tdiff(_cur, az_probe_tstamp_base));\
     } else {\
-      _sample = AZ_PROBE_MK_SAMPLE(0, level, \
+      clock_gettime(AZ_PROBE_CLOCK_ID, &_cur);\
+      _sample = AZ_PROBE_MK_SAMPLE(0, _level, \
           az_prof_tdiff(_cur, az_probe_tstamp_base));\
     }\
+    az_probe_level = _level;\
     if (az_probe_ctrl.state & AZ_PROBE_STATE_DSND){\
       if (az_probe_samples.count >= AZ_PROBE_SAMPLE_SEND_MAX) { \
           az_probe_send();\
@@ -136,8 +145,8 @@ extern az_probe_ctrl_t  az_probe_ctrl;
 #define AZ_PROBE_SET(level)
 #endif
 
-#define AZ_PROBE_INC()    AZ_PROBE_SET(++az_probe_level)
-#define AZ_PROBE_DEC()    AZ_PROBE_SET(--az_probe_level)
+#define AZ_PROBE_INC(a)    AZ_PROBE_SET(az_probe_level+(a))
+#define AZ_PROBE_DEC(a)    AZ_PROBE_SET(az_probe_level-(a))
 
 #define AZ_PROBE_GET_SAMPLE(_pSample) \
           az_ring_pop64(&az_probe_samples, _pSample)

@@ -23,6 +23,7 @@
 #include "frw/az_frw.h"
 #include "cli/az_cli.h"
 #include "az_printf.h"
+#include "az_thread_main.h"
 
 /* declare global variables */
 
@@ -193,20 +194,18 @@ void *az_thread_entry8(void *arg)
 
 az_thread_config_t az_thread_main_config = {
   .arg_name[0] = 0,
+  .tag = 'm',
+  .flags = AZ_THREAD_FLAGS_LOG_ERR|AZ_THREAD_FLAGS_TRACE|AZ_THREAD_FLAGS_PROBE,
   .stackSize = 0,
   .coremask = 0x1,
   .policy = SCHED_OTHER,
   .priority = 1,
   .startdelay = -1,
 };
+static struct az_thread_main_arg az_thread_main_arg; 
 az_thread_t az_thread_main = NULL;
 
-struct az_thread_main_arg {
-  int argc;
-  char **argv;
-} az_thread_main_arg;
-
-void *az_thread_main_entry(struct az_thread_main_arg *arg)
+void * __az_weak az_thread_main_entry(struct az_thread_main_arg *arg)
 {
   az_assert(NULL != arg);
 
@@ -216,7 +215,7 @@ void *az_thread_main_entry(struct az_thread_main_arg *arg)
 //extern void  az_rstdio_begin(void);
 
 az_uint32_t az_ring_ds32[2];
-int main(int argc, char *argv[])
+int az_main(int argc, char *argv[])
 {
   az_r_t r;
 

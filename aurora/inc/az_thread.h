@@ -33,6 +33,7 @@
 #include "az_thread_cfg.h"
 #include "az_ring.h"
 #include "az_ion.h"
+#include "sys/az_sys_probe.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -73,6 +74,8 @@ extern "C"
 
 #define AZ_THREAD_FLAGS_LOG_ERR         0x00000001
 #define AZ_THREAD_FLAGS_TRACE           0x00000002
+#define AZ_THREAD_FLAGS_PROBE           0x00000004
+#define AZ_THREAD_FLAGS_MASK            0x00000007
 
 #ifdef CONFIG_AZ_TRACE_TASKS           
 #define AZ_THREAD_FLAGS_INI_VAL         (AZ_THREAD_FLAGS_LOG_ERR|AZ_THREAD_FLAGS_TRACE) 
@@ -248,6 +251,21 @@ static inline az_r_t az_thread_iomux_del(az_thread_t xu, az_sys_io_t fd)
 {
   az_assert(NULL != xu);
   return (az_r_t)az_sys_iomux_del(xu->sys_xu->iomux, fd);
+}
+static inline az_r_t az_thread_wait_iomux(az_sys_io_event_t *ioevt, int maxevents, int tmo_ms)
+{
+  az_r_t r = AZ_SUCCESS;
+  az_assert(NULL != az_sys_xu);
+  az_sys_xu_t xu = az_sys_xu;
+  az_assert(xu->iomux != AZ_SYS_IOMUX_INVALID); 
+
+  do {
+    AZ_PROBE_DEC_SYS(THREAD, 1);
+    r = (az_r_t)az_sys_iomux_wait(xu->iomux, ioevt, maxevents, tmo_ms);
+    AZ_PROBE_INC_SYS(THREAD, 1);
+  } while (0);
+
+  return r;
 }
 
 

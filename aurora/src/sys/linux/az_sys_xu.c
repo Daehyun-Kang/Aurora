@@ -29,6 +29,7 @@
 //#include "az_def.h"
 #include "az_linux_xu.h"
 #include "az_malloc.h"
+//#include "sys/az_sys_probe.h"
 
 /* declare global variables */
 
@@ -175,9 +176,11 @@ static void az_sys_xu_suspend_handler(int sig)
   az_sys_xu_t xu = az_sys_xu;
   //int val;
 
+  //AZ_PROBE_DEC_SYS(THREAD, 1);
   if (NULL != xu) {
       sem_wait(&(xu->sem_suspend));
   }
+  //AZ_PROBE_INC_SYS(THREAD, 1);
 }
 
 /**

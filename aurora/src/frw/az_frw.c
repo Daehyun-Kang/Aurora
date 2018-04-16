@@ -206,7 +206,7 @@ void *az_frw_main()
     }
     az_thread_beam_t received;
     //az_thread_beam_t emask;
-    az_int64_t  tmo_ns = 2000000000;
+    az_int64_t  tmo_ns = 1000000000;
 
     extern az_fsm_t  az_frw_fsm; 
     az_fsm_activate(&az_frw_fsm, az_thread_self());
@@ -218,17 +218,15 @@ void *az_frw_main()
       break;
     }
     uint32_t tmo_count = 0;
-    AZ_PROBE_INC();
     while (1) {
       received = 0;
-      AZ_PROBE_DEC();
       r = az_thread_recv_beam(AZ_THREAD_BEAM_EVTBUS, 0, tmo_ns, &received);  
-      AZ_PROBE_INC();
+      az_thread_sleep(tmo_ns/2);
       if (r >= 0 && (received & AZ_THREAD_BEAM_EVTBUS)) {
         r = az_event_recv(rcvr, &revt);
         if (r >= 0) {
           az_event_toStr(az_thread_prtbuf, sizeof(az_thread_prtbuf), revt);
-          az_rprintf(r, "xu recvent %p: %s\n", revt, az_thread_prtbuf); 
+          az_dprintf("xu recvent %p: %s\n", revt, az_thread_prtbuf); 
           az_fsm_run(&az_frw_fsm, revt);
         } else {
           az_rprintf(r, "xu recvent: %s\n", NULL); 

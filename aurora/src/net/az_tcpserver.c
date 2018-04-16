@@ -27,7 +27,7 @@ extern int az_tcpserver_init_default(struct az_tcpserver *svr);
 extern int az_tcpserver_start_default(struct az_tcpserver *svr);
 extern void *az_tcpserver_run_default(void *arg);
 extern int az_tcpserver_stop_default(struct az_tcpserver *svr);
-extern int az_tcpserver_onClientConnection_default(void *ctx, az_sock_t cliSock, void *cliAddr);
+extern int az_tcpserver_onClientConnection_default(void *ctx, az_socket_id_t cliSock, void *cliAddr);
 
 /* declare global variables */
 struct az_tcpserver_oprs az_tcpserver_oprs_default = {
@@ -128,10 +128,9 @@ void *az_tcpserver_run_default(void *arg)
   fd_set  fds;
   struct timeval tv;
 #endif
-  az_sock_t cliSock;
+  az_socket_t pCliSock;
   struct sockaddr_in  cliAddress;
   int svr_port_count = CONFIG_AZ_TCP_SVR_PORT_INC_MAX;
-
 
   do {
     r = az_inet_openTcpServer(svr->config.ipAddrStr, (uint16_t)svr->config.port, &(svr->sock));
@@ -148,20 +147,20 @@ void *az_tcpserver_run_default(void *arg)
     }
     az_printf("tcp server on %s:%u open ok\n", svr->config.ipAddrStr,
           svr->config.port);
-    r = az_inet_setSocketNonBlockMode(svr->sock);
+    r = az_inet_setSocketNonBlockMode(svr->sock->sys_socket);
     if (r < 0) {
-      az_inet_closeTcpServer(svr->sock);
-      svr->sock = AZ_SOCK_INVALID;
+      az_inet_closeTcpServer(svr->sock->sys_socket);
+      svr->sock->sys_socket = AZ_SOCK_INVALID;
       break;
     }
-    r = listen(svr->sock, svr->config.backlog);
+    r = listen(svr->sock->sys_socket, svr->config.backlog);
     if (r < 0) {
-      az_inet_closeTcpServer(svr->sock);
-      svr->sock = AZ_SOCK_INVALID;
+      az_inet_closeTcpServer(svr->sock->sys_socket);
+      svr->sock->sys_socket = AZ_SOCK_INVALID;
       break;
     }
     #ifdef  CONFIG_AZ_TCPSERVER_USE_SELECT
-    FD_SET(svr->sock, &fds); nfds = svr->sock;
+    FD_SET(svr->sock->sys_socket, &fds); nfds = svr->sock->sys_socket;
     #endif
     svr->state |= AZ_TCPSERVER_STATE_RUN;
   } while (AZ_SUCCESS != r);
@@ -169,18 +168,19 @@ void *az_tcpserver_run_default(void *arg)
   #ifdef  CONFIG_AZ_TCPSERVER_USE_SELECT
   FD_ZERO(&fds);
   while (svr->state & AZ_TCPSERVER_STATE_RUN) {
-    FD_SET(svr->sock, &fds);
+    FD_SET(svr->sock->sys_socket, &fds);
     tv.tv_sec = svr->config.timeout/1000000;
     tv.tv_usec = svr->config.timeout%1000000;
     nevt = select(nfds+1, &fds, NULL, NULL, &tv);
     if (nevt > 0) {
-      if (!FD_ISSET(svr->sock, &fds)) continue;
-      r = az_inet_getTcpConnection(svr->sock, &cliSock, &cliAddress);
+      if (!FD_ISSET(svr->sock->sys_socket, &fds)) continue;
+      pCliSock = NULL;
+      r = az_inet_getTcpConnection(svr->sock->sys_socket, &pCliSock, &cliAddress);
       if (r < 0) {
         continue;
       }
       if (svr->oprs->onClientConnection) {
-        (svr->oprs->onClientConnection)(svr, cliSock, (void *)&cliAddress);
+        (svr->oprs->onClientConnection)(svr, pCliSock->sys_socket, (void *)&cliAddress);
       }
       continue;
     }
@@ -192,21 +192,22 @@ void *az_tcpserver_run_default(void *arg)
 
   az_sys_io_event_t ioevt;
   az_sys_xu_open_iomux();
-  az_sys_xu_iomux_add(svr->sock, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
+  az_sys_xu_iomux_add(svr->sock->sys_socket, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
   while (svr->state & AZ_TCPSERVER_STATE_RUN) {
-    nevt = az_sys_xu_wait_iomux(&ioevt, 1, svr->config.timeout/1000);
+    nevt = az_thread_wait_iomux(&ioevt, 1, svr->config.timeout/1000);
     //az_printf("%ld %d\n", svr->config.timeout, nevt);
     if (nevt > 0) {
-      if (ioevt.data.fd != svr->sock) continue;
+      if (ioevt.data.fd != svr->sock->sys_socket) continue;
       if (ioevt.events & AZ_SYS_IO_HUP) {
         break;
       }
-      r = az_inet_getTcpConnection(svr->sock, &cliSock, &cliAddress);
+      pCliSock = NULL;
+      r = az_inet_getTcpConnection(svr->sock->sys_socket, &pCliSock, &cliAddress);
       if (r < 0) {
         continue;
       }
       if (svr->oprs->onClientConnection) {
-        (svr->oprs->onClientConnection)(svr, cliSock, (void *)&cliAddress);
+        (svr->oprs->onClientConnection)(svr, pCliSock->sys_socket, (void *)&cliAddress);
       }
       continue;
     }
@@ -219,15 +220,15 @@ void *az_tcpserver_run_default(void *arg)
     }
   }
   
-  az_sys_xu_iomux_del(svr->sock);
+  az_sys_xu_iomux_del(svr->sock->sys_socket);
   az_sys_xu_close_iomux();
   #endif
 
   if (svr->state & AZ_TCPSERVER_STATE_RUN) {
     svr->state &= ~AZ_TCPSERVER_STATE_RUN;
-    if (AZ_SOCK_INVALID != svr->sock) {
-      shutdown(svr->sock, SHUT_RDWR);
-      az_inet_closeTcpServer(svr->sock);
+    if (AZ_SOCK_INVALID != svr->sock->sys_socket) {
+      shutdown(svr->sock->sys_socket, SHUT_RDWR);
+      az_inet_closeTcpServer(svr->sock->sys_socket);
     }
   }
 
@@ -247,9 +248,9 @@ int az_tcpserver_stop_default(struct az_tcpserver *svr)
   az_assert(NULL != svr);
 
   if (svr->state & AZ_TCPSERVER_STATE_RUN) {
-    shutdown(svr->sock, SHUT_RDWR);
-    az_inet_closeTcpServer(svr->sock);
-    svr->sock = AZ_SOCK_INVALID;
+    shutdown(svr->sock->sys_socket, SHUT_RDWR);
+    az_inet_closeTcpServer(svr->sock->sys_socket);
+    svr->sock->sys_socket = AZ_SOCK_INVALID;
     svr->state &= ~AZ_TCPSERVER_STATE_RUN;
     while (svr->state & AZ_TCPSERVER_STATE_RUN) {
       ;
@@ -275,7 +276,7 @@ int az_tcpserver_stop_default(struct az_tcpserver *svr)
  * @return 
  * @exception    none
  */
-int az_tcpserver_onClientConnection_default(void *ctx, az_sock_t cliSock, void *cliAddrIn)
+int az_tcpserver_onClientConnection_default(void *ctx, az_socket_id_t cliSock, void *cliAddrIn)
 {
   //az_tcpserver_t *svr = (az_tcpserver_t *)ctx;
   char  cliIpStr[32]; struct sockaddr_in  *cliAddr = (struct sockaddr_in  *)cliAddrIn;
@@ -311,7 +312,8 @@ az_tcpserver_t *az_tcpserver_create(az_tcpserver_t *svr,
     if (NULL != cfg) {
       svr->config = *cfg;
     }
-    svr->sock = AZ_SOCK_INVALID;
+    svr->sock = &svr->_sock;
+    AZ_SOCKET_INIT_STATIC(svr->sock);
     svr->thread = NULL;
     if (NULL != oprs) {
       svr->oprs = oprs;

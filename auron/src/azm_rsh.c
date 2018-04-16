@@ -82,17 +82,20 @@ int azm_rsh_proc_default(void *arg)
     if (ctrl->state != AZ_TRACE_STATE_IDLE) {
       break;
     }
-    az_sys_socket_t cliSock;
+    static az_socket_entity_t cliSock;
+    az_socket_t pCliSock = &cliSock;
+    AZ_SOCKET_INIT_STATIC(pCliSock);
+
     r = az_inet_openTcpClient(ctrl->rshSvrIpStr, ctrl->rshSvrPort, 
-        NULL, 0, &cliSock);
+        NULL, 0, &pCliSock);
     if (r != AZ_SUCCESS) {
       az_cli_printf("connect fail to trace server %s:%u\n",
           ctrl->rshSvrIpStr, ctrl->rshSvrPort);
       azm_rsh_thread_state = 0;
     } else {
       azm_rsh_thread_state = 1;
-      ctrl->read_fd = cliSock;
-      ctrl->write_fd = cliSock;
+      ctrl->read_fd = cliSock.sys_socket;
+      ctrl->write_fd = cliSock.sys_socket;
       ctrl->state |= AZ_TRACE_STATE_INIT;
       ctrl->curSh->state |= AZ_CLI_SHELL_STATE_INFRWD;
     }
@@ -133,7 +136,7 @@ int azm_rsh_proc_default(void *arg)
   ctrl->curSh->state &= ~AZ_CLI_SHELL_STATE_INFRWD;
   ctrl->curSh->rxfrwd = AZ_SOCK_INVALID; 
   az_sys_xu_iomux_del(ctrl->read_fd);
-  az_sys_socket_delete(ctrl->read_fd);
+  az_socket_delete(ctrl->read_fd);
   ctrl->read_fd = AZ_SOCK_INVALID;
   ctrl->write_fd = AZ_SOCK_INVALID;
 

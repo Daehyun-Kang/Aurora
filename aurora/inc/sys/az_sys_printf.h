@@ -95,7 +95,7 @@ extern "C"
 }
 
 #ifdef  CONFIG_AZ_SYS_PRINT_TIMESTAMP
-#define az_sys_rprintf(r, fmt, ...) if (az_sys_log_level >= AZ_LOG_LEVEL_DEBUG) {\
+#define az_sys_rprintf(r, fmt, ...) if (az_sys_log_level >= AZ_LOG_LEVEL_ERROR) {\
   az_sys_timespec_t _ts; \
   clock_gettime(CLOCK_REALTIME, &_ts);\
   az_sys_time_t _t = (az_sys_time_t)_ts.tv_sec;\
@@ -103,7 +103,7 @@ extern "C"
   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] <%d:%s>" fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, (int)r, az_err_str(r), __VA_ARGS__); \
 }
 #else
-#define az_sys_rprintf(r, fmt, ...) if (az_sys_log_level >= AZ_LOG_LEVEL_DEBUG) printf("[%s:%d] <%d:%s>" fmt, __FUNCTION__, __LINE__, (int)r, az_err_str(r), __VA_ARGS__)
+#define az_sys_rprintf(r, fmt, ...) if (az_sys_log_level >= AZ_LOG_LEVEL_ERROR) printf("[%s:%d] <%d:%s>" fmt, __FUNCTION__, __LINE__, (int)r, az_err_str(r), __VA_ARGS__)
 #endif
 
 #define az_sys_eprintf0(fmt) az_sys_log_printf0(AZ_LOG_LEVEL_ERROR, AZ_LOG_FLAGS_ALL, fmt)

@@ -73,6 +73,7 @@ az_ion_id_t az_socket_create(int domain, int type, int protocol, az_socket_t *p)
     if (r != AZ_SUCCESS) {
       if (AZ_REFCOUNT_IS_ZERO(&s->ion.refCount)) {
         az_free(s);
+        s = NULL;
       }
       break;
     }
@@ -85,6 +86,7 @@ az_ion_id_t az_socket_create(int domain, int type, int protocol, az_socket_t *p)
       if (AZ_REFCOUNT_IS_ZERO(&s->ion.refCount)) {
         az_free(s);
         if (p) *p = NULL;
+        s = NULL;
       }
       break;
     } else {
@@ -93,7 +95,7 @@ az_ion_id_t az_socket_create(int domain, int type, int protocol, az_socket_t *p)
     if (p) *p = s;
   } while (0);
 
-  if (r < 0) {
+  if (r != AZ_SUCCESS) {
     az_sys_rprintf(r, "socket id %d\n",(s == NULL)? -1:s->ion.id);
   }
   return (r < 0)? (az_ion_id_t)r:s->ion.id;
@@ -121,6 +123,7 @@ az_r_t az_socket_delete(az_ion_id_t id)
     }
     if (AZ_REFCOUNT_VALUE(&s->ion.refCount) == 0) {
       result = az_sys_socket_delete(s->sys_socket);
+      s->sys_socket = AZ_SOCK_INVALID;
     }
     if (AZ_REFCOUNT_IS_ZERO(&s->ion.refCount)) {
       az_free(s);

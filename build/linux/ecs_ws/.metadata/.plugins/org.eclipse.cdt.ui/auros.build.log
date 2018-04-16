@@ -1,4 +1,4 @@
-11:25:40 **** Build of configuration Debug for project auros ****
+01:07:57 **** Build of configuration Debug for project auros ****
 make all 
 Building file: /home/dhkang/work/Aurora/auros/src/azs_main.c
 Invoking: GCC C Compiler
@@ -52,31 +52,18 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
      az_array_est_element32_at(pArray, id, e);
      ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
-                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
-     az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
-                                                 ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
- static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
-                    ^
-/home/dhkang/work/Aurora/auros/src/azs_main.c: In function ‘main’:
-/home/dhkang/work/Aurora/auros/src/azs_main.c:101:3: warning: implicit declaration of function ‘az_trace_start_default_thread’ [-Wimplicit-function-declaration]
-   az_trace_start_default_thread();
-   ^
-/home/dhkang/work/Aurora/auros/src/azs_main.c:106:32: warning: passing argument 2 of ‘az_thread_create’ from incompatible pointer type [-Wincompatible-pointer-types]
-   r = az_thread_create("main", azs_xu_main_entry, &azs_xu_main_arg, &azs_xu_main_config, &azs_xu_main);
-                                ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:42:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_probe.h:25,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_thread.h:36,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:43,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_thread.h:256:20: note: expected ‘az_thread_entry_t {aka void * (*)(void *)}’ but argument is of type ‘void * (*)(struct azs_xu_main_arg *)’
- extern az_ion_id_t az_thread_create(char *name, az_thread_entry_t entry, az_thread_arg_t arg, az_thread_config_t *pCfg, az_thread_t *pXU);
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:194:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+     az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
+                                                 ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:144:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+ static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
-/home/dhkang/work/Aurora/auros/src/azs_main.c:110:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-     return (int)az_thread_entry(azs_xu_main);
-            ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -87,12 +74,6 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
- static void az_ion_invalidate(az_ion_t *ion, int is_static)
-             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -184,13 +165,16 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
      az_array_est_element32_at(pArray, id, e);
      ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:28,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_probe.h:25,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_thread.h:36,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:43,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
 /home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:196:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:194:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
      az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
                                                  ^
-/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:146:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:144:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
  static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
                     ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:25:0,
@@ -200,7 +184,7 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:25:0,
  } az_mchk_info_t;
  ^
 In file included from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:23:0:
-/home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:102:1: warning: no semicolon at end of struct or union
+/home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:104:1: warning: no semicolon at end of struct or union
  } az_trace_info_t;
  ^
 /home/dhkang/work/Aurora/auros/src/azs_rstdio.c: In function ‘azs_rstdio_proc_default’:
@@ -217,12 +201,6 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
-In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:34:0,
-                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
-                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
-/home/dhkang/work/Aurora/aurora/inc/az_ion.h:94:13: warning: ‘az_ion_invalidate’ defined but not used [-Wunused-function]
- static void az_ion_invalidate(az_ion_t *ion, int is_static)
-             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -272,5 +250,5 @@ copy exeutable to output location
 cp auros /home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Debug/bin/; cp auros /home/dhkang/work/Aurora/bin/linux/
  
 
-11:25:40 Build Finished (took 732ms)
+01:07:58 Build Finished (took 820ms)
 

@@ -94,7 +94,7 @@ extern "C"
 #define az_rprintf(r, fmt, ...) {\
   extern int az_logs_count;\
   if (az_logs_count > 0) {\
-    az_dprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
+    az_eprintf("<%d:%s> " fmt, r, az_err_str(r), __VA_ARGS__); \
   } else {\
     az_sys_rprintf(r, fmt, __VA_ARGS__); \
   }\

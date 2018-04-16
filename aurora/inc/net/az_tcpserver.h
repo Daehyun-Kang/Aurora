@@ -21,6 +21,7 @@
 #ifndef AZ_TCPSERVER_H
 #define AZ_TCPSERVER_H
 
+#include "sys/az_socket.h"
 #include "sys/az_inet.h"
 
 #ifdef __cplusplus
@@ -49,7 +50,7 @@ struct az_tcpserver_oprs {
   int (*start)(struct az_tcpserver *);
   void *(*run)(void *);
   int (*stop)(struct az_tcpserver *);
-  int (*onClientConnection)(void *, az_sock_t cliSock, void *cliAddr);
+  int (*onClientConnection)(void *, az_socket_id_t cliSock, void *cliAddr);
 };
 struct az_tcpserver_cfg {
   char  *name;
@@ -64,12 +65,13 @@ typedef struct  az_tcpserver {
 
   struct az_tcpserver_cfg config;
 
-  az_sock_t sock;
+  az_socket_t sock;
   void  *thread;
   void  *priv;
 
   struct az_tcpserver_oprs *oprs;
 
+  az_socket_entity_t _sock;
 } az_tcpserver_t;
 
 /* structured types */

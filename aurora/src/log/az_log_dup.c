@@ -481,7 +481,7 @@ void *az_log_dup_thread_proc_default(void *arg)
     r = select(nfds + 1, &fds, NULL, NULL, &tv);
     #else
     j = 0;
-    r = az_sys_xu_wait_iomux(ioevt, 2, 3000);
+    r = az_thread_wait_iomux(ioevt, 2, 3000);
     #endif
     if (az_log_dup_thread_state & 2) continue;
     if (r > 0) {

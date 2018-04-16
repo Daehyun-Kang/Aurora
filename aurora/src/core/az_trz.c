@@ -82,7 +82,8 @@ void az_trz_init_vars()
   }
 
   az_trz_conn_default.nodeid = AZ_TRZ_NODEID_ALL;
-  az_trz_conn_default.sock = AZ_SOCK_INVALID;
+  az_trz_conn_default.sock = &az_trz_conn_default._sock;
+  AZ_SOCKET_INIT_STATIC(az_trz_conn_default.sock);
   az_trz_conn_default.peer = NULL; 
   az_link_initList(&az_trz_conn_default.list);
 }
@@ -94,7 +95,7 @@ void az_trz_init_vars()
  * @return 
  * @exception    none
  */
-void az_trz_default_req_handler(az_trz_t *trz, az_sock_t sock)
+void az_trz_default_req_handler(az_trz_t *trz, az_socket_id_t sockid)
 {
   az_assert(NULL != trz);
   az_r_t r = AZ_SUCCESS;
@@ -110,7 +111,7 @@ void az_trz_default_req_handler(az_trz_t *trz, az_sock_t sock)
   return r;
 }
 
-void az_trz_default_rsp_handler(az_trz_t *trz, az_sock_t sock)
+void az_trz_default_rsp_handler(az_trz_t *trz, az_socket_id_t sockid)
 {
   az_assert(NULL != trz);
   az_r_t r = AZ_SUCCESS;
@@ -126,7 +127,7 @@ void az_trz_default_rsp_handler(az_trz_t *trz, az_sock_t sock)
   return r;
 }
 
-void az_trz_msg_keepalive_req_handler(az_trz_t *trz, az_sock_t sock)
+void az_trz_msg_keepalive_req_handler(az_trz_t *trz, az_socket_id_t sockid)
 {
   az_assert(NULL != trz);
   az_r_t r = AZ_SUCCESS;
@@ -148,7 +149,7 @@ void az_trz_msg_keepalive_req_handler(az_trz_t *trz, az_sock_t sock)
   } while (0);
 }
 
-void az_trz_msg_keepalive_rsp_handler(az_trz_t *trz, az_sock_t sock)
+void az_trz_msg_keepalive_rsp_handler(az_trz_t *trz, az_socket_id_t sockid)
 {
   az_assert(NULL != trz);
   az_r_t r = AZ_SUCCESS;
@@ -232,7 +233,7 @@ az_r_t az_trz_send_request(az_trz_t *trz, az_trz_msg_hdr_t *msgp, az_trz_handler
     }
     trz->req = msgp;
     if (flags & AZ_TRZ_STATE_DREQ) trz->state |= AZ_TRZ_STATE_DREQ;
-    if (trz_conn->sock == AZ_SOCK_INVALID) {
+    if (trz_conn->sock->sys_socket == AZ_SOCK_INVALID) {
       az_trz_node_t  *peer = trz_conn->peer;
       if (peer == NULL) {
         r = AZ_ERR(INVALID);
@@ -244,14 +245,14 @@ az_r_t az_trz_send_request(az_trz_t *trz, az_trz_msg_hdr_t *msgp, az_trz_handler
       if (r != AZ_SUCCESS) {
         break;
       }
-      r = az_thread_iomux_add(az_trz_thread_default, trz_conn->sock, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
+      r = az_thread_iomux_add(az_trz_thread_default, trz_conn->sock->sys_socket, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
       if (r < 0) break;
     }
 
     // change node id to source node
     msgp->nodeid = az_trz_node_local.nodeid; 
     msgp->code |= AZ_TRZ_REQ_FLAG;
-    r = az_send(trz_conn->sock, msgp, sizeof(*msgp) + msgp->len, 0);
+    r = az_send(trz_conn->sock->sys_socket, msgp, sizeof(*msgp) + msgp->len, 0);
     // resoter nodeid
     msgp->nodeid = trz->nodeid;
     if (r != (sizeof(*msgp) + msgp->len)) {
@@ -296,7 +297,7 @@ az_r_t az_trz_send_control_msg(az_trz_node_t *peer, az_trz_msg_hdr_t *msgp, az_t
     }
     trz->req = msgp;
     if (flags & AZ_TRZ_STATE_DREQ) trz->state |= AZ_TRZ_STATE_DREQ;
-    if (peer->sock == AZ_SOCK_INVALID) {
+    if (peer->sock->sys_socket == AZ_SOCK_INVALID) {
       if (peer == NULL) {
         r = AZ_ERR(INVALID);
         break;
@@ -307,13 +308,13 @@ az_r_t az_trz_send_control_msg(az_trz_node_t *peer, az_trz_msg_hdr_t *msgp, az_t
       if (r != AZ_SUCCESS) {
         break;
       }
-      r = az_thread_iomux_add(az_trz_thread_default, peer->sock, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
+      r = az_thread_iomux_add(az_trz_thread_default, peer->sock->sys_socket, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
       if (r < 0) break;
     }
 
     // change node id to source node
     msgp->code |= AZ_TRZ_REQ_FLAG;
-    r = az_send(peer->sock, msgp, sizeof(*msgp) + msgp->len, 0);
+    r = az_send(peer->sock->sys_socket, msgp, sizeof(*msgp) + msgp->len, 0);
     if (r != (sizeof(*msgp) + msgp->len)) {
       trz->state |= AZ_TRZ_STATE_ESND;
       r = AZ_FAIL;
@@ -356,7 +357,7 @@ az_r_t az_trz_msg_query_nodeid_req_send(az_trz_node_t *peer)
  * @return 
  * @exception    none
  */
-void az_trz_msg_query_nodeid_req_handler(az_trz_t *trz, az_sock_t sock)
+void az_trz_msg_query_nodeid_req_handler(az_trz_t *trz, az_socket_id_t sockid)
 {
   az_assert(NULL != trz);
   az_r_t r = AZ_SUCCESS;
@@ -368,9 +369,9 @@ void az_trz_msg_query_nodeid_req_handler(az_trz_t *trz, az_sock_t sock)
   do {
     rsp.hdr = *req;
     rsp.hdr.code = AZ_TRZ_CODE_RSP(QUERY_NODEID);
-    trz_conn = az_trz_conn_find(sock);
+    trz_conn = az_trz_conn_find(sockid);
     if (trz_conn == NULL) {
-      trz_conn = az_trz_conn_getfree(sock, NULL);
+      trz_conn = az_trz_conn_getfree(sockid, NULL);
       if (trz_conn == NULL) {
         rsp.hdr.code |= AZ_TRZ_ERR_FLAG;
       }
@@ -378,7 +379,7 @@ void az_trz_msg_query_nodeid_req_handler(az_trz_t *trz, az_sock_t sock)
     rsp.local_nodeid = trz_conn->nodeid;
     rsp.remote_nodeid = az_trz_node_local.nodeid;
     rsp.hdr.len = sizeof(rsp) - sizeof(rsp.hdr);
-    r = az_send(trz_conn->sock, &rsp, sizeof(rsp), 0);
+    r = az_send(trz_conn->sock->sys_socket, &rsp, sizeof(rsp), 0);
     trz->state &= ~AZ_TRZ_STATE_BUSY;
 
     if (trz->state & AZ_TRZ_STATE_DREQ) {
@@ -390,7 +391,7 @@ void az_trz_msg_query_nodeid_req_handler(az_trz_t *trz, az_sock_t sock)
 
 }
 
-void az_trz_msg_query_nodeid_rsp_handler(az_trz_t *trz, az_sock_t sock)
+void az_trz_msg_query_nodeid_rsp_handler(az_trz_t *trz, az_socket_id_t sockid)
 {
   az_assert(NULL != trz);
   az_r_t r = AZ_SUCCESS;
@@ -405,7 +406,7 @@ void az_trz_msg_query_nodeid_rsp_handler(az_trz_t *trz, az_sock_t sock)
     az_trz_node_log_svr.nodeid = rsp->remote_nodeid; 
     trz_conn = az_trz_conn(rsp->remote_nodeid);
     if (NULL == trz_conn) {
-      r = az_trz_conn_register(rsp->remote_nodeid, sock, &az_trz_node_log_svr);
+      r = az_trz_conn_register(rsp->remote_nodeid, sockid, &az_trz_node_log_svr);
       // register transaction handler from remote node
       az_trz_t *trz = az_trz_alloc(rsp->remote_nodeid, AZ_TRZ_SEQNO_ALL, AZ_TRZ_CODE_REQ(KEEPALIVE));
       if (trz) { 
@@ -431,7 +432,7 @@ void az_trz_msg_query_nodeid_rsp_handler(az_trz_t *trz, az_sock_t sock)
  * @return 
  * @exception    none
  */
-az_r_t az_trz_proc_request(az_trz_msg_hdr_t *msgp, az_sock_t sock)
+az_r_t az_trz_proc_request(az_trz_msg_hdr_t *msgp, az_socket_id_t sockid)
 {
   az_assert(NULL != msgp);
   az_r_t r = AZ_SUCCESS;
@@ -442,7 +443,7 @@ az_r_t az_trz_proc_request(az_trz_msg_hdr_t *msgp, az_sock_t sock)
     trz_conn = az_trz_conn(msgp->nodeid);
     if (trz_conn == NULL) {
       // TODO: peer node info found and set on new trz_conn
-      r = az_trz_conn_register(msgp->nodeid, sock, NULL);
+      r = az_trz_conn_register(msgp->nodeid, sockid, NULL);
       if (r < 0) {
         az_free(msgp);
         break;
@@ -459,7 +460,7 @@ az_r_t az_trz_proc_request(az_trz_msg_hdr_t *msgp, az_sock_t sock)
       erpt.hdr.code = trz->code | AZ_TRZ_ERR_FLAG,
       erpt.hdr.len = sizeof(erpt) - sizeof(erpt.hdr);
       erpt.errcode = (int)r; 
-      az_send(trz_conn->sock, &erpt, sizeof(erpt), 0);
+      az_send(trz_conn->sock->sys_socket, &erpt, sizeof(erpt), 0);
       
       az_free(msgp);
       break;
@@ -468,7 +469,7 @@ az_r_t az_trz_proc_request(az_trz_msg_hdr_t *msgp, az_sock_t sock)
     trz->state |= AZ_TRZ_STATE_BUSY;
     trz->req = msgp;
     trz->state |= AZ_TRZ_STATE_DREQ;
-    (trz->handler)(trz, sock);
+    (trz->handler)(trz, sockid);
   } while (0);
 
   return r;
@@ -481,7 +482,7 @@ az_r_t az_trz_proc_request(az_trz_msg_hdr_t *msgp, az_sock_t sock)
  * @return 
  * @exception    none
  */
-az_r_t az_trz_proc_response(az_trz_msg_hdr_t *msgp, az_sock_t sock)
+az_r_t az_trz_proc_response(az_trz_msg_hdr_t *msgp, az_socket_id_t sockid)
 {
   az_assert(NULL != msgp);
   az_r_t r = AZ_SUCCESS;
@@ -505,7 +506,7 @@ az_r_t az_trz_proc_response(az_trz_msg_hdr_t *msgp, az_sock_t sock)
     trz->state |= AZ_TRZ_STATE_BUSY;
     trz->rsp = msgp;
     trz->state |= AZ_TRZ_STATE_DRSP;
-    (trz->handler)(trz, sock);
+    (trz->handler)(trz, sockid);
   } while (0);
 
   return r;
@@ -538,7 +539,7 @@ az_r_t az_trz_send_response(az_trz_t *trz, az_trz_msg_hdr_t *msgp, int flags)
     // additional settings 
     msgp->seqno = trz->seqno;
     msgp->code &= ~AZ_TRZ_REQ_FLAG;
-    r = az_send(trz_conn->sock, msgp, sizeof(*msgp)+msgp->len, 0);
+    r = az_send(trz_conn->sock->sys_socket, msgp, sizeof(*msgp)+msgp->len, 0);
     // restore node id to destination node
     msgp->nodeid = trz->nodeid;
     if (r != (sizeof(*msgp) + msgp->len)) {
@@ -551,7 +552,7 @@ az_r_t az_trz_send_response(az_trz_t *trz, az_trz_msg_hdr_t *msgp, int flags)
   return r;
 }
 
-int az_trz_recv_proc(az_sock_t sock)
+int az_trz_recv_proc(az_socket_id_t sockid)
 {
   az_r_t r;
   int nlen;
@@ -562,7 +563,7 @@ int az_trz_recv_proc(az_sock_t sock)
 
   do {
     bp = &msghdr;
-    tlen = az_recv(sock, bp, sizeof(msghdr), MSG_PEEK);  
+    tlen = az_recv(sockid, bp, sizeof(msghdr), MSG_PEEK);  
     if (tlen != sizeof(msghdr)) {
       r = AZ_ERR(NOT_READY);
       break;
@@ -574,7 +575,7 @@ int az_trz_recv_proc(az_sock_t sock)
       break;
     }
     while (tlen > 0) {
-      nlen = az_recv(sock, bp, tlen, 0); 
+      nlen = az_recv(sockid, bp, tlen, 0); 
       if (nlen < 0) break;
       tlen -= nlen; bp += nlen;
     }
@@ -585,9 +586,9 @@ int az_trz_recv_proc(az_sock_t sock)
 
     msgcount++;
     if (msghdr.code & AZ_TRZ_REQ_FLAG) {
-      r = az_trz_proc_request((az_trz_msg_hdr_t *)bp, sock);
+      r = az_trz_proc_request((az_trz_msg_hdr_t *)bp, sockid);
     } else {
-      r = az_trz_proc_response((az_trz_msg_hdr_t *)bp, sock);
+      r = az_trz_proc_response((az_trz_msg_hdr_t *)bp, sockid);
     }
 
   } while (1);
@@ -612,29 +613,34 @@ void *az_trz_thread_proc_default(void *arg)
   int tmo_count = 0; 
   az_trz_node_t  *local = &az_trz_node_local;
   az_trz_node_t  *svr = &az_trz_node_log_svr;
-  az_sock_t localSvrSock;
 
   az_trz_thread_state = 1;
   az_sys_eprintf("%s start...\n", __FUNCTION__);
 
   az_trz_init_vars();
 
+  local->sock = &local->_sock;
+  AZ_SOCKET_INIT_STATIC(local->sock);
+
+  svr->sock = &svr->_sock;
+  AZ_SOCKET_INIT_STATIC(svr->sock);
+
   do {
-    r = az_inet_openTcpServer(local->ipAddr, local->port, &localSvrSock); 
+    r = az_inet_openTcpServer(local->ipAddr, local->port, &(local->sock));
     if (AZ_SUCCESS != r) {
       az_sys_eprintf("tcp server on %s:%u open fail\n", local->ipAddr, local->port);
       break;
     }
-    r = az_inet_setSocketNonBlockMode(localSvrSock);
+    r = az_inet_setSocketNonBlockMode(local->sock->sys_socket);
     if (r < 0) {
-      r = az_inet_closeTcpServer(localSvrSock);
-      local->sock = AZ_SOCK_INVALID;
+      r = az_inet_closeTcpServer(local->sock->sys_socket);
+      local->sock->sys_socket = AZ_SOCK_INVALID;
       break;
     }
-    r = listen(localSvrSock, local->backlog);
+    r = listen(local->sock->sys_socket, local->backlog);
     if (r < 0) {
-      r = az_inet_closeTcpServer(localSvrSock);
-      local->sock = AZ_SOCK_INVALID;
+      r = az_inet_closeTcpServer(local->sock->sys_socket);
+      local->sock->sys_socket = AZ_SOCK_INVALID;
       break;
     }
   } while (0);
@@ -642,13 +648,13 @@ void *az_trz_thread_proc_default(void *arg)
 
   int nevt;
   int j;
-  az_sock_t cliSock;
+  az_socket_t cliSock = NULL;
   struct sockaddr_in cliAddress;
 
   az_sys_io_event_t ioevt[AZ_TRZ_WAIT_EVENT_MAX];
   az_sys_xu_open_iomux();
-  if (local->sock != AZ_SOCK_INVALID) {
-    az_sys_xu_iomux_add(localSvrSock, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
+  if (local->sock->sys_socket != AZ_SOCK_INVALID) {
+    az_sys_xu_iomux_add(local->sock->sys_socket, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
   }
 
   az_trz_t *trz = az_trz_alloc(AZ_TRZ_NODEID_ALL, AZ_TRZ_SEQNO_ALL, AZ_TRZ_CODE_REQ(QUERY_NODEID));
@@ -662,29 +668,29 @@ void *az_trz_thread_proc_default(void *arg)
   }
 
   while (az_trz_thread_state) {
-    nevt = az_sys_xu_wait_iomux(ioevt, AZ_TRZ_WAIT_EVENT_MAX, tmo_ns/1000000); 
+    nevt = az_thread_wait_iomux(ioevt, AZ_TRZ_WAIT_EVENT_MAX, tmo_ns/1000000); 
 
     if (nevt > 0) {
       for (j = 0; j < nevt; j++) {
-        if (ioevt[j].data.fd == localSvrSock) {
-          r = az_inet_getTcpConnection(localSvrSock, &cliSock, &cliAddress);
+        if (ioevt[j].data.fd == local->sock->sys_socket) {
+          cliSock = NULL;
+          r = az_inet_getTcpConnection(local->sock->sys_socket, &cliSock, &cliAddress);
           if (r < 0) {
             continue;
           }
-          az_sys_xu_iomux_add(cliSock, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
+          az_sys_xu_iomux_add(cliSock->sys_socket, AZ_SYS_IO_IN|AZ_SYS_IO_HUP);
           continue;
         }
         if (ioevt[j].data.fd == az_sys_xu_io_default()) {
           continue;
         }
-        cliSock = ioevt[j].data.fd;
         if (ioevt[j].events & AZ_SYS_IO_HUP) {
           // close corresponding trz_connection
-          az_sys_xu_iomux_del(cliSock);
+          az_sys_xu_iomux_del(ioevt[j].data.fd);
           continue;
         }
-        az_trz_recv_proc(cliSock);
-        // optionally close cliSock
+        az_trz_recv_proc(ioevt[j].data.fd);
+        // optionally close client socket
       }
     }
     if (nevt < 0) {
@@ -695,8 +701,8 @@ void *az_trz_thread_proc_default(void *arg)
     // scan response time expired transactions
   }
 
-  if (localSvrSock != AZ_SOCK_INVALID) {
-    az_sys_xu_iomux_del(localSvrSock);
+  if (local->sock->sys_socket != AZ_SOCK_INVALID) {
+    az_sys_xu_iomux_del(local->sock->sys_socket);
   }
 
   az_sys_eprintf("%s end...\n", __FUNCTION__);

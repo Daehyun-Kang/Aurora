@@ -32,6 +32,10 @@ az_size_t az_nsyms = 0;
 
 int az_sys_log_level = CONFIG_AZ_LOG_LEVEL_DFT; 
 int az_sys_log_flags = CONFIG_AZ_LOG_FLAGS_DFT; 
+
+#ifdef  CONFIG_AZ_PROBE_SYS
+uint32_t  az_sys_probe_flags = 0;
+#endif
 /* declare static variables */
 static az_state_t az_sys_state = AZ_ST_IDLE;
 

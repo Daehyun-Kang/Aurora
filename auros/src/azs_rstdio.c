@@ -146,7 +146,7 @@ az_tcpserver_t azs_rstdio_svr = {
   .config.port = CONFIG_AZ_REMOTE_STDIO_SVR_PORT,
   .config.backlog = 16, 
   .config.flags = 0, 
-  .sock = AZ_SOCK_INVALID, 
+  .sock = NULL, 
   .thread = NULL,
   .priv = NULL,
   .oprs = &azs_rstdio_svr_oprs, 
@@ -159,7 +159,7 @@ az_tcpserver_t azs_rstdio_svr = {
  * @return 
  * @exception    none
  */
-int azs_rstdio_svr_onClientConnection(void *ctx, az_sock_t cliSock, void *cliAddrIn)
+int azs_rstdio_svr_onClientConnection(void *ctx, az_socket_id_t cliSock, void *cliAddrIn)
 {
   int r = AZ_SUCCESS;
   azs_rstdio_ctrl_t *ctrl = &azs_rstdio_ctrl;

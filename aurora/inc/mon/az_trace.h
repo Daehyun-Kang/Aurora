@@ -69,6 +69,8 @@ typedef struct az_trace_ctrl {
 
   char      monSvrIpStr[CONFIG_AZ_NAME_MAX];
   uint16_t  monSvrPort;
+
+  az_socket_entity_t  _sock;
 } az_trace_ctrl_t;
 
 typedef AZ_PACKED_STRUCT(az_trace_info) {

@@ -343,17 +343,20 @@ int azm_trace_proc_default(void *arg)
   int fd = open("/tmp/xxx", O_RDWR|O_CREAT|O_CLOEXEC, 0666);  
   
   if (ctrl->state == AZ_TRACE_STATE_IDLE) {
-    az_sys_socket_t cliSock;
+    static az_socket_entity_t cliSock;
+    az_socket_t pCliSock = &cliSock; 
+    AZ_SOCKET_INIT_STATIC(pCliSock);
+
     r = az_inet_openTcpClient(ctrl->prbSvrIpStr, ctrl->prbSvrPort, 
-        NULL, 0, &cliSock);
+        NULL, 0, &pCliSock);
     if (r != AZ_SUCCESS) {
       az_cli_printf("connect fail to trace server %s:%u\n",
           ctrl->prbSvrIpStr, ctrl->prbSvrPort);
       azm_trace_thread_state = 0;
     } else {
       azm_trace_thread_state = 1;
-      ctrl->read_fd = cliSock;
-      ctrl->write_fd = cliSock;
+      ctrl->read_fd = cliSock.sys_socket;
+      ctrl->write_fd = cliSock.sys_socket;
       ctrl->state |= AZ_TRACE_STATE_INIT;
     
       info.code = AZ_TRACE_CODE_CMD_START;
@@ -392,7 +395,7 @@ int azm_trace_proc_default(void *arg)
     }
     if (r < 0) {
       az_sys_xu_iomux_del(ctrl->read_fd);
-      az_sys_socket_delete(ctrl->read_fd);
+      az_socket_delete(ctrl->read_fd);
       ctrl->read_fd = AZ_SOCK_INVALID;
       ctrl->write_fd = AZ_SOCK_INVALID;
       break;
@@ -408,7 +411,7 @@ int azm_trace_proc_default(void *arg)
     az_thread_sleep(1000000);
 
     az_sys_xu_iomux_del(ctrl->read_fd);
-    az_sys_socket_delete(ctrl->write_fd);
+    az_socket_delete(ctrl->write_fd);
     ctrl->read_fd = AZ_SOCK_INVALID;
     ctrl->write_fd = AZ_SOCK_INVALID;
   }
@@ -435,7 +438,7 @@ az_tcpserver_t azm_trace_svr = {
   .config.port = CONFIG_AZ_TRACE_MON_SVR_PORT,
   .config.backlog = 16, 
   .config.flags = 0, 
-  .sock = AZ_SOCK_INVALID, 
+  .sock = NULL, 
   .thread = NULL,
   .priv = NULL,
   .oprs = &azm_trace_svr_oprs, 
@@ -448,7 +451,7 @@ az_tcpserver_t azm_trace_svr = {
  * @return 
  * @exception    none
  */
-int azm_trace_svr_onClientConnection(void *ctx, az_sock_t cliSock, void *cliAddrIn)
+int azm_trace_svr_onClientConnection(void *ctx, az_socket_id_t cliSock, void *cliAddrIn)
 {
   int r = AZ_SUCCESS;
   azm_trace_ctrl_t *ctrl = &azm_trace_ctrl;

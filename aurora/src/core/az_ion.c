@@ -91,8 +91,10 @@ static inline az_r_t az_ion_register_io(az_ion_t *ion, az_ion_type_t type)
         } 
       }
     } while (0);
-    az_sys_rprintf(result, "id:%d type:%d ion:%p/%d\n",id, type, 
-        ion, AZ_REFCOUNT_VALUE(&ion->refCount));
+    if (result < 0) {
+      az_rprintf(result, "id:%d type:%d ion:%p/%d\n",id, type, 
+          ion, AZ_REFCOUNT_VALUE(&ion->refCount));
+    }
 
   return result;
 }
@@ -112,8 +114,10 @@ static inline az_r_t az_ion_register_nonio(az_ion_t *ion, az_ion_type_t type)
           az_atomic_inc32(&AZ_ION_LIST()->count);
       }
     } while (0);
-    az_sys_rprintf(result, "id:%d type:%d ion:%p/%d\n",id, type, 
-        ion, AZ_REFCOUNT_VALUE(&ion->refCount));
+    if (result < 0) {
+      az_rprintf(result, "id:%d type:%d ion:%p/%d\n",id, type, 
+          ion, AZ_REFCOUNT_VALUE(&ion->refCount));
+    }
 
   return result;
 }
@@ -165,7 +169,7 @@ static inline az_r_t az_ion_deregister_io(az_ion_t *ion)
       result = AZ_ERR(INVALID);
       break;
     }
-    az_eprintf("id:%d type:%d ion:%p/%d result="AZ_FMT_RET(1)"\n",ion->id, 
+    az_dprintf("id:%d type:%d ion:%p/%d result="AZ_FMT_RET(1)"\n",ion->id, 
         ion->type, az_ion(ion->id), AZ_REFCOUNT_VALUE(&ion->refCount), result); 
     if  (az_refcount_atomic_dec(&ion->refCount) == 0) {
       az_ion_empty(ion);
@@ -308,6 +312,29 @@ az_r_t az_ion_deregister(az_ion_t *ion)
   return result;
 }
 #endif
+
+static int az_ion_compare_type_and_tag(void *arg, void *target)
+{
+  az_ion_t *ion1 = (az_ion_t *)arg;
+  az_ion_t *ion2 = (az_ion_t *)target;
+
+  do {
+    if (ion1->type != ion2->type) {
+      return -1;
+    }
+    if (ion1->tag != ion2->tag) {
+      return -2;
+    }
+  } while (0);
+
+  return 0;
+}
+
+az_ion_t *az_ion_find_by_tag(az_ion_type_t type, az_ion_tag_t tag)
+{
+  az_ion_t ion = {.type = type, .tag = tag };
+  return az_ion_find(&ion, az_ion_compare_type_and_tag);
+}
 
 char *__az_weak az_app_ion_type_name(az_ion_type_t ion)
 {

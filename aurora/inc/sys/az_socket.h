@@ -32,6 +32,10 @@ extern "C"
 #endif
 
 /* constants */
+#ifndef AZ_SOCK_INVALID
+#define AZ_SOCK_INVALID      AZ_SYS_SOCKET_INVALID
+#define AZ_SOCK_ID_INVALID   AZ_ION_ID_INVALID
+#endif
 
 /* basic macros */
 
@@ -42,12 +46,17 @@ typedef struct {
 } az_socket_entity_t;
 
 typedef az_socket_entity_t  *az_socket_t;
+typedef az_ion_id_t      az_socket_id_t;
 
 /* structures */
 
 /* structured types */
 
 /* macros */
+#define AZ_SOCKET_INIT_STATIC(s)  do {\
+    AZ_ION_INIT_STATIC((az_ion_t *)(s), AZ_ION_TYPE_SOCK);\
+    ((az_socket_t)(s))->sys_socket = AZ_SOCK_INVALID;\
+  } while (0);
 
 /* variabls exposed */
 

@@ -55,9 +55,11 @@ extern "C"
 
 /* basic types */
 typedef int az_ion_id_t;
-typedef az_uint32_t az_ion_type_t;
+typedef az_uint16_t az_ion_type_t;
+typedef az_uint16_t az_ion_tag_t;
 
 #define AZ_ION_ID_INVALID         AZ_SYS_IO_INVALID
+#define AZ_ION_TAG_INVALID        (az_ion_tag_t)(-1)
 
 #ifdef  CONFIG_AZ_ION_NONIO
 #define AZ_ION_ID_FLAG_NONIO 0x40000000 
@@ -69,6 +71,7 @@ typedef az_uint32_t az_ion_type_t;
 typedef struct az_ion {
   az_ion_id_t   id;
   az_ion_type_t type;
+  az_ion_tag_t  tag;
   az_refcount_t refCount;
 } az_ion_t;
 typedef az_ion_t  * az_ion_ref_t;

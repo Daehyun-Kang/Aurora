@@ -91,11 +91,12 @@ typedef struct az_ion_list {
 #define az_ion_lock()
 #define az_ion_unlock()
 
-static void az_ion_invalidate(az_ion_t *ion, int is_static)
+static inline void az_ion_invalidate(az_ion_t *ion, int is_static)
 {
   az_assert(NULL != ion);
   ion->id = AZ_SYS_IO_INVALID;
   ion->type = 0;
+  ion->tag = AZ_ION_TAG_INVALID;
   if (is_static) {
     az_refcount_init_static(&ion->refCount);
   } else {
@@ -104,7 +105,7 @@ static void az_ion_invalidate(az_ion_t *ion, int is_static)
 }
 #define AZ_ION_INIT_STATIC(ion, _type) \
   do { \
-    az_ion_invalidate((az_ion_t *)ion); \
+    az_ion_invalidate((az_ion_t *)ion, 1); \
     ((az_ion_t *)(ion))-> type = _type; } while (0);
 
 #define AZ_ION_IS_IDLE_VALID(ion, _type) \
@@ -112,6 +113,16 @@ static void az_ion_invalidate(az_ion_t *ion, int is_static)
      (AZ_REFCOUNT_VALUE(&(((az_ion_t *)(ion))->refCount)) == 0) && \
      (((az_ion_t *)(ion)->type) == _type)) 
 
+static inline void az_ion_set_tag(az_ion_t *ion, az_ion_tag_t tag)
+{
+  az_assert(NULL != ion);
+  ion->tag = tag;
+}
+static inline az_ion_tag_t az_ion_get_tag(az_ion_t *ion)
+{
+  az_assert(NULL != ion);
+  return ion->tag;
+}
 
 /* inline functions */
 static inline void az_ion_init(az_array_t *refList)
@@ -209,6 +220,8 @@ extern void az_ion_empty(az_ion_t *ion);
 
 extern az_size_t az_ion_toStr(az_ion_t *ion, char *tag, char *bp, az_size_t blen);
 extern az_size_t az_ion_valuesOnRow(az_ion_t *ion, char *tag, char *wlist, az_var_value2Str_t *convlist, char *bp, az_size_t blen);
+
+extern az_ion_t *az_ion_find_by_tag(az_ion_type_t type, az_ion_tag_t tag);
 
 #ifdef __cplusplus
 }

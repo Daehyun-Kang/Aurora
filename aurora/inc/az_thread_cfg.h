@@ -37,6 +37,7 @@ extern "C"
 #define AZ_THREAD_CFG_KEY_name         "name"
 #define AZ_THREAD_CFG_KEY_entry_name   "entry"
 #define AZ_THREAD_CFG_KEY_arg_name     "arg"
+#define AZ_THREAD_CFG_KEY_tag          "tag"
 #define AZ_THREAD_CFG_KEY_stackSize    "stackSize.u32"
 #define AZ_THREAD_CFG_KEY_schedule     "schedule"
 #define AZ_THREAD_CFG_KEY_coremask     "coremask.h64"
@@ -60,6 +61,8 @@ typedef struct az_thread_config {
   char            name[AZ_THREAD_CFG_NAME_LEN];
   char            entry_name[AZ_THREAD_CFG_NAME_LEN];
   char            arg_name[AZ_THREAD_CFG_NAME_LEN];
+  uint16_t        tag;
+  uint32_t        flags;
   uint32_t        stackSize;
   uint64_t        coremask;
   az_thread_policy_t  policy;

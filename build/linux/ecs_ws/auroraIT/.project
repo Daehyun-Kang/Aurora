@@ -31,9 +31,9 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>Sources/az_main.c</name>
+			<name>Sources/main.c</name>
 			<type>1</type>
-			<locationURI>Aurora_SRC/frw/az_main.c</locationURI>
+			<locationURI>Aurora_SRC/frw/main.c</locationURI>
 		</link>
 		<link>
 			<name>Sources/pt</name>
@@ -44,6 +44,11 @@
 			<name>Sources/ut</name>
 			<type>2</type>
 			<locationURI>Aurora_SRC/test/ut</locationURI>
+		</link>
+		<link>
+			<name>Release2/Sources/main.c</name>
+			<type>1</type>
+			<locationURI>Aurora_SRC/frw/main.c</locationURI>
 		</link>
 	</linkedResources>
 	<variableList>

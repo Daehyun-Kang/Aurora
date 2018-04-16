@@ -39,8 +39,6 @@ extern "C"
 /* basic macros */
 
 /* basic types */
-typedef az_ion_id_t       az_sock_t;
-#define AZ_SOCK_INVALID   AZ_ION_ID_INVALID
 
 /* structures */
 
@@ -64,7 +62,7 @@ static inline char  *az_inet_IpAddr2Str(struct sockaddr_in *addr, char *ipAddrSt
 }
 static inline int az_inet_str2IpAddr(struct sockaddr_in *addr, char *ipAddrStr) 
 {
-  return inet_pton(AF_INET, ipAddrStr, &(addr->sin_addr.s_addr));
+  return (inet_pton(AF_INET, ipAddrStr, &(addr->sin_addr.s_addr)) == 1)? 0:-1;
 }
 
 static inline int az_inet_isValidIpAddr(char *ipAddr)
@@ -74,30 +72,30 @@ static inline int az_inet_isValidIpAddr(char *ipAddr)
   return result;
 }
 
-static inline int az_inet_openSocket(int domain, int type, int protocol, az_sock_t *p)
+static inline int az_inet_openSocket(int domain, int type, int protocol, az_socket_id_t *p)
 {
   return (int)az_sys_socket_create(domain, type, protocol, p);
 }
-static inline int az_inet_closeSocket(az_sock_t p)
+static inline int az_inet_closeSocket(az_socket_id_t p)
 {
   return (int)az_sys_socket_delete(p);
 }
 
 #ifdef  _WIN32
-static inline int az_inet_setSocketNonBlockMode(az_sock_t sd) 
+static inline int az_inet_setSocketNonBlockMode(az_socket_id_t sd) 
 {
   return (int)az_sys_socket_nonblock(sd);
 }
-static inline int az_inet_setSocketBlockMode(az_sock_t sd) 
+static inline int az_inet_setSocketBlockMode(az_socket_id_t sd) 
 {
   return (int)az_sys_socket_enblock(sd);
 }
-static inline int az_inet_setTcpNodelay(az_sock_t sd)
+static inline int az_inet_setTcpNodelay(az_socket_id_t sd)
 {
   return (int)az_sys_socket_nodelay(sd);
 }
 #else
-static inline int az_inet_setSocketNonBlockMode(az_sock_t sd) 
+static inline int az_inet_setSocketNonBlockMode(az_socket_id_t sd) 
 {
   int flags;
   int r = AZ_SUCCESS;
@@ -108,7 +106,7 @@ static inline int az_inet_setSocketNonBlockMode(az_sock_t sd)
   }
   return r;
 }
-static inline int az_inet_setSocketBlockMode(az_sock_t sd) 
+static inline int az_inet_setSocketBlockMode(az_socket_id_t sd) 
 {
   int flags;
   int r = AZ_SUCCESS;
@@ -120,7 +118,7 @@ static inline int az_inet_setSocketBlockMode(az_sock_t sd)
   return r;
 }
 
-static inline int az_inet_setTcpNodelay(az_sock_t sd)
+static inline int az_inet_setTcpNodelay(az_socket_id_t sd)
 {
   int on = 1;
   int r = AZ_SUCCESS;
@@ -131,7 +129,7 @@ static inline int az_inet_setTcpNodelay(az_sock_t sd)
   return r;
 }
 #endif
-static inline int az_inet_setReuseAddr(az_sock_t sd)
+static inline int az_inet_setReuseAddr(az_socket_id_t sd)
 {
   int on = 1;
   int r = AZ_SUCCESS;
@@ -166,12 +164,12 @@ static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2,
   }
 }
 static inline int az_inet_openLocalSocket(char *name, char *key1, char *key2, 
-    az_sys_sockaddr_t *pAddr, az_sock_t *pSd)
+    az_sys_sockaddr_t *pAddr, az_socket_id_t *pSd)
 {
   az_r_t r = AZ_FAIL;
   az_assert(NULL != name);
   az_assert(NULL != pSd);
-  az_sock_t sd;
+  az_socket_id_t sd;
   char _name[CONFIG_AZ_PATH_MAX];
   do {
     r = az_sys_socket_create(AF_UNIX, SOCK_DGRAM, 0, &sd);
@@ -206,16 +204,16 @@ static inline int az_inet_openLocalSocket(char *name, char *key1, char *key2,
 
   return (int)r;
 }
-static inline int az_inet_closeLocalSocket(az_sock_t *pSd)
+static inline int az_inet_closeLocalSocket(az_socket_id_t *pSd)
 {
   az_assert(NULL != pSd);
   az_r_t r = AZ_FAIL;
-  az_sock_t sd = *pSd;
+  az_socket_id_t sd = *pSd;
   *pSd = AZ_SOCK_INVALID;
   r = az_sys_socket_delete(sd); 
   return (int)r;
 }
-static inline int az_inet_connectLocalSocket(az_sock_t sd, az_sys_sockaddr_t *addr, az_sys_socklen_t addrlen)
+static inline int az_inet_connectLocalSocket(az_socket_id_t sd, az_sys_sockaddr_t *addr, az_sys_socklen_t addrlen)
 {
   az_r_t r = AZ_FAIL;
   r = az_sys_socket_connect(sd, addr, addrlen);
@@ -226,15 +224,15 @@ static inline int az_inet_connectLocalSocket(az_sock_t sd, az_sys_sockaddr_t *ad
 }
 
 /* function prototypes exposed */
-extern int az_inet_openTcpClient(char *svrIpStr, uint16_t svrPort, char *cliIpStr, uint16_t cliPort, az_sock_t *pSock);
-extern int az_inet_closeTcpClient(az_sock_t sd);
+extern int az_inet_openTcpClient(char *svrIpStr, uint16_t svrPort, char *cliIpStr, uint16_t cliPort, az_socket_t *pSock);
+extern int az_inet_closeTcpClient(az_socket_id_t sd);
 
-extern int az_inet_openTcpServer(char *svrIpStr, uint16_t svrPort, az_sock_t *pSock);
-extern int az_inet_closeTcpServer(az_sock_t sd);
-extern int az_inet_getTcpConnection(az_sock_t svrSock, az_sock_t *pCliSock, struct sockaddr_in *pCliAddr);
+extern int az_inet_openTcpServer(char *svrIpStr, uint16_t svrPort, az_socket_t *pSock);
+extern int az_inet_closeTcpServer(az_socket_id_t sd);
+extern int az_inet_getTcpConnection(az_socket_id_t svrSock, az_socket_t *pCliSock, struct sockaddr_in *pCliAddr);
 
-extern int az_inet_tcpRead(az_sock_t sock, uint8_t *bp, ssize_t len);
-extern int az_inet_tcpWrite(az_sock_t sock, uint8_t *bp, ssize_t len);
+extern int az_inet_tcpRead(az_socket_id_t sock, uint8_t *bp, ssize_t len);
+extern int az_inet_tcpWrite(az_socket_id_t sock, uint8_t *bp, ssize_t len);
 #ifdef __cplusplus
 }
 #endif

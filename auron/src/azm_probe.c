@@ -71,8 +71,13 @@ int azm_probe_proc_recv(int fd)
   az_probe_sample_t *sample = buf;
   int rcount;
   int j;
-  int src, level;
+  int src; 
+  double level;
   uint64_t tstamp;
+
+  #ifdef AZM_GUI
+  extern void az_write_sample(int srcno, uint64_t tstamp_us, double value_norm);
+  #endif
 
   do {
     rcount = recv(ctrl->data_sock, buf, sizeof(buf), 0);
@@ -89,10 +94,13 @@ int azm_probe_proc_recv(int fd)
     sample = buf;
     for (j = 0; j < rcount; j++, sample++) {
       src = AZ_PROBE_SRC(*sample);
-      level = AZ_PROBE_LEVEL(*sample);
+      level = (double)AZ_PROBE_LEVEL(*sample) * 7;
       tstamp = AZ_PROBE_TSTAMP(*sample);
       
-      az_printf("%lx: src:%d level:%d  tstamp:%ld\n", *sample, src, level, tstamp);
+      az_printf("%lx: src:%d level:%f  tstamp:%ld\n", *sample, src, level/15.0, tstamp);
+      #ifdef AZM_GUI
+      az_write_sample(src, tstamp / 1000, level/15.0);
+      #endif
     }
   } while (0);
 
@@ -183,7 +191,7 @@ az_tcpserver_t azm_probe_svr = {
   .config.port = CONFIG_AZ_PROBE_SVR_PORT,
   .config.backlog = 16, 
   .config.flags = 0, 
-  .sock = AZ_SOCK_INVALID, 
+  .sock = NULL, 
   .thread = NULL,
   .priv = NULL,
   .oprs = &azm_probe_svr_oprs, 
@@ -196,7 +204,7 @@ az_tcpserver_t azm_probe_svr = {
  * @return 
  * @exception    none
  */
-int azm_probe_svr_onClientConnection(void *ctx, az_sock_t cliSock, void *cliAddrIn)
+int azm_probe_svr_onClientConnection(void *ctx, az_socket_id_t cliSock, void *cliAddrIn)
 {
   int r = AZ_SUCCESS;
   azm_probe_ctrl_t *ctrl = &azm_probe_ctrl;

@@ -21,7 +21,7 @@
 /* include header files */
 #include "az_thread.h"
 #include "az_trz.h"
-#include "mon/az_probe.h"
+#include "sys/az_sys_probe.h"
 
 /* declare global variables */
 #ifdef  CONFIG_AZ_USE_TLS
@@ -121,6 +121,12 @@ az_ion_id_t az_thread_create(char *name, az_thread_entry_t entry, az_thread_arg_
       }
       break;
     } else {
+      if (pCfg) {
+        xu->ion.tag = pCfg->tag;
+        if (pCfg->flags) {
+          xu->flags = (pCfg->flags & AZ_THREAD_FLAGS_MASK);
+        }
+      }
       result = (az_r_t)xu->ion.id;
     }
 
@@ -149,7 +155,9 @@ az_ion_id_t az_thread_create(char *name, az_thread_entry_t entry, az_thread_arg_
   } while (0);
 
   if (xu) {
-    az_rprintf(result, "id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
+    if (result < 0) { 
+      az_rprintf(result, "id:%d ref count %d\n", xu->ion.id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
+    }
   } else {
     az_rprintf(result, "id:%d \n", (az_ion_id_t)result); 
   }
@@ -213,7 +221,9 @@ az_r_t az_thread_start(az_ion_id_t id, az_thread_entry_t entry, az_thread_arg_t 
   } while (0);
 
   if (xu) {
-    az_rprintf(result, "id:%d ref count %d\n", id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
+    if (result < 0) { 
+      az_rprintf(result, "id:%d ref count %d\n", id, AZ_REFCOUNT_VALUE(&xu->ion.refCount));
+    }
   } else {
     az_rprintf(result, "id:%d\n", id);
   }
@@ -586,9 +596,9 @@ az_r_t az_thread_resume(az_ion_id_t id)
  */
 az_r_t az_thread_sleep(az_int64_t nsec)
 {
-  AZ_PROBE_INC();
+  AZ_PROBE_DEC_SYS(THREAD, 1);
   az_r_t r = az_sys_xu_sleep(nsec);
-  AZ_PROBE_DEC();
+  AZ_PROBE_INC_SYS(THREAD, 1);
 
   return r;
 }
@@ -820,7 +830,9 @@ az_r_t az_thread_recv_msg(az_thread_msg_t *pMsg)
 az_r_t az_thread_recv_beam(az_thread_beam_t toReceive, az_int8_t options,
     az_int64_t nsec, az_thread_beam_t *pReceived)
 {
+  AZ_PROBE_DEC_SYS(THREAD, 1);
   az_r_t r =  az_sys_xu_recvEvent(toReceive, options, nsec, pReceived); 
+  AZ_PROBE_INC_SYS(THREAD, 1);
   return r;
 }
 
@@ -851,7 +863,9 @@ az_r_t az_thread_wait_beam(az_thread_beam_t toReceive, az_int8_t options,
     }
   }
 
+  AZ_PROBE_DEC_SYS(THREAD, 1);
   az_r_t r =  az_sys_xu_waitEvent(xu->beams, toReceive, options, nsec, &revents, pReceived); 
+  AZ_PROBE_INC_SYS(THREAD, 1);
 
   if (revents) {
     evecmask = 1; beamcount = xu->beamcount;
@@ -992,6 +1006,7 @@ void *az_thread_entry(void *arg)
   az_thread = xu;
   #endif
 
+  AZ_PROBE_INC_SYS(THREAD, 1);
   #ifdef  CONFIG_AZ_THREAD_EXP_HANDLE
   az_sys_xu_register_exception_handler();
   
@@ -1020,6 +1035,7 @@ void *az_thread_entry(void *arg)
     az_sys_dlog("%s\n", AZ_THREAD_NAME(xu));
   }
   #endif
+  AZ_PROBE_DEC_SYS(THREAD, 1);
 
   az_thread_exit(ret);
 

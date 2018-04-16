@@ -25,8 +25,8 @@
 
 typedef struct az_rstdio_ctrl {
   int state;
-  az_sock_t   read_fd;
-  az_sock_t   write_fd;
+  az_socket_id_t   read_fd;
+  az_socket_id_t   write_fd;
   az_sys_fd_t log_fd;
 
   char      svrIpStr[CONFIG_AZ_NAME_MAX];
@@ -75,9 +75,12 @@ void  az_rstdio_begin(void)
   char *name; 
   az_rstdio_ctrl_t *ctrl = &az_rstdio_ctrl;
   do {
-    az_sys_socket_t cliSock;
+    static az_socket_entity_t cliSock;
+    az_socket_t pCliSock = &cliSock;
+    AZ_SOCKET_INIT_STATIC(pCliSock);
+
     int r = az_inet_openTcpClient(ctrl->svrIpStr, ctrl->svrPort,
-        NULL, 0, &cliSock);
+        NULL, 0, &pCliSock);
     if (r != AZ_SUCCESS) {
       az_sys_eprintf("connect to remote stdio %s:%u error = %d" AZ_NL, 
           ctrl->svrIpStr, ctrl->svrPort, r);
@@ -85,13 +88,13 @@ void  az_rstdio_begin(void)
     } else {
       az_sys_eprintf("connect to remote stdio %s:%u ok" AZ_NL, 
           ctrl->svrIpStr, ctrl->svrPort);
-      r = az_sys_dup2(cliSock, STDOUT_FILENO);
+      r = az_sys_dup2(cliSock.sys_socket, STDOUT_FILENO);
       if (r < 0) {
-        az_sys_eprintf("dup2 error=%d on stdout" AZ_NL, r); 
+        az_sys_eprintf("dup2 error=%d:%d on stdout" AZ_NL, r, az_sys_errno); 
       }
-      r = az_sys_dup2(cliSock, STDIN_FILENO);
+      r = az_sys_dup2(cliSock.sys_socket, STDIN_FILENO);
       if (r < 0) {
-        az_sys_eprintf("dup2 error=%d on stdin" AZ_NL, r); 
+        az_sys_eprintf("dup2 error=%d:%d on stdin" AZ_NL, r, az_sys_errno); 
       }
       ctrl->state = 1;
     }

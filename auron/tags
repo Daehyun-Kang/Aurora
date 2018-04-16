@@ -1,0 +1,49 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+az_dllib_getSymbol	../aurora/src/sys/az_dllib.c	/^az_r_t az_dllib_getSymbol(char *name, az_ref_t *pAddr)$/;"	f
+az_fs_chdir	../aurora/src/sys/az_fs.c	/^az_r_t  az_fs_chdir(char *path)$/;"	f
+az_fs_closeFile	../aurora/src/sys/az_fs.c	/^az_r_t  az_fs_closeFile(az_ion_id_t id)$/;"	f
+az_fs_createDir	../aurora/src/sys/az_fs.c	/^az_r_t  az_fs_createDir(const az_str_t path, int mode)$/;"	f
+az_fs_createFile	../aurora/src/sys/az_fs.c	/^az_ion_id_t  az_fs_createFile(const az_str_t path, int mode, az_file_t *pfile)$/;"	f
+az_fs_deleteDir	../aurora/src/sys/az_fs.c	/^az_r_t  az_fs_deleteDir(const az_str_t path)$/;"	f
+az_fs_deleteFile	../aurora/src/sys/az_fs.c	/^az_r_t  az_fs_deleteFile(const az_str_t path, az_ion_id_t id)$/;"	f
+az_fs_dirSize	../aurora/src/sys/az_fs.c	/^az_size_t  az_fs_dirSize(char *path)$/;"	f
+az_fs_exist	../aurora/src/sys/az_fs.c	/^az_bool_t  az_fs_exist(const az_str_t path)$/;"	f
+az_fs_file2mem	../aurora/src/sys/az_fs.c	/^az_size_t az_fs_file2mem(const az_str_t path, az_ref_t *pMem)$/;"	f
+az_fs_fileSize	../aurora/src/sys/az_fs.c	/^az_size_t  az_fs_fileSize(const az_str_t path, az_ion_id_t id)$/;"	f
+az_fs_findDir	../aurora/src/sys/az_fs.c	/^az_r_t  az_fs_findDir(char *path, char *entryname, az_dirent_t *entry)$/;"	f
+az_fs_getcwd	../aurora/src/sys/az_fs.c	/^az_r_t  az_fs_getcwd(char *path, az_size_t path_size)$/;"	f
+az_fs_listDir	../aurora/src/sys/az_fs.c	/^az_r_t  az_fs_listDir(char *path, az_dirent_t *list, az_size_t listCount, void **ctx) $/;"	f
+az_fs_lseekFile	../aurora/src/sys/az_fs.c	/^az_size_t  az_fs_lseekFile(az_ion_id_t id, az_pos_t offset, int whence)$/;"	f
+az_fs_openFile	../aurora/src/sys/az_fs.c	/^az_ion_id_t  az_fs_openFile(const az_str_t path, int flag, int mode, az_file_t *pfile)$/;"	f
+az_fs_readFile	../aurora/src/sys/az_fs.c	/^az_size_t  az_fs_readFile(az_ion_id_t id, az_uint8_t *bp, az_size_t size)$/;"	f
+az_fs_truncate	../aurora/src/sys/az_fs.c	/^az_r_t  az_fs_truncate(const az_str_t path, az_ion_id_t id, az_size_t size)$/;"	f
+az_fs_writeFile	../aurora/src/sys/az_fs.c	/^az_size_t  az_fs_writeFile(az_ion_id_t id, az_uint8_t *bp, az_size_t size)$/;"	f
+az_inet_closeTcpClient	../aurora/src/sys/az_inet.c	/^int az_inet_closeTcpClient(az_sock_t sd)$/;"	f
+az_inet_closeTcpServer	../aurora/src/sys/az_inet.c	/^int az_inet_closeTcpServer(az_sock_t sd)$/;"	f
+az_inet_getTcpConnection	../aurora/src/sys/az_inet.c	/^int az_inet_getTcpConnection(az_sock_t svrSock, az_sock_t *pCliSock, struct sockaddr_in *pCliAddr)$/;"	f
+az_inet_openTcpClient	../aurora/src/sys/az_inet.c	/^int az_inet_openTcpClient(char *svrIpStr, uint16_t svrPort, $/;"	f
+az_inet_openTcpServer	../aurora/src/sys/az_inet.c	/^int az_inet_openTcpServer(char *svrIpStr, uint16_t svrPort, az_sock_t *pSock)$/;"	f
+az_inet_tcpRead	../aurora/src/sys/az_inet.c	/^int az_inet_tcpRead(az_sock_t sock, uint8_t *bp, ssize_t len)$/;"	f
+az_inet_tcpWrite	../aurora/src/sys/az_inet.c	/^int az_inet_tcpWrite(az_sock_t sock, uint8_t *bp, ssize_t len)$/;"	f
+az_mutex_create	../aurora/src/sys/az_mutex.c	/^az_ion_id_t  az_mutex_create(const char *name, int options, az_mutex_t *pMutex)$/;"	f
+az_mutex_delete	../aurora/src/sys/az_mutex.c	/^az_r_t  az_mutex_delete(az_ion_id_t id)$/;"	f
+az_mutex_lock	../aurora/src/sys/az_mutex.c	/^az_r_t  az_mutex_lock(az_ion_id_t id)$/;"	f
+az_mutex_trylock	../aurora/src/sys/az_mutex.c	/^az_r_t  az_mutex_trylock(az_ion_id_t id)$/;"	f
+az_mutex_unlock	../aurora/src/sys/az_mutex.c	/^az_r_t  az_mutex_unlock(az_ion_id_t id)$/;"	f
+az_sem_create	../aurora/src/sys/az_sem.c	/^az_ion_id_t  az_sem_create(const char *name, int options, unsigned int value, az_sem_t *pSem)$/;"	f
+az_sem_delete	../aurora/src/sys/az_sem.c	/^az_r_t  az_sem_delete(az_ion_id_t id)$/;"	f
+az_sem_post	../aurora/src/sys/az_sem.c	/^az_r_t  az_sem_post(az_ion_id_t id)$/;"	f
+az_sem_timedwait	../aurora/src/sys/az_sem.c	/^az_r_t  az_sem_timedwait(az_ion_id_t id, az_uint64_t tmo_ns)$/;"	f
+az_sem_trywait	../aurora/src/sys/az_sem.c	/^az_r_t  az_sem_trywait(az_ion_id_t id)$/;"	f
+az_sem_wait	../aurora/src/sys/az_sem.c	/^az_r_t  az_sem_wait(az_ion_id_t id)$/;"	f
+az_socket_create	../aurora/src/sys/az_socket.c	/^az_ion_id_t az_socket_create(int domain, int type, int protocol, az_socket_t *p)$/;"	f
+az_socket_delete	../aurora/src/sys/az_socket.c	/^az_r_t az_socket_delete(az_ion_id_t id)$/;"	f
+az_timer_create	../aurora/src/sys/az_timer.c	/^az_ion_id_t  az_timer_create(const char *name, az_uint64_t interval,  int repeat, void (*handler)(void *arg), void *arg, az_timer_t *pTimer)$/;"	f
+az_timer_delete	../aurora/src/sys/az_timer.c	/^az_r_t  az_timer_delete(az_ion_id_t id)$/;"	f
+az_timer_start	../aurora/src/sys/az_timer.c	/^az_r_t  az_timer_start(az_ion_id_t id)$/;"	f
+az_timer_stop	../aurora/src/sys/az_timer.c	/^az_r_t  az_timer_stop(az_ion_id_t id)$/;"	f

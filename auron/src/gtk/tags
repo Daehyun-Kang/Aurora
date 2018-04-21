@@ -4,10 +4,16 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADDR_BUF_LEN	../addr2line.c	261;"	d	file:
 ARRAY_SIZE	../../../aurora/inc/az_unitTest.h	343;"	d
 ARR_ARGS_H	../../../aurora/inc/az_args.h	22;"	d
 AURORA_H	../../../aurora/inc/aurora.h	22;"	d
+AZM_GTK_SAMPLE6	azm_gtk_sample.c	18;"	d	file:
+AZM_TEST_GTK_SAMPLE	azm_gtk.c	26;"	d	file:
+AZM_TEST_GTK_SAMPLE	azm_gtk.c	27;"	d	file:
+AZM_TRACE_FILTER_MAX	../azm_trace.c	48;"	d	file:
 AZ_API_H	../../../aurora/inc/az_api.h	22;"	d
+AZ_APP_CFG_TREE	../../../aurora/inc/frw/az_frw_cfg.h	44;"	d
 AZ_ARRAY_H	../../../aurora/inc/az_array.h	22;"	d
 AZ_ASSERT_H	../../../aurora/inc/az_assert.h	22;"	d
 AZ_ATOMIC_GNUC_H	../../../aurora/inc/az_atomic_gnuc.h	22;"	d
@@ -36,10 +42,43 @@ AZ_BUFFER_OUT_TOO_LONG1	../../../aurora/inc/az_buffer.h	56;"	d
 AZ_BUFFER_OUT_TOO_LONG2	../../../aurora/inc/az_buffer.h	57;"	d
 AZ_BUFFER_OUT_TOO_LONG3	../../../aurora/inc/az_buffer.h	58;"	d
 AZ_CIRBUFFER_H	../../../aurora/inc/az_cirbuffer.h	22;"	d
+AZ_CLI_API_H	../../../aurora/inc/cli/az_cli_api.h	22;"	d
+AZ_CLI_CMD_ERROR	../../../aurora/inc/cli/az_cli_cmd.h	52;"	d
+AZ_CLI_CMD_H	../../../aurora/inc/cli/az_cli_cmd.h	22;"	d
+AZ_CLI_CMD_MASK_APP	../../../aurora/inc/cli/az_cli_cmd.h	57;"	d
+AZ_CLI_CMD_MASK_DEBUG	../../../aurora/inc/cli/az_cli_cmd.h	54;"	d
+AZ_CLI_CMD_MASK_FRW	../../../aurora/inc/cli/az_cli_cmd.h	56;"	d
+AZ_CLI_CMD_MASK_LOCAL	../../../aurora/inc/cli/az_cli_cmd.h	55;"	d
+AZ_CLI_CMD_NOTFOUND	../../../aurora/inc/cli/az_cli_cmd.h	49;"	d
+AZ_CLI_CMD_QUIT	../../../aurora/inc/cli/az_cli_cmd.h	51;"	d
+AZ_CLI_CMD_SHOWHELP	../../../aurora/inc/cli/az_cli_cmd.h	50;"	d
+AZ_CLI_CMD_SUCCESS	../../../aurora/inc/cli/az_cli_cmd.h	48;"	d
+AZ_CLI_GLUE_H	../../../aurora/inc/cli/az_cli_glue.h	22;"	d
+AZ_CLI_H	../../../aurora/inc/cli/az_cli.h	22;"	d
+AZ_CLI_SHELL_MAX	../../../aurora/inc/cli/az_cli_glue.h	33;"	d
+AZ_CLI_SHELL_MAX	../../../aurora/inc/cli/az_cli_glue.h	35;"	d
+AZ_CLI_SHELL_PROMPT_DFT	../../../aurora/inc/cli/az_cli.h	45;"	d
+AZ_CLI_SHELL_PROMPT_DFT	../../../aurora/inc/cli/az_cli.h	47;"	d
+AZ_CLI_SHELL_STATE_BCAST	../../../aurora/inc/cli/az_cli.h	52;"	d
+AZ_CLI_SHELL_STATE_DMALLOC	../../../aurora/inc/cli/az_cli.h	59;"	d
+AZ_CLI_SHELL_STATE_INFRWD	../../../aurora/inc/cli/az_cli.h	57;"	d
+AZ_CLI_SHELL_STATE_INIT	../../../aurora/inc/cli/az_cli.h	49;"	d
+AZ_CLI_SHELL_STATE_LOG	../../../aurora/inc/cli/az_cli.h	55;"	d
+AZ_CLI_SHELL_STATE_RXON	../../../aurora/inc/cli/az_cli.h	53;"	d
+AZ_CLI_SHELL_STATE_RXSTDOUT	../../../aurora/inc/cli/az_cli.h	54;"	d
+AZ_CLI_SHELL_STATE_START	../../../aurora/inc/cli/az_cli.h	50;"	d
+AZ_CLI_SHELL_STATE_START_DFT	../../../aurora/inc/cli/az_cli.h	61;"	d
+AZ_CLI_SHELL_STATE_STOP	../../../aurora/inc/cli/az_cli.h	51;"	d
+AZ_CLI_SVR_PORT	../../../aurora/inc/cli/az_cli.h	35;"	d
+AZ_CLI_SVR_PORT	../../../aurora/inc/cli/az_cli.h	37;"	d
 AZ_CONFIG_H	../../../aurora/inc/az_config.h	22;"	d
 AZ_CORE_H	../../../aurora/inc/az_core.h	22;"	d
+AZ_DATETIME_H	../../../aurora/inc/sys/az_datetime.h	22;"	d
 AZ_DATETIME_STR	../../../aurora/inc/az_log.h	51;"	d
+AZ_DEBUG_H	../../../aurora/inc/mon/az_debug.h	22;"	d
 AZ_DEF_H	../../../aurora/inc/az_def.h	27;"	d
+AZ_DIR_INVALID	../../../aurora/inc/sys/az_fs.h	66;"	d
+AZ_DLLIB_H	../../../aurora/inc/sys/az_dllib.h	22;"	d
 AZ_EQUAL_PTR	../../../aurora/inc/az_def.h	119;"	d
 AZ_ERR	../../../aurora/inc/az_err.h	172;"	d
 AZ_ERR	../../../aurora/inc/az_err.h	178;"	d
@@ -161,6 +200,7 @@ AZ_FIFO_FULL	../../../aurora/inc/az_fifo.h	34;"	d
 AZ_FIFO_H	../../../aurora/inc/az_fifo.h	22;"	d
 AZ_FILENAME	../../../aurora/inc/az_def.h	155;"	d
 AZ_FILENAME	../../../aurora/inc/az_def.h	157;"	d
+AZ_FILE_INVALID	../../../aurora/inc/sys/az_fs.h	73;"	d
 AZ_FMT_EVENT_ID	../../../aurora/inc/az_event.h	49;"	d
 AZ_FMT_EVENT_ID	../../../aurora/inc/az_event.h	56;"	d
 AZ_FMT_KV_EXP	../../../aurora/inc/az_printf.h	46;"	d
@@ -187,11 +227,50 @@ AZ_FMT_POS	../../../aurora/inc/az_printf.h	64;"	d
 AZ_FMT_RET	../../../aurora/inc/az_printf.h	67;"	d
 AZ_FMT_SIZE	../../../aurora/inc/az_printf.h	55;"	d
 AZ_FMT_SIZE	../../../aurora/inc/az_printf.h	63;"	d
+AZ_FRW_APP_FILE_DFT	../../../aurora/inc/frw/az_frw.h	85;"	d
+AZ_FRW_APP_FILE_DFT	../../../aurora/inc/frw/az_frw.h	87;"	d
+AZ_FRW_CFG_FILE_DFT	../../../aurora/inc/frw/az_frw.h	79;"	d
+AZ_FRW_CFG_FILE_DFT	../../../aurora/inc/frw/az_frw.h	81;"	d
+AZ_FRW_CFG_FOLDER_DFT	../../../aurora/inc/frw/az_frw.h	67;"	d
+AZ_FRW_CFG_FOLDER_DFT	../../../aurora/inc/frw/az_frw.h	69;"	d
+AZ_FRW_CFG_H	../../../aurora/inc/frw/az_frw_cfg.h	22;"	d
+AZ_FRW_CFG_KEY_sys	../../../aurora/inc/frw/az_frw_cfg.h	32;"	d
+AZ_FRW_CFG_TREE	../../../aurora/inc/frw/az_frw_cfg.h	43;"	d
+AZ_FRW_CMD_CONF	../../../aurora/inc/frw/az_frw.h	50;"	d
+AZ_FRW_CMD_DOWN	../../../aurora/inc/frw/az_frw.h	56;"	d
+AZ_FRW_CMD_H	../../../aurora/inc/frw/az_frw_cmd.h	22;"	d
+AZ_FRW_CMD_INIT	../../../aurora/inc/frw/az_frw.h	49;"	d
+AZ_FRW_CMD_SAPP	../../../aurora/inc/frw/az_frw.h	54;"	d
+AZ_FRW_CMD_SYNC	../../../aurora/inc/frw/az_frw.h	51;"	d
+AZ_FRW_CMD_TAPP	../../../aurora/inc/frw/az_frw.h	55;"	d
+AZ_FRW_CMD_TINI	../../../aurora/inc/frw/az_frw.h	57;"	d
+AZ_FRW_EVT_BASE	../../../aurora/inc/frw/az_frw.h	43;"	d
+AZ_FRW_EVT_BASE	../../../aurora/inc/frw/az_frw.h	46;"	d
+AZ_FRW_EVT_IERR	../../../aurora/inc/frw/az_frw.h	58;"	d
+AZ_FRW_EVT_MASK	../../../aurora/inc/frw/az_frw.h	44;"	d
+AZ_FRW_EVT_MASK	../../../aurora/inc/frw/az_frw.h	47;"	d
+AZ_FRW_EVT_SYNC	../../../aurora/inc/frw/az_frw.h	53;"	d
+AZ_FRW_EVT_TOUT	../../../aurora/inc/frw/az_frw.h	52;"	d
+AZ_FRW_H	../../../aurora/inc/frw/az_frw.h	22;"	d
+AZ_FRW_LOG_FOLDER_DFT	../../../aurora/inc/frw/az_frw.h	73;"	d
+AZ_FRW_LOG_FOLDER_DFT	../../../aurora/inc/frw/az_frw.h	75;"	d
+AZ_FRW_OPT_APP_CFG_FILE	../../../aurora/inc/frw/az_frw.h	64;"	d
+AZ_FRW_OPT_CFG_FOLDER	../../../aurora/inc/frw/az_frw.h	61;"	d
+AZ_FRW_OPT_FRW_CFG_FILE	../../../aurora/inc/frw/az_frw.h	63;"	d
+AZ_FRW_OPT_LOG_FOLDER	../../../aurora/inc/frw/az_frw.h	62;"	d
+AZ_FRW_STATE_CNFG	../../../aurora/inc/frw/az_frw.h	35;"	d
+AZ_FRW_STATE_DOWN	../../../aurora/inc/frw/az_frw.h	39;"	d
+AZ_FRW_STATE_IDLE	../../../aurora/inc/frw/az_frw.h	33;"	d
+AZ_FRW_STATE_IERR	../../../aurora/inc/frw/az_frw.h	37;"	d
+AZ_FRW_STATE_INIT	../../../aurora/inc/frw/az_frw.h	34;"	d
+AZ_FRW_STATE_NORM	../../../aurora/inc/frw/az_frw.h	38;"	d
+AZ_FRW_STATE_SYNC	../../../aurora/inc/frw/az_frw.h	36;"	d
 AZ_FSM_H	../../../aurora/inc/az_fsm.h	22;"	d
 AZ_FSM_INIT_ARB	../../../aurora/inc/az_fsm.h	201;"	d
 AZ_FSM_INIT_SEQ	../../../aurora/inc/az_fsm.h	190;"	d
 AZ_FSM_TYPE_STATE_ARB	../../../aurora/inc/az_fsm.h	34;"	d
 AZ_FSM_TYPE_STATE_SEQ	../../../aurora/inc/az_fsm.h	35;"	d
+AZ_FS_H	../../../aurora/inc/sys/az_fs.h	22;"	d
 AZ_INDEX_H	../../../aurora/inc/az_index.h	22;"	d
 AZ_INDEX_POOL_COUNT	../../../aurora/inc/az_index.h	196;"	d
 AZ_INDEX_POOL_COUNT	../../../aurora/inc/az_index.h	58;"	d
@@ -200,6 +279,8 @@ AZ_INDEX_POOL_LIST_UNIT_SZ	../../../aurora/inc/az_index.h	50;"	d
 AZ_INDEX_POOL_SIZE	../../../aurora/inc/az_index.h	195;"	d
 AZ_INDEX_POOL_SIZE	../../../aurora/inc/az_index.h	57;"	d
 AZ_INDEX_POOL_TEST_AND_SET	../../../aurora/inc/az_index.h	54;"	d
+AZ_INET_H	../../../aurora/inc/sys/az_inet.h	22;"	d
+AZ_INET_PORT	../../../aurora/inc/sys/az_inet.h	49;"	d
 AZ_IN_RANGE	../../../aurora/inc/az_def.h	102;"	d
 AZ_ION_BUSY	../../../aurora/inc/az_ion.h	68;"	d
 AZ_ION_BUSY	../../../aurora/inc/az_ion.h	85;"	d
@@ -211,23 +292,32 @@ AZ_ION_IDLE	../../../aurora/inc/az_ion.h	67;"	d
 AZ_ION_IDLE	../../../aurora/inc/az_ion.h	84;"	d
 AZ_ION_ID_FLAG_NONIO	../../../aurora/inc/az_ion_types.h	63;"	d
 AZ_ION_ID_FLAG_NONIO	../../../aurora/inc/az_ion_types.h	65;"	d
+AZ_ION_ID_FLAG_NONIO	../../../aurora/inc/az_ion_types.h	67;"	d
 AZ_ION_ID_INVALID	../../../aurora/inc/az_ion_types.h	61;"	d
+AZ_ION_INIT_STATIC	../../../aurora/inc/az_ion.h	106;"	d
+AZ_ION_IS_IDLE_VALID	../../../aurora/inc/az_ion.h	111;"	d
 AZ_ION_LIST	../../../aurora/inc/az_ion.h	65;"	d
 AZ_ION_LIST	../../../aurora/inc/az_ion.h	82;"	d
 AZ_ION_MAX	../../../aurora/inc/az_ion.h	36;"	d
 AZ_ION_MAX	../../../aurora/inc/az_ion.h	38;"	d
+AZ_ION_TAG_INVALID	../../../aurora/inc/az_ion_types.h	62;"	d
 AZ_ION_TYPES_H	../../../aurora/inc/az_ion_types.h	22;"	d
 AZ_ION_TYPE_DIR	../../../aurora/inc/az_ion_types.h	43;"	d
 AZ_ION_TYPE_FILE	../../../aurora/inc/az_ion_types.h	44;"	d
 AZ_ION_TYPE_IOU	../../../aurora/inc/az_ion_types.h	46;"	d
+AZ_ION_TYPE_LOCAL	../../../aurora/inc/az_ion_types.h	48;"	d
 AZ_ION_TYPE_LOCAL	../../../aurora/inc/az_ion_types.h	49;"	d
 AZ_ION_TYPE_MASK	../../../aurora/inc/az_ion_types.h	38;"	d
+AZ_ION_TYPE_MAX	../../../aurora/inc/az_ion_types.h	49;"	d
 AZ_ION_TYPE_MAX	../../../aurora/inc/az_ion_types.h	50;"	d
 AZ_ION_TYPE_MSGQ	../../../aurora/inc/az_ion_types.h	45;"	d
 AZ_ION_TYPE_MUTEX	../../../aurora/inc/az_ion_types.h	41;"	d
+AZ_ION_TYPE_NAMES	../../../aurora/inc/az_ion_types.h	53;"	d
 AZ_ION_TYPE_NAMES	../../../aurora/inc/az_ion_types.h	54;"	d
 AZ_ION_TYPE_SEM	../../../aurora/inc/az_ion_types.h	42;"	d
+AZ_ION_TYPE_SOCK	../../../aurora/inc/az_ion_types.h	47;"	d
 AZ_ION_TYPE_TCP	../../../aurora/inc/az_ion_types.h	48;"	d
+AZ_ION_TYPE_THREAD	../../../aurora/inc/az_ion_types.h	39;"	d
 AZ_ION_TYPE_TIMER	../../../aurora/inc/az_ion_types.h	40;"	d
 AZ_ION_TYPE_UDP	../../../aurora/inc/az_ion_types.h	47;"	d
 AZ_ION_TYPE_XU	../../../aurora/inc/az_ion_types.h	39;"	d
@@ -321,6 +411,11 @@ AZ_MALLOC_MAGIC	../../../aurora/inc/az_malloc.h	33;"	d
 AZ_MALLOC_SIGN	../../../aurora/inc/az_malloc.h	138;"	d
 AZ_MALLOC_STATS	../../../aurora/inc/az_malloc.h	149;"	d
 AZ_MAX_SIG_HANDLERS	../../../aurora/inc/az_sighandle.h	32;"	d
+AZ_MCHECK_H	../../../aurora/inc/mon/az_mcheck.h	22;"	d
+AZ_MCHK_INFO_ITEM_COUNT_MAX	../../../aurora/inc/mon/az_mcheck.h	32;"	d
+AZ_MCK_INFO_LEN	../../../aurora/inc/mon/az_mcheck.h	55;"	d
+AZ_MCK_INFO_LIST_SZ	../../../aurora/inc/mon/az_mcheck.h	60;"	d
+AZ_MISC_H	../../../aurora/inc/sys/az_misc.h	22;"	d
 AZ_MSGQ_H	../../../aurora/inc/az_msgq.h	22;"	d
 AZ_MSGQ_NAME_LEN	../../../aurora/inc/az_msgq.h	37;"	d
 AZ_MSGQ_NAME_LEN	../../../aurora/inc/az_msgq.h	39;"	d
@@ -328,7 +423,12 @@ AZ_MTRACE_ALLOC_POP	../../../aurora/inc/az_malloc.h	82;"	d
 AZ_MTRACE_ALLOC_PUSH	../../../aurora/inc/az_malloc.h	69;"	d
 AZ_MTRACE_FREE_POP	../../../aurora/inc/az_malloc.h	114;"	d
 AZ_MTRACE_FREE_PUSH	../../../aurora/inc/az_malloc.h	101;"	d
+AZ_MUTEX_H	../../../aurora/inc/sys/az_mutex.h	22;"	d
+AZ_MUTEX_INVALID	../../../aurora/inc/sys/az_mutex.h	46;"	d
+AZ_NAME_MAX	../../../aurora/inc/sys/az_fs.h	52;"	d
+AZ_NAME_MAX	../../../aurora/inc/sys/az_fs.h	54;"	d
 AZ_NL	../../../aurora/inc/az_printf.h	33;"	d
+AZ_NL	../../../aurora/inc/cli/az_cli_cmd.h	33;"	d
 AZ_OPTIONS_H	../../../aurora/inc/az_options.h	22;"	d
 AZ_OPTIONS_VALUE_EXIST	../../../aurora/inc/az_options.h	36;"	d
 AZ_OPTIONS_VALUE_NONE	../../../aurora/inc/az_options.h	35;"	d
@@ -340,9 +440,46 @@ AZ_PACKED_STRUCT	../../../aurora/inc/az_trz.h	/^typedef AZ_PACKED_STRUCT(az_tran
 AZ_PACKED_STRUCT	../../../aurora/inc/az_trz_msg.h	/^AZ_PACKED_STRUCT(az_trz_msg_error_report) {$/;"	f
 AZ_PACKED_STRUCT	../../../aurora/inc/az_trz_msg.h	/^AZ_PACKED_STRUCT(az_trz_msg_keepalive) {$/;"	f
 AZ_PACKED_STRUCT	../../../aurora/inc/az_trz_msg.h	/^AZ_PACKED_STRUCT(az_trz_msg_query_nodeid) {$/;"	f
+AZ_PACKED_STRUCT	../../../aurora/inc/mon/az_mcheck.h	/^typedef AZ_PACKED_STRUCT(az_mchk_info) {$/;"	f
+AZ_PACKED_STRUCT	../../../aurora/inc/mon/az_trace.h	/^typedef AZ_PACKED_STRUCT(az_trace_fileinfo) {$/;"	f
+AZ_PACKED_STRUCT	../../../aurora/inc/mon/az_trace.h	/^typedef AZ_PACKED_STRUCT(az_trace_info) {$/;"	f
+AZ_PATH_COMP_MAX	../../../aurora/inc/sys/az_fs.h	46;"	d
+AZ_PATH_COMP_MAX	../../../aurora/inc/sys/az_fs.h	48;"	d
+AZ_PATH_DELIMITER	../../../aurora/inc/sys/az_fs.h	57;"	d
+AZ_PATH_MAX	../../../aurora/inc/sys/az_fs.h	40;"	d
+AZ_PATH_MAX	../../../aurora/inc/sys/az_fs.h	42;"	d
+AZ_PATH_SEPERATOR	../../../aurora/inc/sys/az_fs.h	58;"	d
 AZ_PRINTF_BUF_SZ	../../../aurora/inc/az_log.h	56;"	d
 AZ_PRINTF_BUF_SZ	../../../aurora/inc/az_log.h	58;"	d
 AZ_PRINTF_H	../../../aurora/inc/az_printf.h	22;"	d
+AZ_PROBE_CLOCK_ID	../../../aurora/inc/mon/az_probe.h	65;"	d
+AZ_PROBE_DEC	../../../aurora/inc/mon/az_probe.h	149;"	d
+AZ_PROBE_DEC_SYS	../../../aurora/inc/sys/az_sys_probe.h	55;"	d
+AZ_PROBE_DEC_SYS	../../../aurora/inc/sys/az_sys_probe.h	60;"	d
+AZ_PROBE_GET_SAMPLE	../../../aurora/inc/mon/az_probe.h	151;"	d
+AZ_PROBE_H	../../../aurora/inc/mon/az_probe.h	22;"	d
+AZ_PROBE_INC	../../../aurora/inc/mon/az_probe.h	148;"	d
+AZ_PROBE_INC_SYS	../../../aurora/inc/sys/az_sys_probe.h	52;"	d
+AZ_PROBE_INC_SYS	../../../aurora/inc/sys/az_sys_probe.h	59;"	d
+AZ_PROBE_LEVEL	../../../aurora/inc/mon/az_probe.h	62;"	d
+AZ_PROBE_MK_SAMPLE	../../../aurora/inc/mon/az_probe.h	59;"	d
+AZ_PROBE_SAMPLES_MAX	../../../aurora/inc/mon/az_probe.h	40;"	d
+AZ_PROBE_SAMPLES_MAX	../../../aurora/inc/mon/az_probe.h	42;"	d
+AZ_PROBE_SAMPLE_SEND_MAX	../../../aurora/inc/mon/az_probe.h	46;"	d
+AZ_PROBE_SAMPLE_SEND_MAX	../../../aurora/inc/mon/az_probe.h	48;"	d
+AZ_PROBE_SET	../../../aurora/inc/mon/az_probe.h	103;"	d
+AZ_PROBE_SET	../../../aurora/inc/mon/az_probe.h	145;"	d
+AZ_PROBE_SET_SYS	../../../aurora/inc/sys/az_sys_probe.h	49;"	d
+AZ_PROBE_SET_SYS	../../../aurora/inc/sys/az_sys_probe.h	58;"	d
+AZ_PROBE_SRC	../../../aurora/inc/mon/az_probe.h	61;"	d
+AZ_PROBE_STATE_DSND	../../../aurora/inc/mon/az_probe.h	54;"	d
+AZ_PROBE_STATE_ENAB	../../../aurora/inc/mon/az_probe.h	53;"	d
+AZ_PROBE_STATE_FULL	../../../aurora/inc/mon/az_probe.h	55;"	d
+AZ_PROBE_STATE_IDLE	../../../aurora/inc/mon/az_probe.h	51;"	d
+AZ_PROBE_STATE_INIT	../../../aurora/inc/mon/az_probe.h	52;"	d
+AZ_PROBE_STATE_READY	../../../aurora/inc/mon/az_probe.h	57;"	d
+AZ_PROBE_TSTAMP	../../../aurora/inc/mon/az_probe.h	63;"	d
+AZ_PROBE_WAIT_SAMPLE	../../../aurora/inc/mon/az_probe.h	154;"	d
 AZ_PROF_H	../../../aurora/inc/az_prof.h	22;"	d
 AZ_REFCOUNT_DYNAMIC_ZERO	../../../aurora/inc/az_refcount.h	47;"	d
 AZ_REFCOUNT_H	../../../aurora/inc/az_refcount.h	22;"	d
@@ -359,13 +496,21 @@ AZ_RING_TYPE_DS8	../../../aurora/inc/az_ring.h	/^  AZ_RING_TYPE_DS8 = 1,    \/\/
 AZ_RING_TYPE_DSREF	../../../aurora/inc/az_ring.h	/^  AZ_RING_TYPE_DSREF = 9,  \/\/ data size address$/;"	e	enum:__anon24
 AZ_RING_TYPE_NULL	../../../aurora/inc/az_ring.h	/^  AZ_RING_TYPE_NULL,$/;"	e	enum:__anon24
 AZ_RW_LOCK_H	../../../aurora/inc/az_rw_lock.h	22;"	d
+AZ_SEM_H	../../../aurora/inc/sys/az_sem.h	22;"	d
+AZ_SEM_INVALID	../../../aurora/inc/sys/az_sem.h	45;"	d
 AZ_SEM_INVERSION_SAFE	../../../aurora/inc/az_sys_def.h	62;"	d
 AZ_SEM_INVERSION_SAFE	../../../aurora/inc/az_sys_def.h	64;"	d
+AZ_SEM_OPTIONS_PSHARED	../../../aurora/inc/sys/az_sem.h	35;"	d
 AZ_SEM_Q_FIFO	../../../aurora/inc/az_sys_def.h	50;"	d
 AZ_SEM_Q_FIFO	../../../aurora/inc/az_sys_def.h	52;"	d
 AZ_SEM_Q_PRIORITY	../../../aurora/inc/az_sys_def.h	56;"	d
 AZ_SEM_Q_PRIORITY	../../../aurora/inc/az_sys_def.h	58;"	d
 AZ_SIGHANDLE_H	../../../aurora/inc/az_sighandle.h	22;"	d
+AZ_SIG_H	../../../aurora/inc/sys/az_sig.h	22;"	d
+AZ_SOCKET_H	../../../aurora/inc/sys/az_socket.h	22;"	d
+AZ_SOCKET_INIT_STATIC	../../../aurora/inc/sys/az_socket.h	56;"	d
+AZ_SOCK_ID_INVALID	../../../aurora/inc/sys/az_socket.h	37;"	d
+AZ_SOCK_INVALID	../../../aurora/inc/sys/az_socket.h	36;"	d
 AZ_STR	../../../aurora/inc/az_def.h	109;"	d
 AZ_STRING_H	../../../aurora/inc/az_string.h	22;"	d
 AZ_ST_IDLE	../../../aurora/inc/az_def.h	/^  AZ_ST_IDLE = 0,$/;"	e	enum:__anon5
@@ -376,7 +521,25 @@ AZ_SUCCESS	../../../aurora/inc/az_err.h	97;"	d
 AZ_SYSCALL_PRELOAD_H	../../../aurora/inc/az_syscall_preload.h	22;"	d
 AZ_SYS_BASE_H	../../../aurora/inc/az_sys_base.h	22;"	d
 AZ_SYS_DEF_H	../../../aurora/inc/az_sys_def.h	22;"	d
+AZ_SYS_FLAG_PROBE_MUTEX	../../../aurora/inc/sys/az_sys_probe.h	35;"	d
+AZ_SYS_FLAG_PROBE_SEM	../../../aurora/inc/sys/az_sys_probe.h	36;"	d
+AZ_SYS_FLAG_PROBE_SOCKET	../../../aurora/inc/sys/az_sys_probe.h	37;"	d
+AZ_SYS_FLAG_PROBE_THREAD	../../../aurora/inc/sys/az_sys_probe.h	33;"	d
+AZ_SYS_FLAG_PROBE_TIMER	../../../aurora/inc/sys/az_sys_probe.h	34;"	d
 AZ_SYS_H	../../../aurora/inc/az_sys.h	22;"	d
+AZ_SYS_PRINTF_H	../../../aurora/inc/sys/az_sys_printf.h	22;"	d
+AZ_SYS_PROBE_H	../../../aurora/inc/sys/az_sys_probe.h	22;"	d
+AZ_SYS_TIMESTAMP_FMT	../../../aurora/inc/sys/az_sys_printf.h	43;"	d
+AZ_TCPSERVER_GLUE_H	../../../aurora/inc/net/az_tcpserver_glue.h	22;"	d
+AZ_TCPSERVER_H	../../../aurora/inc/net/az_tcpserver.h	22;"	d
+AZ_TCPSERVER_STATE_CLIBUSY	../../../aurora/inc/net/az_tcpserver.h	39;"	d
+AZ_TCPSERVER_STATE_DALLOC	../../../aurora/inc/net/az_tcpserver.h	41;"	d
+AZ_TCPSERVER_STATE_IDLE	../../../aurora/inc/net/az_tcpserver.h	35;"	d
+AZ_TCPSERVER_STATE_INIT	../../../aurora/inc/net/az_tcpserver.h	36;"	d
+AZ_TCPSERVER_STATE_MASK	../../../aurora/inc/net/az_tcpserver.h	40;"	d
+AZ_TCPSERVER_STATE_RUN	../../../aurora/inc/net/az_tcpserver.h	38;"	d
+AZ_TCPSERVER_STATE_START	../../../aurora/inc/net/az_tcpserver.h	37;"	d
+AZ_TCP_H	../../../aurora/inc/sys/az_tcp.h	22;"	d
 AZ_TC_CHECK_INTERVAL_MS	../../../aurora/inc/az_test.h	38;"	d
 AZ_TC_CUR_ITER	../../../aurora/inc/az_tc.h	52;"	d
 AZ_TC_FLAG_TRACE	../../../aurora/inc/az_tc.h	27;"	d
@@ -391,8 +554,12 @@ AZ_TC_PER_TP_MAX	../../../aurora/inc/az_test.h	35;"	d
 AZ_TC_PRINT_B	../../../aurora/inc/az_tc.h	69;"	d
 AZ_TC_PRINT_BEGIN	../../../aurora/inc/az_tc.h	74;"	d
 AZ_TC_PRINT_END	../../../aurora/inc/az_tc.h	105;"	d
+AZ_TC_PRINT_END	../../../aurora/inc/az_tc.h	110;"	d
 AZ_TC_PRINT_END_FAIL	../../../aurora/inc/az_tc.h	89;"	d
+AZ_TC_PRINT_END_FAIL	../../../aurora/inc/az_tc.h	94;"	d
+AZ_TC_PRINT_END_PASS	../../../aurora/inc/az_tc.h	102;"	d
 AZ_TC_PRINT_END_PASS	../../../aurora/inc/az_tc.h	97;"	d
+AZ_TC_PRINT_RUN	../../../aurora/inc/az_tc.h	89;"	d
 AZ_TC_PRINT_START	../../../aurora/inc/az_tc.h	84;"	d
 AZ_TC_PRINT_T	../../../aurora/inc/az_tc.h	76;"	d
 AZ_TC_PRINT_TERM	../../../aurora/inc/az_tc.h	82;"	d
@@ -402,7 +569,9 @@ AZ_TC_RESULT_SEGV	../../../aurora/inc/az_tc.h	67;"	d
 AZ_TC_RESULT_SUCCESS	../../../aurora/inc/az_tc.h	64;"	d
 AZ_TC_SET_CUR_TC	../../../aurora/inc/az_tc.h	42;"	d
 AZ_TC_SET_OK	../../../aurora/inc/az_tc.h	125;"	d
+AZ_TC_SET_OK	../../../aurora/inc/az_tc.h	130;"	d
 AZ_TC_SET_REASON	../../../aurora/inc/az_tc.h	124;"	d
+AZ_TC_SET_REASON	../../../aurora/inc/az_tc.h	129;"	d
 AZ_TC_SET_TV	../../../aurora/inc/az_tc.h	46;"	d
 AZ_TC_TV_SZ	../../../aurora/inc/az_tc.h	44;"	d
 AZ_TEST_CFG_FILE_DEFAULT	../../../aurora/inc/az_test.h	48;"	d
@@ -489,21 +658,91 @@ AZ_TEST_SUBSTATE_PRE	../../../aurora/inc/az_test.h	199;"	d
 AZ_TEST_SUBSTATE_RUN	../../../aurora/inc/az_test.h	200;"	d
 AZ_TEST_TYPE_FUNC	../../../aurora/inc/az_test.h	203;"	d
 AZ_TEST_TYPE_PERF	../../../aurora/inc/az_test.h	204;"	d
+AZ_THREAD_BEAM_EVTBUS	../../../aurora/inc/az_thread.h	62;"	d
+AZ_THREAD_BEAM_MSG	../../../aurora/inc/az_thread.h	63;"	d
+AZ_THREAD_BEAM_OPT_AND_ALL	../../../aurora/inc/az_thread.h	92;"	d
+AZ_THREAD_BEAM_OPT_PRESERVE	../../../aurora/inc/az_thread.h	93;"	d
+AZ_THREAD_BEAM_TEST_ERROR	../../../aurora/inc/az_test.h	189;"	d
+AZ_THREAD_BEAM_TEST_STARTED	../../../aurora/inc/az_test.h	187;"	d
+AZ_THREAD_BEAM_TEST_STOPPED	../../../aurora/inc/az_test.h	188;"	d
+AZ_THREAD_BEAM_THR_START	../../../aurora/inc/az_thread.h	59;"	d
+AZ_THREAD_BEAM_THR_STOP	../../../aurora/inc/az_thread.h	60;"	d
+AZ_THREAD_BEAM_TRZ	../../../aurora/inc/az_thread.h	61;"	d
+AZ_THREAD_BEAM_VECTORS	../../../aurora/inc/az_thread.h	58;"	d
+AZ_THREAD_CFG_CAT_APP	../../../aurora/inc/az_thread_cfg.h	51;"	d
+AZ_THREAD_CFG_CAT_SYS	../../../aurora/inc/az_thread_cfg.h	50;"	d
 AZ_THREAD_CFG_H	../../../aurora/inc/az_thread_cfg.h	22;"	d
+AZ_THREAD_CFG_KEY_arg_name	../../../aurora/inc/az_thread_cfg.h	39;"	d
+AZ_THREAD_CFG_KEY_coremask	../../../aurora/inc/az_thread_cfg.h	43;"	d
+AZ_THREAD_CFG_KEY_entry_name	../../../aurora/inc/az_thread_cfg.h	38;"	d
+AZ_THREAD_CFG_KEY_name	../../../aurora/inc/az_thread_cfg.h	37;"	d
+AZ_THREAD_CFG_KEY_policy	../../../aurora/inc/az_thread_cfg.h	44;"	d
+AZ_THREAD_CFG_KEY_priority	../../../aurora/inc/az_thread_cfg.h	45;"	d
+AZ_THREAD_CFG_KEY_schedule	../../../aurora/inc/az_thread_cfg.h	42;"	d
+AZ_THREAD_CFG_KEY_stackSize	../../../aurora/inc/az_thread_cfg.h	41;"	d
+AZ_THREAD_CFG_KEY_tag	../../../aurora/inc/az_thread_cfg.h	40;"	d
+AZ_THREAD_CFG_KEY_thread	../../../aurora/inc/az_thread_cfg.h	36;"	d
+AZ_THREAD_CFG_KEY_threadlist	../../../aurora/inc/az_thread_cfg.h	35;"	d
+AZ_THREAD_CFG_NAME_LEN	../../../aurora/inc/az_thread_cfg.h	33;"	d
 AZ_THREAD_CFG_TREE	../../../aurora/inc/az_thread_cfg.h	52;"	d
+AZ_THREAD_CFG_TREE	../../../aurora/inc/az_thread_cfg.h	54;"	d
+AZ_THREAD_CFG_VAL_policy_SCHED_FIFO	../../../aurora/inc/az_thread_cfg.h	48;"	d
+AZ_THREAD_CFG_VAL_policy_SCHED_RR	../../../aurora/inc/az_thread_cfg.h	47;"	d
 AZ_THREAD_ERROR_CREATE	../../../aurora/inc/az_thread.h	40;"	d
+AZ_THREAD_ERROR_CREATED	../../../aurora/inc/az_thread.h	51;"	d
 AZ_THREAD_ERROR_DELETE	../../../aurora/inc/az_thread.h	43;"	d
+AZ_THREAD_ERROR_DELETE	../../../aurora/inc/az_thread.h	54;"	d
 AZ_THREAD_ERROR_RCVEVT	../../../aurora/inc/az_thread.h	45;"	d
+AZ_THREAD_ERROR_RCVEVT	../../../aurora/inc/az_thread.h	56;"	d
 AZ_THREAD_ERROR_SNDEVT	../../../aurora/inc/az_thread.h	44;"	d
+AZ_THREAD_ERROR_SNDEVT	../../../aurora/inc/az_thread.h	55;"	d
 AZ_THREAD_ERROR_START	../../../aurora/inc/az_thread.h	41;"	d
+AZ_THREAD_ERROR_START	../../../aurora/inc/az_thread.h	52;"	d
 AZ_THREAD_ERROR_STOP	../../../aurora/inc/az_thread.h	42;"	d
+AZ_THREAD_ERROR_STOP	../../../aurora/inc/az_thread.h	53;"	d
+AZ_THREAD_EXCPT_POINT	../../../aurora/inc/az_thread.h	190;"	d
+AZ_THREAD_FLAGS_INI_VAL	../../../aurora/inc/az_thread.h	81;"	d
+AZ_THREAD_FLAGS_INI_VAL	../../../aurora/inc/az_thread.h	83;"	d
+AZ_THREAD_FLAGS_LOG_ERR	../../../aurora/inc/az_thread.h	75;"	d
+AZ_THREAD_FLAGS_MASK	../../../aurora/inc/az_thread.h	78;"	d
+AZ_THREAD_FLAGS_PROBE	../../../aurora/inc/az_thread.h	77;"	d
+AZ_THREAD_FLAGS_TRACE	../../../aurora/inc/az_thread.h	76;"	d
 AZ_THREAD_H	../../../aurora/inc/az_thread.h	22;"	d
+AZ_THREAD_ID_INVALID	../../../aurora/inc/az_thread.h	89;"	d
+AZ_THREAD_INVALID	../../../aurora/inc/az_thread.h	175;"	d
+AZ_THREAD_IS_STATE_EXCPT	../../../aurora/inc/az_thread.h	189;"	d
+AZ_THREAD_MAIN_H	../../../aurora/inc/az_thread_main.h	22;"	d
+AZ_THREAD_MSG_CATEGORY	../../../aurora/inc/az_thread.h	194;"	d
+AZ_THREAD_MSG_CAT_MASK	../../../aurora/inc/az_thread.h	68;"	d
+AZ_THREAD_MSG_CAT_MASK	../../../aurora/inc/az_thread.h	72;"	d
+AZ_THREAD_MSG_EXCEPTION	../../../aurora/inc/az_thread.h	66;"	d
+AZ_THREAD_MSG_EXCEPTION	../../../aurora/inc/az_thread.h	70;"	d
+AZ_THREAD_MSG_GET_ION_ID	../../../aurora/inc/az_thread.h	195;"	d
+AZ_THREAD_MSG_STATECHG	../../../aurora/inc/az_thread.h	67;"	d
+AZ_THREAD_MSG_STATECHG	../../../aurora/inc/az_thread.h	71;"	d
+AZ_THREAD_NAME	../../../aurora/inc/az_thread.h	178;"	d
+AZ_THREAD_NAME	../../../aurora/inc/az_thread.h	180;"	d
+AZ_THREAD_ON_EXCPT	../../../aurora/inc/az_thread.h	191;"	d
+AZ_THREAD_PRIORITY_MAX	../../../aurora/inc/az_thread_types.h	32;"	d
+AZ_THREAD_PRIORITY_MIN	../../../aurora/inc/az_thread_types.h	31;"	d
+AZ_THREAD_REPORT_EXCPT	../../../aurora/inc/az_thread.h	192;"	d
 AZ_THREAD_STATE_BUSY	../../../aurora/inc/az_thread.h	36;"	d
+AZ_THREAD_STATE_BUSY	../../../aurora/inc/az_thread.h	47;"	d
 AZ_THREAD_STATE_CREATED	../../../aurora/inc/az_thread.h	33;"	d
+AZ_THREAD_STATE_CREATED	../../../aurora/inc/az_thread.h	44;"	d
 AZ_THREAD_STATE_ERROR	../../../aurora/inc/az_thread.h	37;"	d
+AZ_THREAD_STATE_ERROR	../../../aurora/inc/az_thread.h	48;"	d
 AZ_THREAD_STATE_EXCP	../../../aurora/inc/az_thread.h	38;"	d
+AZ_THREAD_STATE_EXCPT	../../../aurora/inc/az_thread.h	49;"	d
 AZ_THREAD_STATE_START	../../../aurora/inc/az_thread.h	34;"	d
+AZ_THREAD_STATE_START	../../../aurora/inc/az_thread.h	45;"	d
 AZ_THREAD_STATE_STOP	../../../aurora/inc/az_thread.h	35;"	d
+AZ_THREAD_STATE_STOP	../../../aurora/inc/az_thread.h	46;"	d
+AZ_THREAD_TRACE_DISABLE	../../../aurora/inc/az_thread.h	88;"	d
+AZ_THREAD_TRACE_ENABLE	../../../aurora/inc/az_thread.h	87;"	d
+AZ_THREAD_TRACE_ENABLED	../../../aurora/inc/az_thread.h	86;"	d
+AZ_THREAD_TRACE_SET_CURFUNC	../../../aurora/inc/az_thread.h	238;"	d
+AZ_THREAD_TYPES_H	../../../aurora/inc/az_thread_types.h	22;"	d
 AZ_THR_CFG_CAT_APP	../../../aurora/inc/az_thread_cfg.h	49;"	d
 AZ_THR_CFG_CAT_SYS	../../../aurora/inc/az_thread_cfg.h	48;"	d
 AZ_THR_CFG_KEY_arg_name	../../../aurora/inc/az_thread_cfg.h	38;"	d
@@ -519,8 +758,32 @@ AZ_THR_CFG_KEY_threadlist	../../../aurora/inc/az_thread_cfg.h	34;"	d
 AZ_THR_CFG_NAME_LEN	../../../aurora/inc/az_thread_cfg.h	32;"	d
 AZ_THR_CFG_VAL_policy_SCHED_FIFO	../../../aurora/inc/az_thread_cfg.h	46;"	d
 AZ_THR_CFG_VAL_policy_SCHED_RR	../../../aurora/inc/az_thread_cfg.h	45;"	d
+AZ_TIMER_H	../../../aurora/inc/sys/az_timer.h	22;"	d
+AZ_TIMER_INVALID	../../../aurora/inc/sys/az_timer.h	50;"	d
 AZ_TIMESTAMP_STR	../../../aurora/inc/az_log.h	52;"	d
 AZ_TIMESTAMP_STR0	../../../aurora/inc/az_log.h	53;"	d
+AZ_TRACE_CODE_CMD_ENABLE	../../../aurora/inc/mon/az_trace.h	46;"	d
+AZ_TRACE_CODE_CMD_QUERY	../../../aurora/inc/mon/az_trace.h	47;"	d
+AZ_TRACE_CODE_CMD_START	../../../aurora/inc/mon/az_trace.h	44;"	d
+AZ_TRACE_CODE_CMD_STOP	../../../aurora/inc/mon/az_trace.h	45;"	d
+AZ_TRACE_CODE_FILENAME	../../../aurora/inc/mon/az_trace.h	49;"	d
+AZ_TRACE_CODE_FUNC_ENTER	../../../aurora/inc/mon/az_trace.h	53;"	d
+AZ_TRACE_CODE_FUNC_EXIT	../../../aurora/inc/mon/az_trace.h	54;"	d
+AZ_TRACE_CODE_RPT_FREE	../../../aurora/inc/mon/az_trace.h	51;"	d
+AZ_TRACE_CODE_RPT_MALLOC	../../../aurora/inc/mon/az_trace.h	50;"	d
+AZ_TRACE_CODE_RSP_QUERY	../../../aurora/inc/mon/az_trace.h	48;"	d
+AZ_TRACE_H	../../../aurora/inc/mon/az_trace.h	22;"	d
+AZ_TRACE_INFO_LEN_DFT	../../../aurora/inc/mon/az_trace.h	111;"	d
+AZ_TRACE_IS_ACTV	../../../aurora/inc/mon/az_trace.h	119;"	d
+AZ_TRACE_QUERY_CLIPORT	../../../aurora/inc/mon/az_trace.h	56;"	d
+AZ_TRACE_QUERY_UNKNOWN	../../../aurora/inc/mon/az_trace.h	57;"	d
+AZ_TRACE_SOCK_CLI_NAME	../../../aurora/inc/mon/az_trace.h	36;"	d
+AZ_TRACE_SOCK_SVR_NAME	../../../aurora/inc/mon/az_trace.h	35;"	d
+AZ_TRACE_STATE_ACTV	../../../aurora/inc/mon/az_trace.h	41;"	d
+AZ_TRACE_STATE_BUSY	../../../aurora/inc/mon/az_trace.h	40;"	d
+AZ_TRACE_STATE_IDLE	../../../aurora/inc/mon/az_trace.h	38;"	d
+AZ_TRACE_STATE_INIT	../../../aurora/inc/mon/az_trace.h	39;"	d
+AZ_TRACE_STATE_SNDF	../../../aurora/inc/mon/az_trace.h	42;"	d
 AZ_TRUE	../../../aurora/inc/az_def.h	/^  AZ_TRUE = 1,$/;"	e	enum:__anon4
 AZ_TRZ_CODE_ERROR_REPORT	../../../aurora/inc/az_trz_msg.h	33;"	d
 AZ_TRZ_CODE_KEEPALIVE	../../../aurora/inc/az_trz_msg.h	35;"	d
@@ -622,20 +885,35 @@ AZ_VAR_PRINT_KV_LINE_WIDTH	../../../aurora/inc/az_var.h	58;"	d
 AZ_VAR_PRINT_ROW	../../../aurora/inc/az_var.h	/^  AZ_VAR_PRINT_ROW,$/;"	e	enum:az_var_print_mode
 AZ_VAR_PRINT_ROW_FMT_DEFAULT	../../../aurora/inc/az_var.h	192;"	d
 AZ_VAR_TYPE_ARRAY	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_ARRAY,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_ARRAY	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_ARRAY,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_BIT16	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_BIT16,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_BIT16	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_BIT16,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_BIT32	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_BIT32,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_BIT32	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_BIT32,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_BIT64	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_BIT64,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_BIT64	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_BIT64,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_BIT8	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_BIT8,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_BIT8	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_BIT8,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_BOOL	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_BOOL,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_BOOL	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_BOOL,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_CHAR	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_CHAR,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_CHAR	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_CHAR,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_DESCR	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_DESCR,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_DESCR	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_DESCR,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_DOUBLE	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_DOUBLE,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_DOUBLE	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_DOUBLE,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_ENUM	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_ENUM,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_ENUM	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_ENUM,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_FLOAT	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_FLOAT,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_FLOAT	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_FLOAT,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_INT16	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_INT16,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_INT16	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_INT16,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_INT32	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_INT32,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_INT32	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_INT32,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_INT64	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_INT64,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_INT64	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_INT64,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_INT8	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_INT8,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_INT8	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_INT8,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_KEY_ARRAY	../../../aurora/inc/az_xcfg.h	80;"	d
 AZ_VAR_TYPE_KEY_BIT16	../../../aurora/inc/az_xcfg.h	66;"	d
 AZ_VAR_TYPE_KEY_BIT32	../../../aurora/inc/az_xcfg.h	67;"	d
@@ -663,19 +941,33 @@ AZ_VAR_TYPE_KEY_UPOS	../../../aurora/inc/az_xcfg.h	75;"	d
 AZ_VAR_TYPE_KEY_USIZE	../../../aurora/inc/az_xcfg.h	74;"	d
 AZ_VAR_TYPE_KEY_VECTOR	../../../aurora/inc/az_xcfg.h	82;"	d
 AZ_VAR_TYPE_MAX	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_MAX,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_MAX	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_MAX,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_NULL	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_NULL = 0,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_NULL	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_NULL = 0,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_POS	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_POS,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_POS	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_POS,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_REF	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_REF,  \/\/ void *$/;"	e	enum:__anon47
+AZ_VAR_TYPE_REF	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_REF,  \/\/ void *$/;"	e	enum:__anon48
 AZ_VAR_TYPE_RET	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_RET,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_RET	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_RET,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_SIZE	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_SIZE,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_SIZE	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_SIZE,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_STRING	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_STRING,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_STRING	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_STRING,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_UINT16	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_UINT16,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_UINT16	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_UINT16,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_UINT32	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_UINT32,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_UINT32	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_UINT32,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_UINT64	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_UINT64,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_UINT64	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_UINT64,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_UINT8	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_UINT8,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_UINT8	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_UINT8,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_UPOS	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_UPOS,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_UPOS	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_UPOS,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_USIZE	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_USIZE,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_USIZE	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_USIZE,$/;"	e	enum:__anon48
 AZ_VAR_TYPE_VECTOR	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_VECTOR,$/;"	e	enum:__anon47
+AZ_VAR_TYPE_VECTOR	../../../aurora/inc/az_var.h	/^  AZ_VAR_TYPE_VECTOR,$/;"	e	enum:__anon48
 AZ_VER_H	../../../aurora/inc/az_ver.h	22;"	d
 AZ_XCFG_H	../../../aurora/inc/az_xcfg.h	22;"	d
 AZ_XML_CDATA_END_TAG	../../../aurora/inc/az_xml.h	45;"	d
@@ -711,6 +1003,8 @@ AZ_XU_EVENT_TEST_ERROR	../../../aurora/inc/az_test.h	189;"	d
 AZ_XU_EVENT_TEST_STARTED	../../../aurora/inc/az_test.h	187;"	d
 AZ_XU_EVENT_TEST_STOPPED	../../../aurora/inc/az_test.h	188;"	d
 Accept	../../../aurora/inc/az_sys_def.h	/^  } Accept;$/;"	m	union:__anon37	typeref:struct:__anon37::__anon42
+Argc	../../../aurora/inc/cli/az_cli_cmd.h	/^  int   Argc;$/;"	m	struct:az_cli_cmd_table
+Argv	../../../aurora/inc/cli/az_cli_cmd.h	/^  char  *Argv[CONFIG_AZ_CLI_MAX_ARGS];$/;"	m	struct:az_cli_cmd_table
 AurSysInetAddressT	../../../aurora/inc/az_sys_def.h	/^typedef az_sys_inet_address_t  AurSysInetAddressT;  $/;"	t
 AurSysLibT	../../../aurora/inc/az_sys_def.h	/^typedef az_sys_lib_t   AurSysLibT;  $/;"	t
 AurSysProcessArgT	../../../aurora/inc/az_sys_def.h	/^typedef az_sys_process_arg_t AurSysProcessArgT; $/;"	t
@@ -719,79 +1013,172 @@ AurSysSocketArgT	../../../aurora/inc/az_sys_def.h	/^typedef az_sys_socket_arg_t 
 AurSysThreadEntryT	../../../aurora/inc/az_sys_def.h	/^typedef az_sys_thread_entry_t AurSysThreadEntryT;$/;"	t
 AurSysThreadPriorityArgT	../../../aurora/inc/az_sys_def.h	/^typedef az_sys_thread_priority_arg_t AurSysThreadPriorityArgT; $/;"	t
 Bind	../../../aurora/inc/az_sys_def.h	/^  } Bind;$/;"	m	union:__anon37	typeref:struct:__anon37::__anon43
+CALL_AZM_GTK_SAMPLE	azm_gtk.c	30;"	d	file:
+CALL_AZM_GTK_SAMPLE	azm_gtk.c	36;"	d	file:
 CALL_AZ_UT_SET_REASON	../../../aurora/inc/az_unitTest.h	328;"	d
 CONFIG_AZM	../../../aurora/inc/az_config.h	94;"	d
+CONFIG_AZM	../../../aurora/inc/az_config.h	97;"	d
 CONFIG_AZ_APP_CFG_FILE	../../../aurora/inc/az_config.h	159;"	d
+CONFIG_AZ_APP_CFG_FILE	../../../aurora/inc/az_config.h	162;"	d
 CONFIG_AZ_CFG_FOLDER	../../../aurora/inc/az_config.h	156;"	d
+CONFIG_AZ_CFG_FOLDER	../../../aurora/inc/az_config.h	159;"	d
 CONFIG_AZ_CLI	../../../aurora/inc/az_config.h	91;"	d
+CONFIG_AZ_CLI	../../../aurora/inc/az_config.h	94;"	d
+CONFIG_AZ_CLI_CMDBUF_SZ	../../../aurora/inc/cli/az_cli_cmd.h	41;"	d
 CONFIG_AZ_CLI_INPUT_FRWD	../../../aurora/inc/az_config.h	117;"	d
+CONFIG_AZ_CLI_INPUT_FRWD	../../../aurora/inc/az_config.h	120;"	d
+CONFIG_AZ_CLI_MAX_ARGS	../../../aurora/inc/cli/az_cli_cmd.h	45;"	d
+CONFIG_AZ_CLI_MAX_CMDS	../../../aurora/inc/cli/az_cli_cmd.h	37;"	d
 CONFIG_AZ_CLI_SHELL_PROMPT	../../../aurora/inc/az_config.h	100;"	d
+CONFIG_AZ_CLI_SHELL_PROMPT	../../../aurora/inc/az_config.h	101;"	d
+CONFIG_AZ_CLI_SHELL_PROMPT	../../../aurora/inc/az_config.h	103;"	d
 CONFIG_AZ_CLI_SHELL_PROMPT	../../../aurora/inc/az_config.h	98;"	d
 CONFIG_AZ_CLI_SVR_PORT	../../../aurora/inc/az_config.h	137;"	d
+CONFIG_AZ_CLI_SVR_PORT	../../../aurora/inc/az_config.h	140;"	d
+CONFIG_AZ_CLI_TX_BUFFER_SZ	../../../aurora/inc/cli/az_cli.h	41;"	d
+CONFIG_AZ_DEBUG	../../../aurora/inc/az_config.h	46;"	d
+CONFIG_AZ_DEBUG	../../../aurora/inc/az_config.h	47;"	d
 CONFIG_AZ_DEBUG_NATIVE_APP	../../../aurora/inc/az_config.h	46;"	d
 CONFIG_AZ_DEBUG_NATIVE_APP	../../../aurora/inc/az_config.h	47;"	d
+CONFIG_AZ_DEBUG_NATIVE_APP	../../../aurora/inc/az_config.h	49;"	d
+CONFIG_AZ_DEBUG_NATIVE_APP	../../../aurora/inc/az_config.h	50;"	d
 CONFIG_AZ_DYN_THR_ALLOC	../../../aurora/inc/az_config.h	54;"	d
+CONFIG_AZ_DYN_THR_ALLOC	../../../aurora/inc/az_config.h	57;"	d
 CONFIG_AZ_ERR_LOG	../../../aurora/inc/az_config.h	161;"	d
+CONFIG_AZ_ERR_LOG	../../../aurora/inc/az_config.h	164;"	d
 CONFIG_AZ_EXP_CALLSTACK_DEPTH	../../../aurora/inc/az_config.h	167;"	d
+CONFIG_AZ_EXP_CALLSTACK_DEPTH	../../../aurora/inc/az_config.h	170;"	d
 CONFIG_AZ_ION_NONIO	../../../aurora/inc/az_config.h	203;"	d
+CONFIG_AZ_ION_NONIO	../../../aurora/inc/az_config.h	211;"	d
 CONFIG_AZ_LOG	../../../aurora/inc/az_config.h	75;"	d
+CONFIG_AZ_LOG	../../../aurora/inc/az_config.h	78;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../../aurora/inc/az_config.h	78;"	d
 CONFIG_AZ_LOG_DUP_STDOUT	../../../aurora/inc/az_config.h	79;"	d
+CONFIG_AZ_LOG_DUP_STDOUT	../../../aurora/inc/az_config.h	81;"	d
+CONFIG_AZ_LOG_DUP_STDOUT	../../../aurora/inc/az_config.h	82;"	d
 CONFIG_AZ_LOG_DUP_USE_LOCAL_SOCKET	../../../aurora/inc/az_config.h	81;"	d
+CONFIG_AZ_LOG_DUP_USE_LOCAL_SOCKET	../../../aurora/inc/az_config.h	84;"	d
 CONFIG_AZ_LOG_FLAGS_DFT	../../../aurora/inc/az_config.h	188;"	d
+CONFIG_AZ_LOG_FLAGS_DFT	../../../aurora/inc/az_config.h	191;"	d
+CONFIG_AZ_LOG_FLAGS_DFT	../../../aurora/inc/az_config.h	195;"	d
 CONFIG_AZ_LOG_FOLDER	../../../aurora/inc/az_config.h	157;"	d
+CONFIG_AZ_LOG_FOLDER	../../../aurora/inc/az_config.h	160;"	d
 CONFIG_AZ_LOG_LEVEL_DFT	../../../aurora/inc/az_config.h	187;"	d
+CONFIG_AZ_LOG_LEVEL_DFT	../../../aurora/inc/az_config.h	190;"	d
+CONFIG_AZ_LOG_LEVEL_DFT	../../../aurora/inc/az_config.h	194;"	d
 CONFIG_AZ_LOG_MAX	../../../aurora/inc/az_log.h	41;"	d
 CONFIG_AZ_LOG_OUTPORT_MAX	../../../aurora/inc/az_log.h	45;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../../aurora/inc/az_config.h	84;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../../aurora/inc/az_config.h	85;"	d
+CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../../aurora/inc/az_config.h	87;"	d
+CONFIG_AZ_LOG_STDOUT_DUMP_FILE	../../../aurora/inc/az_config.h	88;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE_PREFIX	../../../aurora/inc/az_config.h	88;"	d
+CONFIG_AZ_LOG_STDOUT_DUMP_FILE_PREFIX	../../../aurora/inc/az_config.h	91;"	d
 CONFIG_AZ_LOG_STDOUT_DUMP_FILE_SIZE	../../../aurora/inc/az_config.h	87;"	d
+CONFIG_AZ_LOG_STDOUT_DUMP_FILE_SIZE	../../../aurora/inc/az_config.h	90;"	d
 CONFIG_AZ_LOG_USE_SELECT	../../../aurora/inc/az_config.h	106;"	d
 CONFIG_AZ_LOG_USE_SELECT	../../../aurora/inc/az_config.h	107;"	d
+CONFIG_AZ_LOG_USE_SELECT	../../../aurora/inc/az_config.h	109;"	d
+CONFIG_AZ_LOG_USE_SELECT	../../../aurora/inc/az_config.h	110;"	d
 CONFIG_AZ_MALLOC	../../../aurora/inc/az_config.h	51;"	d
+CONFIG_AZ_MALLOC	../../../aurora/inc/az_config.h	54;"	d
 CONFIG_AZ_MTRACE	../../../aurora/inc/az_config.h	148;"	d
+CONFIG_AZ_MTRACE	../../../aurora/inc/az_config.h	151;"	d
 CONFIG_AZ_MTRACE	../../../aurora/inc/az_config.h	153;"	d
+CONFIG_AZ_MTRACE	../../../aurora/inc/az_config.h	156;"	d
 CONFIG_AZ_MTRACE_LIST_SZ	../../../aurora/inc/az_config.h	149;"	d
+CONFIG_AZ_MTRACE_LIST_SZ	../../../aurora/inc/az_config.h	152;"	d
 CONFIG_AZ_NAME_MAX	../../../aurora/inc/az_config.h	66;"	d
+CONFIG_AZ_NAME_MAX	../../../aurora/inc/az_config.h	69;"	d
 CONFIG_AZ_PATH_MAX	../../../aurora/inc/az_config.h	69;"	d
 CONFIG_AZ_PATH_MAX	../../../aurora/inc/az_config.h	71;"	d
+CONFIG_AZ_PATH_MAX	../../../aurora/inc/az_config.h	72;"	d
+CONFIG_AZ_PATH_MAX	../../../aurora/inc/az_config.h	74;"	d
 CONFIG_AZ_PERF_MEASURE_LOOP_CNT_DFT	../../../aurora/inc/az_config.h	190;"	d
+CONFIG_AZ_PERF_MEASURE_LOOP_CNT_DFT	../../../aurora/inc/az_config.h	198;"	d
 CONFIG_AZ_PERF_MEASURE_SAMPLES_DFT	../../../aurora/inc/az_config.h	191;"	d
+CONFIG_AZ_PERF_MEASURE_SAMPLES_DFT	../../../aurora/inc/az_config.h	199;"	d
 CONFIG_AZ_PROBE	../../../aurora/inc/az_config.h	206;"	d
+CONFIG_AZ_PROBE	../../../aurora/inc/az_config.h	214;"	d
 CONFIG_AZ_PROBE_ENABLE	../../../aurora/inc/az_config.h	207;"	d
+CONFIG_AZ_PROBE_ENABLE	../../../aurora/inc/az_config.h	215;"	d
+CONFIG_AZ_PROBE_FLAG_MUTEX	../../../aurora/inc/az_config.h	222;"	d
+CONFIG_AZ_PROBE_FLAG_SEM	../../../aurora/inc/az_config.h	223;"	d
+CONFIG_AZ_PROBE_FLAG_SOCKET	../../../aurora/inc/az_config.h	224;"	d
+CONFIG_AZ_PROBE_FLAG_THREAD	../../../aurora/inc/az_config.h	220;"	d
+CONFIG_AZ_PROBE_FLAG_TIMER	../../../aurora/inc/az_config.h	221;"	d
 CONFIG_AZ_PROBE_SAMPLES_MAX	../../../aurora/inc/az_config.h	208;"	d
+CONFIG_AZ_PROBE_SAMPLES_MAX	../../../aurora/inc/az_config.h	217;"	d
 CONFIG_AZ_PROBE_SVR_PORT	../../../aurora/inc/az_config.h	140;"	d
+CONFIG_AZ_PROBE_SVR_PORT	../../../aurora/inc/az_config.h	143;"	d
+CONFIG_AZ_PROBE_SYS	../../../aurora/inc/az_config.h	219;"	d
 CONFIG_AZ_REMOTE_STDIO_SVR_PORT	../../../aurora/inc/az_config.h	141;"	d
+CONFIG_AZ_REMOTE_STDIO_SVR_PORT	../../../aurora/inc/az_config.h	144;"	d
 CONFIG_AZ_RSTDIO_ENABLED	../../../aurora/inc/az_config.h	144;"	d
+CONFIG_AZ_RSTDIO_ENABLED	../../../aurora/inc/az_config.h	147;"	d
 CONFIG_AZ_SEGV_TEST	../../../aurora/inc/az_config.h	169;"	d
 CONFIG_AZ_SEGV_TEST	../../../aurora/inc/az_config.h	170;"	d
+CONFIG_AZ_SEGV_TEST	../../../aurora/inc/az_config.h	172;"	d
+CONFIG_AZ_SEGV_TEST	../../../aurora/inc/az_config.h	173;"	d
+CONFIG_AZ_SIGHANDLE_MAX	../../../aurora/inc/sys/az_sig.h	31;"	d
 CONFIG_AZ_SYS_CFG_FILE	../../../aurora/inc/az_config.h	158;"	d
+CONFIG_AZ_SYS_CFG_FILE	../../../aurora/inc/az_config.h	161;"	d
 CONFIG_AZ_SYS_LW_USE_MUTEX	../../../aurora/inc/az_config.h	184;"	d
 CONFIG_AZ_SYS_LW_USE_MUTEX	../../../aurora/inc/az_config.h	185;"	d
+CONFIG_AZ_SYS_LW_USE_MUTEX	../../../aurora/inc/az_config.h	187;"	d
+CONFIG_AZ_SYS_LW_USE_MUTEX	../../../aurora/inc/az_config.h	188;"	d
 CONFIG_AZ_SYS_LW_USE_SEM	../../../aurora/inc/az_config.h	182;"	d
 CONFIG_AZ_SYS_LW_USE_SEM	../../../aurora/inc/az_config.h	183;"	d
+CONFIG_AZ_SYS_LW_USE_SEM	../../../aurora/inc/az_config.h	185;"	d
+CONFIG_AZ_SYS_LW_USE_SEM	../../../aurora/inc/az_config.h	186;"	d
 CONFIG_AZ_SYS_PRINT_TIMESTAMP	../../../aurora/inc/az_config.h	176;"	d
+CONFIG_AZ_SYS_PRINT_TIMESTAMP	../../../aurora/inc/az_config.h	179;"	d
+CONFIG_AZ_SYS_PROBE_FLAGS	../../../aurora/inc/az_config.h	225;"	d
 CONFIG_AZ_TCPSERVER_USE_SELECT	../../../aurora/inc/az_config.h	103;"	d
 CONFIG_AZ_TCPSERVER_USE_SELECT	../../../aurora/inc/az_config.h	104;"	d
+CONFIG_AZ_TCPSERVER_USE_SELECT	../../../aurora/inc/az_config.h	106;"	d
+CONFIG_AZ_TCPSERVER_USE_SELECT	../../../aurora/inc/az_config.h	107;"	d
 CONFIG_AZ_TCP_SVR_PORT_INC_MAX	../../../aurora/inc/az_config.h	165;"	d
+CONFIG_AZ_TCP_SVR_PORT_INC_MAX	../../../aurora/inc/az_config.h	168;"	d
 CONFIG_AZ_TEST	../../../aurora/inc/az_config.h	179;"	d
+CONFIG_AZ_TEST	../../../aurora/inc/az_config.h	182;"	d
+CONFIG_AZ_THREAD_EXCPT_STK_SZ	../../../aurora/inc/az_config.h	201;"	d
+CONFIG_AZ_THREAD_EXP_HANDLE	../../../aurora/inc/az_config.h	209;"	d
+CONFIG_AZ_THREAD_MSG_QUEUE_SZ	../../../aurora/inc/az_config.h	203;"	d
+CONFIG_AZ_THREAD_MSG_SZ	../../../aurora/inc/az_config.h	202;"	d
+CONFIG_AZ_THREAD_PRTBUF_SZ	../../../aurora/inc/az_config.h	180;"	d
 CONFIG_AZ_TRACE	../../../aurora/inc/az_config.h	109;"	d
+CONFIG_AZ_TRACE	../../../aurora/inc/az_config.h	112;"	d
 CONFIG_AZ_TRACE	../../../aurora/inc/az_config.h	116;"	d
+CONFIG_AZ_TRACE	../../../aurora/inc/az_config.h	119;"	d
 CONFIG_AZ_TRACE_DEPTH_MAX	../../../aurora/inc/az_config.h	131;"	d
+CONFIG_AZ_TRACE_DEPTH_MAX	../../../aurora/inc/az_config.h	134;"	d
 CONFIG_AZ_TRACE_INICONN	../../../aurora/inc/az_config.h	123;"	d
+CONFIG_AZ_TRACE_INICONN	../../../aurora/inc/az_config.h	126;"	d
 CONFIG_AZ_TRACE_MON_SVR_PORT	../../../aurora/inc/az_config.h	138;"	d
+CONFIG_AZ_TRACE_MON_SVR_PORT	../../../aurora/inc/az_config.h	141;"	d
 CONFIG_AZ_TRACE_PRB_SVR_PORT	../../../aurora/inc/az_config.h	139;"	d
+CONFIG_AZ_TRACE_PRB_SVR_PORT	../../../aurora/inc/az_config.h	142;"	d
 CONFIG_AZ_TRACE_PTHREAD	../../../aurora/inc/az_config.h	112;"	d
+CONFIG_AZ_TRACE_PTHREAD	../../../aurora/inc/az_config.h	115;"	d
 CONFIG_AZ_TRACE_SELF	../../../aurora/inc/az_config.h	120;"	d
+CONFIG_AZ_TRACE_SELF	../../../aurora/inc/az_config.h	123;"	d
 CONFIG_AZ_TRACE_SELF	../../../aurora/inc/az_config.h	127;"	d
+CONFIG_AZ_TRACE_SELF	../../../aurora/inc/az_config.h	130;"	d
 CONFIG_AZ_TRACE_TASKS	../../../aurora/inc/az_config.h	130;"	d
+CONFIG_AZ_TRACE_TASKS	../../../aurora/inc/az_config.h	133;"	d
 CONFIG_AZ_TRZ_LOG_SVR_NODE	../../../aurora/inc/az_config.h	173;"	d
+CONFIG_AZ_TRZ_LOG_SVR_NODE	../../../aurora/inc/az_config.h	176;"	d
 CONFIG_AZ_TRZ_NODEID_DEFAULT	../../../aurora/inc/az_config.h	174;"	d
+CONFIG_AZ_TRZ_NODEID_DEFAULT	../../../aurora/inc/az_config.h	177;"	d
 CONFIG_AZ_TRZ_NODEID_MAX	../../../aurora/inc/az_config.h	172;"	d
+CONFIG_AZ_TRZ_NODEID_MAX	../../../aurora/inc/az_config.h	175;"	d
 CONFIG_AZ_TRZ_SVR_PORT_BASE	../../../aurora/inc/az_config.h	142;"	d
+CONFIG_AZ_TRZ_SVR_PORT_BASE	../../../aurora/inc/az_config.h	145;"	d
 CONFIG_AZ_USE_STDARG	../../../aurora/inc/az_config.h	64;"	d
+CONFIG_AZ_USE_STDARG	../../../aurora/inc/az_config.h	67;"	d
 CONFIG_AZ_USE_TLS	../../../aurora/inc/az_config.h	49;"	d
+CONFIG_AZ_USE_TLS	../../../aurora/inc/az_config.h	52;"	d
 CONFIG_AZ_XU_EXCPT_STK_SZ	../../../aurora/inc/az_config.h	193;"	d
 CONFIG_AZ_XU_EXP_HANDLE	../../../aurora/inc/az_config.h	201;"	d
 CONFIG_AZ_XU_MSG_QUEUE_SZ	../../../aurora/inc/az_config.h	195;"	d
@@ -803,8 +1190,11 @@ CONFIG_M64	../../../aurora/inc/az_config.h	26;"	d
 CONFIG_M64	../../../aurora/inc/az_config.h	30;"	d
 CONFIG_M64	../../../aurora/inc/az_config.h	32;"	d
 CONFIG_TEST_CASE	../../../aurora/inc/az_config.h	60;"	d
+CONFIG_TEST_CASE	../../../aurora/inc/az_config.h	63;"	d
 CONFIG_UNIT_TEST	../../../aurora/inc/az_config.h	57;"	d
+CONFIG_UNIT_TEST	../../../aurora/inc/az_config.h	60;"	d
 CONFIG_WINDOWS	../../../aurora/inc/az_config.h	28;"	d
+Cleanup	../../../aurora/inc/cli/az_cli.h	/^  az_cli_cleanup_t  Cleanup;$/;"	m	struct:az_cli_shell
 Close	../../../aurora/inc/az_iou.h	/^  az_iou_close_t    Close;$/;"	m	struct:az_iou_oprs
 Connect	../../../aurora/inc/az_sys_def.h	/^  } Connect;$/;"	m	union:__anon37	typeref:struct:__anon37::__anon41
 Control	../../../aurora/inc/az_iou.h	/^  az_iou_control_t  Control;$/;"	m	struct:az_iou_oprs
@@ -819,12 +1209,20 @@ Delete	../../../aurora/inc/az_sys_def.h	/^  } Delete;$/;"	m	union:__anon34	typer
 Epilog	../../../aurora/inc/az_test.h	/^    az_test_case_handler_t  Epilog; $/;"	m	struct:az_test_case::__anon45
 FILE_NULL	../../../aurora/inc/az_tc.h	61;"	d
 FILE_NULL	../../../aurora/inc/az_unitTest.h	152;"	d
+FUNC_MAX	../addr2line.c	463;"	d	file:
 Get	../../../aurora/inc/az_index.h	/^    az_pos_t (*Get)(struct az_index_pool *);$/;"	m	struct:az_index_pool::__anon15
 In	../../../aurora/inc/az_event.h	/^    az_event_port_in_t  In;$/;"	m	struct:az_event_port_entity::__anon13
 In	../../../aurora/inc/az_event.h	/^    az_event_receiver_in_t In;$/;"	m	struct:az_event_receiver::__anon12
 Init	../../../aurora/inc/az_test.h	/^    az_test_case_handler_t  Init; $/;"	m	struct:az_test_case::__anon45
 Listen	../../../aurora/inc/az_sys_def.h	/^  } Listen;$/;"	m	union:__anon37	typeref:struct:__anon37::__anon40
 MIN	../../../aurora/inc/az_string.h	47;"	d
+N_INPUT_DATA	azm_gtk.c	80;"	d	file:
+N_POINTS	azm_gtk.c	85;"	d	file:
+N_POINTS_PER_SPAN	azm_gtk.c	82;"	d	file:
+N_PROBES	azm_gtk.c	78;"	d	file:
+N_SAMPLES	azm_gtk.c	84;"	d	file:
+N_SAMPLES_PER_SPAN	azm_gtk.c	81;"	d	file:
+N_SPANS	azm_gtk.c	83;"	d	file:
 Open	../../../aurora/inc/az_iou.h	/^  az_iou_open_t     Open;$/;"	m	struct:az_iou_oprs
 Out	../../../aurora/inc/az_event.h	/^    az_event_port_out_t Out;$/;"	m	struct:az_event_port_entity::__anon13
 Out	../../../aurora/inc/az_event.h	/^    az_event_receiver_out_t Out;$/;"	m	struct:az_event_receiver::__anon12
@@ -833,6 +1231,7 @@ PATH_MAX	../../../aurora/inc/az_def.h	112;"	d
 Prolog	../../../aurora/inc/az_test.h	/^    az_test_case_handler_t  Prolog; $/;"	m	struct:az_test_case::__anon45
 REASON_NULL	../../../aurora/inc/az_tc.h	62;"	d
 REASON_NULL	../../../aurora/inc/az_unitTest.h	153;"	d
+Read	../../../aurora/inc/cli/az_cli.h	/^  az_cli_read_t   Read;$/;"	m	struct:az_cli_shell
 Recv	../../../aurora/inc/az_iou.h	/^  az_iou_recv_t     Recv;$/;"	m	struct:az_iou_oprs
 Recv	../../../aurora/inc/az_msgq.h	/^  az_msgq_recv_t  Recv;$/;"	m	struct:az_msgq_oprs
 Release	../../../aurora/inc/az_index.h	/^    void (*Release)(struct az_index_pool *, az_pos_t);$/;"	m	struct:az_index_pool::__anon15
@@ -849,6 +1248,7 @@ VA_NUM_ARGS	../../../aurora/inc/az_args.h	27;"	d
 VA_NUM_ARGS_IMPL	../../../aurora/inc/az_args.h	31;"	d
 VFUNC	../../../aurora/inc/az_args.h	38;"	d
 Write	../../../aurora/inc/az_log.h	/^  az_log_port_write_t  Write;$/;"	m	struct:az_log_port_entity
+Write	../../../aurora/inc/cli/az_cli.h	/^  az_cli_write_t  Write;$/;"	m	struct:az_cli_shell
 _AZ_FORMAT	../../../aurora/inc/az_def.h	160;"	d
 _AZ_FORMAT_UPDATE	../../../aurora/inc/az_def.h	172;"	d
 _AZ_SNPRINTF	../../../aurora/inc/az_def.h	168;"	d
@@ -903,8 +1303,12 @@ _az_bitmask_rfilled_size32	../../../aurora/inc/az_bits.h	/^static inline int _az
 _az_bitmask_rfilled_size64	../../../aurora/inc/az_bits.h	/^static inline int _az_bitmask_rfilled_size64(uint64_t n)$/;"	f
 _az_bitmask_rfilled_size8	../../../aurora/inc/az_bits.h	/^static inline int _az_bitmask_rfilled_size8(uint8_t n)$/;"	f
 _az_malloc	../../../aurora/inc/az_malloc.h	/^static inline void az_attr_no_instrument *_az_malloc(size_t  size, char *funcname, int linenum)$/;"	f
+_beamtable	../../../aurora/inc/az_thread.h	/^  struct az_thread_beam _beamtable[AZ_THREAD_BEAM_VECTORS];$/;"	m	struct:az_thread_entity	typeref:struct:az_thread_entity::az_thread_beam
+_ctrl_sock	../../../aurora/inc/mon/az_probe.h	/^  az_socket_entity_t _ctrl_sock;$/;"	m	struct:az_probe_ctrl
 _data_buffer	../../../aurora/inc/az_msgq.h	/^  az_ref_t  _data_buffer;$/;"	m	struct:az_msgq
+_data_sock	../../../aurora/inc/mon/az_probe.h	/^  az_socket_entity_t _data_sock;$/;"	m	struct:az_probe_ctrl
 _descr_list	../../../aurora/inc/az_msgq.h	/^  az_ref_t  _descr_list;$/;"	m	struct:az_msgq
+_libtrace_data	../addr2line.c	/^typedef struct _libtrace_data {$/;"	s	file:
 _list	../../../aurora/inc/az_array.h	/^  az_array_element_ref_t  _list;$/;"	m	struct:az_array
 _list	../../../aurora/inc/az_index.h	/^  az_index_list_unit_t   *_list;$/;"	m	struct:az_index_pool
 _list	../../../aurora/inc/az_index.h	/^  uint8_t *_list;$/;"	m	struct:az_index_pool
@@ -912,18 +1316,38 @@ _lock	../../../aurora/inc/az_array.h	/^  az_rw_lock_t        _lock;$/;"	m	struct
 _lock	../../../aurora/inc/az_buffer.h	/^  az_sys_lw_lock_t  _lock;$/;"	m	struct:az_buffer
 _lock	../../../aurora/inc/az_cirbuffer.h	/^  az_sys_lw_lock_t  _lock;$/;"	m	struct:az_cirbuffer
 _lock	../../../aurora/inc/az_event.h	/^  az_rw_lock_t          _lock;$/;"	m	struct:az_event_port_entity
+_sock	../../../aurora/inc/az_trz.h	/^  az_socket_entity_t  _sock;$/;"	m	struct:az_transaction_connection
+_sock	../../../aurora/inc/az_trz.h	/^  az_socket_entity_t  _sock;$/;"	m	struct:az_transaction_node
+_sock	../../../aurora/inc/mon/az_trace.h	/^  az_socket_entity_t  _sock;$/;"	m	struct:az_trace_ctrl
+_sock	../../../aurora/inc/net/az_tcpserver.h	/^  az_socket_entity_t _sock;$/;"	m	struct:az_tcpserver
+_sym_info	../addr2line.c	/^typedef struct _sym_info {$/;"	s	file:
+_sys_xu	../../../aurora/inc/az_thread.h	/^  az_sys_xu_entity_t  _sys_xu;$/;"	m	struct:az_thread_entity
 a	../../../aurora/inc/az_var.h	/^  az_ref_t          a;$/;"	m	union:__anon48
+a	../../../aurora/inc/az_var.h	/^  az_ref_t          a;$/;"	m	union:__anon49
+abfd	../addr2line.c	/^    bfd *abfd;$/;"	m	struct:_libtrace_data	file:
 alloc_call	../../../aurora/inc/az_malloc.h	/^  az_ref_t  alloc_call[CONFIG_AZ_MTRACE_LIST_SZ];$/;"	m	struct:az_malloc_stats
 alloc_list	../../../aurora/inc/az_malloc.h	/^  az_ref_t  alloc_list[CONFIG_AZ_MTRACE_LIST_SZ];$/;"	m	struct:az_malloc_stats
 alloc_size	../../../aurora/inc/az_malloc.h	/^  uint32_t  alloc_size[CONFIG_AZ_MTRACE_LIST_SZ];$/;"	m	struct:az_malloc_stats
+alpha	azm_gtk_sample.c	/^  gdouble alpha;$/;"	m	struct:__anon5	file:
+app_build_time	../../../aurora/inc/frw/az_frw.h	/^  char          *app_build_time;$/;"	m	struct:az_framework
+app_cfg_file	../../../aurora/inc/frw/az_frw.h	/^  char  app_cfg_file[AZ_NAME_MAX];$/;"	m	struct:az_framework
+app_ver	../../../aurora/inc/frw/az_frw.h	/^  az_version_t  *app_ver;  $/;"	m	struct:az_framework
 arg	../../../aurora/inc/az_sys_def.h	/^	  az_ref_t arg;$/;"	m	struct:__anon34::__anon36
 arg	../../../aurora/inc/az_sys_def.h	/^    az_ref_t arg;$/;"	m	struct:__anon34::__anon35
+arg	../../../aurora/inc/az_thread.h	/^  az_thread_arg_t           arg;$/;"	m	struct:az_thread_beam
+arg	../../../aurora/inc/az_thread.h	/^  az_thread_arg_t     arg;$/;"	m	struct:az_thread_entity
 arg	../../../aurora/inc/az_thread.h	/^  az_xu_arg_t arg;$/;"	m	struct:az_thread_status
+arg_name	../../../aurora/inc/az_thread_cfg.h	/^  char            arg_name[AZ_THREAD_CFG_NAME_LEN];$/;"	m	struct:az_thread_config
 arg_name	../../../aurora/inc/az_thread_cfg.h	/^  char  arg_name[AZ_THR_CFG_NAME_LEN];$/;"	m	struct:az_thread_config
 arg_name	../../../aurora/inc/az_xu_cfg.h	/^  char            arg_name[AZ_XU_CFG_NAME_LEN];$/;"	m	struct:az_xu_config
+argc	../../../aurora/inc/az_thread_main.h	/^  int argc;$/;"	m	struct:az_thread_main_arg
+argc	../azm_main.c	/^  int argc;$/;"	m	struct:azm_xu_main_arg	file:
+argv	../../../aurora/inc/az_thread_main.h	/^  char  **argv;$/;"	m	struct:az_thread_main_arg
+argv	../azm_main.c	/^  char **argv;$/;"	m	struct:azm_xu_main_arg	file:
 array_size	../../../aurora/inc/az_def.h	152;"	d
 attr	../../../aurora/inc/az_sys_def.h	/^    uint32_t  attr;$/;"	m	struct:__anon29::__anon30
 attr	../../../aurora/inc/az_sys_def.h	/^    uint32_t  attr;$/;"	m	struct:__anon29::__anon31
+attr	../../../aurora/inc/az_thread.h	/^  az_thread_attr_t    attr;$/;"	m	struct:az_thread_entity
 attr_list	../../../aurora/inc/az_xml.h	/^  az_double_link_list_t attr_list;$/;"	m	struct:az_xml_element
 az_Slog	../../../aurora/inc/az_printf.h	118;"	d
 az_addr	../../../aurora/inc/az_def.h	145;"	d
@@ -967,6 +1391,7 @@ az_array_t	../../../aurora/inc/az_array.h	/^} az_array_t;$/;"	t	typeref:struct:a
 az_array_unlock_read	../../../aurora/inc/az_array.h	71;"	d
 az_array_unlock_write	../../../aurora/inc/az_array.h	69;"	d
 az_assert	../../../aurora/inc/az_assert.h	32;"	d
+az_assert_ion_type	../../../aurora/inc/az_ion_types.h	51;"	d
 az_assert_ion_type	../../../aurora/inc/az_ion_types.h	52;"	d
 az_atomic_add_and_fetch16	../../../aurora/inc/az_atomic_gnuc.h	99;"	d
 az_atomic_add_and_fetch32	../../../aurora/inc/az_atomic_gnuc.h	101;"	d
@@ -1128,6 +1553,28 @@ az_cirbuffer_size	../../../aurora/inc/az_cirbuffer.h	62;"	d
 az_cirbuffer_space	../../../aurora/inc/az_cirbuffer.h	63;"	d
 az_cirbuffer_t	../../../aurora/inc/az_cirbuffer.h	/^} az_cirbuffer_t;$/;"	t	typeref:struct:az_cirbuffer
 az_cirbuffer_unlock	../../../aurora/inc/az_cirbuffer.h	60;"	d
+az_cli_cleanup_t	../../../aurora/inc/cli/az_cli.h	/^typedef void (*az_cli_cleanup_t)(struct az_cli_shell *);$/;"	t
+az_cli_cmd_descr	../../../aurora/inc/cli/az_cli_cmd.h	/^typedef struct az_cli_cmd_descr {$/;"	s
+az_cli_cmd_descr_init	../../../aurora/inc/cli/az_cli_cmd.h	/^static inline void az_cli_cmd_descr_init(az_cli_cmd_descr_t *pDescr)$/;"	f
+az_cli_cmd_descr_t	../../../aurora/inc/cli/az_cli_cmd.h	/^} az_cli_cmd_descr_t;$/;"	t	typeref:struct:az_cli_cmd_descr
+az_cli_cmd_exec_t	../../../aurora/inc/cli/az_cli_api.h	/^typedef int32_t (*az_cli_cmd_exec_t)(int, char *[]);$/;"	t
+az_cli_cmd_exec_t	../../../aurora/inc/cli/az_cli_cmd.h	/^typedef int32_t (*az_cli_cmd_exec_t)(int, char *[]);$/;"	t
+az_cli_cmd_table	../../../aurora/inc/cli/az_cli_cmd.h	/^typedef struct az_cli_cmd_table {$/;"	s
+az_cli_cmd_table_t	../../../aurora/inc/cli/az_cli_api.h	/^typedef struct az_cli_cmd_table az_cli_cmd_table_t;$/;"	t	typeref:struct:az_cli_cmd_table
+az_cli_cmd_table_t	../../../aurora/inc/cli/az_cli_cmd.h	/^} az_cli_cmd_table_t;$/;"	t	typeref:struct:az_cli_cmd_table
+az_cli_get_default	../../../aurora/inc/cli/az_cli_glue.h	/^static inline az_cli_shell_t  *az_cli_get_default()$/;"	f
+az_cli_key_cmd	../../../aurora/inc/cli/az_cli_api.h	/^struct az_cli_key_cmd {$/;"	s
+az_cli_port_t	../../../aurora/inc/cli/az_cli.h	/^typedef int az_cli_port_t; $/;"	t
+az_cli_read_t	../../../aurora/inc/cli/az_cli.h	/^typedef int (*az_cli_read_t)(az_cli_port_t, char *, int);$/;"	t
+az_cli_shell	../../../aurora/inc/cli/az_cli.h	/^typedef struct az_cli_shell {$/;"	s
+az_cli_shell_t	../../../aurora/inc/cli/az_cli.h	/^} az_cli_shell_t;$/;"	t	typeref:struct:az_cli_shell
+az_cli_thread_curShell	../../../aurora/inc/cli/az_cli_glue.h	/^static inline az_cli_shell_t *az_cli_thread_curShell()$/;"	f
+az_cli_write_t	../../../aurora/inc/cli/az_cli.h	/^typedef int (*az_cli_write_t)(az_cli_port_t, const char *, int);$/;"	t
+az_diag_info_t	../../../aurora/inc/mon/az_trace.h	/^} az_diag_info_t;$/;"	t	typeref:union:__anon1
+az_dir_entity_t	../../../aurora/inc/sys/az_fs.h	/^} az_dir_entity_t; $/;"	t	typeref:struct:__anon2
+az_dir_t	../../../aurora/inc/sys/az_fs.h	/^typedef az_dir_entity_t * az_dir_t;$/;"	t
+az_dirent_t	../../../aurora/inc/sys/az_fs.h	/^typedef az_sys_dirent_t   az_dirent_t;$/;"	t
+az_disp_sig_t	azm_gtk.c	/^} az_disp_sig_t;$/;"	t	typeref:struct:__anon2	file:
 az_dlog	../../../aurora/inc/az_printf.h	112;"	d
 az_double_link	../../../aurora/inc/az_link.h	/^typedef struct az_double_link {$/;"	s
 az_double_link_add	../../../aurora/inc/az_link.h	/^static inline void az_double_link_add(az_double_link_t *p, az_double_link_t *n)$/;"	f
@@ -1187,7 +1634,20 @@ az_fifo_init	../../../aurora/inc/az_fifo.h	/^static inline void az_fifo_init(az_
 az_fifo_pop	../../../aurora/inc/az_fifo.h	/^static inline az_pos_t az_fifo_pop(az_fifo_t *fifo)$/;"	f
 az_fifo_push	../../../aurora/inc/az_fifo.h	/^static inline az_pos_t az_fifo_push(az_fifo_t *fifo)$/;"	f
 az_fifo_t	../../../aurora/inc/az_fifo.h	/^} az_fifo_t;$/;"	t	typeref:struct:az_fifo
+az_file_entity_t	../../../aurora/inc/sys/az_fs.h	/^} az_file_entity_t; $/;"	t	typeref:struct:__anon3
+az_file_t	../../../aurora/inc/sys/az_fs.h	/^typedef az_file_entity_t * az_file_t;$/;"	t
+az_framework	../../../aurora/inc/frw/az_frw.h	/^typedef struct az_framework {$/;"	s
+az_framework_t	../../../aurora/inc/frw/az_frw.h	/^} az_framework_t;$/;"	t	typeref:struct:az_framework
 az_free	../../../aurora/inc/az_malloc.h	/^static inline void az_attr_no_instrument az_free(void *in)$/;"	f
+az_fs_allocateFile	../../../aurora/inc/sys/az_fs.h	/^static inline az_file_t az_fs_allocateFile()$/;"	f
+az_fs_combinePath	../../../aurora/inc/sys/az_fs.h	/^static inline az_r_t az_fs_combinePath(char *path1, char *path2, char *dest)$/;"	f
+az_fs_freeFile	../../../aurora/inc/sys/az_fs.h	/^static inline void az_fs_freeFile(az_file_t file)$/;"	f
+az_fs_getBasePathComponent	../../../aurora/inc/sys/az_fs.h	/^static inline az_r_t  az_fs_getBasePathComponent(char *path, char *out)$/;"	f
+az_fs_getFileBase	../../../aurora/inc/sys/az_fs.h	/^static inline az_r_t  az_fs_getFileBase(char *filename, char *base)$/;"	f
+az_fs_getFileExt	../../../aurora/inc/sys/az_fs.h	/^static inline az_r_t  az_fs_getFileExt(char *filename, char *ext)$/;"	f
+az_fs_getLastPathComponent	../../../aurora/inc/sys/az_fs.h	/^static inline az_r_t  az_fs_getLastPathComponent(char *path, char *comp)$/;"	f
+az_fs_makePath	../../../aurora/inc/sys/az_fs.h	/^static inline az_r_t az_fs_makePath(char *comp[], char *dest)$/;"	f
+az_fs_parsePath	../../../aurora/inc/sys/az_fs.h	/^static inline az_r_t  az_fs_parsePath(const char *path, char *parsed_path, char *comp[])$/;"	f
 az_fsm	../../../aurora/inc/az_fsm.h	/^typedef struct az_fsm {$/;"	s
 az_fsm_activate	../../../aurora/inc/az_fsm.h	/^static inline void az_fsm_activate(az_fsm_t *fsm, void *owner)$/;"	f
 az_fsm_handle_t	../../../aurora/inc/az_fsm.h	/^typedef az_fsm_state_t (*az_fsm_handle_t)(void *, az_fsm_state_t, az_event_t );$/;"	t
@@ -1223,6 +1683,19 @@ az_index_pool_release32	../../../aurora/inc/az_index.h	/^static inline void az_i
 az_index_pool_release64	../../../aurora/inc/az_index.h	/^static inline void az_index_pool_release64(az_index_pool_t *pool, az_pos_t index)$/;"	f
 az_index_pool_release8	../../../aurora/inc/az_index.h	/^static inline void az_index_pool_release8(az_index_pool_t *pool, az_pos_t index)$/;"	f
 az_index_pool_t	../../../aurora/inc/az_index.h	/^} az_index_pool_t;$/;"	t	typeref:struct:az_index_pool
+az_inet_IpAddr2Str	../../../aurora/inc/sys/az_inet.h	/^static inline char  *az_inet_IpAddr2Str(struct sockaddr_in *addr, char *ipAddrStr, int ipAddrStrLen)$/;"	f
+az_inet_closeLocalSocket	../../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_closeLocalSocket(az_socket_id_t *pSd)$/;"	f
+az_inet_closeSocket	../../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_closeSocket(az_socket_id_t p)$/;"	f
+az_inet_connectLocalSocket	../../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_connectLocalSocket(az_socket_id_t sd, az_sys_sockaddr_t *addr, az_sys_socklen_t addrlen)$/;"	f
+az_inet_isValidIpAddr	../../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_isValidIpAddr(char *ipAddr)$/;"	f
+az_inet_mkLocalSocketAddr	../../../aurora/inc/sys/az_inet.h	/^static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, $/;"	f
+az_inet_openLocalSocket	../../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_openLocalSocket(char *name, char *key1, char *key2, $/;"	f
+az_inet_openSocket	../../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_openSocket(int domain, int type, int protocol, az_socket_id_t *p)$/;"	f
+az_inet_setReuseAddr	../../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_setReuseAddr(az_socket_id_t sd)$/;"	f
+az_inet_setSocketBlockMode	../../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_setSocketBlockMode(az_socket_id_t sd) $/;"	f
+az_inet_setSocketNonBlockMode	../../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_setSocketNonBlockMode(az_socket_id_t sd) $/;"	f
+az_inet_setTcpNodelay	../../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_setTcpNodelay(az_socket_id_t sd)$/;"	f
+az_inet_str2IpAddr	../../../aurora/inc/sys/az_inet.h	/^static inline int az_inet_str2IpAddr(struct sockaddr_in *addr, char *ipAddrStr) $/;"	f
 az_int16_t	../../../aurora/inc/az_def.h	/^typedef int16_t  az_int16_t;$/;"	t
 az_int32_t	../../../aurora/inc/az_def.h	/^typedef int32_t  az_int32_t;$/;"	t
 az_int64_t	../../../aurora/inc/az_def.h	/^typedef int64_t  az_int64_t;$/;"	t
@@ -1235,8 +1708,10 @@ az_ion_compare_t	../../../aurora/inc/az_ion.h	/^typedef int (*az_ion_compare_t)(
 az_ion_count	../../../aurora/inc/az_ion.h	/^static inline az_size_t az_ion_count()$/;"	f
 az_ion_deinit	../../../aurora/inc/az_ion.h	/^static inline void az_ion_deinit()$/;"	f
 az_ion_find	../../../aurora/inc/az_ion.h	/^static inline az_ion_t *az_ion_find(void *var, az_ion_compare_t compare_f) $/;"	f
+az_ion_get_tag	../../../aurora/inc/az_ion.h	/^static inline az_ion_tag_t az_ion_get_tag(az_ion_t *ion)$/;"	f
 az_ion_id_t	../../../aurora/inc/az_ion_types.h	/^typedef int az_ion_id_t;$/;"	t
 az_ion_init	../../../aurora/inc/az_ion.h	/^static inline void az_ion_init(az_array_t *refList)$/;"	f
+az_ion_invalidate	../../../aurora/inc/az_ion.h	/^static inline void az_ion_invalidate(az_ion_t *ion, int is_static)$/;"	f
 az_ion_invalidate	../../../aurora/inc/az_ion.h	/^static void az_ion_invalidate(az_ion_t *ion, int is_static)$/;"	f
 az_ion_io	../../../aurora/inc/az_ion.h	70;"	d
 az_ion_list	../../../aurora/inc/az_ion.h	/^typedef struct az_ion_list {$/;"	s
@@ -1244,8 +1719,11 @@ az_ion_list_t	../../../aurora/inc/az_ion.h	/^} az_ion_list_t;$/;"	t	typeref:stru
 az_ion_lock	../../../aurora/inc/az_ion.h	91;"	d
 az_ion_nonio	../../../aurora/inc/az_ion.h	73;"	d
 az_ion_ref_t	../../../aurora/inc/az_ion_types.h	/^typedef az_ion_t  * az_ion_ref_t;$/;"	t
+az_ion_set_tag	../../../aurora/inc/az_ion.h	/^static inline void az_ion_set_tag(az_ion_t *ion, az_ion_tag_t tag)$/;"	f
 az_ion_t	../../../aurora/inc/az_ion_types.h	/^} az_ion_t;$/;"	t	typeref:struct:az_ion
+az_ion_tag_t	../../../aurora/inc/az_ion_types.h	/^typedef az_uint16_t az_ion_tag_t;$/;"	t
 az_ion_type_name	../../../aurora/inc/az_ion_types.h	/^static inline char * az_ion_type_name(az_ion_type_t type) {$/;"	f
+az_ion_type_t	../../../aurora/inc/az_ion_types.h	/^typedef az_uint16_t az_ion_type_t;$/;"	t
 az_ion_type_t	../../../aurora/inc/az_ion_types.h	/^typedef az_uint32_t az_ion_type_t;$/;"	t
 az_ion_unlock	../../../aurora/inc/az_ion.h	92;"	d
 az_iou	../../../aurora/inc/az_iou.h	/^typedef struct az_iou {$/;"	s
@@ -1326,6 +1804,8 @@ az_msgq_oprs	../../../aurora/inc/az_msgq.h	/^struct az_msgq_oprs {$/;"	s
 az_msgq_recv_t	../../../aurora/inc/az_msgq.h	/^typedef az_size_t (*az_msgq_recv_t)(struct az_msgq *, void *bp, az_size_t size);$/;"	t
 az_msgq_send_t	../../../aurora/inc/az_msgq.h	/^typedef az_size_t (*az_msgq_send_t)(struct az_msgq *, void *bp, az_size_t size);$/;"	t
 az_msgq_t	../../../aurora/inc/az_msgq.h	/^} az_msgq_t;$/;"	t	typeref:struct:az_msgq
+az_mutex_entity_t	../../../aurora/inc/sys/az_mutex.h	/^} az_mutex_entity_t;$/;"	t	typeref:struct:__anon4
+az_mutex_t	../../../aurora/inc/sys/az_mutex.h	/^typedef az_mutex_entity_t *        az_mutex_t;$/;"	t
 az_not_success_do_break	../../../aurora/inc/az_macros.h	41;"	d
 az_not_success_fware	../../../aurora/inc/az_macros.h	38;"	d
 az_obuffer	../../../aurora/inc/az_obuffer.h	/^typedef struct az_obuffer {$/;"	s
@@ -1334,6 +1814,7 @@ az_obuffer_init	../../../aurora/inc/az_obuffer.h	/^static inline void az_obuffer
 az_obuffer_reserve	../../../aurora/inc/az_obuffer.h	/^static inline az_pos_t az_obuffer_reserve(az_obuffer_t *buffer, az_size_t len)$/;"	f
 az_obuffer_restore	../../../aurora/inc/az_obuffer.h	/^static inline az_pos_t az_obuffer_restore(az_obuffer_t *buffer, az_pos_t inp, az_size_t len)$/;"	f
 az_obuffer_t	../../../aurora/inc/az_obuffer.h	/^} az_obuffer_t;$/;"	t	typeref:struct:az_obuffer
+az_point_t	azm_gtk.c	/^} az_point_t;$/;"	t	typeref:struct:__anon1	file:
 az_pos_t	../../../aurora/inc/az_def.h	/^typedef int16_t   az_pos_t;$/;"	t
 az_pos_t	../../../aurora/inc/az_def.h	/^typedef int32_t   az_pos_t;$/;"	t
 az_pos_t	../../../aurora/inc/az_def.h	/^typedef int64_t   az_pos_t;$/;"	t
@@ -1342,6 +1823,9 @@ az_print_timestamp	../../../aurora/inc/az_log.h	/^static inline int az_print_tim
 az_print_timestampInDatetime	../../../aurora/inc/az_log.h	/^static inline int az_print_timestampInDatetime(char *bp, int blen, const char *fmt, az_sys_timespec_t *tv)$/;"	f
 az_print_timestampInSeconds	../../../aurora/inc/az_log.h	/^static inline int az_print_timestampInSeconds(char *bp, int blen, const char *fmt, az_sys_timespec_t *tv)$/;"	f
 az_printf	../../../aurora/inc/az_printf.h	70;"	d
+az_probe_ctrl	../../../aurora/inc/mon/az_probe.h	/^typedef struct az_probe_ctrl {$/;"	s
+az_probe_ctrl_t	../../../aurora/inc/mon/az_probe.h	/^} az_probe_ctrl_t;$/;"	t	typeref:struct:az_probe_ctrl
+az_probe_sample_t	../../../aurora/inc/mon/az_probe.h	/^typedef uint64_t   az_probe_sample_t;$/;"	t
 az_prof_elm	../../../aurora/inc/az_prof.h	/^typedef struct az_prof_elm {$/;"	s
 az_prof_elm_end	../../../aurora/inc/az_prof.h	/^static inline void az_prof_elm_end(az_prof_elm_t *p)$/;"	f
 az_prof_elm_init	../../../aurora/inc/az_prof.h	/^static inline void az_prof_elm_init(az_prof_elm_t *p, az_int64_t lcnt)$/;"	f
@@ -1401,21 +1885,59 @@ az_rw_lock_t	../../../aurora/inc/az_rw_lock.h	/^} az_rw_lock_t;$/;"	t	typeref:st
 az_rw_lock_write	../../../aurora/inc/az_rw_lock.h	/^static inline az_r_t az_rw_lock_write(az_rw_lock_t *p)$/;"	f
 az_rw_unlock_read	../../../aurora/inc/az_rw_lock.h	/^static inline az_r_t az_rw_unlock_read(az_rw_lock_t *p)$/;"	f
 az_rw_unlock_write	../../../aurora/inc/az_rw_lock.h	/^static inline az_r_t az_rw_unlock_write(az_rw_lock_t *p)$/;"	f
+az_sem_entity_t	../../../aurora/inc/sys/az_sem.h	/^} az_sem_entity_t;$/;"	t	typeref:struct:__anon5
+az_sem_t	../../../aurora/inc/sys/az_sem.h	/^typedef az_sem_entity_t *                  az_sem_t;$/;"	t
+az_set_srcno	azm_gtk.c	/^static void az_set_srcno(int index, gchar *text)$/;"	f	file:
+az_sig_descr	../../../aurora/inc/sys/az_sig.h	/^typedef struct az_sig_descr {$/;"	s
+az_sig_descr_t	../../../aurora/inc/sys/az_sig.h	/^} az_sig_descr_t;$/;"	t	typeref:struct:az_sig_descr
+az_sigaction_t	../../../aurora/inc/sys/az_sig.h	/^typedef struct sigaction az_sigaction_t;$/;"	t	typeref:struct:sigaction
+az_sighandler_descr	../../../aurora/inc/sys/az_sig.h	/^typedef struct az_sighandler_descr {$/;"	s
+az_sighandler_descr_t	../../../aurora/inc/sys/az_sig.h	/^} az_sighandler_descr_t;$/;"	t	typeref:struct:az_sighandler_descr
+az_sighandler_t	../../../aurora/inc/sys/az_sig.h	/^typedef void  (*az_sighandler_t)(int);$/;"	t
 az_size_t	../../../aurora/inc/az_def.h	/^typedef int16_t   az_size_t;$/;"	t
 az_size_t	../../../aurora/inc/az_def.h	/^typedef int32_t   az_size_t;$/;"	t
 az_size_t	../../../aurora/inc/az_def.h	/^typedef int64_t   az_size_t;$/;"	t
 az_size_t	../../../aurora/inc/az_def.h	/^typedef int8_t   az_size_t;$/;"	t
+az_socket_entity_t	../../../aurora/inc/sys/az_socket.h	/^} az_socket_entity_t;$/;"	t	typeref:struct:__anon6
+az_socket_id_t	../../../aurora/inc/sys/az_socket.h	/^typedef az_ion_id_t      az_socket_id_t;$/;"	t
+az_socket_t	../../../aurora/inc/sys/az_socket.h	/^typedef az_socket_entity_t  *az_socket_t;$/;"	t
 az_state_t	../../../aurora/inc/az_def.h	/^} az_state_t;$/;"	t	typeref:enum:__anon5
 az_str_t	../../../aurora/inc/az_def.h	/^typedef char *    az_str_t;$/;"	t
+az_sys_Slog	../../../aurora/inc/sys/az_sys_printf.h	125;"	d
+az_sys_alog	../../../aurora/inc/sys/az_sys_printf.h	124;"	d
+az_sys_dlog	../../../aurora/inc/sys/az_sys_printf.h	119;"	d
+az_sys_dprintf	../../../aurora/inc/sys/az_sys_printf.h	115;"	d
+az_sys_dprintf0	../../../aurora/inc/sys/az_sys_printf.h	113;"	d
+az_sys_elog	../../../aurora/inc/sys/az_sys_printf.h	123;"	d
+az_sys_eprintf	../../../aurora/inc/sys/az_sys_printf.h	111;"	d
+az_sys_eprintf0	../../../aurora/inc/sys/az_sys_printf.h	109;"	d
+az_sys_ilog	../../../aurora/inc/sys/az_sys_printf.h	121;"	d
 az_sys_inet_address	../../../aurora/inc/az_sys_def.h	/^typedef union az_sys_inet_address {$/;"	u
 az_sys_inet_address_t	../../../aurora/inc/az_sys_def.h	/^} az_sys_inet_address_t;$/;"	t	typeref:union:az_sys_inet_address
 az_sys_lib_t	../../../aurora/inc/az_sys_def.h	/^typedef void*       az_sys_lib_t;$/;"	t
+az_sys_log_printf	../../../aurora/inc/sys/az_sys_printf.h	85;"	d
+az_sys_log_printf0	../../../aurora/inc/sys/az_sys_printf.h	74;"	d
+az_sys_printf	../../../aurora/inc/sys/az_sys_printf.h	58;"	d
+az_sys_printf	../../../aurora/inc/sys/az_sys_printf.h	71;"	d
+az_sys_printf0	../../../aurora/inc/sys/az_sys_printf.h	46;"	d
+az_sys_printf0	../../../aurora/inc/sys/az_sys_printf.h	70;"	d
 az_sys_process_arg_t	../../../aurora/inc/az_sys_def.h	/^} az_sys_process_arg_t;$/;"	t	typeref:union:__anon34
+az_sys_rprintf	../../../aurora/inc/sys/az_sys_printf.h	106;"	d
+az_sys_rprintf	../../../aurora/inc/sys/az_sys_printf.h	98;"	d
 az_sys_sem_arg_t	../../../aurora/inc/az_sys_def.h	/^} az_sys_sem_arg_t;$/;"	t	typeref:union:__anon27
 az_sys_shm_arg_t	../../../aurora/inc/az_sys_def.h	/^} az_sys_shm_arg_t;$/;"	t	typeref:union:__anon29
 az_sys_socket_arg_t	../../../aurora/inc/az_sys_def.h	/^} az_sys_socket_arg_t;$/;"	t	typeref:union:__anon37
 az_sys_thread_entry_t	../../../aurora/inc/az_sys_def.h	/^typedef az_ref_t (*az_sys_thread_entry_t)(az_ref_t);$/;"	t
 az_sys_thread_priority_arg_t	../../../aurora/inc/az_sys_def.h	/^} az_sys_thread_priority_arg_t;$/;"	t	typeref:union:__anon32
+az_sys_tlog	../../../aurora/inc/sys/az_sys_printf.h	120;"	d
+az_sys_vlog	../../../aurora/inc/sys/az_sys_printf.h	118;"	d
+az_sys_wlog	../../../aurora/inc/sys/az_sys_printf.h	122;"	d
+az_tcpserver	../../../aurora/inc/net/az_tcpserver.h	/^typedef struct  az_tcpserver {$/;"	s
+az_tcpserver_cfg	../../../aurora/inc/net/az_tcpserver.h	/^struct az_tcpserver_cfg {$/;"	s
+az_tcpserver_oprs	../../../aurora/inc/net/az_tcpserver.h	/^struct az_tcpserver_oprs {$/;"	s
+az_tcpserver_t	../../../aurora/inc/net/az_tcpserver.h	/^} az_tcpserver_t;$/;"	t	typeref:struct:az_tcpserver
+az_tcpserver_thread_start	../../../aurora/inc/net/az_tcpserver_glue.h	/^static inline az_r_t az_tcpserver_thread_start(char *name,$/;"	f
+az_tcpserver_thread_stop	../../../aurora/inc/net/az_tcpserver_glue.h	/^static inline az_r_t az_tcpserver_thread_stop(void *thread)$/;"	f
 az_test_case	../../../aurora/inc/az_test.h	/^typedef struct az_test_case {$/;"	s
 az_test_case_handler_t	../../../aurora/inc/az_test.h	/^typedef az_r_t (*az_test_case_handler_t)(struct az_test_case *);$/;"	t
 az_test_case_t	../../../aurora/inc/az_test.h	/^} az_test_case_t;$/;"	t	typeref:struct:az_test_case
@@ -1440,15 +1962,51 @@ az_testcase_handler_t	../../../aurora/inc/az_test.h	/^typedef az_test_case_handl
 az_testcase_t	../../../aurora/inc/az_test.h	/^typedef az_test_case_t  az_testcase_t;$/;"	t
 az_testiter_t	../../../aurora/inc/az_test.h	/^typedef az_test_iter_t az_testiter_t;$/;"	t
 az_testproj_t	../../../aurora/inc/az_test.h	/^typedef az_test_project_t az_testproj_t;$/;"	t
+az_thread_arg_t	../../../aurora/inc/az_thread.h	/^typedef void *az_thread_arg_t;$/;"	t
+az_thread_attr_t	../../../aurora/inc/az_thread_types.h	/^} az_thread_attr_t;$/;"	t	typeref:struct:__anon47
+az_thread_beam	../../../aurora/inc/az_thread.h	/^struct az_thread_beam {$/;"	s
+az_thread_beam_handler_t	../../../aurora/inc/az_thread.h	/^typedef void (*az_thread_beam_handler_t)(int, az_thread_arg_t);$/;"	t
+az_thread_beam_t	../../../aurora/inc/az_thread.h	/^typedef az_sys_event_t  az_thread_beam_t;$/;"	t
+az_thread_cause_t	../../../aurora/inc/az_thread.h	/^typedef short az_thread_cause_t;$/;"	t
 az_thread_config	../../../aurora/inc/az_thread_cfg.h	/^typedef struct az_thread_config {$/;"	s
 az_thread_config_t	../../../aurora/inc/az_thread_cfg.h	/^} az_thread_config_t;$/;"	t	typeref:struct:az_thread_config
+az_thread_core_mask_t	../../../aurora/inc/az_thread_types.h	/^typedef uint64_t az_thread_core_mask_t;$/;"	t
 az_thread_entity	../../../aurora/inc/az_thread.h	/^typedef struct az_thread_entity {$/;"	s
 az_thread_entity_t	../../../aurora/inc/az_thread.h	/^} az_thread_entity_t;$/;"	t	typeref:struct:az_thread_entity
+az_thread_entry_t	../../../aurora/inc/az_thread.h	/^typedef az_thread_ret_t (*az_thread_entry_t)(az_thread_arg_t);$/;"	t
+az_thread_flags_t	../../../aurora/inc/az_thread.h	/^typedef int   az_thread_flags_t;$/;"	t
+az_thread_id_t	../../../aurora/inc/az_thread.h	/^typedef az_ion_id_t     az_thread_id_t;$/;"	t
+az_thread_iomux_add	../../../aurora/inc/az_thread.h	/^static inline az_r_t az_thread_iomux_add(az_thread_t xu, az_sys_io_t fd, uint32_t ioevt)$/;"	f
+az_thread_iomux_del	../../../aurora/inc/az_thread.h	/^static inline az_r_t az_thread_iomux_del(az_thread_t xu, az_sys_io_t fd)$/;"	f
+az_thread_main_arg	../../../aurora/inc/az_thread_main.h	/^struct az_thread_main_arg {$/;"	s
+az_thread_msg_t	../../../aurora/inc/az_thread.h	/^typedef uint32_t        az_thread_msg_t;$/;"	t
+az_thread_msg_t	../../../aurora/inc/az_thread.h	/^typedef uint64_t        az_thread_msg_t;$/;"	t
+az_thread_null	../../../aurora/inc/az_thread.h	204;"	d
 az_thread_policy_t	../../../aurora/inc/az_thread_cfg.h	/^typedef int az_thread_policy_t;$/;"	t
+az_thread_reset_flags	../../../aurora/inc/az_thread.h	/^static inline void az_attr_no_instrument az_thread_reset_flags(int flags)$/;"	f
+az_thread_ret_t	../../../aurora/inc/az_thread.h	/^typedef void *az_thread_ret_t;$/;"	t
+az_thread_self	../../../aurora/inc/az_thread.h	203;"	d
+az_thread_set_flags	../../../aurora/inc/az_thread.h	/^static inline void az_attr_no_instrument az_thread_set_flags(int flags)$/;"	f
+az_thread_set_trace	../../../aurora/inc/az_thread.h	/^static inline int az_attr_no_instrument az_thread_set_trace(az_thread_trace_info_t *info, int onoff)$/;"	f
+az_thread_state_t	../../../aurora/inc/az_thread.h	/^typedef short az_thread_state_t;$/;"	t
 az_thread_status	../../../aurora/inc/az_thread.h	/^typedef struct az_thread_status {$/;"	s
 az_thread_status_t	../../../aurora/inc/az_thread.h	/^} az_thread_status_t;$/;"	t	typeref:struct:az_thread_status
+az_thread_t	../../../aurora/inc/az_thread.h	/^typedef   az_thread_entity_t *  az_thread_t;$/;"	t
 az_thread_t	../../../aurora/inc/az_thread.h	/^typedef az_thread_entity_t  *az_thread_t;$/;"	t
+az_thread_trace_info	../../../aurora/inc/az_thread.h	/^typedef struct az_thread_trace_info {$/;"	s
+az_thread_trace_info_t	../../../aurora/inc/az_thread.h	/^} az_thread_trace_info_t;$/;"	t	typeref:struct:az_thread_trace_info
+az_thread_traceinfo	../../../aurora/inc/az_thread.h	205;"	d
+az_thread_wait_iomux	../../../aurora/inc/az_thread.h	/^static inline az_r_t az_thread_wait_iomux(az_sys_io_event_t *ioevt, int maxevents, int tmo_ms)$/;"	f
+az_timer_entity_t	../../../aurora/inc/sys/az_timer.h	/^} az_timer_entity_t;$/;"	t	typeref:struct:__anon7
+az_timer_t	../../../aurora/inc/sys/az_timer.h	/^typedef az_timer_entity_t *   az_timer_t;$/;"	t
+az_timespec_diff	../../../aurora/inc/sys/az_timer.h	/^static inline az_sys_timespec_t *az_timespec_diff(az_sys_timespec_t *e, az_sys_timespec_t *s)$/;"	f
+az_timespec_value	../../../aurora/inc/sys/az_timer.h	77;"	d
+az_timestamp	../../../aurora/inc/sys/az_timer.h	/^static inline uint64_t az_timestamp()$/;"	f
 az_tlog	../../../aurora/inc/az_printf.h	113;"	d
+az_trace_ctrl	../../../aurora/inc/mon/az_trace.h	/^typedef struct az_trace_ctrl {$/;"	s
+az_trace_ctrl_t	../../../aurora/inc/mon/az_trace.h	/^} az_trace_ctrl_t;$/;"	t	typeref:struct:az_trace_ctrl
+az_trace_enable_on_pthread	../../../aurora/inc/mon/az_trace.h	/^static inline int az_attr_no_instrument az_trace_enable_on_pthread(int onoff, char *name)$/;"	f
+az_trace_info_t	../../../aurora/inc/mon/az_mcheck.h	/^typedef struct az_trace_info az_trace_info_t;$/;"	t	typeref:struct:az_trace_info
 az_transaction	../../../aurora/inc/az_trz.h	/^typedef struct az_transaction {$/;"	s
 az_transaction_connection	../../../aurora/inc/az_trz.h	/^typedef struct az_transaction_connection {$/;"	s
 az_transaction_node	../../../aurora/inc/az_trz.h	/^typedef struct az_transaction_node {$/;"	s
@@ -1456,16 +2014,21 @@ az_trz_add	../../../aurora/inc/az_trz.h	/^static inline az_r_t az_trz_add(az_trz
 az_trz_alloc	../../../aurora/inc/az_trz.h	/^static inline az_trz_t *az_trz_alloc(az_trz_nodeid_t nodeid, az_trz_seqno_t seqno, az_trz_code_t code)$/;"	f
 az_trz_code_t	../../../aurora/inc/az_trz.h	/^typedef uint16_t  az_trz_code_t;$/;"	t
 az_trz_conn	../../../aurora/inc/az_trz.h	128;"	d
+az_trz_conn	../../../aurora/inc/az_trz.h	130;"	d
 az_trz_conn_deregister	../../../aurora/inc/az_trz.h	/^static inline az_r_t az_trz_conn_deregister(az_trz_nodeid_t nodeid)$/;"	f
 az_trz_conn_find	../../../aurora/inc/az_trz.h	/^static inline az_trz_conn_t *az_trz_conn_find(az_sock_t sock)$/;"	f
+az_trz_conn_find	../../../aurora/inc/az_trz.h	/^static inline az_trz_conn_t *az_trz_conn_find(az_socket_id_t sockid)$/;"	f
 az_trz_conn_getfree	../../../aurora/inc/az_trz.h	/^static inline az_trz_conn_t *az_trz_conn_getfree(az_sock_t sock, az_trz_node_t *node)$/;"	f
+az_trz_conn_getfree	../../../aurora/inc/az_trz.h	/^static inline az_trz_conn_t *az_trz_conn_getfree(az_socket_id_t sockid, az_trz_node_t *node)$/;"	f
 az_trz_conn_register	../../../aurora/inc/az_trz.h	/^static inline az_r_t az_trz_conn_register(az_trz_nodeid_t nodeid, az_sock_t sock, az_trz_node_t *node)$/;"	f
+az_trz_conn_register	../../../aurora/inc/az_trz.h	/^static inline az_r_t az_trz_conn_register(az_trz_nodeid_t nodeid, az_socket_id_t sockid, az_trz_node_t *node)$/;"	f
 az_trz_conn_t	../../../aurora/inc/az_trz.h	/^} az_trz_conn_t;$/;"	t	typeref:struct:az_transaction_connection
 az_trz_find	../../../aurora/inc/az_trz.h	/^static inline az_trz_t *az_trz_find(az_trz_nodeid_t nodeid, az_trz_seqno_t seqno, az_trz_code_t code, int remove)$/;"	f
 az_trz_flush	../../../aurora/inc/az_trz.h	/^static inline int az_trz_flush(az_link_list_t *list, az_sys_lw_lock_t *lock)$/;"	f
 az_trz_free	../../../aurora/inc/az_trz.h	/^static inline void az_trz_free(az_trz_t *trz)$/;"	f
 az_trz_get	../../../aurora/inc/az_trz.h	/^static inline az_trz_t *az_trz_get(az_link_list_t *list, az_sys_lw_lock_t *lock)$/;"	f
 az_trz_handler_t	../../../aurora/inc/az_trz.h	/^typedef void (*az_trz_handler_t)(struct az_transaction *, az_sock_t );$/;"	t
+az_trz_handler_t	../../../aurora/inc/az_trz.h	/^typedef void (*az_trz_handler_t)(struct az_transaction *, az_socket_id_t );$/;"	t
 az_trz_len_t	../../../aurora/inc/az_trz.h	/^typedef uint16_t  az_trz_len_t;$/;"	t
 az_trz_node_t	../../../aurora/inc/az_trz.h	/^} az_trz_node_t;$/;"	t	typeref:struct:az_transaction_node
 az_trz_nodeid_t	../../../aurora/inc/az_trz.h	/^typedef uint16_t  az_trz_nodeid_t;$/;"	t
@@ -1509,9 +2072,11 @@ az_var_print_mode_t	../../../aurora/inc/az_var.h	/^} az_var_print_mode_t;$/;"	t	
 az_var_print_scalar_value_t	../../../aurora/inc/az_var.h	/^typedef int (*az_var_print_scalar_value_t)(char *, az_size_t, void *, int); $/;"	t
 az_var_t	../../../aurora/inc/az_var.h	/^} az_var_t;$/;"	t	typeref:struct:az_var
 az_var_type_t	../../../aurora/inc/az_var.h	/^} az_var_type_t;$/;"	t	typeref:enum:__anon47
+az_var_type_t	../../../aurora/inc/az_var.h	/^} az_var_type_t;$/;"	t	typeref:enum:__anon48
 az_var_value2Str_t	../../../aurora/inc/az_ion.h	/^typedef char *(*az_var_value2Str_t)(void *);$/;"	t
 az_var_value2Str_t	../../../aurora/inc/az_var.h	/^typedef char *(*az_var_value2Str_t)(void *);$/;"	t
 az_var_value_t	../../../aurora/inc/az_var.h	/^} az_var_value_t;$/;"	t	typeref:union:__anon48
+az_var_value_t	../../../aurora/inc/az_var.h	/^} az_var_value_t;$/;"	t	typeref:union:__anon49
 az_version	../../../aurora/inc/az_ver.h	/^typedef struct az_version {$/;"	s
 az_version_t	../../../aurora/inc/az_ver.h	/^} az_version_t;$/;"	t	typeref:struct:az_version
 az_vlog	../../../aurora/inc/az_printf.h	111;"	d
@@ -1551,22 +2116,113 @@ az_xml_token	../../../aurora/inc/az_xml.h	/^enum az_xml_token {$/;"	g
 az_xu_config	../../../aurora/inc/az_xu_cfg.h	/^typedef struct az_xu_config {$/;"	s
 az_xu_config_t	../../../aurora/inc/az_xu_cfg.h	/^} az_xu_config_t;$/;"	t	typeref:struct:az_xu_config
 az_xu_policy_t	../../../aurora/inc/az_xu_cfg.h	/^typedef int az_xu_policy_t;$/;"	t
+azm_get_curtimeoffset	azm_gtk.c	/^uint64_t azm_get_curtimeoffset()$/;"	f
+azm_gtk_main	azm_gtk.c	/^int azm_gtk_main(int argc, char **argv)$/;"	f
+azm_gtk_sample_main	azm_gtk_sample.c	/^int azm_gtk_sample_main(int argc, char **argv)$/;"	f
+azm_malloc_stats	../azm_mcheck.c	/^struct azm_malloc_stats azm_malloc_stats;$/;"	v	typeref:struct:azm_malloc_stats
+azm_mcheck_cli_cmd	../azm_mcheck.c	/^int azm_mcheck_cli_cmd(int argc, char *argv[])$/;"	f
+azm_mcheck_init	../azm_mcheck.c	/^void az_attr_no_instrument azm_mcheck_init()$/;"	f
+azm_probe_ctrl	../azm_probe.c	/^az_probe_ctrl_t azm_probe_ctrl = {$/;"	v
+azm_probe_ctrl_t	../azm_probe.c	/^typedef az_probe_ctrl_t azm_probe_ctrl_t;$/;"	t	file:
+azm_probe_deinit	../azm_probe.c	/^int azm_probe_deinit()$/;"	f
+azm_probe_init	../azm_probe.c	/^int azm_probe_init()$/;"	f
+azm_probe_proc_default	../azm_probe.c	/^int azm_probe_proc_default(void *arg)$/;"	f
+azm_probe_proc_recv	../azm_probe.c	/^int azm_probe_proc_recv(int fd)$/;"	f
+azm_probe_start	../azm_probe.c	/^int azm_probe_start()$/;"	f
+azm_probe_start_default_thread	../azm_probe.c	/^az_r_t  azm_probe_start_default_thread()$/;"	f
+azm_probe_stop	../azm_probe.c	/^int azm_probe_stop()$/;"	f
+azm_probe_stop_default_thread	../azm_probe.c	/^az_r_t  azm_probe_stop_default_thread()$/;"	f
+azm_probe_svr	../azm_probe.c	/^az_tcpserver_t azm_probe_svr = {$/;"	v
+azm_probe_svr_onClientConnection	../azm_probe.c	/^int azm_probe_svr_onClientConnection(void *ctx, az_socket_id_t cliSock, void *cliAddrIn)$/;"	f
+azm_probe_svr_oprs	../azm_probe.c	/^struct az_tcpserver_oprs azm_probe_svr_oprs;$/;"	v	typeref:struct:az_tcpserver_oprs
+azm_probe_thread_default	../azm_probe.c	/^az_thread_t azm_probe_thread_default = NULL;$/;"	v
+azm_probe_thread_proc_default	../azm_probe.c	/^void *azm_probe_thread_proc_default(void *arg)$/;"	f
+azm_probe_thread_state	../azm_probe.c	/^int azm_probe_thread_state = 0;$/;"	v
+azm_rsh_cli_cmd	../azm_rsh.c	/^int azm_rsh_cli_cmd(int argc, char *argv[])$/;"	f
+azm_rsh_ctrl	../azm_rsh.c	/^azm_rsh_ctrl_t azm_rsh_ctrl = {$/;"	v
+azm_rsh_deinit	../azm_rsh.c	/^int azm_rsh_deinit()$/;"	f
+azm_rsh_init	../azm_rsh.c	/^int azm_rsh_init()$/;"	f
+azm_rsh_proc_default	../azm_rsh.c	/^int azm_rsh_proc_default(void *arg)$/;"	f
+azm_rsh_start_default_thread	../azm_rsh.c	/^az_r_t  azm_rsh_start_default_thread()$/;"	f
+azm_rsh_stop_default_thread	../azm_rsh.c	/^az_r_t  azm_rsh_stop_default_thread()$/;"	f
+azm_rsh_thread_default	../azm_rsh.c	/^az_thread_t azm_rsh_thread_default = NULL;$/;"	v
+azm_rsh_thread_proc_default	../azm_rsh.c	/^void *azm_rsh_thread_proc_default(void *arg)$/;"	f
+azm_rsh_thread_state	../azm_rsh.c	/^int azm_rsh_thread_state = 0;$/;"	v
+azm_rstdio_ctrl	../azm_rstdio.c	/^azm_rstdio_ctrl_t azm_rstdio_ctrl = {$/;"	v
+azm_rstdio_ctrl_t	../azm_rstdio.c	/^typedef azm_trace_ctrl_t  azm_rstdio_ctrl_t;$/;"	t	file:
+azm_rstdio_deinit	../azm_rstdio.c	/^int azm_rstdio_deinit()$/;"	f
+azm_rstdio_init	../azm_rstdio.c	/^int azm_rstdio_init()$/;"	f
+azm_rstdio_proc_default	../azm_rstdio.c	/^int azm_rstdio_proc_default(void *arg)$/;"	f
+azm_rstdio_rxbuffer	../azm_rstdio.c	/^char  azm_rstdio_rxbuffer[2048];$/;"	v
+azm_rstdio_start	../azm_rstdio.c	/^int azm_rstdio_start()$/;"	f
+azm_rstdio_stop	../azm_rstdio.c	/^int azm_rstdio_stop()$/;"	f
+azm_rstdio_svr	../azm_rstdio.c	/^az_tcpserver_t azm_rstdio_svr = {$/;"	v
+azm_rstdio_svr_onClientConnection	../azm_rstdio.c	/^int azm_rstdio_svr_onClientConnection(void *ctx, az_socket_id_t cliSock, void *cliAddrIn)$/;"	f
+azm_rstdio_svr_oprs	../azm_rstdio.c	/^struct az_tcpserver_oprs azm_rstdio_svr_oprs;$/;"	v	typeref:struct:az_tcpserver_oprs
+azm_rstdio_thread_default	../azm_rstdio.c	/^az_thread_t azm_rstdio_thread_default = NULL;$/;"	v
+azm_rstdio_thread_state	../azm_rstdio.c	/^int azm_rstdio_thread_state = 0;$/;"	v
+azm_trace_cli_cmd	../azm_trace.c	/^int azm_trace_cli_cmd(int argc, char *argv[])$/;"	f
+azm_trace_ctrl	../azm_trace.c	/^azm_trace_ctrl_t azm_trace_ctrl = {$/;"	v
+azm_trace_deinit	../azm_trace.c	/^int azm_trace_deinit()$/;"	f
+azm_trace_enable_remote	../azm_trace.c	/^int azm_trace_enable_remote(int onoff)$/;"	f
+azm_trace_filter	../azm_trace.c	/^struct azm_trace_filter {$/;"	s	file:
+azm_trace_filter_add	../azm_trace.c	/^int azm_trace_filter_add(struct azm_trace_filter *filter, char *name)$/;"	f
+azm_trace_filter_del	../azm_trace.c	/^int azm_trace_filter_del(struct azm_trace_filter *filter, char *name)$/;"	f
+azm_trace_filter_matched	../azm_trace.c	/^int azm_trace_filter_matched(char *name, struct azm_trace_filter *filter)$/;"	f
+azm_trace_filter_show	../azm_trace.c	/^int azm_trace_filter_show(struct azm_trace_filter *filter)$/;"	f
+azm_trace_init	../azm_trace.c	/^int azm_trace_init()$/;"	f
+azm_trace_proc_default	../azm_trace.c	/^int azm_trace_proc_default(void *arg)$/;"	f
+azm_trace_proc_query_rsp	../azm_trace.c	/^int azm_trace_proc_query_rsp(short query, char *data, int datalen)$/;"	f
+azm_trace_proc_recv	../azm_trace.c	/^int azm_trace_proc_recv(int fd)$/;"	f
+azm_trace_send_query_cmd	../azm_trace.c	/^int azm_trace_send_query_cmd(short query, char *data, int datalen)$/;"	f
+azm_trace_start	../azm_trace.c	/^int azm_trace_start()$/;"	f
+azm_trace_start_default_thread	../azm_trace.c	/^az_r_t  azm_trace_start_default_thread()$/;"	f
+azm_trace_stop	../azm_trace.c	/^int azm_trace_stop()$/;"	f
+azm_trace_stop_default_thread	../azm_trace.c	/^az_r_t  azm_trace_stop_default_thread()$/;"	f
+azm_trace_svr	../azm_trace.c	/^az_tcpserver_t azm_trace_svr = {$/;"	v
+azm_trace_svr_onClientConnection	../azm_trace.c	/^int azm_trace_svr_onClientConnection(void *ctx, az_socket_id_t cliSock, void *cliAddrIn)$/;"	f
+azm_trace_svr_oprs	../azm_trace.c	/^struct az_tcpserver_oprs azm_trace_svr_oprs;$/;"	v	typeref:struct:az_tcpserver_oprs
+azm_trace_thread_default	../azm_trace.c	/^az_thread_t azm_trace_thread_default = NULL;$/;"	v
+azm_trace_thread_proc_default	../azm_trace.c	/^void *azm_trace_thread_proc_default(void *arg)$/;"	f
+azm_trace_thread_state	../azm_trace.c	/^int azm_trace_thread_state = 0;$/;"	v
+azm_write_probe_input_data	azm_gtk.c	/^void azm_write_probe_input_data(int srcno, uint64_t tstamp_ns, int level)$/;"	f
+azm_xu_main	../azm_main.c	/^az_thread_t azm_xu_main = NULL;$/;"	v
+azm_xu_main_arg	../azm_main.c	/^struct azm_xu_main_arg {$/;"	s	file:
+azm_xu_main_arg	../azm_main.c	/^} azm_xu_main_arg;$/;"	v	typeref:struct:azm_xu_main_arg
+azm_xu_main_config	../azm_main.c	/^az_thread_config_t azm_xu_main_config = {$/;"	v
+azm_xu_main_entry	../azm_main.c	/^void *azm_xu_main_entry(struct azm_xu_main_arg *arg)$/;"	f
 b	../../../aurora/inc/az_var.h	/^  az_bool_t         b;$/;"	m	union:__anon48
+b	../../../aurora/inc/az_var.h	/^  az_bool_t         b;$/;"	m	union:__anon49
 b16	../../../aurora/inc/az_ring.h	/^  az_uint16_t  b16;$/;"	m	union:__anon25
 b16	../../../aurora/inc/az_var.h	/^  az_uint16_t       b16;$/;"	m	union:__anon48
+b16	../../../aurora/inc/az_var.h	/^  az_uint16_t       b16;$/;"	m	union:__anon49
 b32	../../../aurora/inc/az_ring.h	/^  az_uint32_t  b32;$/;"	m	union:__anon25
 b32	../../../aurora/inc/az_var.h	/^  az_uint32_t       b32;$/;"	m	union:__anon48
+b32	../../../aurora/inc/az_var.h	/^  az_uint32_t       b32;$/;"	m	union:__anon49
 b64	../../../aurora/inc/az_ring.h	/^  az_uint64_t  b64;$/;"	m	union:__anon25
 b64	../../../aurora/inc/az_var.h	/^  az_uint64_t       b64;$/;"	m	union:__anon48
+b64	../../../aurora/inc/az_var.h	/^  az_uint64_t       b64;$/;"	m	union:__anon49
 b8	../../../aurora/inc/az_ring.h	/^  az_uint8_t   b8;$/;"	m	union:__anon25
 b8	../../../aurora/inc/az_var.h	/^  az_uint8_t        b8;$/;"	m	union:__anon48
+b8	../../../aurora/inc/az_var.h	/^  az_uint8_t        b8;$/;"	m	union:__anon49
 backlog	../../../aurora/inc/az_sys_def.h	/^    int32_t    backlog;$/;"	m	struct:__anon37::__anon40
 backlog	../../../aurora/inc/az_trz.h	/^  int       backlog;$/;"	m	struct:az_transaction_node
+backlog	../../../aurora/inc/net/az_tcpserver.h	/^  int   backlog;$/;"	m	struct:az_tcpserver_cfg
+base_names	../addr2line.c	/^    bfd_boolean base_names;      \/* Strip directory names.  *\/$/;"	m	struct:_libtrace_data	file:
+base_tstamp	../azm_probe.c	/^uint64_t base_tstamp = 0;$/;"	v
+base_tstamp	azm_gtk.c	/^  uint64_t  base_tstamp;$/;"	m	struct:__anon3	file:
+beamcount	../../../aurora/inc/az_thread.h	/^  int             beamcount;$/;"	m	struct:az_thread_entity
+beams	../../../aurora/inc/az_thread.h	/^  az_thread_beam_t   beams;$/;"	m	struct:az_thread_entity
+beamtable	../../../aurora/inc/az_thread.h	/^  struct az_thread_beam *beamtable; $/;"	m	struct:az_thread_entity	typeref:struct:az_thread_entity::az_thread_beam
+bfd_nonfatal	../addr2line.c	/^bfd_nonfatal(const char *string)$/;"	f
 bio	../../../aurora/inc/az_msgq.h	/^  az_bio_t  bio;$/;"	m	struct:az_msgq
 block_size	../../../aurora/inc/az_bio.h	/^  az_size_t   block_size;$/;"	m	struct:__anon1
 block_size	../../../aurora/inc/az_iou.h	/^    az_int8_t block_size;$/;"	m	struct:az_iou_config::__anon19
 block_size	../../../aurora/inc/az_iou.h	/^    az_int8_t block_size;$/;"	m	struct:az_iou_config::__anon20
+buf	../azm_probe.c	/^static az_probe_sample_t buf[AZ_PROBE_SAMPLE_SEND_MAX];$/;"	v	file:
+buf	../azm_trace.c	/^static char buf[256];$/;"	v	file:
 buffer	../../../aurora/inc/az_log.h	/^  az_cirbuffer_t  buffer;$/;"	m	struct:az_log
+buffer	../../../aurora/inc/cli/az_cli.h	/^  char  buffer[CONFIG_AZ_CLI_TX_BUFFER_SZ];$/;"	m	struct:az_cli_shell
 buffer_area	../../../aurora/inc/az_log.h	/^  uint8_t         *buffer_area;$/;"	m	struct:az_log
 buffer_ctrl	../../../aurora/inc/az_bio.h	/^  az_buffer_t buffer_ctrl;$/;"	m	struct:__anon3
 buffer_data	../../../aurora/inc/az_bio.h	/^  az_uint8_t  *buffer_data;$/;"	m	struct:__anon1
@@ -1576,7 +2232,10 @@ buffer_size	../../../aurora/inc/az_iou.h	/^    az_size_t buffer_size;$/;"	m	stru
 buffer_size	../../../aurora/inc/az_log.h	/^  int   buffer_size;$/;"	m	struct:az_log_config
 build	../../../aurora/inc/az_ver.h	/^  unsigned char   build;$/;"	m	struct:az_version
 busy	../../../aurora/inc/az_bio.h	/^  az_sys_lw_lock_t  busy;$/;"	m	struct:__anon2
+button1_clicked_cb	azm_gtk.c	/^G_MODULE_EXPORT void button1_clicked_cb(GtkButton *button, GtkLabel *label)$/;"	f
+button1_clicked_cb	azm_gtk_sample.c	/^G_MODULE_EXPORT void button1_clicked_cb(GtkButton *button, GtkLabel *label)$/;"	f
 c	../../../aurora/inc/az_var.h	/^  char              c;$/;"	m	union:__anon48
+c	../../../aurora/inc/az_var.h	/^  char              c;$/;"	m	union:__anon49
 cAlloc	../../../aurora/inc/az_malloc.h	/^  unsigned long  cAlloc;$/;"	m	struct:az_malloc_stats
 cAllocPoped	../../../aurora/inc/az_malloc.h	/^  unsigned long  cAllocPoped;$/;"	m	struct:az_malloc_stats
 cErrInvd	../../../aurora/inc/az_malloc.h	/^  unsigned long  cErrInvd;$/;"	m	struct:az_malloc_stats
@@ -1584,19 +2243,33 @@ cErrNull	../../../aurora/inc/az_malloc.h	/^  unsigned long  cErrNull;$/;"	m	stru
 cFail	../../../aurora/inc/az_malloc.h	/^  unsigned long  cFail;$/;"	m	struct:az_malloc_stats
 cFree	../../../aurora/inc/az_malloc.h	/^  unsigned long  cFree;$/;"	m	struct:az_malloc_stats
 cFreePoped	../../../aurora/inc/az_malloc.h	/^  unsigned long  cFreePoped;$/;"	m	struct:az_malloc_stats
+callstack	../../../aurora/inc/az_thread.h	/^  void  *callstack[CONFIG_AZ_TRACE_DEPTH_MAX];$/;"	m	struct:az_thread_trace_info
+cause	../../../aurora/inc/az_thread.h	/^  az_thread_cause_t   cause;$/;"	m	struct:az_thread_entity
 cause	../../../aurora/inc/az_thread.h	/^  int cause;$/;"	m	struct:az_thread_status
 cfg	../../../aurora/inc/az_bio.h	/^  az_bio_cfg_t    cfg;$/;"	m	struct:__anon3
 cfg	../../../aurora/inc/az_test.h	/^  az_test_config_t *cfg;$/;"	m	struct:az_test_descr_t
 cfg_folder	../../../aurora/inc/az_test.h	/^  char  cfg_folder[AZ_PATH_MAX];$/;"	m	struct:az_test_framework
+cfg_folder	../../../aurora/inc/frw/az_frw.h	/^  char  cfg_folder[AZ_PATH_MAX];$/;"	m	struct:az_framework
 child_list	../../../aurora/inc/az_xml.h	/^  az_double_link_list_t child_list;$/;"	m	struct:az_xml_element
+cleanup	azm_gtk_sample.c	/^static void cleanup()$/;"	f	file:
+clicked	azm_gtk_sample.c	/^static gboolean clicked(GtkWidget *widget, GdkEventButton *event,$/;"	f	file:
+cmd	../../../aurora/inc/cli/az_cli_api.h	/^  int32_t (*cmd)(int, char *[]);$/;"	m	struct:az_cli_key_cmd
+cmd_table	../../../aurora/inc/cli/az_cli.h	/^  az_cli_cmd_table_t *cmd_table;$/;"	m	struct:az_cli_shell
+cmdbuffer	../../../aurora/inc/cli/az_cli.h	/^  char  cmdbuffer[CONFIG_AZ_CLI_CMDBUF_SZ];	$/;"	m	struct:az_cli_shell
+cmdpos	../../../aurora/inc/cli/az_cli.h	/^  int   cmdpos;$/;"	m	struct:az_cli_shell
 code	../../../aurora/inc/az_trz.h	/^  az_trz_code_t   code;$/;"	m	struct:az_transaction
 completed	../../../aurora/inc/az_test.h	/^    int completed;$/;"	m	struct:az_test_case::__anon44
 config	../../../aurora/inc/az_iou.h	/^  az_iou_config_t   config;$/;"	m	struct:az_iou
 config	../../../aurora/inc/az_log.h	/^  az_log_config_t config;$/;"	m	struct:az_log
 config	../../../aurora/inc/az_thread.h	/^  az_thread_config_t  config;$/;"	m	struct:az_thread_entity
+config	../../../aurora/inc/net/az_tcpserver.h	/^  struct az_tcpserver_cfg config;$/;"	m	struct:az_tcpserver	typeref:struct:az_tcpserver::az_tcpserver_cfg
 container_of	../../../aurora/inc/az_def.h	147;"	d
 content_width	../../../aurora/inc/az_var.h	/^  int   content_width;$/;"	m	struct:az_var_print_format
+coordx	azm_gtk_sample.c	/^  double coordx[100];$/;"	m	struct:__anon4	file:
+coordy	azm_gtk_sample.c	/^  double coordy[100];$/;"	m	struct:__anon4	file:
+core_mask	../../../aurora/inc/az_thread_types.h	/^    az_thread_core_mask_t core_mask;$/;"	m	struct:__anon47
 coremask	../../../aurora/inc/az_thread_cfg.h	/^  uint64_t                coremask;$/;"	m	struct:az_thread_config
+coremask	../../../aurora/inc/az_thread_cfg.h	/^  uint64_t        coremask;$/;"	m	struct:az_thread_config
 coremask	../../../aurora/inc/az_xu_cfg.h	/^  uint64_t        coremask;$/;"	m	struct:az_xu_config
 count	../../../aurora/inc/az_array.h	/^  az_size_t           count;$/;"	m	struct:az_array
 count	../../../aurora/inc/az_buffer.h	/^  az_size_t count;$/;"	m	struct:az_buffer
@@ -1612,10 +2285,22 @@ count	../../../aurora/inc/az_prof.h	/^  az_int64_t count;$/;"	m	struct:az_prof_e
 count	../../../aurora/inc/az_refcount.h	/^  int32_t   count;$/;"	m	struct:az_refcount
 count	../../../aurora/inc/az_ring.h	/^  az_uint32_t count;$/;"	m	struct:az_ring
 count	../../../aurora/inc/az_test.h	/^    int count;$/;"	m	struct:az_test_case::__anon44
+count	../../../aurora/inc/cli/az_cli_cmd.h	/^  int  count;$/;"	m	struct:az_cli_cmd_table
+count	../azm_trace.c	/^  int   count;$/;"	m	struct:azm_trace_filter	file:
+count	azm_gtk_sample.c	/^  int count;$/;"	m	struct:__anon4	file:
+count	azm_gtk_sample.c	/^float count = 0;$/;"	v
+count	azm_gtk_sample.c	/^int count = 0;$/;"	v
+create_surfaces	azm_gtk_sample.c	/^static void create_surfaces()$/;"	f	file:
 csc	../../../aurora/inc/az_test.h	/^    uint64_t csc;$/;"	m	struct:az_test_project::__anon46
+ctime_us	azm_gtk.c	/^  uint64_t  ctime_us;$/;"	m	struct:__anon3	file:
+ctrl_sock	../../../aurora/inc/mon/az_probe.h	/^  az_socket_t ctrl_sock;$/;"	m	struct:az_probe_ctrl
 cur	../../../aurora/inc/az_xcfg.h	/^  az_xml_element_t *cur;$/;"	m	struct:az_xcfg_tree
 d	../../../aurora/inc/az_var.h	/^  double            d;$/;"	m	union:__anon48
+d	../../../aurora/inc/az_var.h	/^  double            d;$/;"	m	union:__anon49
+da_info	azm_gtk.c	/^} da_info = { $/;"	v	typeref:struct:__anon3
 data	../../../aurora/inc/az_ring.h	/^  az_ref_t  data;$/;"	m	struct:az_ring
+data_sock	../../../aurora/inc/mon/az_probe.h	/^  az_socket_t data_sock;$/;"	m	struct:az_probe_ctrl
+depth	../../../aurora/inc/az_thread.h	/^  short depth;$/;"	m	struct:az_thread_trace_info
 descr_count	../../../aurora/inc/az_bio.h	/^  az_size_t   descr_count;$/;"	m	struct:__anon1
 descr_count	../../../aurora/inc/az_iou.h	/^    az_int16_t descr_count;$/;"	m	struct:az_iou_config::__anon19
 descr_count	../../../aurora/inc/az_iou.h	/^    az_int16_t descr_count;$/;"	m	struct:az_iou_config::__anon20
@@ -1624,12 +2309,31 @@ descr_list	../../../aurora/inc/az_bio.h	/^  az_ref_t    descr_list;$/;"	m	struct
 descr_size	../../../aurora/inc/az_iou.h	/^    az_int8_t descr_size;$/;"	m	struct:az_iou_config::__anon19
 descr_size	../../../aurora/inc/az_iou.h	/^    az_int8_t descr_size;$/;"	m	struct:az_iou_config::__anon20
 descr_type	../../../aurora/inc/az_bio.h	/^  az_int32_t  descr_type;$/;"	m	struct:__anon1
+descrlist	../../../aurora/inc/sys/az_sig.h	/^  az_sighandler_descr_t **descrlist;$/;"	m	struct:az_sig_descr
+destroy_surfaces	azm_gtk_sample.c	/^static void destroy_surfaces()$/;"	f	file:
 devname	../../../aurora/inc/az_iou.h	/^      char  devname[AZ_IOU_ADDR_NAME_LEN];$/;"	m	struct:__anon16::__anon18
+disp_sig	azm_gtk.c	/^  az_disp_sig_t  disp_sig[N_PROBES];$/;"	m	struct:__anon3	file:
+do_demangle	../addr2line.c	/^    bfd_boolean do_demangle;     \/* Demangle names.  *\/$/;"	m	struct:_libtrace_data	file:
+do_drawing	azm_gtk_sample.c	/^static void do_drawing(cairo_t *cr)$/;"	f	file:
+do_drawing	azm_gtk_sample.c	/^static void do_drawing(cairo_t *cr, GtkWidget *widget)$/;"	f	file:
+do_drawing	azm_gtk_sample.c	/^static void do_drawing(cairo_t *cr, cairo_surface_t *surface)$/;"	f	file:
+do_drawing	azm_gtk_sample.c	/^static void do_drawing(cairo_t *cr, gint x, gint w, gint h, cairo_operator_t op)$/;"	f	file:
+do_drawing2	azm_gtk_sample.c	/^static void do_drawing2(cairo_t *cr, GtkWidget *widget)$/;"	f	file:
 domain	../../../aurora/inc/az_sys_def.h	/^    int32_t    domain;$/;"	m	struct:__anon37::__anon38
+draw_clock	azm_gtk.c	/^static gboolean draw_clock(GtkWidget *widget,$/;"	f	file:
+draw_gradient1	azm_gtk_sample.c	/^static void draw_gradient1(cairo_t *cr)$/;"	f	file:
+draw_gradient2	azm_gtk_sample.c	/^static void draw_gradient2(cairo_t *cr)$/;"	f	file:
+draw_gradient3	azm_gtk_sample.c	/^static void draw_gradient3(cairo_t *cr)$/;"	f	file:
+draw_gradient4	azm_gtk_sample.c	/^static void draw_gradient4(cairo_t *cr)$/;"	f	file:
+draw_gradient5	azm_gtk_sample.c	/^static void draw_gradient5(cairo_t *cr)$/;"	f	file:
+draw_mark	azm_gtk_sample.c	/^static void draw_mark()$/;"	f	file:
+dt_us	azm_gtk.c	/^  uint64_t  dt_us;$/;"	m	struct:__anon3	file:
 element_size	../../../aurora/inc/az_array.h	/^  az_size_t           element_size;$/;"	m	struct:az_array
 empty	../../../aurora/inc/az_event.h	/^    int empty;$/;"	m	struct:az_event_receiver_stats::__anon10
 entry	../../../aurora/inc/az_sys_def.h	/^    void (*entry)(az_ref_t);$/;"	m	struct:__anon34::__anon35
+entry	../../../aurora/inc/az_thread.h	/^  az_thread_entry_t   entry;$/;"	m	struct:az_thread_entity
 entry	../../../aurora/inc/az_thread.h	/^  az_xu_entry_t entry;$/;"	m	struct:az_thread_status
+entry_name	../../../aurora/inc/az_thread_cfg.h	/^  char            entry_name[AZ_THREAD_CFG_NAME_LEN];$/;"	m	struct:az_thread_config
 entry_name	../../../aurora/inc/az_thread_cfg.h	/^  char  entry_name[AZ_THR_CFG_NAME_LEN];$/;"	m	struct:az_thread_config
 entry_name	../../../aurora/inc/az_xu_cfg.h	/^  char            entry_name[AZ_XU_CFG_NAME_LEN];$/;"	m	struct:az_xu_config
 ep	../../../aurora/inc/az_log.h	/^  az_log_end_point_t  ep;$/;"	m	struct:az_log_port_entity
@@ -1654,7 +2358,10 @@ event_port	../../../aurora/inc/az_iou.h	/^    az_event_port_t   event_port;$/;"	
 event_port	../../../aurora/inc/az_iou.h	/^    az_event_port_t   event_port;$/;"	m	struct:az_iou::__anon22
 event_port	../../../aurora/inc/az_msgq.h	/^  az_event_port_t event_port;$/;"	m	struct:az_msgq
 event_q	../../../aurora/inc/az_event.h	/^  az_ring_t         *event_q;$/;"	m	struct:az_event_receiver
+excpt_point	../../../aurora/inc/az_thread.h	/^  void *excpt_point;$/;"	m	struct:az_thread_entity
+exec	../../../aurora/inc/cli/az_cli_cmd.h	/^  az_cli_cmd_exec_t exec;$/;"	m	struct:az_cli_cmd_descr
 f	../../../aurora/inc/az_var.h	/^  float             f;$/;"	m	union:__anon48
+f	../../../aurora/inc/az_var.h	/^  float             f;$/;"	m	union:__anon49
 fail	../../../aurora/inc/az_test.h	/^  int fail;$/;"	m	struct:test_result
 fail	../../../aurora/inc/az_unitTest.h	/^  int   fail;$/;"	m	struct:az_ut_testCaseResult
 fail	../../../aurora/inc/az_unitTest.h	/^  int   fail;$/;"	m	struct:az_ut_testProjResult
@@ -1666,28 +2373,64 @@ fd	../../../aurora/inc/az_log_dup.h	/^  az_sys_fd_t fd;$/;"	m	struct:az_log_dump
 fh	../../../aurora/inc/az_log_dup.h	/^  FILE  *fh;$/;"	m	struct:az_log_dump_ctrl
 file	../../../aurora/inc/az_log.h	/^  az_sys_file_t   file;$/;"	m	union:__anon23
 filecount	../../../aurora/inc/az_log_dup.h	/^  int filecount;$/;"	m	struct:az_log_dump_ctrl
+filename	../addr2line.c	/^    const char *filename;$/;"	m	struct:_sym_info	file:
+find_address_in_section	../addr2line.c	/^find_address_in_section(bfd *abfd, asection *section, void *data)$/;"	f	file:
+find_child	azm_gtk.c	/^GtkWidget * find_child(GtkWidget *parent, const gchar *name)$/;"	f
+find_offset_in_section	../addr2line.c	/^find_offset_in_section(bfd *abfd, asection *section, sym_info *psi)$/;"	f	file:
 first	../../../aurora/inc/az_ring.h	/^    az_pos_t (*first)(struct az_ring *, az_ref_t); $/;"	m	struct:az_ring::__anon26
 flags	../../../aurora/inc/az_event.h	/^  az_event_port_flags_t flags;$/;"	m	struct:az_event_port_entity
 flags	../../../aurora/inc/az_iou.h	/^  az_uint32_t   flags;$/;"	m	struct:az_iou_config
 flags	../../../aurora/inc/az_log.h	/^  az_log_flag_t   flags;$/;"	m	struct:az_log_config
+flags	../../../aurora/inc/az_thread.h	/^  az_thread_flags_t   flags;$/;"	m	struct:az_thread_entity
+flags	../../../aurora/inc/az_thread.h	/^  short flags;$/;"	m	struct:az_thread_trace_info
+flags	../../../aurora/inc/az_thread_cfg.h	/^  uint32_t        flags;$/;"	m	struct:az_thread_config
+flags	../../../aurora/inc/net/az_tcpserver.h	/^  int   flags;$/;"	m	struct:az_tcpserver_cfg
+found	../addr2line.c	/^    bfd_boolean found;$/;"	m	struct:_sym_info	file:
 frame_size	../../../aurora/inc/az_iou.h	/^    az_int32_t frame_size;$/;"	m	struct:az_iou_config::__anon19
 frame_size	../../../aurora/inc/az_iou.h	/^    az_int32_t frame_size;$/;"	m	struct:az_iou_config::__anon20
 free_call	../../../aurora/inc/az_malloc.h	/^  az_ref_t  free_call[CONFIG_AZ_MTRACE_LIST_SZ];$/;"	m	struct:az_malloc_stats
 free_list	../../../aurora/inc/az_malloc.h	/^  az_ref_t  free_list[CONFIG_AZ_MTRACE_LIST_SZ];$/;"	m	struct:az_malloc_stats
 free_size	../../../aurora/inc/az_malloc.h	/^  uint32_t  free_size[CONFIG_AZ_MTRACE_LIST_SZ];$/;"	m	struct:az_malloc_stats
 frw_build_time	../../../aurora/inc/az_test.h	/^  char  *frw_build_time;$/;"	m	struct:az_test_framework
+frw_build_time	../../../aurora/inc/frw/az_frw.h	/^  char          *frw_build_time;$/;"	m	struct:az_framework
 frw_cfg_file	../../../aurora/inc/az_test.h	/^  char  frw_cfg_file[AZ_PATH_MAX];$/;"	m	struct:az_test_framework
+frw_cfg_file	../../../aurora/inc/frw/az_frw.h	/^  char  frw_cfg_file[AZ_NAME_MAX];$/;"	m	struct:az_framework
 frw_ver	../../../aurora/inc/az_test.h	/^  az_version_t *frw_ver;$/;"	m	struct:az_test_framework
+frw_ver	../../../aurora/inc/frw/az_frw.h	/^  az_version_t  *frw_ver;  $/;"	m	struct:az_framework
 func	../../../aurora/inc/az_malloc.h	/^  void  *func;$/;"	m	struct:az_malloc_sign
+func_filter	../azm_trace.c	/^struct azm_trace_filter func_filter = {0}; $/;"	v	typeref:struct:azm_trace_filter
+functionname	../addr2line.c	/^    const char *functionname;$/;"	m	struct:_sym_info	file:
+gen_sample	azm_gtk.c	/^static double gen_sample(double us)$/;"	f	file:
 get_aligned_size	../../../aurora/inc/az_def.h	150;"	d
+get_file_size	../addr2line.c	/^get_file_size(const char * file_name)$/;"	f
+get_sample	azm_gtk.c	/^static double get_sample(az_disp_sig_t *disp_sig, uint64_t time)$/;"	f	file:
+glob	azm_gtk_sample.c	/^} glob;$/;"	v	typeref:struct:__anon4
+glob	azm_gtk_sample.c	/^} glob;$/;"	v	typeref:struct:__anon5
+glob	azm_gtk_sample.c	/^} glob;$/;"	v	typeref:struct:__anon6
+glob	azm_gtk_sample.c	/^} glob;$/;"	v	typeref:struct:__anon7
+glob	azm_gtk_sample.c	/^} glob;$/;"	v	typeref:struct:__anon8
+glob	azm_gtk_sample.c	/^} glob;$/;"	v	typeref:struct:__anon9
 handler	../../../aurora/inc/az_fsm.h	/^  az_fsm_handle_t handler;$/;"	m	struct:az_fsm_vector
+handler	../../../aurora/inc/az_thread.h	/^  az_thread_beam_handler_t handler;$/;"	m	struct:az_thread_beam
 handler	../../../aurora/inc/az_trz.h	/^  az_trz_handler_t handler;$/;"	m	struct:az_transaction
+handler	../../../aurora/inc/sys/az_sig.h	/^  az_sighandler_t handler;$/;"	m	struct:az_sighandler_descr
+height	azm_gtk.c	/^  int height;$/;"	m	struct:__anon3	file:
+help	../../../aurora/inc/cli/az_cli_cmd.h	/^  const char  *help;$/;"	m	struct:az_cli_cmd_descr
 i16	../../../aurora/inc/az_var.h	/^  az_int16_t        i16;$/;"	m	union:__anon48
+i16	../../../aurora/inc/az_var.h	/^  az_int16_t        i16;$/;"	m	union:__anon49
 i32	../../../aurora/inc/az_var.h	/^  az_int32_t        i32;$/;"	m	union:__anon48
+i32	../../../aurora/inc/az_var.h	/^  az_int32_t        i32;$/;"	m	union:__anon49
 i64	../../../aurora/inc/az_var.h	/^  az_int64_t        i64;$/;"	m	union:__anon48
+i64	../../../aurora/inc/az_var.h	/^  az_int64_t        i64;$/;"	m	union:__anon49
 i8	../../../aurora/inc/az_var.h	/^  az_int8_t         i8;$/;"	m	union:__anon48
+i8	../../../aurora/inc/az_var.h	/^  az_int8_t         i8;$/;"	m	union:__anon49
 id	../../../aurora/inc/az_ion_types.h	/^  az_ion_id_t   id;$/;"	m	struct:az_ion
 id_list	../../../aurora/inc/az_array.h	/^  az_index_pool_t     id_list; $/;"	m	struct:az_array
+image	azm_gtk_sample.c	/^  cairo_surface_t *image;$/;"	m	struct:__anon6	file:
+image	azm_gtk_sample.c	/^  cairo_surface_t *image;$/;"	m	struct:__anon8	file:
+image	azm_gtk_sample.c	/^  cairo_surface_t *image;$/;"	m	struct:__anon9	file:
+img_height	azm_gtk_sample.c	/^  gint  img_height;$/;"	m	struct:__anon8	file:
+img_width	azm_gtk_sample.c	/^  gint  img_width;$/;"	m	struct:__anon8	file:
 index	../../../aurora/inc/az_test.h	/^    int index;$/;"	m	struct:az_test_case::__anon44
 index	../../../aurora/inc/az_test.h	/^  int     index;$/;"	m	struct:az_test_iter
 index	../../../aurora/inc/az_test.h	/^  int index;$/;"	m	struct:az_test_descr_t
@@ -1696,28 +2439,51 @@ index	../../../aurora/inc/az_unitTest.h	/^  int   index;$/;"	m	struct:az_ut_test
 index	../../../aurora/inc/az_unitTest.h	/^  int   index;$/;"	m	struct:az_ut_testProjResult
 index_unit_size	../../../aurora/inc/az_index.h	/^  uint8_t   index_unit_size;$/;"	m	struct:az_index_pool
 inet	../../../aurora/inc/az_iou.h	/^    } inet;$/;"	m	union:__anon16	typeref:struct:__anon16::__anon17
+init	../../../aurora/inc/net/az_tcpserver.h	/^  int (*init)(struct az_tcpserver *);$/;"	m	struct:az_tcpserver_oprs
 init_value	../../../aurora/inc/az_sys_def.h	/^    int32_t   init_value;$/;"	m	struct:__anon27::__anon28
+init_vars	azm_gtk_sample.c	/^static void init_vars()$/;"	f	file:
 inp	../../../aurora/inc/az_buffer.h	/^  az_pos_t  inp;$/;"	m	struct:az_buffer
 inp	../../../aurora/inc/az_obuffer.h	/^  az_pos_t  inp;$/;"	m	struct:az_obuffer
+input	azm_gtk.c	/^  az_ring_t     input;$/;"	m	struct:__anon2	file:
 interfaceType	../../../aurora/inc/az_iou.h	/^  az_uint16_t   interfaceType;$/;"	m	struct:az_iou_config
+interval_us	azm_gtk.c	/^  uint64_t  interval_us;$/;"	m	struct:__anon3	file:
 io_ions	../../../aurora/inc/az_ion.h	/^  az_ion_t  **io_ions;$/;"	m	struct:az_ion_list
 ioap	../../../aurora/inc/az_iou.h	/^  az_ioap_t ioap;$/;"	m	struct:az_iou_config
 ion	../../../aurora/inc/az_iou.h	/^  az_ion_t          ion;$/;"	m	struct:az_iou
 ion	../../../aurora/inc/az_msgq.h	/^  az_ion_t  ion;$/;"	m	struct:az_msgq
+ion	../../../aurora/inc/az_thread.h	/^  az_ion_t        ion;$/;"	m	struct:az_thread_entity
+ion	../../../aurora/inc/sys/az_fs.h	/^  az_ion_t        ion;$/;"	m	struct:__anon3
+ion	../../../aurora/inc/sys/az_fs.h	/^  az_ion_t      ion;$/;"	m	struct:__anon2
+ion	../../../aurora/inc/sys/az_mutex.h	/^  az_ion_t            ion;$/;"	m	struct:__anon4
+ion	../../../aurora/inc/sys/az_sem.h	/^  az_ion_t            ion;$/;"	m	struct:__anon5
+ion	../../../aurora/inc/sys/az_socket.h	/^  az_ion_t    ion;$/;"	m	struct:__anon6
+ion	../../../aurora/inc/sys/az_timer.h	/^  az_ion_t            ion;$/;"	m	struct:__anon7
 iou	../../../aurora/inc/az_iou_msgq.h	/^  az_iou_t  *iou;$/;"	m	struct:az_iou_msgq_ctx
 ip	../../../aurora/inc/az_iou.h	/^      char  ip[AZ_IOU_ADDR_NAME_LEN-sizeof(int)];$/;"	m	struct:__anon16::__anon17
 ipAddr	../../../aurora/inc/az_trz.h	/^  char      *ipAddr;$/;"	m	struct:az_transaction_node
+ipAddrStr	../../../aurora/inc/net/az_tcpserver.h	/^  char  *ipAddrStr;$/;"	m	struct:az_tcpserver_cfg
+is_odd	azm_gtk.c	/^  uint8_t is_odd;$/;"	m	struct:__anon3	file:
 is_space	../../../aurora/inc/az_string.h	/^static inline int is_space(char c) {$/;"	f
 is_static	../../../aurora/inc/az_refcount.h	/^  uint8_t   is_static:1;$/;"	m	struct:az_refcount
 isprintable	../../../aurora/inc/az_string.h	41;"	d
 key	../../../aurora/inc/az_kv.h	/^  char  *key;$/;"	m	struct:az_kv
+key	../../../aurora/inc/cli/az_cli_api.h	/^  char  *key;$/;"	m	struct:az_cli_key_cmd
+keyword	../azm_trace.c	/^  char  keyword[AZM_TRACE_FILTER_MAX][CONFIG_AZ_NAME_MAX]; $/;"	m	struct:azm_trace_filter	file:
 kv	../../../aurora/inc/az_xml.h	/^  az_kv_t               kv;$/;"	m	struct:az_xml_element
+label	azm_gtk.c	/^  GtkLabel *label;$/;"	m	struct:__anon3	file:
 last	../../../aurora/inc/az_array.h	/^  az_size_t           last;$/;"	m	struct:az_array
+last_sample	../../../aurora/inc/mon/az_probe.h	/^  az_probe_sample_t last_sample;$/;"	m	struct:az_probe_ctrl
 length	../../../aurora/inc/az_def.h	/^  az_size_t length;$/;"	m	struct:az_range
 level	../../../aurora/inc/az_log.h	/^  az_log_level_t  level;$/;"	m	struct:az_log_config
 level	../../../aurora/inc/az_sys_def.h	/^    int32_t    level;$/;"	m	struct:__anon37::__anon39
+level	azm_gtk.c	/^  double        level;$/;"	m	struct:__anon2	file:
 level_count	../../../aurora/inc/az_event.h	/^    int32_t level_count;$/;"	m	struct:az_event_mux::__anon11
+libtrace_close	../addr2line.c	/^libtrace_close(void)$/;"	f
+libtrace_data	../addr2line.c	/^} libtrace_data;$/;"	t	typeref:struct:_libtrace_data	file:
+libtrace_init	../addr2line.c	/^libtrace_init($/;"	f
+libtrace_resolve	../addr2line.c	/^libtrace_resolve($/;"	f
 line	../../../aurora/inc/az_malloc.h	/^  int   line;$/;"	m	struct:az_malloc_sign
+line	../addr2line.c	/^    unsigned int line;$/;"	m	struct:_sym_info	file:
 line_width	../../../aurora/inc/az_var.h	/^  int   line_width;$/;"	m	struct:az_var_print_format
 link	../../../aurora/inc/az_event.h	/^  az_link_t         link;$/;"	m	struct:az_event_receiver
 link	../../../aurora/inc/az_event.h	/^  az_link_t        link;$/;"	m	struct:az_event_port_link
@@ -1728,6 +2494,8 @@ list	../../../aurora/inc/az_index.h	/^  az_index_list_unit_t   *list;$/;"	m	stru
 list	../../../aurora/inc/az_index.h	/^  uint8_t *list;$/;"	m	struct:az_index_pool
 list	../../../aurora/inc/az_test.h	/^    az_test_iter_t *list; $/;"	m	struct:az_test_case::__anon44
 list	../../../aurora/inc/az_trz.h	/^  az_link_list_t list;$/;"	m	struct:az_transaction_connection
+list	../../../aurora/inc/cli/az_cli_cmd.h	/^  az_cli_cmd_descr_t list[CONFIG_AZ_CLI_MAX_CMDS];$/;"	m	struct:az_cli_cmd_table
+list_matching_formats	../addr2line.c	/^list_matching_formats(char **p)$/;"	f
 local	../../../aurora/inc/az_iou_msgq.h	/^  az_msgq_t *local;$/;"	m	struct:az_iou_msgq_ctx
 local_addr	../../../aurora/inc/az_iou.h	/^  az_iou_addr_config_t local_addr;$/;"	m	struct:az_iou_config
 location	../../../aurora/inc/az_def.h	/^  az_pos_t  location;$/;"	m	struct:az_range
@@ -1737,22 +2505,36 @@ lock	../../../aurora/inc/az_buffer.h	/^  az_sys_lw_lock_t  *lock;$/;"	m	struct:a
 lock	../../../aurora/inc/az_cirbuffer.h	/^  az_sys_lw_lock_t  *lock;$/;"	m	struct:az_cirbuffer
 lock	../../../aurora/inc/az_event.h	/^  az_rw_lock_t          *lock;$/;"	m	struct:az_event_port_entity
 lock	../../../aurora/inc/az_event.h	/^  az_rw_lock_t      *lock;$/;"	m	struct:az_event_receiver
+lock	../../../aurora/inc/az_thread.h	/^  az_rw_lock_t    lock;$/;"	m	struct:az_thread_entity
 log_fd	../../../aurora/inc/az_log_dup.h	/^  az_sys_fd_t log_fd;$/;"	m	struct:az_log_dump_ctrl
+log_fd	../../../aurora/inc/mon/az_trace.h	/^  az_sys_fd_t log_fd;$/;"	m	struct:az_trace_ctrl
 log_folder	../../../aurora/inc/az_test.h	/^  char  log_folder[AZ_PATH_MAX];$/;"	m	struct:az_test_framework
+log_folder	../../../aurora/inc/frw/az_frw.h	/^  char  log_folder[AZ_PATH_MAX];$/;"	m	struct:az_framework
 logfilepath	../../../aurora/inc/az_log_dup.h	/^  char  logfilepath[AZ_PATH_MAX];$/;"	m	struct:az_log_dump_ctrl
 logfileprefix	../../../aurora/inc/az_log_dup.h	/^  char  *logfileprefix;$/;"	m	struct:az_log_dump_ctrl
 logid	../../../aurora/inc/az_log.h	/^  az_logid_t  logid;$/;"	m	struct:az_log
+logport	../../../aurora/inc/cli/az_cli.h	/^  az_sys_fd_t     logport;$/;"	m	struct:az_cli_shell
 lsc	../../../aurora/inc/az_test.h	/^    uint64_t lsc;$/;"	m	struct:az_test_project::__anon46
+m_libtrace_data	../addr2line.c	/^static libtrace_data m_libtrace_data = {$/;"	v	file:
+main	../addr2line.c	/^main (int argc, char **argv)$/;"	f
+main	../azm_main.c	/^int main(int argc, char *argv[])$/;"	f
 major	../../../aurora/inc/az_ver.h	/^  unsigned char   major;$/;"	m	struct:az_version
+mask	../../../aurora/inc/cli/az_cli_cmd.h	/^  int mask;$/;"	m	struct:az_cli_cmd_descr
 mask_size	../../../aurora/inc/az_event.h	/^    az_uint32_t mask_size:8;$/;"	m	struct:__anon7::__anon8
 mask_size	../../../aurora/inc/az_event.h	/^    az_uint32_t mask_size:8;$/;"	m	struct:__anon7::__anon9
+mchk	../../../aurora/inc/mon/az_trace.h	/^  az_mchk_info_t  mchk;$/;"	m	union:__anon1
 mem	../../../aurora/inc/az_xcfg.h	/^  char  *mem;$/;"	m	struct:az_xcfg_tree
 mhz	../../../aurora/inc/az_test.h	/^    double   mhz;$/;"	m	struct:az_test_project::__anon46
 minor	../../../aurora/inc/az_ver.h	/^  unsigned char   minor;$/;"	m	struct:az_version
 mode	../../../aurora/inc/az_sys_def.h	/^    int32_t   mode;$/;"	m	struct:__anon29::__anon30
 mode	../../../aurora/inc/az_test.h	/^  char  *mode;$/;"	m	struct:az_test_descr_t
 mode	../../../aurora/inc/az_var.h	/^  az_var_print_mode_t mode;$/;"	m	struct:az_var_print_format
+monSvrIpStr	../../../aurora/inc/mon/az_trace.h	/^  char      monSvrIpStr[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_trace_ctrl
+monSvrPort	../../../aurora/inc/mon/az_trace.h	/^  uint16_t  monSvrPort;$/;"	m	struct:az_trace_ctrl
+msgq	../../../aurora/inc/az_thread.h	/^  az_ring_t   msgq;$/;"	m	struct:az_thread_entity
+msgs	../../../aurora/inc/az_thread.h	/^  az_thread_msg_t msgs[CONFIG_AZ_THREAD_MSG_QUEUE_SZ]; $/;"	m	struct:az_thread_entity
 mtrace_state	../../../aurora/inc/az_malloc.h	/^  long  mtrace_state;$/;"	m	struct:az_malloc_stats
+mutex	../../../aurora/inc/sys/az_mutex.h	/^  az_sys_mutex_t     mutex;       $/;"	m	struct:__anon4
 nTotal	../../../aurora/inc/az_malloc.h	/^  unsigned long  nTotal;$/;"	m	struct:az_malloc_stats
 name	../../../aurora/inc/az_fsm.h	/^  char                  *name;$/;"	m	struct:az_fsm
 name	../../../aurora/inc/az_iou.h	/^    char  name[AZ_IOU_ADDR_NAME_LEN];$/;"	m	union:__anon16
@@ -1763,11 +2545,20 @@ name	../../../aurora/inc/az_sys_def.h	/^    char  name[AZ_SYS_SHM_NAME_MAX];$/;"
 name	../../../aurora/inc/az_test.h	/^  char  *name;$/;"	m	struct:az_test_descr_t
 name	../../../aurora/inc/az_test.h	/^  char  name[AZ_NAME_MAX];$/;"	m	struct:az_test_case
 name	../../../aurora/inc/az_test.h	/^  char  name[AZ_NAME_MAX];$/;"	m	struct:az_test_project
+name	../../../aurora/inc/az_thread.h	/^  char            name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_thread_entity
+name	../../../aurora/inc/az_thread.h	/^  char            name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_thread_trace_info
+name	../../../aurora/inc/az_thread_cfg.h	/^  char            name[AZ_THREAD_CFG_NAME_LEN];$/;"	m	struct:az_thread_config
 name	../../../aurora/inc/az_thread_cfg.h	/^  char  name[AZ_THR_CFG_NAME_LEN];$/;"	m	struct:az_thread_config
 name	../../../aurora/inc/az_unitTest.h	/^  char  *name;$/;"	m	struct:az_ut_testCaseResult
 name	../../../aurora/inc/az_unitTest.h	/^  char  *name;$/;"	m	struct:az_ut_testProjResult
 name	../../../aurora/inc/az_var.h	/^  char    *name;$/;"	m	struct:az_var_descr
 name	../../../aurora/inc/az_xu_cfg.h	/^  char            name[AZ_XU_CFG_NAME_LEN];$/;"	m	struct:az_xu_config
+name	../../../aurora/inc/cli/az_cli.h	/^  char  name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_cli_shell
+name	../../../aurora/inc/cli/az_cli_cmd.h	/^  const char *name;$/;"	m	struct:az_cli_cmd_descr
+name	../../../aurora/inc/net/az_tcpserver.h	/^  char  *name;$/;"	m	struct:az_tcpserver_cfg
+name	../../../aurora/inc/sys/az_mutex.h	/^  char      name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:__anon4
+name	../../../aurora/inc/sys/az_sem.h	/^  char      name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:__anon5
+name	../../../aurora/inc/sys/az_timer.h	/^  char      name[CONFIG_AZ_NAME_MAX];$/;"	m	struct:__anon7
 newPriority	../../../aurora/inc/az_sys_def.h	/^    int32_t  newPriority;$/;"	m	struct:__anon32::__anon33
 next	../../../aurora/inc/az_link.h	/^  az_link_t *next;$/;"	m	struct:az_link_list
 next	../../../aurora/inc/az_link.h	/^  struct az_double_link *next;$/;"	m	struct:az_double_link	typeref:struct:az_double_link::az_double_link
@@ -1775,15 +2566,32 @@ next	../../../aurora/inc/az_link.h	/^  struct az_double_link *next;$/;"	m	struct
 next	../../../aurora/inc/az_link.h	/^  struct az_link *next;$/;"	m	struct:az_link	typeref:struct:az_link::az_link
 next	../../../aurora/inc/az_unitTest.h	/^  struct az_ut_testCaseResult *next;$/;"	m	struct:az_ut_testCaseResult	typeref:struct:az_ut_testCaseResult::az_ut_testCaseResult
 next	../../../aurora/inc/az_unitTest.h	/^  struct az_ut_testProjResult *next;$/;"	m	struct:az_ut_testProjResult	typeref:struct:az_ut_testProjResult::az_ut_testProjResult
+next	../../../aurora/inc/sys/az_sig.h	/^  struct az_sighandler_t *next;$/;"	m	struct:az_sighandler_descr	typeref:struct:az_sighandler_descr::az_sighandler_t
 no	../../../aurora/inc/az_event.h	/^  az_event_port_no_t    no;$/;"	m	struct:az_event_port_entity
+no_instrument	../addr2line.c	27;"	d	file:
 nodeid	../../../aurora/inc/az_trz.h	/^  az_trz_nodeid_t   nodeid; \/\/destnation nodeid$/;"	m	struct:az_transaction
 nodeid	../../../aurora/inc/az_trz.h	/^  az_trz_nodeid_t  nodeid; \/\/destination nodeid$/;"	m	struct:az_transaction_connection
 nodeid	../../../aurora/inc/az_trz.h	/^  az_trz_nodeid_t nodeid; \/\/destination nodeid$/;"	m	struct:az_transaction_node
+non_fatal	../addr2line.c	/^non_fatal(const char *format, ...)$/;"	f
 nonio_ions	../../../aurora/inc/az_ion.h	/^  az_array_t *nonio_ions;$/;"	m	struct:az_ion_list
 offset	../../../aurora/inc/az_var.h	/^  az_pos_t    offset;$/;"	m	struct:az_var_descr
 offsetof	../../../aurora/inc/az_def.h	139;"	d
 offsetof	../../../aurora/inc/az_def.h	141;"	d
+onClientConnection	../../../aurora/inc/net/az_tcpserver.h	/^  int (*onClientConnection)(void *, az_socket_id_t cliSock, void *cliAddr);$/;"	m	struct:az_tcpserver_oprs
 onError	../../../aurora/inc/az_fsm.h	/^  void  (*onError)(void *, az_fsm_state_t, az_event_t);$/;"	m	struct:az_fsm
+on_draw_event	azm_gtk_sample.c	/^static gboolean on_draw_event(GtkWidget *widget, cairo_t *cr, $/;"	f	file:
+on_draw_event	azm_gtk_sample.c	/^static gboolean on_draw_event(GtkWidget *widget, cairo_t *cr, gpointer user_data)$/;"	f	file:
+on_drawingarea1_draw	azm_gtk.c	/^G_MODULE_EXPORT gboolean on_drawingarea1_draw(GtkWidget *widget,$/;"	f
+on_drawingarea1_draw	azm_gtk_sample.c	/^G_MODULE_EXPORT gboolean on_drawingarea1_draw(GtkWidget *widget,$/;"	f
+on_entry1_changed	azm_gtk.c	/^G_MODULE_EXPORT void on_entry1_changed(GtkEntry *entry, GtkWidget *widget)$/;"	f
+on_entry1_changed	azm_gtk_sample.c	/^G_MODULE_EXPORT void on_entry1_changed(GtkEntry *entry, GtkLabel *label)$/;"	f
+on_entry2_changed	azm_gtk.c	/^G_MODULE_EXPORT void on_entry2_changed(GtkEntry *entry, GtkWidget *widget)$/;"	f
+on_entry3_changed	azm_gtk.c	/^G_MODULE_EXPORT void on_entry3_changed(GtkEntry *entry, GtkWidget *widget)$/;"	f
+on_entry4_changed	azm_gtk.c	/^G_MODULE_EXPORT void on_entry4_changed(GtkEntry *entry, GtkWidget *widget)$/;"	f
+on_scale1_value_changed	azm_gtk.c	/^G_MODULE_EXPORT void on_scale1_value_changed(GtkRange *range,$/;"	f
+on_scale1_value_changed	azm_gtk_sample.c	/^G_MODULE_EXPORT void on_scale1_value_changed(GtkRange *range,$/;"	f
+on_window1_destroy	azm_gtk.c	/^G_MODULE_EXPORT void on_window1_destroy()$/;"	f
+on_window1_destroy	azm_gtk_sample.c	/^G_MODULE_EXPORT void on_window1_destroy()$/;"	f
 onoff	../../../aurora/inc/az_test.h	/^  az_bool_t   onoff;$/;"	m	struct:az_test_case
 onoff	../../../aurora/inc/az_test.h	/^  az_bool_t   onoff;$/;"	m	struct:az_test_iter
 onoff	../../../aurora/inc/az_test.h	/^  int   onoff;$/;"	m	struct:az_test_descr_t
@@ -1795,10 +2603,13 @@ oprs	../../../aurora/inc/az_iou.h	/^  struct az_iou_oprs       *oprs;$/;"	m	stru
 oprs	../../../aurora/inc/az_msgq.h	/^  struct az_msgq_oprs *oprs;$/;"	m	struct:az_msgq	typeref:struct:az_msgq::az_msgq_oprs
 oprs	../../../aurora/inc/az_ring.h	/^  } oprs;$/;"	m	struct:az_ring	typeref:struct:az_ring::__anon26
 oprs	../../../aurora/inc/az_test.h	/^  } oprs;$/;"	m	struct:az_test_case	typeref:struct:az_test_case::__anon45
+oprs	../../../aurora/inc/net/az_tcpserver.h	/^  struct az_tcpserver_oprs *oprs;$/;"	m	struct:az_tcpserver	typeref:struct:az_tcpserver::az_tcpserver_oprs
 options	../../../aurora/inc/az_sys_def.h	/^    int32_t   options;$/;"	m	struct:__anon27::__anon28
 optname	../../../aurora/inc/az_sys_def.h	/^    int32_t    optname;$/;"	m	struct:__anon37::__anon39
 optval	../../../aurora/inc/az_sys_def.h	/^    az_ref_t      optval;$/;"	m	struct:__anon37::__anon39
+org_action	../../../aurora/inc/sys/az_sig.h	/^  az_sigaction_t org_action;$/;"	m	struct:az_sig_descr
 org_fd	../../../aurora/inc/az_log_dup.h	/^  az_sys_fd_t org_fd;$/;"	m	struct:az_log_dump_ctrl
+org_x	azm_gtk.c	/^  int org_x;$/;"	m	struct:__anon3	file:
 out	../../../aurora/inc/az_log.h	/^  int (*out)(struct az_log *, const char *, int);$/;"	m	struct:az_log
 outp	../../../aurora/inc/az_buffer.h	/^  az_pos_t  outp;$/;"	m	struct:az_buffer
 outp	../../../aurora/inc/az_obuffer.h	/^  az_pos_t  outp;$/;"	m	struct:az_obuffer
@@ -1809,12 +2620,20 @@ parent	../../../aurora/inc/az_xml.h	/^  struct az_xml_element *parent; $/;"	m	st
 pass	../../../aurora/inc/az_test.h	/^  int pass;$/;"	m	struct:test_result
 pass	../../../aurora/inc/az_unitTest.h	/^  int   pass;$/;"	m	struct:az_ut_testCaseResult
 pass	../../../aurora/inc/az_unitTest.h	/^  int   pass;$/;"	m	struct:az_ut_testProjResult
+pc	../addr2line.c	/^    bfd_vma pc;$/;"	m	struct:_sym_info	file:
 peer	../../../aurora/inc/az_trz.h	/^  az_trz_node_t *peer;$/;"	m	struct:az_transaction_connection
 peer_list	../../../aurora/inc/az_event.h	/^  az_link_list_t        peer_list;$/;"	m	struct:az_event_port_entity
 perf_cal	../../../aurora/inc/az_test.h	/^  } perf_cal;$/;"	m	struct:az_test_project	typeref:struct:az_test_project::__anon46
 phyAddress	../../../aurora/inc/az_sys_def.h	/^    az_ref_t     phyAddress;$/;"	m	struct:__anon29::__anon30
+points	azm_gtk.c	/^  az_point_t    points[N_POINTS];$/;"	m	struct:__anon2	file:
+points	azm_gtk_sample.c	/^int points[11][2] = { $/;"	v
+points	azm_gtk_sample.c	/^int points[11][2] = {$/;"	v
+points_count_unit	azm_gtk.c	/^  uint32_t      points_count_unit;$/;"	m	struct:__anon2	file:
+points_pop	azm_gtk.c	/^  uint64_t      points_push, points_pop;$/;"	m	struct:__anon2	file:
+points_push	azm_gtk.c	/^  uint64_t      points_push, points_pop;$/;"	m	struct:__anon2	file:
 policy	../../../aurora/inc/az_sys_def.h	/^    int32_t  policy;$/;"	m	struct:__anon32::__anon33
 policy	../../../aurora/inc/az_thread_cfg.h	/^  az_thread_policy_t      policy;$/;"	m	struct:az_thread_config
+policy	../../../aurora/inc/az_thread_cfg.h	/^  az_thread_policy_t  policy;$/;"	m	struct:az_thread_config
 policy	../../../aurora/inc/az_xu_cfg.h	/^  az_xu_policy_t  policy;$/;"	m	struct:az_xu_config
 pop	../../../aurora/inc/az_cirbuffer.h	/^  az_pos_t  pop;$/;"	m	struct:az_cirbuffer
 pop	../../../aurora/inc/az_fifo.h	/^  az_pos_t  push, pop;$/;"	m	struct:az_fifo
@@ -1827,10 +2646,12 @@ popfails	../../../aurora/inc/az_ring.h	/^  az_uint32_t popfails;$/;"	m	struct:az
 port	../../../aurora/inc/az_event.h	/^  az_event_port_entity_t  *port;$/;"	m	struct:az_event_port_link
 port	../../../aurora/inc/az_iou.h	/^      int   port;$/;"	m	struct:__anon16::__anon17
 port	../../../aurora/inc/az_trz.h	/^  uint16_t  port;$/;"	m	struct:az_transaction_node
+port	../../../aurora/inc/net/az_tcpserver.h	/^  int   port;$/;"	m	struct:az_tcpserver_cfg
 port_count	../../../aurora/inc/az_event_bus.h	/^  az_uint32_t      port_count;$/;"	m	struct:__anon14
 port_list	../../../aurora/inc/az_event_bus.h	/^  az_event_port_t  *port_list;$/;"	m	struct:__anon14
 port_list_sz	../../../aurora/inc/az_event_bus.h	/^  az_uint32_t      port_list_sz;$/;"	m	struct:__anon14
 pos	../../../aurora/inc/az_var.h	/^  az_pos_t          pos;$/;"	m	union:__anon48
+pos	../../../aurora/inc/az_var.h	/^  az_pos_t          pos;$/;"	m	union:__anon49
 prev	../../../aurora/inc/az_link.h	/^  az_link_t *prev;$/;"	m	struct:az_link_list
 prev	../../../aurora/inc/az_link.h	/^  struct az_double_link *prev;$/;"	m	struct:az_double_link	typeref:struct:az_double_link::az_double_link
 prev	../../../aurora/inc/az_link.h	/^  struct az_double_link *prev;$/;"	m	struct:az_double_link_list	typeref:struct:az_double_link_list::az_double_link
@@ -1838,12 +2659,17 @@ prev_count	../../../aurora/inc/az_buffer.h	/^  az_pos_t prev_count;$/;"	m	struct
 prev_inp	../../../aurora/inc/az_buffer.h	/^  az_pos_t prev_inp;$/;"	m	struct:az_buffer
 priority	../../../aurora/inc/az_sys_def.h	/^    int32_t  priority;$/;"	m	struct:__anon32::__anon33
 priority	../../../aurora/inc/az_thread_cfg.h	/^  uint32_t                priority;$/;"	m	struct:az_thread_config
+priority	../../../aurora/inc/az_thread_cfg.h	/^  uint32_t        priority;$/;"	m	struct:az_thread_config
+priority	../../../aurora/inc/az_thread_types.h	/^    int priority;$/;"	m	struct:__anon47
 priority	../../../aurora/inc/az_xu_cfg.h	/^  uint32_t        priority;$/;"	m	struct:az_xu_config
 priv	../../../aurora/inc/az_cirbuffer.h	/^  void  *priv;$/;"	m	struct:az_cirbuffer
 priv	../../../aurora/inc/az_event.h	/^  void *priv;$/;"	m	struct:az_event_port_entity
 priv	../../../aurora/inc/az_iou.h	/^  void  *priv;$/;"	m	struct:az_iou
 priv	../../../aurora/inc/az_log_dup.h	/^  void  *priv;$/;"	m	struct:az_log_dump_ctrl
 priv	../../../aurora/inc/az_trz.h	/^  void *priv;$/;"	m	struct:az_transaction
+priv	../../../aurora/inc/net/az_tcpserver.h	/^  void  *priv;$/;"	m	struct:az_tcpserver
+program_name	../addr2line.c	/^char *program_name = "addr2line"; $/;"	v
+prompt	../../../aurora/inc/cli/az_cli.h	/^  const char  *prompt;$/;"	m	struct:az_cli_shell
 protocol	../../../aurora/inc/az_sys_def.h	/^    int32_t    protocol;$/;"	m	struct:__anon37::__anon38
 push	../../../aurora/inc/az_cirbuffer.h	/^  az_pos_t  push;$/;"	m	struct:az_cirbuffer
 push	../../../aurora/inc/az_fifo.h	/^  az_pos_t  push, pop;$/;"	m	struct:az_fifo
@@ -1856,8 +2682,10 @@ q	../../../aurora/inc/az_index.h	/^  az_pos_t q, r;$/;"	m	struct:az_index_pool
 qfull	../../../aurora/inc/az_event.h	/^    int qfull;$/;"	m	struct:az_event_receiver_stats::__anon10
 r	../../../aurora/inc/az_index.h	/^  az_pos_t q, r;$/;"	m	struct:az_index_pool
 r	../../../aurora/inc/az_var.h	/^  az_r_t            r;$/;"	m	union:__anon48
+r	../../../aurora/inc/az_var.h	/^  az_r_t            r;$/;"	m	union:__anon49
 readCount	../../../aurora/inc/az_rw_lock.h	/^  int32_t           readCount;$/;"	m	struct:az_rw_lock
 read_fd	../../../aurora/inc/az_log_dup.h	/^  az_sys_fd_t read_fd;$/;"	m	struct:az_log_dump_ctrl
+read_fd	../../../aurora/inc/mon/az_trace.h	/^  az_sys_fd_t read_fd;$/;"	m	struct:az_trace_ctrl
 read_lock	../../../aurora/inc/az_rw_lock.h	/^  az_sys_lw_lock_t  read_lock; $/;"	m	struct:az_rw_lock
 reason	../../../aurora/inc/az_test.h	/^  char        reason[AZ_PATH_MAX];$/;"	m	struct:az_test_case
 reason	../../../aurora/inc/az_test.h	/^  char    reason[AZ_PATH_MAX];$/;"	m	struct:az_test_iter
@@ -1866,6 +2694,7 @@ recvBytes	../../../aurora/inc/az_iou.h	/^  az_usize_t  recvBytes;$/;"	m	struct:a
 recvCount	../../../aurora/inc/az_iou.h	/^  az_usize_t  recvCount;$/;"	m	struct:az_iou_status
 ref	../../../aurora/inc/az_ring.h	/^  az_ref_t     ref;$/;"	m	union:__anon25
 ref	../../../aurora/inc/az_var.h	/^  az_ref_t          ref;$/;"	m	union:__anon48
+ref	../../../aurora/inc/az_var.h	/^  az_ref_t          ref;$/;"	m	union:__anon49
 refCount	../../../aurora/inc/az_array.h	/^  az_refcount_t refCount;$/;"	m	struct:az_array
 refCount	../../../aurora/inc/az_event.h	/^  az_refcount_t         refCount;$/;"	m	struct:az_event_port_entity
 refCount	../../../aurora/inc/az_event.h	/^  az_refcount_t         refCount;$/;"	m	struct:az_event_port_link
@@ -1878,30 +2707,47 @@ remote	../../../aurora/inc/az_iou_msgq.h	/^  az_msgq_t *remote;$/;"	m	struct:az_
 remote_addr	../../../aurora/inc/az_iou.h	/^  az_iou_addr_config_t remote_addr;$/;"	m	struct:az_iou_config
 report	../../../aurora/inc/az_test.h	/^  struct test_result report; $/;"	m	struct:az_test_case	typeref:struct:az_test_case::test_result
 report	../../../aurora/inc/az_test.h	/^  struct test_result report; $/;"	m	struct:az_test_project	typeref:struct:az_test_project::test_result
+report	../addr2line.c	/^report(const char * format, va_list args)$/;"	f
 req	../../../aurora/inc/az_trz.h	/^  void            *req;$/;"	m	struct:az_transaction
 reserved	../../../aurora/inc/az_event.h	/^    az_uint32_t reserved:4;$/;"	m	struct:__anon7::__anon8
 reserved	../../../aurora/inc/az_event.h	/^    az_uint32_t reserved:4;$/;"	m	struct:__anon7::__anon9
+resolve_symbol	../azm_trace.c	/^int resolve_symbol = 0;$/;"	v
 result	../../../aurora/inc/az_test.h	/^  az_r_t      result;$/;"	m	struct:az_test_case
 result	../../../aurora/inc/az_test.h	/^  az_r_t  result;$/;"	m	struct:az_test_iter
 ring	../../../aurora/inc/az_index.h	/^  az_ring_t ring;$/;"	m	struct:az_index_pool
 ring_type	../../../aurora/inc/az_index.h	/^  uint8_t   ring_type;$/;"	m	struct:az_index_pool
 rsp	../../../aurora/inc/az_trz.h	/^  void            *rsp;$/;"	m	struct:az_transaction
 run	../../../aurora/inc/az_fsm.h	/^  az_fsm_run_t          run;$/;"	m	struct:az_fsm
+run	../../../aurora/inc/net/az_tcpserver.h	/^  void *(*run)(void *);$/;"	m	struct:az_tcpserver_oprs
 rx	../../../aurora/inc/az_iou.h	/^  } rx;$/;"	m	struct:az_iou	typeref:struct:az_iou::__anon22
 rx	../../../aurora/inc/az_iou.h	/^  } rx;$/;"	m	struct:az_iou_config	typeref:struct:az_iou_config::__anon20
 rxBytes	../../../aurora/inc/az_iou.h	/^  az_usize_t  rxBytes;$/;"	m	struct:az_iou_status
 rxCount	../../../aurora/inc/az_iou.h	/^  az_usize_t  rxCount;$/;"	m	struct:az_iou_status
 rxRate	../../../aurora/inc/az_iou.h	/^  az_usize_t  rxRate;$/;"	m	struct:az_iou_status
+rxfrwd	../../../aurora/inc/cli/az_cli.h	/^  az_cli_port_t   rxfrwd;$/;"	m	struct:az_cli_shell
+rxinfo	../azm_trace.c	/^az_diag_info_t rxinfo;$/;"	v
+rxport	../../../aurora/inc/cli/az_cli.h	/^  az_cli_port_t   txport, rxport;$/;"	m	struct:az_cli_shell
 s	../../../aurora/inc/az_var.h	/^  char*             s;$/;"	m	union:__anon48
+s	../../../aurora/inc/az_var.h	/^  char*             s;$/;"	m	union:__anon49
+s_input_data	azm_gtk.c	/^static az_probe_sample_t s_input_data[N_PROBES][N_INPUT_DATA]; $/;"	v	file:
 sa4	../../../aurora/inc/az_sys_def.h	/^  struct sockaddr_in    sa4;$/;"	m	union:az_sys_inet_address	typeref:struct:az_sys_inet_address::sockaddr_in
+sample_count_unit	azm_gtk.c	/^  uint32_t      sample_count_unit;$/;"	m	struct:__anon2	file:
+sample_dt	azm_gtk.c	/^  uint32_t      sample_dt;$/;"	m	struct:__anon2	file:
+sample_push	azm_gtk.c	/^  uint64_t      sample_push;$/;"	m	struct:__anon2	file:
 samples	../../../aurora/inc/az_test.h	/^  int     samples;$/;"	m	struct:az_test_iter
+samples	azm_gtk.c	/^  double        samples[N_SAMPLES];$/;"	m	struct:__anon2	file:
+scale	azm_gtk.c	/^  GtkScale *scale;$/;"	m	struct:__anon3	file:
+sched_policy	../../../aurora/inc/az_thread_types.h	/^    int sched_policy;$/;"	m	struct:__anon47
+section	../addr2line.c	/^    asection *section;$/;"	m	struct:_libtrace_data	file:
 sendBytes	../../../aurora/inc/az_iou.h	/^  az_usize_t  sendBytes;$/;"	m	struct:az_iou_status
 sendCount	../../../aurora/inc/az_iou.h	/^  az_usize_t  sendCount;$/;"	m	struct:az_iou_status
 seqno	../../../aurora/inc/az_trz.h	/^  az_trz_seqno_t  seqno; $/;"	m	struct:az_transaction
 serial	../../../aurora/inc/az_iou.h	/^    } serial;$/;"	m	union:__anon16	typeref:struct:__anon16::__anon18
 setflag	../../../aurora/inc/az_ring.h	/^    az_r_t   (*setflag)(struct az_ring *, az_pos_t , az_ref_t);$/;"	m	struct:az_ring::__anon26
+setup	azm_gtk_sample.c	/^static void setup(GtkWidget *win)$/;"	f	file:
 sign	../../../aurora/inc/az_malloc.h	/^  int sign;$/;"	m	struct:az_malloc_sign
 signo	../../../aurora/inc/az_event.h	/^  az_sys_event_t    signo;$/;"	m	struct:az_event_receiver
+signo	../../../aurora/inc/sys/az_sig.h	/^  int signo;$/;"	m	struct:az_sig_descr
 size	../../../aurora/inc/az_array.h	/^  az_size_t           size;$/;"	m	struct:az_array
 size	../../../aurora/inc/az_buffer.h	/^  az_size_t size;$/;"	m	struct:az_buffer
 size	../../../aurora/inc/az_cirbuffer.h	/^  az_size_t size;$/;"	m	struct:az_cirbuffer
@@ -1915,20 +2761,35 @@ size	../../../aurora/inc/az_obuffer.h	/^  az_size_t size;$/;"	m	struct:az_obuffe
 size	../../../aurora/inc/az_ring.h	/^  az_uint32_t size;$/;"	m	struct:az_ring
 size	../../../aurora/inc/az_sys_def.h	/^    az_size_t    size;$/;"	m	struct:__anon29::__anon30
 size	../../../aurora/inc/az_var.h	/^  az_size_t         size;$/;"	m	union:__anon48
+size	../../../aurora/inc/az_var.h	/^  az_size_t         size;$/;"	m	union:__anon49
 size	../../../aurora/inc/az_var.h	/^  az_size_t   size;$/;"	m	struct:az_var_descr
+size	azm_gtk_sample.c	/^  gdouble size;$/;"	m	struct:__anon5	file:
 sizelimit	../../../aurora/inc/az_log_dup.h	/^  int sizelimit;$/;"	m	struct:az_log_dump_ctrl
+slurp_symtab	../addr2line.c	/^slurp_symtab(bfd *abfd)$/;"	f	file:
 sock	../../../aurora/inc/az_log.h	/^  az_sys_socket_t sock;$/;"	m	union:__anon23
 sock	../../../aurora/inc/az_trz.h	/^  az_sock_t sock;$/;"	m	struct:az_transaction_connection
 sock	../../../aurora/inc/az_trz.h	/^  az_sock_t sock;$/;"	m	struct:az_transaction_node
+sock	../../../aurora/inc/az_trz.h	/^  az_socket_t      sock;$/;"	m	struct:az_transaction_connection
+sock	../../../aurora/inc/az_trz.h	/^  az_socket_t sock;$/;"	m	struct:az_transaction_node
+sock	../../../aurora/inc/net/az_tcpserver.h	/^  az_socket_t sock;$/;"	m	struct:az_tcpserver
 sockaddr	../../../aurora/inc/az_sys_def.h	/^    struct sockaddr_in    sockaddr;$/;"	m	struct:__anon37::__anon41	typeref:struct:__anon37::__anon41::sockaddr_in
 sockaddr	../../../aurora/inc/az_sys_def.h	/^    struct sockaddr_in    sockaddr;$/;"	m	struct:__anon37::__anon42	typeref:struct:__anon37::__anon42::sockaddr_in
 sockaddr	../../../aurora/inc/az_sys_def.h	/^    struct sockaddr_in    sockaddr;$/;"	m	struct:__anon37::__anon43	typeref:struct:__anon37::__anon43::sockaddr_in
+source_freq	azm_gtk.c	/^  double source_freq;$/;"	m	struct:__anon3	file:
+source_x	azm_gtk.c	/^  double source_x[N_SAMPLES], source_y[N_SAMPLES];$/;"	m	struct:__anon3	file:
+source_y	azm_gtk.c	/^  double source_x[N_SAMPLES], source_y[N_SAMPLES];$/;"	m	struct:__anon3	file:
+srcno	azm_gtk.c	/^  int           srcno;$/;"	m	struct:__anon2	file:
 st	../../../aurora/inc/az_event.h	/^  } st;$/;"	m	union:__anon7	typeref:struct:__anon7::__anon8
 st	../../../aurora/inc/az_event.h	/^  } st;$/;"	m	union:__anon7	typeref:struct:__anon7::__anon9
 stackSize	../../../aurora/inc/az_thread_cfg.h	/^  uint32_t                stackSize;$/;"	m	struct:az_thread_config
+stackSize	../../../aurora/inc/az_thread_cfg.h	/^  uint32_t        stackSize;$/;"	m	struct:az_thread_config
 stackSize	../../../aurora/inc/az_xu_cfg.h	/^  uint32_t        stackSize;$/;"	m	struct:az_xu_config
+stack_size	../../../aurora/inc/az_thread_types.h	/^    az_size_t   stack_size;$/;"	m	struct:__anon47
 stage	../../../aurora/inc/az_ver.h	/^  unsigned char   stage;  \/\/alpha,beta,rc,relase,stable$/;"	m	struct:az_version
+start	../../../aurora/inc/net/az_tcpserver.h	/^  int (*start)(struct az_tcpserver *);$/;"	m	struct:az_tcpserver_oprs
 startdelay	../../../aurora/inc/az_thread_cfg.h	/^  int                     startdelay;$/;"	m	struct:az_thread_config
+startdelay	../../../aurora/inc/az_thread_cfg.h	/^  int             startdelay;$/;"	m	struct:az_thread_config
+startdelay	../../../aurora/inc/az_thread_types.h	/^    int startdelay;$/;"	m	struct:__anon47
 startdelay	../../../aurora/inc/az_xu_cfg.h	/^  int             startdelay;$/;"	m	struct:az_xu_config
 state	../../../aurora/inc/az_event.h	/^    az_uint32_t state:8;$/;"	m	struct:__anon7::__anon8
 state	../../../aurora/inc/az_event.h	/^    az_uint32_t state:8;$/;"	m	struct:__anon7::__anon9
@@ -1937,14 +2798,22 @@ state	../../../aurora/inc/az_fsm.h	/^  az_fsm_state_t  state;$/;"	m	struct:az_fs
 state	../../../aurora/inc/az_iou.h	/^  az_int32_t  state;$/;"	m	struct:az_iou_status
 state	../../../aurora/inc/az_log.h	/^  az_log_port_state_t state;$/;"	m	struct:az_log_port_entity
 state	../../../aurora/inc/az_log.h	/^  int   state;$/;"	m	struct:az_log
+state	../../../aurora/inc/az_thread.h	/^  az_thread_state_t   state;$/;"	m	struct:az_thread_entity
 state	../../../aurora/inc/az_thread.h	/^  int state;$/;"	m	struct:az_thread_status
 state	../../../aurora/inc/az_trz.h	/^  uint16_t        state;$/;"	m	struct:az_transaction
+state	../../../aurora/inc/cli/az_cli.h	/^  int state;$/;"	m	struct:az_cli_shell
+state	../../../aurora/inc/mon/az_probe.h	/^  uint8_t   state;$/;"	m	struct:az_probe_ctrl
+state	../../../aurora/inc/mon/az_trace.h	/^  int state;$/;"	m	struct:az_trace_ctrl
+state	../../../aurora/inc/net/az_tcpserver.h	/^  volatile int state;$/;"	m	struct:az_tcpserver
+state	azm_gtk.c	/^  int           state;$/;"	m	struct:__anon2	file:
 stats	../../../aurora/inc/az_event.h	/^  az_event_receiver_stats_t stats;$/;"	m	struct:az_event_receiver
 status	../../../aurora/inc/az_bio.h	/^  az_bio_status_t status;$/;"	m	struct:__anon3
 status	../../../aurora/inc/az_iou.h	/^  az_iou_status_t   status;$/;"	m	struct:az_iou
 status	../../../aurora/inc/az_thread.h	/^  az_thread_status_t  status;$/;"	m	struct:az_thread_entity
 stime	../../../aurora/inc/az_test.h	/^  az_sys_timespec_t stime;$/;"	m	struct:az_test_case
 stime	../../../aurora/inc/az_test.h	/^  az_sys_timespec_t stime;$/;"	m	struct:az_test_project
+stime_us	azm_gtk.c	/^  uint64_t  stime_us;$/;"	m	struct:__anon3	file:
+stop	../../../aurora/inc/net/az_tcpserver.h	/^  int (*stop)(struct az_tcpserver *);$/;"	m	struct:az_tcpserver_oprs
 string_begins_no_case	../../../aurora/inc/az_string.h	/^static inline int string_begins_no_case(const char *s1, const char *s2)$/;"	f
 substate	../../../aurora/inc/az_event.h	/^    az_uint32_t substate:8;$/;"	m	struct:__anon7::__anon8
 substate	../../../aurora/inc/az_event.h	/^    az_uint32_t substate:8;$/;"	m	struct:__anon7::__anon9
@@ -1952,9 +2821,29 @@ substate	../../../aurora/inc/az_fsm.h	/^  int8_t                substate;$/;"	m	
 success	../../../aurora/inc/az_test.h	/^  int success;$/;"	m	struct:test_result
 success	../../../aurora/inc/az_unitTest.h	/^  int   success;$/;"	m	struct:az_ut_testCaseResult
 success	../../../aurora/inc/az_unitTest.h	/^  int   success;$/;"	m	struct:az_ut_testProjResult
+surface	azm_gtk_sample.c	/^  cairo_surface_t *surface;$/;"	m	struct:__anon7	file:
+surface	azm_gtk_sample.c	/^  cairo_surface_t *surface;$/;"	m	struct:__anon8	file:
+surface1	azm_gtk_sample.c	/^cairo_surface_t *surface1;$/;"	v
+surface2	azm_gtk_sample.c	/^cairo_surface_t *surface2;$/;"	v
+surface3	azm_gtk_sample.c	/^cairo_surface_t *surface3;$/;"	v
+surface4	azm_gtk_sample.c	/^cairo_surface_t *surface4;$/;"	v
+svrIpStr	../../../aurora/inc/mon/az_probe.h	/^  char  svrIpStr[CONFIG_AZ_NAME_MAX];$/;"	m	struct:az_probe_ctrl
+svrPort	../../../aurora/inc/mon/az_probe.h	/^  uint16_t  svrPort;$/;"	m	struct:az_probe_ctrl
+sym_info	../addr2line.c	/^} sym_info; $/;"	t	typeref:struct:_sym_info	file:
+syms	../addr2line.c	/^    asymbol **syms;              \/* Symbol table.  *\/$/;"	m	struct:_libtrace_data	file:
+sys_dir	../../../aurora/inc/sys/az_fs.h	/^  az_sys_dir_t  sys_dir;$/;"	m	struct:__anon2
+sys_file	../../../aurora/inc/sys/az_fs.h	/^  az_sys_file_t   sys_file;$/;"	m	struct:__anon3
 sys_port	../../../aurora/inc/az_event.h	/^  az_sys_ep_t       *sys_port;$/;"	m	struct:az_event_receiver
+sys_sem	../../../aurora/inc/sys/az_sem.h	/^  az_sys_sem_t              sys_sem; $/;"	m	struct:__anon5
+sys_socket	../../../aurora/inc/sys/az_socket.h	/^  az_sys_socket_t sys_socket;$/;"	m	struct:__anon6
+sys_timer	../../../aurora/inc/sys/az_timer.h	/^  az_sys_timer_t         sys_timer;$/;"	m	struct:__anon7
+sys_xu	../../../aurora/inc/az_thread.h	/^  az_sys_xu_t     sys_xu;$/;"	m	struct:az_thread_entity
 t0	../../../aurora/inc/az_prof.h	/^  az_sys_timespec_t t0, t1;$/;"	m	struct:az_prof_elm
 t1	../../../aurora/inc/az_prof.h	/^  az_sys_timespec_t t0, t1;$/;"	m	struct:az_prof_elm
+t_scale	azm_gtk.c	/^  double t_scale;$/;"	m	struct:__anon3	file:
+t_scale_n	azm_gtk.c	/^  double t_scale_n;$/;"	m	struct:__anon3	file:
+tag	../../../aurora/inc/az_ion_types.h	/^  az_ion_tag_t  tag;$/;"	m	struct:az_ion
+tag	../../../aurora/inc/az_thread_cfg.h	/^  uint16_t        tag;$/;"	m	struct:az_thread_config
 tag	../../../aurora/inc/az_var.h	/^  char  *tag;$/;"	m	struct:az_var_print_format
 tcHead	../../../aurora/inc/az_unitTest.h	/^  az_ut_testCaseResult_t *tcHead;$/;"	m	struct:az_ut_testProjResult
 tcTail	../../../aurora/inc/az_unitTest.h	/^  az_ut_testCaseResult_t *tcTail;$/;"	m	struct:az_ut_testProjResult
@@ -1974,21 +2863,37 @@ testcase_count	../../../aurora/inc/az_test.h	/^  int   testcase_count;$/;"	m	str
 testcase_enabled	../../../aurora/inc/az_test.h	/^  int   testcase_enabled;$/;"	m	struct:az_test_project
 testcase_errored	../../../aurora/inc/az_test.h	/^  int   testcase_errored;$/;"	m	struct:az_test_project
 testcaselist	../../../aurora/inc/az_test.h	/^  az_test_case_t  *testcaselist;$/;"	m	struct:az_test_project
+thread	../../../aurora/inc/az_thread.h	/^  pthread_t thread;$/;"	m	struct:az_thread_trace_info
+thread	../../../aurora/inc/cli/az_cli.h	/^  void  *thread;$/;"	m	struct:az_cli_shell
+thread	../../../aurora/inc/net/az_tcpserver.h	/^  void  *thread;$/;"	m	struct:az_tcpserver
 thread_id	../../../aurora/inc/az_log.h	/^  az_ion_id_t     thread_id;$/;"	m	struct:az_log
 time	../../../aurora/inc/az_prof.h	/^  az_int64_t time;$/;"	m	struct:az_prof_elm
+time_handler	azm_gtk.c	/^static gboolean time_handler(GtkWidget *widget)$/;"	f	file:
+time_handler	azm_gtk_sample.c	/^static gboolean time_handler(GtkWidget *widget)$/;"	f	file:
 timelimit	../../../aurora/inc/az_trz.h	/^  time_t           timelimit;$/;"	m	struct:az_transaction
 timeout	../../../aurora/inc/az_test.h	/^  int32_t     timeout;$/;"	m	struct:az_test_case
+timeout	../../../aurora/inc/net/az_tcpserver.h	/^  long  timeout;$/;"	m	struct:az_tcpserver_cfg
+timer	azm_gtk_sample.c	/^  gboolean  timer;$/;"	m	struct:__anon8	file:
+timer	azm_gtk_sample.c	/^  gboolean timer;$/;"	m	struct:__anon5	file:
+timespan_us	azm_gtk.c	/^  uint64_t  timespan_us;$/;"	m	struct:__anon3	file:
 title_fmt	../../../aurora/inc/az_var.h	/^  char  *title_fmt;$/;"	m	struct:az_var_print_format
+titleshow	azm_gtk_sample.c	/^int titleshow = 1;$/;"	v
 to_lower	../../../aurora/inc/az_string.h	/^static inline char to_lower(char c) {$/;"	f
 tpHead	../../../aurora/inc/az_unitTest.h	/^  az_ut_testProjResult_t  *tpHead;$/;"	m	struct:az_ut_result
 tpTail	../../../aurora/inc/az_unitTest.h	/^  az_ut_testProjResult_t  *tpTail;$/;"	m	struct:az_ut_result
+trace	../../../aurora/inc/mon/az_trace.h	/^  az_trace_info_t trace;$/;"	m	union:__anon1
+trace_info	../../../aurora/inc/az_thread.h	/^  az_thread_trace_info_t trace_info; $/;"	m	struct:az_thread_entity
+tran_setup	azm_gtk_sample.c	/^static void tran_setup(GtkWidget *win)$/;"	f	file:
+translate_addresses	../addr2line.c	/^translate_addresses(bfd *abfd, asection *section, $/;"	f	file:
 transportType	../../../aurora/inc/az_iou.h	/^  az_uint16_t   transportType;$/;"	m	struct:az_iou_config
+trz_list	../../../aurora/inc/az_thread.h	/^  az_link_list_t  trz_list;$/;"	m	struct:az_thread_entity
 tsc	../../../aurora/inc/az_test.h	/^    uint64_t tsc;$/;"	m	struct:az_test_project::__anon46
 tx	../../../aurora/inc/az_iou.h	/^  } tx;$/;"	m	struct:az_iou	typeref:struct:az_iou::__anon21
 tx	../../../aurora/inc/az_iou.h	/^  } tx;$/;"	m	struct:az_iou_config	typeref:struct:az_iou_config::__anon19
 txBytes	../../../aurora/inc/az_iou.h	/^  az_usize_t  txBytes;$/;"	m	struct:az_iou_status
 txCount	../../../aurora/inc/az_iou.h	/^  az_usize_t  txCount;$/;"	m	struct:az_iou_status
 txRate	../../../aurora/inc/az_iou.h	/^  az_usize_t  txRate;$/;"	m	struct:az_iou_status
+txport	../../../aurora/inc/cli/az_cli.h	/^  az_cli_port_t   txport, rxport;$/;"	m	struct:az_cli_shell
 type	../../../aurora/inc/az_event.h	/^    az_uint32_t type:4;$/;"	m	struct:__anon7::__anon8
 type	../../../aurora/inc/az_event.h	/^    az_uint32_t type:4;$/;"	m	struct:__anon7::__anon9
 type	../../../aurora/inc/az_fsm.h	/^  int8_t                type;$/;"	m	struct:az_fsm
@@ -1999,13 +2904,22 @@ type	../../../aurora/inc/az_sys_def.h	/^    int32_t    type;$/;"	m	struct:__anon
 type	../../../aurora/inc/az_var.h	/^  az_var_type_t   type;$/;"	m	struct:az_var
 type	../../../aurora/inc/az_var.h	/^  az_var_type_t type;$/;"	m	struct:az_var_descr
 u16	../../../aurora/inc/az_var.h	/^  az_uint16_t       u16;$/;"	m	union:__anon48
+u16	../../../aurora/inc/az_var.h	/^  az_uint16_t       u16;$/;"	m	union:__anon49
 u32	../../../aurora/inc/az_event.h	/^  az_uint32_t   u32;$/;"	m	union:__anon7
 u32	../../../aurora/inc/az_var.h	/^  az_uint32_t       u32;$/;"	m	union:__anon48
+u32	../../../aurora/inc/az_var.h	/^  az_uint32_t       u32;$/;"	m	union:__anon49
 u64	../../../aurora/inc/az_var.h	/^  az_uint64_t       u64;$/;"	m	union:__anon48
+u64	../../../aurora/inc/az_var.h	/^  az_uint64_t       u64;$/;"	m	union:__anon49
 u8	../../../aurora/inc/az_var.h	/^  az_uint8_t        u8;$/;"	m	union:__anon48
+u8	../../../aurora/inc/az_var.h	/^  az_uint8_t        u8;$/;"	m	union:__anon49
+unwind_inlines	../addr2line.c	/^    bfd_boolean unwind_inlines;  \/* Unwind inlined functions. *\/$/;"	m	struct:_libtrace_data	file:
 upos	../../../aurora/inc/az_var.h	/^  az_upos_t         upos;$/;"	m	union:__anon48
+upos	../../../aurora/inc/az_var.h	/^  az_upos_t         upos;$/;"	m	union:__anon49
+usage	../addr2line.c	/^usage (FILE *stream, int status)$/;"	f	file:
 usize	../../../aurora/inc/az_var.h	/^  az_usize_t        usize;$/;"	m	union:__anon48
+usize	../../../aurora/inc/az_var.h	/^  az_usize_t        usize;$/;"	m	union:__anon49
 v	../../../aurora/inc/az_var.h	/^  az_ref_t          v;$/;"	m	union:__anon48
+v	../../../aurora/inc/az_var.h	/^  az_ref_t          v;$/;"	m	union:__anon49
 value	../../../aurora/inc/az_kv.h	/^  char  *value;$/;"	m	struct:az_kv
 value	../../../aurora/inc/az_var.h	/^  az_var_value_t  value;$/;"	m	struct:az_var
 value2Str	../../../aurora/inc/az_var.h	/^  az_var_value2Str_t value2Str;$/;"	m	struct:az_var_print_format
@@ -2013,9 +2927,15 @@ value2StrList	../../../aurora/inc/az_var.h	/^  az_var_value2Str_t *value2StrList
 var	../../../aurora/inc/az_xcfg.h	/^  az_var_t          var;$/;"	m	struct:az_xcfg_var
 vcur	../../../aurora/inc/az_fsm.h	/^  az_fsm_vector_t       *vcur;$/;"	m	struct:az_fsm
 vtable	../../../aurora/inc/az_fsm.h	/^  az_fsm_vector_t       *vtable;$/;"	m	struct:az_fsm
+wait_thread_id	../../../aurora/inc/az_thread.h	/^  az_ion_id_t wait_thread_id;$/;"	m	struct:az_thread_entity
+width	azm_gtk.c	/^  int width;$/;"	m	struct:__anon3	file:
 width_list	../../../aurora/inc/az_var.h	/^  char  *width_list;$/;"	m	struct:az_var_print_format
+with_functions	../addr2line.c	/^    bfd_boolean with_functions;  \/* Show function names.  *\/$/;"	m	struct:_libtrace_data	file:
 write_fd	../../../aurora/inc/az_log_dup.h	/^  az_sys_fd_t write_fd;$/;"	m	struct:az_log_dump_ctrl
+write_fd	../../../aurora/inc/mon/az_trace.h	/^  az_sys_fd_t write_fd;$/;"	m	struct:az_trace_ctrl
 write_lock	../../../aurora/inc/az_rw_lock.h	/^  az_sys_lw_lock_t  write_lock; $/;"	m	struct:az_rw_lock
+x	azm_gtk.c	/^  int x, y;$/;"	m	struct:__anon1	file:
+x_scale	azm_gtk.c	/^  double x_scale;$/;"	m	struct:__anon3	file:
 xcfg_tree	../../../aurora/inc/az_test.h	/^  az_xcfg_tree_t  *xcfg_tree;$/;"	m	struct:az_test_case
 xml	../../../aurora/inc/az_test.h	/^  az_xml_element_t *xml;$/;"	m	struct:az_test_case
 xml	../../../aurora/inc/az_test.h	/^  az_xml_element_t *xml;$/;"	m	struct:az_test_descr_t
@@ -2056,5 +2976,9 @@ xml_tag_content	../../../aurora/inc/az_xml.h	/^  xml_tag_content,$/;"	e	enum:az_
 xml_tag_end	../../../aurora/inc/az_xml.h	/^  xml_tag_end,$/;"	e	enum:az_xml_parser_state
 xml_tag_start	../../../aurora/inc/az_xml.h	/^  xml_tag_start,$/;"	e	enum:az_xml_parser_state
 xu	../../../aurora/inc/az_thread.h	/^  az_xu_entity_t      xu;$/;"	m	struct:az_thread_entity
+xu	../../../aurora/inc/sys/az_timer.h	/^  az_thread_t xu;$/;"	m	struct:__anon7
+xu_filter	../azm_trace.c	/^struct azm_trace_filter xu_filter = {0}; $/;"	v	typeref:struct:azm_trace_filter
 xu_id	../../../aurora/inc/az_test.h	/^  az_ion_id_t   xu_id;$/;"	m	struct:az_test_project
 xu_id	../../../aurora/inc/az_trz.h	/^  az_ion_id_t      xu_id;$/;"	m	struct:az_transaction
+y	azm_gtk.c	/^  int x, y;$/;"	m	struct:__anon1	file:
+yoffset	azm_gtk.c	/^  int           yoffset;$/;"	m	struct:__anon2	file:

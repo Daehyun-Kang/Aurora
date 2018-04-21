@@ -64,6 +64,7 @@ extern az_r_t  azm_probe_stop_default_thread();
  * @exception    none
  */
 
+uint64_t base_tstamp = 0;
 static az_probe_sample_t buf[AZ_PROBE_SAMPLE_SEND_MAX];
 int azm_probe_proc_recv(int fd)
 {
@@ -72,11 +73,11 @@ int azm_probe_proc_recv(int fd)
   int rcount;
   int j;
   int src; 
-  double level;
+  int level;
   uint64_t tstamp;
 
   #ifdef AZM_GUI
-  extern void az_write_sample(int srcno, uint64_t tstamp_us, double value_norm);
+  extern void azm_write_probe_input_data(int srcno, uint64_t tstamp_ns, int level);
   #endif
 
   do {
@@ -94,12 +95,20 @@ int azm_probe_proc_recv(int fd)
     sample = buf;
     for (j = 0; j < rcount; j++, sample++) {
       src = AZ_PROBE_SRC(*sample);
-      level = (double)AZ_PROBE_LEVEL(*sample) * 7;
+      level = AZ_PROBE_LEVEL(*sample);
       tstamp = AZ_PROBE_TSTAMP(*sample);
+      if (0 == base_tstamp) {
+        #ifdef AZM_GUI
+        extern uint64_t azm_get_curtimeoffset();
+        base_tstamp = azm_get_curtimeoffset() - tstamp;
+        #endif
+      }
+      //tstamp += base_tstamp;
       
-      az_printf("%lx: src:%d level:%f  tstamp:%ld\n", *sample, src, level/15.0, tstamp);
+      az_dlog("%lx: src:%d level:%d  tstamp:%lx/%lx\n", *sample, src, level, 
+          tstamp, base_tstamp);
       #ifdef AZM_GUI
-      az_write_sample(src, tstamp / 1000, level/15.0);
+      azm_write_probe_input_data(src, tstamp + base_tstamp, level);
       #endif
     }
   } while (0);
@@ -167,7 +176,9 @@ int azm_probe_proc_default(void *arg)
 
   if (ctrl->ctrl_sock != AZ_SOCK_INVALID) {
     az_sys_xu_iomux_del(ctrl->ctrl_sock);
-    az_sys_socket_delete(ctrl->data_sock);
+    az_sys_xu_iomux_del(ctrl->data_sock);
+    az_socket_delete(ctrl->ctrl_sock);
+    az_socket_delete(ctrl->data_sock);
     ctrl->ctrl_sock = AZ_SOCK_INVALID;
     ctrl->data_sock = AZ_SOCK_INVALID;
   }

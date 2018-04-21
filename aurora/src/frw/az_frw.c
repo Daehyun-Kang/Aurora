@@ -218,10 +218,14 @@ void *az_frw_main()
       break;
     }
     uint32_t tmo_count = 0;
+    az_sys_timespec_t ts;
     while (1) {
       received = 0;
       r = az_thread_recv_beam(AZ_THREAD_BEAM_EVTBUS, 0, tmo_ns, &received);  
-      az_thread_sleep(tmo_ns/2);
+      int j;
+      for ( j = 0; j < 10000000; j++) {
+        clock_gettime(CLOCK_REALTIME, &ts);
+      }
       if (r >= 0 && (received & AZ_THREAD_BEAM_EVTBUS)) {
         r = az_event_recv(rcvr, &revt);
         if (r >= 0) {

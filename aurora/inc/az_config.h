@@ -95,7 +95,7 @@
 //#undef CONFIG_AZ_CLI           
 
 #define CONFIG_AZM                      1
-#undef  CONFIG_AZM                      
+//#undef  CONFIG_AZM                      
 
 #ifdef CONFIG_AZM                      
 #define CONFIG_AZ_CLI_SHELL_PROMPT      "$$"
@@ -213,8 +213,15 @@
 
 #define CONFIG_AZ_PROBE                   1
 #define CONFIG_AZ_PROBE_ENABLE            1
+//#undef CONFIG_AZ_PROBE_ENABLE             
 #define CONFIG_AZ_PROBE_SAMPLES_MAX       409600
 
 #define CONFIG_AZ_PROBE_SYS               1
+#define CONFIG_AZ_PROBE_FLAG_THREAD        0x00000001
+#define CONFIG_AZ_PROBE_FLAG_TIMER         0x00000002
+#define CONFIG_AZ_PROBE_FLAG_MUTEX         0x00000004
+#define CONFIG_AZ_PROBE_FLAG_SEM           0x00000008
+#define CONFIG_AZ_PROBE_FLAG_SOCKET        0x00000010
+#define CONFIG_AZ_SYS_PROBE_FLAGS         (CONFIG_AZ_PROBE_FLAG_THREAD|CONFIG_AZ_PROBE_FLAG_TIMER)         
 #endif
 

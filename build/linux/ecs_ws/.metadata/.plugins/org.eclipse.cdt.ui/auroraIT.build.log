@@ -1,8 +1,8 @@
-01:39:31 **** Build of configuration Debug for project auroraIT ****
+23:43:31 **** Build of configuration Debug2 for project auroraIT ****
 make all 
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_tc_abc.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/ut/az_tc_abc.d" -MT"Sources/ut/az_tc_abc.o" -o "Sources/ut/az_tc_abc.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_tc_abc.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_abc.d" -MT"Sources/ut/az_tc_abc.o" -o "Sources/ut/az_tc_abc.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -545,7 +545,7 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_abc.c
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_tc_report_excpt.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/ut/az_tc_report_excpt.d" -MT"Sources/ut/az_tc_report_excpt.o" -o "Sources/ut/az_tc_report_excpt.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_tc_report_excpt.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_report_excpt.d" -MT"Sources/ut/az_tc_report_excpt.o" -o "Sources/ut/az_tc_report_excpt.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excpt.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -918,7 +918,7 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_report_excp
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_tc_rw_lock.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/ut/az_tc_rw_lock.d" -MT"Sources/ut/az_tc_rw_lock.o" -o "Sources/ut/az_tc_rw_lock.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_tc_rw_lock.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_rw_lock.d" -MT"Sources/ut/az_tc_rw_lock.o" -o "Sources/ut/az_tc_rw_lock.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -1401,7 +1401,7 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_rw_lock.c
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_tc_segv_handle.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/ut/az_tc_segv_handle.d" -MT"Sources/ut/az_tc_segv_handle.o" -o "Sources/ut/az_tc_segv_handle.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_tc_segv_handle.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_segv_handle.d" -MT"Sources/ut/az_tc_segv_handle.o" -o "Sources/ut/az_tc_segv_handle.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -1745,7 +1745,7 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_segv_handle
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_timer_start.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_tc_timer_start.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/ut/az_tc_timer_start.d" -MT"Sources/ut/az_tc_timer_start.o" -o "Sources/ut/az_tc_timer_start.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_timer_start.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_tc_timer_start.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_tc_timer_start.d" -MT"Sources/ut/az_tc_timer_start.o" -o "Sources/ut/az_tc_timer_start.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_timer_start.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -2209,7 +2209,7 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_tc_timer_start
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_unitTest.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/ut/az_unitTest.d" -MT"Sources/ut/az_unitTest.o" -o "Sources/ut/az_unitTest.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_unitTest.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/ut/az_unitTest.d" -MT"Sources/ut/az_unitTest.o" -o "Sources/ut/az_unitTest.o" "/home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -2429,7 +2429,7 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/ut/az_unitTest.c
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_pt_az_log_printf.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/pt/az_pt_az_log_printf.d" -MT"Sources/pt/az_pt_az_log_printf.o" -o "Sources/pt/az_pt_az_log_printf.o" "/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_pt_az_log_printf.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/pt/az_pt_az_log_printf.d" -MT"Sources/pt/az_pt_az_log_printf.o" -o "Sources/pt/az_pt_az_log_printf.o" "/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_printf.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -2761,7 +2761,7 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_az_log_prin
  
 Building file: /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"az_pt_sys_lw_lock.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/pt/az_pt_sys_lw_lock.d" -MT"Sources/pt/az_pt_sys_lw_lock.o" -o "Sources/pt/az_pt_sys_lw_lock.o" "/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c"
+gcc -Dlinux -D"BASE_FILENAME=\"az_pt_sys_lw_lock.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/pt/az_pt_sys_lw_lock.d" -MT"Sources/pt/az_pt_sys_lw_lock.o" -o "Sources/pt/az_pt_sys_lw_lock.o" "/home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -3258,7 +3258,7 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/test/pt/az_pt_sys_lw_lock
  
 Building file: /home/dhkang/work/Aurora/aurora/src/frw/main.c
 Invoking: GCC C Compiler
-gcc -Dlinux -D"BASE_FILENAME=\"main.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -finstrument-functions -Wall -c -fmessage-length=0 -fsanitize=address -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -o "Sources/main.o" "/home/dhkang/work/Aurora/aurora/src/frw/main.c"
+gcc -Dlinux -D"BASE_FILENAME=\"main.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -o "Sources/main.o" "/home/dhkang/work/Aurora/aurora/src/frw/main.c"
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
                  from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
                  from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
@@ -3478,13 +3478,13 @@ Finished building: /home/dhkang/work/Aurora/aurora/src/frw/main.c
  
 Building target: auroraIT
 Invoking: GCC C++ Linker
-g++ -L"/home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Debug/lib" -o "auroraIT"  ./Sources/ut/az_tc_abc.o ./Sources/ut/az_tc_report_excpt.o ./Sources/ut/az_tc_rw_lock.o ./Sources/ut/az_tc_segv_handle.o ./Sources/ut/az_tc_timer_start.o ./Sources/ut/az_unitTest.o  ./Sources/pt/az_pt_az_log_printf.o ./Sources/pt/az_pt_sys_lw_lock.o  ./Sources/main.o   -lAurora -lasan -lbfd -ldl -lrt -lstdc++ -lm -lgcc -lpthread
+g++ -L"/home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Debug2/lib" -o "auroraIT"  ./Sources/ut/az_tc_abc.o ./Sources/ut/az_tc_report_excpt.o ./Sources/ut/az_tc_rw_lock.o ./Sources/ut/az_tc_segv_handle.o ./Sources/ut/az_tc_timer_start.o ./Sources/ut/az_unitTest.o  ./Sources/pt/az_pt_az_log_printf.o ./Sources/pt/az_pt_sys_lw_lock.o  ./Sources/main.o   -lAurora -lbfd -ldl -lrt -lstdc++ -lm -lgcc -lpthread
 Finished building target: auroraIT
  
 make --no-print-directory post-build
 copy exeutable to output location
-cp auroraIT /home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Debug/bin/; cp auroraIT /home/dhkang/work/Aurora/bin/linux/
+cp auroraIT /home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Debug2/bin/; cp auroraIT /home/dhkang/work/Aurora/bin/linux/
  
 
-01:39:34 Build Finished (took 2s.763ms)
+23:43:33 Build Finished (took 2s.120ms)
 

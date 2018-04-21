@@ -101,8 +101,8 @@ void  az_probe_init()
           ctrl->svrIpStr, ctrl->svrPort, r);
       break;
     }
-    az_sys_eprintf("connect to probe server %s:%u OK" AZ_NL,
-          ctrl->svrIpStr, ctrl->svrPort);
+    az_sys_eprintf("connect to probe server %s:%u OK, ctrl=%d, data=%d" AZ_NL,
+          ctrl->svrIpStr, ctrl->svrPort, ctrl->ctrl_sock->sys_socket, ctrl->data_sock->sys_socket);
 
   } while (0);
 }

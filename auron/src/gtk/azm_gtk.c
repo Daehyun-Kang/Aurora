@@ -77,30 +77,44 @@ GtkWidget * find_child(GtkWidget *parent, const gchar *name)
 }
 #define N_PROBES      4
 
-#define N_SAMPLES     200
-#define N_POINTS      500
+#define N_INPUT_DATA           2048
+#define N_SAMPLES_PER_SPAN     500
+#define N_POINTS_PER_SPAN      500
+#define N_SPANS                1
+#define N_SAMPLES              (N_SAMPLES_PER_SPAN * N_SPANS)
+#define N_POINTS              (N_POINTS_PER_SPAN * N_SPANS)
 typedef struct {
   int x, y;
 } az_point_t;
 typedef struct {
-  int        state;
-  int        srcno;
-  int64_t    time_us[N_POINTS];
-  int        values[N_POINTS];
-  az_point_t points[N_POINTS];
-  int64_t toffset;
-  int push, pop;
-  int64_t   x, y;
+  int           state;
+  int           srcno;
+  az_ring_t     input;
+  double        samples[N_SAMPLES];
+  uint32_t      sample_dt;
+  uint32_t      sample_count_unit;
+  uint64_t      sample_push;
+  az_point_t    points[N_POINTS];
+  uint64_t      points_push, points_pop;
+  uint32_t      points_count_unit;
+  int           yoffset;
+
+  double        level;
+  GdkRGBA       color;
 } az_disp_sig_t;
 struct { 
   int width;
   int height;
-  int64_t interval_us;
+  uint64_t  base_tstamp;
+  uint64_t  interval_us;
   uint64_t  stime_us;
-  uint64_t time_us;
+  uint64_t  ctime_us;
+  uint64_t  dt_us;
+  uint64_t  timespan_us;
+  int64_t   toffset;
+
   double source_freq;
   double source_x[N_SAMPLES], source_y[N_SAMPLES];
-  int64_t timespan_us;
 
   uint8_t is_odd;
   az_disp_sig_t  disp_sig[N_PROBES];
@@ -116,11 +130,14 @@ struct {
 } da_info = { 
   .width = 500, 
   .height = 500, 
+  .base_tstamp = 0,
   .source_freq = 0.2, 
   .timespan_us = 5000000, //5000, 
   .interval_us = 100000, //100,
   .stime_us = 0,
-  .time_us = 0,
+  .ctime_us = 0,
+  .dt_us = 0,
+  .toffset = 0,
   .disp_sig = {0},
   .org_x = 0,
   .is_odd = 0,
@@ -128,59 +145,66 @@ struct {
   .t_scale = 1.0,
   .t_scale_n = 1.0,
 };
-void az_write_sample(int srcno, uint64_t tstamp_us, double value_norm)
+
+static az_probe_sample_t s_input_data[N_PROBES][N_INPUT_DATA]; 
+static GdkRGBA probe_colors[N_PROBES] = {
+  {0.0, 1.0, 0.0, 1.0},
+  {0.0, 0.0, 1.0, 1.0},
+  {1.0, 0.0, 1.0, 1.0},
+  {0.0, 1.0, 1.0, 1.0},
+};
+
+uint64_t azm_get_curtimeoffset()
 {
-  double dy = da_info.height/10.0;
+  return (da_info.ctime_us - da_info.stime_us)* 1000;
+}
+void azm_write_probe_input_data(int srcno, uint64_t tstamp_ns, int level)
+{
   az_disp_sig_t *disp_sig; 
   int probeno = 0;
+  uint64_t sample;
   
   for (disp_sig = &da_info.disp_sig[probeno]; probeno < N_PROBES; probeno++,disp_sig++)
   {
-    if (disp_sig->srcno == srcno) break;
-  }
-  if (probeno >= N_PROBES) {
-    //az_printf("srcno %d no probes\n", srcno);
-    return; 
-  }
-
-  if (disp_sig->state == 0) {
-    //az_printf("srcno %d  state = %d\n", srcno, disp_sig->state);
-    return;
-  }
-
-  if (disp_sig->toffset == 0) {
-    disp_sig->toffset = da_info.time_us - tstamp_us;
-  }
-  tstamp_us += disp_sig->toffset;
-  
-  disp_sig->time_us[disp_sig->push] = tstamp_us;
-  disp_sig->values[disp_sig->push++] = value_norm*2*dy + dy*5;
-  if (disp_sig->push == array_size(disp_sig->values)) disp_sig->push = 0;
-
-  gtk_widget_set_sensitive(da_info.scale, FALSE);
-}
-int get_sample_value(int64_t time_us)
-{
-  az_disp_sig_t *disp_sig; 
-
-  disp_sig = &da_info.disp_sig[1];
-
-  int j = disp_sig->pop;
-  while (j < disp_sig->push) {
-    if (disp_sig->time_us[j] < time_us) {
-      disp_sig->y = disp_sig->values[j];
-    } else {
-      disp_sig->y = disp_sig->values[j];
+    if (disp_sig->state == 0) continue; 
+    if (disp_sig->srcno == srcno) {
+      sample = ((uint64_t)level << 61) + tstamp_ns; 
+      az_ring_push64(&disp_sig->input, &sample); 
+      //az_printf("push %lx, %lx, count=%d\n", tstamp_ns, sample, disp_sig->input.count);
       break;
     }
-    if (++j == array_size(disp_sig->values)) {
-      j = 0;
-    }
-    disp_sig->pop = j;
   }
-  return disp_sig->y;
+  //gtk_widget_set_sensitive(da_info.scale, FALSE);
 }
+static double get_sample(az_disp_sig_t *disp_sig, uint64_t time)
+{
+  int64_t sample, tstamp;
+  double level = disp_sig->level;
 
+  time = time * 1000;
+  az_ring_first64(&disp_sig->input, &sample);
+  do {
+    if (0 == sample) break; 
+    if (da_info.toffset == 0) {
+      tstamp = (sample & 0x1fffffffffffffff); 
+      da_info.toffset = time - tstamp;
+      tstamp = time; 
+    } else {
+      tstamp = (sample & 0x1fffffffffffffff) + da_info.toffset; 
+    }
+    //az_printf("tstamp:%lx time:%lx %ld level=%f\n", tstamp, time, time - tstamp, level);
+    if (tstamp <= time) {
+      az_ring_pop64(&disp_sig->input, &sample);
+      level = disp_sig->level = (double)((sample >> 61) & 0x3) * 2.0 / 15.0;
+      az_dlog("tstamp:%ld time:%ld level=%f\n", tstamp, time, level);
+    } else {
+      break;
+    }
+    az_ring_first64(&disp_sig->input, &sample);
+  } while (1);
+
+  return level;
+}
 static double gen_sample(double us)
 {
   return sin(2*M_PI * us * da_info.source_freq / 1E6); 
@@ -204,10 +228,17 @@ static gboolean time_handler(GtkWidget *widget)
   da_info.count++;
   #endif
 
-  int j;
-  double dt_us = da_info.interval_us / array_size(da_info.source_x);
-  double us;
-  int64_t x, y;
+  int i, j;
+  int count;
+  int x;
+  double y;
+  uint64_t sample_index;
+  uint64_t sample_time_us;
+  uint64_t sample_time_next;
+  uint64_t points_index;
+  uint64_t points_time_us;
+  uint64_t points_time_next;
+
   az_disp_sig_t *disp_sig = &da_info.disp_sig[1];
   if (da_info.t_scale_n != da_info.t_scale) {
     da_info.t_scale = da_info.t_scale_n;
@@ -215,70 +246,106 @@ static gboolean time_handler(GtkWidget *widget)
     az_printf("timespan changed to %ld us\n", da_info.timespan_us);
   }
 
-  if (da_info.time_us == 0) {
+  if (da_info.stime_us == 0) {
     struct timespec ts;
     clock_gettime(CLOCK_REALTIME, &ts);
-    da_info.stime_us = ts.tv_sec * 1000000 + ts.tv_nsec / 1000; 
-    da_info.time_us = da_info.interval_us; 
-    disp_sig = &da_info.disp_sig[1];
-    for (j = 0; j < array_size(disp_sig->values); j++) {
-      disp_sig->points[j].x = j; 
-      disp_sig->points[j].y = da_info.height/2;
-      disp_sig->time_us[j] = 0; 
-      disp_sig->values[j] = -1; 
-    }
-    disp_sig->x = da_info.interval_us * array_size(disp_sig->points) / da_info.timespan_us;
+    da_info.stime_us = ts.tv_sec * 1E6 + ts.tv_nsec / 1E3 - da_info.timespan_us;
+    //da_info.stime_us = ts.tv_sec * 1E6 + ts.tv_nsec / 1E3;
+    da_info.ctime_us = da_info.stime_us; 
+    da_info.dt_us = da_info.timespan_us * N_SPANS / array_size(disp_sig->points);
     disp_sig = &da_info.disp_sig[0];
-    for (j = 0; j < array_size(disp_sig->points); j++) {
-      disp_sig->points[j].x = j;
-      disp_sig->points[j].y = 0;
-    }
-    for (j = 0; j < array_size(da_info.source_x); j++) {
-      us = da_info.source_x[j] = dt_us * j; 
-      da_info.source_y[j] = gen_sample(us);
-
-      x = array_size(disp_sig->points) * us / da_info.timespan_us;
-      x = x % array_size(disp_sig->points); 
-      disp_sig->points[x].y = (da_info.source_y[j] + 1)*da_info.height / 2; 
+    for (i = 0; i < N_PROBES; i++, disp_sig++) {
+      disp_sig->sample_dt = da_info.timespan_us * N_SPANS / array_size(disp_sig->samples);
+      disp_sig->sample_count_unit = array_size(disp_sig->samples) * da_info.interval_us / disp_sig->sample_dt; 
+      disp_sig->sample_push = 0;
+      for (j = 0; j < array_size(disp_sig->samples); j++) {
+        disp_sig->samples[j] = 0;
+      }
+      disp_sig->points_push = 0; 
+      disp_sig->points_count_unit = array_size(disp_sig->points) * da_info.interval_us / da_info.dt_us; 
+      disp_sig->yoffset = da_info.height/2;
+      for (j = 0; j < array_size(disp_sig->points); j++) {
+        disp_sig->points[j].x = j; 
+        disp_sig->points[j].y = disp_sig->yoffset; 
+      }
+      az_ring_init(&disp_sig->input, AZ_RING_TYPE_DS64, N_INPUT_DATA, &s_input_data[i][0]);
+      disp_sig->color = probe_colors[i];
     }
   } else {
-    int64_t time_us;
     struct timespec ts;
     clock_gettime(CLOCK_REALTIME, &ts);
-    time_us = da_info.time_us;
-    da_info.is_odd =  (da_info.time_us / da_info.timespan_us) & 0x1;
-    da_info.time_us = ts.tv_sec * 1000000 + ts.tv_nsec / 1000 - da_info.stime_us; 
-    disp_sig = &da_info.disp_sig[0];
-    for (j = 0; j < array_size(da_info.source_x); j++) {
-      us = da_info.source_x[j] = da_info.source_x[j] + da_info.interval_us; 
-      da_info.source_y[j] = gen_sample(us);
-
-      x = array_size(disp_sig->points) * us / da_info.timespan_us;
-      x = x % array_size(disp_sig->points); 
-      disp_sig->points[x].y = (da_info.source_y[j] + 1)*da_info.height / 2; 
+    da_info.ctime_us = ts.tv_sec * 1E6 + ts.tv_nsec / 1E3 - da_info.timespan_us;
+    //da_info.ctime_us = ts.tv_sec * 1E6 + ts.tv_nsec / 1E3;
+  }
+  
+  int k = 0;
+  disp_sig = &da_info.disp_sig[0];
+  for (; k < N_PROBES; k++, disp_sig++) {
+    if (!(disp_sig->state & 0x6)) continue; 
+    sample_index = (da_info.ctime_us - da_info.stime_us ) / disp_sig->sample_dt;
+    sample_time_us = sample_index * disp_sig->sample_dt;
+    for (j = disp_sig->sample_push; j < sample_index + disp_sig->sample_count_unit; j++) {
+      x = j % array_size(disp_sig->samples);
+      if (disp_sig->state & 0x4) {
+        disp_sig->samples[x] = get_sample(disp_sig, disp_sig->sample_dt * j); 
+      } else
+      if (disp_sig->state & 0x2) {
+        disp_sig->samples[x] = gen_sample(disp_sig->sample_dt * j);
+      }
     }
+    disp_sig->sample_push = j;
 
-    disp_sig = &da_info.disp_sig[1];
-    int64_t nsamples = (da_info.time_us - time_us) * array_size(disp_sig->points) / da_info.timespan_us; 
-    int64_t dt = 0;
-    if (nsamples > 0) dt =  (da_info.time_us - time_us)/nsamples; 
-    for (j = 0, x = disp_sig->x; j < nsamples; j++) {
-      disp_sig->points[x].y = get_sample_value(time_us);
-      time_us += dt;
-      if (++x == array_size(disp_sig->points)) x = 0;
+    points_index = (da_info.ctime_us - da_info.stime_us ) / da_info.dt_us;
+    da_info.org_x = points_index % array_size(disp_sig->points);  
+
+    sample_index = points_index * da_info.dt_us / disp_sig->sample_dt;
+    sample_time_us = sample_index * disp_sig->sample_dt;
+    sample_time_next = sample_time_us + disp_sig->sample_dt; 
+
+    points_time_us = disp_sig->points_push * da_info.dt_us;
+    points_time_next = points_time_us + da_info.dt_us;
+
+    y = disp_sig->samples[sample_index % array_size(disp_sig->samples)];
+    count = 1;
+    while (sample_time_us < points_time_us && sample_time_next <= points_time_us) {
+      sample_time_us += disp_sig->sample_dt;
+      sample_time_next += disp_sig->sample_dt;
+      sample_index++;
+      y += disp_sig->samples[sample_index % array_size(disp_sig->samples)];
+      count++;
     }
-    disp_sig->x = x;
+    y = y / count;
+    for (j = disp_sig->points_push; j < points_index + disp_sig->points_count_unit; j++) {
+      if (sample_time_us <= points_time_us && points_time_us < sample_time_next) {
+        x = j % array_size(disp_sig->points);
+        disp_sig->points[x].y = disp_sig->yoffset + y * da_info.height / 2;
+      }
+      points_time_us += da_info.dt_us;
+      points_time_next += da_info.dt_us;
+      if (sample_time_next > points_time_us) {
+        continue;
+      }
+      sample_time_us += disp_sig->sample_dt;
+      sample_time_next += disp_sig->sample_dt;
+      sample_index++;
+      y = disp_sig->samples[sample_index % array_size(disp_sig->samples)];
+      count = 1;
+      while (sample_time_us < points_time_us && sample_time_next <= points_time_us) {
+        sample_time_us += disp_sig->sample_dt;
+        sample_time_next += disp_sig->sample_dt;
+        sample_index++;
+        y += disp_sig->samples[sample_index % array_size(disp_sig->samples)];
+        count++;
+      }
+      y = y / count;
+    }
   }
 
-  da_info.org_x += (array_size(disp_sig->points) * da_info.interval_us / da_info.timespan_us); 
-  if (da_info.org_x >= array_size(disp_sig->points)) da_info.org_x = 0; 
-
-  
   char tstamp[16];
   static int cur = 0;
-  if (da_info.time_us - cur >= 100*1000) { 
-    cur = da_info.time_us; 
-    sprintf(tstamp, "%d.%d", cur/1000000, cur%1000000); 
+  if (((da_info.ctime_us - da_info.stime_us)- cur) >= 100*1000) { 
+    cur = da_info.ctime_us - da_info.stime_us; 
+    sprintf(tstamp, "%4d.%06d", cur/1000000, cur%1000000); 
     gtk_label_set_text(da_info.label, tstamp); 
     gtk_widget_queue_draw(widget);
   }
@@ -374,10 +441,29 @@ G_MODULE_EXPORT void button1_clicked_cb(GtkButton *button, GtkLabel *label)
 }
 static void az_set_srcno(int index, gchar *text)
 {
-  da_info.disp_sig[index].srcno = strtol(text, NULL, 10);
-  az_printf("set probe %d source thread no %d\n",  
-      index, da_info.disp_sig[index].srcno);
-  da_info.disp_sig[index].state = 1; 
+  char first = *text;
+  az_disp_sig_t *disp_sig = &da_info.disp_sig[index];
+
+  do {
+    if (strlen(text) == 0) {
+      disp_sig->state = 0;
+      az_printf("set probe %d disabled\n",  index);
+      break;
+    }
+    if (!strcmp("sin", text)) {
+      disp_sig->state = 0x3;
+      az_printf("set probe %d source to sin save\n",  index);
+      break;
+    }
+    if ('0'<= first && first <= '9') {
+      disp_sig->srcno = strtol(text, NULL, 10);
+    } else {
+      disp_sig->srcno = (int)first;
+    }
+    az_printf("set probe %d source thread no %d\n",  
+        index, disp_sig->srcno);
+    disp_sig->state = 0x5; 
+  } while (0);
 }
 G_MODULE_EXPORT void on_entry1_changed(GtkEntry *entry, GtkWidget *widget)
 {
@@ -499,6 +585,33 @@ static gboolean draw_clock(GtkWidget *widget,
     return FALSE;
 }
 
+static void draw_grid(cairo_t *cr)
+{
+  int i, d;
+  int count = 10;
+  az_point_t s, e;
+  static const double dash[] = {1.0};
+
+  cairo_save(cr);
+
+  cairo_set_source_rgba(cr, 0, 0, 0, 0.5); 
+  cairo_set_dash(cr, dash, 1, 0);
+  cairo_set_line_width(cr, 1);
+
+  for (i = 0, d = da_info.width/count; i < da_info.width; i += d) {
+    cairo_move_to(cr, i, 0);
+    cairo_line_to(cr, i, da_info.height);
+    cairo_stroke(cr);
+  }
+  for (i = 0, d = da_info.height/count; i < da_info.height; i += d) {
+    cairo_move_to(cr, 0, i);
+    cairo_line_to(cr, da_info.width, i);
+    cairo_stroke(cr);
+  }
+
+  cairo_restore(cr);
+}
+
 G_MODULE_EXPORT gboolean on_drawingarea1_draw(GtkWidget *widget,
     cairo_t *cr,
     gpointer user_data)
@@ -517,40 +630,50 @@ G_MODULE_EXPORT gboolean on_drawingarea1_draw(GtkWidget *widget,
   az_printf("draw area width:%d height:%d\n", width, height);
   */
 
-  //if (da_info.time_us == 0) {
+  //if (da_info.ctime_us == 0) {
     cairo_set_source_rgb(cr, 1, 1, 1); 
     cairo_paint(cr);
   //}
 
   cairo_set_source_rgb(cr, 0, 0, 0); 
 
+  draw_grid(cr);
+
   int j, k, end;
   az_disp_sig_t *disp_sig;
-
-  //disp_sig = &da_info.disp_sig[0];
-  disp_sig = &da_info.disp_sig[1];
-  int remained = array_size(disp_sig->points)- da_info.org_x;
+  int remained;
 
   cairo_scale(cr, da_info.x_scale, 1.0);
-  cairo_translate(cr, -da_info.org_x, 0);
-  if (da_info.time_us > da_info.timespan_us) {
-    j = da_info.org_x;
-    cairo_move_to(cr, disp_sig->points[j].x,disp_sig->points[j].y);
-    for (++j; j < array_size(disp_sig->points); j++) {
+
+  disp_sig = &da_info.disp_sig[0];
+  for (k = 0; k < N_PROBES; k++, disp_sig++) {
+    if (!(disp_sig->state & 1)) continue;
+    remained = array_size(disp_sig->points)- da_info.org_x;
+
+    cairo_set_source_rgba(cr, 
+        disp_sig->color.red, 
+        disp_sig->color.green, 
+        disp_sig->color.blue, 
+        disp_sig->color.alpha);
+    cairo_translate(cr, -da_info.org_x, 0);
+    if (da_info.ctime_us > da_info.timespan_us) {
+      j = da_info.org_x;
+      cairo_move_to(cr, disp_sig->points[j].x,disp_sig->points[j].y);
+      for (++j; j < array_size(disp_sig->points); j++) {
+        //az_printf("%d %d\n", da_info.x[j], da_info.y[j]);
+        cairo_line_to(cr, disp_sig->points[j].x,disp_sig->points[j].y);
+      }
+    }
+
+    cairo_translate(cr, da_info.org_x+remained, 0);
+    end = da_info.org_x;
+    for (j = 0; j < end; j++) {
       //az_printf("%d %d\n", da_info.x[j], da_info.y[j]);
       cairo_line_to(cr, disp_sig->points[j].x,disp_sig->points[j].y);
     }
+    cairo_stroke(cr);
+    cairo_translate(cr, -remained, 0);
   }
-
-  cairo_translate(cr, da_info.org_x+remained, 0);
-  end = da_info.org_x;
-  for (j = 0; j < end; j++) {
-    //az_printf("%d %d\n", da_info.x[j], da_info.y[j]);
-    cairo_line_to(cr, disp_sig->points[j].x,disp_sig->points[j].y);
-  }
-  cairo_stroke(cr);
-  cairo_translate(cr, -remained, 0);
-
 }
 
 /* === end of AZM_GTK_C === */

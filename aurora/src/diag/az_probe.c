@@ -84,21 +84,27 @@ void  az_probe_init()
     ctrl->ctrl_sock = &ctrl->_ctrl_sock;
     AZ_SOCKET_INIT_STATIC(ctrl->ctrl_sock);
 
+    ctrl->data_sock = &ctrl->_data_sock;
+    AZ_SOCKET_INIT_STATIC(ctrl->data_sock);
+
     r = az_inet_openTcpClient(ctrl->svrIpStr, ctrl->svrPort, NULL, 0,
         &ctrl->ctrl_sock);
     if (r != AZ_SUCCESS) {
       az_sys_eprintf("connect ctrl to probe server %s:%u error = %d" AZ_NL,
           ctrl->svrIpStr, ctrl->svrPort, r);
+      az_probe_ctrl.ctrl_sock->sys_socket = AZ_SOCK_INVALID;
+      az_probe_ctrl.data_sock->sys_socket = AZ_SOCK_INVALID;
       break;
     }
 
-    ctrl->data_sock = &ctrl->_data_sock;
-    AZ_SOCKET_INIT_STATIC(ctrl->data_sock);
     r = az_inet_openTcpClient(ctrl->svrIpStr, ctrl->svrPort, NULL, 0,
         &ctrl->data_sock);
     if (r != AZ_SUCCESS) {
       az_sys_eprintf("connect data to probe server %s:%u error = %d" AZ_NL,
           ctrl->svrIpStr, ctrl->svrPort, r);
+      az_socket_delete(az_probe_ctrl.ctrl_sock->sys_socket);
+      az_probe_ctrl.ctrl_sock->sys_socket = AZ_SOCK_INVALID;
+      az_probe_ctrl.data_sock->sys_socket = AZ_SOCK_INVALID;
       break;
     }
     az_sys_eprintf("connect to probe server %s:%u OK, ctrl=%d, data=%d" AZ_NL,

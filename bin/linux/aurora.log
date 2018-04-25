@@ -1,10 +1,10 @@
-<01:10:12.212160>  [main]  [az_cli_svr.c:az_cli_svr_start:130] <0:SUCCESS> cli server: cliSvr start
-<01:10:12.219502>  [cliSvr]  tcp server on (null):53001 open ok
-<01:10:12.716496>  [traceDefault]  send malloc rpt 34
-<01:04:15.515309>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<00:52:39.499711>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<00:53:16.780996>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<00:53:54.043205>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<23:22:15.647020>  [main]  [az_cli_svr.c:az_cli_svr_start:130] <0:SUCCESS> cli server: cliSvr start
+<23:22:15.656214>  [cliSvr]  tcp server on (null):53000 open ok
+<23:10:23.283918>  [tracesvr]  [az_thread.c:az_thread_exit:674] id:4 ref count 4
+<23:10:23.338078>  [main]  [az_thread.c:az_thread_exit:674] id:6 ref count 6
+ion_register_io:96] <-1018:INVALID> id:14 type:9 ion:0x60400000df68/1
+<22:44:17.321868>  [tracesvr]  [az_thread.c:az_thread_exit:674] id:3 ref count 3
+<22:44:17.369298>  [main]  [az_thread.c:az_thread_exit:674] id:4 ref count 4
 <00:54:31.311826>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
 <00:55:08.738567>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
 <00:55:46.038850>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent

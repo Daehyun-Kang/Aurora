@@ -1,4 +1,4 @@
-01:09:56 **** Incremental Build of configuration Debug2 for project gauron ****
+09:15:39 **** Incremental Build of configuration Debug2 for project gauron ****
 make all 
 Building file: /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c
 Invoking: GCC C Compiler
@@ -95,7 +95,19 @@ In file included from /usr/include/gtk-3.0/gtk/gtkapplication.h:27:0,
  void    gtk_widget_queue_draw   (GtkWidget        *widget);
          ^
 /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c: In function ‘azm_gtk_main’:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:397:23: warning: passing argument 1 of ‘gtk_widget_set_name’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:398:3: warning: ‘gtk_widget_override_background_color’ is deprecated [-Wdeprecated-declarations]
+   gtk_widget_override_background_color(window, GTK_STATE_FLAG_NORMAL, &main_bg_color); 
+   ^
+In file included from /usr/include/gtk-3.0/gtk/gtkapplication.h:27:0,
+                 from /usr/include/gtk-3.0/gtk/gtkwindow.h:33,
+                 from /usr/include/gtk-3.0/gtk/gtkdialog.h:33,
+                 from /usr/include/gtk-3.0/gtk/gtkaboutdialog.h:30,
+                 from /usr/include/gtk-3.0/gtk/gtk.h:31,
+                 from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:22:
+/usr/include/gtk-3.0/gtk/gtkwidget.h:1137:14: note: declared here
+ void         gtk_widget_override_background_color (GtkWidget     *widget,
+              ^
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:399:23: warning: passing argument 1 of ‘gtk_widget_set_name’ from incompatible pointer type [-Wincompatible-pointer-types]
    gtk_widget_set_name(drawingArea, "drawingArea1");
                        ^
 In file included from /usr/include/gtk-3.0/gtk/gtkapplication.h:27:0,
@@ -107,7 +119,7 @@ In file included from /usr/include/gtk-3.0/gtk/gtkapplication.h:27:0,
 /usr/include/gtk-3.0/gtk/gtkwidget.h:810:23: note: expected ‘GtkWidget * {aka struct _GtkWidget *}’ but argument is of type ‘GtkDrawingArea * {aka struct _GtkDrawingArea *}’
  void                  gtk_widget_set_name               (GtkWidget    *widget,
                        ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:417:31: warning: passing argument 1 of ‘gtk_widget_set_size_request’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:419:31: warning: passing argument 1 of ‘gtk_widget_set_size_request’ from incompatible pointer type [-Wincompatible-pointer-types]
    gtk_widget_set_size_request(drawingArea, da_info.width, da_info.height);
                                ^
 In file included from /usr/include/gtk-3.0/gtk/gtkapplication.h:27:0,
@@ -119,20 +131,20 @@ In file included from /usr/include/gtk-3.0/gtk/gtkapplication.h:27:0,
 /usr/include/gtk-3.0/gtk/gtkwidget.h:950:12: note: expected ‘GtkWidget * {aka struct _GtkWidget *}’ but argument is of type ‘GtkDrawingArea * {aka struct _GtkDrawingArea *}’
  void       gtk_widget_set_size_request    (GtkWidget           *widget,
             ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:377:13: warning: variable ‘entry’ set but not used [-Wunused-but-set-variable]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:378:13: warning: variable ‘entry’ set but not used [-Wunused-but-set-variable]
    GtkEntry *entry;
              ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:376:14: warning: variable ‘button’ set but not used [-Wunused-but-set-variable]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:377:14: warning: variable ‘button’ set but not used [-Wunused-but-set-variable]
    GtkButton *button;
               ^
 /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c: In function ‘on_entry1_changed’:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:471:19: warning: passing argument 2 of ‘az_set_srcno’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:473:19: warning: passing argument 2 of ‘az_set_srcno’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
    az_set_srcno(0, text);
                    ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:442:13: note: expected ‘gchar * {aka char *}’ but argument is of type ‘const gchar * {aka const char *}’
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:444:13: note: expected ‘gchar * {aka char *}’ but argument is of type ‘const gchar * {aka const char *}’
  static void az_set_srcno(int index, gchar *text)
              ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:473:32: warning: passing argument 1 of ‘gtk_toggle_button_set_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:475:32: warning: passing argument 1 of ‘gtk_toggle_button_set_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    gtk_toggle_button_set_active(rb, 1);
                                 ^
 In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
@@ -143,7 +155,7 @@ In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
                  from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:24:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:474:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:476:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    az_printf("rb%d active %d\n", 0, gtk_toggle_button_get_active(rb));
                                                                  ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:73:99: note: in definition of macro ‘az_printf’
@@ -161,13 +173,13 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:24:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:474:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:476:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    az_printf("rb%d active %d\n", 0, gtk_toggle_button_get_active(rb));
                                                                  ^
 /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:64:119: note: in definition of macro ‘az_sys_printf’
    printf(AZ_SYS_TIMESTAMP_FMT " [%s] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), AZ_FILENAME, __VA_ARGS__);\
                                                                                                                        ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:474:3: note: in expansion of macro ‘az_printf’
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:476:3: note: in expansion of macro ‘az_printf’
    az_printf("rb%d active %d\n", 0, gtk_toggle_button_get_active(rb));
    ^
 In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
@@ -182,13 +194,13 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:24:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:474:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:476:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    az_printf("rb%d active %d\n", 0, gtk_toggle_button_get_active(rb));
                                                                  ^
 /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:66:97: note: in definition of macro ‘az_sys_printf’
    printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
                                                                                                  ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:474:3: note: in expansion of macro ‘az_printf’
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:476:3: note: in expansion of macro ‘az_printf’
    az_printf("rb%d active %d\n", 0, gtk_toggle_button_get_active(rb));
    ^
 In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
@@ -198,13 +210,13 @@ In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
  gboolean   gtk_toggle_button_get_active        (GtkToggleButton *toggle_button);
             ^
 /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c: In function ‘on_entry2_changed’:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:479:19: warning: passing argument 2 of ‘az_set_srcno’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:481:19: warning: passing argument 2 of ‘az_set_srcno’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
    az_set_srcno(1, text);
                    ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:442:13: note: expected ‘gchar * {aka char *}’ but argument is of type ‘const gchar * {aka const char *}’
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:444:13: note: expected ‘gchar * {aka char *}’ but argument is of type ‘const gchar * {aka const char *}’
  static void az_set_srcno(int index, gchar *text)
              ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:481:32: warning: passing argument 1 of ‘gtk_toggle_button_set_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:483:32: warning: passing argument 1 of ‘gtk_toggle_button_set_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    gtk_toggle_button_set_active(rb, 1);
                                 ^
 In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
@@ -215,7 +227,7 @@ In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
                  from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:24:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:482:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:484:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    az_printf("rb%d active %d\n", 1, gtk_toggle_button_get_active(rb));
                                                                  ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:73:99: note: in definition of macro ‘az_printf’
@@ -233,13 +245,13 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:24:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:482:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:484:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    az_printf("rb%d active %d\n", 1, gtk_toggle_button_get_active(rb));
                                                                  ^
 /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:64:119: note: in definition of macro ‘az_sys_printf’
    printf(AZ_SYS_TIMESTAMP_FMT " [%s] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), AZ_FILENAME, __VA_ARGS__);\
                                                                                                                        ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:482:3: note: in expansion of macro ‘az_printf’
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:484:3: note: in expansion of macro ‘az_printf’
    az_printf("rb%d active %d\n", 1, gtk_toggle_button_get_active(rb));
    ^
 In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
@@ -254,13 +266,13 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:24:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:482:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:484:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    az_printf("rb%d active %d\n", 1, gtk_toggle_button_get_active(rb));
                                                                  ^
 /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:66:97: note: in definition of macro ‘az_sys_printf’
    printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
                                                                                                  ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:482:3: note: in expansion of macro ‘az_printf’
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:484:3: note: in expansion of macro ‘az_printf’
    az_printf("rb%d active %d\n", 1, gtk_toggle_button_get_active(rb));
    ^
 In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
@@ -270,13 +282,13 @@ In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
  gboolean   gtk_toggle_button_get_active        (GtkToggleButton *toggle_button);
             ^
 /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c: In function ‘on_entry3_changed’:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:487:19: warning: passing argument 2 of ‘az_set_srcno’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:489:19: warning: passing argument 2 of ‘az_set_srcno’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
    az_set_srcno(2, text);
                    ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:442:13: note: expected ‘gchar * {aka char *}’ but argument is of type ‘const gchar * {aka const char *}’
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:444:13: note: expected ‘gchar * {aka char *}’ but argument is of type ‘const gchar * {aka const char *}’
  static void az_set_srcno(int index, gchar *text)
              ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:489:32: warning: passing argument 1 of ‘gtk_toggle_button_set_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:491:32: warning: passing argument 1 of ‘gtk_toggle_button_set_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    gtk_toggle_button_set_active(rb, 1);
                                 ^
 In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
@@ -287,7 +299,7 @@ In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
                  from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:24:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:490:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:492:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    az_printf("rb%d active %d\n", 2, gtk_toggle_button_get_active(rb));
                                                                  ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:73:99: note: in definition of macro ‘az_printf’
@@ -305,13 +317,13 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:24:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:490:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:492:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    az_printf("rb%d active %d\n", 2, gtk_toggle_button_get_active(rb));
                                                                  ^
 /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:64:119: note: in definition of macro ‘az_sys_printf’
    printf(AZ_SYS_TIMESTAMP_FMT " [%s] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), AZ_FILENAME, __VA_ARGS__);\
                                                                                                                        ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:490:3: note: in expansion of macro ‘az_printf’
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:492:3: note: in expansion of macro ‘az_printf’
    az_printf("rb%d active %d\n", 2, gtk_toggle_button_get_active(rb));
    ^
 In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
@@ -326,13 +338,13 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:24:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:490:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:492:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    az_printf("rb%d active %d\n", 2, gtk_toggle_button_get_active(rb));
                                                                  ^
 /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:66:97: note: in definition of macro ‘az_sys_printf’
    printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
                                                                                                  ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:490:3: note: in expansion of macro ‘az_printf’
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:492:3: note: in expansion of macro ‘az_printf’
    az_printf("rb%d active %d\n", 2, gtk_toggle_button_get_active(rb));
    ^
 In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
@@ -342,13 +354,13 @@ In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
  gboolean   gtk_toggle_button_get_active        (GtkToggleButton *toggle_button);
             ^
 /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c: In function ‘on_entry4_changed’:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:495:19: warning: passing argument 2 of ‘az_set_srcno’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:497:19: warning: passing argument 2 of ‘az_set_srcno’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
    az_set_srcno(3, text);
                    ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:442:13: note: expected ‘gchar * {aka char *}’ but argument is of type ‘const gchar * {aka const char *}’
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:444:13: note: expected ‘gchar * {aka char *}’ but argument is of type ‘const gchar * {aka const char *}’
  static void az_set_srcno(int index, gchar *text)
              ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:497:32: warning: passing argument 1 of ‘gtk_toggle_button_set_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:499:32: warning: passing argument 1 of ‘gtk_toggle_button_set_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    gtk_toggle_button_set_active(rb, 1);
                                 ^
 In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
@@ -359,7 +371,7 @@ In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
             ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/aurora.h:26:0,
                  from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:24:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:498:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:500:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    az_printf("rb%d active %d\n", 3, gtk_toggle_button_get_active(rb));
                                                                  ^
 /home/dhkang/work/Aurora/aurora/inc/az_printf.h:73:99: note: in definition of macro ‘az_printf’
@@ -377,13 +389,13 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:24:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:498:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:500:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    az_printf("rb%d active %d\n", 3, gtk_toggle_button_get_active(rb));
                                                                  ^
 /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:64:119: note: in definition of macro ‘az_sys_printf’
    printf(AZ_SYS_TIMESTAMP_FMT " [%s] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), AZ_FILENAME, __VA_ARGS__);\
                                                                                                                        ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:498:3: note: in expansion of macro ‘az_printf’
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:500:3: note: in expansion of macro ‘az_printf’
    az_printf("rb%d active %d\n", 3, gtk_toggle_button_get_active(rb));
    ^
 In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
@@ -398,13 +410,13 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
                  from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
                  from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
                  from /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:24:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:498:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:500:65: warning: passing argument 1 of ‘gtk_toggle_button_get_active’ from incompatible pointer type [-Wincompatible-pointer-types]
    az_printf("rb%d active %d\n", 3, gtk_toggle_button_get_active(rb));
                                                                  ^
 /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:66:97: note: in definition of macro ‘az_sys_printf’
    printf(AZ_SYS_TIMESTAMP_FMT fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __VA_ARGS__);\
                                                                                                  ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:498:3: note: in expansion of macro ‘az_printf’
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:500:3: note: in expansion of macro ‘az_printf’
    az_printf("rb%d active %d\n", 3, gtk_toggle_button_get_active(rb));
    ^
 In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
@@ -414,10 +426,10 @@ In file included from /usr/include/gtk-3.0/gtk/gtkcheckbutton.h:33:0,
  gboolean   gtk_toggle_button_get_active        (GtkToggleButton *toggle_button);
             ^
 /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c: In function ‘draw_grid’:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:592:17: warning: unused variable ‘e’ [-Wunused-variable]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:594:17: warning: unused variable ‘e’ [-Wunused-variable]
    az_point_t s, e;
                  ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:592:14: warning: unused variable ‘s’ [-Wunused-variable]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:594:14: warning: unused variable ‘s’ [-Wunused-variable]
    az_point_t s, e;
               ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
@@ -430,11 +442,11 @@ In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def
 /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
  static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
                                                       ^
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:516:17: warning: ‘draw_clock’ defined but not used [-Wunused-function]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:518:17: warning: ‘draw_clock’ defined but not used [-Wunused-function]
  static gboolean draw_clock(GtkWidget *widget,
                  ^
 /home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c: In function ‘on_drawingarea1_draw’:
-/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:677:1: warning: control reaches end of non-void function [-Wreturn-type]
+/home/dhkang/work/Aurora/auron/src/gtk/azm_gtk.c:679:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
  ^
 In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
@@ -486,5 +498,5 @@ copy exeutable to output location
 cp gauron /home/dhkang/work/Aurora/build/linux/ecs_build/x86_64/Debug2/bin/; cp gauron /home/dhkang/work/Aurora/bin/linux/
  
 
-01:09:57 Build Finished (took 1s.166ms)
+09:15:41 Build Finished (took 1s.230ms)
 

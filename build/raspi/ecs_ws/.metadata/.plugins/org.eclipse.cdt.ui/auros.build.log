@@ -1,0 +1,612 @@
+23:13:15 **** Build of configuration Debug for project auros ****
+make all 
+Building file: /home/dhkang/work/Aurora/auros/src/azs_main.c
+Invoking: Cross GCC Compiler
+arm-linux-gnueabihf-gcc -Dlinux -D"BASE_FILENAME=\"azs_main.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -I"/home/dhkang/work/Aurora/auros/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/src/azs_main.d" -MT"Sources/src/azs_main.o" -o "Sources/src/azs_main.o" "/home/dhkang/work/Aurora/auros/src/azs_main.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h: In function ‘az_sys_fs_copy’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
+       wlen = sendfile(dst, src, &offset, 4096);
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:377:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:392:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 9 has type ‘az_size_t {aka long long int}’ [-Wformat=]
+ #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:111:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_eprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_ERROR, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:117:9: note: in expansion of macro ‘az_sys_eprintf’
+         az_sys_eprintf("%p %ld\n", symtab, nsyms);
+         ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:93:12: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 5 has type ‘az_size_t {aka long long int}’ [-Wformat=]
+     printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__);\
+            ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:111:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_eprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_ERROR, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:117:9: note: in expansion of macro ‘az_sys_eprintf’
+         az_sys_eprintf("%p %ld\n", symtab, nsyms);
+         ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:130:16: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+         addr = (az_ref_t)syminfo.value;
+                ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdAddr2Name’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:161:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+       if ((az_ref_t)syminfo.value == addr) {
+           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+         name = symtab[i]->name;
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h: In function ‘az_hexStringDecode’:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
+     outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
+                   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_add32’:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
+     az_array_est_element32_at(pArray, id, e);
+     ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_release’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:193:11: note: in expansion of macro ‘container_of’
+       c = container_of(l, az_xml_element_t, link);
+           ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:203:11: note: in expansion of macro ‘container_of’
+       c = container_of(l, az_xml_element_t, link);
+           ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_next_child’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:271:15: note: in expansion of macro ‘container_of’
+       child = container_of(l, az_xml_element_t, link);
+               ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:283:13: note: in expansion of macro ‘container_of’
+     child = container_of(l, az_xml_element_t, link);
+             ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_next_attr’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:301:14: note: in expansion of macro ‘container_of’
+       attr = container_of(l, az_xml_element_t, link);
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:313:12: note: in expansion of macro ‘container_of’
+     attr = container_of(l, az_xml_element_t, link);
+            ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_find_child’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:331:9: note: in expansion of macro ‘container_of’
+     c = container_of(l, az_xml_element_t, link);
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_find_attr’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:352:9: note: in expansion of macro ‘container_of’
+     c = container_of(l, az_xml_element_t, link);
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_iterateOnChild’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:373:9: note: in expansion of macro ‘container_of’
+     c = container_of(l, az_xml_element_t, link);
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_iterateOnAttr’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:395:9: note: in expansion of macro ‘container_of’
+     c = container_of(l, az_xml_element_t, link);
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_del_child’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:416:9: note: in expansion of macro ‘container_of’
+     c = container_of(l, az_xml_element_t, link);
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_del_attr’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:438:9: note: in expansion of macro ‘container_of’
+     c = container_of(l, az_xml_element_t, link);
+         ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_thread_cfg.h:25:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:42,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h: In function ‘az_xcfg_var_toStr’:
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h:168:35: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 4 has type ‘az_int64_t {aka long long int}’ [-Wformat=]
+         tlen = snprintf(bp, blen, "%ld", pVar->var.value.i64);
+                                   ^
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h:168:35: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 4 has type ‘az_int64_t {aka long long int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h:171:35: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 4 has type ‘az_uint64_t {aka long long unsigned int}’ [-Wformat=]
+         tlen = snprintf(bp, blen, "%lu", pVar->var.value.u64);
+                                   ^
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h:171:35: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 4 has type ‘az_uint64_t {aka long long unsigned int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h:174:35: warning: format ‘%lx’ expects argument of type ‘long unsigned int’, but argument 4 has type ‘az_uint64_t {aka long long unsigned int}’ [-Wformat=]
+         tlen = snprintf(bp, blen, "0x%lx", pVar->var.value.b64);
+                                   ^
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h:174:35: warning: format ‘%lx’ expects argument of type ‘long unsigned int’, but argument 4 has type ‘az_uint64_t {aka long long unsigned int}’ [-Wformat=]
+In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_probe.h:25,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_thread.h:36,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:43,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:194:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+     az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
+                                                 ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:144:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+ static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
+                    ^
+/home/dhkang/work/Aurora/auros/src/azs_main.c: In function ‘az_thread_main_entry’:
+/home/dhkang/work/Aurora/auros/src/azs_main.c:66:33: warning: integer overflow in expression [-Woverflow]
+     az_thread_sleep(1000000000L * 3);
+                                 ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/auros/src/azs_main.c: At top level:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
+ static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
+                                                      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/auros/src/azs_main.c: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
+   asymbol **symtab;
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_main.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
+   az_size_t nsize, nsyms, i;
+                    ^
+Finished building: /home/dhkang/work/Aurora/auros/src/azs_main.c
+ 
+Building file: /home/dhkang/work/Aurora/auros/src/azs_rstdio.c
+Invoking: Cross GCC Compiler
+arm-linux-gnueabihf-gcc -Dlinux -D"BASE_FILENAME=\"azs_rstdio.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -I"/home/dhkang/work/Aurora/auros/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sources/src/azs_rstdio.d" -MT"Sources/src/azs_rstdio.o" -o "Sources/src/azs_rstdio.o" "/home/dhkang/work/Aurora/auros/src/azs_rstdio.c"
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:69:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h: In function ‘az_sys_fs_copy’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_fs.h:217:14: warning: implicit declaration of function ‘sendfile’ [-Wimplicit-function-declaration]
+       wlen = sendfile(dst, src, &offset, 4096);
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:127:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_add_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:377:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h: In function ‘az_sys_iomux_del_ep’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_event.h:392:10: warning: ‘return’ with a value, in function returning void
+   return r;
+          ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:43:30: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 9 has type ‘az_size_t {aka long long int}’ [-Wformat=]
+ #define AZ_SYS_TIMESTAMP_FMT "<%02d:%02d:%02d:%06d>  " 
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:10: note: in expansion of macro ‘AZ_SYS_TIMESTAMP_FMT’
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+          ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:111:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_eprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_ERROR, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:117:9: note: in expansion of macro ‘az_sys_eprintf’
+         az_sys_eprintf("%p %ld\n", symtab, nsyms);
+         ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:93:12: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 5 has type ‘az_size_t {aka long long int}’ [-Wformat=]
+     printf("[%s:%d] " fmt, __FUNCTION__, __LINE__, __VA_ARGS__);\
+            ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:111:29: note: in expansion of macro ‘az_sys_log_printf’
+ #define az_sys_eprintf(...) az_sys_log_printf(AZ_LOG_LEVEL_ERROR, AZ_LOG_FLAGS_ALL, __VA_ARGS__)
+                             ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:117:9: note: in expansion of macro ‘az_sys_eprintf’
+         az_sys_eprintf("%p %ld\n", symtab, nsyms);
+         ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:130:16: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+         addr = (az_ref_t)syminfo.value;
+                ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h: In function ‘az_sys_dllib_findBfdAddr2Name’:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:161:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+       if ((az_ref_t)syminfo.value == addr) {
+           ^
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:162:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+         name = symtab[i]->name;
+              ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:32:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h: In function ‘az_hexStringDecode’:
+/home/dhkang/work/Aurora/aurora/inc/az_string.h:186:19: warning: implicit declaration of function ‘az_hex2Byte’ [-Wimplicit-function-declaration]
+     outBytes[i] = az_hex2Byte(&inHexStr[i*2]);
+                   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:33:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h: In function ‘az_array_add32’:
+/home/dhkang/work/Aurora/aurora/inc/az_array.h:329:5: warning: implicit declaration of function ‘az_array_est_element32_at’ [-Wimplicit-function-declaration]
+     az_array_est_element32_at(pArray, id, e);
+     ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_release’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:193:11: note: in expansion of macro ‘container_of’
+       c = container_of(l, az_xml_element_t, link);
+           ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:203:11: note: in expansion of macro ‘container_of’
+       c = container_of(l, az_xml_element_t, link);
+           ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_next_child’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:271:15: note: in expansion of macro ‘container_of’
+       child = container_of(l, az_xml_element_t, link);
+               ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:283:13: note: in expansion of macro ‘container_of’
+     child = container_of(l, az_xml_element_t, link);
+             ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_next_attr’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:301:14: note: in expansion of macro ‘container_of’
+       attr = container_of(l, az_xml_element_t, link);
+              ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:313:12: note: in expansion of macro ‘container_of’
+     attr = container_of(l, az_xml_element_t, link);
+            ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_find_child’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:331:9: note: in expansion of macro ‘container_of’
+     c = container_of(l, az_xml_element_t, link);
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_find_attr’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:352:9: note: in expansion of macro ‘container_of’
+     c = container_of(l, az_xml_element_t, link);
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_iterateOnChild’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:373:9: note: in expansion of macro ‘container_of’
+     c = container_of(l, az_xml_element_t, link);
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_iterateOnAttr’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:395:9: note: in expansion of macro ‘container_of’
+     c = container_of(l, az_xml_element_t, link);
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_del_child’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:416:9: note: in expansion of macro ‘container_of’
+     c = container_of(l, az_xml_element_t, link);
+         ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h: In function ‘az_xml_element_del_attr’:
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:141:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define offsetof(type, member)  ((az_size_t)&(((type *)0)->member))
+                                  ^
+/home/dhkang/work/Aurora/aurora/inc/az_def.h:148:30: note: in expansion of macro ‘offsetof’
+     (type *)((char *)(ptr) - offsetof(type, member))
+                              ^
+/home/dhkang/work/Aurora/aurora/inc/az_xml.h:438:9: note: in expansion of macro ‘container_of’
+     c = container_of(l, az_xml_element_t, link);
+         ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/az_thread_cfg.h:25:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:42,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h: In function ‘az_xcfg_var_toStr’:
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h:168:35: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 4 has type ‘az_int64_t {aka long long int}’ [-Wformat=]
+         tlen = snprintf(bp, blen, "%ld", pVar->var.value.i64);
+                                   ^
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h:168:35: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 4 has type ‘az_int64_t {aka long long int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h:171:35: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 4 has type ‘az_uint64_t {aka long long unsigned int}’ [-Wformat=]
+         tlen = snprintf(bp, blen, "%lu", pVar->var.value.u64);
+                                   ^
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h:171:35: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 4 has type ‘az_uint64_t {aka long long unsigned int}’ [-Wformat=]
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h:174:35: warning: format ‘%lx’ expects argument of type ‘long unsigned int’, but argument 4 has type ‘az_uint64_t {aka long long unsigned int}’ [-Wformat=]
+         tlen = snprintf(bp, blen, "0x%lx", pVar->var.value.b64);
+                                   ^
+/home/dhkang/work/Aurora/aurora/inc/az_xcfg.h:174:35: warning: format ‘%lx’ expects argument of type ‘long unsigned int’, but argument 4 has type ‘az_uint64_t {aka long long unsigned int}’ [-Wformat=]
+In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_probe.h:28:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/sys/az_sys_probe.h:25,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_thread.h:36,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:43,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h: In function ‘az_inet_openLocalSocket’:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:194:49: warning: passing argument 4 of ‘az_inet_mkLocalSocketAddr’ from incompatible pointer type [-Wincompatible-pointer-types]
+     az_inet_mkLocalSocketAddr(name, NULL, NULL, addr);
+                                                 ^
+/home/dhkang/work/Aurora/aurora/inc/sys/az_inet.h:144:20: note: expected ‘az_sys_sockaddr_t * {aka struct sockaddr *}’ but argument is of type ‘struct sockaddr_un *’
+ static inline void az_inet_mkLocalSocketAddr(char *name, char *key1, char *key2, 
+                    ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:25:0,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:23:
+/home/dhkang/work/Aurora/aurora/inc/mon/az_mcheck.h: At top level:
+/home/dhkang/work/Aurora/aurora/inc/mon/az_mcheck.h:53:1: warning: no semicolon at end of struct or union
+ } az_mchk_info_t;
+ ^
+In file included from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:23:0:
+/home/dhkang/work/Aurora/aurora/inc/mon/az_trace.h:104:1: warning: no semicolon at end of struct or union
+ } az_trace_info_t;
+ ^
+/home/dhkang/work/Aurora/auros/src/azs_rstdio.c: In function ‘azs_rstdio_proc_default’:
+/home/dhkang/work/Aurora/auros/src/azs_rstdio.c:80:8: warning: unused variable ‘count’ [-Wunused-variable]
+   long count = 0;
+        ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/auros/src/azs_rstdio.c: At top level:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:140:54: warning: ‘az_sys_dllib_findBfdAddr2Name’ defined but not used [-Wunused-function]
+ static char __attribute__((no_instrument_function)) *az_sys_dllib_findBfdAddr2Name(az_ref_t addr) 
+                                                      ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/auros/src/azs_rstdio.c: In function ‘az_sys_dllib_findBfdSymbol’:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘symtab’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:95:13: note: ‘symtab’ was declared here
+   asymbol **symtab;
+             ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:45:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/az_sys_printf.h:91:3: warning: ‘nsyms’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf(AZ_SYS_TIMESTAMP_FMT "[%s:%d] " fmt,tp->tm_hour, tp->tm_min, tp->tm_sec, (int)(_ts.tv_nsec/1000), __FUNCTION__, __LINE__, __VA_ARGS__); \
+   ^
+In file included from /home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_def.h:255:0,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_sys_def.h:27,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_def.h:189,
+                 from /home/dhkang/work/Aurora/aurora/inc/az_core.h:24,
+                 from /home/dhkang/work/Aurora/aurora/inc/aurora.h:24,
+                 from /home/dhkang/work/Aurora/auros/src/azs_rstdio.c:22:
+/home/dhkang/work/Aurora/aurora/inc/sys/linux/az_linux_dllib.h:96:20: note: ‘nsyms’ was declared here
+   az_size_t nsize, nsyms, i;
+                    ^
+Finished building: /home/dhkang/work/Aurora/auros/src/azs_rstdio.c
+ 
+Building target: auros
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L"/home/dhkang/work/Aurora/build/raspi/ecs_build/arm/Debug/lib" -o "auros"  ./Sources/src/azs_main.o ./Sources/src/azs_rstdio.o   -lAurora -lasan -lbfd -lz -ldl -lrt -lstdc++ -lm -lgcc -lpthread
+Finished building target: auros
+ 
+make --no-print-directory post-build
+copy exeutable to output location
+cp auros /home/dhkang/work/Aurora/build/raspi/ecs_build/arm/Debug/bin/; cp auros /home/dhkang/work/Aurora/bin/raspi/
+ 
+
+23:13:16 Build Finished (took 924ms)
+

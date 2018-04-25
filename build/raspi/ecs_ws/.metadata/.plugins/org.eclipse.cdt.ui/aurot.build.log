@@ -1,0 +1,7 @@
+01:48:11 **** Clean-only build of configuration Debug2 for project aurot ****
+make clean 
+rm -rf  ./Sources/ut/az_tc_abc.o ./Sources/ut/az_tc_report_excpt.o ./Sources/ut/az_tc_rw_lock.o ./Sources/ut/az_tc_segv_handle.o ./Sources/ut/az_tc_timer_start.o ./Sources/ut/az_unitTest.o  ./Sources/pt/az_pt_az_log_printf.o ./Sources/pt/az_pt_sys_lw_lock.o  ./Sources/aurot/aurot_main.o  ./Sources/ut/az_tc_abc.d ./Sources/ut/az_tc_report_excpt.d ./Sources/ut/az_tc_rw_lock.d ./Sources/ut/az_tc_segv_handle.d ./Sources/ut/az_tc_timer_start.d ./Sources/ut/az_unitTest.d  ./Sources/pt/az_pt_az_log_printf.d ./Sources/pt/az_pt_sys_lw_lock.d  ./Sources/aurot/aurot_main.d  aurot
+ 
+
+01:48:11 Build Finished (took 161ms)
+

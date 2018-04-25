@@ -167,6 +167,7 @@ int az_debug_init_watchpoint()
   sigaction(SIGTRAP, &trap_action, &trap_action_save);
 }
 
+#if defined(__i386__) || defined(__x86_64__)
 int az_debug_set_watchpoint(int bpno, void *addr, int var_size) 
 {
   pid_t child;
@@ -227,6 +228,12 @@ int az_debug_set_watchpoint(int bpno, void *addr, int var_size)
 
   return 0;
 }
+#else
+int az_debug_set_watchpoint(int bpno, void *addr, int var_size) 
+{
+  return 1;
+}
+#endif
 
 int az_debug_reset_watchpoint(int bpno)
 {

@@ -125,6 +125,8 @@ static void az_sys_xu_sigsegv_handler(int sig, siginfo_t *info, void *context)
       callsite = (void *)(uc->uc_mcontext.gregs[REG_EIP]);
   #elif defined(__x86_64__)
       callsite = (void *)(uc->uc_mcontext.gregs[REG_RIP]);
+  #elif defined(__arm__)
+      callsite = (void *)(uc->uc_mcontext.arm_pc);
   #else
   #error Unsupported architecture
   #endif

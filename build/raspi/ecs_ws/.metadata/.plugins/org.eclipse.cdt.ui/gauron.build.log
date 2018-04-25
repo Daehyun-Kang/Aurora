@@ -1,0 +1,7 @@
+23:42:02 **** Clean-only build of configuration Debug2 for project gauron ****
+make clean 
+rm -rf  ./Sources/auron_src/gtk/azm_gtk.o ./Sources/auron_src/gtk/azm_gtk_sample.o  ./Sources/auron_src/addr2line.o ./Sources/auron_src/azm_main.o ./Sources/auron_src/azm_mcheck.o ./Sources/auron_src/azm_probe.o ./Sources/auron_src/azm_rsh.o ./Sources/auron_src/azm_rstdio.o ./Sources/auron_src/azm_trace.o  ./Sources/auron_src/gtk/azm_gtk.d ./Sources/auron_src/gtk/azm_gtk_sample.d  ./Sources/auron_src/addr2line.d ./Sources/auron_src/azm_main.d ./Sources/auron_src/azm_mcheck.d ./Sources/auron_src/azm_probe.d ./Sources/auron_src/azm_rsh.d ./Sources/auron_src/azm_rstdio.d ./Sources/auron_src/azm_trace.d  gauron
+ 
+
+23:42:02 Build Finished (took 174ms)
+

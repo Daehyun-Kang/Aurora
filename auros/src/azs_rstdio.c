@@ -113,7 +113,7 @@ int azs_rstdio_proc_default(void *arg)
     if (r < 0) {
       az_sys_xu_iomux_del(ctrl->read_fd);
      az_sys_xu_iomux_del(STDIN_FILENO);
-      az_sys_socket_delete(ctrl->read_fd);
+      az_socket_delete(ctrl->read_fd);
       ctrl->read_fd = AZ_SOCK_INVALID;
       ctrl->write_fd = AZ_SOCK_INVALID;
       break;
@@ -123,7 +123,7 @@ int azs_rstdio_proc_default(void *arg)
   if (ctrl->write_fd != AZ_SOCK_INVALID) {
     az_sys_xu_iomux_del(ctrl->read_fd);
     az_sys_xu_iomux_del(STDIN_FILENO);
-    az_sys_socket_delete(ctrl->write_fd);
+    az_socket_delete(ctrl->write_fd);
     ctrl->read_fd = AZ_SOCK_INVALID;
     ctrl->write_fd = AZ_SOCK_INVALID;
   }

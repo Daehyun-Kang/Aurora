@@ -364,6 +364,7 @@ static gboolean time_handler(GtkWidget *widget)
  * @warning   warnings
  * @exception none
  */
+static GdkRGBA main_bg_color = { 0.7, 0.7, 0.7, 1.0 };
 int azm_gtk_main(int argc, char **argv)
 {
   
@@ -394,6 +395,7 @@ int azm_gtk_main(int argc, char **argv)
   drawingArea = GTK_DRAWING_AREA(gtk_builder_get_object(builder, "drawingarea1"));
   scale = GTK_SCALE(gtk_builder_get_object(builder, "scale1"));
 
+  gtk_widget_override_background_color(window, GTK_STATE_FLAG_NORMAL, &main_bg_color); 
   gtk_widget_set_name(drawingArea, "drawingArea1");
 
   gint width, height;

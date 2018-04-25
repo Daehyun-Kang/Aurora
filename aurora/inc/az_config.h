@@ -141,6 +141,8 @@
 #define CONFIG_AZ_TRACE_MON_SVR_PORT         54000 
 #define CONFIG_AZ_TRACE_PRB_SVR_PORT         55000 
 #define CONFIG_AZ_PROBE_SVR_PORT             56000 
+#define CONFIG_AZ_REMOTE_STDIO_SVR_IP        "192.168.9.15"
+//#define CONFIG_AZ_REMOTE_STDIO_SVR_IP        "127.0.0.1"
 #define CONFIG_AZ_REMOTE_STDIO_SVR_PORT      59000 
 #define CONFIG_AZ_TRZ_SVR_PORT_BASE          58000 
 
@@ -207,6 +209,7 @@
 #endif
 
 #define CONFIG_AZ_THREAD_EXP_HANDLE           1
+//#undef CONFIG_AZ_THREAD_EXP_HANDLE 
 
 #define CONFIG_AZ_ION_NONIO                 1
 //#undef CONFIG_AZ_ION_NONIO                 
@@ -215,6 +218,11 @@
 #define CONFIG_AZ_PROBE_ENABLE            1
 //#undef CONFIG_AZ_PROBE_ENABLE             
 #define CONFIG_AZ_PROBE_SAMPLES_MAX       409600
+
+#ifdef  CONFIG_AZM
+#undef CONFIG_AZ_PROBE_ENABLE             
+#endif
+
 
 #define CONFIG_AZ_PROBE_SYS               1
 #define CONFIG_AZ_PROBE_FLAG_THREAD        0x00000001

@@ -61,7 +61,9 @@ typedef az_timer_entity_t *   az_timer_t;
 static inline uint64_t az_timestamp()
 {
   uint32_t low, high;
+#if defined(__i386__) || defined(__x86_64__) || defined(__ia64__)
   asm volatile ("rdtsc":"=a"(low), "=d"(high));
+#endif
   return ((uint64_t)high << 32) | low;
 
 }

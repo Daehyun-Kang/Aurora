@@ -1,0 +1,20 @@
+21:14:03 **** Incremental Build of configuration Debug2 for project Aurora2 ****
+make all 
+Building file: ../test.c
+Invoking: Cross GCC Compiler
+arm-linux-gnueabihf-gcc -Dlinux -D"BASE_FILENAME=\"test.c\"" -I"/home/dhkang/work/Aurora/aurora/inc" -I"/home/dhkang/work/Aurora/aurora/inc/sys" -I"/home/dhkang/work/Aurora/aurora/inc/sys/linux" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"test.d" -MT"test.o" -o "test.o" "../test.c"
+Finished building: ../test.c
+ 
+Building target: libAurora2.a
+Invoking: Cross GCC Archiver
+arm-linux-gnueabihf-ar -r  "libAurora2.a"  ./test.o   
+arm-linux-gnueabihf-ar: creating libAurora2.a
+Finished building target: libAurora2.a
+ 
+make --no-print-directory post-build
+copy libAurora to build directory
+cp libAurora2.a /home/dhkang/work/Aurora/build/raspi/ecs_build/arm/Debug2/lib/
+ 
+
+21:14:03 Build Finished (took 174ms)
+

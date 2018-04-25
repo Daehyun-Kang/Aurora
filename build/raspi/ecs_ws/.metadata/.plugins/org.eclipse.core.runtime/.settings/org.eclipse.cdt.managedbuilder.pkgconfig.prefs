@@ -1,3 +1,7 @@
 PKG_CONFIG_BIN\ -\ Aurora=
+PKG_CONFIG_BIN\ -\ auron=
+PKG_CONFIG_BIN\ -\ auroraIT=
+PKG_CONFIG_BIN\ -\ auros=
+PKG_CONFIG_BIN\ -\ aurot=
 PKG_CONFIG_BIN\ -\ gauron=
 eclipse.preferences.version=1

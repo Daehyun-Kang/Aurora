@@ -357,16 +357,58 @@ def argsToVector(rettype, args):
   s += "{0}=\"{1}\" ".format("result", rettype) 
   return s
 
+def print_usage(cmd):
+  print "usage: {0} [funcdel]/[-n funcname -s src_folder]".format(cmd)
+
+def get_funcdecl(argc, argv):
+  import findfunc
+  funcname = ''
+  src_folder = '.'
+  if argv[1] == '-n':
+    funcname = argv[2]
+  elif argv[1] == '-s':
+    src_folder = argv[2]
+  else:
+    print_usage(argv[0])
+    exit (1)
+  if argc > 3:
+    if argv[3] == '-n':
+      funcname = argv[4]
+    elif argv[3] == '-s':
+      src_folder = argv[4]
+    else:
+      print_usage(argv[0])
+      exit (2)
+  if len(funcname) == 0:
+    print 'function name not specified'
+    print_usage(argv[0])
+    exit (3)
+  curlist = []
+  while True:
+    node, path = findfunc.find_next(funcname, src_folder, curlist)
+    if node is None:
+      print '{} not found from {}'.format(funcname, src_folder)
+      exit(4)
+    fprototype = findfunc.get_prototype(node)
+    answer=raw_input('function prototype {} is right? (Y/n)'.format(fprototype))
+    if answer != 'n':
+      print fprototype
+      return fprototype
+    curlist.append(path)
+
 def main():
-  if len(sys.argv) < 2:
-    print "usage: {0} funcdel".format(sys.argv[0])
+  argc = len(sys.argv)
+  if argc < 2 or (argc - 1)%2 != 0:
+    print_usage(sys.argv[0])
     return
 
-  #print "usage: {0} {1} {2}".format(sys.argv[0], sys.argv[1], sys.argv[2])
   username = get_user_name()
   brief = "" 
 
-  funcdecl = sys.argv[1]
+  if argc == 2:
+    funcdecl = sys.argv[1]
+  else:
+    funcdecl = get_funcdecl(argc, sys.argv)
 
   funcstruct = parseFuncDecl(funcdecl)
 
@@ -382,6 +424,8 @@ def main():
 
   if funcname[:3] == 'az_':
     funcname = funcname[3:]
+
+  funcname = funcname.strip()
 
   if funcret == "void":
     func_has_return = False

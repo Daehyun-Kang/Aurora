@@ -67,6 +67,11 @@ az_r_t az_sys_init()
 {
   az_r_t r = AZ_SUCCESS;
   extern az_r_t az_sys_timer_init();
+  extern az_r_t az_sys_udev_init();
+
+#ifdef  CONFIG_AZ_WCHAR
+  setlocale(LC_ALL, "");
+#endif
 
   az_sys_eprintf0("start\n");
   switch (az_sys_state) {
@@ -77,6 +82,7 @@ az_r_t az_sys_init()
       // TODO: sys dependant init....
       //
       az_sys_timer_init();
+      az_sys_udev_init();
       az_sys_state = AZ_ST_NORM;
       break;
     case AZ_ST_INIT:
@@ -101,6 +107,7 @@ az_r_t az_sys_deinit()
 {
   az_r_t r = AZ_SUCCESS;
   extern az_r_t az_sys_timer_deinit();
+  extern az_r_t az_sys_udev_deinit();
 
   az_sys_eprintf0("...");
   switch (az_sys_state) {
@@ -114,6 +121,7 @@ az_r_t az_sys_deinit()
       az_sys_state = AZ_ST_TINI;
       // TODO: sys dependant deinit....
       //
+      az_sys_udev_deinit();
       az_sys_timer_deinit();
       az_sys_state = AZ_ST_IDLE;
       break;

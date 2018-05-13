@@ -130,7 +130,7 @@ static inline az_pos_t az_fifo_pop(az_fifo_t *fifo)
 }
 
 /* function prototypes exposed */
-extern az_size_t az_fifo_toStr(az_fifo_t *, char *, char *, az_size_t);
+extern az_size_t az_fifo_toStr(char *bp, az_size_t blen, void *fmt, az_fifo_t *pLink);
 
 #ifdef __cplusplus
 }

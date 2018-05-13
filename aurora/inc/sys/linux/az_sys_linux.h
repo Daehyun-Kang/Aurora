@@ -31,6 +31,10 @@
 #include <errno.h>
 #include <unistd.h>
 #include <string.h>
+#ifdef  CONFIG_AZ_WCHAR
+#include <locale.h>
+#include <wchar.h>
+#endif
 #include <signal.h>
 #include <stdlib.h>
 #include <time.h>

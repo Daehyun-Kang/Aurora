@@ -74,6 +74,10 @@ typedef uint16_t  az_uint16_t;
 typedef uint32_t  az_uint32_t;
 typedef uint64_t  az_uint64_t;
 
+#ifdef  CONFIG_AZ_WCHAR
+typedef wchar_t   az_wchar_t;
+#endif
+
 typedef enum {
   AZ_FALSE = 0,
   AZ_TRUE = 1,

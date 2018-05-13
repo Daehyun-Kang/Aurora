@@ -442,7 +442,7 @@ extern az_r_t az_event_receiver_out_single(az_event_receiver_t *rcvr, az_event_t
 extern az_r_t az_event_receiver_out_level(az_event_receiver_t *rcvr, az_event_t *pEvt);
 extern az_r_t az_event_receiver_out_edge(az_event_receiver_t *rcvr, az_event_t *pEvt);
 
-extern int az_event_toStr(char *bp, int blen, az_event_t evt);
+extern int az_event_toStr(char *bp, int blen, void *fmt, az_event_t evt);
 
 #ifdef __cplusplus
 }

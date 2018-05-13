@@ -152,7 +152,7 @@ void *az_tc_thread_proc_default(void *arg)
         if (received & AZ_THREAD_BEAM_EVTBUS) {
           r = az_event_recv(rcvr, &revt);
           if (r >= 0) {
-            //az_event_toStr(az_thread_prtbuf, sizeof(az_thread_prtbuf), revt);
+            //az_event_toStr(az_thread_prtbuf, sizeof(az_thread_prtbuf), NULL, revt);
             //az_rprintf(r, "xu recvent %p: %s\n", revt, az_thread_prtbuf);
             if (0 == AZ_SYS_XU_SAVE_CONTEXT()) { 
               az_fsm_run(&az_tc_fsm, revt);

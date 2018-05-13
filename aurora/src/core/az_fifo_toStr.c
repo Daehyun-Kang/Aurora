@@ -57,10 +57,10 @@ az_var_descr_t az_fifo_t_descr[] = {
  * @warning   warnings
  * @exception none
  */
-az_size_t az_fifo_toStr(az_fifo_t *pLink, char *tag, char *bp, az_size_t blen)
+az_size_t az_fifo_toStr(char *bp, az_size_t blen, void *fmt, az_fifo_t *pLink)
 { 
-  az_var_print_format_t fmt = AZ_VAR_PRINT_KV_FMT_DEFAULT(tag, "%6s:", 5); 
-  az_size_t tlen = az_var_printVars((az_uint8_t *)pLink, az_fifo_t_descr, &fmt, bp, blen, NULL);
+  az_var_print_format_t sfmt = AZ_VAR_PRINT_KV_FMT_DEFAULT(fmt, "%6s:", 5); 
+  az_size_t tlen = az_var_printVars((az_uint8_t *)pLink, az_fifo_t_descr, &sfmt, bp, blen, NULL);
 
   return tlen;
 }

@@ -72,6 +72,7 @@
 									<listOptionValue builtIn="false" value="m"/>
 									<listOptionValue builtIn="false" value="gcc"/>
 									<listOptionValue builtIn="false" value="pthread"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="udev"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.860370208" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${Aurora_LIB_OUT}&quot;"/>
@@ -153,6 +154,7 @@
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="m"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="gcc"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="pthread"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="udev"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.793777082" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${Aurora_LIB_OUT}&quot;"/>
@@ -242,6 +244,7 @@
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="m"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="gcc"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="pthread"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="udev"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.1043927143" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${Aurora_LIB_OUT}&quot;"/>
@@ -331,6 +334,7 @@
 									<listOptionValue builtIn="false" value="m"/>
 									<listOptionValue builtIn="false" value="gcc"/>
 									<listOptionValue builtIn="false" value="pthread"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="udev"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.1046344050" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${Aurora_LIB_OUT}&quot;"/>
@@ -354,21 +358,6 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="auroraIT.cdt.managedbuild.target.gnu.exe.167543784" name="Executable" projectType="cdt.managedbuild.target.gnu.exe"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1493262902;cdt.managedbuild.config.gnu.exe.debug.1493262902.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.854756289;cdt.managedbuild.tool.gnu.c.compiler.input.428623770">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1493262902;cdt.managedbuild.config.gnu.exe.debug.1493262902.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.383341824;cdt.managedbuild.tool.gnu.cpp.compiler.input.675623971">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.9151069;cdt.managedbuild.config.gnu.exe.release.9151069.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.1076409420;cdt.managedbuild.tool.gnu.c.compiler.input.1321472820">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.9151069;cdt.managedbuild.config.gnu.exe.release.9151069.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.863457184;cdt.managedbuild.tool.gnu.cpp.compiler.input.1601126827">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Debug">
@@ -380,4 +369,31 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1493262902;cdt.managedbuild.config.gnu.exe.debug.1493262902.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.854756289;cdt.managedbuild.tool.gnu.c.compiler.input.428623770">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1493262902;cdt.managedbuild.config.gnu.exe.debug.1493262902.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.383341824;cdt.managedbuild.tool.gnu.cpp.compiler.input.675623971">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.9151069;cdt.managedbuild.config.gnu.exe.release.9151069.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.1076409420;cdt.managedbuild.tool.gnu.c.compiler.input.1321472820">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1493262902.2068300592;cdt.managedbuild.config.gnu.exe.debug.1493262902.2068300592.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1299804613;cdt.managedbuild.tool.gnu.c.compiler.input.942692361">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.9151069;cdt.managedbuild.config.gnu.exe.release.9151069.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.863457184;cdt.managedbuild.tool.gnu.cpp.compiler.input.1601126827">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1493262902.2038799951;cdt.managedbuild.config.gnu.exe.debug.1493262902.2038799951.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.118145254;cdt.managedbuild.tool.gnu.cpp.compiler.input.1604285261">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1493262902.2038799951;cdt.managedbuild.config.gnu.exe.debug.1493262902.2038799951.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.193438994;cdt.managedbuild.tool.gnu.c.compiler.input.1852971071">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1493262902.2068300592;cdt.managedbuild.config.gnu.exe.debug.1493262902.2068300592.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1446044194;cdt.managedbuild.tool.gnu.cpp.compiler.input.1549552245">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
 </cproject>

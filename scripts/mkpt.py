@@ -362,7 +362,7 @@ def print_usage(cmd):
   print "usage: {0} [funcdel]/[-n funcname -s src_folder]".format(cmd)
 
 def get_funcdecl(argc, argv):
-  import findfunc
+  import az_inspect
   funcname = ''
   src_folder = '.'
   if argv[1] == '-n':
@@ -386,11 +386,11 @@ def get_funcdecl(argc, argv):
     exit (3)
   curlist = []
   while True:
-    node, path = findfunc.find_next(funcname, src_folder, curlist)
+    node, path = az_inspect.find_func_next(funcname, src_folder, curlist)
     if node is None:
       print '{} not found from {}'.format(funcname, src_folder)
       exit(4)
-    fprototype = findfunc.get_prototype(node)
+    fprototype = az_inspect.get_prototype(node)
     answer=raw_input('function prototype {} is right? (Y/n)'.format(fprototype))
     if answer != 'n':
       print fprototype

@@ -229,7 +229,7 @@ void *az_frw_main()
       if (r >= 0 && (received & AZ_THREAD_BEAM_EVTBUS)) {
         r = az_event_recv(rcvr, &revt);
         if (r >= 0) {
-          az_event_toStr(az_thread_prtbuf, sizeof(az_thread_prtbuf), revt);
+          az_event_toStr(az_thread_prtbuf, sizeof(az_thread_prtbuf), NULL, revt);
           az_dprintf("xu recvent %p: %s\n", revt, az_thread_prtbuf); 
           az_fsm_run(&az_frw_fsm, revt);
         } else {

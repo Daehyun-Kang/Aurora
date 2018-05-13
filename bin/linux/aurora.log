@@ -1,32 +1,102 @@
-<23:22:15.647020>  [main]  [az_cli_svr.c:az_cli_svr_start:130] <0:SUCCESS> cli server: cliSvr start
-<23:22:15.656214>  [cliSvr]  tcp server on (null):53000 open ok
-<23:10:23.283918>  [tracesvr]  [az_thread.c:az_thread_exit:674] id:4 ref count 4
-<23:10:23.338078>  [main]  [az_thread.c:az_thread_exit:674] id:6 ref count 6
-ion_register_io:96] <-1018:INVALID> id:14 type:9 ion:0x60400000df68/1
-<22:44:17.321868>  [tracesvr]  [az_thread.c:az_thread_exit:674] id:3 ref count 3
-<22:44:17.369298>  [main]  [az_thread.c:az_thread_exit:674] id:4 ref count 4
-<00:54:31.311826>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<00:55:08.738567>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<00:55:46.038850>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<00:56:23.315968>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<00:57:00.577919>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<00:57:37.800838>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<00:58:15.035630>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<00:58:52.249024>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<00:59:29.522290>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<01:00:06.727082>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<01:00:43.958765>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<01:01:21.234587>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-<01:01:58.441671>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
-  send free rpt 2
-<12:18:02.942434>  [tcRunner]  iter1: timeout 0 tdiff=1000207572
-<12:18:02.942801>  [tcRunner]  [az_thread.c:az_thread_exit:674] id:19 ref count 19
-<12:18:02.942825>  [main]  test case::az_tc_timer_start stopped
-<12:18:02.943272>  [main]  test case::eventTest onoff=0 found on test project::unitTest
-<12:18:02.943347>  [main]  test case::msgqTest onoff=0 found on test project::unitTest
-<12:18:02.943377>  [main]  test case::ringTest onoff=0 found on test project::unitTest
-<12:18:02.943399>  [main]  test case::az_pt_pthread_mutex onoff=0 found on test project::unitTest
-<12:18:02.943421>  [main]  test case::az_pt_sys_lw_lock onoff=0 found on test project::unitTest
-<12:18:02.943441>  [main]  test case::az_pt_az_log_printf onoff=0 found on test project::unitTest
-<12:18:02.951241>  [traceDefault]  send malloc rpt 3
-<12:18:02.951365>  [traceDefault]  send free rpt 44
+<16:03:49.410637>  [main]  [az_cli_svr.c:az_cli_svr_start:130] <0:SUCCESS> cli server: cliSvr start
+<16:03:49.418110>  [cliSvr]  tcp server on (null):53000 open ok
+<15:55:56.996426>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<15:56:33.551440>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<15:57:10.016074>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<15:57:46.482164>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<15:58:22.944422>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<15:58:59.355236>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<15:59:35.759581>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:18:45.094677>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:19:21.674838>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:19:58.295377>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:20:34.929217>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:21:11.523863>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:21:48.159389>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:22:24.910177>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:23:01.553431>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<13:53:16.824949>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<13:53:53.439139>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<13:54:29.981912>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<13:55:06.514596>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<13:55:43.120492>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<13:56:19.638212>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<13:56:56.145915>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<13:57:32.709848>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<13:58:09.220233>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<13:58:45.687613>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<13:59:22.301889>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<13:59:58.891037>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:00:35.481833>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:01:12.159388>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:01:48.804819>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:02:25.482889>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:03:02.010074>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:03:38.592681>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:04:15.280493>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:04:51.906638>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<14:05:28.278164>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<22:08:45.333488>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<22:09:22.014342>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<22:09:58.770709>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<22:10:35.514275>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<22:11:12.199099>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<22:11:48.683111>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<22:12:25.153121>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<22:13:01.552976>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:34:31.509936>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:35:09.471585>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:35:47.460932>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:36:25.453376>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:37:03.384459>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:37:41.303848>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:38:19.308120>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:38:57.271442>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:39:35.219015>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:40:13.149071>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:40:51.126990>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:41:29.080596>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:42:07.065908>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:42:45.201684>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:43:23.155356>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:44:01.087177>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:44:39.064611>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:45:17.124604>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:45:55.123673>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:46:33.144231>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:47:11.209981>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:47:49.226570>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:48:27.259704>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:49:05.419686>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:49:43.390150>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:50:21.500762>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:50:59.592033>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:51:37.624515>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:52:15.707693>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:52:53.814569>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:53:31.929799>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:54:10.023897>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:54:48.075093>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:55:26.174233>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:56:04.147122>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:56:42.083102>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:57:19.997812>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:57:58.004901>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:58:36.026582>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:59:14.081593>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<19:59:52.305830>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:00:30.322583>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:01:08.350472>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:01:46.418066>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:02:24.472364>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:03:02.586709>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:03:40.700230>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:04:18.727736>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:04:56.908038>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:05:34.914527>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:06:13.339608>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:06:51.929910>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:07:30.490219>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:08:09.164833>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:08:47.745490>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent
+<20:09:26.380488>  [main]  [az_frw.c:az_frw_main:242] <-1008:TIMEOUT> xu recvevent

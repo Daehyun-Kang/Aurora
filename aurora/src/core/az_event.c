@@ -668,16 +668,21 @@ az_r_t az_event_receiver_out_edge(az_event_receiver_t *rcvr, az_event_t *pEvt)
   return r;
 }
 
-int az_event_toStr(char *bp, int blen, az_event_t evt)
+int az_event_toStr(char *bp, int blen, void *fmt, az_event_t evt)
 {
   int tlen = 0;
-  _AZ_SNPRINTF(tlen, bp, blen, "descr_id=%d flags=%x refCount=%d:%d node=%d id=%x\n",
+  if (!fmt) fmt = "descr_id=%d flags=%x refCount=%d:%d node=%d id=%x";
+  if (evt) {
+  _AZ_SNPRINTF(tlen, bp, blen, (const char *)fmt,
       evt->descr_id,
       evt->flags,
       evt->refCount.is_static,
       evt->refCount.count,
       evt->event_node,
       evt->event_id);
+  } else {
+  _AZ_SNPRINTF(tlen, bp, blen, (const char *)"%s", "NULL");
+  }
   return tlen;
 }
 #if 0
